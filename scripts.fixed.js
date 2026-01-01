@@ -411,10 +411,10 @@ function openPilotModal(fullRow, headerArr) {
       }
       html += `<div class="pilot-champ-item">
 <div class="pilot-champ-logo-left">
-<img src="${champImgPng}" 
+<img src="${champImgSvg}" 
      alt="${escapeHtml(it.champName)}" 
      class="pilot-champ-logo" 
-     onerror="if(this.src.includes('.png')){this.src='${champImgSvg}';}else{this.style.display='none';}" />
+     onerror="if(this.src.includes('.png')){this.src='${champImgPng}';}else{this.style.display='none';}" />
 </div>
                 <div class="pilot-champ-center">
                   <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
