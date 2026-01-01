@@ -34,122 +34,6 @@ closeMenu.addEventListener("click", closeSidebar);
         closeSidebar();
     }
 });
-
-// ---------- Pilot modal helper functions ----------
-
-function slugify(text) {
-  if (!text) return "";
-  return text
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function ensurePilotModalExists() {
-  let modal = document.getElementById('pilot-modal');
-  if (modal) return modal;
-
-  modal = document.createElement('div');
-  modal.id = 'pilot-modal';
-  modal.className = 'pilot-modal';
-  modal.innerHTML = `
-    <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
-    <div class="pilot-modal-content" role="dialog" aria-modal="true">
-      <button class="pilot-modal-close" id="pilot-modal-close">×</button>
-      <div class="pilot-modal-body" id="pilot-modal-body"></div>
-    </div>
-  `;
-  document.body.appendChild(modal);
-
-  // Close handlers
-  modal.querySelector('#pilot-modal-close').addEventListener('click', closePilotModal);
-  modal.querySelector('#pilot-modal-backdrop').addEventListener('click', closePilotModal);
-
-  return modal;
-}
-
-function openPilotModal(fullRow, headerArr) {
-  if (!fullRow || fullRow.length === 0) return;
-  const modal = ensurePilotModalExists();
-  const body = modal.querySelector('#pilot-modal-body');
-
-  const name = fullRow[0] || '';
-  const number = fullRow[1] || '';
-  const info = fullRow[2] || '';
-
-  // Build championships list (groups of 4 starting at index 3)
-  const items = [];
-  for (let i = 3; i < fullRow.length; i += 4) {
-    const participates = (fullRow[i] || '').toString().trim().toLowerCase();
-    if (participates === 'x' || participates === '✓' || participates === '1') {
-      const champName = headerArr && headerArr[i] ? headerArr[i] : `Campionato ${Math.floor((i-3)/4)+1}`;
-      const category = fullRow[i+1] || '';
-      const carUsed = fullRow[i+2] || '';
-      const brand = fullRow[i+3] || '';
-      items.push({ champName, category, carUsed, brand });
-    }
-  }
-
-  // Render HTML
-  let html = '';
-  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(name)}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
-  if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
-
-  html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
-  if (items.length === 0) {
-    html += `<div class="pilot-no-item">Nessun impegno registrato.</div>`;
-  } else {
-    html += `<div class="pilot-champ-list">`;
-    items.forEach((it) => {
-      const champSlug = slugify(it.champName);
-      const champImgPng = `images/Campionati/${champSlug}.png`;
-      const champImgSvg = `images/Campionati/${champSlug}.svg`;
-      const brandSlug = slugify(it.brand);
-      const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
-      const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
-
-      html += `<div class="pilot-champ-item">
-                <div class="pilot-champ-left">
-                  <img src="${champImgPng}" alt="${escapeHtml(it.champName)}" class="pilot-champ-logo" onerror="this.onerror=null; this.src='${champImgSvg}';" />
-                </div>
-                <div class="pilot-champ-body">
-                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
-                  <div class="pilot-champ-meta">Categoria: ${escapeHtml(it.category)} — Auto: ${escapeHtml(it.carUsed)}</div>
-                </div>
-                <div class="pilot-champ-right">
-                  <img src="${brandImgSvg}" alt="${escapeHtml(it.brand)}" class="pilot-brand-logo" onerror="this.onerror=null; this.src='${brandImgPng}'; if(!this.complete) this.style.display='none';" />
-                </div>
-              </div>`;
-    });
-    html += `</div>`;
-  }
-
-  body.innerHTML = html;
-
-  // Show modal
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePilotModal() {
-  const modal = document.getElementById('pilot-modal');
-  if (!modal) return;
-  modal.classList.remove('open');
-  document.body.style.overflow = 'auto';
-}
-
-function escapeHtml(unsafe) {
-  return (unsafe || '')
-    .toString()
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
 */
 
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
@@ -279,8 +163,8 @@ async function loadAndCreateHtmlTable(
       .map((row) =>
         // Suddivide le celle, gestendo le virgolette
         row
-          .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
-          .map((cell) => cell.trim().replace(/^"|"$/g, "").replace(/""/g, '"'))
+          .split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/)
+          .map((cell) => cell.trim().replace(/^\"|\"$/g, "").replace(/\"\"/g, '"'))
       );
 
     if (!rows || rows.length === 0) {
@@ -383,7 +267,7 @@ async function loadAndCreateHtmlTable(
       tbody.appendChild(tr);
     }
     
-    // Se stiamo popolando la tabella dei piloti, aggiungiamo gli handler di click
+    // Se stiamo popolando la tabella dei piloti, aggiungiamo glihandler di click
     if (tbodyId === 'piloti-body') {
       // Aggiungi classe/cursore e listener alla prima cella di ogni riga
       const rows = tbody.querySelectorAll('tr');
@@ -425,91 +309,123 @@ async function loadAndCreateHtmlTable(
   }
 }
 
-//Funzione per opzioni stanza
-// **!!! IMPORTANTE !!!** Sostituisci questo con il link CSV esportato da Google Fogli
-const CSV_URL = "YOUR_CSV_LINK_HERE";
-const container = document.getElementById("card-output");
+// ---------- Pilot modal helper functions ----------
 
-/**
- * Funzione per convertire una riga CSV in un oggetto data.
- * Assumiamo che la colonna 0 sia il Titolo (in alto) e la colonna 1 sia il Corpo (in basso).
- * @param {string} line - La riga CSV come stringa.
- * @returns {{header: string, body: string} | null} L'oggetto dati della card.
- */
-function parseCsvLine(line) {
-  // Semplice suddivisione per virgola (adatta se i tuoi dati non contengono virgole interne)
-  const columns = line.split(",");
-
-  // Controlla se ci sono almeno due colonne
-  if (columns.length < 2) {
-    return null;
-  }
-
-  // Pulisce gli spazi bianchi all'inizio/fine
-  const header = columns[0].trim();
-  const body = columns[1].trim();
-
-  if (!header || !body) {
-    return null; // Salta righe vuote o incomplete
-  }
-
-  return { header: header, body: body };
+function slugify(text) {
+  if (!text) return "";
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-/**
- * Funzione per generare il markup HTML di una singola card.
- * @param {{header: string, body: string}} data - I dati della card.
- * @returns {string} Il codice HTML della card.
- */
-function generateCardHtml(data) {
-  return `
-        <div class="opzioni-card">
-            <div class="opzioni-card-header">${data.header}</div>
-            <div class="opzioni-card-body">${data.body}</div>
-        </div>
-    `;
+function ensurePilotModalExists() {
+  let modal = document.getElementById('pilot-modal');
+  if (modal) return modal;
+
+  modal = document.createElement('div');
+  modal.id = 'pilot-modal';
+  modal.className = 'pilot-modal';
+  modal.innerHTML = `
+    <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
+    <div class="pilot-modal-content" role="dialog" aria-modal="true">
+      <button class="pilot-modal-close" id="pilot-modal-close">×</button>
+      <div class="pilot-modal-body" id="pilot-modal-body"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Close handlers
+  modal.querySelector('#pilot-modal-close').addEventListener('click', closePilotModal);
+  modal.querySelector('#pilot-modal-backdrop').addEventListener('click', closePilotModal);
+
+  return modal;
 }
 
-/**
- * Funzione principale per caricare i dati e popolare il DOM.
- */
-async function loadDataAndGenerateCards(spreadsheetUrl) {
-  try {
-    // 1. Fetch dei dati dal link CSV
-    const response = await fetch(spreadsheetUrl);
+function openPilotModal(fullRow, headerArr) {
+  if (!fullRow || fullRow.length === 0) return;
+  const modal = ensurePilotModalExists();
+  const body = modal.querySelector('#pilot-modal-body');
 
-    // Controlla se la risposta è ok (status 200)
-    if (!response.ok) {
-      throw new Error(`Errore HTTP: ${response.status}`);
+  const name = fullRow[0] || '';
+  const number = fullRow[1] || '';
+  const info = fullRow[2] || '';
+
+  // Build championships list (groups of 4 starting at index 3)
+  const items = [];
+  for (let i = 3; i < fullRow.length; i += 4) {
+    const participates = (fullRow[i] || '').toString().trim().toLowerCase();
+    if (participates === 'x' || participates === '✓' || participates === '1') {
+      const champName = headerArr && headerArr[i] ? headerArr[i] : `Campionato ${Math.floor((i-3)/4)+1}`;
+      const category = fullRow[i+1] || '';
+      const carUsed = fullRow[i+2] || '';
+      const brand = fullRow[i+3] || '';
+      items.push({ champName, category, carUsed, brand });
     }
-
-    const csvText = await response.text();
-
-    // 2. Analisi del CSV
-    // Divide il testo in righe e filtra le righe vuote
-    const lines = csvText.split("\n").filter((line) => line.trim() !== "");
-
-    // Salta la prima riga se contiene le intestazioni
-    const dataLines = lines.slice(1);
-
-    // 3. Generazione e iniezione delle card
-    let htmlCards = "";
-    dataLines.forEach((line) => {
-      const cardData = parseCsvLine(line);
-      if (cardData) {
-        htmlCards += generateCardHtml(cardData);
-      }
-    });
-
-    // Inietta tutte le card nel contenitore (ottimizzazione delle performance)
-    container.innerHTML = htmlCards;
-  } catch (error) {
-    console.error(
-      "Si è verificato un errore durante il caricamento o l'analisi dei dati:",
-      error
-    );
-    container.innerHTML = `<p style="color: red;">Impossibile caricare i dati. Controlla il link CSV o la console.</p>`;
   }
+
+  // Render HTML
+  let html = '';
+  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(name)}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
+  if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
+
+  html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
+  if (items.length === 0) {
+    html += `<div class="pilot-no-item">Nessun impegno registrato.</div>`;
+  } else {
+    html += `<div class="pilot-champ-list">`;
+    items.forEach((it) => {
+      const champSlug = slugify(it.champName);
+      const champImgPng = `images/Campionati/${champSlug}.png`;
+      const champImgSvg = `images/Campionati/${champSlug}.svg`;
+      const brandSlug = slugify(it.brand);
+      const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
+      const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
+
+
+      html += `<div class="pilot-champ-item">
+                <div class="pilot-champ-left">
+                  <img src="${champImgPng}" alt="${escapeHtml(it.champName)}" class="pilot-champ-logo" onerror="this.onerror=null; this.src='${champImgSvg}';" />
+                </div>
+                <div class="pilot-champ-body">
+                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
+                  <div class="pilot-champ-meta">${escapeHtml(it.category)}</div>
+                  <div class="pilot-champ-car">
+<img src="${brandImgPng}" 
+     alt="${escapeHtml(it.brand)}" 
+     class="pilot-brand-logo" 
+     onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />                    ${escapeHtml(it.carUsed)}
+                  </div>
+                </div>
+              </div>`;
+    });
+    html += `</div>`;
+  }
+
+  body.innerHTML = html;
+
+  // Show modal
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePilotModal() {
+  const modal = document.getElementById('pilot-modal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = 'auto';
+}
+
+function escapeHtml(unsafe) {
+  return (unsafe || '')
+    .toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 document.addEventListener("DOMContentLoaded", () => {

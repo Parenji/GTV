@@ -916,14 +916,17 @@ td.totalone {
   background-color: #000000;
   min-height: 250px;
 }
-
 .federation {
-  background-image: url("images/Campionati/Federation.jpeg");
+  background-image: url("images/Campionati/Federation.png");
   background-color: #ffffff;
 }
-
 .interno {
   background-image: url("images/Campionati/interno.png");
+  background-color: #000000;
+  align-items: end;
+}
+.superleague {
+  background-image: url("images/Campionati/superleague.svg");
   background-color: #000000;
   align-items: end;
 }
@@ -1148,6 +1151,36 @@ td.totalone {
   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
     0 0 80px #ff8c00, 0 0 90px #ff8c00;
   margin-bottom: 40px;
+}
+
+/* Pilot modal styles */
+.pilot-modal { position: fixed; inset: 0; display: none; z-index: 9999; }
+.pilot-modal.open { display: block; }
+.pilot-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.pilot-modal-content { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--grigio-captions); color: #ffffff; border-radius: 12px; max-width: 760px; width: calc(100% - 40px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); padding: 18px; }
+.pilot-modal-close { position: absolute; right: 10px; top: 8px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333; }
+.pilot-modal-body { margin-top: 6px; }
+.pilot-header { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.pilot-name { font-size: 20px; font-weight: 700; }
+.pilot-number { font-size: 20px; font-weight: 700; color:var(--giallogtv); }
+.pilot-info { font-size: 13px; color:#444; margin-bottom:10px; }
+.pilot-section-title { font-size: 14px; margin: 10px 0 8px; color:#ffffff; }
+.pilot-no-item { color:#ffffff; font-size:13px; }
+.pilot-champ-list { display:flex; flex-direction:column; gap:10px; }
+.pilot-champ-item { display:flex; align-items:center; gap:12px; padding:8px; border-radius:8px; background: var(--grigio-box); }
+.pilot-champ-left { width:56px; flex: 0 0 56px; display:flex; align-items:center; justify-content:center; }
+.pilot-champ-logo { max-width:48px; max-height:36px; object-fit:contain; }
+.pilot-champ-body { flex:1; }
+.pilot-champ-name { font-weight:600; font-size:14px; }
+.pilot-champ-meta { font-size:12px; color:#aaaaaa; }
+.pilot-champ-right { width:48px; flex:0 0 48px; display:flex; align-items:center; justify-content:center; }
+.pilot-brand-logo { max-width:40px; max-height:24px; object-fit:contain; }
+.pilot-champ-car { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #aaaaaa; }
+
+/* Small screens */
+@media (max-width: 520px) {
+  .pilot-modal-content { width: calc(100% - 24px); padding:12px; }
+  .pilot-header { flex-direction: column; align-items:flex-start; }
 }
 
 .twitch {
