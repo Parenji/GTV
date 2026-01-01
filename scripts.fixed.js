@@ -395,26 +395,37 @@ function openPilotModal(fullRow, headerArr) {
       const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
       const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
 
+      function fixImg(el, fallback) {
+        // Evita loop infiniti
+        el.onerror = null;
+        // Tenta il secondo formato
+        el.src = fallback;
+        // Se fallisce anche il secondo, nascondi l'immagine
+        el.addEventListener(
+          "error",
+          () => {
+            el.style.display = "none";
+          },
+          { once: true }
+        );
+      }
       html += `<div class="pilot-champ-item">
-        <div class="pilot-champ-left">
-            <img src="${champImgPng}" 
-                    alt="${escapeHtml(it.champName)}" 
-                    class="pilot-champ-logo" 
-                    onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />
-        </div>
-                <div class="pilot-champ-body">
-                  <div class="pilot-champ-name">${escapeHtml(
-                    it.champName
-                  )}</div>
-                  <div class="pilot-champ-meta">${escapeHtml(it.category)}</div>
-                  <div class="pilot-champ-car">
-                    <img src="${brandImgPng}" 
-                        alt="${escapeHtml(it.brand)}" 
-                        class="pilot-brand-logo" 
-                        onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />                    ${escapeHtml(
-        it.carUsed
-      )}
-                  </div>
+<div class="pilot-champ-logo-left">
+<img src="${champImgPng}" 
+     alt="${escapeHtml(it.champName)}" 
+     class="pilot-champ-logo" 
+     onerror="if(this.src.includes('.png')){this.src='${champImgSvg}';}else{this.style.display='none';}" />
+</div>
+                <div class="pilot-champ-center">
+                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
+                  <div class="pilot-champ-category">${escapeHtml(it.category)}</div>
+                  <div class="pilot-champ-car-name">${escapeHtml(it.carUsed)}</div>
+                </div>
+                <div class="pilot-champ-logo-right">
+<img src="${brandImgPng}" 
+     alt="${escapeHtml(it.brand)}" 
+     class="pilot-brand-logo" 
+     onerror="if(this.src.includes('.png')){this.src='${brandImgSvg}';}else{this.style.display='none';}" />           
                 </div>
               </div>`;
     });

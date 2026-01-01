@@ -917,8 +917,8 @@ td.totalone {
   min-height: 250px;
 }
 .federation {
-  background-image: url("images/Campionati/Federation.png");
-  background-color: #ffffff;
+  background-image: url("images/Campionati/Federation.svg");
+  background-color: #000000;
 }
 .interno {
   background-image: url("images/Campionati/interno.png");
@@ -1167,15 +1167,13 @@ td.totalone {
 .pilot-section-title { font-size: 14px; margin: 10px 0 8px; color:#ffffff; }
 .pilot-no-item { color:#ffffff; font-size:13px; }
 .pilot-champ-list { display:flex; flex-direction:column; gap:10px; }
-.pilot-champ-item { display:flex; align-items:center; gap:12px; padding:8px; border-radius:8px; background: var(--grigio-box); }
-.pilot-champ-left { width:56px; flex: 0 0 56px; display:flex; align-items:center; justify-content:center; }
-.pilot-champ-logo { max-width:48px; max-height:36px; object-fit:contain; }
-.pilot-champ-body { flex:1; }
+.pilot-champ-item { display:flex; justify-content: space-between; align-items:center; gap:12px; padding:8px; border-radius:8px; background: var(--grigio-box); }
+.pilot-champ-logo-left, .pilot-champ-logo-right { width:60px; flex: 0 0 60px; display:flex; align-items:center; justify-content:center; }
+.pilot-champ-logo { max-width:60px; max-height:60px; object-fit:contain; }
+.pilot-champ-center { flex:1; text-align: center; display: flex; flex-direction: column; gap: 4px; }
 .pilot-champ-name { font-weight:600; font-size:14px; }
-.pilot-champ-meta { font-size:12px; color:#aaaaaa; }
-.pilot-champ-right { width:48px; flex:0 0 48px; display:flex; align-items:center; justify-content:center; }
-.pilot-brand-logo { max-width:40px; max-height:24px; object-fit:contain; }
-.pilot-champ-car { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #aaaaaa; }
+.pilot-champ-category, .pilot-champ-car-name { font-size:12px; color:#aaaaaa; }
+.pilot-brand-logo { max-width:60px; max-height:60px; object-fit:contain; }
 
 /* Small screens */
 @media (max-width: 520px) {
