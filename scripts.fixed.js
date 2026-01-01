@@ -73,12 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
         this.classList.add("active");
-        const linksToActivate = document.querySelectorAll(`a[href="#${targetId}"]`);
-            
-            // Applica la classe 'active' a OGNUNO di essi
-            linksToActivate.forEach(linkToActivate => {
-                linkToActivate.classList.add("active");
-            });
+        const linksToActivate = document.querySelectorAll(
+          `a[href="#${targetId}"]`
+        );
+
+        // Applica la classe 'active' a OGNUNO di essi
+        linksToActivate.forEach((linkToActivate) => {
+          linkToActivate.classList.add("active");
+        });
       }
     });
   });
@@ -102,23 +104,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // });
 
   ///Mostra la prima sezione per impostazione predefinita e evidenzia il primo link
-///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
-if (sections.length > 0) {
-    
+  ///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
+  if (sections.length > 0) {
     // 1. Mostra la prima sezione (Logica invariata)
-    sections[0].style.display = "block"; 
-    
+    sections[0].style.display = "block";
+
     // 2. Seleziona TUTTI i link che puntano alla Home.
     // Usiamo 'a[href="#home"]' come selettore, indipendentemente dal contenitore.
     const homeLinks = document.querySelectorAll('a[href="#page1"]');
-    
+
     // 3. Applica la classe 'active' a tutti i link trovati.
     if (homeLinks.length > 0) {
-        homeLinks.forEach(link => {
-            link.classList.add("active");
-        });
+      homeLinks.forEach((link) => {
+        link.classList.add("active");
+      });
     }
-}
+  }
 });
 
 /**
@@ -162,9 +163,12 @@ async function loadAndCreateHtmlTable(
       .split("\n")
       .map((row) =>
         // Suddivide le celle, gestendo le virgolette
-        row
-          .split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/)
-          .map((cell) => cell.trim().replace(/^\"|\"$/g, "").replace(/\"\"/g, '"'))
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
       );
 
     if (!rows || rows.length === 0) {
@@ -172,44 +176,43 @@ async function loadAndCreateHtmlTable(
       return;
     }
 
-// La prima riga è l'intestazione
-  const header = rows[0];
-  // Le righe successive sono i dati, senza intestazione
-  const allDataRows = rows.slice(1); 
-  
-  let dataRows = [];
-  
-  // *** INIZIO NUOVA LOGICA DI FILTRAGGIO ***
-  
-  if (typeof options === 'number' || options.maxRows) {
+    // La prima riga è l'intestazione
+    const header = rows[0];
+    // Le righe successive sono i dati, senza intestazione
+    const allDataRows = rows.slice(1);
+
+    let dataRows = [];
+
+    // *** INIZIO NUOVA LOGICA DI FILTRAGGIO ***
+
+    if (typeof options === "number" || options.maxRows) {
       // Caso 1: È stata passata la vecchia sintassi (solo numero) o l'opzione maxRows
-      const limit = typeof options === 'number' ? options : options.maxRows;
+      const limit = typeof options === "number" ? options : options.maxRows;
       dataRows = allDataRows.slice(0, limit);
-      
-  } else if (options.rowIndex) {
+    } else if (options.rowIndex) {
       // Caso 2: Vuoi solo una riga specifica
       // Ricorda: l'indice 'rowIndex' è 1-based (riga 1, riga 2, ecc.) e DEVE ignorare l'header.
       // Esempio: se rowIndex è 1, vogliamo allDataRows[0]
       const index0Based = options.rowIndex - 1;
 
       if (index0Based >= 0 && index0Based < allDataRows.length) {
-          dataRows = [allDataRows[index0Based]]; // Inserisci la singola riga in un array
+        dataRows = [allDataRows[index0Based]]; // Inserisci la singola riga in un array
       } else {
-          // Indice fuori dai limiti
-          console.warn(`Indice riga ${options.rowIndex} non valido.`);
-          dataRows = [];
+        // Indice fuori dai limiti
+        console.warn(`Indice riga ${options.rowIndex} non valido.`);
+        dataRows = [];
       }
-  } else {
+    } else {
       // Caso di default: mostra tutte le righe
       dataRows = allDataRows;
-  }
-  // 1. Definiamo quali colonne visualizzare (QUESTO BLOCCO ERA MANCANTE)
+    }
+    // 1. Definiamo quali colonne visualizzare (QUESTO BLOCCO ERA MANCANTE)
     let indicesToUse = columnIndices;
     if (!indicesToUse || indicesToUse.length === 0) {
       // Se non specificato, usiamo tutte le colonne disponibili nell'header
       indicesToUse = Array.from({ length: header.length }, (_, i) => i);
     }
-  // *** FINE NUOVA LOGICA DI FILTRAGGIO ***
+    // *** FINE NUOVA LOGICA DI FILTRAGGIO ***
     // 2. Creazione delle righe di dati (<tbody>)
     for (const rowData of dataRows) {
       // Se la prima cella della riga di dati è vuota, salta la riga
@@ -266,26 +269,26 @@ async function loadAndCreateHtmlTable(
       tr.dataset.header = JSON.stringify(header);
       tbody.appendChild(tr);
     }
-    
+
     // Se stiamo popolando la tabella dei piloti, aggiungiamo glihandler di click
-    if (tbodyId === 'piloti-body') {
+    if (tbodyId === "piloti-body") {
       // Aggiungi classe/cursore e listener alla prima cella di ogni riga
-      const rows = tbody.querySelectorAll('tr');
+      const rows = tbody.querySelectorAll("tr");
       rows.forEach((r) => {
-        const firstCell = r.querySelector('td');
+        const firstCell = r.querySelector("td");
         if (!firstCell) return;
-        firstCell.classList.add('pilota-link');
-        firstCell.style.cursor = 'pointer';
+        firstCell.classList.add("pilota-link");
+        firstCell.style.cursor = "pointer";
         // Evitiamo agganciare più volte lo stesso listener
         if (!r._pilotHandlerAttached) {
-          firstCell.addEventListener('click', () => {
+          firstCell.addEventListener("click", () => {
             let fullRow = [];
             let headerArr = [];
             try {
-              fullRow = JSON.parse(r.dataset.fullRow || '[]');
-              headerArr = JSON.parse(r.dataset.header || '[]');
+              fullRow = JSON.parse(r.dataset.fullRow || "[]");
+              headerArr = JSON.parse(r.dataset.header || "[]");
             } catch (e) {
-              console.error('Errore parsing dataset riga pilota', e);
+              console.error("Errore parsing dataset riga pilota", e);
             }
             openPilotModal(fullRow, headerArr);
           });
@@ -293,7 +296,6 @@ async function loadAndCreateHtmlTable(
         }
       });
     }
-
   } catch (error) {
     console.error("Errore nel caricamento dei dati:", error);
     // Calcola colspan in base al numero di colonne che si dovevano usare
@@ -322,12 +324,12 @@ function slugify(text) {
 }
 
 function ensurePilotModalExists() {
-  let modal = document.getElementById('pilot-modal');
+  let modal = document.getElementById("pilot-modal");
   if (modal) return modal;
 
-  modal = document.createElement('div');
-  modal.id = 'pilot-modal';
-  modal.className = 'pilot-modal';
+  modal = document.createElement("div");
+  modal.id = "pilot-modal";
+  modal.className = "pilot-modal";
   modal.innerHTML = `
     <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
     <div class="pilot-modal-content" role="dialog" aria-modal="true">
@@ -338,8 +340,12 @@ function ensurePilotModalExists() {
   document.body.appendChild(modal);
 
   // Close handlers
-  modal.querySelector('#pilot-modal-close').addEventListener('click', closePilotModal);
-  modal.querySelector('#pilot-modal-backdrop').addEventListener('click', closePilotModal);
+  modal
+    .querySelector("#pilot-modal-close")
+    .addEventListener("click", closePilotModal);
+  modal
+    .querySelector("#pilot-modal-backdrop")
+    .addEventListener("click", closePilotModal);
 
   return modal;
 }
@@ -347,28 +353,33 @@ function ensurePilotModalExists() {
 function openPilotModal(fullRow, headerArr) {
   if (!fullRow || fullRow.length === 0) return;
   const modal = ensurePilotModalExists();
-  const body = modal.querySelector('#pilot-modal-body');
+  const body = modal.querySelector("#pilot-modal-body");
 
-  const name = fullRow[0] || '';
-  const number = fullRow[1] || '';
-  const info = fullRow[2] || '';
+  const name = fullRow[0] || "";
+  const number = fullRow[1] || "";
+  const info = fullRow[2] || "";
 
   // Build championships list (groups of 4 starting at index 3)
   const items = [];
   for (let i = 3; i < fullRow.length; i += 4) {
-    const participates = (fullRow[i] || '').toString().trim().toLowerCase();
-    if (participates === 'x' || participates === '✓' || participates === '1') {
-      const champName = headerArr && headerArr[i] ? headerArr[i] : `Campionato ${Math.floor((i-3)/4)+1}`;
-      const category = fullRow[i+1] || '';
-      const carUsed = fullRow[i+2] || '';
-      const brand = fullRow[i+3] || '';
+    const participates = (fullRow[i] || "").toString().trim().toLowerCase();
+    if (participates === "x" || participates === "✓" || participates === "1") {
+      const champName =
+        headerArr && headerArr[i]
+          ? headerArr[i]
+          : `Campionato ${Math.floor((i - 3) / 4) + 1}`;
+      const category = fullRow[i + 1] || "";
+      const carUsed = fullRow[i + 2] || "";
+      const brand = fullRow[i + 3] || "";
       items.push({ champName, category, carUsed, brand });
     }
   }
 
   // Render HTML
-  let html = '';
-  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(name)}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
+  let html = "";
+  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(
+    name
+  )}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
   if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
 
   html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
@@ -384,19 +395,25 @@ function openPilotModal(fullRow, headerArr) {
       const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
       const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
 
-
       html += `<div class="pilot-champ-item">
-                <div class="pilot-champ-left">
-                  <img src="${champImgPng}" alt="${escapeHtml(it.champName)}" class="pilot-champ-logo" onerror="this.onerror=null; this.src='${champImgSvg}';" />
-                </div>
+        <div class="pilot-champ-left">
+            <img src="${champImgPng}" 
+                    alt="${escapeHtml(it.champName)}" 
+                    class="pilot-champ-logo" 
+                    onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />
+        </div>
                 <div class="pilot-champ-body">
-                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
+                  <div class="pilot-champ-name">${escapeHtml(
+                    it.champName
+                  )}</div>
                   <div class="pilot-champ-meta">${escapeHtml(it.category)}</div>
                   <div class="pilot-champ-car">
-<img src="${brandImgPng}" 
-     alt="${escapeHtml(it.brand)}" 
-     class="pilot-brand-logo" 
-     onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />                    ${escapeHtml(it.carUsed)}
+                    <img src="${brandImgPng}" 
+                        alt="${escapeHtml(it.brand)}" 
+                        class="pilot-brand-logo" 
+                        onerror="this.onerror=null; this.src='${brandImgSvg}'; this.addEventListener('error', () => this.style.display='none', {once: true});" />                    ${escapeHtml(
+        it.carUsed
+      )}
                   </div>
                 </div>
               </div>`;
@@ -407,25 +424,25 @@ function openPilotModal(fullRow, headerArr) {
   body.innerHTML = html;
 
   // Show modal
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
 function closePilotModal() {
-  const modal = document.getElementById('pilot-modal');
+  const modal = document.getElementById("pilot-modal");
   if (!modal) return;
-  modal.classList.remove('open');
-  document.body.style.overflow = 'auto';
+  modal.classList.remove("open");
+  document.body.style.overflow = "auto";
 }
 
 function escapeHtml(unsafe) {
-  return (unsafe || '')
+  return (unsafe || "")
     .toString()
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
