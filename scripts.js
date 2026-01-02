@@ -42,21 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const sections = document.querySelectorAll(".section");
 
-  const breadcrumbs = {
-    'index.html': {
-      'page1': 'Home',
-      'page2': 'Piloti',
-      'page3': 'Admin',
-      'page4': 'Social',
-      'page5': 'Campionati',
-      'page6': 'Palmares'
-    },
-    'gtec.html': {
-      'page1': 'Home',
-      'page2': 'Lobby',
-      'page3': 'Info e Regolamento'
+  const breadcrumbs = {};
+  const page = window.location.pathname.split('/').pop();
+  const menuLinks = document.querySelectorAll('.sidebar-content .menu-link');
+  menuLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const sectionId = href.substring(1);
+      const text = link.textContent.trim();
+      if (!breadcrumbs[page]) breadcrumbs[page] = {};
+      breadcrumbs[page][sectionId] = text;
     }
-  };
+  });
 
   function updateBreadcrumb(sectionId) {
     const page = window.location.pathname.split('/').pop();

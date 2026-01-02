@@ -272,6 +272,7 @@ button {
   }
   .main-container {
     max-width: none;
+          margin: 0 0;
   }
   
   #breadcrumb {
