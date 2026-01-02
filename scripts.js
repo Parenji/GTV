@@ -27,130 +27,13 @@ function closeSidebar() {
 menuToggle.addEventListener("click", openSidebar);
 closeMenu.addEventListener("click", closeSidebar);
 
-// Opzionale: Chiudi il menu cliccando fuori da esso (overlay)
-/* document.addEventListener('click', (event) => {
+// Chiudi il menu cliccando fuori da esso (overlay)
+document.addEventListener('click', (event) => {
     // Chiudi solo se l'elemento cliccato non è il menu, non è il pulsante, e il menu è aperto
     if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && sidebar.classList.contains('open')) {
         closeSidebar();
     }
 });
-
-// ---------- Pilot modal helper functions ----------
-
-function slugify(text) {
-  if (!text) return "";
-  return text
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function ensurePilotModalExists() {
-  let modal = document.getElementById('pilot-modal');
-  if (modal) return modal;
-
-  modal = document.createElement('div');
-  modal.id = 'pilot-modal';
-  modal.className = 'pilot-modal';
-  modal.innerHTML = `
-    <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
-    <div class="pilot-modal-content" role="dialog" aria-modal="true">
-      <button class="pilot-modal-close" id="pilot-modal-close">×</button>
-      <div class="pilot-modal-body" id="pilot-modal-body"></div>
-    </div>
-  `;
-  document.body.appendChild(modal);
-
-  // Close handlers
-  modal.querySelector('#pilot-modal-close').addEventListener('click', closePilotModal);
-  modal.querySelector('#pilot-modal-backdrop').addEventListener('click', closePilotModal);
-
-  return modal;
-}
-
-function openPilotModal(fullRow, headerArr) {
-  if (!fullRow || fullRow.length === 0) return;
-  const modal = ensurePilotModalExists();
-  const body = modal.querySelector('#pilot-modal-body');
-
-  const name = fullRow[0] || '';
-  const number = fullRow[1] || '';
-  const info = fullRow[2] || '';
-
-  // Build championships list (groups of 4 starting at index 3)
-  const items = [];
-  for (let i = 3; i < fullRow.length; i += 4) {
-    const participates = (fullRow[i] || '').toString().trim().toLowerCase();
-    if (participates === 'x' || participates === '✓' || participates === '1') {
-      const champName = headerArr && headerArr[i] ? headerArr[i] : `Campionato ${Math.floor((i-3)/4)+1}`;
-      const category = fullRow[i+1] || '';
-      const carUsed = fullRow[i+2] || '';
-      const brand = fullRow[i+3] || '';
-      items.push({ champName, category, carUsed, brand });
-    }
-  }
-
-  // Render HTML
-  let html = '';
-  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(name)}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
-  if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
-
-  html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
-  if (items.length === 0) {
-    html += `<div class="pilot-no-item">Nessun impegno registrato.</div>`;
-  } else {
-    html += `<div class="pilot-champ-list">`;
-    items.forEach((it) => {
-      const champSlug = slugify(it.champName);
-      const champImgPng = `images/Campionati/${champSlug}.png`;
-      const champImgSvg = `images/Campionati/${champSlug}.svg`;
-      const brandSlug = slugify(it.brand);
-      const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
-      const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
-
-      html += `<div class="pilot-champ-item">
-                <div class="pilot-champ-left">
-                  <img src="${champImgPng}" alt="${escapeHtml(it.champName)}" class="pilot-champ-logo" onerror="this.onerror=null; this.src='${champImgSvg}';" />
-                </div>
-                <div class="pilot-champ-body">
-                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
-                  <div class="pilot-champ-meta">Categoria: ${escapeHtml(it.category)} — Auto: ${escapeHtml(it.carUsed)}</div>
-                </div>
-                <div class="pilot-champ-right">
-                  <img src="${brandImgSvg}" alt="${escapeHtml(it.brand)}" class="pilot-brand-logo" onerror="this.onerror=null; this.src='${brandImgPng}'; if(!this.complete) this.style.display='none';" />
-                </div>
-              </div>`;
-    });
-    html += `</div>`;
-  }
-
-  body.innerHTML = html;
-
-  // Show modal
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePilotModal() {
-  const modal = document.getElementById('pilot-modal');
-  if (!modal) return;
-  modal.classList.remove('open');
-  document.body.style.overflow = 'auto';
-}
-
-function escapeHtml(unsafe) {
-  return (unsafe || '')
-    .toString()
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
-*/
 
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
@@ -158,6 +41,35 @@ document.addEventListener("DOMContentLoaded", function () {
     ".navbar-scroll a, .sidebar-content a, .section-link a"
   );
   const sections = document.querySelectorAll(".section");
+
+  const breadcrumbs = {
+    'index.html': {
+      'page1': 'Home',
+      'page2': 'Piloti',
+      'page3': 'Admin',
+      'page4': 'Social',
+      'page5': 'Campionati',
+      'page6': 'Palmares'
+    },
+    'gtec.html': {
+      'page1': 'Home',
+      'page2': 'Lobby',
+      'page3': 'Info e Regolamento'
+    }
+  };
+
+  function updateBreadcrumb(sectionId) {
+    const page = window.location.pathname.split('/').pop();
+    const sectionName = breadcrumbs[page] && breadcrumbs[page][sectionId] ? breadcrumbs[page][sectionId] : 'Home';
+    const breadcrumbEl = document.getElementById('breadcrumb');
+    if (breadcrumbEl) {
+      const homeLink = page === 'index.html' ? 'GTV' : 'GTEC';
+      const homeHref = page === 'index.html' ? 'index.html' : 'gtec.html';
+      const logoSrc = page === 'index.html' ? 'images/gtvblack.svg' : 'images/Campionati/GTEC.png';
+      const filter = page === 'index.html' ? 'invert(1)' : 'none';
+      breadcrumbEl.innerHTML = `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${homeHref}"><img src="${logoSrc}" alt="${homeLink}" style="${filter ? 'filter: ' + filter + ';' : ''}"></a></span> › <a href="#${sectionId}">${sectionName}</a>`;
+    }
+  }
 
   function hideAllSections() {
     sections.forEach((section) => {
@@ -183,21 +95,31 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetElement) {
         hideAllSections();
         targetElement.style.display = "block";
+        updateBreadcrumb(targetId);
         sidebarcontent.addEventListener("click", closeSidebar);
         // targetElement.scrollIntoView({ behavior: "smooth" });
 
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
         this.classList.add("active");
-        const linksToActivate = document.querySelectorAll(`a[href="#${targetId}"]`);
-            
-            // Applica la classe 'active' a OGNUNO di essi
-            linksToActivate.forEach(linkToActivate => {
-                linkToActivate.classList.add("active");
-            });
+        const linksToActivate = document.querySelectorAll(
+          `a[href="#${targetId}"]`
+        );
+
+        // Applica la classe 'active' a OGNUNO di essi
+        linksToActivate.forEach((linkToActivate) => {
+          linkToActivate.classList.add("active");
+        });
       }
     });
   });
+
+  // Mostra la sezione iniziale (page1)
+  const initialSection = document.getElementById('page1');
+  if (initialSection) {
+    initialSection.style.display = 'block';
+    updateBreadcrumb('page1');
+  }
 
   // menus.forEach((menu) => {
   //   menu.addEventListener("click", function (event) {
@@ -218,23 +140,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // });
 
   ///Mostra la prima sezione per impostazione predefinita e evidenzia il primo link
-///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
-if (sections.length > 0) {
-    
+  ///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
+  if (sections.length > 0) {
     // 1. Mostra la prima sezione (Logica invariata)
-    sections[0].style.display = "block"; 
-    
+    sections[0].style.display = "block";
+
     // 2. Seleziona TUTTI i link che puntano alla Home.
     // Usiamo 'a[href="#home"]' come selettore, indipendentemente dal contenitore.
     const homeLinks = document.querySelectorAll('a[href="#page1"]');
-    
+
     // 3. Applica la classe 'active' a tutti i link trovati.
     if (homeLinks.length > 0) {
-        homeLinks.forEach(link => {
-            link.classList.add("active");
-        });
+      homeLinks.forEach((link) => {
+        link.classList.add("active");
+      });
     }
-}
+  }
 });
 
 /**
@@ -278,9 +199,12 @@ async function loadAndCreateHtmlTable(
       .split("\n")
       .map((row) =>
         // Suddivide le celle, gestendo le virgolette
-        row
-          .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
-          .map((cell) => cell.trim().replace(/^"|"$/g, "").replace(/""/g, '"'))
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
       );
 
     if (!rows || rows.length === 0) {
@@ -288,44 +212,43 @@ async function loadAndCreateHtmlTable(
       return;
     }
 
-// La prima riga è l'intestazione
-  const header = rows[0];
-  // Le righe successive sono i dati, senza intestazione
-  const allDataRows = rows.slice(1); 
-  
-  let dataRows = [];
-  
-  // *** INIZIO NUOVA LOGICA DI FILTRAGGIO ***
-  
-  if (typeof options === 'number' || options.maxRows) {
+    // La prima riga è l'intestazione
+    const header = rows[0];
+    // Le righe successive sono i dati, senza intestazione
+    const allDataRows = rows.slice(1);
+
+    let dataRows = [];
+
+    // *** INIZIO NUOVA LOGICA DI FILTRAGGIO ***
+
+    if (typeof options === "number" || options.maxRows) {
       // Caso 1: È stata passata la vecchia sintassi (solo numero) o l'opzione maxRows
-      const limit = typeof options === 'number' ? options : options.maxRows;
+      const limit = typeof options === "number" ? options : options.maxRows;
       dataRows = allDataRows.slice(0, limit);
-      
-  } else if (options.rowIndex) {
+    } else if (options.rowIndex) {
       // Caso 2: Vuoi solo una riga specifica
       // Ricorda: l'indice 'rowIndex' è 1-based (riga 1, riga 2, ecc.) e DEVE ignorare l'header.
       // Esempio: se rowIndex è 1, vogliamo allDataRows[0]
       const index0Based = options.rowIndex - 1;
 
       if (index0Based >= 0 && index0Based < allDataRows.length) {
-          dataRows = [allDataRows[index0Based]]; // Inserisci la singola riga in un array
+        dataRows = [allDataRows[index0Based]]; // Inserisci la singola riga in un array
       } else {
-          // Indice fuori dai limiti
-          console.warn(`Indice riga ${options.rowIndex} non valido.`);
-          dataRows = [];
+        // Indice fuori dai limiti
+        console.warn(`Indice riga ${options.rowIndex} non valido.`);
+        dataRows = [];
       }
-  } else {
+    } else {
       // Caso di default: mostra tutte le righe
       dataRows = allDataRows;
-  }
-  // 1. Definiamo quali colonne visualizzare (QUESTO BLOCCO ERA MANCANTE)
+    }
+    // 1. Definiamo quali colonne visualizzare (QUESTO BLOCCO ERA MANCANTE)
     let indicesToUse = columnIndices;
     if (!indicesToUse || indicesToUse.length === 0) {
       // Se non specificato, usiamo tutte le colonne disponibili nell'header
       indicesToUse = Array.from({ length: header.length }, (_, i) => i);
     }
-  // *** FINE NUOVA LOGICA DI FILTRAGGIO ***
+    // *** FINE NUOVA LOGICA DI FILTRAGGIO ***
     // 2. Creazione delle righe di dati (<tbody>)
     for (const rowData of dataRows) {
       // Se la prima cella della riga di dati è vuota, salta la riga
@@ -382,26 +305,26 @@ async function loadAndCreateHtmlTable(
       tr.dataset.header = JSON.stringify(header);
       tbody.appendChild(tr);
     }
-    
-    // Se stiamo popolando la tabella dei piloti, aggiungiamo gli handler di click
-    if (tbodyId === 'piloti-body') {
+
+    // Se stiamo popolando la tabella dei piloti, aggiungiamo glihandler di click
+    if (tbodyId === "piloti-body") {
       // Aggiungi classe/cursore e listener alla prima cella di ogni riga
-      const rows = tbody.querySelectorAll('tr');
+      const rows = tbody.querySelectorAll("tr");
       rows.forEach((r) => {
-        const firstCell = r.querySelector('td');
+        const firstCell = r.querySelector("td");
         if (!firstCell) return;
-        firstCell.classList.add('pilota-link');
-        firstCell.style.cursor = 'pointer';
+        firstCell.classList.add("pilota-link");
+        firstCell.style.cursor = "pointer";
         // Evitiamo agganciare più volte lo stesso listener
         if (!r._pilotHandlerAttached) {
-          firstCell.addEventListener('click', () => {
+          firstCell.addEventListener("click", () => {
             let fullRow = [];
             let headerArr = [];
             try {
-              fullRow = JSON.parse(r.dataset.fullRow || '[]');
-              headerArr = JSON.parse(r.dataset.header || '[]');
+              fullRow = JSON.parse(r.dataset.fullRow || "[]");
+              headerArr = JSON.parse(r.dataset.header || "[]");
             } catch (e) {
-              console.error('Errore parsing dataset riga pilota', e);
+              console.error("Errore parsing dataset riga pilota", e);
             }
             openPilotModal(fullRow, headerArr);
           });
@@ -409,7 +332,6 @@ async function loadAndCreateHtmlTable(
         }
       });
     }
-
   } catch (error) {
     console.error("Errore nel caricamento dei dati:", error);
     // Calcola colspan in base al numero di colonne che si dovevano usare
@@ -425,91 +347,149 @@ async function loadAndCreateHtmlTable(
   }
 }
 
-//Funzione per opzioni stanza
-// **!!! IMPORTANTE !!!** Sostituisci questo con il link CSV esportato da Google Fogli
-const CSV_URL = "YOUR_CSV_LINK_HERE";
-const container = document.getElementById("card-output");
+// ---------- Pilot modal helper functions ----------
 
-/**
- * Funzione per convertire una riga CSV in un oggetto data.
- * Assumiamo che la colonna 0 sia il Titolo (in alto) e la colonna 1 sia il Corpo (in basso).
- * @param {string} line - La riga CSV come stringa.
- * @returns {{header: string, body: string} | null} L'oggetto dati della card.
- */
-function parseCsvLine(line) {
-  // Semplice suddivisione per virgola (adatta se i tuoi dati non contengono virgole interne)
-  const columns = line.split(",");
-
-  // Controlla se ci sono almeno due colonne
-  if (columns.length < 2) {
-    return null;
-  }
-
-  // Pulisce gli spazi bianchi all'inizio/fine
-  const header = columns[0].trim();
-  const body = columns[1].trim();
-
-  if (!header || !body) {
-    return null; // Salta righe vuote o incomplete
-  }
-
-  return { header: header, body: body };
+function slugify(text) {
+  if (!text) return "";
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-/**
- * Funzione per generare il markup HTML di una singola card.
- * @param {{header: string, body: string}} data - I dati della card.
- * @returns {string} Il codice HTML della card.
- */
-function generateCardHtml(data) {
-  return `
-        <div class="opzioni-card">
-            <div class="opzioni-card-header">${data.header}</div>
-            <div class="opzioni-card-body">${data.body}</div>
-        </div>
-    `;
+function ensurePilotModalExists() {
+  let modal = document.getElementById("pilot-modal");
+  if (modal) return modal;
+
+  modal = document.createElement("div");
+  modal.id = "pilot-modal";
+  modal.className = "pilot-modal";
+  modal.innerHTML = `
+    <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
+    <div class="pilot-modal-content" role="dialog" aria-modal="true">
+      <button class="pilot-modal-close" id="pilot-modal-close">×</button>
+      <div class="pilot-modal-body" id="pilot-modal-body"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Close handlers
+  modal
+    .querySelector("#pilot-modal-close")
+    .addEventListener("click", closePilotModal);
+  modal
+    .querySelector("#pilot-modal-backdrop")
+    .addEventListener("click", closePilotModal);
+
+  return modal;
 }
 
-/**
- * Funzione principale per caricare i dati e popolare il DOM.
- */
-async function loadDataAndGenerateCards(spreadsheetUrl) {
-  try {
-    // 1. Fetch dei dati dal link CSV
-    const response = await fetch(spreadsheetUrl);
+function openPilotModal(fullRow, headerArr) {
+  if (!fullRow || fullRow.length === 0) return;
+  const modal = ensurePilotModalExists();
+  const body = modal.querySelector("#pilot-modal-body");
 
-    // Controlla se la risposta è ok (status 200)
-    if (!response.ok) {
-      throw new Error(`Errore HTTP: ${response.status}`);
+  const name = fullRow[0] || "";
+  const number = fullRow[1] || "";
+  const info = fullRow[2] || "";
+
+  // Build championships list (groups of 4 starting at index 3)
+  const items = [];
+  for (let i = 3; i < fullRow.length; i += 4) {
+    const participates = (fullRow[i] || "").toString().trim().toLowerCase();
+    if (participates === "x" || participates === "✓" || participates === "1") {
+      const champName =
+        headerArr && headerArr[i]
+          ? headerArr[i]
+          : `Campionato ${Math.floor((i - 3) / 4) + 1}`;
+      const category = fullRow[i + 1] || "";
+      const carUsed = fullRow[i + 2] || "";
+      const brand = fullRow[i + 3] || "";
+      items.push({ champName, category, carUsed, brand });
     }
-
-    const csvText = await response.text();
-
-    // 2. Analisi del CSV
-    // Divide il testo in righe e filtra le righe vuote
-    const lines = csvText.split("\n").filter((line) => line.trim() !== "");
-
-    // Salta la prima riga se contiene le intestazioni
-    const dataLines = lines.slice(1);
-
-    // 3. Generazione e iniezione delle card
-    let htmlCards = "";
-    dataLines.forEach((line) => {
-      const cardData = parseCsvLine(line);
-      if (cardData) {
-        htmlCards += generateCardHtml(cardData);
-      }
-    });
-
-    // Inietta tutte le card nel contenitore (ottimizzazione delle performance)
-    container.innerHTML = htmlCards;
-  } catch (error) {
-    console.error(
-      "Si è verificato un errore durante il caricamento o l'analisi dei dati:",
-      error
-    );
-    container.innerHTML = `<p style="color: red;">Impossibile caricare i dati. Controlla il link CSV o la console.</p>`;
   }
+
+  // Render HTML
+  let html = "";
+  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(
+    name
+  )}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
+  if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
+
+  html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
+  if (items.length === 0) {
+    html += `<div class="pilot-no-item">Nessun impegno registrato.</div>`;
+  } else {
+    html += `<div class="pilot-champ-list">`;
+    items.forEach((it) => {
+      const champSlug = slugify(it.champName);
+      const champImgPng = `images/Campionati/${champSlug}.png`;
+      const champImgSvg = `images/Campionati/${champSlug}.svg`;
+      const brandSlug = slugify(it.brand);
+      const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
+      const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
+
+      function fixImg(el, fallback) {
+        // Evita loop infiniti
+        el.onerror = null;
+        // Tenta il secondo formato
+        el.src = fallback;
+        // Se fallisce anche il secondo, nascondi l'immagine
+        el.addEventListener(
+          "error",
+          () => {
+            el.style.display = "none";
+          },
+          { once: true }
+        );
+      }
+      html += `<div class="pilot-champ-item">
+<div class="pilot-champ-logo-left">
+<img src="${champImgSvg}" 
+     alt="${escapeHtml(it.champName)}" 
+     class="pilot-champ-logo" 
+     onerror="if(this.src.includes('.png')){this.src='${champImgPng}';}else{this.style.display='none';}" />
+</div>
+                <div class="pilot-champ-center">
+                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
+                  <div class="pilot-champ-category">${escapeHtml(it.category)}</div>
+                  <div class="pilot-champ-car-name">${escapeHtml(it.carUsed)}</div>
+                </div>
+                <div class="pilot-champ-logo-right">
+<img src="${brandImgPng}" 
+     alt="${escapeHtml(it.brand)}" 
+     class="pilot-brand-logo" 
+     onerror="if(this.src.includes('.png')){this.src='${brandImgSvg}';}else{this.style.display='none';}" />           
+                </div>
+              </div>`;
+    });
+    html += `</div>`;
+  }
+
+  body.innerHTML = html;
+
+  // Show modal
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closePilotModal() {
+  const modal = document.getElementById("pilot-modal");
+  if (!modal) return;
+  modal.classList.remove("open");
+  document.body.style.overflow = "auto";
+}
+
+function escapeHtml(unsafe) {
+  return (unsafe || "")
+    .toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
