@@ -1,220 +1,237 @@
 <DOCTYPE html> <!-- ci deve essere-->
-<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+    <html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Granturismo TV</title>
-    <link rel="stylesheet" href="styles.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Granturismo TV</title>
+        <link rel="stylesheet" href="styles.css" />
 
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="GTV" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+        <link rel="shortcut icon" href="favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="GTV" />
+        <link rel="manifest" href="favicon/site.webmanifest" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-
-
-    <!-- Colore della barra dell'interfaccia mobile -->
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="background-color" content="#FFFFFF">
-
-</head>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  a che serve questo?-->
-
-<body>
-    <!-- container dove contiene logo per tornare al menù principale-->
-    <header>
-        <div class="title-container index">
-            <a href="index.html">
-                <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
-                <div class="sottotitolo">GranturismoTV</div>
-            </a>
-            <button id="menu-toggle" class="hamburger-button">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 
 
-            <!--menu ad hamburger-->
-            <div id="sidebar">
-                <button id="close-menu" class="close-button">X</button>
-                <nav class="sidebar-content" id="sidebar-content">
-                    <a href="#page1" class="menu-link">
-                        <!-- Home -->
-                        <img src="images/gtvwhite.png" alt="Logo" class="menu-icon" />
-                    </a>
-                    <a href="#page2" class="menu-link">
-                        Piloti
-                    </a>
-                    <a href="#page3" class="menu-link">
-                        Admin
-                    </a>
-                    <!-- <a href="#page4" class="menu-link">
+        <!-- Colore della barra dell'interfaccia mobile -->
+        <meta name="theme-color" content="#FFFFFF">
+        <meta name="background-color" content="#FFFFFF">
+
+    </head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  a che serve questo?-->
+
+    <body>
+        <!-- container dove contiene logo per tornare al menù principale-->
+        <header>
+            <div class="title-container index">
+                <a href="index.html">
+                    <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
+                    <div class="sottotitolo">GranturismoTV</div>
+                </a>
+                <div id="breadcrumb">GTV >> Home</div>
+                <button id="menu-toggle" class="hamburger-button">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            
+
+
+                <!--menu ad hamburger-->
+                <div id="sidebar">
+                    <button id="close-menu" class="close-button">X</button>
+                    <nav class="sidebar-content" id="sidebar-content">
+                        <a href="#page1" class="menu-link">
+                            <!-- Home -->
+                            <img src="images/gtvwhite.png" alt="Logo" class="menu-icon" />
+                        </a>
+                        <a href="#page2" class="menu-link">
+                            Piloti
+                        </a>
+                        <a href="#page3" class="menu-link">
+                            Admin
+                        </a>
+                        <!-- <a href="#page4" class="menu-link">
                         Social
                     </a> -->
-                    <a href="#page5" class="menu-link">
-                        Campionati
-                    </a>
-                    <a href="#page6" class="menu-link">
-                        Palmares
-                    </a>
-                    <a href="gtec.html" class="menu-link">
-                        <img src="images/Campionati/GTEC.png" alt="Logo" class="menu-icon" style="height: 30px;" />
-                    </a>
-                </nav>
-            </div>
-        </div>
-
-        <!-- container dove contiene i vari sotto menù-->
-
-    </header>
-
-    <!-- container principale con le notizie -->
-    <div class="main-container" id="main-container">
-        <div id="breadcrumb">GTV >> Home</div>
-
-
-        <!--homepage sarà la storia del team-->
-        <section id="page1" class="section">
-            <div class="linktree-container">
-                
-                <div class="linktree-buttons">
-                    <a href="gtec.html" class="linktree-button gtec-button">
-                        <img src="images/Campionati/GTEC.png" alt="GTEC" class="linktree-icon gtec-icon">
-                        <span> Championship</span>
-                    </a>
-                    
-                    <a href="https://www.instagram.com/granturismotv" target="_blank" class="linktree-button instagram-button">
-                        <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram" class="linktree-icon">
-                        <span>Seguici su Instagram</span>
-                    </a>
-
-                                        <a href="https://www.instagram.com/juniorgtvcorse" target="_blank" class="linktree-button instagram-button">
-                        <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram" class="linktree-icon">
-                        <span>Segui anche la JGTV</span>
-                    </a>
-                    
-                    <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank" class="linktree-button twitch-button">
-                        <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch" class="linktree-icon">
-                        <span>Guarda su Twitch</span>
-                    </a>
-                </div>
-                
-                <div class="additional-logos">
-                    <img src="images/Campionati/federation.svg" alt="Federation" class="additional-logo">
-                    <img src="images/Campionati/GTEC.png" alt="GTEC" class="additional-logo gtec-logo">
-                    <img src="images/Campionati/superleague.svg" alt="Superleague" class="additional-logo">
-                </div>
-                
-                <div class="sponsor-section">
-                    <h2>Sponsor</h2>
-                    <div>
-                        <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m" target="_blank">
-                            <img src="images/vitastrong.png" alt="VITASTRONG Sponsor">
+                        <a href="#page5" class="menu-link">
+                            Campionati
                         </a>
-                        <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
+                        <a href="#page6" class="menu-link">
+                            Palmares
+                        </a>
+                        <a href="gtec.html" class="menu-link">
+                            <img src="images/Campionati/GTEC.png" alt="Logo" class="menu-icon" style="height: 30px;" />
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+
+            <!-- container dove contiene i vari sotto menù-->
+
+        </header>
+
+        <!-- container principale con le notizie -->
+        <div class="main-container" id="main-container">
+
+
+
+            <!--homepage sarà la storia del team-->
+            <section id="page1" class="section">
+                <div class="linktree-container">
+
+                    <div class="linktree-buttons">
+                        <a href="gtec.html" class="linktree-button gtec-button">
+                            <img src="images/Campionati/GTEC.png" alt="GTEC" class="linktree-icon gtec-icon">
+                            <span> Championship</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/granturismotv" target="_blank"
+                            class="linktree-button instagram-button">
+                            <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram"
+                                class="linktree-icon">
+                            <span>Seguici su Instagram</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/juniorgtvcorse" target="_blank"
+                            class="linktree-button instagram-button">
+                            <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram"
+                                class="linktree-icon">
+                            <span>Segui anche la JGTV</span>
+                        </a>
+
+                        <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank"
+                            class="linktree-button twitch-button">
+                            <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch"
+                                class="linktree-icon">
+                            <span>Guarda su Twitch</span>
+                        </a>
+                    </div>
+
+                    <div class="additional-logos">
+                        <img src="images/Campionati/federation.svg" alt="Federation" class="additional-logo">
+                        <img src="images/Campionati/GTEC.png" alt="GTEC" class="additional-logo gtec-logo">
+                        <img src="images/Campionati/superleague.svg" alt="Superleague" class="additional-logo">
+                    </div>
+
+                    <div class="sponsor-section">
+                        <h2>Sponsor</h2>
+                        <div>
+                            <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m"
+                                target="_blank">
+                                <img src="images/vitastrong.png" alt="VITASTRONG Sponsor">
+                            </a>
+                            <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
+                        </div>
+                    </div>
+            </section>
+
+
+
+            <section id="page2" class="section">
+
+                <div class="table-container">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Id PSN Pilota</th>
+                                <th>Num.</th>
+                                <th>Info</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="piloti-body">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 20px;">
+                                    Caricamento dati in corso...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="simple-footer"></footer>
+            </section>
+
+
+
+
+            <section id="page3" class="section">
+
+
+
+                <div class="table-container">
+                    <table class="responsive-table alwaysmobile-table">
+                        <thead>
+                            <tr>
+                                <th>Ruolo</th>
+                                <th>Membri del team</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="admin-body">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 20px;">
+                                    Caricamento dati in corso...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+
+
+
+            </section>
+
+
+            <section id="page5" class="section">
+                <div class="linktree-container">
+                    <div class="linktree-buttons">
+                        <a href="gtec.html" class="campionati-button">
+                            <img src="images/Campionati/GTEC.png" alt="Logo GTEC" class="button-logo gtec">
+                            <span>GTEC</span>
+                        </a>
+                        <a href="#" class="campionati-button">
+                            <img src="images/Campionati/federation.svg" alt="Logo Federation" class="button-logo">
+                            <span>Federation</span>
+                        </a>
+                        <a href="#" class="campionati-button">
+                            <img src="images/Campionati/superleague.svg" alt="Logo Superleague" class="button-logo">
+                            <span>Superleague</span>
+                        </a>
                     </div>
                 </div>
-        </section>
+                <div class="buttons-secondary-group">
 
 
 
-        <section id="page2" class="section">
+                </div>
+            </section>
 
-            <div class="table-container">
-                <table class="responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Id PSN Pilota</th>
-                            <th>Num.</th>
-                            <th>Info</th>
+            <section id="page6" class="section">
 
 
-                        </tr>
-                    </thead>
-                    <tbody id="piloti-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <h2>Palmares del Team</h2>
 
 
-        </section>
+            </section>
 
 
+        </div>
 
 
-        <section id="page3" class="section">
+    </body>
+    <script src="scripts.js" defer></script>
 
-
-            <h2>Organigramma amministrativo</h2>
-
-            <div class="table-container">
-                <table class="responsive-table alwaysmobile-table">
-                    <thead>
-                        <tr>
-                            <th>Ruolo</th>
-                            <th>Membri del team</th>
-
-
-                        </tr>
-                    </thead>
-                    <tbody id="admin-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </section>
-
-
-
-
-        </section>
-
-
-        <section id="page5" class="section">
-            <div class="main-campionato-container">
-                <a href="gtec.html" class="campionati-button box gtec">
-
-                </a>
-            </div>
-            <div class="buttons-secondary-group">
-
-                <a href="#" class="campionati-button box federation">
-
-                </a>
-
-                <a href="#" class="campionati-button box superleague">
-                </a>
-
-            </div>
-        </section>
-
-         <section id="page6" class="section">
-
-
-            <h2>Palmares del Team</h2>
-
-        </section>
-
-
-    </div>
-
-</body>
-<script src="scripts.js" defer></script>
-
-</html>
+    </html>

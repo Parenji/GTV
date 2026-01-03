@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const homeLink = isGtecPage ? 'GTEC' : 'GTV';
       const homeHref = isGtecPage ? 'gtec.html' : 'index.html';
       const logoSrc = isGtecPage ? 'images/Campionati/GTEC.png' : 'images/gtvblack.svg';
-      const filter = isGtecPage ? 'none' : 'invert(1)';
+      const filter = isGtecPage ? 'invert(1)' : 'none';
       breadcrumbEl.innerHTML = `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${homeHref}"><img src="${logoSrc}" alt="${homeLink}" style="${filter ? 'filter: ' + filter + ';' : ''}"></a></span> › <a href="#${sectionId}">${sectionName}</a>`;
     }
   }
