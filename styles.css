@@ -1536,8 +1536,10 @@ td.totalone {
 }
 
 .additional-logo {
-  width: auto;
-  height: 120px;
+  width: 120px;
+  max-height: 120px;
+  height: auto;
+  object-fit: contain;
 }
 
 .linktree-button:hover {
@@ -1603,7 +1605,10 @@ td.totalone {
   }
   
   .additional-logo {
-    height: 80px;
+    width: 80px;
+    max-height: 80px;
+    height: auto;
+    object-fit: contain;
   }
 }
 .coppaimg {
