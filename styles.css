@@ -598,36 +598,7 @@ td.totalone {
   height: auto;
   margin-top: 11px;
 }
-.navbar-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  text-align: center;
-  flex-wrap: wrap;
-}
-.navbar-scroll {
-  /*max-width: 800px;*/ /*questo bloccava l'allargamento dello schermo*/
-  display: flex;
-  list-style: none;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: #202020;
-  background-color: var(--giallogtv);
-  color: #000000;
-}
-.navbar-scroll a {
-  color: #000000;
-  text-decoration: none;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 0 7px;
-  font-size: calc(0.5vw + 7px);
-}
+
 .menu-link {
   justify-content: center;
   display: flex;
