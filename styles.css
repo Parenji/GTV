@@ -901,7 +901,7 @@ td.totalone {
 .campionati-button:hover {
   background-color: black;
   border-color: var(--giallogtv);
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 /* Stile per l'immagine del logo */
@@ -914,10 +914,6 @@ td.totalone {
 .gtec {
   width: 150px;
   height: 100px;
-}
-
-.campionati-button:hover {
-  transform: translateY(-5px);
 }
 
 .main-campionato-container {
@@ -1595,8 +1591,9 @@ td.totalone {
 }
 
 .pilot-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: black;
+  border-color: var(--giallogtv);
+  transform: translateY(-5px);
 }
 
 .pilot-left {
