@@ -875,7 +875,7 @@ td.totalone {
    ======================================== */
 .campionati-button {
   padding: 15px 20px;
-  background-color: var(--grigio-box);
+  background: linear-gradient(135deg, var(--grigio-box), #111);
   border: 2px solid var(--brdr-color);
   border-radius: 10px;
   text-decoration: none;
@@ -901,7 +901,8 @@ td.totalone {
 .campionati-button:hover {
   background-color: black;
   border-color: var(--giallogtv);
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  background: none;
 }
 
 /* Stile per l'immagine del logo */
@@ -1565,6 +1566,7 @@ td.totalone {
   background-color: black;
   border-color: var(--giallogtv);
   transform: scale(1.05);
+  background: none;
 }
 
 /* Stili per le card dei piloti */
@@ -1593,7 +1595,7 @@ td.totalone {
 .pilot-card:hover {
   background-color: black;
   border-color: var(--giallogtv);
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .pilot-left {
@@ -1663,7 +1665,6 @@ td.totalone {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 
 .admin-role {
   font-size: 16px;
