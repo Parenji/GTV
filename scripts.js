@@ -57,15 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateBreadcrumb(sectionId) {
     const currentPath = window.location.pathname;
-    const isGtecPage = currentPath.includes('gtec.html');
+    const pageName = currentPath.split('/').pop().replace('.html', '');
+    const isIndex = pageName === 'index';
     const sectionName = breadcrumbs[page] && breadcrumbs[page][sectionId] ? breadcrumbs[page][sectionId] : 'Home';
     const breadcrumbEl = document.getElementById('breadcrumb');
     if (breadcrumbEl) {
-      const homeLink = isGtecPage ? 'GTEC' : 'GTV';
-      const homeHref = isGtecPage ? 'gtec.html' : 'index.html';
-      const logoSrc = isGtecPage ? 'images/Campionati/GTEC.png' : 'images/gtvblack.svg';
-      const filter = isGtecPage ? 'invert(1)' : 'none';
-      breadcrumbEl.innerHTML = `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${homeHref}"><img src="${logoSrc}" alt="${homeLink}" style="${filter ? 'filter: ' + filter + ';' : ''}"></a></span> › <a href="#${sectionId}">${sectionName}</a>`;
+      let breadcrumbHTML = `<span style="padding: 5px 10px; border-radius: 5px;"><a href="index.html"><img src="images/gtvblack.svg" alt="GTV"></a></span> › `;
+      if (!isIndex) {
+        const logoSrc = `images/Campionati/${pageName}.png`;
+        const altText = pageName.toUpperCase();
+        breadcrumbHTML += `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${pageName}.html"><img src="${logoSrc}" alt="${altText}" style="filter: invert(1);"></a></span> › `;
+      }
+      breadcrumbHTML += `<a href="#${sectionId}">${sectionName}</a>`;
+      breadcrumbEl.innerHTML = breadcrumbHTML;
     }
   }
 
@@ -112,11 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Mostra la sezione iniziale (page1)
-  const initialSection = document.getElementById('page1');
+  // Mostra la sezione iniziale (home)
+  const initialSection = document.getElementById('home');
   if (initialSection) {
     initialSection.style.display = 'block';
-    updateBreadcrumb('page1');
+    updateBreadcrumb('home');
   }
 
   // menus.forEach((menu) => {
@@ -140,20 +144,55 @@ document.addEventListener("DOMContentLoaded", function () {
   ///Mostra la prima sezione per impostazione predefinita e evidenzia il primo link
   ///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
   if (sections.length > 0) {
-    // 1. Mostra la prima sezione (Logica invariata)
-    sections[0].style.display = "block";
+    // Controlla se c'è un hash nell'URL
+    const hash = window.location.hash.substring(1); // Rimuove il #
+    let targetSectionId = hash || 'home'; // Default a home se nessun hash
 
-    // 2. Seleziona TUTTI i link che puntano alla Home.
-    // Usiamo 'a[href="#home"]' come selettore, indipendentemente dal contenitore.
-    const homeLinks = document.querySelectorAll('a[href="#page1"]');
-
-    // 3. Applica la classe 'active' a tutti i link trovati.
-    if (homeLinks.length > 0) {
-      homeLinks.forEach((link) => {
+    // Verifica che la sezione esista
+    const targetSection = document.getElementById(targetSectionId);
+    
+    if (targetSection) {
+      // Nascondi tutte le sezioni
+      hideAllSections();
+      // Mostra la sezione target
+      targetSection.style.display = 'block';
+      // Aggiorna il breadcrumb
+      updateBreadcrumb(targetSectionId);
+      // Evidenzia il link attivo nel menu
+      removeActiveClass();
+      const linksToActivate = document.querySelectorAll(`a[href="#${targetSectionId}"]`);
+      linksToActivate.forEach((link) => {
         link.classList.add("active");
       });
+    } else {
+      // Se la sezione non esiste, mostra la prima
+      sections[0].style.display = "block";
+      const homeLinks = document.querySelectorAll('a[href="#home"]');
+      if (homeLinks.length > 0) {
+        homeLinks.forEach((link) => {
+          link.classList.add("active");
+        });
+      }
     }
   }
+
+  // Aggiungi listener per i cambiamenti di hash (quando l'utente usa i pulsanti indietro/avanti)
+  window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      const targetElement = document.getElementById(hash);
+      if (targetElement) {
+        hideAllSections();
+        targetElement.style.display = 'block';
+        updateBreadcrumb(hash);
+        removeActiveClass();
+        const linksToActivate = document.querySelectorAll(`a[href="#${hash}"]`);
+        linksToActivate.forEach((link) => {
+          link.classList.add("active");
+        });
+      }
+    }
+  });
 });
 
 /**
@@ -252,39 +291,71 @@ async function loadAndCreateHtmlTable(
       // Se la prima cella della riga di dati è vuota, salta la riga
       if (rowData.length === 0 || !rowData[indicesToUse[0]]) continue;
 
-      const tr = document.createElement("tr");
-      let innerHTML = "";
+      if (tbodyId === "piloti-body") {
+        // Creazione card per piloti
+        const pilotCard = document.createElement("div");
+        pilotCard.className = "pilot-card";
+        const name = rowData[indicesToUse[0]] || "";
+        const number = rowData[indicesToUse[1]] || "";
+        const info = rowData[indicesToUse[2]] || "";
+        const isJgtv = info.toLowerCase().includes('jgtv');
+        pilotCard.innerHTML = `
+          <div class="pilot-left">
+            <div class="pilot-name">${name}</div>
+            ${isJgtv ? '<div class="pilot-label">jgtv</div>' : ''}
+          </div>
+          <div class="pilot-number">#${number}</div>
+        `;
+        // Salva la riga completa e l'header come dataset
+        pilotCard.dataset.fullRow = JSON.stringify(rowData);
+        pilotCard.dataset.header = JSON.stringify(header);
+        tbody.appendChild(pilotCard);
+      } else if (tbodyId === "admin-body") {
+        // Creazione card per admin
+        const adminCard = document.createElement("div");
+        adminCard.className = "admin-card";
+        const role = rowData[indicesToUse[0]] || "";
+        const members = rowData[indicesToUse[1]] || "";
+        adminCard.innerHTML = `
+          <div class="admin-role">${role}</div>
+          <div class="admin-members">${members}</div>
+        `;
+        tbody.appendChild(adminCard);
+      } else {
+        // Creazione tradizionale per altre tabelle
+        const tr = document.createElement("tr");
+        let innerHTML = "";
 
-      // 3. Iteriamo solo sugli indici di colonna che vogliamo visualizzare
-      for (const colIndex of indicesToUse) {
-        // Prende il valore della cella, o una stringa vuota se la cella non esiste
-        const cellValue = rowData[colIndex] || "";
-        // Prende il nome della colonna dall'header, o un nome generico
-        const columnName = header[colIndex] || "";
+        // 3. Iteriamo solo sugli indici di colonna che vogliamo visualizzare
+        for (const colIndex of indicesToUse) {
+          // Prende il valore della cella, o una stringa vuota se la cella non esiste
+          const cellValue = rowData[colIndex] || "";
+          // Prende il nome della colonna dall'header, o un nome generico
+          const columnName = header[colIndex] || "";
 
-        let cellContent = cellValue; // Contenuto di default è il testo
+          let cellContent = cellValue; // Contenuto di default è il testo
 
-        // 🌟 NUOVA LOGICA PER LA GESTIONE DELLE IMMAGINI 🌟
+          // 🌟 NUOVA LOGICA PER LA GESTIONE DELLE IMMAGINI 🌟
 
-        // Normalizziamo il valore della cella per creare il path del file
-        const fileSlug = cellValue.toLowerCase().replace(/[^a-z0-9]+/g, "");
+          // Normalizziamo il valore della cella per creare il path del file
+          const fileSlug = cellValue.toLowerCase().replace(/[^a-z0-9]+/g, "");
 
-        if (columnName === "Circuito") {
-          // Esempio: images/tracks/autopolis.png (o .svg)
-          const imagePath = `images/tracks/${fileSlug}.png`;
+          if (columnName === "Circuito") {
+            // Esempio: images/tracks/autopolis.png (o .svg)
+            const imagePath = `images/tracks/${fileSlug}.png`;
 
-          cellContent = `
+            cellContent = `
                         <img 
                             src="${imagePath}" 
                             alt="${cellValue}" 
                             class="circuit-icon"
                             onerror="this.onerror=null; this.src='images/tracks/${fileSlug}.svg'; if(this.alt === 'images/tracks/${fileSlug}.svg') this.style.display='none'; this.alt='images/tracks/${fileSlug}.svg';"                        />
                     `;
-        } else if (columnName === "Nazione" || columnName === "Country") {
-          // Esempio: images/flags/jp.svg (o .png). Assumiamo bandiere in cartella "flags"
-          const flagPath = `images/bandiere/${fileSlug}.svg`;
+          } else if (columnName === "Nazione" || columnName === "Country") {
+            // Esempio: images/flags/jp.svg (o .png). Assumiamo bandiere in cartella "flags"
+            const flagPath = `images/bandiere/${fileSlug}.svg`;
 
-          cellContent = `
+            cellContent = `
                         <img 
                             src="${flagPath}" 
                             alt="${cellValue}" 
@@ -292,41 +363,40 @@ async function loadAndCreateHtmlTable(
                             onerror="this.onerror=null; this.style.display='none';" 
                         />
                     `;
+          }
+          // Aggiungi la cella con il contenuto (testo o HTML dell'immagine)
+          innerHTML += `<td data-label="${columnName}">${cellContent}</td>`;
         }
-        // Aggiungi la cella con il contenuto (testo o HTML dell'immagine)
-        innerHTML += `<td data-label="${columnName}">${cellContent}</td>`;
-      }
 
-      tr.innerHTML = innerHTML;
-      // Salva la riga completa e l'header come dataset sull'elemento <tr>
-      tr.dataset.fullRow = JSON.stringify(rowData);
-      tr.dataset.header = JSON.stringify(header);
-      tbody.appendChild(tr);
+        tr.innerHTML = innerHTML;
+        // Salva la riga completa e l'header come dataset sull'elemento <tr>
+        tr.dataset.fullRow = JSON.stringify(rowData);
+        tr.dataset.header = JSON.stringify(header);
+        tbody.appendChild(tr);
+      }
     }
 
-    // Se stiamo popolando la tabella dei piloti, aggiungiamo glihandler di click
+    // Se stiamo popolando la tabella dei piloti, aggiungiamo gli handler di click
     if (tbodyId === "piloti-body") {
-      // Aggiungi classe/cursore e listener alla prima cella di ogni riga
-      const rows = tbody.querySelectorAll("tr");
-      rows.forEach((r) => {
-        const firstCell = r.querySelector("td");
-        if (!firstCell) return;
-        firstCell.classList.add("pilota-link");
-        firstCell.style.cursor = "pointer";
+      // Aggiungi classe/cursore e listener all'intera card di ogni pilota
+      const pilotCards = tbody.querySelectorAll(".pilot-card");
+      pilotCards.forEach((card) => {
+        card.classList.add("pilota-link");
+        card.style.cursor = "pointer";
         // Evitiamo agganciare più volte lo stesso listener
-        if (!r._pilotHandlerAttached) {
-          firstCell.addEventListener("click", () => {
+        if (!card._pilotHandlerAttached) {
+          card.addEventListener("click", () => {
             let fullRow = [];
             let headerArr = [];
             try {
-              fullRow = JSON.parse(r.dataset.fullRow || "[]");
-              headerArr = JSON.parse(r.dataset.header || "[]");
+              fullRow = JSON.parse(card.dataset.fullRow || "[]");
+              headerArr = JSON.parse(card.dataset.header || "[]");
             } catch (e) {
-              console.error("Errore parsing dataset riga pilota", e);
+              console.error("Errore parsing dataset card pilota", e);
             }
             openPilotModal(fullRow, headerArr);
           });
-          r._pilotHandlerAttached = true;
+          card._pilotHandlerAttached = true;
         }
       });
     }
@@ -335,13 +405,21 @@ async function loadAndCreateHtmlTable(
     // Calcola colspan in base al numero di colonne che si dovevano usare
     const colspan = columnIndices ? columnIndices.length : 1;
 
-    tbody.innerHTML = `
-            <tr>
-                <td colspan="${colspan}" style="text-align: center; color: red; padding: 20px;">
-                    ❌ Errore nel caricamento dei dati.
-                </td>
-            </tr>
-        `;
+    if (tbodyId === "piloti-body" || tbodyId === "admin-body") {
+      tbody.innerHTML = `
+        <div style="text-align: center; color: red; padding: 20px;">
+          ❌ Errore nel caricamento dei dati.
+        </div>
+      `;
+    } else {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="${colspan}" style="text-align: center; color: red; padding: 20px;">
+            ❌ Errore nel caricamento dei dati.
+          </td>
+        </tr>
+      `;
+    }
   }
 }
 
