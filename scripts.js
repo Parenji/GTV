@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
 
   const breadcrumbs = {};
-  const page = window.location.pathname.split('/').pop();
+  const page = window.location.pathname.split('/').pop() || 'index.html';
   const menuLinks = document.querySelectorAll('.sidebar-content .menu-link');
   menuLinks.forEach(link => {
     const href = link.getAttribute('href');
@@ -57,8 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateBreadcrumb(sectionId) {
     const currentPath = window.location.pathname;
-    const pageName = currentPath.split('/').pop().replace('.html', '');
-    const isIndex = pageName === 'index';
+    let pageName = currentPath.split('/').pop().replace('.html', '');
+    // Se il pathname è vuoto o termina con /, usa 'index' come default
+    if (!pageName || pageName === '') {
+      pageName = 'index';
+    }
+    const isIndex = pageName === 'index' || pageName === '';
     const sectionName = breadcrumbs[page] && breadcrumbs[page][sectionId] ? breadcrumbs[page][sectionId] : 'Home';
     const breadcrumbEl = document.getElementById('breadcrumb');
     if (breadcrumbEl) {
