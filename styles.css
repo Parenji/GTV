@@ -1596,6 +1596,7 @@ td.totalone {
   background-color: black;
   border-color: var(--giallogtv);
   transform: scale(1.05);
+  background: none;
 }
 
 .pilot-left {
