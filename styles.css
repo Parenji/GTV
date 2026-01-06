@@ -83,11 +83,7 @@ button {
   flex-grow: 1;
   max-width: 1000px;
   margin: 0 auto;
-  background: 
-    linear-gradient(to right, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
-    linear-gradient(to bottom, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
-    url(images/bg.jpg) no-repeat center top -140px;
-  background-size: cover;
+
 }
 
 #breadcrumb {
@@ -255,6 +251,14 @@ button {
 }
 
 @media (max-width: 768px) {
+  .main-container {
+    background: 
+    linear-gradient(to right, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
+    linear-gradient(to bottom, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
+    url(images/bg.jpg) no-repeat center top -160px;
+      background-size: cover;
+  }
+
   .logohead {
     width: 50%;
     height: auto;
