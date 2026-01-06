@@ -1714,6 +1714,7 @@ td.totalone {
   filter: invert(0%);
 }
 
+
 .sponsor-section {
   margin-top: 0px;
   padding: 20px;
@@ -1780,8 +1781,8 @@ td.totalone {
   }
 
   .additional-logo {
-    width: 80px;
-    max-height: 80px;
+    width: 90px;
+    max-height: 90px;
     height: auto;
     object-fit: contain;
   }
