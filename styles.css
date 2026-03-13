@@ -1077,7 +1077,6 @@ td.totalone {
   padding-left: 0px;
   justify-content: center;
   height: 70px;
-  margin-top: 2px;
 }
 
 .calendar td[data-label="Circuito"]::before {
@@ -1471,7 +1470,6 @@ td.totalone {
   padding-left: 0px;
   justify-content: center;
   height: 70px;
-  margin-top: 2px;
 }
 .calendar td[data-label="Circuito"]::before {
   display: none;
@@ -1881,6 +1879,7 @@ body#worldchampionship {
   height: 40px;
   width: auto;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
 }
 
 .team-car {
