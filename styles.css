@@ -250,13 +250,15 @@ button {
   margin-left: 5px;
 }
 
+body#worldchampionship .sidebar-content a[href="#home"].active .menu-icon {
+  filter: brightness(0);
+}
+
 @media (max-width: 768px) {
   .main-container {
     background: 
     linear-gradient(to right, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
     linear-gradient(to bottom, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
-    url(images/bg.jpg) no-repeat center top -160px;
-      background-size: cover;
   }
 
   .logohead {
@@ -362,6 +364,7 @@ table {
   position: relative;
   overflow-x: auto;
   white-space: nowrap;
+  padding: 5px 0px;
 }
 
 td,
@@ -418,11 +421,11 @@ td.totalone {
   background-color: var(--giallogtv);
   color: #000000;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 20px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  margin: 5px;
+  margin: 2px;
 }
 
 .pdf-button:hover,
@@ -432,7 +435,7 @@ td.totalone {
 
 .pdf-button-container {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* ========================================
@@ -513,7 +516,7 @@ td.totalone {
     width: -webkit-fill-available;
     box-sizing: border-box;
     padding: 12px;
-    margin: 20px;
+    margin: 10px;
     font-size: 18px;
   }
 }
@@ -1554,6 +1557,14 @@ td.totalone {
   transition: all 0.3s ease;
 }
 
+.linktree-button.only-logo {
+  justify-content: center;
+}
+
+.linktree-button.only-logo .linktree-icon {
+  margin: 0;
+}
+
 .linktree-button span {
   flex: 1;
   text-align: center;
@@ -1802,4 +1813,174 @@ td.totalone {
 
 .active {
   margin-left: 6px;
+}
+
+body#worldchampionship {
+  --giallogtv: #bfefff;
+  --giallogtvhover: #8fd8ff;
+}
+
+/* Stili per la sezione Team e Piloti */
+.team-piloti-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.team-card {
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  border: 2px solid var(--giallogtv);
+  border-radius: 15px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--giallogtv), var(--giallogtvhover));
+  border-radius: 15px 15px 0 0;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(191, 239, 255, 0.3);
+  border-color: var(--giallogtvhover);
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.3);
+}
+
+.team-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.team-car {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.car-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.car-name {
+  display: none;
+}
+
+.team-pilots {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pilot-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 12px;
+  background: rgba(191, 239, 255, 0.08);
+  border-left: 3px solid var(--giallogtv);
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+}
+
+
+.pilot-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.pilot-avatar {
+  width: 8px;
+  height: 8px;
+  background: var(--giallogtv);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.loading-message, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.error-message {
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+/* Responsive per la sezione Team e Piloti */
+@media (max-width: 768px) {
+  .team-piloti-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .team-card {
+    padding: 15px;
+  }
+  
+  .team-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .car-image {
+    max-width: 100%;
+  }
+  
+  .team-pilots {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .pilot-info {
+    padding: 6px 10px;
+  }
 }

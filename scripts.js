@@ -68,9 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (breadcrumbEl) {
       let breadcrumbHTML = `<span style="padding: 5px 10px; border-radius: 5px;"><a href="index.html"><img src="images/gtvblack.svg" alt="GTV"></a></span> › `;
       if (!isIndex) {
-        const logoSrc = `images/Campionati/${pageName}.png`;
+        const logoSrc = pageName === 'worldchampionship' ? 'images/wc.png' : `images/Campionati/${pageName}.png`;
         const altText = pageName.toUpperCase();
-        breadcrumbHTML += `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${pageName}.html"><img src="${logoSrc}" alt="${altText}" style="filter: invert(1);"></a></span> › `;
+        const logoStyle = pageName === 'worldchampionship' ? 'filter: brightness(0);' : 'filter: invert(1);';
+        breadcrumbHTML += `<span style="padding: 5px 10px; border-radius: 5px;"><a href="${pageName}.html"><img src="${logoSrc}" alt="${altText}" style="${logoStyle}"></a></span> › `;
       }
       breadcrumbHTML += `<a href="#${sectionId}">${sectionName}</a>`;
       breadcrumbEl.innerHTML = breadcrumbHTML;
@@ -426,6 +427,190 @@ async function loadAndCreateHtmlTable(
     }
   }
 }
+//Funzione per opzioni stanza
+// **!!! IMPORTANTE !!!** Sostituisci questo con il link CSV esportato da Google Fogli
+const CSV_URL = "YOUR_CSV_LINK_HERE";
+const container = document.getElementById("card-output");
+
+/**
+ * Funzione per convertire una riga CSV in un oggetto data.
+ * Assumiamo che la colonna 0 sia il Titolo (in alto) e la colonna 1 sia il Corpo (in basso).
+ * @param {string} line - La riga CSV come stringa.
+ * @returns {{header: string, body: string} | null} L'oggetto dati della card.
+ */
+function parseCsvLine(line) {
+  // Semplice suddivisione per virgola (adatta se i tuoi dati non contengono virgole interne)
+  const columns = line.split(",");
+
+  // Controlla se ci sono almeno due colonne
+  if (columns.length < 2) {
+    return null;
+  }
+
+  // Pulisce gli spazi bianchi all'inizio/fine
+  const header = columns[0].trim();
+  const body = columns[1].trim();
+
+  if (!header || !body) {
+    return null; // Salta righe vuote o incomplete
+  }
+
+  return { header: header, body: body };
+}
+
+/**
+ * Funzione per generare il markup HTML di una singola card.
+ * @param {{header: string, body: string}} data - I dati della card.
+ * @returns {string} Il codice HTML della card.
+ */
+function generateCardHtml(data) {
+  return `
+        <div class="opzioni-card">
+            <div class="opzioni-card-header">${data.header}</div>
+            <div class="opzioni-card-body">${data.body}</div>
+        </div>
+    `;
+}
+
+/**
+ * Funzione principale per caricare i dati e popolare il DOM.
+ */
+async function loadDataAndGenerateCards(spreadsheetUrl) {
+  try {
+    // 1. Fetch dei dati dal link CSV
+    const response = await fetch(spreadsheetUrl);
+
+    // Controlla se la risposta è ok (status 200)
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+
+    // 2. Analisi del CSV
+    // Divide il testo in righe e filtra le righe vuote
+    const lines = csvText.split("\n").filter((line) => line.trim() !== "");
+
+    // Salta la prima riga se contiene le intestazioni
+    const dataLines = lines.slice(1);
+
+    // 3. Generazione e iniezione delle card
+    let htmlCards = "";
+    dataLines.forEach((line) => {
+      const cardData = parseCsvLine(line);
+      if (cardData) {
+        htmlCards += generateCardHtml(cardData);
+      }
+    });
+
+    // Inietta tutte le card nel contenitore (ottimizzazione delle performance)
+    container.innerHTML = htmlCards;
+  } catch (error) {
+    console.error(
+      "Si è verificato un errore durante il caricamento o l'analisi dei dati:",
+      error
+    );
+    container.innerHTML = `<p style="color: red;">Impossibile caricare i dati. Controlla il link CSV o la console.</p>`;
+  }
+}
+
+// Funzione per caricare e visualizzare i dati del team e piloti
+async function loadTeamAndPiloti(spreadsheetUrl) {
+  const container = document.getElementById("team-piloti-container");
+  
+  if (!container) {
+    console.error("Container 'team-piloti-container' non trovato.");
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    
+    // Parsing del CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div class="error-message">Nessun dato trovato.</div>';
+      return;
+    }
+
+    // La prima riga è l'intestazione
+    const header = rows[0];
+    // Le righe successive sono i dati
+    const dataRows = rows.slice(1);
+
+    let htmlTeams = "";
+    
+    dataRows.forEach((rowData, index) => {
+      const team = rowData[0] || "";
+      const marchio = rowData[1] || "";
+      const auto = rowData[2] || "";
+      const pilota1 = rowData[3] || "";
+      const pilota2 = rowData[4] || "";
+
+      if (!team) return; // Salta righe vuote
+
+      // Normalizzazione del marchio per trovare il logo
+      const marchioSlug = marchio.toLowerCase().replace(/[^a-z0-9]+/g, "");
+      const marchioLogoPath = `images/marchi-auto/${marchioSlug}.svg`;
+      
+      // Normalizzazione del nome auto per l'immagine
+      const autoSlug = team.toLowerCase().replace(/[^a-z0-9]+/g, "");
+      const autoImagePath = `images/livree/${autoSlug}.png`;
+
+      htmlTeams += `
+        <div class="team-card">
+          <div class="team-header">
+            <div class="team-name">${team}</div>
+            <div class="team-brand">
+              <img src="${marchioLogoPath}" alt="${marchio}" class="brand-logo" 
+                   onerror="this.onerror=null; this.src='images/marchi-auto/${marchioSlug}.png'; if(this.src.endsWith('${marchioSlug}.png') && this.naturalWidth === 0) this.style.display='none';" />
+            </div>
+          </div>
+          <div class="team-car">
+            <img src="${autoImagePath}" alt="${auto}" class="car-image" 
+                 onerror="this.onerror=null; this.style.display='none';" />
+            <div class="car-name">${auto}</div>
+          </div>
+          <div class="team-pilots">
+            <div class="pilot-info">
+              <div class="pilot-avatar"></div>
+              <div class="pilot-name">${pilota1}</div>
+            </div>
+            ${pilota2 ? `
+              <div class="pilot-info">
+                <div class="pilot-avatar"></div>
+                <div class="pilot-name">${pilota2}</div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = htmlTeams;
+
+  } catch (error) {
+    console.error("Errore nel caricamento dei dati del team:", error);
+    container.innerHTML = '<div class="error-message">Impossibile caricare i dati del team. Controlla la console per dettagli.</div>';
+  }
+}
 
 // ---------- Pilot modal helper functions ----------
 
@@ -573,6 +758,13 @@ function escapeHtml(unsafe) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const config = window.GTV_CONFIG;
+  if (!config) {
+    console.error(
+      "GTV_CONFIG non trovato. Assicurati di caricare config.js prima di scripts.js."
+    );
+    return;
+  }
   // --- 1. Logica per index.html ---
 
   // Controlla se la pagina ha l'ID 'piloti-body' (il che indica che siamo in index.html)
@@ -582,13 +774,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Inizializzazione di index.html: Caricamento Piloti e Admin.");
 
     // --- Tabella Piloti ---
-    const URL_PILOTI =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv";
+    const URL_PILOTI = config.googleSheets.piloti;
     loadAndCreateHtmlTable(URL_PILOTI, "piloti-body", [0, 1, 2]);
 
     // --- Tabella Admin ---
-    const URL_ADMIN =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx7dbRJV9vs3dkCo3zycLGxybjzItCLU6NizJLgzdlJXhgErb_HBugUN7wmeEYmilVVUS6nzmoHbhP/pub?gid=1215200164&single=true&output=csv";
+    const URL_ADMIN = config.googleSheets.admin;
     loadAndCreateHtmlTable(URL_ADMIN, "admin-body", [0, 1]);
   }
 
@@ -612,8 +802,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }`;
 
     // --- Tabella Lobby ---
-    const URL_LOBBY =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=0&single=true&output=csv";
+    const URL_LOBBY = config.googleSheets.gtec.lobby;
     loadAndCreateHtmlTable(
       URL_LOBBY,
       "lobby-body"
@@ -621,8 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // --- Tabella Lobby Promo e retro ---
-    const URL_PROMRETR =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1228545593&single=true&output=csv";
+    const URL_PROMRETR = config.googleSheets.gtec.promoRetro;
     loadAndCreateHtmlTable(
       URL_PROMRETR,
       "proret-body"
@@ -630,8 +818,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // --- Tabella classifica ---
-    const URL_CLASS =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=126395538&single=true&output=csv";
+    const URL_CLASS = config.googleSheets.gtec.classifica;
     loadAndCreateHtmlTable(
       URL_CLASS,
       "classifica-body"
@@ -649,8 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // Penalità
-    const URL_PEN =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1753268594&single=true&output=csv";
+    const URL_PEN = config.googleSheets.gtec.penalita;
     loadAndCreateHtmlTable(
       URL_PEN,
       "penalita-body"
@@ -659,12 +845,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
 
-    const URL_CALENDAR =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=912348639&single=true&output=csv";
+    const URL_CALENDAR = config.googleSheets.gtec.calendario;
     loadAndCreateHtmlTable(
       URL_CALENDAR,
       "prossima-gara-body",
-      [0, 2, 1, 4], //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
+      [0, 3, 2, 1, 4], //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       { rowIndex: prossimaGara }
       // altrimenti specificare quelle che vuoi mostrare)
     );
@@ -672,16 +857,59 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAndCreateHtmlTable(
       URL_CALENDAR,
       "calendar-body",
-      [0, 2, 1, 4] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
+      [0, 3, 2, 1, 4] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
     );
 
     // Avvia il processo al caricamento della pagina
-    const URL_OPZIONI =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1285111450&single=true&output=csv";
+    const URL_OPZIONI = config.googleSheets.gtec.opzioniLobby;
     loadDataAndGenerateCards(URL_OPZIONI);
   }
-  // --- 3. Logica per interno.html ---
+
+  // --- 3. Logica per worldchampionship.html ---
+
+  const worldchampionship = document.getElementById("worldchampionship");
+
+  if (worldchampionship) {
+    console.log("Inizializzazione di worldchampionship.html: Caricamento...");
+    let ultimaGara = 0; // Cambia questo numero quando vuoi aggiornare la gara
+    prossimaGara = ultimaGara + 1;
+    document.getElementById(
+      "pen-ult-gara"
+    ).innerText = `Penalità Gara ${ultimaGara}`;
+    document.getElementById("lobby-next-gara").innerText = `Gara ${
+      ultimaGara + 1
+    }`;
+    document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
+      ultimaGara + 1
+    }`;
+
+    const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
+    loadAndCreateHtmlTable(URL_LOBBY, "lobby-body");
+
+    const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
+    loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
+
+    const URL_CLASS = config.googleSheets.worldchampionship.classifica;
+    loadAndCreateHtmlTable(URL_CLASS, "classifica-body");
+    loadAndCreateHtmlTable(URL_CLASS, "classifica-short-body", [], 10);
+
+    const URL_PEN = config.googleSheets.worldchampionship.penalita;
+    loadAndCreateHtmlTable(URL_PEN, "penalita-body");
+
+    const URL_CALENDAR = config.googleSheets.worldchampionship.calendario;
+    loadAndCreateHtmlTable(URL_CALENDAR, "prossima-gara-body", [0, 3, 2, 1, 4], {
+      rowIndex: prossimaGara,
+    });
+    loadAndCreateHtmlTable(URL_CALENDAR, "calendar-body", [0, 3, 2, 1, 4]);
+
+    const URL_OPZIONI = config.googleSheets.worldchampionship.opzioniLobby;
+    loadDataAndGenerateCards(URL_OPZIONI);
+
+    const URL_TEAM_PILOTI = config.googleSheets.worldchampionship.teamPiloti;
+    loadTeamAndPiloti(URL_TEAM_PILOTI);
+  }
+  // --- 4. Logica per interno.html ---
 
   // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
   const interno = document.getElementById("interno");
@@ -690,12 +918,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Inizializzazione di gtec.html: Caricamento...");
 
     // --- Tabella calendar ---
-    const URL_CALENDAR =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTjIK9QJjiVNA9MC4opAz426vl9zzl7X6A3OS0P7h8yikDIXoK5tVetXnrQAYYew0Gz7wEMtM2ZtRkl/pub?gid=0&single=true&output=csv";
+    const URL_CALENDAR = config.googleSheets.interno.calendario;
     loadAndCreateHtmlTable(
       URL_CALENDAR,
       "calendar-body",
-      [0, 2, 1, 4] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
+      [0, 2, 1, 3] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
     );
   }

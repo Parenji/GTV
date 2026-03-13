@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granturismo TV - WORLD CHAMPIONSHIP</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTV" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
+
+    <!-- Colore della barra dell'interfaccia mobile -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="background-color" content="#FFFFFF">
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<body id="worldchampionship">
+
+    <header>
+        <button id="menu-toggle" class="hamburger-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <div id="sidebar">
+            <button id="close-menu" class="close-button">X</button>
+
+            <nav class="sidebar-content" id="sidebar-content">
+                <a href="#home" class="menu-link">
+                    Home
+                    <img src="images/wc.png" alt="Logo" class="menu-icon" />
+                </a>
+                <a href="#team-piloti" class="menu-link">
+                    Team e Piloti
+                </a>
+                <a href="#lobby" class="menu-link">
+                    Lobby
+                </a>
+                <a href="#classifica" class="menu-link">
+                    Classifica
+                </a>
+                <a href="#regolamento" class="menu-link">
+                    Regolamento
+                </a>
+                <a href="#penalita" class="menu-link">
+                    Direzione Gara
+                </a>
+                <a href="#calendario" class="menu-link">
+                    Calendario
+                </a>
+                <a href="index.html" class="menu-link">
+                    <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
+                </a>
+                <!-- <a href="#calendario" class="menu-link">
+                        Risultati
+                    </a>
+                    <a href="#page7" class="menu-link">
+                        Calendario
+                    </a> -->
+            </nav>
+
+        </div>
+        <div class="title-container">
+            <a href="worldchampionship.html">
+                <img src="images/wc.png" alt="Logo" class="logocamp" />
+            </a>
+            <a href="index.html">
+                <span class="sottotitolo"> Powered by </span>
+                <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
+            </a>
+            <div id="breadcrumb"></div>
+        </div>
+
+    </header>
+
+
+
+    <div class="main-container">
+
+
+
+
+        <section id="home" class="section">
+
+
+            <div class="antibox">
+                <div class="titolino-sx">Calendario</div>
+                <div class="titolino-dx">Prossima gara</div>
+            </div>
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table calendar">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody id="prossima-gara-body">
+
+                        <tr">
+                            <td colspan="2" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="background-color: var(--grigio-captions); padding: 4px 10px 4px; margin-top: -13px; font-size: 1.2em;">
+                                <div class="section-link">
+                                    <a href="#calendario" class="menu-link">Calendario completo 🔗</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+<!-- 
+            <div class="antibox">
+                <div class="titolino-sx">WORLD CHAMPIONSHIP</div>
+                <div class="titolino-dx">Vincitore</div>
+
+            </div>
+            <div class="box">
+                <div class="coppa">
+                    <img src="images/icons/coppa.svg" alt="Logo" class="coppaimg" />
+                </div>
+
+
+                <div class="titolettowin winner">
+                    Hawk_Mavenich
+                </div>
+
+
+            </div> -->
+
+
+            <div class="antibox">
+                <div class="titolino-sx">Classifica</div>
+                <div class="titolino-dx">Top 10</div>
+            </div>
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Id Pilota</th>
+                            <th>Pti</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="classifica-short-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="background-color: var(--grigio-captions);">
+                                <div class="section-link">
+                                    <a href="#classifica" class="menu-link"
+                                        style="color:white; text-decoration: none; font-weight: 700; font-size: 1.2em; justify-content: right;">
+                                        Classifica completa 🔗</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+
+        </section>
+
+        <section id="lobby" class="section">
+            <div class="titoletto" id="lobby-next-gara"></div>
+            <!-- <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Promozioni</th>
+                            <th>Retrocessioni</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="proret-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table lobby">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Ora</th>
+                            <th>Cat.</th>
+                            <th>Cat.</th>
+                            <th>Piloti</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="lobby-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </section>
+
+
+
+
+        <section id="regolamento" class="section">
+
+            <div class="pdf-button-container">
+
+                <button class="pdf-button" onclick="window.open('pdf/WORLD regolamento.pdf', '_blank')">
+                    PDF Regolamento
+                </button>
+                <button class="pdf-button" onclick="window.open('pdf/WORLD opzioni e cal.pdf', '_blank')">
+                    PDF Opzioni stanza
+                </button>
+            </div>
+            <div class="titoletto" id="info-next-gara"></div>
+            <div id="card-output" class="opzioni-card-container">
+            </div>
+
+        </section>
+
+        <section id="penalita" class="section">
+            <div class="pdf-button-container">
+
+                <button class="pdf-button"
+                    onclick="window.open(window.GTV_CONFIG.googleForms.worldchampionship.reclamiGara, '_blank')">
+                    Modulo reclami
+                </button>
+            </div>
+            <div class="titoletto" id="pen-ult-gara"></div>
+            <div class="table-container">
+                <table class="responsive-table mobile-table lobby">
+                    <thead>
+                        <tr>
+                            <th>Pilota</th>
+                            <th>Penalità</th>
+                            <th>Gara</th>
+                            <th>Giro</th>
+                            <th>Curva</th>
+                            <th>Punti patente</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="penalita-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+
+        <section id="classifica" class="section">
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Id Pilota</th>
+                            <th>Pti</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="classifica-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="calendario" class="section">
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table calendar">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+
+                        <tr">
+                            <td colspan="2" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="team-piloti" class="section">
+            <div class="titoletto">Team e Piloti</div>
+            <div id="team-piloti-container" class="team-piloti-container">
+                <div class="loading-message">Caricamento dati in corso...</div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+</body>
+<script src="config.js" defer></script>
+<script src="scripts.js" defer></script>
+
+</html>
