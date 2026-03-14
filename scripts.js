@@ -224,6 +224,12 @@ async function loadAndCreateHtmlTable(
   // Pulisci il contenitore prima di iniziare
   tbody.innerHTML = "";
 
+  // Rimuovi la classe loading se presente
+  const tableContainer = tbody.closest('.table-container');
+  if (tableContainer && tableContainer.classList.contains('loading')) {
+    tableContainer.classList.remove('loading');
+  }
+
   try {
     const response = await fetch(spreadsheetUrl);
 
@@ -511,6 +517,118 @@ async function loadDataAndGenerateCards(spreadsheetUrl) {
       error
     );
     container.innerHTML = `<p style="color: red;">Impossibile caricare i dati. Controlla il link CSV o la console.</p>`;
+  }
+}
+
+// Funzione per caricare e visualizzare le lobby in formato card
+async function loadLobbyCards(spreadsheetUrl) {
+  const container = document.getElementById("lobby-body");
+  
+  if (!container) {
+    console.error("Container 'lobby-body' non trovato.");
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    
+    // Parsing del CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div class="error-message">Nessun dato trovato.</div>';
+      return;
+    }
+
+    const dataRows = rows.slice(1); // Salta l'header
+    let htmlCards = "";
+    
+    dataRows.forEach((rowData, index) => {
+      if (rowData.length < 4) return; // Salta righe incomplete
+      
+      // Estrai le info della gara (prime 4 colonne)
+      const date = rowData[0] || "";
+      const time = rowData[1] || "";
+      const category = rowData[2] || "";
+      const host = rowData[3] || "";
+      const live = rowData[4] || "";
+      
+      // Estrai i piloti (dalla colonna 5 in poi)
+      const pilots = rowData.slice(5).filter(pilot => pilot && pilot.trim() !== "");
+      
+      if (!date || !time || !category) return; // Salta righe senza dati essenziali
+      
+      // Genera la card
+      htmlCards += `
+        <div class="lobby-card">
+          <div class="lobby-card-header">
+            <div class="lobby-datetime">
+              <div class="lobby-date">${escapeHtml(date)}</div>
+              <div class="lobby-time">${escapeHtml(time)}</div>
+            </div>
+            <div class="lobby-category">${escapeHtml(category)}</div>
+          </div>
+          
+          <div class="lobby-info-section">
+            ${host ? `
+              <div class="lobby-host">
+                <div class="lobby-host-icon">🏠</div>
+                <div class="lobby-host-content">
+                  <div class="lobby-host-label">Host</div>
+                  <div class="lobby-host-name">${escapeHtml(host)}</div>
+                </div>
+              </div>
+            ` : ''}
+            
+            ${live ? `
+              <div class="lobby-live">
+                <div class="lobby-live-icon">🔴</div>
+                <div class="lobby-live-content">
+                  <div class="lobby-live-label">Live su</div>
+                  <div class="lobby-live-name">${escapeHtml(live)}</div>
+                </div>
+                <div class="lobby-live-badge">LIVE</div>
+              </div>
+            ` : ''}
+          </div>
+          
+          ${pilots.length > 0 ? `
+            <div class="lobby-pilots-section">
+              <div class="lobby-pilots-title">Piloti Iscritti (${pilots.length})</div>
+              <div class="lobby-pilots-grid">
+                ${pilots.map((pilot, pilotIndex) => `
+                  <div class="lobby-pilot" title="${escapeHtml(pilot)}">
+                    <div class="lobby-pilot-name">${escapeHtml(pilot)}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    });
+
+    container.innerHTML = htmlCards || '<div class="error-message">Nessuna lobby trovata.</div>';
+
+  } catch (error) {
+    console.error("Errore nel caricamento delle lobby:", error);
+    container.innerHTML = '<div class="error-message">Impossibile caricare le lobby. Controlla la console per dettagli.</div>';
   }
 }
 
@@ -885,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }`;
 
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
-    loadAndCreateHtmlTable(URL_LOBBY, "lobby-body");
+    loadLobbyCards(URL_LOBBY);
 
     const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
     loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");

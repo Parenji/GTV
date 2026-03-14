@@ -26,7 +26,7 @@ window.GTV_CONFIG = {
     },
 
     worldchampionship: {
-      lobby: "https://docs.google.com/spreadsheets/d/e/REPLACE_ME_WORLDCHAMPIONSHIP/pub?gid=0&single=true&output=csv",
+      lobby: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=0&single=true&output=csv",
       promoRetro:
         "https://docs.google.com/spreadsheets/d/e/REPLACE_ME_WORLDCHAMPIONSHIP/pub?gid=0&single=true&output=csv",
       classifica:
