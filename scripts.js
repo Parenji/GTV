@@ -632,7 +632,215 @@ async function loadLobbyCards(spreadsheetUrl) {
   }
 }
 
-// Funzione per caricare e visualizzare i dati del team e piloti
+// Funzione per creare le 4 classifiche rivoluzionate
+async function loadAllClassifications(spreadsheetUrl) {
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    
+    // Parsing del CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      return;
+    }
+
+    const dataRows = rows.slice(1); // Salta l'header
+    
+    // Separa i dati per tipo di classifica
+    const allPilots = [];
+    const jgtvPilots = [];
+    const nonJgtvPilots = [];
+    const teams = {};
+    
+    dataRows.forEach((row) => {
+      if (row.length < 7) return;
+      
+      const position = row[0] || "";
+      const pilot = row[1] || "";
+      const number = row[2] || "";
+      const team = row[3] || "";
+      const marchio = row[4] || "";
+      const isJgtv = row[5] || "";
+      const points = parseInt(row[6]) || 0;
+      
+      const pilotData = { position, pilot, number, team, marchio, points };
+      
+      // Aggiungi a tutti i piloti
+      allPilots.push(pilotData);
+      
+      // Separa per JGTV e non-JGTV
+      if (isJgtv.toLowerCase() === 'jgtv') {
+        jgtvPilots.push(pilotData);
+      } else {
+        nonJgtvPilots.push(pilotData);
+      }
+      
+      // Calcola punti per team
+      if (team) {
+        if (!teams[team]) {
+          teams[team] = { team, points: 0, pilots: [], marchio: marchio };
+        }
+        teams[team].points += points;
+        teams[team].pilots.push(pilotData);
+      }
+    });
+    
+    // Ordina tutte le classifiche
+    allPilots.sort((a, b) => b.points - a.points);
+    jgtvPilots.sort((a, b) => b.points - a.points);
+    nonJgtvPilots.sort((a, b) => b.points - a.points);
+    
+    const teamRanking = Object.values(teams).sort((a, b) => b.points - a.points);
+    
+    // Genera HTML per le 4 classifiche
+    generateClassificationHTML('classifica-generale-piloti', allPilots, 'Classifica Piloti');
+    generateClassificationHTML('classifica-generale-team', teamRanking, 'Classifica Team', true);
+    generateClassificationHTML('classifica-jgtv-piloti', jgtvPilots, 'Classifica Piloti JGTV');
+    generateClassificationHTML('classifica-non-jgtv-piloti', nonJgtvPilots, 'Classifica Piloti GTV');
+    
+    // Genera Top 10 per la home
+    generateTop10Home(allPilots.slice(0, 10));
+
+  } catch (error) {
+    console.error("Errore nel caricamento delle classifiche:", error);
+  }
+}
+
+// Funzione per generare HTML delle classifiche
+function generateClassificationHTML(containerId, data, title, isTeam = false) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  let html = `
+    <div class="classification-accordion">
+      <div class="accordion" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-title">${title}</div>
+          <div class="accordion-subtitle">${data.length} ${isTeam ? 'team' : 'piloti'}</div>
+          <i><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="2" fill="none"/></svg></i>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="classification-table">
+  `;
+  
+  data.forEach((item, index) => {
+    // Normalizza il nome del marchio per il percorso dell'immagine
+    const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
+    
+    if (isTeam) {
+      html += `
+        <div class="pilot-ranking-item">
+          <div class="pilot-position">${index + 1}</div>
+          <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
+            <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
+          </div>
+          <div class="pilot-name">${escapeHtml(item.team)}</div>
+          <div class="pilot-team">${item.pilots.map(p => escapeHtml(p.number)).join(', ')}</div>
+          <div class="pilot-points">${item.points}</div>
+        </div>
+      `;
+    } else {
+      html += `
+        <div class="pilot-ranking-item">
+          <div class="pilot-position">${index + 1}</div>
+          <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
+            <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
+          </div>
+          <div class="pilot-name">${escapeHtml(item.pilot)}</div>
+          <div class="pilot-team">${escapeHtml(item.team)}</div>
+          <div class="pilot-points">${item.points}</div>
+        </div>
+      `;
+    }
+  });
+  
+  html += `
+        </div>
+      </div>
+    </div>
+  `;
+  
+  container.innerHTML = html;
+}
+
+// Funzione per generare Top 10 Home
+function generateTop10Home(data) {
+  const container = document.getElementById("classifica-short-body");
+  if (!container) return;
+  
+  let html = '<div class="top10-home">';
+  html += '<div class="top10-header"><div class="top10-title">Top 10</div><div class="top10-subtitle">Classifica Generale</div></div>';
+  html += '<div class="classification-table">';
+  
+  data.forEach((item, index) => {
+    // Normalizza il nome del marchio per il percorso dell'immagine
+    const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
+    html += `
+      <div class="pilot-ranking-item">
+        <div class="pilot-position">${index + 1}</div>
+        <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
+          <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
+        </div>
+        <div class="pilot-name">${escapeHtml(item.pilot)}</div>
+        <div class="pilot-team">${escapeHtml(item.team)}</div>
+        <div class="pilot-points">${item.points}</div>
+      </div>
+    `;
+  });
+  
+  html += '</div></div>';
+  container.innerHTML = html;
+}
+
+// Funzione per ottenere colore team
+function getTeamColor(teamName) {
+  const teamColors = {
+    'Swiffer': '#8B7500',
+    'Badboys': '#4B0082',
+    'Tekkadan': '#FFFFFF',
+    'Grom': '#8B0000',
+    'Drifter': '#26b3ff',
+    'Lentiviolenti': '#00FF7F',
+    'Gliscappatidicasa': '#FFFF00',
+    'Rebellion': '#FF1493',
+    'Newgeneration': '#0096d6',
+    'Frauzer': '#D3D3D3',
+    'Afmotorsport': '#191970',
+    'Esagerati': '#FF4500',
+    'Pasa_racing': '#8A2BE2',
+    'Swatclub': '#87CEFA',
+    'Team15': 'var(--giallogtv)'
+  };
+  return teamColors[teamName] || 'var(--giallogtv)';
+}
+
+// Funzione per toggle accordion
+function toggleAccordion(element) {
+  element.classList.toggle('active');
+  const panel = element.nextElementSibling;
+  if (panel.style.display === 'block') {
+    panel.style.display = 'none';
+  } else {
+    panel.style.display = 'block';
+  }
+}
 async function loadTeamAndPiloti(spreadsheetUrl) {
   const container = document.getElementById("team-piloti-container");
   
@@ -681,7 +889,9 @@ async function loadTeamAndPiloti(spreadsheetUrl) {
       const auto = rowData[2] || "";
       const pilota1 = rowData[3] || "";
       const pilota2 = rowData[4] || "";
-
+      const num1 = rowData[5] || "";
+      const num2 = rowData[6] || "";
+      
       if (!team) return; // Salta righe vuote
 
       // Normalizzazione del marchio per trovare il logo
@@ -690,10 +900,13 @@ async function loadTeamAndPiloti(spreadsheetUrl) {
       
       // Normalizzazione del nome auto per l'immagine
       const autoSlug = team.toLowerCase().replace(/[^a-z0-9]+/g, "");
-      const autoImagePath = `images/livree/${autoSlug}.png`;
+      const autoImagePath = `images/livree/${autoSlug}.jpeg`;
+
+      // Normalizzazione del nome del team per l'attributo data-team
+      const teamSlug = team.toLowerCase().replace(/[^a-z0-9_]+/g, "");
 
       htmlTeams += `
-        <div class="team-card">
+        <div class="team-card" data-team="${escapeHtml(teamSlug)}">
           <div class="team-header">
             <div class="team-name">${team}</div>
             <div class="team-brand">
@@ -707,13 +920,13 @@ async function loadTeamAndPiloti(spreadsheetUrl) {
             <div class="car-name">${auto}</div>
           </div>
           <div class="team-pilots">
-            <div class="pilot-info">
-              <div class="pilot-avatar"></div>
+            <div class="pilot-info" data-team-color="${escapeHtml(teamSlug)}">
+              <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">${escapeHtml(num1)}</div>
               <div class="pilot-name">${pilota1}</div>
             </div>
             ${pilota2 ? `
-              <div class="pilot-info">
-                <div class="pilot-avatar"></div>
+              <div class="pilot-info" data-team-color="${escapeHtml(teamSlug)}">
+                <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">${escapeHtml(num2)}</div>
                 <div class="pilot-name">${pilota2}</div>
               </div>
             ` : ''}
@@ -928,13 +1141,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // --- Tabella Lobby Promo e retro ---
-    const URL_PROMRETR = config.googleSheets.gtec.promoRetro;
-    loadAndCreateHtmlTable(
-      URL_PROMRETR,
-      "proret-body"
+    // const URL_PROMRETR = config.googleSheets.gtec.promoRetro;
+    // loadAndCreateHtmlTable(
+    //   URL_PROMRETR,
+    //   "proret-body"
       // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
-    );
+    // );
     // --- Tabella classifica ---
     const URL_CLASS = config.googleSheets.gtec.classifica;
     loadAndCreateHtmlTable(
@@ -944,15 +1157,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // Tabella top10
-    loadAndCreateHtmlTable(
-      URL_CLASS,
-      "classifica-short-body",
-      [],
-      10
+    // loadAndCreateHtmlTable(
+    //   URL_CLASS,
+    //   "classifica-short-body",
+    //   [],
+    //   10
 
       //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       // altrimenti specificare quelle che vuoi mostrare)
-    );
+    // );
     // Penalità
     const URL_PEN = config.googleSheets.gtec.penalita;
     loadAndCreateHtmlTable(
@@ -1005,15 +1218,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
     loadLobbyCards(URL_LOBBY);
 
-    const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
-    loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
+    // const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
+    // loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
 
     const URL_CLASS = config.googleSheets.worldchampionship.classifica;
-    loadAndCreateHtmlTable(URL_CLASS, "classifica-body");
-    loadAndCreateHtmlTable(URL_CLASS, "classifica-short-body", [], 10);
+    loadAllClassifications(URL_CLASS);
 
     const URL_PEN = config.googleSheets.worldchampionship.penalita;
-    loadAndCreateHtmlTable(URL_PEN, "penalita-body");
+    loadAndCreateHtmlTable(URL_PEN, "penalita-body", []);
 
     const URL_CALENDAR = config.googleSheets.worldchampionship.calendario;
     loadAndCreateHtmlTable(URL_CALENDAR, "prossima-gara-body", [0, 3, 2, 1, 4], {

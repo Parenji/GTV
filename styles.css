@@ -2309,6 +2309,11 @@ body#worldchampionship {
     gap: 8px;
   }
   
+  .lobby-pilots-grid {
+    grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
+    gap: 8px;
+  }
+  
   .lobby-pilot {
     padding: 8px 10px;
   }
@@ -2320,7 +2325,7 @@ body#worldchampionship {
 
 @media (max-width: 480px) {
   .lobby-pilots-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: 1fr 1fr; /* Mantengo 2 colonne anche su schermi piccoli */
   }
   
   .lobby-card {
@@ -2328,7 +2333,790 @@ body#worldchampionship {
   }
 }
 
-/* Responsive per la sezione Team e Piloti */
+/* Colori personalizzati per ogni team */
+.team-card[data-team="gtvswiffer"] {
+  border-color: #8B7500 !important;
+}
+
+.team-card[data-team="gtvswiffer"]::before {
+  background: linear-gradient(90deg, #8B7500 0%, #A68B00 100%) !important;
+}
+
+.team-card[data-team="gtvbadboys"] {
+  border-color: #4B0082 !important;
+}
+
+.team-card[data-team="gtvbadboys"]::before {
+  background: linear-gradient(90deg, #4B0082 0%, #6A0DAD 100%) !important;
+}
+
+.team-card[data-team="gtvtekkadan"] {
+  border-color: #FFFFFF !important;
+}
+
+.team-card[data-team="gtvtekkadan"]::before {
+  background: linear-gradient(90deg, #FFFFFF 0%, #F0F0F0 100%) !important;
+}
+
+.team-card[data-team="gtvgrom"] {
+  border-color: #8B0000 !important;
+}
+
+.team-card[data-team="gtvgrom"]::before {
+  background: linear-gradient(90deg, #8B0000 0%, #B22222 100%) !important;
+}
+
+.team-card[data-team="gtvdrifter"] {
+  border-color: #26b3ff !important;
+}
+
+.team-card[data-team="gtvdrifter"]::before {
+  background: linear-gradient(90deg, #26b3ff 0%, #26b3ff 100%) !important;
+}
+
+.team-card[data-team="gtvlentiviolenti"] {
+  border-color: #00FF7F !important;
+}
+
+.team-card[data-team="gtvlentiviolenti"]::before {
+  background: linear-gradient(90deg, #00FF7F 0%, #40E0D0 100%) !important;
+}
+
+.team-card[data-team="gtvgliscappatidicasa"] {
+  border-color: #FFFF00 !important;
+}
+
+.team-card[data-team="gtvgliscappatidicasa"]::before {
+  background: linear-gradient(90deg, #FFFF00 0%, #FFD700 100%) !important;
+}
+
+.team-card[data-team="gtvrebellion"] {
+  border-color: #FF1493 !important;
+}
+
+.team-card[data-team="gtvrebellion"]::before {
+  background: linear-gradient(90deg, #FF1493 0%, #FF69B4 100%) !important;
+}
+
+.team-card[data-team="gtvnewgeneration"] {
+  border-color: #0096d6 !important;
+}
+
+.team-card[data-team="gtvnewgeneration"]::before {
+  background: linear-gradient(90deg, #0096d6 0%, #0096d6 100%) !important;
+}
+
+.team-card[data-team="gtvfrauzer"] {
+  border-color: #D3D3D3 !important;
+}
+
+.team-card[data-team="gtvfrauzer"]::before {
+  background: linear-gradient(90deg, #D3D3D3 0%, #E5E5E5 100%) !important;
+}
+
+.team-card[data-team="gtvafmotorsport"] {
+  border-color: #191970 !important;
+}
+
+.team-card[data-team="gtvafmotorsport"]::before {
+  background: linear-gradient(90deg, #191970 0%, #000080 100%) !important;
+}
+
+.team-card[data-team="gtvesagerati"] {
+  border-color: #FF4500 !important;
+}
+
+.team-card[data-team="gtvesagerati"]::before {
+  background: linear-gradient(90deg, #FF4500 0%, #FF6347 100%) !important;
+}
+
+.team-card[data-team="gtvpasa_racing"] {
+  border-color: #8A2BE2 !important;
+}
+
+.team-card[data-team="gtvpasa_racing"]::before {
+  background: linear-gradient(90deg, #8A2BE2 0%, #9370DB 100%) !important;
+}
+
+.team-card[data-team="gtvswatclub"] {
+  border-color: #87CEFA !important;
+}
+
+.team-card[data-team="gtvswatclub"]::before {
+  background: linear-gradient(90deg, #87CEFA 0%, #B0E0E6 100%) !important;
+}
+
+.team-card[data-team="gtvteam15"] {
+  border-color: var(--giallogtv) !important;
+}
+
+.team-card[data-team="gtvteam15"]::before {
+  background: linear-gradient(90deg, var(--giallogtv) 0%, #bbc22d 100%) !important;
+}
+
+/* Colori dei numeri piloti basati sui team */
+.pilot-number[data-team-color="gtvswiffer"] {
+  background: #8B7500 !important;
+}
+
+.pilot-number[data-team-color="gtvbadboys"] {
+  background: #4B0082 !important;
+}
+
+.pilot-number[data-team-color="gtvtekkadan"] {
+  background: #FFFFFF !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvgrom"] {
+  background: #8B0000 !important;
+}
+
+.pilot-number[data-team-color="gtvdrifter"] {
+  background: #26b3ff !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvlentiviolenti"] {
+  background: #00FF7F !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvgliscappatidicasa"] {
+  background: #FFFF00 !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvrebellion"] {
+  background: #FF1493 !important;
+}
+
+.pilot-number[data-team-color="gtvnewgeneration"] {
+  background: #0096d6 !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvfrauzer"] {
+  background: #D3D3D3 !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvafmotorsport"] {
+  background: #191970 !important;
+}
+
+.pilot-number[data-team-color="gtvesagerati"] {
+  background: #FF4500 !important;
+}
+
+.pilot-number[data-team-color="gtvpasa_racing"] {
+  background: #8A2BE2 !important;
+}
+
+.pilot-number[data-team-color="gtvswatclub"] {
+  background: #87CEFA !important;
+  color: #000 !important;
+}
+
+.pilot-number[data-team-color="gtvteam15"] {
+  background: var(--giallogtv) !important;
+  color: #000 !important;
+}
+
+/* Colori dei pilot-info - Design semplice */
+.pilot-info[data-team-color="gtvswiffer"] {
+  border-left: 3px solid #8B7500;
+}
+
+.pilot-info[data-team-color="gtvbadboys"] {
+  border-left: 3px solid #4B0082;
+}
+
+.pilot-info[data-team-color="gtvtekkadan"] {
+  border-left: 3px solid #FFFFFF;
+}
+
+.pilot-info[data-team-color="gtvgrom"] {
+  border-left: 3px solid #8B0000;
+}
+
+.pilot-info[data-team-color="gtvdrifter"] {
+  border-left: 3px solid #26b3ff;
+}
+
+.pilot-info[data-team-color="gtvlentiviolenti"] {
+  border-left: 3px solid #00FF7F;
+}
+
+.pilot-info[data-team-color="gtvgliscappatidicasa"] {
+  border-left: 3px solid #FFFF00;
+}
+
+.pilot-info[data-team-color="gtvrebellion"] {
+  border-left: 3px solid #FF1493;
+}
+
+.pilot-info[data-team-color="gtvnewgeneration"] {
+  border-left: 3px solid #0096d6;
+}
+
+.pilot-info[data-team-color="gtvfrauzer"] {
+  border-left: 3px solid #D3D3D3;
+}
+
+.pilot-info[data-team-color="gtvafmotorsport"] {
+  border-left: 3px solid #191970;
+}
+
+.pilot-info[data-team-color="gtvesagerati"] {
+  border-left: 3px solid #FF4500;
+}
+
+.pilot-info[data-team-color="gtvpasa_racing"] {
+  border-left: 3px solid #8A2BE2;
+}
+
+.pilot-info[data-team-color="gtvswatclub"] {
+  border-left: 3px solid #87CEFA;
+}
+
+.pilot-info[data-team-color="gtvteam15"] {
+  border-left: 3px solid var(--giallogtv);
+}
+
+/* Stile base per numeri piloti - Design semplice */
+.pilot-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #fff;
+  margin-right: 12px;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.pilot-number:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Team info container - Design orizzontale */
+.pilot-info {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+.pilot-info:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Pilot name semplice */
+.pilot-name {
+  font-weight: 600;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Team pilots container */
+.team-pilots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Responsive per team pilots */
+@media (max-width: 768px) {
+  .pilot-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+  
+  .pilot-info {
+    padding: 10px 12px;
+  }
+  
+  .pilot-name {
+    font-size: 0.9em;
+  }
+}
+
+/* ========================================
+   CLASSIFICHE RIVOLUZIONATE - ACCORDION
+   ======================================== */
+
+/* Container classifiche */
+.classification-accordion {
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden; /* Contiene tutto dentro i bordi */
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Accordion header */
+.accordion {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0; /* Rimuovo margini che causano overflow */
+}
+
+.accordion:hover {
+  background: linear-gradient(135deg, rgba(245, 255, 60, 0.15) 0%, rgba(245, 255, 60, 0.08) 100%);
+  border-color: rgba(245, 255, 60, 0.3);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+  cursor: pointer;
+  user-select: none;
+  min-height: 60px; /* Altezza minima per mobile */
+  touch-action: manipulation; /* Ottimizzazione touch */
+}
+
+.accordion-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.accordion-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accordion i {
+  color: var(--giallogtv);
+  transition: transform 0.3s ease;
+}
+
+.accordion.active i {
+  transform: rotate(180deg);
+}
+
+/* Panel content */
+.panel {
+  display: none;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(245, 255, 60, 0.1);
+  margin: 0; /* Rimuovo margini che causano overflow */
+  padding: 0; /* Padding gestito dal contenitore interno */
+}
+
+.accordion.active .panel {
+  display: block;
+}
+
+/* Tabella classifiche */
+.classification-table {
+  padding: 20px;
+  margin: 0; /* Assicuro che non ci siano margini esterni */
+}
+
+/* Classifica piloti */
+.pilot-ranking-item {
+  display: grid;
+  grid-template-columns: 60px 50px 1fr 200px 80px;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.pilot-ranking-item:hover {
+  background: rgba(245, 255, 60, 0.08);
+  transform: translateX(5px);
+}
+
+.pilot-position {
+  font-size: 1em;
+  font-weight: 800;
+  color: var(--giallogtv);
+  text-align: center;
+}
+
+.pilot-number-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.pilot-number-circle:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.team-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.team-logo.invert-colors {
+  filter: invert(1);
+}
+
+.pilot-name {
+  font-weight: 600;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px; /* Aumentato da 240px */
+}
+
+.pilot-team {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pilot-points {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--giallogtv);
+  text-align: center;
+  background: rgba(245, 255, 60, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(245, 255, 60, 0.3);
+  min-width: 60px;
+  display: inline-block;
+}
+
+/* Classifica team - Design Minimal */
+.team-ranking-item {
+  display: grid;
+  grid-template-columns: 50px 20px 1fr 80px;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.team-ranking-item:hover {
+  background: rgba(245, 255, 60, 0.08);
+  border-color: rgba(245, 255, 60, 0.2);
+  transform: none; /* Rimuovo spostamento */
+}
+
+.team-position {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: var(--giallogtv);
+  text-align: center;
+  grid-column: 1;
+}
+
+.team-color-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  grid-column: 2;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-name {
+  font-size: 1em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  grid-column: 3;
+}
+
+.team-points {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-align: center;
+  background: rgba(245, 255, 60, 0.1);
+  padding: 6px 12px;
+  border-radius: 15px;
+  border: 1px solid rgba(245, 255, 60, 0.3);
+  grid-column: 4;
+  justify-self: center;
+}
+
+.team-pilots-list {
+  display: none; /* Nascosto su mobile e desktop */
+}
+
+.mini-pilot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.mini-pilot:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(3px);
+}
+
+.mini-pilot-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  color: #fff;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mini-pilot-name {
+  font-weight: 500;
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Top 10 Home */
+.top10-home {
+  background: linear-gradient(135deg, rgba(245, 255, 60, 0.1) 0%, rgba(245, 255, 60, 0.05) 100%);
+  border: 1px solid rgba(245, 255, 60, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+}
+
+.top10-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  border-bottom: 1px solid rgba(245, 255, 60, 0.2);
+}
+
+.top10-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.top10-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.top10-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.top10-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.top10-item:hover {
+  background: rgba(245, 255, 60, 0.08);
+  border-color: rgba(245, 255, 60, 0.3);
+  transform: translateX(5px);
+}
+
+.top10-item.podium {
+  background: linear-gradient(135deg, rgba(245, 255, 60, 0.15) 0%, rgba(245, 255, 60, 0.08) 100%);
+  border-color: rgba(245, 255, 60, 0.4);
+}
+
+.top10-position {
+  background: var(--giallogtv);
+  color: #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.top10-position.podium {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.top10-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.top10-points {
+  background: rgba(245, 255, 60, 0.1);
+  color: var(--giallogtv);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1em;
+  min-width: 60px;
+  text-align: center;
+  border: 1px solid rgba(245, 255, 60, 0.3);
+  display: inline-block;
+}
+
+/* Responsive classifiche */
+@media (max-width: 768px) {
+  .pilot-ranking-item {
+    grid-template-columns: 40px 35px 1fr 50px;
+    gap: 6px;
+    padding: 8px 14px;
+  }
+  
+  .pilot-team {
+    display: none; /* Nasconde il nome team su mobile */
+  }
+  
+  .team-ranking-item {
+    padding: 8px 10px;
+    margin-bottom: 6px;
+  }
+  
+  .team-position {
+    font-size: 1em;
+  }
+  
+  .team-color-indicator {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .team-name {
+    font-size: 0.9em;
+  }
+  
+  .team-points {
+    font-size: 0.85em;
+    padding: 4px 8px;
+  }
+  
+  .pilot-name {
+    max-width: 180px; /* Aumentato da 150px */
+  }
+  
+  .pilot-team {
+    max-width: 160px; /* Aumentato da 130px */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .team-pilots-list {
+    display: none; /* Nascosto su mobile e desktop */
+  }
+  
+  .top10-item {
+    padding: 0;
+    margin: 0;
+    gap: 6px;
+  }
+  
+  .top10-home .classification-table {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .accordion-header {
+    padding: 12px 15px;
+    min-height: 50px; /* Altezza minima ridotta */
+    touch-action: manipulation; /* Ottimizzazione touch */
+    flex-wrap: wrap; /* Permette al testo di andare a capo */
+    align-content: center; /* Centra il contenuto */
+    justify-content: center; /* Centra tutto */
+  }
+  
+  .accordion-title {
+    font-size: 0.95em; /* Leggermente più piccolo su mobile */
+    text-align: center; /* Centra il titolo */
+    width: 100%; /* Occupa tutta la larghezza */
+    margin-bottom: 3px; /* Spazio ridotto dal subtitle */
+    line-height: 1.2; /* Altezza linea ridotta */
+  }
+  
+  .accordion-subtitle {
+    font-size: 0.75em; /* Molto più piccolo su mobile */
+    text-align: center;
+    width: 100%;
+  }
+  
+  .classification-table {
+    padding: 0px;
+  }
+  
+  .mini-pilot {
+    padding: 4px 6px;
+    gap: 4px;
+  }
+  
+  .mini-pilot-number {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7em;
+  }
+  
+  .mini-pilot-name {
+    font-size: 0.7em;
+  }
+}
 @media (max-width: 768px) {
   .team-piloti-container {
     grid-template-columns: 1fr;

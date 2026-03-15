@@ -145,21 +145,10 @@
             </div> -->
 
 
-            <div class="antibox">
-                <div class="titolino-sx">Classifica</div>
-                <div class="titolino-dx">Top 10</div>
-            </div>
+
             <div class="table-container">
                 <table class="responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Pos.</th>
-                            <th>Id Pilota</th>
-                            <th>Pti</th>
 
-
-                        </tr>
-                    </thead>
                     <tbody id="classifica-short-body">
                         <tr>
                             <td colspan="4" style="text-align: center; padding: 20px;">
@@ -167,17 +156,7 @@
                             </td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" style="background-color: var(--grigio-captions);">
-                                <div class="section-link">
-                                    <a href="#classifica" class="menu-link"
-                                        style="color:white; text-decoration: none; font-weight: 700; font-size: 1.2em; justify-content: right;">
-                                        Classifica completa 🔗</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tfoot>
+
                 </table>
             </div>
 
@@ -276,24 +255,11 @@
 
         <section id="classifica" class="section">
             <div class="table-container">
-                <table class="responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Pos.</th>
-                            <th>Id Pilota</th>
-                            <th>Pti</th>
-
-
-                        </tr>
-                    </thead>
-                    <tbody id="classifica-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Le 4 classifiche saranno generate dinamicamente -->
+                <div id="classifica-generale-piloti"></div>
+                <div id="classifica-generale-team"></div>
+                <div id="classifica-jgtv-piloti"></div>
+                <div id="classifica-non-jgtv-piloti"></div>
             </div>
         </section>
         <section id="calendario" class="section">
