@@ -208,6 +208,285 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param {number[]} [columnIndices] Gli indici delle colonne (base 0) da visualizzare.
  * Se non specificato, vengono visualizzate TUTTE le colonne.
  */
+/**
+ * Carica e visualizza l'intero calendario con stile next-race
+ * @param {string} spreadsheetUrl URL del Google Sheet CSV
+ */
+async function loadCalendar(spreadsheetUrl) {
+  const container = document.getElementById("calendar-body");
+
+  if (!container) {
+    console.error('Elemento "calendar-body" non trovato.');
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status} (${response.statusText})`);
+    }
+
+    const csvText = await response.text();
+
+    // Parsing CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div class="race-item"><div style="text-align: center; padding: 15px;">Nessuna gara trovata</div></div>';
+      return;
+    }
+
+    const allDataRows = rows.slice(1); // Salta l'intestazione
+    let html = '';
+
+    // Genera HTML per ogni gara
+    allDataRows.forEach((raceData, index) => {
+      // Colonne: [0]gara, [1]data, [2]circuito, [3]nazione, [4]altre info
+      const gara = raceData[0] || '';
+      const data = raceData[1] || '';
+      const circuito = raceData[2] || '';
+      const nazione = raceData[3] || '';
+      const altreInfo = raceData[4] || '';
+
+      let circuitLogo = '';
+
+      // Prepara il logo del circuito se esiste
+      if (circuito) {
+        // Mapping per nomi comuni che potrebbero non corrispondere
+        const circuitMapping = {
+          'daytona': 'daytona',
+          'autopolis': 'autopolis', 
+          'deep forest': 'deep-forest',
+          'dragon trail': 'dragon',
+          'fuji': 'fuji',
+          'interlagos': 'interlagos',
+          'laguna seca': 'lagunaseca',
+          'laguna seca': 'lagunaseca',
+          'monza': 'monza',
+          'mount panorama': 'mountpanorama',
+          'mount panorama': 'mountpanorama',
+          'red bull ring': 'rbr',
+          'rbr': 'rbr',
+          'sardegna': 'sardegna',
+          'spa': 'spa',
+          'spa francorchamps': 'spa',
+          'suzuka': 'suzuka',
+          'tokyo': 'tokyo',
+          'watkins glen': 'watkins',
+          'watkins': 'watkins',
+          'yas marina': 'yasmarina',
+          'yas marina': 'yasmarina'
+        };
+
+        // Pulisci e normalizza il nome del circuito
+        const cleanName = circuito.toLowerCase().trim();
+        const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
+        
+        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 180px; height: 50px; object-fit: contain; display: block; margin: 10px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8em; margin-top: 10px;">🛣️ ${circuito}</div>`;
+      }
+
+      // Layout compatto e mobile-friendly per ogni gara
+      html += `
+        <div class="race-item">
+          <div style="text-align: center; padding: 8px;">
+            <!-- Header Gara -->
+            <div style="margin-bottom: 8px;">
+              <div style="font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+                Gara ${index + 1}
+              </div>
+              <div style="font-size: 1.4em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px;">
+                ${gara || 'N/D'}
+              </div>
+            </div>
+            
+            <!-- Data -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; background: rgba(191,239,255,0.1); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(191,239,255,0.2);">
+              <span style="font-size: 1em;">📅</span>
+              <span style="font-size: 0.9em; font-weight: 600; color: rgba(255,255,255,0.9);">${data || 'N/D'}</span>
+            </div>
+            
+            <!-- Logo Circuit -->
+            ${circuito ? `
+              <div style="margin-bottom: 8px;">
+                ${circuitLogo}
+              </div>
+            ` : ''}
+            
+            <!-- Info -->
+            ${altreInfo && altreInfo.trim() !== '' ? `
+              <div style="background: rgba(255,255,255,0.05); padding: 6px 10px; border-radius: 6px; border-left: 2px solid var(--giallogtv);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.9em;">ℹ️</span>
+                  <span style="font-size: 0.8em; color: rgba(255,255,255,0.8);">${altreInfo}</span>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+
+  } catch (error) {
+    console.error('Errore nel caricamento del calendario:', error);
+    container.innerHTML = '<div class="race-item"><div style="text-align: center; padding: 15px;">Errore nel caricamento</div></div>';
+  }
+}
+
+/**
+ * Carica e visualizza la prossima gara con stile top10
+ * @param {string} spreadsheetUrl URL del Google Sheet CSV
+ * @param {number} rowIndex Indice della riga (1-based)
+ */
+async function loadNextRace(spreadsheetUrl, rowIndex) {
+  const container = document.getElementById("prossima-gara-body");
+
+  if (!container) {
+    console.error('Elemento "prossima-gara-body" non trovato.');
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status} (${response.statusText})`);
+    }
+
+    const csvText = await response.text();
+
+    // Parsing CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Nessuna gara trovata</div></div></div>';
+      return;
+    }
+
+    const header = rows[0];
+    const allDataRows = rows.slice(1);
+    const index0Based = rowIndex - 1;
+
+    if (index0Based >= 0 && index0Based < allDataRows.length) {
+      const raceData = allDataRows[index0Based];
+      
+      // Colonne: [0]gara, [1]data, [2]circuito, [3]nazione, [4]altre info
+      const gara = raceData[0] || '';
+      const data = raceData[1] || '';
+      const circuito = raceData[2] || '';
+      const nazione = raceData[3] || '';
+      const altreInfo = raceData[4] || '';
+
+      // Genera HTML con stile top10 - Layout mobile-first moderno
+      let html = '';
+      let circuitLogo = '';
+
+      // Prepara il logo del circuito se esiste
+      if (circuito) {
+        // Mapping per nomi comuni che potrebbero non corrispondere
+        const circuitMapping = {
+          'daytona': 'daytona',
+          'autopolis': 'autopolis', 
+          'deep forest': 'deep-forest',
+          'dragon trail': 'dragon',
+          'fuji': 'fuji',
+          'interlagos': 'interlagos',
+          'laguna seca': 'lagunaseca',
+          'laguna seca': 'lagunaseca',
+          'monza': 'monza',
+          'mount panorama': 'mountpanorama',
+          'mount panorama': 'mountpanorama',
+          'red bull ring': 'rbr',
+          'rbr': 'rbr',
+          'sardegna': 'sardegna',
+          'spa': 'spa',
+          'spa francorchamps': 'spa',
+          'suzuka': 'suzuka',
+          'tokyo': 'tokyo',
+          'watkins glen': 'watkins',
+          'watkins': 'watkins',
+          'yas marina': 'yasmarina',
+          'yas marina': 'yasmarina'
+        };
+
+        // Pulisci e normalizza il nome del circuito
+        const cleanName = circuito.toLowerCase().trim();
+        const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
+        
+        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 200px; height: 60px; object-fit: contain; display: block; margin: 15px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-top: 10px;">🛣️ ${circuito}</div>`;
+      }
+
+      // Layout compatto e mobile-friendly
+      html += `
+        <div style="text-align: center; padding: 10px;">
+          <!-- Header Gara -->
+          <div style="margin-bottom: 10px;">
+            <div style="font-size: 0.9em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              Gara
+            </div>
+            <div style="font-size: 2em; font-weight: 800; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px;">
+              ${gara || 'N/D'}
+            </div>
+          </div>
+          
+          <!-- Data -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; background: rgba(191,239,255,0.1); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(191,239,255,0.2);">
+            <span style="font-size: 1.2em;">📅</span>
+            <span style="font-size: 1em; font-weight: 600; color: rgba(255,255,255,0.9);">${data || 'N/D'}</span>
+          </div>
+          
+          <!-- Logo Circuit -->
+          ${circuito ? `
+            <div style="margin-bottom: 10px;">
+              ${circuitLogo}
+            </div>
+          ` : ''}
+          
+          <!-- Info -->
+          ${altreInfo && altreInfo.trim() !== '' ? `
+            <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; border-left: 3px solid var(--giallogtv);">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.1em;">ℹ️</span>
+                <span style="font-size: 0.9em; color: rgba(255,255,255,0.8);">${altreInfo}</span>
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      container.innerHTML = html;
+    } else {
+      container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Gara non trovata</div></div></div>';
+    }
+
+  } catch (error) {
+    console.error('Errore nel caricamento della prossima gara:', error);
+    container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Errore nel caricamento</div></div></div>';
+  }
+}
+
 async function loadAndCreateHtmlTable(
   spreadsheetUrl,
   tbodyId,
@@ -588,7 +867,7 @@ async function loadLobbyCards(spreadsheetUrl) {
           <div class="lobby-info-section">
             ${host ? `
               <div class="lobby-host">
-                <div class="lobby-host-icon">🏠</div>
+                <div class="lobby-host-icon">👤</div>
                 <div class="lobby-host-content">
                   <div class="lobby-host-label">Host</div>
                   <div class="lobby-host-name">${escapeHtml(host)}</div>
@@ -1228,10 +1507,8 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAndCreateHtmlTable(URL_PEN, "penalita-body", []);
 
     const URL_CALENDAR = config.googleSheets.worldchampionship.calendario;
-    loadAndCreateHtmlTable(URL_CALENDAR, "prossima-gara-body", [0, 3, 2, 1, 4], {
-      rowIndex: prossimaGara,
-    });
-    loadAndCreateHtmlTable(URL_CALENDAR, "calendar-body", [0, 3, 2, 1, 4]);
+    loadNextRace(URL_CALENDAR, prossimaGara);
+    loadCalendar(URL_CALENDAR);
 
     const URL_OPZIONI = config.googleSheets.worldchampionship.opzioniLobby;
     loadDataAndGenerateCards(URL_OPZIONI);

@@ -491,7 +491,7 @@ td.totalone {
   }
   .accordion {
     font-size: 16px;
-    padding: 20px;
+    padding: 0px;
     margin-bottom: 0;
   }
   /* .accordion:hover {
@@ -1963,13 +1963,14 @@ body#worldchampionship {
 }
 
 .lobby-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px 25px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .lobby-card::before {
@@ -1983,18 +1984,19 @@ body#worldchampionship {
 }
 
 .lobby-card:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(191, 239, 255, 0.1);
-  border-color: rgba(191, 239, 255, 0.3);
 }
 
 .lobby-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .lobby-datetime {
@@ -2020,14 +2022,16 @@ body#worldchampionship {
 }
 
 .lobby-category {
-  background: linear-gradient(135deg, var(--giallogtv) 0%, #bbc22d 100%);
-  color: #000;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.9em;
+  background: rgba(191, 239, 255, 0.1);
+  color: var(--giallogtv);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  display: inline-block;
 }
 
 .lobby-organizer {
@@ -2047,31 +2051,29 @@ body#worldchampionship {
   gap: 15px;
   margin-bottom: 20px;
 }
-
 .lobby-host {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 15px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  border-left: 4px solid #4a90e2;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .lobby-host:hover {
-  background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0.05) 100%);
-  transform: translateY(-2px);
-  border-color: #4a90e2;
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .lobby-host-icon {
-  font-size: 1.5em;
-  background: #4a90e2;
-  color: white;
-  width: 40px;
-  height: 40px;
+  font-size: 1.2em;
+  background: rgba(191, 239, 255, 0.15);
+  color: #87ceeb;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2092,65 +2094,41 @@ body#worldchampionship {
 }
 
 .lobby-host-name {
-  color: #4a90e2;
+  color: #87ceeb;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .lobby-live {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 15px;
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.02) 100%);
-  border: 1px solid rgba(255, 0, 0, 0.2);
-  border-radius: 12px;
-  border-left: 4px solid #ff0000;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .lobby-live:hover {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0.05) 100%);
-  transform: translateY(-2px);
-  border-color: #ff0000;
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateY(-1px);
 }
 
-.lobby-live::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 0, 0, 0.1) 100%);
-  pointer-events: none;
-}
 
 .lobby-live-icon {
-  font-size: 1.5em;
-  background: #ff0000;
-  color: white;
-  width: 40px;
-  height: 40px;
+  font-size: 1.2em;
+  background: rgba(191, 239, 255, 0.15);
+  color: #87ceeb;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
-  }
 }
 
 .lobby-live-content {
@@ -2166,20 +2144,21 @@ body#worldchampionship {
 }
 
 .lobby-live-name {
-  color: #ff4444;
+  color: #87ceeb;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .lobby-live-badge {
-  background: #ff0000;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
+  background: rgba(191, 239, 255, 0.2);
+  color: #87ceeb;
+  padding: 3px 6px;
+  border-radius: 4px;
   font-size: 0.7em;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(191, 239, 255, 0.3);
   animation: blink 1.5s infinite;
   margin-left: auto;
 }
@@ -2913,6 +2892,205 @@ body#worldchampionship {
   font-weight: 500;
   font-size: 0.85em;
   color: rgba(255, 255, 255, 0.8);
+}
+
+/* Calendar Home - Stile basato su Next Race */
+.calendar-home {
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+}
+
+.calendar-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.calendar-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.calendar-content {
+  padding: 5px;
+}
+
+/* Stile per le singole gare nel calendario */
+.race-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.race-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateX(3px);
+}
+
+/* Next Race Home - Stile basato su Top 10 */
+.next-race-home {
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+
+.next-race-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+}
+
+.next-race-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.next-race-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.next-race-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.next-race-content {
+  padding: 5px;
+}
+
+.next-race-footer {
+  padding: 15px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.next-race-footer a {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.next-race-footer a:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
+}
+
+/* Stile per le informazioni della gara */
+.race-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.race-info-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.race-info-icon {
+  background: var(--giallogtv);
+  color: #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  flex-shrink: 0;
+}
+
+.race-info-content {
+  flex: 1;
+}
+
+.race-info-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.race-info-value {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.race-circuit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.race-circuit img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .next-race-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .race-info-item {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+  
+  .race-circuit img {
+    width: 50px;
+  }
 }
 
 /* Top 10 Home */
