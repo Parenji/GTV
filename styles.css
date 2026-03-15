@@ -1979,13 +1979,13 @@ body#worldchampionship {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--giallogtv) 0%, rgba(245, 255, 60, 0.6) 100%);
+  background: linear-gradient(90deg, var(--giallogtv) 0%, rgba(191, 239, 255, 0.6) 100%);
 }
 
 .lobby-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(245, 255, 60, 0.1);
-  border-color: rgba(245, 255, 60, 0.3);
+  box-shadow: 0 10px 30px rgba(191, 239, 255, 0.1);
+  border-color: rgba(191, 239, 255, 0.3);
 }
 
 .lobby-card-header {
@@ -2271,8 +2271,8 @@ body#worldchampionship {
 }
 
 .lobby-pilot:hover {
-  background: rgba(245, 255, 60, 0.1);
-  border-color: rgba(245, 255, 60, 0.3);
+  background: rgba(191, 239, 255, 0.1);
+  border-color: rgba(191, 239, 255, 0.3);
   transform: scale(1.05);
 }
 
@@ -2676,8 +2676,8 @@ body#worldchampionship {
 }
 
 .accordion:hover {
-  background: linear-gradient(135deg, rgba(245, 255, 60, 0.15) 0%, rgba(245, 255, 60, 0.08) 100%);
-  border-color: rgba(245, 255, 60, 0.3);
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.15) 0%, rgba(191, 239, 255, 0.08) 100%);
+  border-color: rgba(191, 239, 255, 0.3);
 }
 
 .accordion-header {
@@ -2719,7 +2719,7 @@ body#worldchampionship {
 .panel {
   display: none;
   background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(245, 255, 60, 0.1);
+  border-top: 1px solid rgba(191, 239, 255, 0.1);
   margin: 0; /* Rimuovo margini che causano overflow */
   padding: 0; /* Padding gestito dal contenitore interno */
 }
@@ -2747,7 +2747,7 @@ body#worldchampionship {
 }
 
 .pilot-ranking-item:hover {
-  background: rgba(245, 255, 60, 0.08);
+  background: rgba(191, 239, 255, 0.08);
   transform: translateX(5px);
 }
 
@@ -2811,10 +2811,10 @@ body#worldchampionship {
   font-size: 1.1em;
   color: var(--giallogtv);
   text-align: center;
-  background: rgba(245, 255, 60, 0.1);
+  background: rgba(191, 239, 255, 0.1);
   padding: 8px 15px;
   border-radius: 20px;
-  border: 1px solid rgba(245, 255, 60, 0.3);
+  border: 1px solid rgba(191, 239, 255, 0.3);
   min-width: 60px;
   display: inline-block;
 }
@@ -2834,8 +2834,8 @@ body#worldchampionship {
 }
 
 .team-ranking-item:hover {
-  background: rgba(245, 255, 60, 0.08);
-  border-color: rgba(245, 255, 60, 0.2);
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
   transform: none; /* Rimuovo spostamento */
 }
 
@@ -2867,10 +2867,10 @@ body#worldchampionship {
   font-weight: 700;
   color: var(--giallogtv);
   text-align: center;
-  background: rgba(245, 255, 60, 0.1);
+  background: rgba(191, 239, 255, 0.1);
   padding: 6px 12px;
   border-radius: 15px;
-  border: 1px solid rgba(245, 255, 60, 0.3);
+  border: 1px solid rgba(191, 239, 255, 0.3);
   grid-column: 4;
   justify-self: center;
 }
@@ -2917,8 +2917,8 @@ body#worldchampionship {
 
 /* Top 10 Home */
 .top10-home {
-  background: linear-gradient(135deg, rgba(245, 255, 60, 0.1) 0%, rgba(245, 255, 60, 0.05) 100%);
-  border: 1px solid rgba(245, 255, 60, 0.2);
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  border: 1px solid rgba(191, 239, 255, 0.2);
   border-radius: 15px;
   padding: 0px 0px;
 }
@@ -2929,7 +2929,7 @@ body#worldchampionship {
   align-items: center;
 
   padding: 20px;
-  border-bottom: 1px solid rgba(245, 255, 60, 0.2);
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 
 .top10-title {
@@ -2964,14 +2964,14 @@ body#worldchampionship {
 }
 
 .top10-item:hover {
-  background: rgba(245, 255, 60, 0.08);
-  border-color: rgba(245, 255, 60, 0.3);
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.3);
   transform: translateX(5px);
 }
 
 .top10-item.podium {
-  background: linear-gradient(135deg, rgba(245, 255, 60, 0.15) 0%, rgba(245, 255, 60, 0.08) 100%);
-  border-color: rgba(245, 255, 60, 0.4);
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.15) 0%, rgba(191, 239, 255, 0.08) 100%);
+  border-color: rgba(191, 239, 255, 0.4);
 }
 
 .top10-position {
@@ -3002,7 +3002,7 @@ body#worldchampionship {
 }
 
 .top10-points {
-  background: rgba(245, 255, 60, 0.1);
+  background: rgba(191, 239, 255, 0.1);
   color: var(--giallogtv);
   padding: 8px 15px;
   border-radius: 20px;
@@ -3010,7 +3010,7 @@ body#worldchampionship {
   font-size: 1em;
   min-width: 60px;
   text-align: center;
-  border: 1px solid rgba(245, 255, 60, 0.3);
+  border: 1px solid rgba(191, 239, 255, 0.3);
   display: inline-block;
 }
 
