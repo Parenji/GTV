@@ -88,7 +88,7 @@ button {
 
 #breadcrumb {
   color: black;
-  margin: 20px 0px 10px;
+  margin: 10px 0px 10px;
   background-color: var(--giallogtv);
   height: 30px;
   align-content: center;
@@ -124,7 +124,7 @@ button {
   z-index: 2;
   text-align: center;
   font-weight: 500;
-  padding: 20px;
+  padding: 20px 20px 0px;
   text-decoration: none;
 }
 .index {
