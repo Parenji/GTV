@@ -1302,7 +1302,9 @@ function openPilotModal(fullRow, headerArr) {
       const champSlug = slugify(it.champName);
       const champImgPng = `images/Campionati/${champSlug}.png`;
       const champImgSvg = `images/Campionati/${champSlug}.svg`;
-      const brandSlug = slugify(it.brand);
+      
+      // Use same normalization logic as worldchampionship for car brands
+      const brandSlug = it.brand.toLowerCase().replace(/[^a-z0-9]+/g, "");
       const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
       const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
 
