@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-<!-- 
+            <!-- 
             <div class="antibox">
                 <div class="titolino-sx">WORLD CHAMPIONSHIP</div>
                 <div class="titolino-dx">Vincitore</div>
@@ -151,35 +151,19 @@
         </section>
 
         <section id="lobby" class="section">
-            <div class="titoletto" id="lobby-next-gara"></div>
-            <!-- <div class="table-container">
-                <table class="responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Promozioni</th>
-                            <th>Retrocessioni</th>
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody id="proret-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-
-            <div class="lobby-card-container" id="lobby-body">
-                <div class="lobby-card loading">
-                    <div class="loading-message">Caricamento dati in corso...</div>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Lobby</div>
+                    <div class="calendar-subtitle" id="lobby-next-gara"></div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="lobby-body" class="calendar-content lobby-card-container">
+                        <div class="lobby-card loading">
+                            <div class="loading-message">Caricamento dati in corso...</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
         </section>
 
 
@@ -204,38 +188,42 @@
 
         <section id="penalita" class="section">
             <div class="pdf-button-container">
-
                 <button class="pdf-button"
                     onclick="window.open(window.GTV_CONFIG.googleForms.worldchampionship.reclamiGara, '_blank')">
                     Modulo reclami
                 </button>
             </div>
-            <div class="titoletto" id="pen-ult-gara"></div>
-            <div class="table-container">
-                <table class="responsive-table mobile-table lobby">
-                    <thead>
-                        <tr>
-                            <th>Pilota</th>
-                            <th>Penalità</th>
-                            <th>Gara</th>
-                            <th>Giro</th>
-                            <th>Curva</th>
-                            <th>Punti patente</th>
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody id="penalita-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Direzione Gara</div>
+                    <div class="calendar-subtitle" id="pen-ult-gara"></div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="table-container">
+                            <table class="responsive-table mobile-table lobby">
+                                <thead>
+                                    <tr>
+                                        <th>Pilota</th>
+                                        <th>Penalità</th>
+                                        <th>Gara</th>
+                                        <th>Giro</th>
+                                        <th>Curva</th>
+                                        <th>Punti patente</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="penalita-body">
+                                    <tr>
+                                        <td colspan="4" style="text-align: center; padding: 20px;">
+                                            Caricamento dati in corso...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </section>
 
 
@@ -264,9 +252,15 @@
         </section>
 
         <section id="team-piloti" class="section">
-            <div class="titoletto">Team e Piloti</div>
-            <div id="team-piloti-container" class="team-piloti-container">
-                <div class="loading-message">Caricamento dati in corso...</div>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Team e Piloti</div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="team-piloti-container" class="calendar-content team-piloti-container">
+                        <div class="loading-message">Caricamento dati in corso...</div>
+                    </div>
+                </div>
             </div>
         </section>
 

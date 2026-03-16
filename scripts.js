@@ -1090,24 +1090,25 @@ function generateTop10Home(data) {
 
 // Funzione per ottenere colore team
 function getTeamColor(teamName) {
-  const teamColors = {
-    'Swiffer': '#8B7500',
-    'Badboys': '#4B0082',
-    'Tekkadan': '#FFFFFF',
-    'Grom': '#8B0000',
-    'Drifter': '#26b3ff',
-    'Lentiviolenti': '#00FF7F',
-    'Gliscappatidicasa': '#FFFF00',
-    'Rebellion': '#FF1493',
-    'Newgeneration': '#0096d6',
-    'Frauzer': '#D3D3D3',
-    'Afmotorsport': '#191970',
-    'Esagerati': '#FF4500',
-    'Pasa_racing': '#8A2BE2',
-    'Swatclub': '#87CEFA',
-    'Team15': 'var(--giallogtv)'
+  // Mappa team name to CSS variable name
+  const teamVariableMap = {
+    'Swiffer': 'var(--team-swiffer)',
+    'Badboys': 'var(--team-badboys)',
+    'Tekkadan': 'var(--team-tekkadan)',
+    'Grom': 'var(--team-grom)',
+    'Drifter': 'var(--team-drifter)',
+    'Lentiviolenti': 'var(--team-lentiviolenti)',
+    'Gliscappatidicasa': 'var(--team-gliscappatidicasa)',
+    'Rebellion': 'var(--team-rebellion)',
+    'Newgeneration': 'var(--team-newgeneration)',
+    'Frauzer': 'var(--team-frauzer)',
+    'Afmotorsport': 'var(--team-afmotorsport)',
+    'Esagerati': 'var(--team-esagerati)',
+    'Pasa_racing': 'var(--team-pasa-racing)',
+    'Swatclub': 'var(--team-swatclub)',
+    'Team15': 'var(--team-team15)'
   };
-  return teamColors[teamName] || 'var(--giallogtv)';
+  return teamVariableMap[teamName] || 'var(--team-team15)';
 }
 
 // Funzione per toggle accordion

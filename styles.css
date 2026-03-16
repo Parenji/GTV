@@ -9,6 +9,23 @@
   --rossotlm: #810101;
   --giallogtv: #f5ff3c;
   --giallogtvhover: #bbc22d;
+  
+  /* Colori Team */
+  --team-swiffer: #8B7500;
+  --team-badboys: #4B0082;
+  --team-tekkadan: #FFFFFF;
+  --team-grom: #8B0000;
+  --team-drifter: #26b3ff;
+  --team-lentiviolenti: #00FF7F;
+  --team-gliscappatidicasa: #FFFF00;
+  --team-rebellion: #FF1493;
+  --team-newgeneration: #0096d6;
+  --team-frauzer: #D3D3D3;
+  --team-afmotorsport: #191970;
+  --team-esagerati: #FF4500;
+  --team-pasa-racing: #0047AB;
+  --team-swatclub: #87CEFA;
+  --team-team15: var(--giallogtv);
 }
 
 /* ========================================
@@ -2314,119 +2331,119 @@ body#worldchampionship {
 
 /* Colori personalizzati per ogni team */
 .team-card[data-team="gtvswiffer"] {
-  border-color: #8B7500 !important;
+  border-color: var(--team-swiffer) !important;
 }
 
 .team-card[data-team="gtvswiffer"]::before {
-  background: linear-gradient(90deg, #8B7500 0%, #A68B00 100%) !important;
+  background: linear-gradient(90deg, var(--team-swiffer) 0%, #A68B00 100%) !important;
 }
 
 .team-card[data-team="gtvbadboys"] {
-  border-color: #4B0082 !important;
+  border-color: var(--team-badboys) !important;
 }
 
 .team-card[data-team="gtvbadboys"]::before {
-  background: linear-gradient(90deg, #4B0082 0%, #6A0DAD 100%) !important;
+  background: linear-gradient(90deg, var(--team-badboys) 0%, #6A0DAD 100%) !important;
 }
 
 .team-card[data-team="gtvtekkadan"] {
-  border-color: #FFFFFF !important;
+  border-color: var(--team-tekkadan) !important;
 }
 
 .team-card[data-team="gtvtekkadan"]::before {
-  background: linear-gradient(90deg, #FFFFFF 0%, #F0F0F0 100%) !important;
+  background: linear-gradient(90deg, var(--team-tekkadan) 0%, #F0F0F0 100%) !important;
 }
 
 .team-card[data-team="gtvgrom"] {
-  border-color: #8B0000 !important;
+  border-color: var(--team-grom) !important;
 }
 
 .team-card[data-team="gtvgrom"]::before {
-  background: linear-gradient(90deg, #8B0000 0%, #B22222 100%) !important;
+  background: linear-gradient(90deg, var(--team-grom) 0%, #B22222 100%) !important;
 }
 
 .team-card[data-team="gtvdrifter"] {
-  border-color: #26b3ff !important;
+  border-color: var(--team-drifter) !important;
 }
 
 .team-card[data-team="gtvdrifter"]::before {
-  background: linear-gradient(90deg, #26b3ff 0%, #26b3ff 100%) !important;
+  background: linear-gradient(90deg, var(--team-drifter) 0%, var(--team-drifter) 100%) !important;
 }
 
 .team-card[data-team="gtvlentiviolenti"] {
-  border-color: #00FF7F !important;
+  border-color: var(--team-lentiviolenti) !important;
 }
 
 .team-card[data-team="gtvlentiviolenti"]::before {
-  background: linear-gradient(90deg, #00FF7F 0%, #40E0D0 100%) !important;
+  background: linear-gradient(90deg, var(--team-lentiviolenti) 0%, #40E0D0 100%) !important;
 }
 
 .team-card[data-team="gtvgliscappatidicasa"] {
-  border-color: #FFFF00 !important;
+  border-color: var(--team-gliscappatidicasa) !important;
 }
 
 .team-card[data-team="gtvgliscappatidicasa"]::before {
-  background: linear-gradient(90deg, #FFFF00 0%, #FFD700 100%) !important;
+  background: linear-gradient(90deg, var(--team-gliscappatidicasa) 0%, #FFD700 100%) !important;
 }
 
 .team-card[data-team="gtvrebellion"] {
-  border-color: #FF1493 !important;
+  border-color: var(--team-rebellion) !important;
 }
 
 .team-card[data-team="gtvrebellion"]::before {
-  background: linear-gradient(90deg, #FF1493 0%, #FF69B4 100%) !important;
+  background: linear-gradient(90deg, var(--team-rebellion) 0%, #FF69B4 100%) !important;
 }
 
 .team-card[data-team="gtvnewgeneration"] {
-  border-color: #0096d6 !important;
+  border-color: var(--team-newgeneration) !important;
 }
 
 .team-card[data-team="gtvnewgeneration"]::before {
-  background: linear-gradient(90deg, #0096d6 0%, #0096d6 100%) !important;
+  background: linear-gradient(90deg, var(--team-newgeneration) 0%, var(--team-newgeneration) 100%) !important;
 }
 
 .team-card[data-team="gtvfrauzer"] {
-  border-color: #D3D3D3 !important;
+  border-color: var(--team-frauzer) !important;
 }
 
 .team-card[data-team="gtvfrauzer"]::before {
-  background: linear-gradient(90deg, #D3D3D3 0%, #E5E5E5 100%) !important;
+  background: linear-gradient(90deg, var(--team-frauzer) 0%, #E5E5E5 100%) !important;
 }
 
 .team-card[data-team="gtvafmotorsport"] {
-  border-color: #191970 !important;
+  border-color: var(--team-afmotorsport) !important;
 }
 
 .team-card[data-team="gtvafmotorsport"]::before {
-  background: linear-gradient(90deg, #191970 0%, #000080 100%) !important;
+  background: linear-gradient(90deg, var(--team-afmotorsport) 0%, #000080 100%) !important;
 }
 
 .team-card[data-team="gtvesagerati"] {
-  border-color: #FF4500 !important;
+  border-color: var(--team-esagerati) !important;
 }
 
 .team-card[data-team="gtvesagerati"]::before {
-  background: linear-gradient(90deg, #FF4500 0%, #FF6347 100%) !important;
+  background: linear-gradient(90deg, var(--team-esagerati) 0%, #FF6347 100%) !important;
 }
 
 .team-card[data-team="gtvpasa_racing"] {
-  border-color: #8A2BE2 !important;
+  border-color: var(--team-pasa-racing) !important;
 }
 
 .team-card[data-team="gtvpasa_racing"]::before {
-  background: linear-gradient(90deg, #8A2BE2 0%, #9370DB 100%) !important;
+  background: linear-gradient(90deg, var(--team-pasa-racing) 0%, #1E90FF 100%) !important;
 }
 
 .team-card[data-team="gtvswatclub"] {
-  border-color: #87CEFA !important;
+  border-color: var(--team-swatclub) !important;
 }
 
 .team-card[data-team="gtvswatclub"]::before {
-  background: linear-gradient(90deg, #87CEFA 0%, #B0E0E6 100%) !important;
+  background: linear-gradient(90deg, var(--team-swatclub) 0%, #B0E0E6 100%) !important;
 }
 
 .team-card[data-team="gtvteam15"] {
-  border-color: var(--giallogtv) !important;
+  border-color: var(--team-team15) !important;
 }
 
 .team-card[data-team="gtvteam15"]::before {
@@ -2435,65 +2452,65 @@ body#worldchampionship {
 
 /* Colori dei numeri piloti basati sui team */
 .pilot-number[data-team-color="gtvswiffer"] {
-  background: #8B7500 !important;
+  background: var(--team-swiffer) !important;
 }
 
 .pilot-number[data-team-color="gtvbadboys"] {
-  background: #4B0082 !important;
+  background: var(--team-badboys) !important;
 }
 
 .pilot-number[data-team-color="gtvtekkadan"] {
-  background: #FFFFFF !important;
+  background: var(--team-tekkadan) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvgrom"] {
-  background: #8B0000 !important;
+  background: var(--team-grom) !important;
 }
 
 .pilot-number[data-team-color="gtvdrifter"] {
-  background: #26b3ff !important;
+  background: var(--team-drifter) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvlentiviolenti"] {
-  background: #00FF7F !important;
+  background: var(--team-lentiviolenti) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvgliscappatidicasa"] {
-  background: #FFFF00 !important;
+  background: var(--team-gliscappatidicasa) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvrebellion"] {
-  background: #FF1493 !important;
+  background: var(--team-rebellion) !important;
 }
 
 .pilot-number[data-team-color="gtvnewgeneration"] {
-  background: #0096d6 !important;
+  background: var(--team-newgeneration) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvfrauzer"] {
-  background: #D3D3D3 !important;
+  background: var(--team-frauzer) !important;
   color: #000 !important;
 }
 
 .pilot-number[data-team-color="gtvafmotorsport"] {
-  background: #191970 !important;
+  background: var(--team-afmotorsport) !important;
 }
 
 .pilot-number[data-team-color="gtvesagerati"] {
-  background: #FF4500 !important;
+  background: var(--team-esagerati) !important;
 }
 
 .pilot-number[data-team-color="gtvpasa_racing"] {
-  background: #8A2BE2 !important;
+  background: var(--team-pasa-racing) !important;
 }
 
 .pilot-number[data-team-color="gtvswatclub"] {
-  background: #87CEFA !important;
+  background: var(--team-swatclub) !important;
   color: #000 !important;
 }
 
@@ -2504,59 +2521,59 @@ body#worldchampionship {
 
 /* Colori dei pilot-info - Design semplice */
 .pilot-info[data-team-color="gtvswiffer"] {
-  border-left: 3px solid #8B7500;
+  border-left: 3px solid var(--team-swiffer);
 }
 
 .pilot-info[data-team-color="gtvbadboys"] {
-  border-left: 3px solid #4B0082;
+  border-left: 3px solid var(--team-badboys);
 }
 
 .pilot-info[data-team-color="gtvtekkadan"] {
-  border-left: 3px solid #FFFFFF;
+  border-left: 3px solid var(--team-tekkadan);
 }
 
 .pilot-info[data-team-color="gtvgrom"] {
-  border-left: 3px solid #8B0000;
+  border-left: 3px solid var(--team-grom);
 }
 
 .pilot-info[data-team-color="gtvdrifter"] {
-  border-left: 3px solid #26b3ff;
+  border-left: 3px solid var(--team-drifter);
 }
 
 .pilot-info[data-team-color="gtvlentiviolenti"] {
-  border-left: 3px solid #00FF7F;
+  border-left: 3px solid var(--team-lentiviolenti);
 }
 
 .pilot-info[data-team-color="gtvgliscappatidicasa"] {
-  border-left: 3px solid #FFFF00;
+  border-left: 3px solid var(--team-gliscappatidicasa);
 }
 
 .pilot-info[data-team-color="gtvrebellion"] {
-  border-left: 3px solid #FF1493;
+  border-left: 3px solid var(--team-rebellion);
 }
 
 .pilot-info[data-team-color="gtvnewgeneration"] {
-  border-left: 3px solid #0096d6;
+  border-left: 3px solid var(--team-newgeneration);
 }
 
 .pilot-info[data-team-color="gtvfrauzer"] {
-  border-left: 3px solid #D3D3D3;
+  border-left: 3px solid var(--team-frauzer);
 }
 
 .pilot-info[data-team-color="gtvafmotorsport"] {
-  border-left: 3px solid #191970;
+  border-left: 3px solid var(--team-afmotorsport);
 }
 
 .pilot-info[data-team-color="gtvesagerati"] {
-  border-left: 3px solid #FF4500;
+  border-left: 3px solid var(--team-esagerati);
 }
 
 .pilot-info[data-team-color="gtvpasa_racing"] {
-  border-left: 3px solid #8A2BE2;
+  border-left: 3px solid var(--team-pasa-racing);
 }
 
 .pilot-info[data-team-color="gtvswatclub"] {
-  border-left: 3px solid #87CEFA;
+  border-left: 3px solid var(--team-swatclub);
 }
 
 .pilot-info[data-team-color="gtvteam15"] {
