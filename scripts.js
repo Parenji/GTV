@@ -250,6 +250,9 @@ async function loadCalendar(spreadsheetUrl) {
     const allDataRows = rows.slice(1); // Salta l'intestazione
     let html = '';
 
+    // Layout a 2 colonne per desktop
+    html += '<div class="calendar-grid-2-columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">';
+
     // Genera HTML per ogni gara
     allDataRows.forEach((raceData, index) => {
       // Colonne: [0]gara, [1]data, [2]circuito, [3]nazione, [4]altre info
@@ -293,27 +296,37 @@ async function loadCalendar(spreadsheetUrl) {
         const cleanName = circuito.toLowerCase().trim();
         const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
         
-        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 180px; height: 50px; object-fit: contain; display: block; margin: 10px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8em; margin-top: 10px;">🛣️ ${circuito}</div>`;
+        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 160px; height: 45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.7em; margin-top: 8px;">🛣️ ${circuito}</div>`;
       }
 
       // Layout compatto e mobile-friendly per ogni gara
+      // Prepara lo sfondo con la bandiera se esiste
+      let backgroundStyle = '';
+      if (nazione) {
+        // Normalizza il nome della nazione per il path del file
+        const nationSlug = nazione.toLowerCase().replace(/[^a-z0-9]+/g, "");
+        backgroundStyle = `background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/bandiere/flag-icons-main/flags/4x3/${nationSlug}.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;`;
+      } else {
+        backgroundStyle = 'background: rgba(255,255,255,0.08);';
+      }
+
       html += `
-        <div class="race-item">
-          <div style="text-align: center; padding: 8px;">
+        <div class="race-item" style="${backgroundStyle} backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px;">
+          <div style="text-align: center; padding: 10px;">
             <!-- Header Gara -->
             <div style="margin-bottom: 8px;">
-              <div style="font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-                Gara ${index + 1}
+              <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">
+                Gara
               </div>
-              <div style="font-size: 1.4em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px;">
+              <div style="font-size: 1.1em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">
                 ${gara || 'N/D'}
               </div>
             </div>
             
             <!-- Data -->
-            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; background: rgba(191,239,255,0.1); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(191,239,255,0.2);">
-              <span style="font-size: 1em;">📅</span>
-              <span style="font-size: 0.9em; font-weight: 600; color: rgba(255,255,255,0.9);">${data || 'N/D'}</span>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
+              <span style="font-size: 0.9em;">📅</span>
+              <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${data || 'N/D'}</span>
             </div>
             
             <!-- Logo Circuit -->
@@ -325,10 +338,10 @@ async function loadCalendar(spreadsheetUrl) {
             
             <!-- Info -->
             ${altreInfo && altreInfo.trim() !== '' ? `
-              <div style="background: rgba(255,255,255,0.05); padding: 6px 10px; border-radius: 6px; border-left: 2px solid var(--giallogtv);">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="font-size: 0.9em;">ℹ️</span>
-                  <span style="font-size: 0.8em; color: rgba(255,255,255,0.8);">${altreInfo}</span>
+              <div style="background: rgba(0,0,0,0.6); padding: 6px 10px; border-radius: 6px; border-left: 3px solid var(--giallogtv); backdrop-filter: blur(3px);">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="font-size: 0.8em;">ℹ️</span>
+                  <span style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${altreInfo}</span>
                 </div>
               </div>
             ` : ''}
@@ -336,6 +349,8 @@ async function loadCalendar(spreadsheetUrl) {
         </div>
       `;
     });
+
+    html += '</div>';
 
     container.innerHTML = html;
 
@@ -439,37 +454,47 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
       }
 
       // Layout compatto e mobile-friendly
+      // Prepara lo sfondo con la bandiera se esiste
+      let backgroundStyle = '';
+      if (nazione) {
+        // Normalizza il nome della nazione per il path del file
+        const nationSlug = nazione.toLowerCase().replace(/[^a-z0-9]+/g, "");
+        backgroundStyle = `background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/bandiere/flag-icons-main/flags/4x3/${nationSlug}.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;`;
+      } else {
+        backgroundStyle = 'background: rgba(255,255,255,0.08);';
+      }
+
       html += `
-        <div style="text-align: center; padding: 10px;">
+        <div style="${backgroundStyle} backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 15px; text-align: center;">
           <!-- Header Gara -->
-          <div style="margin-bottom: 10px;">
-            <div style="font-size: 0.9em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              Gara
+          <div style="margin-bottom: 15px;">
+            <div style="font-size: 0.9em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">
+              Prossima Gara
             </div>
-            <div style="font-size: 2em; font-weight: 800; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px;">
+            <div style="font-size: 2em; font-weight: 800; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">
               ${gara || 'N/D'}
             </div>
           </div>
           
           <!-- Data -->
-          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; background: rgba(191,239,255,0.1); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(191,239,255,0.2);">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; background: rgba(0,0,0,0.5); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
             <span style="font-size: 1.2em;">📅</span>
-            <span style="font-size: 1em; font-weight: 600; color: rgba(255,255,255,0.9);">${data || 'N/D'}</span>
+            <span style="font-size: 1em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${data || 'N/D'}</span>
           </div>
           
           <!-- Logo Circuit -->
           ${circuito ? `
-            <div style="margin-bottom: 10px;">
+            <div style="margin-bottom: 15px;">
               ${circuitLogo}
             </div>
           ` : ''}
           
           <!-- Info -->
           ${altreInfo && altreInfo.trim() !== '' ? `
-            <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; border-left: 3px solid var(--giallogtv);">
+            <div style="background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 8px; border-left: 3px solid var(--giallogtv); backdrop-filter: blur(3px);">
               <div style="display: flex; align-items: center; gap: 10px;">
                 <span style="font-size: 1.1em;">ℹ️</span>
-                <span style="font-size: 0.9em; color: rgba(255,255,255,0.8);">${altreInfo}</span>
+                <span style="font-size: 0.9em; color: rgba(255,255,255,0.95); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${altreInfo}</span>
               </div>
             </div>
           ` : ''}
@@ -643,7 +668,7 @@ async function loadAndCreateHtmlTable(
                     `;
           } else if (columnName === "Nazione" || columnName === "Country") {
             // Esempio: images/flags/jp.svg (o .png). Assumiamo bandiere in cartella "flags"
-            const flagPath = `images/bandiere/${fileSlug}.svg`;
+            const flagPath = `images/bandiere/flag-icons-main/flags/4x3/${fileSlug}.svg`;
 
             cellContent = `
                         <img 
@@ -1106,6 +1131,8 @@ function getTeamColor(teamName) {
     'Esagerati': 'var(--team-esagerati)',
     'Pasa_racing': 'var(--team-pasa-racing)',
     'Swatclub': 'var(--team-swatclub)',
+    'Apex': 'var(--team-apex)',
+    'GTVApex': 'var(--team-apex)',
     'Team15': 'var(--team-team15)'
   };
   return teamVariableMap[teamName] || 'var(--team-team15)';

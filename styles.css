@@ -25,6 +25,7 @@
   --team-esagerati: #FF4500;
   --team-pasa-racing: #0047AB;
   --team-swatclub: #87CEFA;
+  --team-apex: #0D1B2A;  /* Blu molto scuro */
   --team-team15: var(--giallogtv);
 }
 
@@ -2442,6 +2443,14 @@ body#worldchampionship {
   background: linear-gradient(90deg, var(--team-swatclub) 0%, #B0E0E6 100%) !important;
 }
 
+.team-card[data-team="gtvapex"] {
+  border-color: var(--team-apex) !important;
+}
+
+.team-card[data-team="gtvapex"]::before {
+  background: linear-gradient(90deg, var(--team-apex) 0%, #1A2F4A 100%) !important;
+}
+
 .team-card[data-team="gtvteam15"] {
   border-color: var(--team-team15) !important;
 }
@@ -2514,6 +2523,10 @@ body#worldchampionship {
   color: #000 !important;
 }
 
+.pilot-number[data-team-color="gtvapex"] {
+  background: var(--team-apex) !important;
+}
+
 .pilot-number[data-team-color="gtvteam15"] {
   background: var(--giallogtv) !important;
   color: #000 !important;
@@ -2574,6 +2587,10 @@ body#worldchampionship {
 
 .pilot-info[data-team-color="gtvswatclub"] {
   border-left: 3px solid var(--team-swatclub);
+}
+
+.pilot-info[data-team-color="gtvapex"] {
+  border-left: 3px solid var(--team-apex);
 }
 
 .pilot-info[data-team-color="gtvteam15"] {
@@ -3336,6 +3353,12 @@ body#worldchampionship {
   .team-pilots {
     flex-direction: column;
     gap: 5px;
+  }
+
+  /* Calendario responsive: 1 colonna su mobile */
+  .calendar-grid-2-columns {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
   }
   
   .pilot-info {
