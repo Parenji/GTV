@@ -973,15 +973,15 @@ async function loadAllClassifications(spreadsheetUrl) {
     const teams = {};
     
     dataRows.forEach((row) => {
-      if (row.length < 7) return;
+      if (row.length < 8) return;
       
       const position = row[0] || "";
       const pilot = row[1] || "";
       const number = row[2] || "";
       const team = row[3] || "";
       const marchio = row[4] || "";
-      const isJgtv = row[5] || "";
-      const points = parseInt(row[6]) || 0;
+      const isJgtv = row[6] || "";
+      const points = parseInt(row[7]) || 0;
       
       const pilotData = { position, pilot, number, team, marchio, points };
       
