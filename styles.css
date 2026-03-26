@@ -20,7 +20,7 @@
   --team-gliscappatidicasa: #FFFF00;
   --team-rebellion: #FF1493;
   --team-newgeneration: #0096d6;
-  --team-frauzer: #D3D3D3;
+  --team-frauzer: #464646;
   --team-afmotorsport: #191970;
   --team-esagerati: #FF4500;
   --team-pasa-racing: #0047AB;
@@ -1183,9 +1183,30 @@ td.totalone {
   gap: 12px;
   margin-bottom: 8px;
 }
+/* ========================================
+   PILOT NAME - DEFINIZIONE UNICA
+   ======================================== */
 .pilot-name {
-  font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px; /* Aumentato da 240px */
+}
+
+/* Responsive per pilot name */
+@media (max-width: 768px) {
+  .pilot-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .pilot-name {
+    max-width: 180px; /* Aumentato da 150px */
+  }
 }
 .pilot-number {
   font-size: 20px;
@@ -1304,7 +1325,7 @@ td.totalone {
 /* ========================================
    TABELLE MOBILE
    ======================================== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .mobile-table thead {
     display: none;
   }
@@ -1644,13 +1665,6 @@ td.totalone {
   flex: 1;
 }
 
-.pilot-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
 .pilot-number {
   color: var(--giallogtv);
   font-weight: bold;
@@ -1675,9 +1689,6 @@ td.totalone {
   .pilot-card {
     width: 100%;
     max-width: 350px;
-  }
-  .pilot-name {
-    font-size: 18px;
   }
   .pilot-number {
     font-size: 22px;
@@ -1935,16 +1946,6 @@ body#worldchampionship {
   border-left: 3px solid var(--giallogtv);
   border-radius: 0 5px 5px 0;
   transition: all 0.2s ease;
-}
-
-
-.pilot-name {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1em;
-  flex: 1;
-  margin: 0;
-  padding: 0;
 }
 
 .pilot-avatar {
@@ -2252,8 +2253,8 @@ body#worldchampionship {
 
 .lobby-pilots-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
+  gap: 8px;
 }
 
 .lobby-pilot {
@@ -2274,11 +2275,29 @@ body#worldchampionship {
 }
 
 .lobby-pilot-name {
-  font-size: 0.85em;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
   word-break: break-word;
   line-height: 1.3;
+}
+
+.lobby-pilot-team {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.lobby-pilot-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lobby-pilot-info {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Loading state */
@@ -2301,10 +2320,7 @@ body#worldchampionship {
     justify-content: space-between;
   }
   
-  .lobby-pilots-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 8px;
-  }
+
   
   .lobby-pilots-grid {
     grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
@@ -2320,9 +2336,9 @@ body#worldchampionship {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .lobby-pilots-grid {
-    grid-template-columns: 1fr 1fr; /* Mantengo 2 colonne anche su schermi piccoli */
+    grid-template-columns: 1fr; /* Mantengo 2 colonne anche su schermi piccoli */
   }
   
   .lobby-card {
@@ -2330,271 +2346,179 @@ body#worldchampionship {
   }
 }
 
-/* Colori personalizzati per ogni team */
-.team-card[data-team="gtvswiffer"] {
-  border-color: var(--team-swiffer) !important;
+/* Colori dei numeri piloti basati sui team - Sistema Centralizzato */
+.pilot-number[data-team-color] {
+  background: var(--team-color, var(--giallogtv)) !important;
+  color: var(--team-text-color, #000) !important;
 }
 
-.team-card[data-team="gtvswiffer"]::before {
-  background: linear-gradient(90deg, var(--team-swiffer) 0%, #A68B00 100%) !important;
+/* Colori dei pilot-info basati sui team - Sistema Centralizzato */
+.pilot-info[data-team-color] {
+  border-left: 3px solid var(--team-color, var(--giallogtv));
 }
 
-.team-card[data-team="gtvbadboys"] {
-  border-color: var(--team-badboys) !important;
+/* Colori delle team cards - Sistema Centralizzato */
+.team-card[data-team] {
+  border-color: var(--team-color, var(--giallogtv)) !important;
 }
 
-.team-card[data-team="gtvbadboys"]::before {
-  background: linear-gradient(90deg, var(--team-badboys) 0%, #6A0DAD 100%) !important;
+.team-card[data-team]::before {
+  background: linear-gradient(90deg, var(--team-color, var(--giallogtv)) 0%, var(--team-color-dark, var(--giallogtv)) 100%) !important;
 }
 
-.team-card[data-team="gtvtekkadan"] {
-  border-color: var(--team-tekkadan) !important;
+/* Loghi delle lobby - Sistema Centralizzato */
+.lobby-pilot-logo-container[data-team] {
+  background: var(--team-color, rgba(255, 255, 255, 0.1)) !important;
 }
 
-.team-card[data-team="gtvtekkadan"]::before {
-  background: linear-gradient(90deg, var(--team-tekkadan) 0%, #F0F0F0 100%) !important;
+/* Mappatura colori team centralizzata */
+:root {
+  /* Mappatura team -> colore */
+  --team-swiffer: #8B7500;
+  --team-badboys: #4B0082;
+  --team-tekkadan: #FFFFFF;
+  --team-grom: #8B0000;
+  --team-drifter: #26b3ff;
+  --team-lentiviolenti: #00FF7F;
+  --team-gliscappatidicasa: #FFFF00;
+  --team-rebellion: #FF1493;
+  --team-newgeneration: #0096d6;
+  --team-frauzer: #464646;
+  --team-afmotorsport: #191970;
+  --team-esagerati: #FF4500;
+  --team-pasa-racing: #0047AB;
+  --team-swatclub: #87CEFA;
+  --team-apex: #0D1B2A;
+  --team-team15: var(--giallogtv);
 }
 
-.team-card[data-team="gtvgrom"] {
-  border-color: var(--team-grom) !important;
+/* Applica colori team usando data attributes */
+.team-card[data-team="gtvswiffer"],
+.pilot-number[data-team-color="gtvswiffer"],
+.pilot-info[data-team-color="gtvswiffer"],
+.lobby-pilot-logo-container[data-team="Swiffer"] {
+  --team-color: var(--team-swiffer);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvgrom"]::before {
-  background: linear-gradient(90deg, var(--team-grom) 0%, #B22222 100%) !important;
+.team-card[data-team="gtvbadboys"],
+.pilot-number[data-team-color="gtvbadboys"],
+.pilot-info[data-team-color="gtvbadboys"],
+.lobby-pilot-logo-container[data-team="Badboys"] {
+  --team-color: var(--team-badboys);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvdrifter"] {
-  border-color: var(--team-drifter) !important;
+.team-card[data-team="gtvtekkadan"],
+.pilot-number[data-team-color="gtvtekkadan"],
+.pilot-info[data-team-color="gtvtekkadan"],
+.lobby-pilot-logo-container[data-team="Tekkadan"] {
+  --team-color: var(--team-tekkadan);
+  --team-text-color: #000;
 }
 
-.team-card[data-team="gtvdrifter"]::before {
-  background: linear-gradient(90deg, var(--team-drifter) 0%, var(--team-drifter) 100%) !important;
+.team-card[data-team="gtvgrom"],
+.pilot-number[data-team-color="gtvgrom"],
+.pilot-info[data-team-color="gtvgrom"],
+.lobby-pilot-logo-container[data-team="Grom"] {
+  --team-color: var(--team-grom);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvlentiviolenti"] {
-  border-color: var(--team-lentiviolenti) !important;
+.team-card[data-team="gtvdrifter"],
+.pilot-number[data-team-color="gtvdrifter"],
+.pilot-info[data-team-color="gtvdrifter"],
+.lobby-pilot-logo-container[data-team="Drifter"] {
+  --team-color: var(--team-drifter);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvlentiviolenti"]::before {
-  background: linear-gradient(90deg, var(--team-lentiviolenti) 0%, #40E0D0 100%) !important;
+.team-card[data-team="gtvlentiviolenti"],
+.pilot-number[data-team-color="gtvlentiviolenti"],
+.pilot-info[data-team-color="gtvlentiviolenti"],
+.lobby-pilot-logo-container[data-team="Lentiviolenti"] {
+  --team-color: var(--team-lentiviolenti);
+  --team-text-color: #000;
 }
 
-.team-card[data-team="gtvgliscappatidicasa"] {
-  border-color: var(--team-gliscappatidicasa) !important;
+.team-card[data-team="gtvgliscappatidicasa"],
+.pilot-number[data-team-color="gtvgliscappatidicasa"],
+.pilot-info[data-team-color="gtvgliscappatidicasa"],
+.lobby-pilot-logo-container[data-team="Gliscappatidicasa"] {
+  --team-color: var(--team-gliscappatidicasa);
+  --team-text-color: #000;
 }
 
-.team-card[data-team="gtvgliscappatidicasa"]::before {
-  background: linear-gradient(90deg, var(--team-gliscappatidicasa) 0%, #FFD700 100%) !important;
+.team-card[data-team="gtvrebellion"],
+.pilot-number[data-team-color="gtvrebellion"],
+.pilot-info[data-team-color="gtvrebellion"],
+.lobby-pilot-logo-container[data-team="Rebellion"] {
+  --team-color: var(--team-rebellion);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvrebellion"] {
-  border-color: var(--team-rebellion) !important;
+.team-card[data-team="gtvnewgeneration"],
+.pilot-number[data-team-color="gtvnewgeneration"],
+.pilot-info[data-team-color="gtvnewgeneration"],
+.lobby-pilot-logo-container[data-team="Newgeneration"] {
+  --team-color: var(--team-newgeneration);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvrebellion"]::before {
-  background: linear-gradient(90deg, var(--team-rebellion) 0%, #FF69B4 100%) !important;
+.team-card[data-team="gtvfrauzer"],
+.pilot-number[data-team-color="gtvfrauzer"],
+.pilot-info[data-team-color="gtvfrauzer"],
+.lobby-pilot-logo-container[data-team="Frauzer"] {
+  --team-color: var(--team-frauzer);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvnewgeneration"] {
-  border-color: var(--team-newgeneration) !important;
+.team-card[data-team="gtvafmotorsport"],
+.pilot-number[data-team-color="gtvafmotorsport"],
+.pilot-info[data-team-color="gtvafmotorsport"],
+.lobby-pilot-logo-container[data-team="Afmotorsport"] {
+  --team-color: var(--team-afmotorsport);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvnewgeneration"]::before {
-  background: linear-gradient(90deg, var(--team-newgeneration) 0%, var(--team-newgeneration) 100%) !important;
+.team-card[data-team="gtvesagerati"],
+.pilot-number[data-team-color="gtvesagerati"],
+.pilot-info[data-team-color="gtvesagerati"],
+.lobby-pilot-logo-container[data-team="Esagerati"] {
+  --team-color: var(--team-esagerati);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvfrauzer"] {
-  border-color: var(--team-frauzer) !important;
+.team-card[data-team="gtvpasa_racing"],
+.pilot-number[data-team-color="gtvpasa_racing"],
+.pilot-info[data-team-color="gtvpasa_racing"],
+.lobby-pilot-logo-container[data-team="Pasa_racing"] {
+  --team-color: var(--team-pasa-racing);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvfrauzer"]::before {
-  background: linear-gradient(90deg, var(--team-frauzer) 0%, #E5E5E5 100%) !important;
+.team-card[data-team="gtvswatclub"],
+.pilot-number[data-team-color="gtvswatclub"],
+.pilot-info[data-team-color="gtvswatclub"],
+.lobby-pilot-logo-container[data-team="Swatclub"] {
+  --team-color: var(--team-swatclub);
+  --team-text-color: #000;
 }
 
-.team-card[data-team="gtvafmotorsport"] {
-  border-color: var(--team-afmotorsport) !important;
+.team-card[data-team="gtvapex"],
+.pilot-number[data-team-color="gtvapex"],
+.pilot-info[data-team-color="gtvapex"],
+.lobby-pilot-logo-container[data-team="Apex"] {
+  --team-color: var(--team-apex);
+  --team-text-color: #fff;
 }
 
-.team-card[data-team="gtvafmotorsport"]::before {
-  background: linear-gradient(90deg, var(--team-afmotorsport) 0%, #000080 100%) !important;
-}
-
-.team-card[data-team="gtvesagerati"] {
-  border-color: var(--team-esagerati) !important;
-}
-
-.team-card[data-team="gtvesagerati"]::before {
-  background: linear-gradient(90deg, var(--team-esagerati) 0%, #FF6347 100%) !important;
-}
-
-.team-card[data-team="gtvpasa_racing"] {
-  border-color: var(--team-pasa-racing) !important;
-}
-
-.team-card[data-team="gtvpasa_racing"]::before {
-  background: linear-gradient(90deg, var(--team-pasa-racing) 0%, #1E90FF 100%) !important;
-}
-
-.team-card[data-team="gtvswatclub"] {
-  border-color: var(--team-swatclub) !important;
-}
-
-.team-card[data-team="gtvswatclub"]::before {
-  background: linear-gradient(90deg, var(--team-swatclub) 0%, #B0E0E6 100%) !important;
-}
-
-.team-card[data-team="gtvapex"] {
-  border-color: var(--team-apex) !important;
-}
-
-.team-card[data-team="gtvapex"]::before {
-  background: linear-gradient(90deg, var(--team-apex) 0%, #1A2F4A 100%) !important;
-}
-
-.team-card[data-team="gtvteam15"] {
-  border-color: var(--team-team15) !important;
-}
-
-.team-card[data-team="gtvteam15"]::before {
-  background: linear-gradient(90deg, var(--giallogtv) 0%, #bbc22d 100%) !important;
-}
-
-/* Colori dei numeri piloti basati sui team */
-.pilot-number[data-team-color="gtvswiffer"] {
-  background: var(--team-swiffer) !important;
-}
-
-.pilot-number[data-team-color="gtvbadboys"] {
-  background: var(--team-badboys) !important;
-}
-
-.pilot-number[data-team-color="gtvtekkadan"] {
-  background: var(--team-tekkadan) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvgrom"] {
-  background: var(--team-grom) !important;
-}
-
-.pilot-number[data-team-color="gtvdrifter"] {
-  background: var(--team-drifter) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvlentiviolenti"] {
-  background: var(--team-lentiviolenti) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvgliscappatidicasa"] {
-  background: var(--team-gliscappatidicasa) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvrebellion"] {
-  background: var(--team-rebellion) !important;
-}
-
-.pilot-number[data-team-color="gtvnewgeneration"] {
-  background: var(--team-newgeneration) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvfrauzer"] {
-  background: var(--team-frauzer) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvafmotorsport"] {
-  background: var(--team-afmotorsport) !important;
-}
-
-.pilot-number[data-team-color="gtvesagerati"] {
-  background: var(--team-esagerati) !important;
-}
-
-.pilot-number[data-team-color="gtvpasa_racing"] {
-  background: var(--team-pasa-racing) !important;
-}
-
-.pilot-number[data-team-color="gtvswatclub"] {
-  background: var(--team-swatclub) !important;
-  color: #000 !important;
-}
-
-.pilot-number[data-team-color="gtvapex"] {
-  background: var(--team-apex) !important;
-}
-
-.pilot-number[data-team-color="gtvteam15"] {
-  background: var(--giallogtv) !important;
-  color: #000 !important;
-}
-
-/* Colori dei pilot-info - Design semplice */
-.pilot-info[data-team-color="gtvswiffer"] {
-  border-left: 3px solid var(--team-swiffer);
-}
-
-.pilot-info[data-team-color="gtvbadboys"] {
-  border-left: 3px solid var(--team-badboys);
-}
-
-.pilot-info[data-team-color="gtvtekkadan"] {
-  border-left: 3px solid var(--team-tekkadan);
-}
-
-.pilot-info[data-team-color="gtvgrom"] {
-  border-left: 3px solid var(--team-grom);
-}
-
-.pilot-info[data-team-color="gtvdrifter"] {
-  border-left: 3px solid var(--team-drifter);
-}
-
-.pilot-info[data-team-color="gtvlentiviolenti"] {
-  border-left: 3px solid var(--team-lentiviolenti);
-}
-
-.pilot-info[data-team-color="gtvgliscappatidicasa"] {
-  border-left: 3px solid var(--team-gliscappatidicasa);
-}
-
-.pilot-info[data-team-color="gtvrebellion"] {
-  border-left: 3px solid var(--team-rebellion);
-}
-
-.pilot-info[data-team-color="gtvnewgeneration"] {
-  border-left: 3px solid var(--team-newgeneration);
-}
-
-.pilot-info[data-team-color="gtvfrauzer"] {
-  border-left: 3px solid var(--team-frauzer);
-}
-
-.pilot-info[data-team-color="gtvafmotorsport"] {
-  border-left: 3px solid var(--team-afmotorsport);
-}
-
-.pilot-info[data-team-color="gtvesagerati"] {
-  border-left: 3px solid var(--team-esagerati);
-}
-
-.pilot-info[data-team-color="gtvpasa_racing"] {
-  border-left: 3px solid var(--team-pasa-racing);
-}
-
-.pilot-info[data-team-color="gtvswatclub"] {
-  border-left: 3px solid var(--team-swatclub);
-}
-
-.pilot-info[data-team-color="gtvapex"] {
-  border-left: 3px solid var(--team-apex);
-}
-
-.pilot-info[data-team-color="gtvteam15"] {
-  border-left: 3px solid var(--giallogtv);
+.team-card[data-team="gtvteam15"],
+.pilot-number[data-team-color="gtvteam15"],
+.pilot-info[data-team-color="gtvteam15"],
+.lobby-pilot-logo-container[data-team="Team15"] {
+  --team-color: var(--team-team15);
+  --team-text-color: #000;
 }
 
 /* Stile base per numeri piloti - Design semplice */
@@ -2634,19 +2558,47 @@ body#worldchampionship {
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Pilot name semplice */
-.pilot-name {
-  font-weight: 600;
-  font-size: 1em;
-  color: rgba(255, 255, 255, 0.9);
-}
-
 /* Team pilots container */
 .team-pilots {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 15px;
+}
+
+/* Stile per le sezioni delle lobby nei risultati */
+.race-lobby-section {
+  margin-bottom: 20px;
+}
+
+.race-lobby-title {
+  font-size: 0.9em;
+  color: var(--giallogtv);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--giallogtv);
+  border-radius: 4px;
+}
+
+/* Logo tracciato nell'accordion */
+.track-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  flex: 0 0 80px; /* Spazio fisso per il logo */
+}
+
+.track-logo-small {
+  width: 120px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 4px;
 }
 
 /* Responsive per team pilots */
@@ -2661,9 +2613,7 @@ body#worldchampionship {
     padding: 10px 12px;
   }
   
-  .pilot-name {
-    font-size: 0.9em;
-  }
+
 }
 
 /* ========================================
@@ -2682,10 +2632,18 @@ body#worldchampionship {
 /* Accordion header */
 .accordion {
   background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 0; /* Rimuovo margini che causano overflow */
+  margin: 0; /* Rimuovi margini che causano overflow */
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  position: relative;
 }
 
 .accordion:hover {
@@ -2693,16 +2651,6 @@ body#worldchampionship {
   border-color: rgba(191, 239, 255, 0.3);
 }
 
-.accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 20px;
-  cursor: pointer;
-  user-select: none;
-  min-height: 60px; /* Altezza minima per mobile */
-  touch-action: manipulation; /* Ottimizzazione touch */
-}
 
 .accordion-title {
   font-size: 1.3em;
@@ -2772,17 +2720,16 @@ body#worldchampionship {
 }
 
 .pilot-number-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.85em;
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .pilot-number-circle:hover {
@@ -2801,14 +2748,29 @@ body#worldchampionship {
   filter: invert(1);
 }
 
-.pilot-name {
-  font-weight: 600;
-  font-size: 1em;
-  color: rgba(255, 255, 255, 0.9);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 280px; /* Aumentato da 240px */
+/* Stili specifici per i loghi delle lobby */
+.lobby-pilot-logo-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lobby-pilot-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lobby-pilot-logo.invert-colors {
+  filter: invert(1);
 }
 
 .pilot-team {
@@ -2826,8 +2788,8 @@ body#worldchampionship {
   text-align: center;
   background: rgba(191, 239, 255, 0.1);
   padding: 8px 15px;
-  border-radius: 20px;
-  border: 1px solid rgba(191, 239, 255, 0.3);
+border-radius: 8px;
+  border: 1px solid rgba(191, 239, 255, 0.5);
   min-width: 60px;
   display: inline-block;
 }
@@ -3229,7 +3191,7 @@ body#worldchampionship {
 /* Responsive classifiche */
 @media (max-width: 768px) {
   .pilot-ranking-item {
-    grid-template-columns: 40px 35px 1fr 50px;
+    grid-template-columns: 40px 40px 1fr 50px;
     gap: 6px;
     padding: 8px 14px;
   }
@@ -3261,9 +3223,7 @@ body#worldchampionship {
     padding: 4px 8px;
   }
   
-  .pilot-name {
-    max-width: 180px; /* Aumentato da 150px */
-  }
+
   
   .pilot-team {
     max-width: 160px; /* Aumentato da 130px */

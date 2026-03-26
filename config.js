@@ -35,7 +35,7 @@ window.GTV_CONFIG = {
         "https://docs.google.com/spreadsheets/d/e/REPLACE_ME_WORLDCHAMPIONSHIP/pub?gid=0&single=true&output=csv",
       calendario:
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=912348639&single=true&output=csv",
-      opzioniLobby:
+      opzioni:
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=1285111450&single=true&output=csv",
       teamPiloti:
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=65135939&single=true&output=csv",

@@ -248,6 +248,14 @@ async function loadCalendar(spreadsheetUrl) {
     }
 
     const allDataRows = rows.slice(1); // Salta l'intestazione
+    
+    // Salva in cache globale per uso in altre funzioni
+    if (!window.globalCache) {
+      window.globalCache = {};
+    }
+    window.globalCache.calendar = allDataRows;
+    console.log(`loadCalendar: Salvate ${allDataRows.length} gare nella cache globale`);
+    
     let html = '';
 
     // Layout a 2 colonne per desktop
@@ -825,7 +833,7 @@ async function loadDataAndGenerateCards(spreadsheetUrl) {
 }
 
 // Funzione per caricare e visualizzare le lobby in formato card
-async function loadLobbyCards(spreadsheetUrl) {
+async function loadLobbyCards(spreadsheetUrl, ssu2) {
   const container = document.getElementById("lobby-body");
   
   if (!container) {
@@ -834,16 +842,26 @@ async function loadLobbyCards(spreadsheetUrl) {
   }
 
   try {
-    const response = await fetch(spreadsheetUrl);
+    // Carica entrambi i CSV contemporaneamente
+    const [optionsResponse, classificationsResponse] = await Promise.all([
+      fetch(spreadsheetUrl),
+      fetch(ssu2)
+    ]);
     
-    if (!response.ok) {
-      throw new Error(`Errore HTTP: ${response.status}`);
+    if (!optionsResponse.ok) {
+      throw new Error(`Errore HTTP opzioni: ${optionsResponse.status}`);
+    }
+    if (!classificationsResponse.ok) {
+      throw new Error(`Errore HTTP classifiche: ${classificationsResponse.status}`);
     }
 
-    const csvText = await response.text();
+    const [optionsCsvText, classificationsCsvText] = await Promise.all([
+      optionsResponse.text(),
+      classificationsResponse.text()
+    ]);
     
-    // Parsing del CSV
-    const rows = csvText
+    // Parsing CSV opzioni (per date, time, category, host, live)
+    const optionsRows = optionsCsvText
       .trim()
       .split("\n")
       .map((row) =>
@@ -855,15 +873,61 @@ async function loadLobbyCards(spreadsheetUrl) {
         )
       );
 
-    if (!rows || rows.length === 0) {
-      container.innerHTML = '<div class="error-message">Nessun dato trovato.</div>';
+    // Parsing CSV classifiche (per piloti)
+    const classificationsRows = classificationsCsvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!optionsRows || optionsRows.length === 0) {
+      container.innerHTML = '<div class="error-message">Nessuna opzione lobby trovata.</div>';
       return;
     }
 
-    const dataRows = rows.slice(1); // Salta l'header
+    if (!classificationsRows || classificationsRows.length === 0) {
+      container.innerHTML = '<div class="error-message">Nessuna classifica trovata.</div>';
+      return;
+    }
+
+    // Estrai piloti dalle classifiche e raggruppa per lobby
+    const lobby1Pilots = [];
+    const lobby2Pilots = [];
+    
+    const classificationData = classificationsRows.slice(1); // Salta l'header
+    classificationData.forEach((row) => {
+      if (row.length < 9) return; // Deve avere almeno 9 colonne
+      
+      const position = row[0] || "";
+      const pilot = row[1] || "";
+      const number = row[2] || "";
+      const team = row[3] || "";
+      const marchio = row[4] || "";
+      const isJgtv = row[6] || "";
+      const points = parseInt(row[7]) || 0;
+      const lobbyAssignment = row[8] || ""; // Colonna 9: 1 o 2
+      
+      if (lobbyAssignment === "1") {
+        lobby1Pilots.push({ position, pilot, number, team, marchio, points });
+      } else if (lobbyAssignment === "2") {
+        lobby2Pilots.push({ position, pilot, number, team, marchio, points });
+      }
+    });
+
+    // Ordina i piloti per posizione (come nelle classifiche)
+    lobby1Pilots.sort((a, b) => parseInt(a.position) - parseInt(b.position));
+    lobby2Pilots.sort((a, b) => parseInt(a.position) - parseInt(b.position));
+
+    const optionsData = optionsRows.slice(1); // Salta l'header
     let htmlCards = "";
     
-    dataRows.forEach((rowData, index) => {
+    optionsData.forEach((rowData, index) => {
       if (rowData.length < 4) return; // Salta righe incomplete
       
       // Estrai le info della gara (prime 4 colonne)
@@ -873,8 +937,8 @@ async function loadLobbyCards(spreadsheetUrl) {
       const host = rowData[3] || "";
       const live = rowData[4] || "";
       
-      // Estrai i piloti (dalla colonna 5 in poi)
-      const pilots = rowData.slice(5).filter(pilot => pilot && pilot.trim() !== "");
+      // Determina quali piloti mostrare basandosi sull'indice (0 = Lobby 1, 1 = Lobby 2)
+      const currentLobbyPilots = index === 0 ? lobby1Pilots : lobby2Pilots;
       
       if (!date || !time || !category) return; // Salta righe senza dati essenziali
       
@@ -912,15 +976,28 @@ async function loadLobbyCards(spreadsheetUrl) {
             ` : ''}
           </div>
           
-          ${pilots.length > 0 ? `
+          ${currentLobbyPilots.length > 0 ? `
             <div class="lobby-pilots-section">
-              <div class="lobby-pilots-title">Piloti Iscritti (${pilots.length})</div>
+              <div class="lobby-pilots-title">Piloti Iscritti (${currentLobbyPilots.length})</div>
               <div class="lobby-pilots-grid">
-                ${pilots.map((pilot, pilotIndex) => `
-                  <div class="lobby-pilot" title="${escapeHtml(pilot)}">
-                    <div class="lobby-pilot-name">${escapeHtml(pilot)}</div>
-                  </div>
-                `).join('')}
+                ${currentLobbyPilots.map((pilotData, pilotIndex) => {
+                  // Normalizza il nome del marchio per il percorso dell'immagine
+                  const normalizedMarchio = pilotData.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
+                  
+                  return `
+                    <div class="lobby-pilot" title="${escapeHtml(pilotData.pilot)}" data-team="${escapeHtml(pilotData.team)}">
+                      <div class="lobby-pilot-header">
+                        <div class="lobby-pilot-logo-container" data-team="${escapeHtml(pilotData.team)}">
+                          <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(pilotData.marchio)}" class="lobby-pilot-logo ${pilotData.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
+                        </div>
+                        <div class="lobby-pilot-info">
+                          <div class="lobby-pilot-name">${escapeHtml(pilotData.pilot)}</div>
+                          <div class="lobby-pilot-team desktop-only">${escapeHtml(pilotData.team)}</div>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
               </div>
             </div>
           ` : ''}
@@ -1136,6 +1213,228 @@ function getTeamColor(teamName) {
     'Team15': 'var(--team-team15)'
   };
   return teamVariableMap[teamName] || 'var(--team-team15)';
+}
+
+// Funzione per caricare i risultati di tutte le gare
+async function loadRisultati(spreadsheetUrl) {
+  console.log('loadRisultati: Inizio caricamento risultati da', spreadsheetUrl);
+  const container = document.getElementById("risultati-body");
+  
+  if (!container) {
+    console.error('Elemento "risultati-body" non trovato.');
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status} (${response.statusText})`);
+    }
+
+    const csvText = await response.text();
+    console.log('loadRisultati: CSV ricevuto, lunghezza:', csvText.length);
+    
+    // Parsing CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    console.log('loadRisultati: Righe parsate:', rows.length);
+    
+    if (!rows || rows.length === 0) {
+      console.log('loadRisultati: Nessuna riga trovata');
+      container.innerHTML = '<div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">Nessun risultato trovato.</div>';
+      return;
+    }
+
+    const header = rows[0];
+    const allDataRows = rows.slice(1);
+    console.log('loadRisultati: Header:', header);
+    console.log('loadRisultati: Dati rows:', allDataRows.length);
+    console.log('loadRisultati: Lunghezza header:', header.length);
+    
+    // Genera HTML per le 8 gare (colonne 10-15, 16-21, 22-27, 28-33, 34-39, 40-45, 46-51, 52-57)
+    let html = '';
+    
+    for (let race = 1; race <= 8; race++) {
+      const startCol = 9 + (race - 1) * 6; // 10, 16, 22, 28, 34, 40, 46, 52
+      const endCol = startCol + 6; // 15, 21, 27, 33, 39, 45, 51, 57
+      
+
+      
+      if (startCol >= allDataRows[0].length) {
+        console.log(`loadRisultati: Fine colonne - startCol ${startCol} >= lunghezza header ${allDataRows[0].length}`);
+        break; // Se non ci sono più colonne
+      }
+      
+      // Estrai i risultati per questa gara
+      const raceResults = [];
+      allDataRows.forEach((row, index) => {
+        if (row.length > startCol) {
+          const lobby = row[startCol] || ''; // Colonna 1: lobby
+          const position = row[startCol + 1] || ''; // Colonna 2: posizione
+          const points = parseInt(row[startCol + 2]) || 0; // Colonna 3: punti
+          const pole = parseInt(row[startCol + 3]) || 0; // Colonna 4: pole
+          const fastLap = parseInt(row[startCol + 4]) || 0; // Colonna 5: giro veloce
+          const totalPoints = parseInt(row[startCol + 5]) || 0; // Colonna 6: punti totali
+          
+          
+          if (position && position !== '') {
+            // Usa i dati delle classifiche generali per ottenere info pilota
+            const pilotData = {
+              position: index + 1,
+              pilot: row[1] || '',
+              number: row[2] || '',
+              team: row[3] || '',
+              marchio: row[4] || '',
+              points: totalPoints
+            };
+            
+            raceResults.push({
+              ...pilotData,
+              lobby: lobby,
+              racePosition: position,
+              racePoints: points,
+              pole: pole,
+              fastLap: fastLap
+            });
+          }
+        }
+      });
+      
+      // Ordina per posizione
+      raceResults.sort((a, b) => parseInt(a.racePosition) - parseInt(b.racePosition));
+      
+      // Separa per lobby
+      const lobby1 = raceResults.filter(r => r.lobby === '1');
+      const lobby2 = raceResults.filter(r => r.lobby === '2');
+      
+      // Prendi dati del tracciato dal calendario (se disponibile)
+      let trackLogo = '';
+      let trackName = '';
+      console.log(`loadRisultati: Gara ${race - 1} - controllo cache calendario`);
+      console.log(`loadRisultati: globalCache esiste:`, !!window.globalCache);
+      console.log(`loadRisultati: globalCache.calendar esiste:`, !!(window.globalCache && window.globalCache.calendar));
+      console.log(`loadRisultati: dati per gara ${race - 1}:`, window.globalCache && window.globalCache.calendar ? window.globalCache.calendar[race - 1] : 'NON DISPONIBILE');
+      
+      if (window.globalCache && window.globalCache.calendar && window.globalCache.calendar[race - 1]) {
+        const raceData = window.globalCache.calendar[race - 1];
+        trackName = raceData[2] || ''; // Colonna circuito
+        console.log(`loadRisultati: Tracciato trovato: "${trackName}"`);
+        if (trackName) {
+          const circuitMapping = {
+            'daytona': 'daytona', 'autopolis': 'autopolis', 'deep forest': 'deep-forest',
+            'dragon trail': 'dragon', 'fuji': 'fuji', 'interlagos': 'interlagos',
+            'laguna seca': 'lagunaseca', 'monza': 'monza', 'mount panorama': 'mountpanorama',
+            'red bull ring': 'rbr', 'sardegna': 'sardegna', 'spa': 'spa',
+            'suzuka': 'suzuka', 'tokyo': 'tokyo', 'watkins glen': 'watkins',
+            'yas marina': 'yasmarina'
+          };
+          const cleanName = trackName.toLowerCase().trim();
+          const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
+          trackLogo = `<img src="images/tracks/${circuitName}.png" alt="${trackName}" class="track-logo-small" onerror="this.style.display='none'">`;
+          console.log(`loadRisultati: Logo generato: ${trackLogo}`);
+        }
+      } else {
+        console.log(`loadRisultati: Cache calendario non disponibile per gara ${race}`);
+      }
+      
+      html += `
+        <div class="classification-accordion">
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <div class="accordion-title">Gara ${race}</div>
+              <div class="track-logo-container">${trackLogo}</div>
+              <div class="accordion-subtitle">${raceResults.length > 0 ? 'RISULTATI DISPONIBILI' : ''}</div>
+              <i><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="2" fill="none"/></svg></i>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="classification-table">
+      `;
+      
+      // Funzione per generare HTML dei piloti
+      const generatePilotHTML = (pilots, lobbyName) => {
+        if (pilots.length === 0) return '';
+        
+        let pilotHTML = '';
+        pilots.forEach((item, index) => {
+          const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
+          
+          // Determina lo stile speciale per i punti
+          let pointsStyle = '';
+          if (item.pole === 1 && item.fastLap === 1) {
+            // Entrambi: transizione da giallo fuoco a fucsia
+            pointsStyle = 'background: linear-gradient(90deg, #ffd000 0%, #ff00ff 100%);';
+          } else if (item.pole === 1) {
+            // Solo pole position: giallo fuoco
+            pointsStyle = 'background: #ffd000; color: black;';
+          } else if (item.fastLap === 1) {
+            // Solo giro veloce: fucsia
+            pointsStyle = 'background: #ff00ff;';
+          }
+          
+          pilotHTML += `
+            <div class="pilot-ranking-item">
+              <div class="pilot-position">${item.racePosition}</div>
+              <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
+                <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
+              </div>
+              <div class="pilot-name">${escapeHtml(item.pilot)}</div>
+              <div class="pilot-team">${escapeHtml(item.team)}</div>
+              <div class="pilot-points" style="${pointsStyle} font-weight: bold; padding: 2px 6px;">${item.points}</div>
+            </div>
+          `;
+        });
+        return pilotHTML;
+      };
+      
+      // Aggiungi le lobby se ci sono piloti
+      if (lobby1.length > 0) {
+        html += `
+          <div class="race-lobby-section">
+            <div class="race-lobby-title">Lobby 1</div>
+            <div class="classification-table">
+              ${generatePilotHTML(lobby1, 'Lobby 1')}
+            </div>
+          </div>
+        `;
+      }
+      
+      if (lobby2.length > 0) {
+        html += `
+          <div class="race-lobby-section">
+            <div class="race-lobby-title">Lobby 2</div>
+            <div class="classification-table">
+              ${generatePilotHTML(lobby2, 'Lobby 2')}
+            </div>
+          </div>
+        `;
+      }
+      
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    container.innerHTML = html || '<div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">Nessun risultato trovato.</div>';
+    console.log('loadRisultati: HTML impostato nel container');
+
+  } catch (error) {
+    console.error('Errore nel caricamento dei risultati:', error);
+    container.innerHTML = '<div style="text-align: center; padding: 40px; color: rgba(255,0,0,0.7);">Errore nel caricamento dei risultati</div>';
+  }
 }
 
 // Funzione per toggle accordion
@@ -1525,13 +1824,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }`;
 
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
-    loadLobbyCards(URL_LOBBY);
+    const URL_CLASS = config.googleSheets.worldchampionship.classifica;
+    loadLobbyCards(URL_LOBBY, URL_CLASS);
 
     // const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
     // loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
 
-    const URL_CLASS = config.googleSheets.worldchampionship.classifica;
     loadAllClassifications(URL_CLASS);
+    loadRisultati(URL_CLASS);
 
     const URL_PEN = config.googleSheets.worldchampionship.penalita;
     loadAndCreateHtmlTable(URL_PEN, "penalita-body", []);
@@ -1540,7 +1840,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadNextRace(URL_CALENDAR, prossimaGara);
     loadCalendar(URL_CALENDAR);
 
-    const URL_OPZIONI = config.googleSheets.worldchampionship.opzioniLobby;
+    const URL_OPZIONI = config.googleSheets.worldchampionship.opzioni;
     loadDataAndGenerateCards(URL_OPZIONI);
 
     const URL_TEAM_PILOTI = config.googleSheets.worldchampionship.teamPiloti;
