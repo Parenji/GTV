@@ -86,6 +86,9 @@ html {
   border-radius: 50%;
   border-top-color: var(--giallogtv);
   animation: spin 1s ease-in-out infinite;
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 @keyframes spin {
