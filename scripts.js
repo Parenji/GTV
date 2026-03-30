@@ -255,6 +255,7 @@ async function loadCalendar(spreadsheetUrl) {
     }
     window.globalCache.calendar = allDataRows;
     console.log(`loadCalendar: Salvate ${allDataRows.length} gare nella cache globale`);
+    console.log(`loadCalendar: Prime 3 gare:`, allDataRows.slice(0, 3).map(row => `${row[0]} - ${row[2]}`));
     
     let html = '';
 
@@ -936,6 +937,7 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
       const category = rowData[2] || "";
       const host = rowData[3] || "";
       const live = rowData[4] || "";
+      const linklive = rowData[5] || "";
       
       // Determina quali piloti mostrare basandosi sull'indice (0 = Lobby 1, 1 = Lobby 2)
       const currentLobbyPilots = index === 0 ? lobby1Pilots : lobby2Pilots;
@@ -959,7 +961,7 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
                 <div class="lobby-host-icon">👤</div>
                 <div class="lobby-host-content">
                   <div class="lobby-host-label">Host</div>
-                  <div class="lobby-host-name">${escapeHtml(host)}</div>
+                  <a href="https://profile.playstation.com/${escapeHtml(host)}/add" target="_blank" class="lobby-host-name">${escapeHtml(host)}</a>
                 </div>
               </div>
             ` : ''}
@@ -969,9 +971,9 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
                 <div class="lobby-live-icon">🔴</div>
                 <div class="lobby-live-content">
                   <div class="lobby-live-label">Live su</div>
-                  <div class="lobby-live-name">${escapeHtml(live)}</div>
+                  <a href="${escapeHtml(linklive)}" target="_blank" class="lobby-live-name">${escapeHtml(live)}</a>
                 </div>
-                <div class="lobby-live-badge">LIVE</div>
+                <a href="${escapeHtml(live)}" target="_blank" class="lobby-live-badge">LIVE</a>
               </div>
             ` : ''}
           </div>
@@ -1009,7 +1011,12 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
 
   } catch (error) {
     console.error("Errore nel caricamento delle lobby:", error);
-    container.innerHTML = '<div class="error-message">Impossibile caricare le lobby. Controlla la console per dettagli.</div>';
+    container.innerHTML = `
+      <div class="error-message">
+        <div>Impossibile caricare le lobby</div>
+        <button onclick="location.reload()">Riprova</button>
+      </div>
+    `;
   }
 }
 
@@ -1186,7 +1193,12 @@ function generateTop10Home(data) {
     `;
   });
   
-  html += '</div></div>';
+  html += '</div>';
+  html += '<div class="next-race-footer">';
+  html += '<a href="#classifica" class="menu-link">Classifica completa</a>';
+  html += '</div>';
+  html += '</div>';
+  
   container.innerHTML = html;
 }
 
@@ -1213,6 +1225,86 @@ function getTeamColor(teamName) {
     'Team15': 'var(--team-team15)'
   };
   return teamVariableMap[teamName] || 'var(--team-team15)';
+}
+
+// Funzionalità di search per piloti
+function initializePilotSearch() {
+  const searchInput = document.getElementById('pilot-search');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const allPilotItems = document.querySelectorAll('.pilot-ranking-item');
+    
+    allPilotItems.forEach(item => {
+      const pilotName = item.querySelector('.pilot-name')?.textContent.toLowerCase() || '';
+      const teamName = item.querySelector('.pilot-team')?.textContent.toLowerCase() || '';
+      
+      if (pilotName.includes(searchTerm) || teamName.includes(searchTerm)) {
+        item.style.display = 'flex';
+        item.style.opacity = '1';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+}
+
+// Funzionalità di search per lobby
+function initializeLobbySearch() {
+  const searchInput = document.getElementById('lobby-search');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const allLobbyPilots = document.querySelectorAll('.lobby-pilot');
+    
+    allLobbyPilots.forEach(pilot => {
+      const pilotName = pilot.querySelector('.lobby-pilot-name')?.textContent.toLowerCase() || '';
+      const teamName = pilot.getAttribute('data-team')?.toLowerCase() || '';
+      
+      if (pilotName.includes(searchTerm) || teamName.includes(searchTerm)) {
+        pilot.style.display = 'block';
+      } else {
+        pilot.style.display = 'none';
+      }
+    });
+  });
+}
+
+// Funzione per mostrare notifiche
+function showNotification(message) {
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--giallogtv);
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 10000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  `;
+  notification.textContent = message;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.opacity = '1';
+    notification.style.transform = 'translateX(0)';
+  }, 100);
+  
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
 }
 
 // Funzione per caricare i risultati di tutte le gare
@@ -1321,28 +1413,37 @@ async function loadRisultati(spreadsheetUrl) {
       // Prendi dati del tracciato dal calendario (se disponibile)
       let trackLogo = '';
       let trackName = '';
-      console.log(`loadRisultati: Gara ${race - 1} - controllo cache calendario`);
+      console.log(`loadRisultati: Gara ${race} - controllo cache calendario`);
       console.log(`loadRisultati: globalCache esiste:`, !!window.globalCache);
       console.log(`loadRisultati: globalCache.calendar esiste:`, !!(window.globalCache && window.globalCache.calendar));
-      console.log(`loadRisultati: dati per gara ${race - 1}:`, window.globalCache && window.globalCache.calendar ? window.globalCache.calendar[race - 1] : 'NON DISPONIBILE');
       
-      if (window.globalCache && window.globalCache.calendar && window.globalCache.calendar[race - 1]) {
-        const raceData = window.globalCache.calendar[race - 1];
-        trackName = raceData[2] || ''; // Colonna circuito
-        console.log(`loadRisultati: Tracciato trovato: "${trackName}"`);
-        if (trackName) {
-          const circuitMapping = {
-            'daytona': 'daytona', 'autopolis': 'autopolis', 'deep forest': 'deep-forest',
-            'dragon trail': 'dragon', 'fuji': 'fuji', 'interlagos': 'interlagos',
-            'laguna seca': 'lagunaseca', 'monza': 'monza', 'mount panorama': 'mountpanorama',
-            'red bull ring': 'rbr', 'sardegna': 'sardegna', 'spa': 'spa',
-            'suzuka': 'suzuka', 'tokyo': 'tokyo', 'watkins glen': 'watkins',
-            'yas marina': 'yasmarina'
-          };
-          const cleanName = trackName.toLowerCase().trim();
-          const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
-          trackLogo = `<img src="images/tracks/${circuitName}.png" alt="${trackName}" class="track-logo-small" onerror="this.style.display='none'">`;
-          console.log(`loadRisultati: Logo generato: ${trackLogo}`);
+      if (window.globalCache && window.globalCache.calendar) {
+        console.log(`loadRisultati: calendar array length:`, window.globalCache.calendar.length);
+        console.log(`loadRisultati: dati per gara ${race - 1}:`, window.globalCache.calendar[race - 1]);
+        
+        if (window.globalCache.calendar[race - 1]) {
+          const raceData = window.globalCache.calendar[race - 1];
+          trackName = raceData[2] || ''; // Colonna circuito
+          console.log(`loadRisultati: Tracciato trovato: "${trackName}"`);
+          
+          if (trackName) {
+            const circuitMapping = {
+              'daytona': 'daytona', 'autopolis': 'autopolis', 'deep forest': 'deep-forest',
+              'dragon trail': 'dragon', 'fuji': 'fuji', 'interlagos': 'interlagos',
+              'laguna seca': 'lagunaseca', 'monza': 'monza', 'mount panorama': 'mountpanorama',
+              'red bull ring': 'rbr', 'sardegna': 'sardegna', 'spa': 'spa',
+              'suzuka': 'suzuka', 'tokyo': 'tokyo', 'watkins glen': 'watkins',
+              'yas marina': 'yasmarina'
+            };
+            const cleanName = trackName.toLowerCase().trim();
+            const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
+            console.log(`loadRisultati: Clean name: "${cleanName}" -> Circuit name: "${circuitName}"`);
+            
+            trackLogo = `<img src="images/tracks/${circuitName}.png" alt="${trackName}" class="track-logo-small" onerror="this.style.display='none'">`;
+            console.log(`loadRisultati: Logo generato: ${trackLogo}`);
+          }
+        } else {
+          console.log(`loadRisultati: Nessun dato trovato per indice ${race - 1}`);
         }
       } else {
         console.log(`loadRisultati: Cache calendario non disponibile per gara ${race}`);
@@ -1433,7 +1534,12 @@ async function loadRisultati(spreadsheetUrl) {
 
   } catch (error) {
     console.error('Errore nel caricamento dei risultati:', error);
-    container.innerHTML = '<div style="text-align: center; padding: 40px; color: rgba(255,0,0,0.7);">Errore nel caricamento dei risultati</div>';
+    container.innerHTML = `
+      <div class="error-message">
+        <div>Errore nel caricamento dei risultati</div>
+        <button onclick="location.reload()">Riprova</button>
+      </div>
+    `;
   }
 }
 
@@ -1831,7 +1937,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
 
     loadAllClassifications(URL_CLASS);
-    loadRisultati(URL_CLASS);
 
     const URL_PEN = config.googleSheets.worldchampionship.penalita;
     loadAndCreateHtmlTable(URL_PEN, "penalita-body", []);
@@ -1843,8 +1948,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const URL_OPZIONI = config.googleSheets.worldchampionship.opzioni;
     loadDataAndGenerateCards(URL_OPZIONI);
 
+    // Inizializza funzionalità search
+    initializePilotSearch();
+    initializeLobbySearch();
+
     const URL_TEAM_PILOTI = config.googleSheets.worldchampionship.teamPiloti;
     loadTeamAndPiloti(URL_TEAM_PILOTI);
+
+    // Carica risultati DOPO il calendario per avere la cache disponibile
+    setTimeout(() => {
+      loadRisultati(URL_CLASS);
+    }, 1000); // Aspetta 1 secondo per assicurarsi che la cache sia caricata
   }
   // --- 4. Logica per interno.html ---
 

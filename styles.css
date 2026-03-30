@@ -72,6 +72,123 @@ button {
   cursor: pointer;
 }
 
+/* Smooth scroll per navigazione fluida */
+html { 
+  scroll-behavior: smooth; 
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--giallogtv);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Error Messages migliorati */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 100, 100, 0.9);
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.error-message button {
+  background: var(--giallogtv);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 35px 8px 15px;
+  color: white;
+  font-size: 0.9em;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--giallogtv);
+  background: rgba(255, 255, 255, 0.15);
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+/* Responsive Search Bar */
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .search-container {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .search-input:focus {
+    width: 100%;
+  }
+}
+
 /* ========================================
    HEADER
    ======================================== */
@@ -2116,6 +2233,13 @@ body#worldchampionship {
   color: #87ceeb;
   font-weight: 600;
   font-size: 1em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lobby-host-name:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .lobby-live {
@@ -2158,14 +2282,22 @@ body#worldchampionship {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  animation: blink 1.5s infinite;
+  margin-left: auto;
 }
 
 .lobby-live-name {
-  color: #87ceeb;
+  font-size: 0.9em;
   font-weight: 600;
-  font-size: 1em;
+  color: var(--giallogtv);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lobby-live-name:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .lobby-live-badge {
@@ -2176,10 +2308,18 @@ body#worldchampionship {
   font-size: 0.7em;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
   letter-spacing: 0.5px;
   border: 1px solid rgba(191, 239, 255, 0.3);
   animation: blink 1.5s infinite;
   margin-left: auto;
+}
+
+.lobby-live-badge:hover {
+  background: rgba(191, 239, 255, 0.3);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 @keyframes blink {
