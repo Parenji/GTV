@@ -208,6 +208,133 @@ html {
   }
 }
 
+/* Stili per il podio */
+.podio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+
+}
+
+.podio-lobby {
+  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  border: 2px solid var(--giallogtv);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.podio-lobby-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--giallogtv);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.podio-piloti {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.podio-pilota {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.podio-pilota:hover {
+  background: rgba(191, 239, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.podio-posizione {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--giallogtv);
+  min-width: 40px;
+  text-align: center;
+}
+
+.podio-primo {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.podio-secondo {
+  color: #c0c0c0;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.podio-terzo {
+  color: #cd7f32;
+  text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+.podio-pilota-nome {
+  flex: 1;
+  font-weight: 500;
+}
+
+.podio-pilota-team {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+/* Responsive per podio */
+@media (max-width: 768px) {
+
+  
+  .podio-lobby {
+    padding: 12px;
+  }
+  
+  .podio-piloti {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+  
+  .podio-pilota {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    padding: 6px 3px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .podio-posizione {
+    min-width: auto;
+    margin-bottom: 0;
+    font-size: 1em;
+    line-height: 1;
+  }
+  
+  .podio-pilota-nome {
+    font-size: 0.7em;
+    line-height: 1.1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .podio-pilota-team {
+    font-size: 0.6em;
+    opacity: 0.8;
+    line-height: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 /* ========================================
    HEADER
    ======================================== */

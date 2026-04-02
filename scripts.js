@@ -1312,6 +1312,171 @@ function showNotification(message) {
   }, 3000);
 }
 
+// Funzione per caricare il podio dell'ultima gara
+async function loadPodioUltimaGara(spreadsheetUrl, ultimaGara) {
+  const container = document.getElementById("podio-ultima-gara");
+  
+  if (!container) {
+    console.error('Elemento "podio-ultima-gara" non trovato.');
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    
+    // Parsing CSV
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (!rows || rows.length === 0) {
+      container.innerHTML = '<div class="loading-message">Nessun risultato trovato.</div>';
+      return;
+    }
+
+    const header = rows[0];
+    const allDataRows = rows.slice(1);
+    
+    // Debug: mostra la struttura del CSV
+    console.log('Struttura CSV risultati:', header);
+    console.log('Prime 3 righe dati:', allDataRows.slice(0, 3));
+    
+    // Usa la stessa logica di loadRisultati per l'ultima gara
+    const startCol = 9 + (ultimaGara - 1) * 6; // Stessa formula di loadRisultati
+    const endCol = startCol + 6;
+    
+    console.log(`Podio: Gara ${ultimaGara} - colonne ${startCol}-${endCol}`);
+    
+    if (startCol >= allDataRows[0].length) {
+      container.innerHTML = '<div class="loading-message">Nessun risultato trovato per questa gara.</div>';
+      return;
+    }
+    
+    // Estrai i risultati per l'ultima gara
+    const raceResults = [];
+    allDataRows.forEach((row, index) => {
+      if (row.length > startCol) {
+        const lobby = row[startCol] || ''; // Colonna 1: lobby
+        const position = parseInt(row[startCol + 1]) || 0; // Colonna 2: posizione
+        const points = parseInt(row[startCol + 2]) || 0; // Colonna 3: punti
+        const pole = parseInt(row[startCol + 3]) || 0; // Colonna 4: pole
+        const fastLap = parseInt(row[startCol + 4]) || 0; // Colonna 5: giro veloce
+        const totalPoints = parseInt(row[startCol + 5]) || 0; // Colonna 6: punti totali
+        
+        if (position && position > 0) {
+          raceResults.push({
+            lobby: lobby,
+            position: position,
+            points: points,
+            pole: pole,
+            fastLap: fastLap,
+            totalPoints: totalPoints,
+            pilotName: row[1] || '', // Colonna pilota
+            teamName: row[3] || '', // Colonna team
+            originalIndex: index + 1
+          });
+        }
+      }
+    });
+    
+    console.log('Podio: Risultati estratti:', raceResults.length);
+    
+    // Separa per lobby e prendi i primi 3 di ciascuna
+    const lobby1Results = raceResults
+      .filter(result => result.lobby === '1')
+      .sort((a, b) => a.position - b.position)
+      .slice(0, 3);
+      
+    const lobby2Results = raceResults
+      .filter(result => result.lobby === '2')
+      .sort((a, b) => a.position - b.position)
+      .slice(0, 3);
+    
+    console.log('Podio: Lobby 1 -', lobby1Results.length, 'piloti');
+    console.log('Podio: Lobby 2 -', lobby2Results.length, 'piloti');
+    
+    let html = '';
+    
+    // Genera HTML per Lobby 1
+    if (lobby1Results.length > 0) {
+      html += `
+        <div class="podio-lobby">
+          <div class="podio-lobby-header">🏆 Lobby 1</div>
+          <div class="podio-piloti">
+      `;
+      
+      lobby1Results.forEach((result, index) => {
+        const positionClass = index === 0 ? 'podio-primo' : index === 1 ? 'podio-secondo' : 'podio-terzo';
+        
+        html += `
+          <div class="podio-pilota">
+            <div class="podio-posizione ${positionClass}">${result.position}°</div>
+            <div class="podio-pilota-nome">${escapeHtml(result.pilotName)}</div>
+            <div class="podio-pilota-team">${escapeHtml(result.teamName)}</div>
+          </div>
+        `;
+      });
+      
+      html += `
+          </div>
+        </div>
+      `;
+    }
+    
+    // Genera HTML per Lobby 2
+    if (lobby2Results.length > 0) {
+      html += `
+        <div class="podio-lobby">
+          <div class="podio-lobby-header">🏆 Lobby 2</div>
+          <div class="podio-piloti">
+      `;
+      
+      lobby2Results.forEach((result, index) => {
+        const positionClass = index === 0 ? 'podio-primo' : index === 1 ? 'podio-secondo' : 'podio-terzo';
+        
+        html += `
+          <div class="podio-pilota">
+            <div class="podio-posizione ${positionClass}">${result.position}°</div>
+            <div class="podio-pilota-nome">${escapeHtml(result.pilotName)}</div>
+            <div class="podio-pilota-team">${escapeHtml(result.teamName)}</div>
+          </div>
+        `;
+      });
+      
+      html += `
+          </div>
+        </div>
+      `;
+    }
+    
+    container.innerHTML = html || '<div class="loading-message">Nessun risultato trovato per l\'ultima gara.</div>';
+    console.log('Podio caricato:', lobby1Results.length + ' piloti Lobby 1,', lobby2Results.length + ' piloti Lobby 2');
+
+  } catch (error) {
+    console.error('Errore nel caricamento del podio:', error);
+    container.innerHTML = `
+      <div class="error-message">
+        <div>Errore nel caricamento del podio</div>
+        <button onclick="location.reload()">Riprova</button>
+      </div>
+    `;
+  }
+}
+
 // Funzione per caricare i risultati di tutte le gare
 async function loadRisultati(spreadsheetUrl) {
   console.log('loadRisultati: Inizio caricamento risultati da', spreadsheetUrl);
@@ -1938,6 +2103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
     const URL_CLASS = config.googleSheets.worldchampionship.classifica;
     loadLobbyCards(URL_LOBBY, URL_CLASS);
+
+    // Carica il podio dell'ultima gara
+    loadPodioUltimaGara(URL_CLASS, ultimaGara);
 
     // const URL_PROMRETR = config.googleSheets.worldchampionship.promoRetro;
     // loadAndCreateHtmlTable(URL_PROMRETR, "proret-body");
