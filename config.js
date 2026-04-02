@@ -32,7 +32,7 @@ window.GTV_CONFIG = {
       classifica:
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=126395538&single=true&output=csv",
       penalita:
-        "https://docs.google.com/spreadsheets/d/e/REPLACE_ME_WORLDCHAMPIONSHIP/pub?gid=0&single=true&output=csv",
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=1753268594&single=true&output=csv",
       calendario:
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRJUJf8J-6IC2HEmaZ1lRCABX3F4H8CHY4jauYhIL6m2NWGvcBhrho1Pi1YvSJWu-8CBa5qt3Hp2A2N/pub?gid=912348639&single=true&output=csv",
       opzioni:

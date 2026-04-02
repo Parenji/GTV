@@ -179,20 +179,40 @@
 
 
         <section id="regolamento" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Regolamento</div>
+                    <div class="calendar-subtitle">Documenti ufficiali campionato</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="pdf-button-container">
+                            <button class="pdf-button" onclick="window.open('pdf/WORLD.pdf', '_blank')">
+                                PDF Regolamento
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/WORLD opzioni e cal.pdf', '_blank')">
+                                PDF Opzioni stanza
+                            </button>
+                        </div>
 
-            <div class="pdf-button-container">
-
-                <button class="pdf-button" onclick="window.open('pdf/WORLD.pdf', '_blank')">
-                    PDF Regolamento
-                </button>
-                <button class="pdf-button" onclick="window.open('pdf/WORLD opzioni e cal.pdf', '_blank')">
-                    PDF Opzioni stanza
-                </button>
+                    </div>
+                </div>
             </div>
-            <div class="titoletto" id="info-next-gara"></div>
-            <div id="card-output" class="opzioni-card-container">
-            </div>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title" id="info-next-gara"></div>
+                    <div class="calendar-subtitle" id="subinfo-next-gara"></div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="card-output" class="opzioni-card-container">
+                            <div id="card-output" class="opzioni-card-container">
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="penalita" class="section">
@@ -218,12 +238,12 @@
                                         <th>Gara</th>
                                         <th>Giro</th>
                                         <th>Curva</th>
-                                        <th>Punti patente</th>
+                                        <th>Motivazione</th>
                                     </tr>
                                 </thead>
                                 <tbody id="penalita-body">
                                     <tr>
-                                        <td colspan="4" style="text-align: center; padding: 20px;">
+                                        <td colspan="6" style="text-align: center; padding: 20px;">
                                             Caricamento dati in corso...
                                         </td>
                                     </tr>

@@ -9,24 +9,6 @@
   --rossotlm: #810101;
   --giallogtv: #f5ff3c;
   --giallogtvhover: #bbc22d;
-  
-  /* Colori Team */
-  --team-swiffer: #8B7500;
-  --team-badboys: #4B0082;
-  --team-tekkadan: #FFFFFF;
-  --team-grom: #8B0000;
-  --team-drifter: #26b3ff;
-  --team-lentiviolenti: #00FF7F;
-  --team-gliscappatidicasa: #FFFF00;
-  --team-rebellion: #FF1493;
-  --team-newgeneration: #0096d6;
-  --team-frauzer: #464646;
-  --team-afmotorsport: #191970;
-  --team-esagerati: #FF4500;
-  --team-pasa-racing: #0047AB;
-  --team-swatclub: #87CEFA;
-  --team-apex: #0D1B2A;  /* Blu molto scuro */
-  --team-team15: var(--giallogtv);
 }
 
 /* ========================================
@@ -189,6 +171,40 @@ html {
   
   .search-input:focus {
     width: 100%;
+  }
+}
+
+/* Stili specifici per tabella penalità */
+.motivazione-cell {
+  max-width: 300px;
+  white-space: normal !important;
+  word-wrap: break-word;
+  line-height: 1.4;
+  padding: 12px 8px !important;
+  vertical-align: top !important;
+}
+
+/* Responsive per penalità */
+@media (max-width: 768px) {
+  .motivazione-cell {
+    max-width: none;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px 5px 15px 120px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+  }
+  
+  .motivazione-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--giallogtv);
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 100px;
+    text-align: left;
+    margin-bottom: 0;
   }
 }
 
@@ -2517,7 +2533,7 @@ body#worldchampionship {
 /* Mappatura colori team centralizzata */
 :root {
   /* Mappatura team -> colore */
-  --team-swiffer: #8B7500;
+  --team-swiffer: #000000;
   --team-badboys: #4B0082;
   --team-tekkadan: #FFFFFF;
   --team-grom: #8B0000;
@@ -2525,13 +2541,14 @@ body#worldchampionship {
   --team-lentiviolenti: #00FF7F;
   --team-gliscappatidicasa: #FFFF00;
   --team-rebellion: #FF1493;
-  --team-newgeneration: #0096d6;
+  --team-newgeneration: #16588e;
   --team-frauzer: #464646;
-  --team-afmotorsport: #191970;
+  --team-afmotorsport: #0f3871;
   --team-esagerati: #FF4500;
-  --team-pasa-racing: #0047AB;
+  --team-pasa-racing: #00398a;
   --team-swatclub: #87CEFA;
   --team-apex: #0D1B2A;
+  --team-lavazzaracing: #000679;  /* Blu lavazzaracing */
   --team-team15: var(--giallogtv);
 }
 
@@ -2653,6 +2670,14 @@ body#worldchampionship {
 .pilot-info[data-team-color="gtvapex"],
 .lobby-pilot-logo-container[data-team="Apex"] {
   --team-color: var(--team-apex);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvlavazzaracing"],
+.pilot-number[data-team-color="gtvlavazzaracing"],
+.pilot-info[data-team-color="gtvlavazzaracing"],
+.lobby-pilot-logo-container[data-team="Lavazzaracing"] {
+  --team-color: var(--team-lavazzaracing);
   --team-text-color: #fff;
 }
 

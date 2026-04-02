@@ -688,8 +688,12 @@ async function loadAndCreateHtmlTable(
                         />
                     `;
           }
+          
+          // Aggiungi classe speciale per motivazione nelle penalità
+          const cellClass = (columnName === "Motivazione" || columnName === "motivazione") ? ' class="motivazione-cell"' : '';
+          
           // Aggiungi la cella con il contenuto (testo o HTML dell'immagine)
-          innerHTML += `<td data-label="${columnName}">${cellContent}</td>`;
+          innerHTML += `<td data-label="${columnName}"${cellClass}>${cellContent}</td>`;
         }
 
         tr.innerHTML = innerHTML;
@@ -1222,6 +1226,7 @@ function getTeamColor(teamName) {
     'Swatclub': 'var(--team-swatclub)',
     'Apex': 'var(--team-apex)',
     'GTVApex': 'var(--team-apex)',
+    'Lavazzaracing': 'var(--team-lavazzaracing)',
     'Team15': 'var(--team-team15)'
   };
   return teamVariableMap[teamName] || 'var(--team-team15)';
@@ -1917,7 +1922,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (worldchampionship) {
     console.log("Inizializzazione di worldchampionship.html: Caricamento...");
-    let ultimaGara = 0; // Cambia questo numero quando vuoi aggiornare la gara
+    let ultimaGara = 1; // Cambia questo numero quando vuoi aggiornare la gara
     prossimaGara = ultimaGara + 1;
     document.getElementById(
       "pen-ult-gara"
@@ -1925,9 +1930,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("lobby-next-gara").innerText = `Gara ${
       ultimaGara + 1
     }`;
-    document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
+    document.getElementById("info-next-gara").innerText = `Opzioni Stanza `;
+        document.getElementById("subinfo-next-gara").innerText = `Gara ${
       ultimaGara + 1
-    }`;
+    } (standard)`;
 
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
     const URL_CLASS = config.googleSheets.worldchampionship.classifica;
