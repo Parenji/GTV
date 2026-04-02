@@ -212,16 +212,16 @@ html {
 .podio-container {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 10px;
 
 }
 
 .podio-lobby {
   background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
-  border: 2px solid var(--giallogtv);
+  border: 0px solid var(--giallogtv);
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 15px;
+
 }
 
 .podio-lobby-header {
@@ -291,7 +291,7 @@ html {
 
   
   .podio-lobby {
-    padding: 12px;
+    padding: 5px;
   }
   
   .podio-piloti {
