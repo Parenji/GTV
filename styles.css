@@ -335,6 +335,49 @@ html {
   }
 }
 
+/* Legenda punteggi risultati */
+.legenda-punteggi {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legenda-pole {
+  color: #ffd000;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.legenda-giro-veloce {
+  color: #ff00ff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Responsive per legenda */
+@media (max-width: 768px) {
+  .legenda-punteggi {
+    gap: 15px;
+    font-size: 0.7em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .legenda-item {
+    gap: 3px;
+  }
+}
+
 /* ========================================
    HEADER
    ======================================== */
@@ -2872,10 +2915,7 @@ body#worldchampionship {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--giallogtv);
   border-radius: 4px;
 }
 

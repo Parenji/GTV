@@ -104,7 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
         targetElement.style.display = "block";
         updateBreadcrumb(targetId);
         sidebarcontent.addEventListener("click", closeSidebar);
-        // targetElement.scrollIntoView({ behavior: "smooth" });
+        
+        // Scroll al top della pagina prima di scrollare alla sezione
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        
+        // Dopo un breve momento, scroll alla sezione
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }, 100);
 
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
@@ -478,7 +485,7 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
           <!-- Header Gara -->
           <div style="margin-bottom: 15px;">
             <div style="font-size: 0.9em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">
-              Prossima Gara
+              Gara
             </div>
             <div style="font-size: 2em; font-weight: 800; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">
               ${gara || 'N/D'}
@@ -1662,7 +1669,7 @@ async function loadRisultati(spreadsheetUrl) {
               </div>
               <div class="pilot-name">${escapeHtml(item.pilot)}</div>
               <div class="pilot-team">${escapeHtml(item.team)}</div>
-              <div class="pilot-points" style="${pointsStyle} font-weight: bold; padding: 2px 6px;">${item.points}</div>
+              <div class="pilot-points" style="${pointsStyle}">${item.points}</div>
             </div>
           `;
         });
