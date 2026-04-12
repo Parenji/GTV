@@ -39,7 +39,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
 
 .centered-div {
@@ -55,8 +54,8 @@ button {
 }
 
 /* Smooth scroll per navigazione fluida */
-html { 
-  scroll-behavior: smooth; 
+html {
+  scroll-behavior: smooth;
 }
 
 /* Loading Spinner */
@@ -74,7 +73,9 @@ html {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-message {
@@ -158,17 +159,17 @@ html {
     gap: 15px;
     align-items: stretch;
   }
-  
+
   .search-container {
     margin-left: 0;
     width: 100%;
   }
-  
+
   .search-input {
     width: 100%;
     max-width: none;
   }
-  
+
   .search-input:focus {
     width: 100%;
   }
@@ -191,10 +192,10 @@ html {
     width: 100%;
     min-height: 50px;
     padding: 15px 5px 15px 120px !important;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
   }
-  
+
   .motivazione-cell::before {
     content: attr(data-label);
     font-weight: bold;
@@ -213,15 +214,17 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
 }
 
 .podio-lobby {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
   border: 0px solid var(--giallogtv);
   border-radius: 15px;
   padding: 20px;
-
 }
 
 .podio-lobby-header {
@@ -288,19 +291,17 @@ html {
 
 /* Responsive per podio */
 @media (max-width: 768px) {
-
-  
   .podio-lobby {
     padding: 5px;
   }
-  
+
   .podio-piloti {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
     width: 100%;
   }
-  
+
   .podio-pilota {
     flex-direction: column;
     align-items: center;
@@ -311,21 +312,21 @@ html {
     width: 100%;
     box-sizing: border-box;
   }
-  
+
   .podio-posizione {
     min-width: auto;
     margin-bottom: 0;
     font-size: 1em;
     line-height: 1;
   }
-  
+
   .podio-pilota-nome {
     font-size: 0.7em;
     line-height: 1.1;
     word-break: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .podio-pilota-team {
     font-size: 0.6em;
     opacity: 0.8;
@@ -372,9 +373,68 @@ html {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .legenda-item {
     gap: 3px;
+  }
+}
+
+/* Stile per le icone delle periferiche */
+.pilot-periferica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.periferica-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.periferica-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive per icone periferiche */
+@media (max-width: 768px) {
+  .periferica-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Stile per le icone delle periferiche nel modal */
+.pilot-periferica-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.periferica-icon-modal {
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.periferica-icon-modal:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive per icone periferiche nel modal */
+@media (max-width: 768px) {
+  .periferica-icon-modal {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pilot-periferica-modal {
+    margin-left: 5px;
   }
 }
 
@@ -382,7 +442,8 @@ html {
    HEADER
    ======================================== */
 header {
-  background: linear-gradient(to bottom, transparent 0%, #0f0f0f 100%),
+  background:
+    linear-gradient(to bottom, transparent 0%, #0f0f0f 100%),
     url("images/carbon.jpg");
   position: sticky;
   top: 0;
@@ -407,7 +468,6 @@ button {
   flex-grow: 1;
   max-width: 1000px;
   margin: 0 auto;
-
 }
 
 #breadcrumb {
@@ -580,9 +640,21 @@ body#worldchampionship .sidebar-content a[href="#home"].active .menu-icon {
 
 @media (max-width: 768px) {
   .main-container {
-    background: 
-    linear-gradient(to right, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
-    linear-gradient(to bottom, #0f0f0f 0%, transparent 25%, transparent 75%, #0f0f0f 100%),
+    background:
+      linear-gradient(
+        to right,
+        #0f0f0f 0%,
+        transparent 25%,
+        transparent 75%,
+        #0f0f0f 100%
+      ),
+      linear-gradient(
+        to bottom,
+        #0f0f0f 0%,
+        transparent 25%,
+        transparent 75%,
+        #0f0f0f 100%
+      );
   }
 
   .logohead {
@@ -894,10 +966,8 @@ td.totalone {
   margin-bottom: 15px;
 }
 .countdown-container1 {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
     url("images/usa.svg");
   background-size: cover;
   background-position: center;
@@ -916,13 +986,22 @@ td.totalone {
   font-size: 17px;
   font-weight: 700;
   /* color: #fff7c7; */
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00;
 }
 .winnerf {
   font-weight: 700;
   color: #fff7c7;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
-    0 0 80px #ff8c00, 0 0 90px #ff8c00;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00,
+    0 0 80px #ff8c00,
+    0 0 90px #ff8c00;
   margin-bottom: 40px;
 }
 .twitch {
@@ -1122,7 +1201,9 @@ td.totalone {
   text-align: center;
   align-items: center;
   border: 1px solid var(--giallogtv);
-  box-shadow: 0 0 1px var(--giallogtvhover), 0 0 6px var(--giallogtvhover),
+  box-shadow:
+    0 0 1px var(--giallogtvhover),
+    0 0 6px var(--giallogtvhover),
     0 0 12px var(--giallogtvhover);
   overflow: hidden;
   position: relative;
@@ -1151,7 +1232,9 @@ td.totalone {
   text-align: center;
   align-items: center;
   border: 1px solid var(--giallogtv);
-  box-shadow: 0 0 1px var(--giallogtvhover), 0 0 6px var(--giallogtvhover),
+  box-shadow:
+    0 0 1px var(--giallogtvhover),
+    0 0 6px var(--giallogtvhover),
     0 0 12px var(--giallogtvhover);
   overflow: hidden;
   position: relative;
@@ -1430,14 +1513,23 @@ td.totalone {
 .winner {
   font-size: 17px;
   font-weight: 700;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00;
 }
 
 .winnerf {
   font-weight: 700;
   color: #fff7c7;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
-    0 0 80px #ff8c00, 0 0 90px #ff8c00;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00,
+    0 0 80px #ff8c00,
+    0 0 90px #ff8c00;
   margin-bottom: 40px;
 }
 
@@ -1485,7 +1577,7 @@ td.totalone {
 }
 .pilot-header {
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: 12px;
   margin-bottom: 8px;
 }
@@ -1588,9 +1680,6 @@ td.totalone {
     width: calc(100% - 24px);
     padding: 12px;
   }
-  .pilot-header {
-    align-items: flex-start;
-  }
 }
 
 .pentrack {
@@ -1613,10 +1702,8 @@ td.totalone {
 }
 
 .countdown-container1 {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
     url("images/usa.svg");
   background-size: cover;
   background-position: center;
@@ -1836,10 +1923,12 @@ td.totalone {
   flex-wrap: wrap;
   gap: 5px;
   /* 1. Helvetica Neue è spesso preferito se disponibile */
-  font-family: "Helvetica Neue", /* 2. Helvetica (il font classico) */ Helvetica,
+  font-family:
+    "Helvetica Neue",
+    /* 2. Helvetica (il font classico) */ Helvetica,
     /* 3. Arial (un'alternativa comune di default sui sistemi Windows) */ Arial,
     /* 4. sans-serif (il fallback generico per assicurare che venga usato un font senza grazie) */
-      sans-serif;
+    sans-serif;
 }
 .opzioni-card {
   flex: 1 1 300px;
@@ -1901,7 +1990,8 @@ td.totalone {
 }
 
 .linktree-button.only-logo {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .linktree-button.only-logo .linktree-icon {
@@ -1918,7 +2008,6 @@ td.totalone {
   justify-content: center;
   gap: 40px;
   margin: 30px 0;
-
 }
 
 .additional-logo {
@@ -1955,7 +2044,9 @@ td.totalone {
   width: 360px;
   min-height: 70px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .pilot-card:hover {
@@ -2020,7 +2111,9 @@ td.totalone {
   width: 360px;
   min-height: 80px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .admin-role {
@@ -2058,10 +2151,6 @@ td.totalone {
   filter: invert(100%);
   flex-shrink: 0;
 }
-.gtec-icon {
-  filter: invert(0%);
-}
-
 
 .sponsor-section {
   margin-top: 0px;
@@ -2078,13 +2167,11 @@ td.totalone {
 
 .sponsor-section h2 {
   color: var(--giallogtv);
-
 }
 
 .sponsor-section a {
   text-decoration: none;
   color: white;
-
 }
 
 .sponsor-section img {
@@ -2104,8 +2191,6 @@ td.totalone {
   flex-direction: column;
   min-height: 90px;
 }
-
-
 
 @media (max-width: 768px) {
   .linktree-container h1 {
@@ -2163,7 +2248,11 @@ body#worldchampionship {
 }
 
 .team-card {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
   border: 2px solid var(--giallogtv);
   border-radius: 15px;
   padding: 15px;
@@ -2173,7 +2262,7 @@ body#worldchampionship {
 }
 
 .team-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2181,12 +2270,6 @@ body#worldchampionship {
   height: 4px;
   background: linear-gradient(90deg, var(--giallogtv), var(--giallogtvhover));
   border-radius: 15px 15px 0 0;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(191, 239, 255, 0.3);
-  border-color: var(--giallogtvhover);
 }
 
 .team-header {
@@ -2262,7 +2345,8 @@ body#worldchampionship {
   flex-shrink: 0;
 }
 
-.loading-message, .error-message {
+.loading-message,
+.error-message {
   text-align: center;
   padding: 40px;
   font-size: 1.1em;
@@ -2299,13 +2383,17 @@ body#worldchampionship {
 }
 
 .lobby-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--giallogtv) 0%, rgba(191, 239, 255, 0.6) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--giallogtv) 0%,
+    rgba(191, 239, 255, 0.6) 100%
+  );
 }
 
 .lobby-card:hover {
@@ -2449,7 +2537,6 @@ body#worldchampionship {
   transform: translateY(-1px);
 }
 
-
 .lobby-live-icon {
   font-size: 1.2em;
   background: rgba(191, 239, 255, 0.15);
@@ -2512,10 +2599,13 @@ body#worldchampionship {
 }
 
 @keyframes blink {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0.7;
   }
 }
@@ -2526,19 +2616,19 @@ body#worldchampionship {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .lobby-host,
   .lobby-live {
     padding: 12px;
   }
-  
+
   .lobby-host-icon,
   .lobby-live-icon {
     width: 35px;
     height: 35px;
     font-size: 1.2em;
   }
-  
+
   .lobby-live-badge {
     position: absolute;
     top: 8px;
@@ -2576,7 +2666,7 @@ body#worldchampionship {
 }
 
 .lobby-pilots-title::before {
-  content: '🏁';
+  content: "🏁";
   font-size: 1.2em;
 }
 
@@ -2644,22 +2734,20 @@ body#worldchampionship {
     gap: 15px;
     align-items: stretch;
   }
-  
+
   .lobby-datetime {
     justify-content: space-between;
   }
-  
 
-  
   .lobby-pilots-grid {
     grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
     gap: 8px;
   }
-  
+
   .lobby-pilot {
     padding: 8px 10px;
   }
-  
+
   .lobby-pilot-name {
     font-size: 0.8em;
   }
@@ -2669,7 +2757,7 @@ body#worldchampionship {
   .lobby-pilots-grid {
     grid-template-columns: 1fr; /* Mantengo 2 colonne anche su schermi piccoli */
   }
-  
+
   .lobby-card {
     padding: 20px 15px;
   }
@@ -2692,7 +2780,11 @@ body#worldchampionship {
 }
 
 .team-card[data-team]::before {
-  background: linear-gradient(90deg, var(--team-color, var(--giallogtv)) 0%, var(--team-color-dark, var(--giallogtv)) 100%) !important;
+  background: linear-gradient(
+    90deg,
+    var(--team-color, var(--giallogtv)) 0%,
+    var(--team-color-dark, var(--giallogtv)) 100%
+  ) !important;
 }
 
 /* Loghi delle lobby - Sistema Centralizzato */
@@ -2704,21 +2796,21 @@ body#worldchampionship {
 :root {
   /* Mappatura team -> colore */
   --team-swiffer: #000000;
-  --team-badboys: #4B0082;
-  --team-tekkadan: #FFFFFF;
-  --team-grom: #8B0000;
+  --team-badboys: #4b0082;
+  --team-tekkadan: #ffffff;
+  --team-grom: #8b0000;
   --team-drifter: #26b3ff;
-  --team-lentiviolenti: #00FF7F;
-  --team-gliscappatidicasa: #FFFF00;
-  --team-rebellion: #FF1493;
+  --team-lentiviolenti: #00ff7f;
+  --team-gliscappatidicasa: #ffff00;
+  --team-rebellion: #ff1493;
   --team-newgeneration: #16588e;
   --team-frauzer: #464646;
   --team-afmotorsport: #0f3871;
-  --team-esagerati: #FF4500;
+  --team-esagerati: #ff4500;
   --team-pasa-racing: #00398a;
-  --team-swatclub: #87CEFA;
-  --team-apex: #0D1B2A;
-  --team-lavazzaracing: #000679;  /* Blu lavazzaracing */
+  --team-swatclub: #87cefa;
+  --team-apex: #0d1b2a;
+  --team-lavazzaracing: #000679; /* Blu lavazzaracing */
   --team-team15: var(--giallogtv);
 }
 
@@ -2861,9 +2953,9 @@ body#worldchampionship {
 
 /* Stile base per numeri piloti - Design semplice */
 .pilot-number {
-  width: 40px;
+  width: 60px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2874,11 +2966,6 @@ body#worldchampionship {
   flex-shrink: 0;
   border: 2px solid rgba(255, 255, 255, 0.3);
   transition: all 0.2s ease;
-}
-
-.pilot-number:hover {
-  transform: scale(1.1);
-  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Team info container - Design orizzontale */
@@ -2906,7 +2993,6 @@ body#worldchampionship {
 
 /* Stile per le sezioni delle lobby nei risultati */
 .race-lobby-section {
-  margin-bottom: 20px;
 }
 
 .race-lobby-title {
@@ -2917,6 +3003,7 @@ body#worldchampionship {
   letter-spacing: 1px;
   padding: 8px 12px;
   border-radius: 4px;
+  margin-top: 20px;
 }
 
 /* Logo tracciato nell'accordion */
@@ -2938,17 +3025,9 @@ body#worldchampionship {
 
 /* Responsive per team pilots */
 @media (max-width: 768px) {
-  .pilot-number {
-    width: 35px;
-    height: 35px;
-    font-size: 0.8em;
-  }
-  
   .pilot-info {
     padding: 10px 12px;
   }
-  
-
 }
 
 /* ========================================
@@ -2982,10 +3061,13 @@ body#worldchampionship {
 }
 
 .accordion:hover {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.15) 0%, rgba(191, 239, 255, 0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.15) 0%,
+    rgba(191, 239, 255, 0.08) 100%
+  );
   border-color: rgba(191, 239, 255, 0.3);
 }
-
 
 .accordion-title {
   font-size: 1.3em;
@@ -3123,7 +3205,7 @@ body#worldchampionship {
   text-align: center;
   background: rgba(191, 239, 255, 0.1);
   padding: 8px 15px;
-border-radius: 8px;
+  border-radius: 8px;
   border: 1px solid rgba(191, 239, 255, 0.5);
   min-width: 60px;
   display: inline-block;
@@ -3227,7 +3309,11 @@ border-radius: 8px;
 
 /* Calendar Home - Stile basato su Next Race */
 .calendar-home {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
   border: 1px solid rgba(191, 239, 255, 0.2);
   border-radius: 15px;
   padding: 0px 0px;
@@ -3283,7 +3369,11 @@ border-radius: 8px;
 
 /* Next Race Home - Stile basato su Top 10 */
 .next-race-home {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
   border: 1px solid rgba(191, 239, 255, 0.2);
   border-radius: 15px;
   padding: 0px 0px;
@@ -3413,12 +3503,12 @@ border-radius: 8px;
     gap: 10px;
     text-align: center;
   }
-  
+
   .race-info-item {
     padding: 12px 15px;
     gap: 12px;
   }
-  
+
   .race-circuit img {
     width: 50px;
   }
@@ -3426,7 +3516,11 @@ border-radius: 8px;
 
 /* Top 10 Home */
 .top10-home {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.1) 0%, rgba(191, 239, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
   border: 1px solid rgba(191, 239, 255, 0.2);
   border-radius: 15px;
   padding: 0px 0px;
@@ -3479,7 +3573,11 @@ border-radius: 8px;
 }
 
 .top10-item.podium {
-  background: linear-gradient(135deg, rgba(191, 239, 255, 0.15) 0%, rgba(191, 239, 255, 0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.15) 0%,
+    rgba(191, 239, 255, 0.08) 100%
+  );
   border-color: rgba(191, 239, 255, 0.4);
 }
 
@@ -3530,58 +3628,56 @@ border-radius: 8px;
     gap: 6px;
     padding: 8px 14px;
   }
-  
+
   .pilot-team {
     display: none; /* Nasconde il nome team su mobile */
   }
-  
+
   .team-ranking-item {
     padding: 8px 10px;
     margin-bottom: 6px;
   }
-  
+
   .team-position {
     font-size: 1em;
   }
-  
+
   .team-color-indicator {
     width: 12px;
     height: 12px;
   }
-  
+
   .team-name {
     font-size: 0.9em;
   }
-  
+
   .team-points {
     font-size: 0.85em;
     padding: 4px 8px;
   }
-  
 
-  
   .pilot-team {
     max-width: 160px; /* Aumentato da 130px */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .team-pilots-list {
     display: none; /* Nascosto su mobile e desktop */
   }
-  
+
   .top10-item {
     padding: 0;
     margin: 0;
     gap: 6px;
   }
-  
+
   .top10-home .classification-table {
     padding: 0;
     margin: 0;
   }
-  
+
   .accordion-header {
     padding: 12px 15px;
     min-height: 50px; /* Altezza minima ridotta */
@@ -3590,7 +3686,7 @@ border-radius: 8px;
     align-content: center; /* Centra il contenuto */
     justify-content: center; /* Centra tutto */
   }
-  
+
   .accordion-title {
     font-size: 0.95em; /* Leggermente più piccolo su mobile */
     text-align: center; /* Centra il titolo */
@@ -3598,28 +3694,28 @@ border-radius: 8px;
     margin-bottom: 3px; /* Spazio ridotto dal subtitle */
     line-height: 1.2; /* Altezza linea ridotta */
   }
-  
+
   .accordion-subtitle {
     font-size: 0.75em; /* Molto più piccolo su mobile */
     text-align: center;
     width: 100%;
   }
-  
+
   .classification-table {
     padding: 0px;
   }
-  
+
   .mini-pilot {
     padding: 4px 6px;
     gap: 4px;
   }
-  
+
   .mini-pilot-number {
     width: 20px;
     height: 20px;
     font-size: 0.7em;
   }
-  
+
   .mini-pilot-name {
     font-size: 0.7em;
   }
@@ -3630,21 +3726,21 @@ border-radius: 8px;
     padding: 10px;
     gap: 15px;
   }
-  
+
   .team-card {
     padding: 15px;
   }
-  
+
   .team-header {
     flex-direction: column;
     gap: 10px;
     text-align: center;
   }
-  
+
   .car-image {
     max-width: 100%;
   }
-  
+
   .team-pilots {
     flex-direction: column;
     gap: 5px;
@@ -3655,8 +3751,13 @@ border-radius: 8px;
     grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
-  
+
   .pilot-info {
     padding: 6px 10px;
   }
+}
+
+.gtec-icon {
+  filter: invert(0%);
+  height: 70px;
 }

@@ -630,12 +630,28 @@ async function loadAndCreateHtmlTable(
         const number = rowData[indicesToUse[1]] || "";
         const info = rowData[indicesToUse[2]] || "";
         const isJgtv = info.toLowerCase().includes('jgtv');
+        const periferica = rowData[indicesToUse[3]] || "";
+        
+        // Determina l'icona della periferica
+        let perifericaIcon = '';
+        const perifericaLower = periferica.toLowerCase();
+        
+        if (perifericaLower.includes('volante') || perifericaLower.includes('wheel') || perifericaLower.includes('steering')) {
+          perifericaIcon = '<img src="images/icons/volante.svg" alt="Volante" class="periferica-icon">';
+        } else if (perifericaLower.includes('pad') || perifericaLower.includes('joystick') || perifericaLower.includes('controller')) {
+          perifericaIcon = '<img src="images/icons/pad.svg" alt="Pad" class="periferica-icon">';
+        } else {
+          // Default a pad se non specificato
+          perifericaIcon = '<img src="images/icons/social.svg" alt="Pad" class="periferica-icon">';
+        }
+        
         pilotCard.innerHTML = `
           <div class="pilot-left">
             <div class="pilot-name">${name}</div>
             ${isJgtv ? '<div class="pilot-label">jgtv</div>' : ''}
           </div>
           <div class="pilot-number">#${number}</div>
+          <div class="pilot-periferica">${perifericaIcon}</div>
         `;
         // Salva la riga completa e l'header come dataset
         pilotCard.dataset.fullRow = JSON.stringify(rowData);
@@ -1151,7 +1167,7 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
             <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
           </div>
           <div class="pilot-name">${escapeHtml(item.team)}</div>
-          <div class="pilot-team">${item.pilots.map(p => escapeHtml(p.number)).join(', ')}</div>
+          <div class="pilot-team">#${item.pilots.map(p => escapeHtml(p.number)).join(', #')}</div>
           <div class="pilot-points">${item.points}</div>
         </div>
       `;
@@ -1810,12 +1826,12 @@ async function loadTeamAndPiloti(spreadsheetUrl) {
           </div>
           <div class="team-pilots">
             <div class="pilot-info" data-team-color="${escapeHtml(teamSlug)}">
-              <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">${escapeHtml(num1)}</div>
+              <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">#${escapeHtml(num1)}</div>
               <div class="pilot-name">${pilota1}</div>
             </div>
             ${pilota2 ? `
               <div class="pilot-info" data-team-color="${escapeHtml(teamSlug)}">
-                <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">${escapeHtml(num2)}</div>
+                <div class="pilot-number" data-team-color="${escapeHtml(teamSlug)}">#${escapeHtml(num2)}</div>
                 <div class="pilot-name">${pilota2}</div>
               </div>
             ` : ''}
@@ -1879,10 +1895,24 @@ function openPilotModal(fullRow, headerArr) {
   const name = fullRow[0] || "";
   const number = fullRow[1] || "";
   const info = fullRow[2] || "";
+  const periferica = fullRow[3] || "";
 
-  // Build championships list (groups of 4 starting at index 3)
+  // Determina l'icona della periferica
+  let perifericaIcon = '';
+  const perifericaLower = periferica.toLowerCase();
+  
+  if (perifericaLower.includes('volante') || perifericaLower.includes('wheel') || perifericaLower.includes('steering')) {
+    perifericaIcon = '<img src="images/icons/volante.svg" alt="Volante" class="periferica-icon-modal">';
+  } else if (perifericaLower.includes('pad') || perifericaLower.includes('joystick') || perifericaLower.includes('controller')) {
+    perifericaIcon = '<img src="images/icons/pad.svg" alt="Pad" class="periferica-icon-modal">';
+  } else {
+    // Default a pad se non specificato
+    perifericaIcon = '<img src="images/icons/social.svg" alt="Pad" class="periferica-icon-modal">';
+  }
+
+  // Build championships list (groups of 4 starting at index 4)
   const items = [];
-  for (let i = 3; i < fullRow.length; i += 4) {
+  for (let i = 4; i < fullRow.length; i += 4) {
     const participates = (fullRow[i] || "").toString().trim().toLowerCase();
     if (participates === "x" || participates === "✓" || participates === "1") {
       const champName =
@@ -1900,7 +1930,7 @@ function openPilotModal(fullRow, headerArr) {
   let html = "";
   html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(
     name
-  )}</div><div class="pilot-number">#${escapeHtml(number)}</div></div>`;
+  )}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
   if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
 
   html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
@@ -1997,95 +2027,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Tabella Piloti ---
     const URL_PILOTI = config.googleSheets.piloti;
-    loadAndCreateHtmlTable(URL_PILOTI, "piloti-body", [0, 1, 2]);
+    loadAndCreateHtmlTable(URL_PILOTI, "piloti-body", [0, 1, 2, 3]);
 
     // --- Tabella Admin ---
     const URL_ADMIN = config.googleSheets.admin;
     loadAndCreateHtmlTable(URL_ADMIN, "admin-body", [0, 1]);
-  }
-
-  // --- 2. Logica per gtec.html ---
-
-  // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
-  const gtec = document.getElementById("gtec");
-
-  if (gtec) {
-    console.log("Inizializzazione di gtec.html: Caricamento...");
-    let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
-    prossimaGara = ultimaGara + 1;
-    document.getElementById(
-      "pen-ult-gara"
-    ).innerText = `Penalità Gara ${ultimaGara}`;
-    document.getElementById("lobby-next-gara").innerText = `Gara ${
-      ultimaGara + 1
-    }`;
-    document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
-      ultimaGara + 1
-    }`;
-
-    // --- Tabella Lobby ---
-    const URL_LOBBY = config.googleSheets.gtec.lobby;
-    loadAndCreateHtmlTable(
-      URL_LOBBY,
-      "lobby-body"
-      // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
-      // altrimenti specificare quelle che vuoi mostrare)
-    );
-    // --- Tabella Lobby Promo e retro ---
-    // const URL_PROMRETR = config.googleSheets.gtec.promoRetro;
-    // loadAndCreateHtmlTable(
-    //   URL_PROMRETR,
-    //   "proret-body"
-      // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
-      // altrimenti specificare quelle che vuoi mostrare)
-    // );
-    // --- Tabella classifica ---
-    const URL_CLASS = config.googleSheets.gtec.classifica;
-    loadAndCreateHtmlTable(
-      URL_CLASS,
-      "classifica-body"
-      // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
-      // altrimenti specificare quelle che vuoi mostrare)
-    );
-    // Tabella top10
-    // loadAndCreateHtmlTable(
-    //   URL_CLASS,
-    //   "classifica-short-body",
-    //   [],
-    //   10
-
-      //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      // altrimenti specificare quelle che vuoi mostrare)
-    // );
-    // Penalità
-    const URL_PEN = config.googleSheets.gtec.penalita;
-    loadAndCreateHtmlTable(
-      URL_PEN,
-      "penalita-body"
-
-      //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      // altrimenti specificare quelle che vuoi mostrare)
-    );
-
-    const URL_CALENDAR = config.googleSheets.gtec.calendario;
-    loadAndCreateHtmlTable(
-      URL_CALENDAR,
-      "prossima-gara-body",
-      [0, 3, 2, 1, 4], //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
-      { rowIndex: prossimaGara }
-      // altrimenti specificare quelle che vuoi mostrare)
-    );
-
-    loadAndCreateHtmlTable(
-      URL_CALENDAR,
-      "calendar-body",
-      [0, 3, 2, 1, 4] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
-      // altrimenti specificare quelle che vuoi mostrare)
-    );
-
-    // Avvia il processo al caricamento della pagina
-    const URL_OPZIONI = config.googleSheets.gtec.opzioniLobby;
-    loadDataAndGenerateCards(URL_OPZIONI);
   }
 
   // --- 3. Logica per worldchampionship.html ---
@@ -2143,11 +2089,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // --- 4. Logica per interno.html ---
 
-  // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
+  // Controlla se la pagina ha l'ID 'interno' (il che indica che siamo in interno.html)
   const interno = document.getElementById("interno");
 
   if (interno) {
-    console.log("Inizializzazione di gtec.html: Caricamento...");
+    console.log("Inizializzazione di interno.html: Caricamento...");
 
     // --- Tabella calendar ---
     const URL_CALENDAR = config.googleSheets.interno.calendario;
