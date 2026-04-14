@@ -1047,6 +1047,29 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
   }
 }
 
+// Funzione per calcolare posizioni stile Excel (pari punti = stessa posizione)
+function calculateExcelRanking(sortedData) {
+  const rankings = [];
+  let currentRank = 1;
+  
+  for (let i = 0; i < sortedData.length; i++) {
+    const currentItem = sortedData[i];
+    const currentPoints = currentItem.points;
+    
+    // Se è il primo elemento o ha punti diversi dal precedente
+    if (i === 0 || currentPoints !== sortedData[i - 1].points) {
+      currentRank = i + 1;
+    }
+    
+    rankings.push({
+      ...currentItem,
+      rank: currentRank
+    });
+  }
+  
+  return rankings;
+}
+
 // Funzione per creare le 4 classifiche rivoluzionate
 async function loadAllClassifications(spreadsheetUrl) {
   try {
@@ -1123,14 +1146,20 @@ async function loadAllClassifications(spreadsheetUrl) {
     
     const teamRanking = Object.values(teams).sort((a, b) => b.points - a.points);
     
+    // Applica ranking stile Excel (pari punti = stessa posizione)
+    const rankedAllPilots = calculateExcelRanking(allPilots);
+    const rankedJgtvPilots = calculateExcelRanking(jgtvPilots);
+    const rankedNonJgtvPilots = calculateExcelRanking(nonJgtvPilots);
+    const rankedTeams = calculateExcelRanking(teamRanking);
+    
     // Genera HTML per le 4 classifiche
-    generateClassificationHTML('classifica-generale-piloti', allPilots, 'Classifica Piloti');
-    generateClassificationHTML('classifica-generale-team', teamRanking, 'Classifica Team', true);
-    generateClassificationHTML('classifica-jgtv-piloti', jgtvPilots, 'Classifica Piloti JGTV');
-    generateClassificationHTML('classifica-non-jgtv-piloti', nonJgtvPilots, 'Classifica Piloti GTV');
+    generateClassificationHTML('classifica-generale-piloti', rankedAllPilots, 'Classifica Piloti');
+    generateClassificationHTML('classifica-generale-team', rankedTeams, 'Classifica Team', true);
+    generateClassificationHTML('classifica-jgtv-piloti', rankedJgtvPilots, 'Classifica Piloti JGTV');
+    generateClassificationHTML('classifica-non-jgtv-piloti', rankedNonJgtvPilots, 'Classifica Piloti GTV');
     
     // Genera Top 10 per la home
-    generateTop10Home(allPilots.slice(0, 10));
+    generateTop10Home(rankedAllPilots.slice(0, 10));
 
   } catch (error) {
     console.error("Errore nel caricamento delle classifiche:", error);
@@ -1162,7 +1191,7 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
     if (isTeam) {
       html += `
         <div class="pilot-ranking-item">
-          <div class="pilot-position">${index + 1}</div>
+          <div class="pilot-position">${item.rank}</div>
           <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
             <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
           </div>
@@ -1174,7 +1203,7 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
     } else {
       html += `
         <div class="pilot-ranking-item">
-          <div class="pilot-position">${index + 1}</div>
+          <div class="pilot-position">${item.rank}</div>
           <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
             <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
           </div>
@@ -1209,7 +1238,7 @@ function generateTop10Home(data) {
     const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
     html += `
       <div class="pilot-ranking-item">
-        <div class="pilot-position">${index + 1}</div>
+        <div class="pilot-position">${item.rank}</div>
         <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
           <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
         </div>
@@ -1967,7 +1996,7 @@ function openPilotModal(fullRow, headerArr) {
 <img src="${champImgSvg}" 
      alt="${escapeHtml(it.champName)}" 
      class="pilot-champ-logo" 
-     onerror="if(this.src.includes('.png')){this.src='${champImgPng}';}else{this.style.display='none';}" />
+     onerror="if(this.src.includes('.svg')){this.src='${champImgPng}';}else{this.style.display='none';}" />
 </div>
                 <div class="pilot-champ-center">
                   <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>

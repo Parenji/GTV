@@ -2261,16 +2261,6 @@ body#worldchampionship {
   overflow: hidden;
 }
 
-.team-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--giallogtv), var(--giallogtvhover));
-  border-radius: 15px 15px 0 0;
-}
 
 .team-header {
   display: flex;
@@ -2779,14 +2769,6 @@ body#worldchampionship {
   border-color: var(--team-color, var(--giallogtv)) !important;
 }
 
-.team-card[data-team]::before {
-  background: linear-gradient(
-    90deg,
-    var(--team-color, var(--giallogtv)) 0%,
-    var(--team-color-dark, var(--giallogtv)) 100%
-  ) !important;
-}
-
 /* Loghi delle lobby - Sistema Centralizzato */
 .lobby-pilot-logo-container[data-team] {
   background: var(--team-color, rgba(255, 255, 255, 0.1)) !important;
@@ -2811,6 +2793,7 @@ body#worldchampionship {
   --team-swatclub: #87cefa;
   --team-apex: #0d1b2a;
   --team-lavazzaracing: #000679; /* Blu lavazzaracing */
+  --team-alfacorse: #ffb300; /* Giallo tendente all'arancione */
   --team-team15: var(--giallogtv);
 }
 
@@ -2941,6 +2924,14 @@ body#worldchampionship {
 .lobby-pilot-logo-container[data-team="Lavazzaracing"] {
   --team-color: var(--team-lavazzaracing);
   --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvalfacorse"],
+.pilot-number[data-team-color="gtvalfacorse"],
+.pilot-info[data-team-color="gtvalfacorse"],
+.lobby-pilot-logo-container[data-team="Alfacorse"] {
+  --team-color: var(--team-alfacorse);
+  --team-text-color: #000;
 }
 
 .team-card[data-team="gtvteam15"],
