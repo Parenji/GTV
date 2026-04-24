@@ -1,3 +1,4 @@
+let ultimaGara = 1; // <-- MODIFICA QUESTO VALORE PER AGGIORNARE LA GARA
 //MENU HAMBURGER
 // Seleziona gli elementi del DOM
 const menuToggle = document.getElementById("menu-toggle");
@@ -2069,7 +2070,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (worldchampionship) {
     console.log("Inizializzazione di worldchampionship.html: Caricamento...");
-    let ultimaGara = 1; // Cambia questo numero quando vuoi aggiornare la gara
+    let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
     prossimaGara = ultimaGara + 1;
     document.getElementById(
       "pen-ult-gara"
@@ -2080,7 +2081,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("info-next-gara").innerText = `Opzioni Stanza `;
         document.getElementById("subinfo-next-gara").innerText = `Gara ${
       ultimaGara + 1
-    } (standard)`;
+    }`;
 
     const URL_LOBBY = config.googleSheets.worldchampionship.lobby;
     const URL_CLASS = config.googleSheets.worldchampionship.classifica;
