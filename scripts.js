@@ -1304,35 +1304,37 @@ async function loadPenalitaByRace(spreadsheetUrl) {
               </div>
             </div>
             <div class="panel">
-              <div class="penalty-table-container">
-                <table class="responsive-table mobile-table penalty-table">
-                  <thead>
-                    <tr>
-                      <th>Pilota</th>
-                      <th>Penalità</th>
-                      <th>Giro</th>
-                      <th>Curva</th>
-                      <th>Motivazione</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+              <div class="penalty-cards-container">
         `;
         
         penalties.forEach(penalty => {
+          // Rileva se è un warning
+          const penaltyText = penalty.penalty.toLowerCase();
+          const isWarning = penaltyText.includes('warn') || penaltyText.includes('warning') || penaltyText === 'warn.';
+          
+          const penaltyIcon = isWarning ? '⚠️' : '';
+          const penaltyClass = isWarning ? 'penalty-type-warning' : 'penalty-type-penalty';
+          
           html += `
-            <tr>
-              <td>${escapeHtml(penalty.pilot)}</td>
-              <td>${escapeHtml(penalty.penalty)}</td>
-              <td>${escapeHtml(penalty.lap)}</td>
-              <td>${escapeHtml(penalty.corner)}</td>
-              <td>${escapeHtml(penalty.reason)}</td>
-            </tr>
+            <div class="penalty-card">
+              <div class="penalty-header">
+                <div class="penalty-pilot">
+                  <div class="penalty-pilot-name">${escapeHtml(penalty.pilot)}</div>
+                </div>
+                <div class="penalty-type ${penaltyClass}">${penaltyIcon} ${escapeHtml(penalty.penalty)}</div>
+              </div>
+              <div class="penalty-details">
+                <div class="penalty-location">
+                  ${penalty.lap ? `<span class="penalty-lap">Giro ${escapeHtml(penalty.lap)}</span>` : ''}
+                  ${penalty.corner ? `<span class="penalty-corner">Curva ${escapeHtml(penalty.corner)}</span>` : ''}
+                </div>
+                <div class="penalty-reason">${escapeHtml(penalty.reason)}</div>
+              </div>
+            </div>
           `;
         });
         
         html += `
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
