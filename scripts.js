@@ -1225,6 +1225,135 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
   container.innerHTML = html;
 }
 
+// Funzione per caricare e raggruppare le penalità per gara
+async function loadPenalitaByRace(spreadsheetUrl) {
+  const container = document.getElementById("penalita-body");
+  
+  if (!container) {
+    console.error("Container penalita-body non trovato");
+    return;
+  }
+
+  try {
+    const response = await fetch(spreadsheetUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+    const rows = csvText
+      .trim()
+      .split("\n")
+      .map((row) =>
+        row.split(/,(?=(?:(?:[^\"]*"){2})*[^\"]*$)/).map((cell) =>
+          cell
+            .trim()
+            .replace(/^\"|\"$/g, "")
+            .replace(/\"\"/g, '"')
+        )
+      );
+
+    if (rows.length < 2) {
+      container.innerHTML = '<div class="no-penalties">Nessuna penalità trovata.</div>';
+      return;
+    }
+
+    const header = rows[0];
+    const dataRows = rows.slice(1);
+    
+    // Raggruppa le penalità per numero di gara (colonna 3, indice 2)
+    const penalitaByRace = {};
+    
+    dataRows.forEach(row => {
+      if (row.length >= 3 && row[0] && row[1] && row[2]) { // Pilota, Penalità, Gara
+        const raceNumber = row[2].trim();
+        if (!penalitaByRace[raceNumber]) {
+          penalitaByRace[raceNumber] = [];
+        }
+        
+        penalitaByRace[raceNumber].push({
+          pilot: row[0].trim(),
+          penalty: row[1].trim(),
+          race: raceNumber,
+          lap: row[3] ? row[3].trim() : '',
+          corner: row[4] ? row[4].trim() : '',
+          reason: row[5] ? row[5].trim() : ''
+        });
+      }
+    });
+
+    // Ordina le gare per numero
+    const sortedRaces = Object.keys(penalitaByRace).sort((a, b) => parseInt(a) - parseInt(b));
+    
+    // Genera HTML con sistema accordion
+    let html = '';
+    
+    if (sortedRaces.length === 0) {
+      html = '<div class="no-penalties">Nessuna penalità trovata.</div>';
+    } else {
+      sortedRaces.forEach(raceNum => {
+        const penalties = penalitaByRace[raceNum];
+        html += `
+          <div class="penalty-accordion">
+            <div class="accordion" onclick="toggleAccordion(this)">
+              <div class="accordion-header">
+                <div class="accordion-title">Gara ${raceNum}</div>
+                <div class="accordion-subtitle">${penalties.length} provvedimenti</div>
+                <i><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="2" fill="none"/></svg></i>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="penalty-table-container">
+                <table class="responsive-table mobile-table penalty-table">
+                  <thead>
+                    <tr>
+                      <th>Pilota</th>
+                      <th>Penalità</th>
+                      <th>Giro</th>
+                      <th>Curva</th>
+                      <th>Motivazione</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+        `;
+        
+        penalties.forEach(penalty => {
+          html += `
+            <tr>
+              <td>${escapeHtml(penalty.pilot)}</td>
+              <td>${escapeHtml(penalty.penalty)}</td>
+              <td>${escapeHtml(penalty.lap)}</td>
+              <td>${escapeHtml(penalty.corner)}</td>
+              <td>${escapeHtml(penalty.reason)}</td>
+            </tr>
+          `;
+        });
+        
+        html += `
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    container.innerHTML = html;
+    console.log(`Caricate penalità per ${sortedRaces.length} gare`);
+
+  } catch (error) {
+    console.error("Errore nel caricamento delle penalità:", error);
+    container.innerHTML = `
+      <div class="error-message">
+        <div>Impossibile caricare le penalità</div>
+        <button onclick="location.reload()">Riprova</button>
+      </div>
+    `;
+  }
+}
+
 // Funzione per generare Top 10 Home
 function generateTop10Home(data) {
   const container = document.getElementById("classifica-short-body");
@@ -2072,9 +2201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Inizializzazione di worldchampionship.html: Caricamento...");
     let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
     prossimaGara = ultimaGara + 1;
-    document.getElementById(
-      "pen-ult-gara"
-    ).innerText = `Penalità Gara ${ultimaGara}`;
     document.getElementById("lobby-next-gara").innerText = `Gara ${
       ultimaGara + 1
     }`;
@@ -2096,7 +2222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAllClassifications(URL_CLASS);
 
     const URL_PEN = config.googleSheets.worldchampionship.penalita;
-    loadAndCreateHtmlTable(URL_PEN, "penalita-body", []);
+    loadPenalitaByRace(URL_PEN);
 
     const URL_CALENDAR = config.googleSheets.worldchampionship.calendario;
     loadNextRace(URL_CALENDAR, prossimaGara);
