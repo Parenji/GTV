@@ -3264,6 +3264,85 @@ body#worldchampionship {
 }
 
 /* ========================================
+   FRECCE DI VARIAZIONE POSIZIONE
+   ======================================== */
+
+/* Container per posizione con freccia */
+.pilot-position-with-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 40px;
+}
+
+/* Frecce di variazione posizione */
+.position-change {
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 20px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Freccia su (miglioramento) - verde */
+.position-up {
+  background: linear-gradient(135deg, #00c851 0%, #00a846 100%);
+  color: #fff;
+  border: 1px solid rgba(0, 200, 81, 0.3);
+}
+
+/* Freccia giù (peggioramento) - rosso */
+.position-down {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+/* Uguale (nessuna variazione) - grigio */
+.position-equal {
+  background: linear-gradient(135deg, #666666 0%, #4d4d4d 100%);
+  color: #ccc;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+}
+
+/* Responsive per frecce - Mobile */
+@media (max-width: 768px) {
+  .pilot-position-with-change {
+    min-width: 35px;
+    gap: 1px;
+  }
+  
+  .position-change {
+    font-size: 0.65em;
+    padding: 1px 3px;
+    min-width: 18px;
+    height: 14px;
+  }
+}
+
+/* Responsive per frecce - Desktop */
+@media (min-width: 1024px) {
+  .pilot-position-with-change {
+    min-width: 45px;
+    gap: 3px;
+  }
+  
+  .position-change {
+    font-size: 0.75em;
+    padding: 3px 5px;
+    min-width: 22px;
+    height: 18px;
+  }
+}
+
+/* ========================================
    CLASSIFICHE RIVOLUZIONATE - ACCORDION
    ======================================== */
 
@@ -3557,16 +3636,16 @@ body#worldchampionship {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 
 .calendar-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--giallogtv);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .calendar-subtitle {
@@ -3617,16 +3696,16 @@ body#worldchampionship {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 
 .next-race-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--giallogtv);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .next-race-subtitle {
@@ -3646,7 +3725,7 @@ body#worldchampionship {
 }
 
 .next-race-footer {
-  padding: 15px 20px;
+  padding: 12px 20px;
   text-align: center;
   border-top: 1px solid rgba(191, 239, 255, 0.2);
   background: rgba(255, 255, 255, 0.02);
@@ -3745,6 +3824,59 @@ body#worldchampionship {
   .race-circuit img {
     width: 50px;
   }
+
+  /* Mobile layout per prossima gara - ultra-compatto con grid */
+  .next-race-content > div[style*="display: flex"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Gara - prima cella */
+  .next-race-content > div[style*="display: flex"] > div:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Circuito - seconda cella (stessa riga di Gara) */
+  .next-race-content > div[style*="display: flex"] > div:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Data - seconda riga, occupa tutto */
+  .next-race-content > div[style*="display: flex"] > div:nth-child(2) {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Info - terza riga, occupa tutto */
+  .next-race-content > div[style*="display: flex"] > div:nth-child(4) {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    padding: 6px 10px !important;
+    background: rgba(191,239,255,0.03) !important;
+  }
+
+  .next-race-content > div[style*="display: flex"] > div > div:first-child {
+    font-size: 0.6em !important;
+    margin-bottom: 1px !important;
+  }
+
+  .next-race-content > div[style*="display: flex"] > div > div:last-child {
+    font-size: 0.85em !important;
+  }
 }
 
 /* Top 10 Home */
@@ -3757,23 +3889,23 @@ body#worldchampionship {
   border: 1px solid rgba(191, 239, 255, 0.2);
   border-radius: 15px;
   padding: 0px 0px;
+  margin-bottom: 20px;
 }
 
 .top10-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 20px;
+  padding: 15px 20px;
   border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 
 .top10-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--giallogtv);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .top10-subtitle {
@@ -3786,6 +3918,32 @@ body#worldchampionship {
 .top10-grid {
   display: grid;
   gap: 12px;
+}
+
+.top10-content {
+  padding: 5px;
+}
+
+.top10-footer {
+  padding: 12px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.top10-footer a {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.top10-footer a:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
 }
 
 .top10-item {

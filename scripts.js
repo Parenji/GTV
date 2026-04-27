@@ -470,48 +470,49 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
         circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 200px; height: 60px; object-fit: contain; display: block; margin: 15px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-top: 10px;">🛣️ ${circuito}</div>`;
       }
 
-      // Layout compatto e mobile-friendly
-      // Prepara lo sfondo con la bandiera se esiste
-      let backgroundStyle = '';
-      if (nazione) {
-        // Normalizza il nome della nazione per il path del file
-        const nationSlug = nazione.toLowerCase().replace(/[^a-z0-9]+/g, "");
-        backgroundStyle = `background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/bandiere/flag-icons-main/flags/4x3/${nationSlug}.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;`;
-      } else {
-        backgroundStyle = 'background: rgba(255,255,255,0.08);';
-      }
-
+      // Layout ultra-compatto e brillante
       html += `
-        <div style="${backgroundStyle} backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 15px; text-align: center;">
-          <!-- Header Gara -->
-          <div style="margin-bottom: 15px;">
-            <div style="font-size: 0.9em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">
+        <div style="display: flex; align-items: center; gap: 0; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden;">
+          <!-- Gara -->
+          <div style="flex: 0 0 auto; padding: 10px 18px; border-right: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
               Gara
             </div>
-            <div style="font-size: 2em; font-weight: 800; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">
+            <div style="font-size: 1.1em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 0.5px;">
               ${gara || 'N/D'}
             </div>
           </div>
           
           <!-- Data -->
-          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; background: rgba(0,0,0,0.5); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-            <span style="font-size: 1.2em;">📅</span>
-            <span style="font-size: 1em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${data || 'N/D'}</span>
+          <div style="flex: 0 0 auto; padding: 10px 18px; border-right: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              Data
+            </div>
+            <div style="font-size: 0.9em; font-weight: 500; color: rgba(255,255,255,0.9);">
+              ${data || 'N/D'}
+            </div>
           </div>
           
-          <!-- Logo Circuit -->
+          <!-- Circuito -->
           ${circuito ? `
-            <div style="margin-bottom: 15px;">
-              ${circuitLogo}
+            <div style="flex: 1; padding: 10px 18px;">
+              <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+                Circuito
+              </div>
+              <div style="font-size: 0.9em; font-weight: 500; color: rgba(255,255,255,0.9);">
+                ${circuito}
+              </div>
             </div>
           ` : ''}
           
-          <!-- Info -->
+          <!-- Altre Info (se presenti) -->
           ${altreInfo && altreInfo.trim() !== '' ? `
-            <div style="background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 8px; border-left: 3px solid var(--giallogtv); backdrop-filter: blur(3px);">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 1.1em;">ℹ️</span>
-                <span style="font-size: 0.9em; color: rgba(255,255,255,0.95); text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">${altreInfo}</span>
+            <div style="flex: 0 0 auto; padding: 10px 18px; border-left: 1px solid rgba(255,255,255,0.1); background: rgba(191,239,255,0.05);">
+              <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+                Info
+              </div>
+              <div style="font-size: 0.85em; font-weight: 500; color: rgba(255,255,255,0.85);">
+                ${altreInfo}
               </div>
             </div>
           ` : ''}
@@ -931,7 +932,7 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
     
     const classificationData = classificationsRows.slice(1); // Salta l'header
     classificationData.forEach((row) => {
-      if (row.length < 9) return; // Deve avere almeno 9 colonne
+      if (row.length < 10) return; // Deve avere almeno 10 colonne (aggiunta colonna 9 punti precedenti)
       
       const position = row[0] || "";
       const pilot = row[1] || "";
@@ -940,7 +941,8 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
       const marchio = row[4] || "";
       const isJgtv = row[6] || "";
       const points = parseInt(row[7]) || 0;
-      const lobbyAssignment = row[8] || ""; // Colonna 9: 1 o 2
+      const previousPoints = parseInt(row[8]) || 0; // Colonna 9: punti precedenti (nuova)
+      const lobbyAssignment = row[9] || ""; // Colonna 10: 1 o 2 (spostata da 9 a 10)
       
       if (lobbyAssignment === "1") {
         lobby1Pilots.push({ position, pilot, number, team, marchio, points });
@@ -1108,7 +1110,7 @@ async function loadAllClassifications(spreadsheetUrl) {
     const teams = {};
     
     dataRows.forEach((row) => {
-      if (row.length < 8) return;
+      if (row.length < 9) return;
       
       const position = row[0] || "";
       const pilot = row[1] || "";
@@ -1117,8 +1119,9 @@ async function loadAllClassifications(spreadsheetUrl) {
       const marchio = row[4] || "";
       const isJgtv = row[6] || "";
       const points = parseInt(row[7]) || 0;
+      const previousPoints = parseInt(row[8]) || 0; // Colonna 9 - punti prima dell'ultima gara
       
-      const pilotData = { position, pilot, number, team, marchio, points };
+      const pilotData = { position, pilot, number, team, marchio, points, previousPoints };
       
       // Aggiungi a tutti i piloti
       allPilots.push(pilotData);
@@ -1130,12 +1133,13 @@ async function loadAllClassifications(spreadsheetUrl) {
         nonJgtvPilots.push(pilotData);
       }
       
-      // Calcola punti per team
+      // Calcola punti per team (attuali e precedenti)
       if (team) {
         if (!teams[team]) {
-          teams[team] = { team, points: 0, pilots: [], marchio: marchio };
+          teams[team] = { team, points: 0, previousPoints: 0, pilots: [], marchio: marchio };
         }
         teams[team].points += points;
+        teams[team].previousPoints += previousPoints;
         teams[team].pilots.push(pilotData);
       }
     });
@@ -1147,11 +1151,62 @@ async function loadAllClassifications(spreadsheetUrl) {
     
     const teamRanking = Object.values(teams).sort((a, b) => b.points - a.points);
     
-    // Applica ranking stile Excel (pari punti = stessa posizione)
-    const rankedAllPilots = calculateExcelRanking(allPilots);
-    const rankedJgtvPilots = calculateExcelRanking(jgtvPilots);
-    const rankedNonJgtvPilots = calculateExcelRanking(nonJgtvPilots);
-    const rankedTeams = calculateExcelRanking(teamRanking);
+    // Funzione per calcolare le variazioni di posizione confrontando classifica attuale vs precedente
+    function calculatePositionChanges(currentData) {
+      // Crea una versione dei dati con i punti precedenti per calcolare la classifica vecchia
+      // ORDINATA per previousPoints decrescente
+      const previousData = currentData.map(item => ({
+        ...item,
+        points: item.previousPoints || 0
+      })).sort((a, b) => b.points - a.points);
+      
+      // Assicurati che currentData sia ordinato per punti attuali
+      const sortedCurrentData = [...currentData].sort((a, b) => b.points - a.points);
+      
+      // Calcola ranking per entrambe le classifiche
+      const rankedCurrent = calculateExcelRanking(sortedCurrentData);
+      const rankedPrevious = calculateExcelRanking(previousData);
+      
+      // Crea mappa delle posizioni precedenti
+      const previousPositions = new Map();
+      rankedPrevious.forEach(item => {
+        const key = item.pilot || item.team;
+        previousPositions.set(key, item.rank);
+      });
+      
+      // Confronta e calcola variazioni
+      return rankedCurrent.map(item => {
+        const key = item.pilot || item.team;
+        const previousRank = previousPositions.get(key);
+        const currentRank = item.rank;
+        
+        let positionChange = null;
+        let positionChangeType = 'equal';
+        
+        if (previousRank !== undefined && currentRank !== undefined) {
+          positionChange = previousRank - currentRank; // Positivo = migliorato
+          
+          if (positionChange > 0) {
+            positionChangeType = 'up';
+          } else if (positionChange < 0) {
+            positionChangeType = 'down';
+          }
+        }
+        
+        return {
+          ...item,
+          previousPosition: previousRank,
+          positionChange,
+          positionChangeType
+        };
+      });
+    }
+    
+    // Calcola le variazioni per tutte le classifiche
+    const rankedAllPilots = calculatePositionChanges(allPilots);
+    const rankedJgtvPilots = calculatePositionChanges(jgtvPilots);
+    const rankedNonJgtvPilots = calculatePositionChanges(nonJgtvPilots);
+    const rankedTeams = calculatePositionChanges(teamRanking);
     
     // Genera HTML per le 4 classifiche
     generateClassificationHTML('classifica-generale-piloti', rankedAllPilots, 'Classifica Piloti');
@@ -1189,10 +1244,16 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
     // Normalizza il nome del marchio per il percorso dell'immagine
     const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
     
+    // Genera la freccia di variazione posizione
+    const positionArrow = generatePositionChangeArrow(item.positionChangeType, item.positionChange);
+    
     if (isTeam) {
       html += `
         <div class="pilot-ranking-item">
-          <div class="pilot-position">${item.rank}</div>
+          <div class="pilot-position-with-change">
+            ${positionArrow}
+            <div class="pilot-position">${item.rank}</div>
+          </div>
           <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
             <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
           </div>
@@ -1204,7 +1265,10 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
     } else {
       html += `
         <div class="pilot-ranking-item">
-          <div class="pilot-position">${item.rank}</div>
+          <div class="pilot-position-with-change">
+            ${positionArrow}
+            <div class="pilot-position">${item.rank}</div>
+          </div>
           <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
             <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
           </div>
@@ -1223,6 +1287,24 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
   `;
   
   container.innerHTML = html;
+}
+
+// Funzione per generare HTML delle frecce di variazione posizione
+function generatePositionChangeArrow(positionChangeType, positionChange) {
+  if (!positionChange || positionChangeType === 'equal') {
+    return '<div class="position-change position-equal">=</div>';
+  }
+  
+  const absChange = Math.abs(positionChange);
+  const changeText = absChange > 0 ? absChange : '';
+  
+  if (positionChangeType === 'up') {
+    return `<div class="position-change position-up">↑${changeText}</div>`;
+  } else if (positionChangeType === 'down') {
+    return `<div class="position-change position-down">↓${changeText}</div>`;
+  }
+  
+  return '<div class="position-change position-equal">=</div>';
 }
 
 // Funzione per caricare e raggruppare le penalità per gara
@@ -1299,7 +1381,7 @@ async function loadPenalitaByRace(spreadsheetUrl) {
             <div class="accordion" onclick="toggleAccordion(this)">
               <div class="accordion-header">
                 <div class="accordion-title">Gara ${raceNum}</div>
-                <div class="accordion-subtitle">${penalties.length} provvedimenti</div>
+                <div class="accordion-subtitle">${penalties.length} provvediment${penalties.length === 1 ? 'o' : 'i'}</div>
                 <i><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="2" fill="none"/></svg></i>
               </div>
             </div>
@@ -1368,9 +1450,16 @@ function generateTop10Home(data) {
   data.forEach((item, index) => {
     // Normalizza il nome del marchio per il percorso dell'immagine
     const normalizedMarchio = item.marchio.toLowerCase().replace(/\s+/g, '').replace(/-/g, '');
+    
+    // Genera la freccia di variazione posizione
+    const positionArrow = generatePositionChangeArrow(item.positionChangeType, item.positionChange);
+    
     html += `
       <div class="pilot-ranking-item">
-        <div class="pilot-position">${item.rank}</div>
+        <div class="pilot-position-with-change">
+          ${positionArrow}
+          <div class="pilot-position">${item.rank}</div>
+        </div>
         <div class="pilot-number-circle" style="background: ${getTeamColor(item.team)}">
           <img src="images/marchi-auto/${normalizedMarchio}.svg" alt="${escapeHtml(item.marchio)}" class="team-logo ${item.team === 'Gliscappatidicasa' ? 'invert-colors' : ''}" onerror="this.style.display='none'">
         </div>
@@ -1430,7 +1519,7 @@ function initializePilotSearch() {
       const teamName = item.querySelector('.pilot-team')?.textContent.toLowerCase() || '';
       
       if (pilotName.includes(searchTerm) || teamName.includes(searchTerm)) {
-        item.style.display = 'flex';
+        item.style.display = 'grid'; // Usa grid invece di flex per mantenere il layout delle colonne
         item.style.opacity = '1';
       } else {
         item.style.display = 'none';
@@ -1540,7 +1629,7 @@ async function loadPodioUltimaGara(spreadsheetUrl, ultimaGara) {
     console.log('Prime 3 righe dati:', allDataRows.slice(0, 3));
     
     // Usa la stessa logica di loadRisultati per l'ultima gara
-    const startCol = 9 + (ultimaGara - 1) * 6; // Stessa formula di loadRisultati
+    const startCol = 10 + (ultimaGara - 1) * 6; // Colonne gare spostate di 1 (colonna 9 = punti precedenti)
     const endCol = startCol + 6;
     
     console.log(`Podio: Gara ${ultimaGara} - colonne ${startCol}-${endCol}`);
@@ -1712,7 +1801,7 @@ async function loadRisultati(spreadsheetUrl) {
     let html = '';
     
     for (let race = 1; race <= 8; race++) {
-      const startCol = 9 + (race - 1) * 6; // 10, 16, 22, 28, 34, 40, 46, 52
+      const startCol = 10 + (race - 1) * 6; // 10, 16, 22, 28, 34, 40, 46, 52 - spostate di 1 per colonna 9
       const endCol = startCol + 6; // 15, 21, 27, 33, 39, 45, 51, 57
       
 
