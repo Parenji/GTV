@@ -542,7 +542,9 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
 
       // Layout barra sottile a griglia
       let html = `
+              <a href="#lobby"
         <div class="next-race-bar-content">
+
           <div class="next-race-bar-left">
             <div class="next-race-gara-number">G${gara || 'N/D'}</div>
             <div class="next-race-date">${data || 'N/D'}</div>
@@ -552,11 +554,12 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
             </div>
           </div>
           <div class="next-race-bar-right">
-            <a href="#lobby"             <div class="next-race-circuit-logo-container">
+             <div class="next-race-circuit-logo-container">
               ${circuitLogo}
-            </div></a>
+            </div>
           </div>
         </div>
+        </a>
       `;
 
       container.innerHTML = html;
