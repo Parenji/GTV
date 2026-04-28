@@ -282,6 +282,10 @@ html {
 .podio-pilota-nome {
   flex: 1;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
 .podio-pilota-team {
@@ -323,8 +327,10 @@ html {
   .podio-pilota-nome {
     font-size: 0.7em;
     line-height: 1.1;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
   }
 
   .podio-pilota-team {
@@ -472,7 +478,7 @@ button {
 
 #breadcrumb {
   color: black;
-  margin: 10px 0px 10px;
+  margin: 10px 0px 5px;
   background-color: var(--giallogtv);
   height: 30px;
   align-content: center;
@@ -508,7 +514,7 @@ button {
   z-index: 2;
   text-align: center;
   font-weight: 500;
-  padding: 20px 20px 0px;
+  padding: 10px 00px 0px;
   text-decoration: none;
 }
 .index {
@@ -518,6 +524,7 @@ button {
 .sottotitolo {
   color: white;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .logohead {
@@ -530,14 +537,14 @@ button {
 
 .logoheadcamp {
   width: auto;
-  height: 14px;
+  height: 10px;
   margin: auto 0;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
 
 .logocamp {
   width: auto;
-  height: 100px;
+  height: 70px;
   margin: auto;
   display: block;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
@@ -553,8 +560,8 @@ button {
 /* Pulsante Hamburger (Posizionato fisso in alto a sinistra) */
 .hamburger-button {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   z-index: 1001; /* Deve stare sopra tutto */
   background: none;
   border: none;
@@ -620,8 +627,8 @@ button {
 /* Pulsante di chiusura (la 'X') */
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   background: transparent;
   border: none;
   font-size: 160%;
@@ -666,7 +673,7 @@ body#worldchampionship .sidebar-content a[href="#home"].active .menu-icon {
 
   .logocamp {
     width: auto;
-    height: 70px;
+    height: 35px;
     margin: auto;
     display: block;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
@@ -880,7 +887,7 @@ td.totalone {
 }
 @media (max-width: 768px) {
   .section {
-    padding: 10px;
+    padding: 20px 10px 70px;
     margin-left: 0;
     margin-right: 0;
     width: auto;
@@ -2261,7 +2268,6 @@ body#worldchampionship {
   overflow: hidden;
 }
 
-
 .team-header {
   display: flex;
   justify-content: space-between;
@@ -2363,34 +2369,15 @@ body#worldchampionship {
 
 .lobby-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 20px 25px;
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.lobby-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--giallogtv) 0%,
-    rgba(191, 239, 255, 0.6) 100%
-  );
 }
 
 .lobby-card:hover {
   background: rgba(191, 239, 255, 0.08);
-  border-color: rgba(191, 239, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(191, 239, 255, 0.1);
+  border-color: rgba(191, 239, 255, 0.3);
 }
 
 .lobby-card-header {
@@ -2472,16 +2459,18 @@ body#worldchampionship {
 }
 
 .lobby-host-icon {
-  font-size: 1.2em;
-  background: rgba(191, 239, 255, 0.15);
-  color: #87ceeb;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.lobby-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
 }
 
 .lobby-host-content {
@@ -2528,12 +2517,8 @@ body#worldchampionship {
 }
 
 .lobby-live-icon {
-  font-size: 1.2em;
-  background: rgba(191, 239, 255, 0.15);
-  color: #87ceeb;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2549,8 +2534,6 @@ body#worldchampionship {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  animation: blink 1.5s infinite;
-  margin-left: auto;
 }
 
 .lobby-live-name {
@@ -2566,39 +2549,6 @@ body#worldchampionship {
   text-decoration: underline;
 }
 
-.lobby-live-badge {
-  background: rgba(191, 239, 255, 0.2);
-  color: #87ceeb;
-  padding: 3px 6px;
-  border-radius: 4px;
-  font-size: 0.7em;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(191, 239, 255, 0.3);
-  animation: blink 1.5s infinite;
-  margin-left: auto;
-}
-
-.lobby-live-badge:hover {
-  background: rgba(191, 239, 255, 0.3);
-  color: #fff;
-  transform: scale(1.05);
-}
-
-@keyframes blink {
-  0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-  25%,
-  75% {
-    opacity: 0.7;
-  }
-}
 
 /* Responsive per le info section */
 @media (max-width: 768px) {
@@ -2655,10 +2605,6 @@ body#worldchampionship {
   gap: 10px;
 }
 
-.lobby-pilots-title::before {
-  content: "🏁";
-  font-size: 1.2em;
-}
 
 .lobby-pilots-grid {
   display: grid;
@@ -3035,7 +2981,11 @@ body#worldchampionship {
 
 /* Card singola della penalità */
 .penalty-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 16px;
@@ -3046,7 +2996,7 @@ body#worldchampionship {
 }
 
 .penalty-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -3147,12 +3097,12 @@ body#worldchampionship {
     padding: 12px;
     gap: 12px;
   }
-  
+
   .penalty-card {
     padding: 12px;
     border-radius: 10px;
   }
-  
+
   .penalty-header {
     flex-direction: column;
     align-items: flex-start;
@@ -3160,34 +3110,34 @@ body#worldchampionship {
     margin-bottom: 10px;
     padding-left: 6px;
   }
-  
+
   .penalty-pilot-name {
     font-size: 1em;
     line-height: 1.1;
   }
-  
+
   .penalty-type {
     font-size: 0.7em;
     padding: 3px 8px;
     align-self: flex-start;
     margin-left: 0;
   }
-  
+
   .penalty-details {
     padding-left: 6px;
   }
-  
+
   .penalty-location {
     gap: 6px;
     margin-bottom: 6px;
   }
-  
+
   .penalty-lap,
   .penalty-corner {
     font-size: 0.65em;
     padding: 2px 6px;
   }
-  
+
   .penalty-reason {
     font-size: 0.85em;
     line-height: 1.3;
@@ -3202,41 +3152,41 @@ body#worldchampionship {
     gap: 20px;
     padding: 24px;
   }
-  
+
   .penalty-card {
     padding: 20px;
     border-radius: 14px;
   }
-  
+
   .penalty-header {
     margin-bottom: 16px;
     padding-left: 12px;
   }
-  
+
   .penalty-pilot-name {
     font-size: 1.2em;
   }
-  
+
   .penalty-type {
     font-size: 0.8em;
     padding: 5px 12px;
   }
-  
+
   .penalty-details {
     padding-left: 12px;
   }
-  
+
   .penalty-location {
     gap: 10px;
     margin-bottom: 10px;
   }
-  
+
   .penalty-lap,
   .penalty-corner {
     font-size: 0.75em;
     padding: 4px 10px;
   }
-  
+
   .penalty-reason {
     font-size: 0.95em;
     line-height: 1.5;
@@ -3249,15 +3199,15 @@ body#worldchampionship {
     padding: 16px;
     gap: 14px;
   }
-  
+
   .penalty-card {
     padding: 14px;
   }
-  
+
   .penalty-pilot-name {
     font-size: 1.05em;
   }
-  
+
   .penalty-reason {
     font-size: 0.88em;
   }
@@ -3318,7 +3268,7 @@ body#worldchampionship {
     min-width: 35px;
     gap: 1px;
   }
-  
+
   .position-change {
     font-size: 0.65em;
     padding: 1px 3px;
@@ -3333,7 +3283,7 @@ body#worldchampionship {
     min-width: 45px;
     gap: 3px;
   }
-  
+
   .position-change {
     font-size: 0.75em;
     padding: 3px 5px;
@@ -3636,7 +3586,7 @@ body#worldchampionship {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 
@@ -3679,7 +3629,261 @@ body#worldchampionship {
   transform: translateX(3px);
 }
 
-/* Next Race Home - Stile basato su Top 10 */
+/* Next Race Bar - Barra sottile sotto title-container */
+.next-race-bar {
+  /* background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.08) 100%,
+    rgba(191, 239, 255, 0.03) 100%
+  ); */
+  border-bottom: 1px solid rgba(191, 239, 255, 0.15);
+  padding: 8px 20px;
+  /* border-top: 1px solid rgba(191, 239, 255, 0.15); */
+  margin-top: 10px;
+}
+
+.next-race-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.next-race-bar-left {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 0 15px;
+  align-items: center;
+}
+
+.next-race-gara-number {
+  grid-row: 1 / -1;
+  grid-column: 1;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.next-race-date {
+  grid-row: 1;
+  grid-column: 2;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.next-race-circuit-info {
+  grid-row: 2;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.next-race-flag {
+  font-size: 1.1em;
+}
+
+.next-race-circuit {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.next-race-circuit-logo-container {
+  grid-row: 1 / -1;
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-race-circuit-logo {
+  height: 2.6em;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.next-race-bar-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.next-race-lobby-link {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-race-lobby-link:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive per barra prossima gara */
+@media (max-width: 768px) {
+
+
+  .next-race-bar-content {
+    gap: 10px;
+  }
+
+  .next-race-bar-left {
+    grid-template-columns: auto auto;
+    gap: 0 10px;
+  }
+
+  .next-race-gara-number {
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+  }
+
+  .next-race-date {
+    font-size: 0.8em;
+  }
+
+  .next-race-circuit-info {
+    font-size: 0.8em;
+    gap: 6px;
+  }
+
+  .next-race-circuit-logo {
+    height: 1.8em;
+  }
+
+  .next-race-lobby-link {
+    font-size: 0.75em;
+  }
+}
+
+/* Barra navigazione in basso (app-like) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  padding: 0px 0;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, background 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 12px;
+  min-width: 60px;
+}
+
+.nav-item:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(191, 239, 255, 0.1);
+}
+
+.nav-item.active {
+  color: var(--giallogtv);
+  background: rgba(191, 239, 255, 0.15);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.nav-item-home .nav-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.nav-item.active .nav-icon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(191, 239, 255, 0.5));
+}
+
+.nav-item-home.active .nav-icon {
+  filter: drop-shadow(0 0 8px rgba(191, 239, 255, 0.5));
+}
+
+.nav-label {
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-item-home {
+  background: var(--giallogtv);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item-home:hover {
+  background: rgba(191, 239, 255, 0.3);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item-home.active {
+  background: #87ceeb;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile responsive per barra navigazione */
+@media (max-width: 768px) {
+
+  .nav-item {
+    padding: 6px 8px;
+    min-width: 50px;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-item-home .nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-label {
+    font-size: 0.7em;
+  }
+}
+
+/* Next Race Home - Stile basato su Top 10 (mantenuto per compatibilità) */
 .next-race-home {
   background: linear-gradient(
     135deg,
@@ -3824,59 +4028,6 @@ body#worldchampionship {
   .race-circuit img {
     width: 50px;
   }
-
-  /* Mobile layout per prossima gara - ultra-compatto con grid */
-  .next-race-content > div[style*="display: flex"] {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0 !important;
-  }
-
-  /* Gara - prima cella */
-  .next-race-content > div[style*="display: flex"] > div:nth-child(1) {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    border-right: 1px solid rgba(255,255,255,0.08) !important;
-    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-    padding: 6px 10px !important;
-  }
-
-  /* Circuito - seconda cella (stessa riga di Gara) */
-  .next-race-content > div[style*="display: flex"] > div:nth-child(3) {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-    padding: 6px 10px !important;
-  }
-
-  /* Data - seconda riga, occupa tutto */
-  .next-race-content > div[style*="display: flex"] > div:nth-child(2) {
-    grid-column: 1 / -1 !important;
-    grid-row: 2 !important;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-    padding: 6px 10px !important;
-  }
-
-  /* Info - terza riga, occupa tutto */
-  .next-race-content > div[style*="display: flex"] > div:nth-child(4) {
-    grid-column: 1 / -1 !important;
-    grid-row: 3 !important;
-    border-right: none !important;
-    border-bottom: none !important;
-    padding: 6px 10px !important;
-    background: rgba(191,239,255,0.03) !important;
-  }
-
-  .next-race-content > div[style*="display: flex"] > div > div:first-child {
-    font-size: 0.6em !important;
-    margin-bottom: 1px !important;
-  }
-
-  .next-race-content > div[style*="display: flex"] > div > div:last-child {
-    font-size: 0.85em !important;
-  }
 }
 
 /* Top 10 Home */
@@ -3896,7 +4047,7 @@ body#worldchampionship {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid rgba(191, 239, 255, 0.2);
 }
 

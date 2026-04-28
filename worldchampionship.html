@@ -48,8 +48,8 @@
                 <a href="#risultati" class="menu-link">
                     Risultati
                 </a>
-                <a href="#classifica" class="menu-link">
-                    Classifica
+                <a href="#classifiche" class="menu-link">
+                    Classifiche
                 </a>
                 <a href="#penalita" class="menu-link">
                     Direzione Gara
@@ -83,7 +83,21 @@
                 <span class="sottotitolo">Campionato interno </span>
                 <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
             </a>
-            <div id="breadcrumb"></div>
+        </div>
+
+        <!-- Barra prossima gara -->
+        <div id="next-race-bar" class="next-race-bar">
+            <div class="next-race-bar-content">
+                <div class="next-race-bar-left">
+                    <div class="next-race-gara-number">...</div>
+                    <div class="next-race-date">Caricamento...</div>
+                    <div class="next-race-circuit-info"></div>
+                    <div class="next-race-circuit-logo-container"></div>
+                </div>
+                <div class="next-race-bar-right">
+                    <a href="#lobby" class="next-race-lobby-link">> Lobby</a>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -97,23 +111,6 @@
 
         <section id="home" class="section">
 
-
-            <div class="next-race-home">
-                <div class="next-race-header">
-                    <div class="next-race-title">Prossima Gara</div>
-                </div>
-                <div class="next-race-grid">
-                    <div id="prossima-gara-body" class="next-race-content">
-                        <div class="loading-message">
-                            <div class="loading-spinner"></div>
-                            Caricamento dati in corso...
-                        </div>
-                    </div>
-                </div>
-                <div class="next-race-footer">
-                    <a href="#lobby" class="menu-link">Vai alle Lobby</a>
-                </div>
-            </div>
 
             <div class="calendar-home">
                 <div class="calendar-header">
@@ -162,7 +159,7 @@
                         Caricamento dati in corso...
                     </div>
                     <div class="next-race-footer">
-                        <a href="#classifica" class="menu-link">Classifica completa</a>
+                        <a href="#classifiche" class="menu-link">Classifica completa</a>
                     </div>
                 </div>
             </div>
@@ -260,7 +257,7 @@
         </section>
 
 
-        <section id="classifica" class="section">
+        <section id="classifiche" class="section">
             <div class="calendar-home">
                 <div class="calendar-header">
                     <div class="calendar-title">Classifiche</div>
@@ -337,6 +334,30 @@
 
 
     </div>
+
+    <!-- Barra navigazione in basso -->
+    <nav class="bottom-nav">
+        <a href="#lobby" class="nav-item" data-section="lobby">
+            <img src="images/icons/piloti.svg" alt="Lobby" class="nav-icon">
+            <span class="nav-label">Lobby</span>
+        </a>
+        <a href="#classifiche" class="nav-item" data-section="classifiche">
+            <img src="images/icons/classifica.svg" alt="Classifiche" class="nav-icon">
+            <span class="nav-label">Classifiche</span>
+        </a>
+        <a href="#home" class="nav-item nav-item-home" data-section="home">
+            <img src="images/icons/home.svg" alt="Home" class="nav-icon">
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="#risultati" class="nav-item" data-section="risultati">
+            <img src="images/icons/risultati.svg" alt="Risultati" class="nav-icon">
+            <span class="nav-label">Risultati</span>
+        </a>
+        <a href="#penalita" class="nav-item" data-section="direzione-gara">
+            <img src="images/icons/admin.svg" alt="Direzione Gara" class="nav-icon">
+            <span class="nav-label">Direzione</span>
+        </a>
+    </nav>
 
 </body>
 <script src="config.js" defer></script>

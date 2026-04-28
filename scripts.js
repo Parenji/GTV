@@ -378,15 +378,15 @@ async function loadCalendar(spreadsheetUrl) {
 }
 
 /**
- * Carica e visualizza la prossima gara con stile top10
+ * Carica e visualizza la prossima gara nella barra sottile
  * @param {string} spreadsheetUrl URL del Google Sheet CSV
  * @param {number} rowIndex Indice della riga (1-based)
  */
 async function loadNextRace(spreadsheetUrl, rowIndex) {
-  const container = document.getElementById("prossima-gara-body");
+  const container = document.getElementById("next-race-bar");
 
   if (!container) {
-    console.error('Elemento "prossima-gara-body" non trovato.');
+    console.error('Elemento "next-race-bar" non trovato.');
     return;
   }
 
@@ -413,7 +413,7 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
       );
 
     if (!rows || rows.length === 0) {
-      container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Nessuna gara trovata</div></div></div>';
+      container.innerHTML = '<div class="next-race-bar-content">Nessuna gara trovata</div>';
       return;
     }
 
@@ -423,7 +423,7 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
 
     if (index0Based >= 0 && index0Based < allDataRows.length) {
       const raceData = allDataRows[index0Based];
-      
+
       // Colonne: [0]gara, [1]data, [2]circuito, [3]nazione, [4]altre info
       const gara = raceData[0] || '';
       const data = raceData[1] || '';
@@ -431,16 +431,15 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
       const nazione = raceData[3] || '';
       const altreInfo = raceData[4] || '';
 
-      // Genera HTML con stile top10 - Layout mobile-first moderno
-      let html = '';
+      // Prepara il logo del circuito e la bandiera
       let circuitLogo = '';
+      let flagEmoji = '';
 
-      // Prepara il logo del circuito se esiste
       if (circuito) {
         // Mapping per nomi comuni che potrebbero non corrispondere
         const circuitMapping = {
           'daytona': 'daytona',
-          'autopolis': 'autopolis', 
+          'autopolis': 'autopolis',
           'deep forest': 'deep-forest',
           'dragon trail': 'dragon',
           'fuji': 'fuji',
@@ -466,67 +465,108 @@ async function loadNextRace(spreadsheetUrl, rowIndex) {
         // Pulisci e normalizza il nome del circuito
         const cleanName = circuito.toLowerCase().trim();
         const circuitName = circuitMapping[cleanName] || cleanName.replace(/\s+/g, '_').replace(/[^\w]/g, '');
-        
-        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" style="width: 100%; max-width: 200px; height: 60px; object-fit: contain; display: block; margin: 15px auto 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="display: none; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9em; margin-top: 10px;">🛣️ ${circuito}</div>`;
+
+        circuitLogo = `<img src="images/tracks/${circuitName}.png" alt="${circuito}" class="next-race-circuit-logo" onerror="this.style.display='none';">`;
       }
 
-      // Layout ultra-compatto e brillante
-      html += `
-        <div style="display: flex; align-items: center; gap: 0; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden;">
-          <!-- Gara -->
-          <div style="flex: 0 0 auto; padding: 10px 18px; border-right: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              Gara
-            </div>
-            <div style="font-size: 1.1em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 0.5px;">
-              ${gara || 'N/D'}
+      // Mapping nazione -> emoji bandiera (codici ISO a 2 lettere)
+      const flagMapping = {
+        'it': '🇮🇹',
+        'italia': '🇮🇹',
+        'jp': '🇯🇵',
+        'giappone': '🇯🇵',
+        'us': '🇺🇸',
+        'united states': '🇺🇸',
+        'be': '🇧🇪',
+        'belgio': '🇧🇪',
+        'belgium': '🇧🇪',
+        'br': '🇧🇷',
+        'brasile': '🇧🇷',
+        'brazil': '🇧🇷',
+        'de': '🇩🇪',
+        'germania': '🇩🇪',
+        'germany': '🇩🇪',
+        'fr': '🇫🇷',
+        'francia': '🇫🇷',
+        'france': '🇫🇷',
+        'es': '🇪🇸',
+        'spagna': '🇪🇸',
+        'spain': '🇪🇸',
+        'au': '🇦🇺',
+        'australia': '🇦🇺',
+        'mc': '🇲🇨',
+        'monaco': '🇲🇨',
+        'gb': '🇬🇧',
+        'uk': '🇬🇧',
+        'united kingdom': '🇬🇧',
+        'at': '🇦🇹',
+        'austria': '🇦🇹',
+        'hu': '🇭🇺',
+        'ungheria': '🇭🇺',
+        'hungary': '🇭🇺',
+        'ae': '🇦🇪',
+        'emirati arabi': '🇦🇪',
+        'uae': '🇦🇪',
+        'pt': '🇵🇹',
+        'portogallo': '🇵🇹',
+        'portugal': '🇵🇹',
+        'mx': '🇲🇽',
+        'messico': '🇲🇽',
+        'mexico': '🇲🇽',
+        'ca': '🇨🇦',
+        'canada': '🇨🇦',
+        'cn': '🇨🇳',
+        'cina': '🇨🇳',
+        'china': '🇨🇳',
+        'sg': '🇸🇬',
+        'singapore': '🇸🇬',
+        'ru': '🇷🇺',
+        'russia': '🇷🇺',
+        'tr': '🇹🇷',
+        'turkey': '🇹🇷',
+        'kr': '🇰🇷',
+        'corea': '🇰🇷',
+        'korea': '🇰🇷',
+        'id': '🇮🇩',
+        'indonesia': '🇮🇩',
+        'qa': '🇶🇦',
+        'qatar': '🇶🇦',
+        'sa': '🇸🇦',
+        'saudi arabia': '🇸🇦'
+      };
+
+      if (nazione) {
+        const cleanNation = nazione.toLowerCase().trim();
+        flagEmoji = flagMapping[cleanNation] || '';
+      }
+
+      // Layout barra sottile a griglia
+      let html = `
+        <div class="next-race-bar-content">
+          <div class="next-race-bar-left">
+            <div class="next-race-gara-number">G${gara || 'N/D'}</div>
+            <div class="next-race-date">${data || 'N/D'}</div>
+            <div class="next-race-circuit-info">
+              ${flagEmoji ? `<span class="next-race-flag">${flagEmoji}</span>` : ''}
+              <span class="next-race-circuit">${circuito || 'N/D'}</span>
             </div>
           </div>
-          
-          <!-- Data -->
-          <div style="flex: 0 0 auto; padding: 10px 18px; border-right: 1px solid rgba(255,255,255,0.1);">
-            <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              Data
-            </div>
-            <div style="font-size: 0.9em; font-weight: 500; color: rgba(255,255,255,0.9);">
-              ${data || 'N/D'}
-            </div>
+          <div class="next-race-bar-right">
+            <a href="#lobby"             <div class="next-race-circuit-logo-container">
+              ${circuitLogo}
+            </div></a>
           </div>
-          
-          <!-- Circuito -->
-          ${circuito ? `
-            <div style="flex: 1; padding: 10px 18px;">
-              <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-                Circuito
-              </div>
-              <div style="font-size: 0.9em; font-weight: 500; color: rgba(255,255,255,0.9);">
-                ${circuito}
-              </div>
-            </div>
-          ` : ''}
-          
-          <!-- Altre Info (se presenti) -->
-          ${altreInfo && altreInfo.trim() !== '' ? `
-            <div style="flex: 0 0 auto; padding: 10px 18px; border-left: 1px solid rgba(255,255,255,0.1); background: rgba(191,239,255,0.05);">
-              <div style="font-size: 0.65em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-                Info
-              </div>
-              <div style="font-size: 0.85em; font-weight: 500; color: rgba(255,255,255,0.85);">
-                ${altreInfo}
-              </div>
-            </div>
-          ` : ''}
         </div>
       `;
 
       container.innerHTML = html;
     } else {
-      container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Gara non trovata</div></div></div>';
+      container.innerHTML = '<div class="next-race-bar-content">Gara non trovata</div>';
     }
 
   } catch (error) {
     console.error('Errore nel caricamento della prossima gara:', error);
-    container.innerHTML = '<div class="race-info-item"><div class="race-info-content"><div class="race-info-value">Errore nel caricamento</div></div></div>';
+    container.innerHTML = '<div class="next-race-bar-content">Errore nel caricamento</div>';
   }
 }
 
@@ -988,7 +1028,9 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
           <div class="lobby-info-section">
             ${host ? `
               <div class="lobby-host">
-                <div class="lobby-host-icon">👤</div>
+                <div class="lobby-host-icon">
+                  <img src="images/icons/host.svg" alt="Host" class="lobby-icon">
+                </div>
                 <div class="lobby-host-content">
                   <div class="lobby-host-label">Host</div>
                   <a href="https://profile.playstation.com/${escapeHtml(host)}/add" target="_blank" class="lobby-host-name">${escapeHtml(host)}</a>
@@ -998,12 +1040,13 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
             
             ${live ? `
               <div class="lobby-live">
-                <div class="lobby-live-icon">🔴</div>
+                <div class="lobby-live-icon">
+                  <img src="images/icons/live.svg" alt="Live" class="lobby-icon">
+                </div>
                 <div class="lobby-live-content">
                   <div class="lobby-live-label">Live su</div>
                   <a href="${escapeHtml(linklive)}" target="_blank" class="lobby-live-name">${escapeHtml(live)}</a>
                 </div>
-                <a href="${escapeHtml(live)}" target="_blank" class="lobby-live-badge">LIVE</a>
               </div>
             ` : ''}
           </div>
@@ -1472,7 +1515,7 @@ function generateTop10Home(data) {
   
   html += '</div>';
   html += '<div class="next-race-footer">';
-  html += '<a href="#classifica" class="menu-link">Classifica completa</a>';
+  html += '<a href="#classifiche" class="menu-link">Classifica completa</a>';
   html += '</div>';
   html += '</div>';
   
@@ -1667,77 +1710,53 @@ async function loadPodioUltimaGara(spreadsheetUrl, ultimaGara) {
     });
     
     console.log('Podio: Risultati estratti:', raceResults.length);
-    
-    // Separa per lobby e prendi i primi 3 di ciascuna
-    const lobby1Results = raceResults
-      .filter(result => result.lobby === '1')
-      .sort((a, b) => a.position - b.position)
-      .slice(0, 3);
-      
-    const lobby2Results = raceResults
-      .filter(result => result.lobby === '2')
-      .sort((a, b) => a.position - b.position)
-      .slice(0, 3);
-    
-    console.log('Podio: Lobby 1 -', lobby1Results.length, 'piloti');
-    console.log('Podio: Lobby 2 -', lobby2Results.length, 'piloti');
-    
+
+    // Trova tutte le lobby uniche e ordina numericamente
+    const uniqueLobbies = [...new Set(raceResults.map(r => r.lobby))].sort((a, b) => parseInt(a) - parseInt(b));
+
+    // Raggruppa risultati per lobby e prendi i primi 3 di ciascuna
+    const lobbiesResults = {};
+    uniqueLobbies.forEach(lobby => {
+      lobbiesResults[lobby] = raceResults
+        .filter(result => result.lobby === lobby)
+        .sort((a, b) => a.position - b.position)
+        .slice(0, 3);
+      console.log('Podio: Lobby', lobby, '-', lobbiesResults[lobby].length, 'piloti');
+    });
+
     let html = '';
-    
-    // Genera HTML per Lobby 1
-    if (lobby1Results.length > 0) {
-      html += `
-        <div class="podio-lobby">
-          <div class="podio-lobby-header">🏆 Lobby 1</div>
-          <div class="podio-piloti">
-      `;
-      
-      lobby1Results.forEach((result, index) => {
-        const positionClass = index === 0 ? 'podio-primo' : index === 1 ? 'podio-secondo' : 'podio-terzo';
-        
+
+    // Genera HTML per ogni lobby
+    uniqueLobbies.forEach(lobby => {
+      const results = lobbiesResults[lobby];
+      if (results.length > 0) {
         html += `
-          <div class="podio-pilota">
-            <div class="podio-posizione ${positionClass}">${result.position}°</div>
-            <div class="podio-pilota-nome">${escapeHtml(result.pilotName)}</div>
-            <div class="podio-pilota-team">${escapeHtml(result.teamName)}</div>
+          <div class="podio-lobby">
+            <div class="podio-lobby-header">Lobby ${lobby}</div>
+            <div class="podio-piloti">
+        `;
+
+        results.forEach((result, index) => {
+          const positionClass = index === 0 ? 'podio-primo' : index === 1 ? 'podio-secondo' : 'podio-terzo';
+
+          html += `
+            <div class="podio-pilota">
+              <div class="podio-posizione ${positionClass}">${result.position}°</div>
+              <div class="podio-pilota-nome">${escapeHtml(result.pilotName)}</div>
+              <div class="podio-pilota-team">${escapeHtml(result.teamName)}</div>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
           </div>
         `;
-      });
-      
-      html += `
-          </div>
-        </div>
-      `;
-    }
-    
-    // Genera HTML per Lobby 2
-    if (lobby2Results.length > 0) {
-      html += `
-        <div class="podio-lobby">
-          <div class="podio-lobby-header">🏆 Lobby 2</div>
-          <div class="podio-piloti">
-      `;
-      
-      lobby2Results.forEach((result, index) => {
-        const positionClass = index === 0 ? 'podio-primo' : index === 1 ? 'podio-secondo' : 'podio-terzo';
-        
-        html += `
-          <div class="podio-pilota">
-            <div class="podio-posizione ${positionClass}">${result.position}°</div>
-            <div class="podio-pilota-nome">${escapeHtml(result.pilotName)}</div>
-            <div class="podio-pilota-team">${escapeHtml(result.teamName)}</div>
-          </div>
-        `;
-      });
-      
-      html += `
-          </div>
-        </div>
-      `;
-    }
-    
+      }
+    });
+
     container.innerHTML = html || '<div class="loading-message">Nessun risultato trovato per l\'ultima gara.</div>';
-    console.log('Podio caricato:', lobby1Results.length + ' piloti Lobby 1,', lobby2Results.length + ' piloti Lobby 2');
+    console.log('Podio caricato:', uniqueLobbies.length, 'lobby');
 
   } catch (error) {
     console.error('Errore nel caricamento del podio:', error);
@@ -2329,6 +2348,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const URL_TEAM_PILOTI = config.googleSheets.worldchampionship.teamPiloti;
     loadTeamAndPiloti(URL_TEAM_PILOTI);
 
+    // Inizializza barra navigazione
+    initializeBottomNav();
+
     // Carica risultati DOPO il calendario per avere la cache disponibile
     setTimeout(() => {
       loadRisultati(URL_CLASS);
@@ -2350,5 +2372,38 @@ document.addEventListener("DOMContentLoaded", () => {
       [0, 2, 1, 3] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
     );
+  }
+
+  // Funzione per inizializzare la barra navigazione in basso
+  function initializeBottomNav() {
+    const navItems = document.querySelectorAll('.nav-item');
+
+    function updateActiveNav() {
+      const currentHash = window.location.hash || '#home';
+      const currentSection = currentHash.replace('#', '');
+
+      navItems.forEach(item => {
+        const section = item.getAttribute('data-section');
+        if (section === currentSection) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    // Aggiorna stato iniziale
+    updateActiveNav();
+
+    // Ascolta cambiamenti dell'hash
+    window.addEventListener('hashchange', updateActiveNav);
+
+    // Ascolta click sui nav items per aggiornare stato
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navItems.forEach(nav => nav.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
   }
 });
