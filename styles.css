@@ -228,11 +228,10 @@ html {
 }
 
 .podio-lobby-header {
-  font-size: 1.2em;
   font-weight: bold;
   color: var(--giallogtv);
-  margin-bottom: 15px;
   text-align: center;
+  padding: 5px 0px 10px;
 }
 
 .podio-piloti {
@@ -544,7 +543,7 @@ button {
 
 .logocamp {
   width: auto;
-  height: 70px;
+  height: 50px;
   margin: auto;
   display: block;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
@@ -750,7 +749,7 @@ h2 {
   display: none;
   margin: 0 auto;
   width: 800px;
-  padding: 40px 20px;
+  padding: 40px 20px 70px;
 }
 
 /* ========================================
@@ -2385,42 +2384,39 @@ body#worldchampionship {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
 }
 
 .lobby-datetime {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .lobby-date {
   background: var(--giallogtv);
   color: #000;
-  padding: 8px 15px;
+  padding: 8px 10px;
   border-radius: 8px;
-  font-weight: 700;
-  font-size: 1.1em;
+  font-weight: 600;
+  font-size: 0.85em;
 }
 
 .lobby-time {
   background: rgba(255, 255, 255, 0.1);
-  padding: 8px 15px;
+  padding: 8px 10px;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 0.85em;
 }
 
 .lobby-category {
-  background: rgba(191, 239, 255, 0.1);
   color: var(--giallogtv);
   padding: 6px 12px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.85em;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 1px solid rgba(191, 239, 255, 0.2);
   display: inline-block;
 }
 
@@ -2486,7 +2482,7 @@ body#worldchampionship {
 }
 
 .lobby-host-name {
-  color: #87ceeb;
+    color: var(--giallogtv);
   font-weight: 600;
   font-size: 1em;
   text-decoration: none;
@@ -2665,11 +2661,7 @@ body#worldchampionship {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .lobby-card-header {
-    flex-direction: column;
-    gap: 15px;
-    align-items: stretch;
-  }
+
 
   .lobby-datetime {
     justify-content: space-between;
@@ -3647,7 +3639,7 @@ body#worldchampionship {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  max-width: 1400px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -3784,10 +3776,10 @@ body#worldchampionship {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgba(10, 10, 20, 0.95);
+  background: rgba(10, 10, 20, 0.8);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(191, 239, 255, 0.2);
-  padding: 0px 0;
+  padding: 0px 0 0px;
   z-index: 1000;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
 }
@@ -3830,9 +3822,7 @@ body#worldchampionship {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.nav-item.active .nav-icon {
-  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(191, 239, 255, 0.5));
-}
+
 
 .nav-item-home.active .nav-icon {
   filter: drop-shadow(0 0 8px rgba(191, 239, 255, 0.5));
@@ -3864,22 +3854,22 @@ body#worldchampionship {
 @media (max-width: 768px) {
 
   .nav-item {
-    padding: 6px 8px;
-    min-width: 50px;
+    padding: 12px 8px 14px;
+    min-width: 18%;
   }
 
   .nav-icon {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
   }
 
   .nav-item-home .nav-icon {
-    width: 28px;
-    height: 28px;
+    width: 46px;
+    height: 34px;
   }
 
   .nav-label {
-    font-size: 0.7em;
+    font-size: 0.55em;
   }
 }
 
