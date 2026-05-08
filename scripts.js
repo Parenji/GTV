@@ -1,4 +1,4 @@
-let ultimaGara = 3; // <-- MODIFICA QUESTO VALORE PER AGGIORNARE LA GARA
+// <-- MODIFICA QUESTO VALORE PER AGGIORNARE LA GARA a riga 2317
 //MENU HAMBURGER
 // Seleziona gli elementi del DOM
 const menuToggle = document.getElementById("menu-toggle");
@@ -2314,7 +2314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (worldchampionship) {
     console.log("Inizializzazione di worldchampionship.html: Caricamento...");
-    let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
+    let ultimaGara = 3; // Cambia questo numero quando vuoi aggiornare la gara
     prossimaGara = ultimaGara + 1;
     document.getElementById("lobby-next-gara").innerText = `Gara ${
       ultimaGara + 1
