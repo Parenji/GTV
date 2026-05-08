@@ -1,4 +1,4 @@
-let ultimaGara = 1; // <-- MODIFICA QUESTO VALORE PER AGGIORNARE LA GARA
+let ultimaGara = 3; // <-- MODIFICA QUESTO VALORE PER AGGIORNARE LA GARA
 //MENU HAMBURGER
 // Seleziona gli elementi del DOM
 const menuToggle = document.getElementById("menu-toggle");
@@ -1417,6 +1417,7 @@ async function loadPenalitaByRace(spreadsheetUrl) {
     // Genera HTML con sistema accordion
     let html = '';
     
+        
     if (sortedRaces.length === 0) {
       html = '<div class="no-penalties">Nessuna penalità trovata.</div>';
     } else {
@@ -1436,12 +1437,13 @@ async function loadPenalitaByRace(spreadsheetUrl) {
         `;
         
         penalties.forEach(penalty => {
-          // Rileva se è un warning
+          // Rileva se è un warning o MNR
           const penaltyText = penalty.penalty.toLowerCase();
           const isWarning = penaltyText.includes('warn') || penaltyText.includes('warning') || penaltyText === 'warn.';
+          const isMNR = penaltyText.includes('squalifica') || penaltyText.includes('squal.');
           
-          const penaltyIcon = isWarning ? '⚠️' : '';
-          const penaltyClass = isWarning ? 'penalty-type-warning' : 'penalty-type-penalty';
+          const penaltyIcon = isWarning ? '⚠️' : isMNR ? '🚫' : '';
+          const penaltyClass = isWarning ? 'penalty-type-warning' : isMNR ? 'penalty-type-mnr' : 'penalty-type-penalty';
           
           html += `
             <div class="penalty-card">
