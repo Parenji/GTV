@@ -1,0 +1,1126 @@
+/* UNA BUONA PARTE DI TUTTE QUESTE CLASSI è INUTILIZZATA  */
+
+/* l'ho notato fratm*/
+
+:root {
+  --brdr-color: #3c3c3c;
+  --grigio-captions: #393939;
+  --grigio-box: #222;
+  --bordigrigi: rgb(170, 170, 170);
+  --rossotlm: #810101;
+  --giallogtv: #f5ff3c;
+  --giallogtvhover: #bbc22d;
+}
+
+button {
+  background: none;
+}
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: f1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background-image: url("images/carbon.jpg");
+  position: sticky;
+  top: 0;
+
+  /* Assicurati che l'header sia sopra gli altri contenuti */
+  z-index: 1000;
+  margin-bottom: 20px;
+}
+/* Selettore che copre tutti i link nell'header */
+header a {
+    text-decoration: none; /* Rimuove la sottolineatura nello stato normale */
+    color: inherit;        /* Assicura che il colore del testo sia ereditato se necessario */
+}
+
+/* 🛑 Fondamentale: Rimuovere la sottolineatura anche negli stati di interazione */
+header a:hover,
+header a:focus,
+header a:active {
+    text-decoration: none;
+}
+@font-face {
+  font-family: f1;
+  src: url("font/Formula1-Regular.otf");
+}
+button {
+  font-family: inherit;
+}
+.main-container {
+  display: block;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+.title-container {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 50px;
+  margin-bottom: 30px;
+text-decoration: none;
+}
+
+.sottotitolo{
+    color: white;
+  text-decoration: none;
+
+}
+.logohead {
+  width: auto;
+  height: 70px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.logoheadcamp {
+  width: auto;
+  height: 30px;
+  margin: auto;
+  margin-top: 20px;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.logocamp {
+  width: auto;
+  height: 100px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+
+@media (max-width: 768px) {
+  .logohead {
+    width: 35%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+  .logoheadcamp {
+    width: 28%;
+    height: auto;
+    max-width: 100%;
+    margin: 10px auto 0px;
+    display: block;
+  }
+  .logocamp {
+    width: auto;
+    height: 70px;
+    margin: auto;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+  }
+  .title-container {
+    margin: 15px auto 10px;
+
+}
+}
+.section {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  width: 800px;
+}
+.flagtrack {
+  width: auto;
+  height: 15px;
+  margin-left: 5px;
+}
+.title-container h1 {
+  margin: 10;
+  font-size: 2em;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+td,
+th {
+  border: 1px solid #0e0e0e;
+  background-color: #1a1a1a;
+  padding: 5px;
+  text-align: center;
+}
+th {
+    background-color: var(--grigio-captions);
+    color: var(--giallogtv);
+}
+td.totale {
+  font-weight: 700;
+}
+th.totalone {
+  font-size: larger;
+  font-weight: 700;
+}
+td.totalone {
+  font-size: larger;
+  font-weight: 700;
+}
+.hidden {
+  display: none;
+}
+.toggleColumnsButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
+}
+.toggleColumnsButton:hover {
+  background-color: #666;
+}
+.hidden {
+  display: none;
+}
+.pdf-button-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.pdf-button {
+  background-color: var(--giallogtv);
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.pen-button {
+  background-color: var(--giallogtv);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.pdf-button:hover {
+  background-color: var(--giallogtvhover);
+}
+.pen-button:hover {
+  background-color: var(--giallogtvhover);
+}
+.accordion-container {
+  margin-bottom: 10px;
+}
+.accordion {
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: 0;
+  text-align: left;
+  transition: 0.4s;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.accordion > i > svg {
+  width: 1rem;
+  height: 0.9rem;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+  float: right;
+}
+.accordion.active > i > svg {
+  height: 0.9rem;
+  width: 1rem;
+  transform: rotate(-90deg);
+}
+/* .accordion:hover {
+  background-color: #2a2a2a;
+} */
+.accordionn-container {
+  margin-bottom: 10px;
+}
+
+.panel {
+  padding: 0 px;
+  display: none;
+  overflow: hidden;
+  /* background-color: #0e0e0e; */
+  margin-bottom: 5px;
+}
+.panel-content {
+  /* background-color: #0e0e0e; */
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+  .accordion {
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 0;
+  }
+  /* .accordion:hover {
+    background-color: #0e0e0e;
+  } */
+  .accordionn {
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 0;
+  }
+  .accordionn:hover {
+    background-color: #0e0e0e;
+  }
+  .pen-button {
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 20px;
+    font-size: 18px;
+  }
+  .pdf-button {
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 20px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .table-container {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .table-container1 {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  td,
+  th {
+    padding: 4px 6px 4px;
+    text-align: center;
+  }
+  table {
+    font-size: 12px;
+  }
+}
+.titolozzo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.titoletto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.titolettounderlogo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+.countdown-container1 {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("images/usa.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.timer {
+  font-weight: lighter;
+}
+.winner {
+  font-size: 17px;
+  font-weight: 700;
+  /* color: #fff7c7; */
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00;
+}
+.winnerf {
+  font-weight: 700;
+  color: #fff7c7;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
+    0 0 80px #ff8c00, 0 0 90px #ff8c00;
+  margin-bottom: 40px;
+}
+.twitch {
+  width: 30px;
+  height: auto;
+  margin-top: 9px;
+}
+.youtube {
+  width: 30px;
+  height: auto;
+  margin-top: 11px;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.navbar-scroll {
+  /*max-width: 800px;*/ /*questo bloccava l'allargamento dello schermo*/
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #202020;
+  background-color: var(--giallogtv);
+  color: #000000;
+}
+.navbar-scroll a {
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0 7px;
+  font-size: calc(0.5vw + 7px);
+}
+.menu-link.active {
+  background-color: #484848;
+  background-color: var(--giallogtvhover);
+  font-weight: 700;
+  color: #000000;
+  box-shadow: 0 10px 20px 0 rgba(255, 141, 141, 0.23);
+}
+.menu-link .home {
+  width: calc(0.2vw + 32px);
+  /* filter: invert(100%); */
+  padding-bottom: 5px;
+}
+.pentrack {
+  background-color: #fff;
+  width: -webkit-fill-available;
+  max-width: 600px;
+  height: auto;
+  margin: 10px;
+  justify-content: center;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+.footer-section {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin-top: 10px;
+}
+.sponsor-section h2 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+.sponsor-logos img {
+  max-height: 50px;
+  max-width: 180px;
+}
+.social-page {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+
+}
+
+
+/* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
+
+.social-page a {
+    display: flex;
+    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
+  width: 60px;
+  height: auto;
+    text-decoration: none;
+    text-align: center;
+        color: #333;  
+}
+.social-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.social-page img:hover {
+  transform: scale(1.1);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+  border-bottom: 1px solid #848484;
+}
+.social-icons a {
+  display: inline-block;
+  width: 22px;
+  height: auto;
+}
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+.social-label {
+    font-size: 0.75rem; /* Rendi l'etichetta più piccola */
+    margin-top: 4px;
+}
+
+
+.box {
+  background: linear-gradient(125deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--bordigrigi);
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.3);
+}
+
+.box-oro {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* .box-oro span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
+} */
+
+
+.titolino-sx {
+  text-align: left;
+  padding: 4px 10px;
+  font-size: calc(0.5vw + 10px);
+}
+.titolino-dx {
+  text-align: right;
+  padding: 4px 11px;
+  font-size: calc(0.5vw + 10px);
+}
+
+.antibox {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.ps-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.glow-box {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  /* display: flex; */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--giallogtv);
+  box-shadow: 0 0 1px var(--giallogtvhover), 0 0 6px var(--giallogtvhover),
+    0 0 12px var(--giallogtvhover);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.glow-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  /* animation: shiny-move 6s infinite; */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shiny-box {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  /* display: flex; */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--giallogtv);
+  box-shadow: 0 0 1px var(--giallogtvhover), 0 0 6px var(--giallogtvhover),
+    0 0 12px var(--giallogtvhover);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.shiny-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 230, 0) 0%,
+    rgba(255, 230, 230, 0.18) 50%,
+    rgba(255, 230, 230, 0) 100%
+  );
+  transform: skewX(-30deg);
+  animation: shiny-move 6s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes shiny-move {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  10% {
+    left: -125%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  58% {
+    left: 170%;
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+.glow-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+.shiny-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Stili Base per tutti i Pulsanti */
+.campionati-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  border-radius: 20px; /* Angoli molto arrotondati */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none; /* Rimuove la sottolineatura del link */
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 100px; /* Altezza minima per la grandezza */
+  cursor: pointer;
+  border: none;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; /* NON si ripete */
+}
+.gtec {
+  background-image: url("images/Campionati/GTEC.png");
+
+  background-color: #000000;
+}
+
+.federation {
+  background-image: url("images/Campionati/Federation.jpeg");
+  background-color: #ffffff;
+}
+.interno {
+  background-image: url("images/Campionati/interno.png");
+  background-color: #000000;
+  align-items: end;
+}
+
+/* Effetto al passaggio del mouse */
+.campionati-button:hover {
+  transform: translateY(-5px);
+}
+
+/* Contenitore per i Pulsanti */
+.main-campinonato-container {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px; /* Larghezza massima per desktop */
+  /* grid-template-columns: repeat(
+    2,
+    1fr
+  ); 2 colonne per default (desktop/tablet) */
+}
+
+.buttons-secondary-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonne per mobile */
+  gap: 20px;
+  margin-top: 20px; /* Spazio dopo il primo pulsante */
+}
+
+/* --- MEDIA QUERY per Mobile --- */
+@media (max-width: 768px) {
+  .buttons-container {
+    /* Layout a colonna singola per tutti i pulsanti */
+    grid-template-columns: 1fr;
+  }
+
+  /* Il primo pulsante (shiny-box) copre già l'intera larghezza grazie a grid-column: 1 / -1; 
+               Sugli schermi piccoli, l'intera griglia è già una colonna singola.
+            */
+
+  /* Gli altri pulsanti (glow-box) devono essere 2 per riga */
+  /* Per gli altri 4 pulsanti, usiamo un contenitore flessibile all'interno, 
+               o ridefiniamo la griglia per i restanti elementi.
+               Il modo più semplice per rispettare l'ordine e il requisito è:
+               1. Il contenitore ha una sola colonna (come sopra).
+               2. Applichiamo una griglia 2x2 SOLO ai pulsanti glow-box.
+               
+               Dato che gli elementi sono uno dopo l'altro nel flusso, un approccio più pulito 
+               per mantenere il primo elemento separato e gli altri in coppia è:
+            */
+
+  .buttons-secondary-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne per mobile */
+    gap: 20px;
+    margin-top: 20px; /* Spazio dopo il primo pulsante */
+  }
+
+  /* Assicuriamoci che i pulsanti all'interno di questo gruppo abbiano la dimensione giusta */
+  .buttons-secondary-group .campionati-button {
+    grid-column: span 1; /* Ognuno occupa una colonna */
+    font-size: 1.2rem;
+    padding: 10px 10px;
+  }
+
+  /* Il contenitore principale torna a una sola colonna */
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.comunicato {
+  font-size: small;
+}
+
+/* --- MOBILE SPECIFIC TABLE STYLES --- */
+@media (max-width: 600px) {
+  /* Applica questi stili su schermi più piccoli di 600px */
+  .mobile-table thead {
+    display: none; /* Nasconde l'intestazione della tabella */
+  }
+
+  .mobile-table,
+  .mobile-table tbody,
+  .mobile-table tr,
+  .mobile-table td {
+    display: block; /* Rende gli elementi della tabella blocchi */
+  }
+
+  .mobile-table tr {
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-table td {
+  text-align: right; /* Il valore a destra */
+  padding-left: 50%; /* Spazio per la label */
+  position: relative;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  min-height: 10px; /* Altezza minima per la cella */
+  display: flex; /* Usa flexbox per allineare label e valore */
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-end; /* Allinea il contenuto a destra */
+  }
+
+  .mobile-table td::before {
+    /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
+    content: attr(data-label);
+    position: absolute; /* Posizione assoluta per la label */
+    left: 10px;
+    width: calc(50% - 30px); /* Larghezza della label */
+    /* padding-right: 10px; */ /* Non necessario con flexbox */
+    white-space: normal; /* Permette alla label di andare a capo */
+    text-align: left;
+    font-weight: 600;
+    color: var(--giallogtv); /* Colore label */
+    font-size: 0.95em; /* Leggermente più piccola */
+  }
+
+  /* Stili per il footer della tabella su mobile */
+  .mobile-table tfoot {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .mobile-table tfoot tr {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .mobile-table tfoot td {
+    font-weight: 700;
+    color: var(--giallogtv);
+    font-size: 1.1em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right; /* Allinea a destra per il totale */
+    justify-content: flex-end;
+  }
+
+  .mobile-table tfoot td::before {
+    content: attr(data-label);
+    position: absolute; /* Rende la label statica per il footer */
+    width: auto;
+    padding-right: 10px;
+    font-size: 1.1em;
+    color: var(--giallogtv);
+  }
+}
+
+/* Applica questi stili NON SOLO su schermi più piccoli di 600px */
+.alwaysmobile-table thead {
+  display: none; /* Nasconde l'intestazione della tabella */
+}
+
+.alwaysmobile-table,
+.alwaysmobile-table tbody,
+.alwaysmobile-table tr,
+.alwaysmobile-table td {
+  display: block; /* Rende gli elementi della tabella blocchi */
+}
+
+.alwaysmobile-table tr {
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alwaysmobile-table td {
+  text-align: right; /* Il valore a destra */
+  padding-left: 50%; /* Spazio per la label */
+  position: relative;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  min-height: 10px; /* Altezza minima per la cella */
+  display: flex; /* Usa flexbox per allineare label e valore */
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-end; /* Allinea il contenuto a destra */
+}
+
+.alwaysmobile-table td::before {
+  /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
+  content: attr(data-label);
+  position: absolute; /* Posizione assoluta per la label */
+  left: 10px;
+  width: calc(50%); /* Larghezza della label */
+  /* padding-right: 10px; */ /* Non necessario con flexbox */
+  white-space: normal; /* Permette alla label di andare a capo */
+  text-align: left;
+  font-weight: 600;
+  color: var(--giallogtv); /* Colore label */
+  font-size: 0.90em; /* Leggermente più piccola */
+}
+
+/* Stili per il footer della tabella su alwaysmobile */
+.alwaysmobile-table tfoot {
+  display: block;
+  margin-top: 20px;
+}
+
+.alwaysmobile-table tfoot tr {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.alwaysmobile-table tfoot td {
+  font-weight: 700;
+  color: var(--giallogtv);
+  font-size: 1.1em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: right; /* Allinea a destra per il totale */
+  justify-content: flex-end;
+}
+
+.alwaysmobile-table tfoot td::before {
+  content: attr(data-label);
+  position: absolute; /* Rende la label statica per il footer */
+  width: auto;
+  padding-right: 10px;
+  font-size: 1.1em;
+  color: var(--giallogtv);
+}
+/* Stile per l'icona del circuito (PNG/SVG) */
+.circuit-icon {
+    width: auto; /* Larghezza fissa */
+    max-width: 300px;
+    height: 70px; /* Altezza fissa */
+    object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
+    vertical-align: middle;
+}
+
+/* Stile per l'icona della nazione (Bandiera) */
+.nation-flag {
+    width: auto; /* Larghezza più piccola per la bandiera */
+    height: 30px; 
+
+    vertical-align: middle;
+}
+
+.calendar td {
+  font-size: larger;
+  padding-left: calc(50% + 15px);
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.calendar td[data-label="Gara"]{
+    font-weight: bolder;
+    justify-content: left;
+    background-color: var(--grigio-captions);
+    /* color: rgb(255, 255, 255); */
+    
+}
+.calendar td[data-label="Gara"]::before{
+    font-weight: bolder;
+    justify-content: right;
+    display: flex;
+    /* color: #000; */
+}
+.calendar td[data-label="Circuito"]{
+    padding-left: 0px;
+    justify-content: center;
+    height: 70px;
+    margin-top: 2px;
+}
+.calendar td[data-label="Circuito"]::before{
+    display: none;
+}
+.calendar td[data-label="Nazione"]{
+    padding-left: 0px;
+    justify-content: center;
+    
+}
+.calendar td[data-label="Nazione"]::before{
+    display: none;
+}
+
+.instagram-post {
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+
+
+
+/* Sezione principale */
+.section {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+/* Link ai social in alto */
+.social-page {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.social-page a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.social-page a:hover {
+    transform: translateY(-5px);
+}
+
+.social-page img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.social-label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Container per i post Instagram affiancati */
+.instagram-posts-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instagram-post {
+    flex: 1;
+    min-width: 326px;
+    max-width: 540px;
+}
+
+/* Responsive: su mobile uno sotto l'altro */
+@media (max-width: 768px) {
+    .instagram-posts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .instagram-post {
+        width: 100%;
+    }
+
+    .social-page {
+        gap: 20px;
+    }
+
+    .social-page img {
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,4335 @@
+/* ========================================
+   VARIABILI CSS
+   ======================================== */
+:root {
+  --brdr-color: #3c3c3c;
+  --grigio-captions: #393939;
+  --grigio-box: #222;
+  --bordigrigi: rgb(170, 170, 170);
+  --rossotlm: #810101;
+  --giallogtv: #f5ff3c;
+  --giallogtvhover: #bbc22d;
+}
+
+/* ========================================
+   RESET E STILI BASE
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: f1;
+  src: url("font/Formula1-Regular.otf");
+}
+/* Sostituisci 60px con l'altezza TOTALE della tua navbar/header fisso */
+html {
+  /* Questo è il trucco: dice al browser dove deve finire la scrollata */
+  scroll-padding-top: 800px;
+
+  /* Opzionale, per un'animazione fluida */
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: f1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: none;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* Smooth scroll per navigazione fluida */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--giallogtv);
+  animation: spin 1s ease-in-out infinite;
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Error Messages migliorati */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 100, 100, 0.9);
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.error-message button {
+  background: var(--giallogtv);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 35px 8px 15px;
+  color: white;
+  font-size: 0.9em;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--giallogtv);
+  background: rgba(255, 255, 255, 0.15);
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+/* Responsive Search Bar */
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .search-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .search-input:focus {
+    width: 100%;
+  }
+}
+
+/* Stili specifici per tabella penalità */
+.motivazione-cell {
+  max-width: 300px;
+  white-space: normal !important;
+  word-wrap: break-word;
+  line-height: 1.4;
+  padding: 12px 8px !important;
+  vertical-align: top !important;
+}
+
+/* Responsive per penalità */
+@media (max-width: 768px) {
+  .motivazione-cell {
+    max-width: none;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px 5px 15px 120px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .motivazione-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--giallogtv);
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 100px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+/* Stili per il podio */
+.podio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.podio-lobby {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
+  border: 0px solid var(--giallogtv);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.podio-lobby-header {
+  font-weight: bold;
+  color: var(--giallogtv);
+  text-align: center;
+  padding: 5px 0px 10px;
+}
+
+.podio-piloti {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.podio-pilota {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.podio-pilota:hover {
+  background: rgba(191, 239, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.podio-posizione {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--giallogtv);
+  min-width: 40px;
+  text-align: center;
+}
+
+.podio-primo {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.podio-secondo {
+  color: #c0c0c0;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.podio-terzo {
+  color: #cd7f32;
+  text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+.podio-pilota-nome {
+  flex: 1;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.podio-pilota-team {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+/* Responsive per podio */
+@media (max-width: 768px) {
+  .podio-lobby {
+    padding: 5px;
+  }
+
+  .podio-piloti {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .podio-pilota {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    padding: 6px 3px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .podio-posizione {
+    min-width: auto;
+    margin-bottom: 0;
+    font-size: 1em;
+    line-height: 1;
+  }
+
+  .podio-pilota-nome {
+    font-size: 0.7em;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+  }
+
+  .podio-pilota-team {
+    font-size: 0.6em;
+    opacity: 0.8;
+    line-height: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Legenda punteggi risultati */
+.legenda-punteggi {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legenda-pole {
+  color: #ffd000;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.legenda-giro-veloce {
+  color: #ff00ff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Responsive per legenda */
+@media (max-width: 768px) {
+  .legenda-punteggi {
+    gap: 15px;
+    font-size: 0.7em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .legenda-item {
+    gap: 3px;
+  }
+}
+
+/* Stile per le icone delle periferiche */
+.pilot-periferica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.periferica-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.periferica-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive per icone periferiche */
+@media (max-width: 768px) {
+  .periferica-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Stile per le icone delle periferiche nel modal */
+.pilot-periferica-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.periferica-icon-modal {
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.periferica-icon-modal:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive per icone periferiche nel modal */
+@media (max-width: 768px) {
+  .periferica-icon-modal {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pilot-periferica-modal {
+    margin-left: 5px;
+  }
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+header {
+  background:
+    linear-gradient(to bottom, transparent 0%, #0f0f0f 100%),
+    url("images/carbon.jpg");
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header a,
+header a:hover,
+header a:focus,
+header a:active {
+  text-decoration: none;
+}
+@font-face {
+  font-family: f1;
+  src: url("font/Formula1-Regular.otf");
+}
+button {
+  font-family: inherit;
+}
+.main-container {
+  /* display: block; */
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#breadcrumb {
+  color: black;
+  margin: 10px 0px 5px;
+  background-color: var(--giallogtv);
+  height: 30px;
+  align-content: center;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px 0px;
+}
+
+#breadcrumb a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+#breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+#breadcrumb img {
+  height: 15px;
+}
+.simple-footer {
+  height: 10px;
+  width: 100%;
+  /* background-color: transparent; */ /* Puoi metterlo trasparente o dello stesso colore dello sfondo */
+}
+
+.title-container {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
+  font-weight: 500;
+  padding: 10px 00px 0px;
+  text-decoration: none;
+}
+.index {
+  padding-top: 30px;
+}
+
+.sottotitolo {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.logohead {
+  width: auto;
+  height: 90px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.logoheadcamp {
+  width: auto;
+  height: 10px;
+  margin: auto 0;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.logocamp {
+  width: auto;
+  height: 50px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+/* --- Stili Generali e Posizionamento Fisso --- */
+
+/* Posiziona il contenuto principale sotto il pulsante */
+#page-content {
+  padding-top: 100px; /* Spazio per il pulsante fisso in alto */
+}
+
+/* Pulsante Hamburger (Posizionato fisso in alto a sinistra) */
+.hamburger-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001; /* Deve stare sopra tutto */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Icona Hamburger (le tre linee) */
+.line {
+  display: block;
+  width: 50px;
+  height: 6px;
+  background-color: var(--bordigrigi);
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* --- Menu Laterale (Sidebar) --- */
+
+#sidebar {
+  /* Posizionamento fisso per coprire l'intera altezza dello schermo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px; /* Larghezza del menu */
+  background-color: #333; /* Sfondo scuro */
+  color: white;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+  /* NASCONDE IL MENU: Spostalo fuori dallo schermo a sinistra */
+  transform: translateX(-100%);
+
+  /* Animazione fluida (molto importante!) */
+  transition: transform 0.4s ease-out;
+}
+
+/* MOSTRA IL MENU: Classe aggiunta da JavaScript */
+#sidebar.open {
+  transform: translateX(0); /* Lo riporta in vista */
+}
+
+/* Contenuto del menu */
+.sidebar-content {
+  padding: 100px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.sidebar-content a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 0;
+  border-bottom: 1px solid #444;
+  font-size: 1.1em;
+}
+
+.logo-menu {
+  height: 25px;
+}
+
+/* Pulsante di chiusura (la 'X') */
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 160%;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 20px;
+}
+.menu-icon {
+  height: 25px;
+  margin-left: 5px;
+}
+
+body#worldchampionship .sidebar-content a[href="#home"].active .menu-icon {
+  filter: brightness(0);
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    background:
+      linear-gradient(
+        to right,
+        #0f0f0f 0%,
+        transparent 25%,
+        transparent 75%,
+        #0f0f0f 100%
+      ),
+      linear-gradient(
+        to bottom,
+        #0f0f0f 0%,
+        transparent 25%,
+        transparent 75%,
+        #0f0f0f 100%
+      );
+  }
+
+  .logohead {
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .logocamp {
+    width: auto;
+    height: 35px;
+    margin: auto;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+  }
+  .main-container {
+    max-width: none;
+    margin: 0 0;
+  }
+
+  /* Icona Hamburger (le tre linee) */
+  .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--bordigrigi);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  /* Contenuto del menu */
+  .sidebar-content {
+    padding: 100px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Posiziona il contenuto principale sotto il pulsante */
+  #page-content {
+    padding-top: 70px; /* Spazio per il pulsante fisso in alto */
+  }
+}
+.section {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  width: 800px;
+}
+
+.titoletto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.titolettounderlogo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.title-container h1 {
+  margin: 10px 0;
+  font-size: 2em;
+}
+
+/* ========================================
+   SEZIONI
+   ======================================== */
+.section {
+  display: none;
+  margin: 0 auto;
+  width: 800px;
+  padding: 40px 20px 70px;
+}
+
+/* ========================================
+   TABELLE
+   ======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 5px 0px;
+}
+
+td,
+th {
+  border: 1px solid #0e0e0e;
+  background-color: #1a1a1a;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--grigio-captions);
+  color: var(--giallogtv);
+}
+
+td.totale {
+  font-weight: 700;
+}
+
+th.totalone,
+td.totalone {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.flagtrack {
+  width: auto;
+  height: 15px;
+  margin-left: 5px;
+}
+
+/* ========================================
+   PULSANTI
+   ======================================== */
+.toggleColumnsButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.toggleColumnsButton:hover {
+  background-color: #666;
+}
+
+.pdf-button,
+.pen-button {
+  background-color: var(--giallogtv);
+  color: #000000;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.pdf-button:hover,
+.pen-button:hover {
+  background-color: var(--giallogtvhover);
+}
+
+.pdf-button-container {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* ========================================
+   ACCORDION
+   ======================================== */
+.accordion-container {
+  margin-bottom: 10px;
+}
+
+.accordion {
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: 0;
+  text-align: left;
+  transition: 0.4s;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.accordion > i > svg {
+  width: 1rem;
+  height: 0.9rem;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+  float: right;
+}
+
+.accordion.active > i > svg {
+  height: 0.9rem;
+  width: 1rem;
+  transform: rotate(-90deg);
+}
+
+.panel {
+  padding: 0;
+  display: none;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.panel-content {
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 10px 70px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+  .accordion {
+    font-size: 16px;
+    padding: 0px;
+    margin-bottom: 0;
+  }
+  /* .accordion:hover {
+    background-color: #0e0e0e;
+  } */
+  .accordionn {
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 0;
+  }
+  .accordionn:hover {
+    background-color: #0e0e0e;
+  }
+  .pen-button {
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 20px;
+    font-size: 18px;
+  }
+  .pdf-button {
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 10px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .table-container {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .table-container1 {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  td,
+  th {
+    padding: 4px 5px 4px;
+    text-align: center;
+  }
+  table {
+    font-size: 12px;
+  }
+}
+.titolozzo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.titoletto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.titolettounderlogo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+.countdown-container1 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url("images/usa.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.timer {
+  font-weight: lighter;
+}
+.winner {
+  font-size: 17px;
+  font-weight: 700;
+  /* color: #fff7c7; */
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00;
+}
+.winnerf {
+  font-weight: 700;
+  color: #fff7c7;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00,
+    0 0 80px #ff8c00,
+    0 0 90px #ff8c00;
+  margin-bottom: 40px;
+}
+.twitch {
+  width: 30px;
+  height: auto;
+  margin-top: 9px;
+}
+.youtube {
+  width: 30px;
+  height: auto;
+  margin-top: 11px;
+}
+
+.menu-link {
+  justify-content: center;
+  display: flex;
+}
+.menu-link.active {
+  justify-content: center;
+  display: flex;
+  background-color: var(--giallogtvhover);
+  font-weight: 700;
+  color: #000000;
+  box-shadow: 0 10px 20px 0 rgba(255, 141, 141, 0.23);
+}
+.menu-link .home {
+  width: calc(0.2vw + 32px);
+  /* filter: invert(100%); */
+  padding-bottom: 5px;
+}
+.pentrack {
+  background-color: #fff;
+  width: -webkit-fill-available;
+  max-width: 600px;
+  height: auto;
+  margin: 10px;
+  justify-content: center;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+.footer-section {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin-top: 10px;
+}
+.sponsor-section h2 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+.sponsor-logos img {
+  max-height: 40px;
+  max-width: 190px;
+}
+.social-page {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+@media (max-width: 768px) {
+  .social-page {
+    gap: 20px;
+  }
+}
+
+/* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
+
+.social-page a {
+  display: flex;
+  flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
+  width: 60px;
+  height: auto;
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+}
+.social-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.social-page img:hover {
+  transform: scale(1.1);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+  border-bottom: 1px solid #848484;
+}
+.social-icons a {
+  display: inline-block;
+  width: 22px;
+  height: auto;
+}
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.social-label {
+  font-size: 0.75rem; /* Rendi l'etichetta più piccola */
+  margin-top: 4px;
+}
+
+.box {
+  background: linear-gradient(125deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--bordigrigi);
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.3);
+}
+
+.box-oro {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* .box-oro span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
+} */
+
+.titolino-sx {
+  text-align: left;
+  padding: 4px 10px;
+  font-size: calc(0.5vw + 10px);
+}
+.titolino-dx {
+  text-align: right;
+  padding: 4px 10px;
+  font-size: calc(0.5vw + 10px);
+}
+
+.antibox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ps-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.glow-box {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--giallogtv);
+  box-shadow:
+    0 0 1px var(--giallogtvhover),
+    0 0 6px var(--giallogtvhover),
+    0 0 12px var(--giallogtvhover);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.glow-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shiny-box {
+  background: linear-gradient(135deg, #333, #111);
+  padding: 15px 10px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  /* min-height: 500px; */
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--giallogtv);
+  box-shadow:
+    0 0 1px var(--giallogtvhover),
+    0 0 6px var(--giallogtvhover),
+    0 0 12px var(--giallogtvhover);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.shiny-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 230, 0) 0%,
+    rgba(255, 230, 230, 0.18) 50%,
+    rgba(255, 230, 230, 0) 100%
+  );
+  transform: skewX(-30deg);
+  animation: shiny-move 6s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes shiny-move {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  10% {
+    left: -125%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  58% {
+    left: 170%;
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+.glow-box > *,
+.shiny-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
+   PULSANTI CAMPIONATI
+   ======================================== */
+.campionati-button {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  border: 2px solid var(--brdr-color);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column; /* Mette logo sopra e testo sotto */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  min-height: 150px; /* Aumentato per far stare entrambi */
+  cursor: pointer;
+}
+
+.campionati-button:hover {
+  background-color: black;
+  border-color: var(--giallogtv);
+  transform: scale(1.05);
+  background: none;
+}
+
+/* Stile per l'immagine del logo */
+.button-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.gtec {
+  width: 150px;
+  height: 100px;
+}
+
+.main-campionato-container {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0px 20px;
+}
+
+.buttons-secondary-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0px 20px;
+}
+
+/* ========================================
+   SOCIAL MEDIA - PAGINA SOCIAL
+   ======================================== */
+.social-page {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  filter: grayscale(1) invert(1);
+}
+
+.social-page a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.social-page a:hover {
+  transform: translateY(-5px);
+}
+
+.social-page img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.social-page img:hover {
+  transform: scale(1.1);
+}
+
+.social-label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ========================================
+   SOCIAL MEDIA - ICONE FOOTER
+   ======================================== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  filter: grayscale(1) invert(1);
+  border-bottom: 1px solid #848484;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 22px;
+  height: auto;
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   INSTAGRAM POSTS
+   ======================================== */
+.instagram-posts-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instagram-post {
+  flex: 1;
+  min-width: 326px;
+  max-width: 540px;
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+/* ========================================
+   CALENDARIO
+   ======================================== */
+.circuit-icon {
+  width: auto;
+  max-width: 300px;
+  height: 70px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.nation-flag {
+  width: auto;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.calendar td {
+  font-size: larger;
+  padding-left: calc(50% + 15px);
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.calendar td[data-label="Gara"] {
+  font-weight: bolder;
+  background-color: var(--grigio-captions);
+  padding: 4px 10px 4px;
+}
+
+.calendar td[data-label="Gara"]::before {
+  font-weight: bolder;
+  display: flex;
+}
+
+.calendar td[data-label="Circuito"] {
+  padding-left: 0px;
+  justify-content: center;
+  height: 70px;
+}
+
+.calendar td[data-label="Circuito"]::before {
+  display: none;
+}
+
+.calendar td[data-label="Nazione"] {
+  padding-left: 0px;
+  justify-content: center;
+}
+
+.calendar td[data-label="Nazione"]::before {
+  display: none;
+}
+
+/* ========================================
+   UTILITY
+   ======================================== */
+.hidden {
+  display: none;
+}
+
+.timer {
+  font-weight: lighter;
+}
+
+.winner {
+  font-size: 17px;
+  font-weight: 700;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00;
+}
+
+.winnerf {
+  font-weight: 700;
+  color: #fff7c7;
+  text-shadow:
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 40px #ff8c00,
+    0 0 80px #ff8c00,
+    0 0 90px #ff8c00;
+  margin-bottom: 40px;
+}
+
+/* Pilot modal styles */
+.pilot-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.pilot-modal.open {
+  display: block;
+}
+.pilot-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.pilot-modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  color: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  max-width: 760px;
+  width: calc(100% - 40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+}
+.pilot-modal-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+}
+.pilot-modal-body {
+  margin-top: 6px;
+}
+.pilot-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+/* ========================================
+   PILOT NAME - DEFINIZIONE UNICA
+   ======================================== */
+.pilot-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px; /* Aumentato da 240px */
+}
+
+/* Responsive per pilot name */
+@media (max-width: 768px) {
+  .pilot-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .pilot-name {
+    max-width: 180px; /* Aumentato da 150px */
+  }
+}
+.pilot-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--giallogtv);
+}
+.pilot-info {
+  font-size: 13px;
+  color: #cccccc;
+  margin-bottom: 10px;
+}
+.pilot-section-title {
+  font-size: 14px;
+  margin: 10px 0 8px;
+  color: #ffffff;
+}
+.pilot-no-item {
+  color: #ffffff;
+  font-size: 13px;
+}
+.pilot-champ-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pilot-champ-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--grigio-box);
+}
+.pilot-champ-logo-left,
+.pilot-champ-logo-right {
+  width: 60px;
+  flex: 0 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pilot-champ-logo {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
+}
+.pilot-champ-center {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pilot-champ-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.pilot-champ-category,
+.pilot-champ-car-name {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+.pilot-brand-logo {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+  .pilot-modal-content {
+    width: calc(100% - 24px);
+    padding: 12px;
+  }
+}
+
+.pentrack {
+  background-color: #fff;
+  width: -webkit-fill-available;
+  max-width: 600px;
+  height: auto;
+  margin: 10px;
+  justify-content: center;
+  filter: grayscale(1) invert(1);
+}
+
+.ps-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.comunicato {
+  font-size: small;
+}
+
+.countdown-container1 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url("images/usa.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+/* ========================================
+   TABELLE MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+  .mobile-table thead {
+    display: none;
+  }
+
+  .mobile-table,
+  .mobile-table tbody,
+  .mobile-table tr,
+  .mobile-table td {
+    display: block;
+  }
+
+  .mobile-table tr {
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-table td {
+    text-align: right; /* Il valore a destra */
+    padding-left: 50%; /* Spazio per la label */
+    position: relative;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    min-height: 10px; /* Altezza minima per la cella */
+    display: flex; /* Usa flexbox per allineare label e valore */
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-end; /* Allinea il contenuto a destra */
+  }
+
+  .mobile-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 30px);
+    white-space: normal;
+    text-align: left;
+    font-weight: 600;
+    color: var(--giallogtv);
+    font-size: 0.95em;
+  }
+
+  .mobile-table tfoot {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .mobile-table tfoot tr {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .mobile-table tfoot td {
+    font-weight: 700;
+    color: var(--giallogtv);
+    font-size: 1.1em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  .mobile-table tfoot td::before {
+    content: attr(data-label);
+    position: absolute;
+    width: auto;
+    padding-right: 10px;
+    font-size: 1.1em;
+    color: var(--giallogtv);
+  }
+}
+
+/* Tabelle sempre in formato mobile */
+.alwaysmobile-table thead {
+  display: none;
+}
+
+.alwaysmobile-table,
+.alwaysmobile-table tbody,
+.alwaysmobile-table tr,
+.alwaysmobile-table td {
+  display: block;
+}
+
+.alwaysmobile-table tr {
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alwaysmobile-table td {
+  text-align: right;
+  padding-left: 50%;
+  position: relative;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  min-height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.alwaysmobile-table td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 10px;
+  width: calc(50%);
+  white-space: normal;
+  text-align: left;
+  font-weight: 600;
+  color: var(--giallogtv); /* Colore label */
+  font-size: 0.9em; /* Leggermente più piccola */
+}
+
+.alwaysmobile-table tfoot {
+  display: block;
+  background-color: var(--grigio-captions);
+}
+
+.alwaysmobile-table tfoot tr {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.alwaysmobile-table tfoot td {
+  font-weight: 700;
+  color: var(--giallogtv);
+  font-size: 1.1em;
+  text-align: right;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.alwaysmobile-table tfoot td::before {
+  content: attr(data-label);
+  position: absolute;
+  width: auto;
+  padding-right: 10px;
+  font-size: 1.1em;
+  color: var(--giallogtv);
+}
+
+.alwaysmobile-table tfoot a {
+  text-decoration: none;
+  color: white;
+}
+/* Stile per l'icona del circuito (PNG/SVG) */
+.circuit-icon {
+  width: auto; /* Larghezza fissa */
+  max-width: 300px;
+  height: 70px; /* Altezza fissa */
+  object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
+  vertical-align: middle;
+}
+
+/* Stile per l'icona della nazione (Bandiera) */
+.nation-flag {
+  width: auto; /* Larghezza più piccola per la bandiera */
+  height: 30px;
+
+  vertical-align: middle;
+}
+
+.calendar td {
+  font-size: larger;
+  padding-left: calc(50% + 15px);
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.calendar td[data-label="Circuito"] {
+  padding-left: 0px;
+  justify-content: center;
+  height: 70px;
+}
+.calendar td[data-label="Circuito"]::before {
+  display: none;
+}
+.calendar td[data-label="Nazione"] {
+  padding-left: 0px;
+  justify-content: center;
+}
+.calendar td[data-label="Nazione"]::before {
+  display: none;
+}
+
+.instagram-post {
+  width: 100%;
+}
+
+.opzioni-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  /* 1. Helvetica Neue è spesso preferito se disponibile */
+  font-family:
+    "Helvetica Neue",
+    /* 2. Helvetica (il font classico) */ Helvetica,
+    /* 3. Arial (un'alternativa comune di default sui sistemi Windows) */ Arial,
+    /* 4. sans-serif (il fallback generico per assicurare che venga usato un font senza grazie) */
+    sans-serif;
+}
+.opzioni-card {
+  flex: 1 1 300px;
+  border: 2px solid var(--brdr-color);
+  padding: 2%;
+  border-radius: 5px;
+}
+.opzioni-card-header {
+  padding: 1%;
+}
+.opzioni-card-body {
+  margin-bottom: 0;
+  color: var(--giallogtv);
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 1%;
+}
+
+/* ========================================
+   AVVISI CONTAINER STYLES
+   ======================================== */
+
+.avvisi-container {
+  background: rgba(191, 239, 255, 0.1);
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.avviso-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--giallogtv);
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.avviso-item:last-child {
+  margin-bottom: 0;
+}
+
+.avviso-title {
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.avviso-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* ========================================
+   PENALITA STYLES
+   ======================================== */
+/* ========================================
+   LINKTREE STYLES
+   ======================================== */
+.linktree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.linktree-container h1 {
+  font-size: 2.5em;
+  color: var(--giallogtv);
+  margin-bottom: 40px;
+}
+
+.linktree-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.linktree-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 15px 20px;
+  background-color: var(--grigio-box);
+  border: 2px solid var(--brdr-color);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.linktree-button.only-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.linktree-button.only-logo .linktree-icon {
+  margin: 0;
+}
+
+.linktree-button span {
+  flex: 1;
+  text-align: center;
+}
+
+.additional-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.additional-logo {
+  width: 120px;
+  max-height: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.linktree-button:hover {
+  background-color: black;
+  border-color: var(--giallogtv);
+  transform: scale(1.05);
+  background: none;
+}
+
+/* Stili per le card dei piloti */
+.piloti-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 0 10px 0;
+}
+
+.pilot-card {
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  min-height: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.pilot-card:hover {
+  background-color: black;
+  border-color: var(--giallogtv);
+  transform: scale(1.05);
+  background: none;
+}
+
+.pilot-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pilot-number {
+  color: var(--giallogtv);
+  font-weight: bold;
+  font-size: 26px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.pilot-label {
+  background-color: var(--giallogtv);
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+  .pilot-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  .pilot-number {
+    font-size: 22px;
+  }
+}
+
+/* Stili per le card degli admin */
+.admin-container {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.admin-card {
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  border: 2px solid #e9ecef;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 360px;
+  min-height: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.admin-role {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--giallogtv);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-members {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+  .admin-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  .admin-role {
+    font-size: 14px;
+  }
+  .admin-members {
+    font-size: 13px;
+  }
+}
+
+.linktree-icon {
+  width: auto;
+  height: 40px;
+  filter: invert(100%);
+  flex-shrink: 0;
+}
+
+.sponsor-section {
+  margin-top: 0px;
+  padding: 20px;
+  background-color: var(--grigio-box);
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+
+.sponsor-section h2 {
+  color: var(--giallogtv);
+}
+
+.sponsor-section a {
+  text-decoration: none;
+  color: white;
+}
+
+.sponsor-section img {
+  max-width: 200px;
+  max-height: 70px;
+}
+
+.sponsor-section div {
+  font-size: 0.9em;
+  color: #ccc;
+  border-bottom: #333 1px solid;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 90px;
+}
+
+@media (max-width: 768px) {
+  .linktree-container h1 {
+    font-size: 2em;
+  }
+
+  .linktree-button {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+
+  .linktree-icon {
+    width: auto;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .additional-logos {
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .additional-logo {
+    width: 90px;
+    max-height: 90px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+.coppaimg {
+  width: 30px;
+  filter: invert(100%);
+}
+.coppa {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.active {
+  margin-left: 6px;
+}
+
+body#worldchampionship {
+  --giallogtv: #bfefff;
+  --giallogtvhover: #8fd8ff;
+}
+
+/* Stili per la sezione Team e Piloti */
+.team-piloti-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.team-card {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
+  border: 2px solid var(--giallogtv);
+  border-radius: 15px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.3);
+}
+
+.team-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
+}
+
+.team-car {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.car-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.car-name {
+  display: none;
+}
+
+.team-pilots {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pilot-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 12px;
+  background: rgba(191, 239, 255, 0.08);
+  border-left: 3px solid var(--giallogtv);
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+}
+
+.pilot-avatar {
+  width: 8px;
+  height: 8px;
+  background: var(--giallogtv);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.error-message {
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+/* ========================================
+   LOBBY CARD STYLES
+   ======================================== */
+
+.lobby-card-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.lobby-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.lobby-card:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.3);
+}
+
+.lobby-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.lobby-datetime {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lobby-date {
+  background: var(--giallogtv);
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+.lobby-time {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+.lobby-category {
+  color: var(--giallogtv);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.lobby-organizer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border-left: 3px solid var(--giallogtv);
+}
+
+.lobby-info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.lobby-host {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.lobby-host:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.lobby-host-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lobby-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.lobby-host-content {
+  flex: 1;
+}
+
+.lobby-host-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.lobby-host-name {
+    color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lobby-host-name:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.lobby-live {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.lobby-live:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.lobby-live-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lobby-live-content {
+  flex: 1;
+}
+
+.lobby-live-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lobby-live-name {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--giallogtv);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lobby-live-name:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+/* Responsive per le info section */
+@media (max-width: 768px) {
+  .lobby-info-section {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .lobby-host,
+  .lobby-live {
+    padding: 12px;
+  }
+
+  .lobby-host-icon,
+  .lobby-live-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+  }
+
+  .lobby-live-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin-left: 0;
+  }
+}
+
+.lobby-organizer-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lobby-organizer-name {
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.lobby-pilots-section {
+  margin-top: 20px;
+}
+
+.lobby-pilots-title {
+  color: var(--giallogtv);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.lobby-pilots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
+  gap: 8px;
+}
+
+.lobby-pilot {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.lobby-pilot:hover {
+  background: rgba(191, 239, 255, 0.1);
+  border-color: rgba(191, 239, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.lobby-pilot-name {
+  font-size: 1em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.lobby-pilot-team {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.lobby-pilot-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lobby-pilot-info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Loading state */
+.lobby-card.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+
+  .lobby-datetime {
+    justify-content: space-between;
+  }
+
+  .lobby-pilots-grid {
+    grid-template-columns: 1fr 1fr; /* Esattamente 2 colonne su mobile */
+    gap: 8px;
+  }
+
+  .lobby-pilot {
+    padding: 8px 10px;
+  }
+
+  .lobby-pilot-name {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 520px) {
+  .lobby-pilots-grid {
+    grid-template-columns: 1fr; /* Mantengo 2 colonne anche su schermi piccoli */
+  }
+
+  .lobby-card {
+    padding: 20px 15px;
+  }
+}
+
+/* Colori dei numeri piloti basati sui team - Sistema Centralizzato */
+.pilot-number[data-team-color] {
+  background: var(--team-color, var(--giallogtv)) !important;
+  color: var(--team-text-color, #000) !important;
+}
+
+/* Colori dei pilot-info basati sui team - Sistema Centralizzato */
+.pilot-info[data-team-color] {
+  border-left: 3px solid var(--team-color, var(--giallogtv));
+}
+
+/* Colori delle team cards - Sistema Centralizzato */
+.team-card[data-team] {
+  border-color: var(--team-color, var(--giallogtv)) !important;
+}
+
+/* Loghi delle lobby - Sistema Centralizzato */
+.lobby-pilot-logo-container[data-team] {
+  background: var(--team-color, rgba(255, 255, 255, 0.1)) !important;
+}
+
+/* Mappatura colori team centralizzata */
+:root {
+  /* Mappatura team -> colore */
+  --team-swiffer: #000000;
+  --team-badboys: #4b0082;
+  --team-tekkadan: #ffffff;
+  --team-grom: #8b0000;
+  --team-drifter: #26b3ff;
+  --team-lentiviolenti: #00ff7f;
+  --team-gliscappatidicasa: #ffff00;
+  --team-rebellion: #ff1493;
+  --team-newgeneration: #16588e;
+  --team-frauzer: #464646;
+  --team-afmotorsport: #0f3871;
+  --team-esagerati: #ff4500;
+  --team-pasa-racing: #00398a;
+  --team-swatclub: #87cefa;
+  --team-apex: #0d1b2a;
+  --team-lavazzaracing: #000679; /* Blu lavazzaracing */
+  --team-alfacorse: #ffb300; /* Giallo tendente all'arancione */
+  --team-team15: var(--giallogtv);
+}
+
+/* Applica colori team usando data attributes */
+.team-card[data-team="gtvswiffer"],
+.pilot-number[data-team-color="gtvswiffer"],
+.pilot-info[data-team-color="gtvswiffer"],
+.lobby-pilot-logo-container[data-team="Swiffer"] {
+  --team-color: var(--team-swiffer);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvbadboys"],
+.pilot-number[data-team-color="gtvbadboys"],
+.pilot-info[data-team-color="gtvbadboys"],
+.lobby-pilot-logo-container[data-team="Badboys"] {
+  --team-color: var(--team-badboys);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvtekkadan"],
+.pilot-number[data-team-color="gtvtekkadan"],
+.pilot-info[data-team-color="gtvtekkadan"],
+.lobby-pilot-logo-container[data-team="Tekkadan"] {
+  --team-color: var(--team-tekkadan);
+  --team-text-color: #000;
+}
+
+.team-card[data-team="gtvgrom"],
+.pilot-number[data-team-color="gtvgrom"],
+.pilot-info[data-team-color="gtvgrom"],
+.lobby-pilot-logo-container[data-team="Grom"] {
+  --team-color: var(--team-grom);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvdrifter"],
+.pilot-number[data-team-color="gtvdrifter"],
+.pilot-info[data-team-color="gtvdrifter"],
+.lobby-pilot-logo-container[data-team="Drifter"] {
+  --team-color: var(--team-drifter);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvlentiviolenti"],
+.pilot-number[data-team-color="gtvlentiviolenti"],
+.pilot-info[data-team-color="gtvlentiviolenti"],
+.lobby-pilot-logo-container[data-team="Lentiviolenti"] {
+  --team-color: var(--team-lentiviolenti);
+  --team-text-color: #000;
+}
+
+.team-card[data-team="gtvgliscappatidicasa"],
+.pilot-number[data-team-color="gtvgliscappatidicasa"],
+.pilot-info[data-team-color="gtvgliscappatidicasa"],
+.lobby-pilot-logo-container[data-team="Gliscappatidicasa"] {
+  --team-color: var(--team-gliscappatidicasa);
+  --team-text-color: #000;
+}
+
+.team-card[data-team="gtvrebellion"],
+.pilot-number[data-team-color="gtvrebellion"],
+.pilot-info[data-team-color="gtvrebellion"],
+.lobby-pilot-logo-container[data-team="Rebellion"] {
+  --team-color: var(--team-rebellion);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvnewgeneration"],
+.pilot-number[data-team-color="gtvnewgeneration"],
+.pilot-info[data-team-color="gtvnewgeneration"],
+.lobby-pilot-logo-container[data-team="Newgeneration"] {
+  --team-color: var(--team-newgeneration);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvfrauzer"],
+.pilot-number[data-team-color="gtvfrauzer"],
+.pilot-info[data-team-color="gtvfrauzer"],
+.lobby-pilot-logo-container[data-team="Frauzer"] {
+  --team-color: var(--team-frauzer);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvafmotorsport"],
+.pilot-number[data-team-color="gtvafmotorsport"],
+.pilot-info[data-team-color="gtvafmotorsport"],
+.lobby-pilot-logo-container[data-team="Afmotorsport"] {
+  --team-color: var(--team-afmotorsport);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvesagerati"],
+.pilot-number[data-team-color="gtvesagerati"],
+.pilot-info[data-team-color="gtvesagerati"],
+.lobby-pilot-logo-container[data-team="Esagerati"] {
+  --team-color: var(--team-esagerati);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvpasa_racing"],
+.pilot-number[data-team-color="gtvpasa_racing"],
+.pilot-info[data-team-color="gtvpasa_racing"],
+.lobby-pilot-logo-container[data-team="Pasa_racing"] {
+  --team-color: var(--team-pasa-racing);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvswatclub"],
+.pilot-number[data-team-color="gtvswatclub"],
+.pilot-info[data-team-color="gtvswatclub"],
+.lobby-pilot-logo-container[data-team="Swatclub"] {
+  --team-color: var(--team-swatclub);
+  --team-text-color: #000;
+}
+
+.team-card[data-team="gtvapex"],
+.pilot-number[data-team-color="gtvapex"],
+.pilot-info[data-team-color="gtvapex"],
+.lobby-pilot-logo-container[data-team="Apex"] {
+  --team-color: var(--team-apex);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvlavazzaracing"],
+.pilot-number[data-team-color="gtvlavazzaracing"],
+.pilot-info[data-team-color="gtvlavazzaracing"],
+.lobby-pilot-logo-container[data-team="Lavazzaracing"] {
+  --team-color: var(--team-lavazzaracing);
+  --team-text-color: #fff;
+}
+
+.team-card[data-team="gtvalfacorse"],
+.pilot-number[data-team-color="gtvalfacorse"],
+.pilot-info[data-team-color="gtvalfacorse"],
+.lobby-pilot-logo-container[data-team="Alfacorse"] {
+  --team-color: var(--team-alfacorse);
+  --team-text-color: #000;
+}
+
+.team-card[data-team="gtvteam15"],
+.pilot-number[data-team-color="gtvteam15"],
+.pilot-info[data-team-color="gtvteam15"],
+.lobby-pilot-logo-container[data-team="Team15"] {
+  --team-color: var(--team-team15);
+  --team-text-color: #000;
+}
+
+/* Stile base per numeri piloti - Design semplice */
+.pilot-number {
+  width: 60px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #fff;
+  margin-right: 12px;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* Team info container - Design orizzontale */
+.pilot-info {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+.pilot-info:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Team pilots container */
+.team-pilots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Stile per le sezioni delle lobby nei risultati */
+.race-lobby-section {
+}
+
+.race-lobby-title {
+  font-size: 0.9em;
+  color: var(--giallogtv);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+/* Logo tracciato nell'accordion */
+.track-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  flex: 0 0 80px; /* Spazio fisso per il logo */
+}
+
+.track-logo-small {
+  width: 120px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* Responsive per team pilots */
+@media (max-width: 768px) {
+  .pilot-info {
+    padding: 10px 12px;
+  }
+}
+
+/* ========================================
+   PENALITY CARDS - DESIGN MOBILE-FIRST
+   ======================================== */
+
+/* Container per le card delle penalità */
+.penalty-cards-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card singola della penalità */
+.penalty-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.penalty-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--giallogtv);
+  opacity: 0.8;
+}
+
+.penalty-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Header della card con pilota e tipo penalità */
+.penalty-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.penalty-pilot-name {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.penalty-type {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Warning - sfondo giallo */
+.penalty-type-warning {
+  background: linear-gradient(135deg, var(--giallogtv) 0%, #e6c200 100%);
+  color: #000;
+  border: 1px solid rgba(245, 255, 60, 0.3);
+}
+
+/* Penalità vera - sfondo rosso con gradient */
+.penalty-type-penalty {
+  background: linear-gradient(135deg, var(--rossotlm) 0%, #660000 100%);
+  color: #fff;
+  border: 1px solid rgba(129, 1, 1, 0.3);
+}
+
+/* Dettagli della penalità */
+.penalty-details {
+  padding-left: 8px;
+}
+
+.penalty-location {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.penalty-lap,
+.penalty-corner {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.penalty-reason {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9em;
+  line-height: 1.4;
+  font-weight: 400;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive per penalità - Mobile */
+@media (max-width: 768px) {
+  .penalty-cards-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .penalty-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .penalty-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-left: 6px;
+  }
+
+  .penalty-pilot-name {
+    font-size: 1em;
+    line-height: 1.1;
+  }
+
+  .penalty-type {
+    font-size: 0.7em;
+    padding: 3px 8px;
+    align-self: flex-start;
+    margin-left: 0;
+  }
+
+  .penalty-details {
+    padding-left: 6px;
+  }
+
+  .penalty-location {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .penalty-lap,
+  .penalty-corner {
+    font-size: 0.65em;
+    padding: 2px 6px;
+  }
+
+  .penalty-reason {
+    font-size: 0.85em;
+    line-height: 1.3;
+  }
+}
+
+/* Responsive per penalità - Desktop */
+@media (min-width: 1024px) {
+  .penalty-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .penalty-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .penalty-header {
+    margin-bottom: 16px;
+    padding-left: 12px;
+  }
+
+  .penalty-pilot-name {
+    font-size: 1.2em;
+  }
+
+  .penalty-type {
+    font-size: 0.8em;
+    padding: 5px 12px;
+  }
+
+  .penalty-details {
+    padding-left: 12px;
+  }
+
+  .penalty-location {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .penalty-lap,
+  .penalty-corner {
+    font-size: 0.75em;
+    padding: 4px 10px;
+  }
+
+  .penalty-reason {
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+}
+
+/* Ottimizzazione per tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .penalty-cards-container {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .penalty-card {
+    padding: 14px;
+  }
+
+  .penalty-pilot-name {
+    font-size: 1.05em;
+  }
+
+  .penalty-reason {
+    font-size: 0.88em;
+  }
+}
+
+/* ========================================
+   FRECCE DI VARIAZIONE POSIZIONE
+   ======================================== */
+
+/* Container per posizione con freccia */
+.pilot-position-with-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 40px;
+}
+
+/* Frecce di variazione posizione */
+.position-change {
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 20px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Freccia su (miglioramento) - verde */
+.position-up {
+  background: linear-gradient(135deg, #00c851 0%, #00a846 100%);
+  color: #fff;
+  border: 1px solid rgba(0, 200, 81, 0.3);
+}
+
+/* Freccia giù (peggioramento) - rosso */
+.position-down {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+/* Uguale (nessuna variazione) - grigio */
+.position-equal {
+  background: linear-gradient(135deg, #666666 0%, #4d4d4d 100%);
+  color: #ccc;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+}
+
+/* Responsive per frecce - Mobile */
+@media (max-width: 768px) {
+  .pilot-position-with-change {
+    min-width: 35px;
+    gap: 1px;
+  }
+
+  .position-change {
+    font-size: 0.65em;
+    padding: 1px 3px;
+    min-width: 18px;
+    height: 14px;
+  }
+}
+
+/* Responsive per frecce - Desktop */
+@media (min-width: 1024px) {
+  .pilot-position-with-change {
+    min-width: 45px;
+    gap: 3px;
+  }
+
+  .position-change {
+    font-size: 0.75em;
+    padding: 3px 5px;
+    min-width: 22px;
+    height: 18px;
+  }
+}
+
+/* ========================================
+   CLASSIFICHE RIVOLUZIONATE - ACCORDION
+   ======================================== */
+
+/* Container classifiche */
+.classification-accordion {
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden; /* Contiene tutto dentro i bordi */
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Accordion header */
+.accordion {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0; /* Rimuovi margini che causano overflow */
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  position: relative;
+}
+
+.accordion:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.15) 0%,
+    rgba(191, 239, 255, 0.08) 100%
+  );
+  border-color: rgba(191, 239, 255, 0.3);
+}
+
+.accordion-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.accordion-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accordion i {
+  color: var(--giallogtv);
+  transition: transform 0.3s ease;
+}
+
+.accordion.active i {
+  transform: rotate(180deg);
+}
+
+/* Panel content */
+.panel {
+  display: none;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(191, 239, 255, 0.1);
+  margin: 0; /* Rimuovo margini che causano overflow */
+  padding: 0; /* Padding gestito dal contenitore interno */
+}
+
+.accordion.active .panel {
+  display: block;
+}
+
+/* Tabella classifiche */
+.classification-table {
+  padding: 20px;
+  margin: 0; /* Assicuro che non ci siano margini esterni */
+}
+
+/* Classifica piloti */
+.pilot-ranking-item {
+  display: grid;
+  grid-template-columns: 60px 50px 1fr 200px 80px;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.pilot-ranking-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.pilot-position {
+  font-size: 1em;
+  font-weight: 800;
+  color: var(--giallogtv);
+  text-align: center;
+}
+
+.pilot-number-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pilot-number-circle:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.team-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.team-logo.invert-colors {
+  filter: invert(1);
+}
+
+/* Stili specifici per i loghi delle lobby */
+.lobby-pilot-logo-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lobby-pilot-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lobby-pilot-logo.invert-colors {
+  filter: invert(1);
+}
+
+.pilot-team {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pilot-points {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--giallogtv);
+  text-align: center;
+  background: rgba(191, 239, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(191, 239, 255, 0.5);
+  min-width: 60px;
+  display: inline-block;
+}
+
+/* Classifica team - Design Minimal */
+.team-ranking-item {
+  display: grid;
+  grid-template-columns: 50px 20px 1fr 80px;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.team-ranking-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: none; /* Rimuovo spostamento */
+}
+
+.team-position {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: var(--giallogtv);
+  text-align: center;
+  grid-column: 1;
+}
+
+.team-color-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  grid-column: 2;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-name {
+  font-size: 1em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  grid-column: 3;
+}
+
+.team-points {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-align: center;
+  background: rgba(191, 239, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 15px;
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  grid-column: 4;
+  justify-self: center;
+}
+
+.team-pilots-list {
+  display: none; /* Nascosto su mobile e desktop */
+}
+
+.mini-pilot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.mini-pilot:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(3px);
+}
+
+.mini-pilot-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  color: #fff;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mini-pilot-name {
+  font-weight: 500;
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Calendar Home - Stile basato su Next Race */
+.calendar-home {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+}
+
+.calendar-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.calendar-content {
+  padding: 5px;
+}
+
+/* Stile per le singole gare nel calendario */
+.race-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.race-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateX(3px);
+}
+
+/* Next Race Bar - Barra sottile sotto title-container */
+.next-race-bar {
+  /* background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.08) 100%,
+    rgba(191, 239, 255, 0.03) 100%
+  ); */
+  border-bottom: 1px solid rgba(191, 239, 255, 0.15);
+  padding: 8px 20px;
+  /* border-top: 1px solid rgba(191, 239, 255, 0.15); */
+  margin-top: 10px;
+}
+
+.next-race-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.next-race-bar-left {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 0 15px;
+  align-items: center;
+}
+
+.next-race-gara-number {
+  grid-row: 1 / -1;
+  grid-column: 1;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.next-race-date {
+  grid-row: 1;
+  grid-column: 2;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.next-race-circuit-info {
+  grid-row: 2;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.next-race-flag {
+  font-size: 1.1em;
+}
+
+.next-race-circuit {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.next-race-circuit-logo-container {
+  grid-row: 1 / -1;
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-race-circuit-logo {
+  height: 2.6em;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.next-race-bar-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.next-race-lobby-link {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-race-lobby-link:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive per barra prossima gara */
+@media (max-width: 768px) {
+
+
+  .next-race-bar-content {
+    gap: 10px;
+  }
+
+  .next-race-bar-left {
+    grid-template-columns: auto auto;
+    gap: 0 10px;
+  }
+
+  .next-race-gara-number {
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+  }
+
+  .next-race-date {
+    font-size: 0.8em;
+  }
+
+  .next-race-circuit-info {
+    font-size: 0.8em;
+    gap: 6px;
+  }
+
+  .next-race-circuit-logo {
+    height: 1.8em;
+  }
+
+  .next-race-lobby-link {
+    font-size: 0.75em;
+  }
+}
+
+/* Barra navigazione in basso (app-like) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(10, 10, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  padding: 0px 0 0px;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, background 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 12px;
+  min-width: 60px;
+}
+
+.nav-item:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(191, 239, 255, 0.1);
+}
+
+.nav-item.active {
+  color: var(--giallogtv);
+  background: rgba(191, 239, 255, 0.15);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.nav-item-home .nav-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+
+
+.nav-item-home.active .nav-icon {
+  filter: drop-shadow(0 0 8px rgba(191, 239, 255, 0.5));
+}
+
+.nav-label {
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-item-home {
+  background: var(--giallogtv);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item-home:hover {
+  background: rgba(191, 239, 255, 0.3);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-item-home.active {
+  background: #87ceeb;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile responsive per barra navigazione */
+@media (max-width: 768px) {
+
+  .nav-item {
+    padding: 12px 8px 14px;
+    min-width: 18%;
+  }
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-item-home .nav-icon {
+    width: 46px;
+    height: 34px;
+  }
+
+  .nav-label {
+    font-size: 0.55em;
+  }
+}
+
+/* Next Race Home - Stile basato su Top 10 (mantenuto per compatibilità) */
+.next-race-home {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+
+.next-race-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+}
+
+.next-race-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.next-race-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.next-race-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.next-race-content {
+  padding: 5px;
+}
+
+.next-race-footer {
+  padding: 12px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.next-race-footer a {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.next-race-footer a:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
+}
+
+/* Stile per le informazioni della gara */
+.race-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.race-info-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.race-info-icon {
+  background: var(--giallogtv);
+  color: #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  flex-shrink: 0;
+}
+
+.race-info-content {
+  flex: 1;
+}
+
+.race-info-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.race-info-value {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.race-circuit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.race-circuit img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .next-race-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .race-info-item {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .race-circuit img {
+    width: 50px;
+  }
+}
+
+/* Top 10 Home */
+.top10-home {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.1) 0%,
+    rgba(191, 239, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  border-radius: 15px;
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+
+.top10-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+}
+
+.top10-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.top10-subtitle {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.top10-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.top10-content {
+  padding: 5px;
+}
+
+.top10-footer {
+  padding: 12px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(191, 239, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.top10-footer a {
+  text-decoration: none;
+  color: var(--giallogtv);
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.top10-footer a:hover {
+  color: #87ceeb;
+  transform: translateY(-1px);
+}
+
+.top10-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.top10-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.top10-item.podium {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 239, 255, 0.15) 0%,
+    rgba(191, 239, 255, 0.08) 100%
+  );
+  border-color: rgba(191, 239, 255, 0.4);
+}
+
+.top10-position {
+  background: var(--giallogtv);
+  color: #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.top10-position.podium {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.top10-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.top10-points {
+  background: rgba(191, 239, 255, 0.1);
+  color: var(--giallogtv);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1em;
+  min-width: 60px;
+  text-align: center;
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  display: inline-block;
+}
+
+/* Responsive classifiche */
+@media (max-width: 768px) {
+  .pilot-ranking-item {
+    grid-template-columns: 40px 40px 1fr 50px;
+    gap: 6px;
+    padding: 8px 14px;
+  }
+
+  .pilot-team {
+    display: none; /* Nasconde il nome team su mobile */
+  }
+
+  .team-ranking-item {
+    padding: 8px 10px;
+    margin-bottom: 6px;
+  }
+
+  .team-position {
+    font-size: 1em;
+  }
+
+  .team-color-indicator {
+    width: 12px;
+    height: 12px;
+  }
+
+  .team-name {
+    font-size: 0.9em;
+  }
+
+  .team-points {
+    font-size: 0.85em;
+    padding: 4px 8px;
+  }
+
+  .pilot-team {
+    max-width: 160px; /* Aumentato da 130px */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-pilots-list {
+    display: none; /* Nascosto su mobile e desktop */
+  }
+
+  .top10-item {
+    padding: 0;
+    margin: 0;
+    gap: 6px;
+  }
+
+  .top10-home .classification-table {
+    padding: 0;
+    margin: 0;
+  }
+
+  .accordion-header {
+    padding: 12px 15px;
+    min-height: 50px; /* Altezza minima ridotta */
+    touch-action: manipulation; /* Ottimizzazione touch */
+    flex-wrap: wrap; /* Permette al testo di andare a capo */
+    align-content: center; /* Centra il contenuto */
+    justify-content: center; /* Centra tutto */
+  }
+
+  .accordion-title {
+    font-size: 0.95em; /* Leggermente più piccolo su mobile */
+    text-align: center; /* Centra il titolo */
+    width: 100%; /* Occupa tutta la larghezza */
+    margin-bottom: 3px; /* Spazio ridotto dal subtitle */
+    line-height: 1.2; /* Altezza linea ridotta */
+  }
+
+  .accordion-subtitle {
+    font-size: 0.75em; /* Molto più piccolo su mobile */
+    text-align: center;
+    width: 100%;
+  }
+
+  .classification-table {
+    padding: 0px;
+  }
+
+  .mini-pilot {
+    padding: 4px 6px;
+    gap: 4px;
+  }
+
+  .mini-pilot-number {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7em;
+  }
+
+  .mini-pilot-name {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 768px) {
+  .team-piloti-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .team-card {
+    padding: 15px;
+  }
+
+  .team-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .car-image {
+    max-width: 100%;
+  }
+
+  .team-pilots {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Calendario responsive: 1 colonna su mobile */
+  .calendar-grid-2-columns {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .pilot-info {
+    padding: 6px 10px;
+  }
+}
+
+.gtec-icon {
+  filter: invert(0%);
+  height: 70px;
+}

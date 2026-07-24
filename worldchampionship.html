@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granturismo TV - WORLD CHAMPIONSHIP</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTV" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
+
+    <!-- Colore della barra dell'interfaccia mobile -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="background-color" content="#FFFFFF">
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<body id="worldchampionship">
+
+    <header>
+        <button id="menu-toggle" class="hamburger-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <div id="sidebar">
+            <button id="close-menu" class="close-button">X</button>
+
+            <nav class="sidebar-content" id="sidebar-content">
+                <a href="#home" class="menu-link">
+                    Home
+                    <img src="images/wc.png" alt="Logo" class="menu-icon" />
+                </a>
+                <a href="#lobby" class="menu-link">
+                    Lobby
+                </a>
+                <a href="#risultati" class="menu-link">
+                    Risultati
+                </a>
+                <a href="#classifiche" class="menu-link">
+                    Classifiche
+                </a>
+                <a href="#penalita" class="menu-link">
+                    Direzione Gara
+                </a>
+                <a href="#calendario" class="menu-link">
+                    Calendario
+                </a>
+                <a href="#team-piloti" class="menu-link">
+                    Team e Piloti
+                </a>
+                <a href="#regolamento" class="menu-link">
+                    Regolamento
+                </a>
+                <a href="index.html" class="menu-link">
+                    <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
+                </a>
+                <!-- <a href="#calendario" class="menu-link">
+                        Risultati
+                    </a>
+                    <a href="#page7" class="menu-link">
+                        Calendario
+                    </a> -->
+            </nav>
+
+        </div>
+        <div class="title-container">
+            <a href="worldchampionship.html">
+                <img src="images/wc.png" alt="Logo" class="logocamp" />
+            </a>
+            <a href="index.html">
+                <span class="sottotitolo">Campionato interno </span>
+                <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
+            </a>
+        </div>
+
+        <!-- Barra prossima gara -->
+        <!-- <div id="next-race-bar" class="next-race-bar">
+            <div class="next-race-bar-content">
+                <div class="next-race-bar-left">
+                    <div class="next-race-gara-number">...</div>
+                    <div class="next-race-date">Caricamento...</div>
+                    <div class="next-race-circuit-info"></div>
+                    <div class="next-race-circuit-logo-container"></div>
+                </div>
+                <div class="next-race-bar-right">
+                    <a href="#lobby" class="next-race-lobby-link">> Lobby</a>
+                </div>
+            </div>
+        </div> -->
+
+    </header>
+
+
+
+    <div class="main-container">
+
+
+
+
+        <section id="home" class="section">
+
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Ultima Gara</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="podio-ultima-gara" class="podio-container">
+                            <div class="loading-message">
+                                <div class="loading-spinner"></div>
+                                Caricamento podio in corso...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="next-race-footer">
+                    <a href="#risultati" class="menu-link">Risultati completi</a>
+                </div>
+            </div>
+
+            <!-- 
+            <div class="antibox">
+                <div class="titolino-sx">WORLD CHAMPIONSHIP</div>
+                <div class="titolino-dx">Vincitore</div>
+
+            </div>
+            <div class="box">
+                <div class="coppa">
+                    <img src="images/icons/coppa.svg" alt="Logo" class="coppaimg" />
+                </div>
+
+
+                <div class="titolettowin winner">
+                    Hawk_Mavenich
+                </div>
+
+
+            </div> -->
+
+
+
+            <div class="table-container">
+                <div id="classifica-short-body" class="responsive-table">
+                    <div class="loading-message">
+                        <div class="loading-spinner"></div>
+                        Caricamento dati in corso...
+                    </div>
+                    <div class="next-race-footer">
+                        <a href="#classifiche" class="menu-link">Classifica completa</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section id="lobby" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Lobby</div>
+                    <div class="calendar-subtitle" id="lobby-next-gara"></div>
+                    <div class="search-container">
+                        <input type="text" id="lobby-search" placeholder="Cerca pilota..." class="search-input">
+                        <div class="search-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="lobby-body" class="calendar-content lobby-card-container">
+                        <div class="lobby-card loading">
+                            <div class="loading-message">
+                                <div class="loading-spinner"></div>
+                                Caricamento dati in corso...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="regolamento" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Regolamento</div>
+                    <div class="calendar-subtitle">Documenti ufficiali campionato</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="pdf-button-container">
+                            <button class="pdf-button" onclick="window.open('pdf/WORLD.pdf', '_blank')">
+                                PDF Regolamento
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/WORLD opzioni e cal.pdf', '_blank')">
+                                PDF Opzioni stanza
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title" id="info-next-gara"></div>
+                    <div class="calendar-subtitle" id="subinfo-next-gara"></div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="card-output" class="opzioni-card-container">
+                            <div id="card-output" class="opzioni-card-container">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="penalita" class="section">
+            <div class="pdf-button-container">
+                <button class="pdf-button"
+                    onclick="window.open(window.GTV_CONFIG.googleForms.worldchampionship.reclamiGara, '_blank')">
+                    Modulo reclami
+                </button>
+            </div>
+            
+
+            
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Direzione Gara</div>
+
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="penalita-body" class="penalties-container">
+                            <div class="loading-message">
+                                <div class="loading-spinner"></div>
+                                Caricamento penalità in corso...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <!-- Contenitore avvisi tra reclami e penalità -->
+            <div id="avvisi-container" class="avvisi-container">
+                                <div class="calendar-header">
+                    <div class="calendar-title">Archivio D.G.</div>
+
+                </div>
+                <div class="avviso-item">
+                    <div class="avviso-title">⚠️ Ultimo Avvertimento - Testacoda sul traguardo</div>
+                    <div class="avviso-text">
+                        In gara 3 siamo stati clementi per l'ulitma volta. Da Gara 4 qualunque pilota faccia il testacoda o qualunque altra cosa che potrebbe comportare bandiere gialle sulla linea del traguardo verrà penalizzato con 6 punti di penalità. 
+                    </div>
+                </div>
+                
+                
+                <div class="avviso-item">
+                    <div class="avviso-title">⚠️ Postilla al regolamento - Come scontare le Penalità</div>
+                    <div class="avviso-text">
+I piloti sono sempre obbligati a scontare la penalità al di fuori della traiettoria ideale e devono mettersi nelle condizioni, se possibile, di spostarsi per tempo senza fare manovre azzardate. Allo stesso tempo i piloti che inseguono devono evitare, se possibile, di seguire la traiettoria del pilota in procinto di scontare la penalità, e devono quindi comportarsi come se il fantasma non esistesse. In gara 3 GTV_Legendafluo non riceve una sanzione disciplinare in quanto ha pochi secondi per decidere se spostarsi a destra e il pilota Gamer-SneaX è molto vicino e sembra tentare di affiancarsi sulla destra. La sanzione disciplinare prevista, sia per chi sconta male la penalità, sia per chi insegue il pilota penalizzato eccedendo nello sfruttare la sua scia fino a trapassarlo, è di 6 punti.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="classifiche" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Classifiche</div>
+                    <div class="search-container">
+                        <input type="text" id="pilot-search" placeholder="Cerca pilota..." class="search-input">
+                        <div class="search-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <!-- Le 4 classifiche saranno generate dinamicamente -->
+                        <div id="classifica-generale-piloti"></div>
+                        <div id="classifica-generale-team"></div>
+                        <div id="classifica-jgtv-piloti"></div>
+                        <div id="classifica-non-jgtv-piloti"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="risultati" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Risultati</div>
+                    <div class="calendar-subtitle">
+                        <div class="legenda-punteggi">
+                            <span class="legenda-item">
+                                <span class="legenda-pole">●</span> Pole Position
+                            </span>
+                            <span class="legenda-item">
+                                <span class="legenda-giro-veloce">●</span> Giro Veloce
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="risultati-body" class="calendar-content">
+                        <div class="loading-message">
+                            <div class="loading-spinner"></div>
+                            Caricamento dati in corso...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="calendario" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Calendario</div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="calendar-body" class="calendar-content">
+                        <div class="loading-message">
+                            <div class="loading-spinner"></div>
+                            Caricamento dati in corso...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team-piloti" class="section">
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Team e Piloti</div>
+                </div>
+                <div class="calendar-grid">
+                    <div id="team-piloti-container" class="calendar-content team-piloti-container">
+                        <div class="loading-message">Caricamento dati in corso...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+    <!-- Barra navigazione in basso -->
+    <nav class="bottom-nav">
+        <a href="#lobby" class="nav-item" data-section="lobby">
+            <img src="images/icons/piloti.svg" alt="Lobby" class="nav-icon">
+            <span class="nav-label">Lobby</span>
+        </a>
+        <a href="#classifiche" class="nav-item" data-section="classifiche">
+            <img src="images/icons/classifica.svg" alt="Classifiche" class="nav-icon">
+            <span class="nav-label">Classifiche</span>
+        </a>
+        <a href="#home" class="nav-item nav-item-home" data-section="home">
+            <img src="images/icons/home.svg" alt="Home" class="nav-icon">
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="#risultati" class="nav-item" data-section="risultati">
+            <img src="images/icons/risultati.svg" alt="Risultati" class="nav-icon">
+            <span class="nav-label">Risultati</span>
+        </a>
+        <a href="#penalita" class="nav-item" data-section="direzione-gara">
+            <img src="images/icons/admin.svg" alt="Direzione Gara" class="nav-icon">
+            <span class="nav-label">Direzione</span>
+        </a>
+    </nav>
+
+</body>
+<script src="config.js" defer></script>
+<script src="scripts.js" defer></script>
+
+</html>
