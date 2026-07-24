@@ -1041,8 +1041,8 @@ async function loadLobbyCards(spreadsheetUrl, ssu2) {
       const team = row[3] || "";
       const marchio = row[4] || "";
       const isJgtv = row[6] || "";
-      const points = parseInt(row[7]) || 0;
-      const previousPoints = parseInt(row[8]) || 0; // Colonna 9: punti precedenti (nuova)
+      const points = parseFloat((row[7] || "").replace(",", ".")) || 0;
+      const previousPoints = parseFloat((row[8] || "").replace(",", ".")) || 0; // Colonna 9: punti precedenti (nuova)
       const lobbyAssignment = row[9] || ""; // Colonna 10: 1 o 2 (spostata da 9 a 10)
 
       if (lobbyAssignment === "1") {
@@ -1239,8 +1239,8 @@ async function loadAllClassifications(spreadsheetUrl) {
       const team = row[3] || "";
       const marchio = row[4] || "";
       const isJgtv = row[6] || "";
-      const points = parseInt(row[7]) || 0;
-      const previousPoints = parseInt(row[8]) || 0; // Colonna 9 - punti prima dell'ultima gara
+      const points = parseFloat((row[7] || "").replace(",", ".")) || 0;
+      const previousPoints = parseFloat((row[8] || "").replace(",", ".")) || 0; // Colonna 9 - punti prima dell'ultima gara
 
       const pilotData = {
         position,
@@ -1422,7 +1422,7 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
           </div>
           <div class="pilot-name">${escapeHtml(item.team)}</div>
           <div class="pilot-team">#${item.pilots.map((p) => escapeHtml(p.number)).join(", #")}</div>
-          <div class="pilot-points">${item.points}</div>
+          <div class="pilot-points">${formatNumber(item.points)}</div>
         </div>
       `;
     } else {
@@ -1437,7 +1437,7 @@ function generateClassificationHTML(containerId, data, title, isTeam = false) {
           </div>
           <div class="pilot-name">${escapeHtml(item.pilot)}</div>
           <div class="pilot-team">${escapeHtml(item.team)}</div>
-          <div class="pilot-points">${item.points}</div>
+          <div class="pilot-points">${formatNumber(item.points)}</div>
         </div>
       `;
     }
@@ -1648,7 +1648,7 @@ function generateTop10Home(data) {
         </div>
         <div class="pilot-name">${escapeHtml(item.pilot)}</div>
         <div class="pilot-team">${escapeHtml(item.team)}</div>
-        <div class="pilot-points">${item.points}</div>
+        <div class="pilot-points">${formatNumber(item.points)}</div>
       </div>
     `;
   });
@@ -1834,10 +1834,10 @@ async function loadPodioUltimaGara(spreadsheetUrl, ultimaGara) {
       if (row.length > startCol) {
         const lobby = row[startCol] || ""; // Colonna 1: lobby
         const position = parseInt(row[startCol + 1]) || 0; // Colonna 2: posizione
-        const points = parseInt(row[startCol + 2]) || 0; // Colonna 3: punti
+        const points = parseFloat((row[startCol + 2] || "").replace(",", ".")) || 0; // Colonna 3: punti
         const pole = parseInt(row[startCol + 3]) || 0; // Colonna 4: pole
         const fastLap = parseInt(row[startCol + 4]) || 0; // Colonna 5: giro veloce
-        const totalPoints = parseInt(row[startCol + 5]) || 0; // Colonna 6: punti totali
+        const totalPoints = parseFloat((row[startCol + 5] || "").replace(",", ".")) || 0; // Colonna 6: punti totali
 
         if (position && position > 0) {
           raceResults.push({
@@ -1999,10 +1999,10 @@ async function loadRisultati(spreadsheetUrl) {
         if (row.length > startCol) {
           const lobby = row[startCol] || ""; // Colonna 1: lobby
           const position = row[startCol + 1] || ""; // Colonna 2: posizione
-          const points = parseInt(row[startCol + 2]) || 0; // Colonna 3: punti
+          const points = parseFloat((row[startCol + 2] || "").replace(",", ".")) || 0; // Colonna 3: punti
           const pole = parseInt(row[startCol + 3]) || 0; // Colonna 4: pole
           const fastLap = parseInt(row[startCol + 4]) || 0; // Colonna 5: giro veloce
-          const totalPoints = parseInt(row[startCol + 5]) || 0; // Colonna 6: punti totali
+          const totalPoints = parseFloat((row[startCol + 5] || "").replace(",", ".")) || 0; // Colonna 6: punti totali
 
           if (position && position !== "") {
             // Usa i dati delle classifiche generali per ottenere info pilota
@@ -2149,7 +2149,7 @@ async function loadRisultati(spreadsheetUrl) {
               </div>
               <div class="pilot-name">${escapeHtml(item.pilot)}</div>
               <div class="pilot-team">${escapeHtml(item.team)}</div>
-              <div class="pilot-points" style="${pointsStyle}">${item.points}</div>
+              <div class="pilot-points" style="${pointsStyle}">${formatNumber(item.points)}</div>
             </div>
           `;
         });
@@ -2505,6 +2505,11 @@ function escapeHtml(unsafe) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function formatNumber(n) {
+  if (n % 1 === 0) return n.toString();
+  return n.toFixed(1).replace(".", ",");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
