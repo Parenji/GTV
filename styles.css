@@ -2127,6 +2127,20 @@ td.totalone {
   border-radius: 5px;
 }
 
+.pilot-nickname {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.pilot-nickname-modal {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
 /* Responsive per mobile */
 @media (max-width: 768px) {
   .pilot-card {

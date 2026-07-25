@@ -712,10 +712,11 @@ async function loadAndCreateHtmlTable(
         const pilotCard = document.createElement("div");
         pilotCard.className = "pilot-card";
         const name = rowData[indicesToUse[0]] || "";
-        const number = rowData[indicesToUse[1]] || "";
-        const info = rowData[indicesToUse[2]] || "";
+        const nickname = rowData[indicesToUse[1]] || "";
+        const number = rowData[indicesToUse[2]] || "";
+        const info = rowData[indicesToUse[3]] || "";
         const isJgtv = info.toLowerCase().includes("jgtv");
-        const periferica = rowData[indicesToUse[3]] || "";
+        const periferica = rowData[indicesToUse[4]] || "";
 
         // Determina l'icona della periferica
         let perifericaIcon = "";
@@ -744,6 +745,7 @@ async function loadAndCreateHtmlTable(
         pilotCard.innerHTML = `
           <div class="pilot-left">
             <div class="pilot-name">${name}</div>
+            ${nickname ? `<div class="pilot-nickname">GT7: ${nickname}</div>` : ""}
             ${isJgtv ? '<div class="pilot-label">jgtv</div>' : ""}
           </div>
           <div class="pilot-number">#${number}</div>
@@ -2380,9 +2382,10 @@ function openPilotModal(fullRow, headerArr) {
   const body = modal.querySelector("#pilot-modal-body");
 
   const name = fullRow[0] || "";
-  const number = fullRow[1] || "";
-  const info = fullRow[2] || "";
-  const periferica = fullRow[3] || "";
+  const nickname = fullRow[1] || "";
+  const number = fullRow[2] || "";
+  const info = fullRow[3] || "";
+  const periferica = fullRow[4] || "";
 
   // Determina l'icona della periferica
   let perifericaIcon = "";
@@ -2408,9 +2411,9 @@ function openPilotModal(fullRow, headerArr) {
       '<img src="images/icons/social.svg" alt="Pad" class="periferica-icon-modal">';
   }
 
-  // Build championships list (groups of 4 starting at index 4)
+  // Build championships list (groups of 4 starting at index 5)
   const items = [];
-  for (let i = 4; i < fullRow.length; i += 4) {
+  for (let i = 5; i < fullRow.length; i += 4) {
     const participates = (fullRow[i] || "").toString().trim().toLowerCase();
     if (participates === "x" || participates === "✓" || participates === "1") {
       const champName =
@@ -2426,9 +2429,9 @@ function openPilotModal(fullRow, headerArr) {
 
   // Render HTML
   let html = "";
-  html += `<div class="pilot-header"><div class="pilot-name">${escapeHtml(
+  html += `<div class="pilot-header"><div class="pilot-header-left"><div class="pilot-name">${escapeHtml(
     name,
-  )}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
+  )}</div>${nickname ? `<div class="pilot-nickname-modal">GT7: ${escapeHtml(nickname)}</div>` : ""}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
   if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
 
   html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
@@ -2530,7 +2533,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Tabella Piloti ---
     const URL_PILOTI = config.googleSheets.piloti;
-    loadAndCreateHtmlTable(URL_PILOTI, "piloti-body", [0, 1, 2, 3]);
+    loadAndCreateHtmlTable(URL_PILOTI, "piloti-body", [0, 1, 2, 3, 4]);
 
     // --- Tabella Admin ---
     const URL_ADMIN = config.googleSheets.admin;
