@@ -4347,3 +4347,194 @@ body#worldchampionship {
   filter: invert(0%);
   height: 70px;
 }
+/* ========================================
+   UNION - pagine del campionato Union
+   ======================================== */
+
+/* Intro */
+.union-intro {
+  padding: 14px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.union-intro strong {
+  color: var(--giallogtv);
+}
+
+/* --- Carousel --- */
+.union-carousel {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto 8px;
+  overflow: hidden;
+}
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(191, 239, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.union-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--giallogtv);
+  border: 1px solid rgba(191, 239, 255, 0.4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.union-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.carousel-prev {
+  left: 8px;
+}
+.carousel-next {
+  right: 8px;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.carousel-dot.active {
+  background: var(--giallogtv);
+}
+
+/* --- Tabella piloti iscritti --- */
+.union-lista {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.union-lista th,
+.union-lista td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  vertical-align: middle;
+}
+.union-lista thead th {
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85em;
+  background: rgba(191, 239, 255, 0.05);
+}
+.union-lista tbody tr:hover {
+  background: rgba(191, 239, 255, 0.06);
+}
+.union-num {
+  font-weight: 700;
+  color: var(--giallogtv);
+  width: 60px;
+}
+.union-gt7 {
+  color: rgba(255, 255, 255, 0.75);
+}
+.union-tier {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(191, 239, 255, 0.12);
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.union-brand {
+  text-align: center;
+}
+.union-brand-logo {
+  max-width: 60px;
+  max-height: 34px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.union-brand-name {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+.union-empty {
+  color: rgba(255, 255, 255, 0.4);
+}
+.union-count {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 12px 0 4px;
+  font-size: 0.9em;
+}
+
+/* Responsive: tabella su mobile (impila le celle) */
+@media (max-width: 620px) {
+  .union-lista thead {
+    display: none;
+  }
+  .union-lista,
+  .union-lista tbody,
+  .union-lista tr,
+  .union-lista td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .union-lista tr {
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 6px 0;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .union-lista td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-left: 40%;
+    position: relative;
+    text-align: right;
+    min-height: 28px;
+  }
+  .union-lista td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 35%;
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}

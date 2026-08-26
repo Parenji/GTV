@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granturismo TV - UNION</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTV" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
+    <!-- Colore della barra dell'interfaccia mobile -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="background-color" content="#FFFFFF">
+
+</head>
+
+<body id="union">
+
+    <header>
+        <button id="menu-toggle" class="hamburger-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <div id="sidebar">
+            <button id="close-menu" class="close-button">X</button>
+
+            <nav class="sidebar-content" id="sidebar-content">
+                <a href="#home" class="menu-link">
+                    Home
+                    <img src="images/Campionati/union.png" alt="Logo" class="menu-icon" />
+                </a>
+                <a href="#piloti" class="menu-link">
+                    Piloti
+                </a>
+                <a href="#regolamento" class="menu-link">
+                    Regolamento
+                </a>
+                <a href="#documenti" class="menu-link">
+                    Documenti
+                </a>
+                <a href="index.html" class="menu-link">
+                    <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
+                </a>
+            </nav>
+
+        </div>
+        <div class="title-container">
+            <a href="union.html">
+                <img src="images/Campionati/union.png" alt="Logo" class="logocamp" />
+            </a>
+            <a href="index.html">
+                                <span class="sottotitolo"> La casa dei  </span>
+                <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
+            </a>
+        </div>
+
+    </header>
+
+
+    <div class="main-container">
+
+        <section id="home" class="section">
+
+            <!-- <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Union</div>
+                    <div class="calendar-subtitle">LEGA UNION E-SPORT · 2026 · ROUND 2 · GTV CORSE</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="union-intro">
+                        <p>Ecco i piloti della squadra iscritti alla <strong>LEGA UNION E-SPORT</strong> per il
+                            round 2 della stagione 2026, divisi per categoria. Scorri le grafiche per vedere gli
+                            schieramenti.</p>
+                    </div>
+                </div>
+            </div> -->
+
+<!-- Carousel delle grafiche di categoria -->
+            <div class="union-carousel" id="union-carousel">
+                <button class="union-carousel-arrow carousel-prev" id="carousel-prev" aria-label="Precedente">&#10094;</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide"><img src="images/union/1_STAR.png" alt="Categoria STAR"></div>
+                        <div class="carousel-slide"><img src="images/union/2_ELITE.png" alt="Categoria ELITE"></div>
+                        <div class="carousel-slide"><img src="images/union/3_PRO_GOLD.png" alt="Categoria PRO GOLD"></div>
+                        <div class="carousel-slide"><img src="images/union/4_PRO_SILVER.png" alt="Categoria PRO SILVER"></div>
+                        <div class="carousel-slide"><img src="images/union/5_PRO_AMA.png" alt="Categoria PRO AMA"></div>
+                        <div class="carousel-slide"><img src="images/union/6_AMA.png" alt="Categoria AMA"></div>
+                    </div>
+                </div>
+                <button class="union-carousel-arrow carousel-next" id="carousel-next" aria-label="Immagine successiva">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Documenti utili</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="pdf-button-container">
+                            <button class="pdf-button" onclick="window.open('pdf/union/Regolamento Generale Union 2026_V2-3.pdf', '_blank')">
+                                PDF Regolamento
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/union/impostazioni lobby v.2.01_-1.pdf', '_blank')">
+                                PDF Opzioni stanza
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
+                                PDF Lista iscritti
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/union/Calendario Union 2026.pdf', '_blank')">
+                                PDF Calendario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="piloti" class="section">
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Piloti Iscritti</div>
+                    <div class="calendar-subtitle">Squadra partecipante alla LEGA UNION E-SPORT</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="table-container">
+                        <div id="union-piloti-body" class="responsive-table union-piloti-table">
+                            <div class="loading-message">
+                                <div class="loading-spinner"></div>
+                                Caricamento dati in corso...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+<section id="regolamento" class="section">
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Regolamento</div>
+                    <div class="calendar-subtitle">Documenti ufficiali campionato</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="pdf-button-container">
+                            <button class="pdf-button" onclick="window.open('pdf/union/Regolamento Generale Union 2026_V2-3.pdf', '_blank')">
+                                PDF Regolamento
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/union/impostazioni lobby v.2.01_-1.pdf', '_blank')">
+                                PDF Opzioni stanza
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="documenti" class="section">
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Documenti</div>
+                    <div class="calendar-subtitle">Lista piloti e calendario</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="pdf-button-container">
+                            <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
+                                PDF Lista Piloti
+                            </button>
+                            <button class="pdf-button" onclick="window.open('pdf/union/Calendario Union 2026.pdf', '_blank')">
+                                PDF Calendario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+<script src="config.js" defer></script>
+<script src="scripts.js" defer></script>
+<script src="union.js" defer></script>
+
+</html>

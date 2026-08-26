@@ -745,7 +745,7 @@ async function loadAndCreateHtmlTable(
         pilotCard.innerHTML = `
           <div class="pilot-left">
             <div class="pilot-name">${name}</div>
-            ${nickname ? `<div class="pilot-nickname">GT7: ${nickname}</div>` : ""}
+            ${nickname ? `<div class="pilot-nickname">${nickname}</div>` : ""}
             ${isJgtv ? '<div class="pilot-label">jgtv</div>' : ""}
           </div>
           <div class="pilot-number">#${number}</div>
@@ -2431,7 +2431,7 @@ function openPilotModal(fullRow, headerArr) {
   let html = "";
   html += `<div class="pilot-header"><div class="pilot-header-left"><div class="pilot-name">${escapeHtml(
     name,
-  )}</div>${nickname ? `<div class="pilot-nickname-modal">GT7: ${escapeHtml(nickname)}</div>` : ""}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
+  )}</div>${nickname ? `<div class="pilot-nickname-modal">${escapeHtml(nickname)}</div>` : ""}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
   if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
 
   html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
