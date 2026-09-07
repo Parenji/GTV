@@ -4538,3 +4538,238 @@ body#worldchampionship {
     color: rgba(255, 255, 255, 0.55);
   }
 }
+
+/* --- Specchietto riassuntivo piloti GTV (sezione Lobby) --- */
+.union-specchietto-body {
+  padding: 10px 14px;
+}
+
+.union-specch-intro {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.union-specch-intro strong,
+.union-specch-intro em {
+  color: var(--giallogtv);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.union-table-scroll {
+  overflow-x: auto;
+}
+
+/* Layout fisso su tutte le dimensioni: le colonne NON si spartiscono
+   lo spazio in modo uguale, ma seguono le larghezze sotto */
+.union-specch-table {
+  table-layout: fixed;
+}
+
+/* Larghezze di colonna: più spazio al pilota, poco a giorno/ora.
+   Ordine: 1=Pilota 2=Lobby 3=Giorno 4=Ora */
+.union-specch-table th:nth-child(1),
+.union-specch-table td:nth-child(1) {
+  width: 46%;
+}
+.union-specch-table th:nth-child(2),
+.union-specch-table td:nth-child(2) {
+  width: 22%;
+}
+.union-specch-table th:nth-child(3),
+.union-specch-table td:nth-child(3) {
+  width: 13%;
+}
+.union-specch-table th:nth-child(4),
+.union-specch-table td:nth-child(4) {
+  width: 19%;
+}
+
+.union-specch-table .union-specch-pilot {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.union-specch-table .union-specch-day {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.union-specch-table .union-specch-time {
+  white-space: nowrap;
+  color: var(--giallogtv);
+  font-weight: 600;
+}
+
+/* Pulsante sulla colonna Lobby: grande e facile da cliccare */
+.union-specch-link {
+  display: inline-block;
+  background: rgba(191, 239, 255, 0.12);
+  border: 1px solid rgba(191, 239, 255, 0.4);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 18px;
+  font-size: 0.95em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+  min-width: 56px;
+  text-align: center;
+}
+
+.union-specch-link:hover {
+  background: var(--giallogtv);
+  color: #000;
+  border-color: var(--giallogtv);
+}
+
+/* --- Elenco lobby complete --- */
+.union-lobby-body {
+  padding: 10px 0;
+}
+
+.union-lobby-day-block {
+  margin-bottom: 24px;
+}
+
+.union-lobby-day-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-left: 4px solid var(--giallogtv);
+  padding-left: 12px;
+  margin: 10px 0 12px;
+}
+
+/* Griglia lobby: una lobby per riga (sempre, mobile e desktop) */
+.union-lobby-day-block .lobby-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0;
+}
+
+.union-lobby-card {
+  scroll-margin-top: 68px;
+}
+
+/* Testata card: lascia andare a capo la categoria se serve */
+.union-lobby-card .lobby-card-header {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.union-lobby-card .lobby-category {
+  text-align: right;
+}
+
+.union-lobby-pos {
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(191, 239, 255, 0.12);
+  border: 1px solid rgba(191, 239, 255, 0.3);
+  border-radius: 50%;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  flex-shrink: 0;
+}
+
+.union-lobby-count {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.union-lobby-pilot-gtv {
+  border-color: var(--giallogtv);
+  background: rgba(245, 255, 60, 0.06);
+}
+
+.union-lobby-pilot-gtv .lobby-pilot-name {
+  color: var(--giallogtv);
+}
+
+/* I piloti nelle lobby complete NON sono cliccabili: via hover/pulsante */
+.union-lobby-card .lobby-pilot,
+.union-lobby-card .lobby-pilot:hover {
+  cursor: default;
+  transform: none;
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 620px) {
+  /* Lo specchietto resta una tabella vera anche su mobile, compatta */
+  .union-specchietto-body {
+    padding: 6px 4px;
+  }
+
+  .union-specch-table {
+    display: table;
+    width: 100%;
+  }
+
+  .union-specch-table tbody {
+    display: table-row-group;
+  }
+
+  .union-specch-table tr {
+    display: table-row;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .union-specch-table td {
+    display: table-cell;
+    width: auto;
+    padding: 6px 6px;
+    text-align: left;
+    min-height: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78em;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .union-specch-table td::before {
+    content: none;
+  }
+
+  .union-specch-table thead {
+    display: table-header-group;
+  }
+
+  .union-specch-table thead th {
+    font-size: 0.68em;
+    padding: 5px 6px;
+  }
+
+  .union-specch-link {
+    padding: 7px 16px;
+    font-size: 0.9em;
+  }
+
+  .union-lobby-day-block .lobby-card-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

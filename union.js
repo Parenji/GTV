@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function initUnionPage() {
   initCarousel();
   loadUnionPiloti();
+  loadUnionLobby();
 }
 
 // -------------------------------------------------------------
@@ -228,5 +229,248 @@ function brandLogoCell(brand) {
     '<div class="union-brand-name">' +
     escapeHtml(b) +
     "</div></td>"
+  );
+}
+
+// -------------------------------------------------------------
+// SEZIONE LOBBY - dati estratti da unionscraping/data.json
+// 1) Specchietto riassuntivo dei piloti GTV con link alla lobby
+// 2) Tutte le lobby (schieramenti completi) raggruppate per giorno
+// -------------------------------------------------------------
+
+// Dati generati dallo scraper (stessi campi di data.json)
+var UNION_LOBBY_DAYS = ["LUNEDI", "MARTEDI", "MERCOLEDI", "GIOVEDI", "VENERDI"];
+
+function loadUnionLobby() {
+  var specchietto = document.getElementById("union-specchietto-body");
+  var body = document.getElementById("union-lobby-body");
+  if (!specchietto && !body) return;
+
+  var url =
+    window.GTV_CONFIG && window.GTV_CONFIG.unionLobbyData
+      ? window.GTV_CONFIG.unionLobbyData
+      : "unionscraping/data.json";
+
+  fetch(url)
+    .then(function (response) {
+      if (!response.ok) throw new Error("Errore HTTP " + response.status);
+      return response.json();
+    })
+    .then(function (data) {
+      if (!data || !data.lobbies) {
+        throw new Error("Dati non validi");
+      }
+      if (specchietto) renderUnionSpecchietto(specchietto, data);
+      if (body) renderUnionLobbyBody(body, data);
+    })
+    .catch(function (err) {
+      console.error("Errore caricamento lobby:", err);
+      var msg = '<div class="error-message">Impossibile caricare le lobby Union.</div>';
+      if (specchietto) specchietto.innerHTML = msg;
+      if (body) body.innerHTML = msg;
+    });
+}
+
+// Id univoco di una card-lobby (per gli ancoraggi dello specchietto)
+function lobbyCardId(day, name) {
+  return "union-lobby-" + String(day || "").toLowerCase() + "-" + String(name || "").toLowerCase();
+}
+
+// Ordina per giorno e poi per nome lobby
+function unionDayIndex(day) {
+  var i = UNION_LOBBY_DAYS.indexOf(String(day || "").toUpperCase());
+  return i === -1 ? UNION_LOBBY_DAYS.length : i;
+}
+
+// Abbreviazioni per i giorni (per risparmiare spazio su mobile)
+var UNION_DAY_SHORT = {
+  LUNEDI: "LUN",
+  MARTEDI: "MAR",
+  MERCOLEDI: "MER",
+  GIOVEDI: "GIO",
+  VENERDI: "VEN",
+};
+
+// -------------------------------------------------------------
+// Specchietto riassuntivo: una riga per ogni pilota GTV iscritto
+// -------------------------------------------------------------
+function renderUnionSpecchietto(container, data) {
+  container.classList.remove("loading-message");
+
+  var rows = [];
+  data.lobbies.forEach(function (lb) {
+    lb.pilots.forEach(function (p) {
+      var team = String(p.team || "").trim().toUpperCase();
+      if (team !== "GTV") return;
+      rows.push({
+        name: lb.name,
+        day: lb.day,
+        time: lb.time,
+        category: lb.category,
+        host: lb.host || "",
+        pilot: p.nome || "",
+      });
+    });
+  });
+
+  // Ordina per giorno e poi per nome lobby
+  rows.sort(function (a, b) {
+    var diff = unionDayIndex(a.day) - unionDayIndex(b.day);
+    if (diff !== 0) return diff;
+    return String(a.name).localeCompare(String(b.name));
+  });
+
+  var rowsHtml = rows
+    .map(function (r) {
+      var id = lobbyCardId(r.day, r.name);
+      var dayShort = UNION_DAY_SHORT[String(r.day || "").toUpperCase()] || r.day;
+      var hour = String(r.time || "").replace("Ore ", "").trim();
+      return (
+        "<tr>" +
+        '<td class="union-specch-pilot" data-label="Pilota">' + escapeHtml(r.pilot) + "</td>" +
+        '<td class="union-specch-lobby" data-label="Lobby">' +
+        '<button class="union-specch-link" data-target="' + id + '">' + escapeHtml(r.name) + "</button>" +
+        "</td>" +
+        '<td class="union-specch-day" data-label="Data">' + escapeHtml(dayShort) + "</td>" +
+        '<td class="union-specch-time" data-label="Ora">' + escapeHtml(hour) + "</td>" +
+        "</tr>"
+      );
+    })
+    .join("");
+
+  var html =
+    '<div class="union-specchietto">' +
+    '<div class="union-specch-intro">' +
+    "Clicca sulla <em>Lobby</em> per vedere lo schieramento completo." +
+    "</div>" +
+    '<div class="union-count">' + rows.length + " piloti GTV iscritti</div>" +
+    '<div class="union-table-scroll">' +
+    '<table class="union-lista union-specch-table">' +
+    "<thead><tr>" +
+    '<th class="union-specch-th">Pilota</th>' +
+    '<th class="union-specch-th">Lobby</th>' +
+    '<th class="union-specch-th">Data</th>' +
+    '<th class="union-specch-th">Ora</th>' +
+    "</tr></thead><tbody>" +
+    rowsHtml +
+    "</tbody></table></div></div>";
+
+  container.innerHTML =
+    html || '<div class="error-message">Nessun pilota GTV trovato nelle lobby.</div>';
+
+  // Link dello specchietto: scrolla alla lobby completa corrispondente
+  Array.from(container.querySelectorAll(".union-specch-link")).forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = document.getElementById(btn.getAttribute("data-target"));
+      if (target) {
+        // Offset per l'header sticky: scorrimento più preciso per
+        // far comparire la lobby cliccata in cima (non quella precedente)
+        var offset = 68;
+        var y = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+      }
+    });
+  });
+}
+
+// -------------------------------------------------------------
+// Tutte le lobby, raggruppate per giorno, in stile GTV
+// -------------------------------------------------------------
+function renderUnionLobbyBody(container, data) {
+  container.classList.remove("loading-message");
+
+  var byDay = {};
+  UNION_LOBBY_DAYS.forEach(function (d) {
+    byDay[d] = [];
+  });
+  data.lobbies.forEach(function (lb) {
+    var d = String(lb.day || "").toUpperCase();
+    (byDay[d] = byDay[d] || []).push(lb);
+  });
+
+  var daysHtml = UNION_LOBBY_DAYS
+    .filter(function (d) {
+      return byDay[d] && byDay[d].length;
+    })
+    .map(function (d) {
+      var cards = byDay[d]
+        .map(function (lb) {
+          return unionLobbyCardHtml(lb);
+        })
+        .join("");
+
+      return (
+        '<div class="union-lobby-day-block">' +
+        '<div class="union-lobby-day-title">' + d + "</div>" +
+        '<div class="lobby-card-container">' +
+        cards +
+        "</div></div>"
+      );
+    })
+    .join("");
+
+  container.innerHTML =
+    daysHtml || '<div class="error-message">Nessuna lobby trovata.</div>';
+}
+
+function unionLobbyCardHtml(lb) {
+  var id = lobbyCardId(lb.day, lb.name);
+  var time = String(lb.time || "").replace("Ore ", "");
+
+  var pilots = lb.pilots
+    .map(function (p) {
+      var isGtv = String(p.team || "").trim().toUpperCase() === "GTV";
+      return (
+        '<div class="lobby-pilot' + (isGtv ? " union-lobby-pilot-gtv" : "") + '">' +
+        '<div class="lobby-pilot-header">' +
+        '<div class="union-lobby-pos">' + escapeHtml(p.pos) + "</div>" +
+        '<div class="lobby-pilot-info">' +
+        '<div class="lobby-pilot-name">' + escapeHtml(p.nome) + "</div>" +
+        '<div class="lobby-pilot-team">' + escapeHtml(p.team) + "</div>" +
+        "</div></div></div>"
+      );
+    })
+    .join("");
+
+  var hostLink =
+    lb.host
+      ? '<a href="https://profile.playstation.com/' +
+        encodeURIComponent(lb.host) +
+        '/add" target="_blank" class="lobby-host-name">' +
+        escapeHtml(lb.host) +
+        "</a>"
+      : '<span class="lobby-host-name">—</span>';
+
+  var liveBlock =
+    lb.url
+      ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener" class="lobby-live-name">' +
+        escapeHtml(lb.live || "Canale live") +
+        "</a>"
+      : '<span class="lobby-live-name">—</span>';
+
+  return (
+    '<div id="' + id + '" class="lobby-card union-lobby-card">' +
+    '<div class="lobby-card-header">' +
+    '<div class="lobby-datetime">' +
+    '<div class="lobby-date">' + escapeHtml(lb.day) + "</div>" +
+    '<div class="lobby-time">' + escapeHtml(time) + "</div>" +
+    "</div>" +
+    '<div class="lobby-category">' + escapeHtml(lb.category) + " · Lobby " + escapeHtml(lb.name) + "</div>" +
+    "</div>" +
+    '<div class="lobby-info-section">' +
+    '<div class="lobby-host"><div class="lobby-host-icon">👑</div>' +
+    '<div class="lobby-host-content"><div class="lobby-host-label">Host</div>' +
+    hostLink +
+    "</div></div>" +
+    '<div class="lobby-live"><div class="lobby-live-icon">📺</div>' +
+    '<div class="lobby-live-content"><div class="lobby-live-label">Live</div>' +
+    liveBlock +
+    "</div></div>" +
+    "</div>" +
+    '<div class="lobby-pilots-section">' +
+    '<div class="lobby-pilots-title">Piloti <span class="union-lobby-count">(' + lb.pilots.length + ")</span></div>" +
+    '<div class="lobby-pilots-grid">' +
+    pilots +
+    "</div></div></div>"
   );
 }

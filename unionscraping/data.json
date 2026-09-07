@@ -1,0 +1,7071 @@
+{
+  "meta": {
+    "source": "https://sites.google.com/view/hubunion",
+    "title": "HUB UNION - Campionato Union 2026 Round 2"
+  },
+  "stats": {
+    "total_pilots": 473,
+    "total_lobbies": 36,
+    "total_teams": 23,
+    "categories": {
+      "Star": 77,
+      "ELITE": 78,
+      "Pro Gold": 82,
+      "PROSILVER": 78,
+      "Pro Ama": 80,
+      "AMA": 78
+    },
+    "lobby_groups": {
+      "1": 77,
+      "2": 78,
+      "3": 82,
+      "4": 77,
+      "5": 80,
+      "6": 78,
+      "": 1
+    },
+    "pilots_per_day": {
+      "LUNEDI": 7,
+      "MARTEDI": 8,
+      "MERCOLEDI": 7,
+      "GIOVEDI": 8,
+      "VENERDI": 6
+    }
+  },
+  "lobbies": [
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:00",
+      "name": "A1",
+      "category": "STAR",
+      "host": "MirkoDC10",
+      "live": "DCT- MirkoDC10",
+      "url": "https://www.twitch.tv/dclab_channel_1",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "28",
+          "team": "GTV",
+          "nome": "InuyashaGodYokai",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "59",
+          "team": "RMT",
+          "nome": "RMT_87_TOMMY",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "33",
+          "team": "MMS",
+          "nome": "mms_babide46",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "50",
+          "team": "PRT",
+          "nome": "S.Mancabelli",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "64",
+          "team": "RSR",
+          "nome": "M.Caruso",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "5",
+          "team": "BCSC",
+          "nome": "BCSC_IL MALEDETTO",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "46",
+          "team": "PRT",
+          "nome": "PRT_Danielex84",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "70",
+          "team": "SMI",
+          "nome": "SMI_Minchippo",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "12",
+          "team": "DCT",
+          "nome": "DRT-Nanix84",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "37",
+          "team": "PBC",
+          "nome": "manu08FL",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "77",
+          "team": "TLM",
+          "nome": "RupeTheKing",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "16",
+          "team": "DCT",
+          "nome": "Sam-750",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "23",
+          "team": "GTRC",
+          "nome": "GTRC_Emilios98",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:00",
+      "name": "A2",
+      "category": "ELITE",
+      "host": "thelostgamer3000",
+      "live": "EVO- thelostgamer3000",
+      "url": "https://www.youtube.com/@team-evolution-racing",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "106",
+          "team": "CBR",
+          "nome": "U.Virivè",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "157",
+          "team": "RSR",
+          "nome": "Mat-bull11",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "145",
+          "team": "RCE",
+          "nome": "Rce_ Patrick85",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "138",
+          "team": "PRT",
+          "nome": "PRT_Fr0sT",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "115",
+          "team": "EVO",
+          "nome": "Wilpy235",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "111",
+          "team": "EVO",
+          "nome": "EVO_Bricca",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "133",
+          "team": "PRT",
+          "nome": "dev_ferio",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "119",
+          "team": "GTID",
+          "nome": "GTID_Gsadventure",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "100",
+          "team": "CBR",
+          "nome": "CBR_JOHNNY",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "93",
+          "team": "ARC",
+          "nome": "TRT-Turino",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "129",
+          "team": "MMS",
+          "nome": "Angelo_6896",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "167",
+          "team": "TLM",
+          "nome": "Mark126p",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "152",
+          "team": "RMT",
+          "nome": "RMT_MWalter",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:00",
+      "name": "A3",
+      "category": "PRO GOLD",
+      "host": "Villab90",
+      "live": "TLM- Villab90",
+      "url": "https://youtube.com/@teamlionmotorsport",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "204",
+          "team": "FMC",
+          "nome": "Fmc_pipino1983",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "188",
+          "team": "CBR",
+          "nome": "Natalino Vezzani",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "213",
+          "team": "GTV",
+          "nome": "GTV-legendafluo6",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "208",
+          "team": "GTID",
+          "nome": "GTID_pienobonus",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "192",
+          "team": "DCT",
+          "nome": "DCT_mercenario94",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "234",
+          "team": "RCE",
+          "nome": "RCE_Leobustv",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "230",
+          "team": "PRT",
+          "nome": "montlorenzo",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "226",
+          "team": "PRT",
+          "nome": "Denni",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "184",
+          "team": "CBR",
+          "nome": "CBR_il_Coach",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "180",
+          "team": "ARC",
+          "nome": "KSI-Bambolone78",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "200",
+          "team": "EVO",
+          "nome": "Ric_hero1971",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "220",
+          "team": "MMS",
+          "nome": "Faraone65",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "196",
+          "team": "EVO",
+          "nome": "EVO_AleTDx",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "238",
+          "team": "RMT",
+          "nome": "RMT_misterful. IT",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:00",
+      "name": "A4",
+      "category": "PRO SILVER",
+      "host": "hellboy",
+      "live": "SCGT- hellboy",
+      "url": "https://www.twitch.tv/squadracorsegt",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "327",
+          "team": "SMI",
+          "nome": "Ciccio_Vona-1994",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "281",
+          "team": "DCT",
+          "nome": "aquila d'oro",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "341",
+          "team": "TLM",
+          "nome": "Blokkobubbles",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "294",
+          "team": "GTRC",
+          "nome": "GTRC-MirkoZaffa",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "316",
+          "team": "RCE",
+          "nome": "RCE_mauris72",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "273",
+          "team": "BCSC",
+          "nome": "BCSC_Grabuxero",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "338",
+          "team": "SMI",
+          "nome": "SMI_tiskitoski",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "305",
+          "team": "PBC",
+          "nome": "Pete",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "348",
+          "team": "TLM",
+          "nome": "MikiRua",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "289",
+          "team": "EVO",
+          "nome": "Fanatec73",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "322",
+          "team": "RMT",
+          "nome": "Tlm_Gamma",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "300",
+          "team": "MMS",
+          "nome": "MMS_Gattonero70",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "331",
+          "team": "SMI",
+          "nome": "SMI Niki Lauda",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "276",
+          "team": "CBR",
+          "nome": "CBR_Renegade21",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 22:00",
+      "name": "A5",
+      "category": "STAR",
+      "host": "Leobustv_18",
+      "live": "RCE- Leobustv_18",
+      "url": "https://www.youtube.com/@RCE_Official",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "26",
+          "team": "GTRC",
+          "nome": "GTRC-MIKY",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "39",
+          "team": "PBC",
+          "nome": "Richie",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "71",
+          "team": "SMI",
+          "nome": "SMI_Mustangblack",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "32",
+          "team": "MMS",
+          "nome": "A.Reitano",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "62",
+          "team": "RRT",
+          "nome": "TER_Barba",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "45",
+          "team": "PRT",
+          "nome": "Phin",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "17",
+          "team": "EVO",
+          "nome": "EVO_il_Cuuc",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "8",
+          "team": "CBR",
+          "nome": "CBR_Ircaliffo91",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "52",
+          "team": "RCE",
+          "nome": "RCE_DarkneSS",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "75",
+          "team": "SMI",
+          "nome": "SMI-Marcus_Pilot",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "21",
+          "team": "GTID",
+          "nome": "A.D’alba",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "2",
+          "team": "ARC",
+          "nome": "KSI-JonMazzo",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "78",
+          "team": "TLM",
+          "nome": "TonyRoto",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 22:00",
+      "name": "A6",
+      "category": "PRO AMA",
+      "host": "MirkoDC10",
+      "live": "DCT- fiume11",
+      "url": "https://www.twitch.tv/dclab_channel_1",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "414",
+          "team": "RMT",
+          "nome": "Fabrifox99",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "372",
+          "team": "DCT",
+          "nome": "Cipo",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "432",
+          "team": "SMI",
+          "nome": "zarsantez",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "390",
+          "team": "GTRC",
+          "nome": "GTRC-Kelone74",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "408",
+          "team": "PRT",
+          "nome": "PRT-Timmycicc",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "366",
+          "team": "CBR",
+          "nome": "CBR_FELIX",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "426",
+          "team": "SMI",
+          "nome": "HULK1959",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "384",
+          "team": "GTID",
+          "nome": "GTID_D3LZ719",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "420",
+          "team": "RRT",
+          "nome": "J-Fly",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "378",
+          "team": "FFM",
+          "nome": "R.Napoletano",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "396",
+          "team": "MMS",
+          "nome": "JackVenom",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "360",
+          "team": "ARC",
+          "nome": "KSI-AreS_GlaDiuS",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "402",
+          "team": "PRT",
+          "nome": "astrorock285",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 22:00",
+      "name": "A7",
+      "category": "AMA",
+      "host": "MF_GioBar73",
+      "live": "MFC- MF_GioBar73",
+      "url": "https://youtube.com/@mfcorse-46",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "493",
+          "team": "RMT",
+          "nome": "SCGT-amofede01",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "458",
+          "team": "CBR",
+          "nome": "Alex Lilla",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "521",
+          "team": "SRT",
+          "nome": "habanero",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "476",
+          "team": "MMS",
+          "nome": "Travis199ita",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "505",
+          "team": "SCGT",
+          "nome": "mcogons83",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "487",
+          "team": "PRT",
+          "nome": "S. Di Giovanni",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "450",
+          "team": "ARC",
+          "nome": "TRT-Ultras68",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "514",
+          "team": "SMI",
+          "nome": "SMI-Mandrake",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "468",
+          "team": "FMC",
+          "nome": "Fratta_motor_clb",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "497",
+          "team": "RRT",
+          "nome": "Pierpynolo76",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "482",
+          "team": "PRT",
+          "nome": "Step87",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "509",
+          "team": "SCGT",
+          "nome": "Domydero",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "470",
+          "team": "GTV",
+          "nome": "Frasalvo96",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 21:00",
+      "name": "A10",
+      "category": "STAR",
+      "host": "TRT-Tommizio",
+      "live": "ARC- TRT-Tommizio",
+      "url": "https://youtube.com/@kronosesportitalia",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "11",
+          "team": "DCT",
+          "nome": "DCT-Ziototoooo",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "57",
+          "team": "RMT",
+          "nome": "L. Silvestri",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "7",
+          "team": "CBR",
+          "nome": "CBR_GABRIEL",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "43",
+          "team": "PRT",
+          "nome": "Lusu_Hard_98",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "25",
+          "team": "GTRC",
+          "nome": "GTRC- TROTOTEK",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "68",
+          "team": "SMI",
+          "nome": "FFM_Prinz17",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "61",
+          "team": "RMT",
+          "nome": "Tlm_Sile",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "53",
+          "team": "RCE",
+          "nome": "RCE_Freej",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "36",
+          "team": "PBC",
+          "nome": "M. Pennisi",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "48",
+          "team": "PRT",
+          "nome": "PRT_MaxLukex",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "9",
+          "team": "CBR",
+          "nome": "F.Tommasini",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "20",
+          "team": "FFM",
+          "nome": "FFM_Nic_Cannone",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "29",
+          "team": "GTV",
+          "nome": "Maverick",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 21:00",
+      "name": "A11",
+      "category": "AMA",
+      "host": "GTRC-SorcioSecco",
+      "live": "GTRC- GTRC-SorcioSecco",
+      "url": "https://youtube.com/@gtrctube2564",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "471",
+          "team": "GTV",
+          "nome": "GTSCode",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "523",
+          "team": "SRT",
+          "nome": "TSR_LK№³",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "456",
+          "team": "ARC",
+          "nome": "ARGAMERR",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "489",
+          "team": "RCE",
+          "nome": "RCE-warrior",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "512",
+          "team": "SMI",
+          "nome": "SMI_dragulillo",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "465",
+          "team": "FFM",
+          "nome": "Imperatore128",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "501",
+          "team": "RRT",
+          "nome": "Fabrix88",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "478",
+          "team": "OES",
+          "nome": "SMI_Fabry_colo86",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "526",
+          "team": "TLM",
+          "nome": "BabyKiller",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "454",
+          "team": "ARC",
+          "nome": "Razor",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "494",
+          "team": "RMT",
+          "nome": "RMT-Marck_84",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "517",
+          "team": "SMI",
+          "nome": "SMI-Slimer",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "483",
+          "team": "PRT",
+          "nome": "Zio_zero7",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 22:00",
+      "name": "A12",
+      "category": "ELITE",
+      "host": "Pardus—89",
+      "live": "BCSC- Pardus—89",
+      "url": "https://youtube.com/@badcerbero23",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "98",
+          "team": "CBR",
+          "nome": "Al_Rizlas",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "155",
+          "team": "RSR",
+          "nome": "C.Leclecca",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "136",
+          "team": "PRT",
+          "nome": "H7-25YT",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "114",
+          "team": "EVO",
+          "nome": "TITT__ONE",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "148",
+          "team": "RCE",
+          "nome": "RCE_Seccoide87",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "164",
+          "team": "SMI",
+          "nome": "SMI_Maverick88",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "103",
+          "team": "CBR",
+          "nome": "E. Caizzone",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "130",
+          "team": "MMS",
+          "nome": "Jakarta69",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "160",
+          "team": "SMI",
+          "nome": "Lo Iacono D.",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "92",
+          "team": "ARC",
+          "nome": "TRT-Tommizio",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "124",
+          "team": "GTV",
+          "nome": "Giusdandri",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "107",
+          "team": "DCT",
+          "nome": "DCT_Fiume11",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "141",
+          "team": "PRT",
+          "nome": "VeGe",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 22:00",
+      "name": "A13",
+      "category": "PRO SILVER",
+      "host": "RMT_AXEL_K_17",
+      "live": "RMT- RMT_AXEL_K_17",
+      "url": "https://www.twitch.tv/racing_monster_team_",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "287",
+          "team": "DCT",
+          "nome": "Shudew",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "329",
+          "team": "SMI",
+          "nome": "Marco pugnaghi67",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "274",
+          "team": "BCSC",
+          "nome": "TER_Axel79",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "340",
+          "team": "TLM",
+          "nome": "AngeloIaia",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "306",
+          "team": "PBC",
+          "nome": "Poluz",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "321",
+          "team": "RMT",
+          "nome": "RMT-FABBIO696",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "295",
+          "team": "GTRC",
+          "nome": "twinggy",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "344",
+          "team": "TLM",
+          "nome": "Jack187",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "280",
+          "team": "CBR",
+          "nome": "Sintoh87",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "315",
+          "team": "RCE",
+          "nome": "RCE_fabryct90",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "332",
+          "team": "SMI",
+          "nome": "SMI_DeliciousBBQ",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "303",
+          "team": "OES",
+          "nome": "Pinpinella95",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "347",
+          "team": "TLM",
+          "nome": "Mikerine92",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 22:00",
+      "name": "A14",
+      "category": "PRO GOLD",
+      "host": "VintageAR",
+      "live": "ARC- VintageAR",
+      "url": "https://youtube.com/@kronosesportitalia",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "201",
+          "team": "EVO",
+          "nome": "Ter_effe355",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "231",
+          "team": "PRT",
+          "nome": "shark929292",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "235",
+          "team": "RCE",
+          "nome": "RCE_pirati",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "227",
+          "team": "PRT",
+          "nome": "Jaiss84",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "222",
+          "team": "MMS",
+          "nome": "Suka",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "205",
+          "team": "FMC",
+          "nome": "Uburoi",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "181",
+          "team": "BCSC",
+          "nome": "BAD_lupogrigio",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "185",
+          "team": "CBR",
+          "nome": "CBR_Paolucci",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "189",
+          "team": "CBR",
+          "nome": "P.Vicari",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "209",
+          "team": "GTRC",
+          "nome": "GTRC-AMALA-ETNA",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "193",
+          "team": "DCT",
+          "nome": "Gjca-76",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "215",
+          "team": "GTV",
+          "nome": "Vale34",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "197",
+          "team": "EVO",
+          "nome": "EVO_Manu81",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "239",
+          "team": "RMT",
+          "nome": "RMT_PINOAWAY",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 22:00",
+      "name": "A15",
+      "category": "PRO AMA",
+      "host": "GTV_legendafluo",
+      "live": "GTV- GTV_legendafluo",
+      "url": "https://www.twitch.tv/legendafluo6/",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "379",
+          "team": "FMC",
+          "nome": "Fmc_blackbeard8007",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "421",
+          "team": "SCGT",
+          "nome": "Basilio1969",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "367",
+          "team": "CBR",
+          "nome": "CBR_gattipaolo86",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "397",
+          "team": "MMS",
+          "nome": "Mms_dpgurney78",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "433",
+          "team": "SRT",
+          "nome": "Il Giuda22",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "409",
+          "team": "PRT",
+          "nome": "roncoa73",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "385",
+          "team": "GTID",
+          "nome": "GTID-D3sTr0X",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "427",
+          "team": "SMI",
+          "nome": "SMI_Bibieffe",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "373",
+          "team": "DCT",
+          "nome": "DCT_Pescepoldo",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "415",
+          "team": "RMT",
+          "nome": "LID_Nelloz",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "391",
+          "team": "GTRC",
+          "nome": "GTRC-Squinzi76",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "403",
+          "team": "PRT",
+          "nome": "Baba_Voss",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "361",
+          "team": "ARC",
+          "nome": "KSI-TheHammer44",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "438",
+          "team": "TLM",
+          "nome": "Jonny_Rotten",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 21:00",
+      "name": "A8",
+      "category": "ELITE",
+      "host": "Live_cobraracing",
+      "live": "CBR- Live_cobraracing",
+      "url": "https://twitch.tv/live_cobraracingtwitch",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "113",
+          "team": "EVO",
+          "nome": "EVO_Piccuz",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "144",
+          "team": "RCE",
+          "nome": "Flotta muscoso",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "166",
+          "team": "SRT",
+          "nome": "V. Uva",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "90",
+          "team": "ARC",
+          "nome": "TRT-AlexoPazz",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "158",
+          "team": "SCGT",
+          "nome": "Gigikom75",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "121",
+          "team": "GTID",
+          "nome": "GTID_vaiper—ste",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "109",
+          "team": "DCT",
+          "nome": "Er meyo",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "132",
+          "team": "PBC",
+          "nome": "PBC_Goivas",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "102",
+          "team": "CBR",
+          "nome": "DavideRui",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "97",
+          "team": "BCSC",
+          "nome": "ITA_SOLID_SNAKE",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "126",
+          "team": "MFC",
+          "nome": "castoshi",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "140",
+          "team": "PRT",
+          "nome": "Sulimanov",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "153",
+          "team": "RMT",
+          "nome": "RMT-Axel K",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 21:00",
+      "name": "A9",
+      "category": "PRO SILVER",
+      "host": "BAD_brucem84",
+      "live": "BCSC- BAD_brucem84",
+      "url": "https://youtube.com/@badcerbero23",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "312",
+          "team": "PRT",
+          "nome": "Ptr.bso",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "270",
+          "team": "ARC",
+          "nome": "KSI-firefoxgold",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "337",
+          "team": "SMI",
+          "nome": "SMI_Stefano",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "296",
+          "team": "GTRC",
+          "nome": "GTRC-Checco",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "325",
+          "team": "SCGT",
+          "nome": "Mattia13491",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "284",
+          "team": "DCT",
+          "nome": "Libix888",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "343",
+          "team": "TLM",
+          "nome": "Hellios_778",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "301",
+          "team": "MMS",
+          "nome": "Sard Lander",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "318",
+          "team": "RMT",
+          "nome": "RMT-AT83Andrea",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "278",
+          "team": "CBR",
+          "nome": "M.Gatti",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "333",
+          "team": "SMI",
+          "nome": "SMI_Jackengi",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "291",
+          "team": "GTID",
+          "nome": "F.Amerio",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "346",
+          "team": "TLM",
+          "nome": "Michael_Fox",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 21:00",
+      "name": "A16",
+      "category": "PRO AMA",
+      "host": "slaydei2",
+      "live": "PBC- Goivas80",
+      "url": "https://youtube.com/@performancebearcrew4660",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "410",
+          "team": "PRT",
+          "nome": "tcarlisi",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "368",
+          "team": "CBR",
+          "nome": "CBR_MBBerto",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "422",
+          "team": "SCGT",
+          "nome": "Djvituc",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "386",
+          "team": "GTID",
+          "nome": "Ice_Fire",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "374",
+          "team": "DCT",
+          "nome": "erikspadino77",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "434",
+          "team": "SRT",
+          "nome": "landre",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "398",
+          "team": "MMS",
+          "nome": "MMS-DOCTORWEB",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "416",
+          "team": "RMT",
+          "nome": "Micius",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "404",
+          "team": "PRT",
+          "nome": "fedemastro",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "392",
+          "team": "GTRC",
+          "nome": "TodayTek",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "428",
+          "team": "SMI",
+          "nome": "SMI_Desmo77",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "380",
+          "team": "FMC",
+          "nome": "Fmc_Fulminato199",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "362",
+          "team": "ARC",
+          "nome": "SalvinoKing",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 21:00",
+      "name": "A17",
+      "category": "STAR",
+      "host": "RsR_Seawolf",
+      "live": "RSR- RsR_Seawolf",
+      "url": "https://twitch.tv/rushsimracers",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "3",
+          "team": "ARC",
+          "nome": "KSI-VintageAR",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "4",
+          "team": "BCSC",
+          "nome": "BAD_brucem84",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "13",
+          "team": "DCT",
+          "nome": "DRT-XaserTek",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "18",
+          "team": "EVO",
+          "nome": "EVO_lama85",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "30",
+          "team": "GTV",
+          "nome": "Nicco.rs",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "63",
+          "team": "RSR",
+          "nome": "C.Zuccaro",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "73",
+          "team": "SMI",
+          "nome": "SMI_vicktor21",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "67",
+          "team": "SMI",
+          "nome": "Drugo",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "24",
+          "team": "GTRC",
+          "nome": "GTRC_FrenkMik93",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "49",
+          "team": "PRT",
+          "nome": "Rareseed92",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "56",
+          "team": "RMT",
+          "nome": "#GO1FREE!!!!",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "44",
+          "team": "PRT",
+          "nome": "Perdinci",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "40",
+          "team": "PBC",
+          "nome": "SimoT_18",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 21:00",
+      "name": "A18",
+      "category": "ELITE",
+      "host": "Buitre83gt",
+      "live": "TLM- Buitre83gt",
+      "url": "https://youtube.com/@teamlionmotorsport",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "135",
+          "team": "PRT",
+          "nome": "G.Bozzo",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "147",
+          "team": "RCE",
+          "nome": "RCE_MVedovi59",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "96",
+          "team": "BCSC",
+          "nome": "CSC_Cicciodi94",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "108",
+          "team": "DCT",
+          "nome": "DCT_Radik",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "163",
+          "team": "SMI",
+          "nome": "SMI_GREEN21",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "131",
+          "team": "PBC",
+          "nome": "Danny Bonny",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "142",
+          "team": "RCE",
+          "nome": "Ayrton16",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "125",
+          "team": "GTV",
+          "nome": "Iceman",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "104",
+          "team": "CBR",
+          "nome": "M. Busato",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "159",
+          "team": "SMI",
+          "nome": "Henryk",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "151",
+          "team": "RMT",
+          "nome": "RMT_Deadpaul_87",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "116",
+          "team": "FFM",
+          "nome": "FFM_Beppolo",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "120",
+          "team": "GTID",
+          "nome": "GTID_Tia10",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 21:00",
+      "name": "A19",
+      "category": "AMA",
+      "host": "MF_maxlaqualunque",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@mfcorse-46",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "506",
+          "team": "SCGT",
+          "nome": "Sim7one",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "461",
+          "team": "DCT",
+          "nome": "Praetorian_001",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "519",
+          "team": "SRT",
+          "nome": "Yanuzzo_44",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "474",
+          "team": "MMS",
+          "nome": "A.Papotto",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "488",
+          "team": "RCE",
+          "nome": "RCE_Dingo77",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "524",
+          "team": "TLM",
+          "nome": "Talsigiano",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "452",
+          "team": "ARC",
+          "nome": "KSI-MarinaioPazz",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "499",
+          "team": "RRT",
+          "nome": "RRT_Andovè",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "480",
+          "team": "PRT",
+          "nome": "Margotone",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "516",
+          "team": "SMI",
+          "nome": "SMI_Kaiser",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "467",
+          "team": "FMC",
+          "nome": "FMC_Samu4Seven",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "491",
+          "team": "RMT",
+          "nome": "RMTSuperSic",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "510",
+          "team": "SMI",
+          "nome": "SMI_Missidenis54",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 22:00",
+      "name": "A20",
+      "category": "PRO AMA",
+      "host": "FFM_HOST",
+      "live": "FFM- FFM_HOST",
+      "url": "https://m.twitch.tv/ffmvirtualmotorsport",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "423",
+          "team": "SCGT",
+          "nome": "simothesniper23",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "369",
+          "team": "CBR",
+          "nome": "CBR_Sarade",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "411",
+          "team": "PRT",
+          "nome": "The-Knipex",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "429",
+          "team": "SMI",
+          "nome": "SMI_Gas89",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "387",
+          "team": "GTID",
+          "nome": "Xelavr6",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "363",
+          "team": "ARC",
+          "nome": "TRT-Bingo",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "417",
+          "team": "RMT",
+          "nome": "RMT Mario84",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "405",
+          "team": "PRT",
+          "nome": "Giannivir64",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "375",
+          "team": "DCT",
+          "nome": "Iuppino",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "393",
+          "team": "GTV",
+          "nome": "Sauzer",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "435",
+          "team": "SRT",
+          "nome": "SRT KAIDO",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "381",
+          "team": "GTID",
+          "nome": "Davide 1972 Ita",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "399",
+          "team": "MMS",
+          "nome": "Saetta Assidua",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 22:00",
+      "name": "A21",
+      "category": "PRO GOLD",
+      "host": "xSamueLx",
+      "live": "PRT- xSamueLx",
+      "url": "https://www.twitch.tv/xsamuelx_channel",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "258",
+          "team": "SRT",
+          "nome": "Rikosmo94",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "182",
+          "team": "CBR",
+          "nome": "AgaresErkekjette",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "198",
+          "team": "EVO",
+          "nome": "EVO_piraz",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "250",
+          "team": "SMI",
+          "nome": "SMI_DENI_BURIDA",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "186",
+          "team": "CBR",
+          "nome": "CBR_Simello",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "190",
+          "team": "DCT",
+          "nome": "animasarda81",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "223",
+          "team": "OES",
+          "nome": "Alex",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "202",
+          "team": "FFM",
+          "nome": "FFM_M a z e sBin",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "194",
+          "team": "DCT",
+          "nome": "MattiaLingua",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "242",
+          "team": "RRT",
+          "nome": "RRT_iaakk1983",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "216",
+          "team": "MFC",
+          "nome": "GioBar73 @ PRT",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "211",
+          "team": "GTV",
+          "nome": "Barda88",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "254",
+          "team": "SMI",
+          "nome": "vanveremberg-87",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "206",
+          "team": "GTID",
+          "nome": "GTID_Ale #77",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 22:00",
+      "name": "A22",
+      "category": "PRO SILVER",
+      "host": "Babide46",
+      "live": "MMS- babide46",
+      "url": "https://www.twitch.tv/mms_channel",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "292",
+          "team": "GTID",
+          "nome": "GTID_Salma81",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "335",
+          "team": "SMI",
+          "nome": "SMI_Maureddu77",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "277",
+          "team": "CBR",
+          "nome": "Clesh555",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "310",
+          "team": "PRT",
+          "nome": "N_Spec2",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "326",
+          "team": "SCGT",
+          "nome": "SCGT_Salvatore",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "285",
+          "team": "DCT",
+          "nome": "Matteo.R 00",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "342",
+          "team": "TLM",
+          "nome": "G.C.C.8",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "298",
+          "team": "GTV",
+          "nome": "Zabo",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "319",
+          "team": "RMT",
+          "nome": "RMT-Atawolf",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "272",
+          "team": "ARC",
+          "nome": "TRT-Awesalvo",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "330",
+          "team": "SMI",
+          "nome": "SMI Mimmogr",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "308",
+          "team": "PRT",
+          "nome": "blaze",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "345",
+          "team": "TLM",
+          "nome": "Kratos88",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 21:00",
+      "name": "A23",
+      "category": "AMA",
+      "host": "MNY-MirwoTangi",
+      "live": "OES- MNY-MirwoTangi",
+      "url": "https://youtube.com/@officialorionesports",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "485",
+          "team": "PRT",
+          "nome": "KedoK956",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "520",
+          "team": "SRT",
+          "nome": "kiank87",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "455",
+          "team": "ARC",
+          "nome": "giggggetto87",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "503",
+          "team": "RSR",
+          "nome": "K.Zele",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "472",
+          "team": "GTV",
+          "nome": "Goose",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "518",
+          "team": "SMI",
+          "nome": "SMI_RomeLu",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "463",
+          "team": "EVO",
+          "nome": "TER_Brazorf",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "507",
+          "team": "SCGT",
+          "nome": "gas_95_",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "479",
+          "team": "PRT",
+          "nome": "conradveron59",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "525",
+          "team": "TLM",
+          "nome": "mancinelli2002",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "459",
+          "team": "DCT",
+          "nome": "DRT-Marras83",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "496",
+          "team": "RMT",
+          "nome": "RMT Moody33",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "484",
+          "team": "PRT",
+          "nome": "Luca R72",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 21:00",
+      "name": "A24",
+      "category": "PRO GOLD",
+      "host": "Cornazzai73",
+      "live": "GTID- Cornazzai73",
+      "url": "https://www.twitch.tv/gtid_team",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "259",
+          "team": "TLM",
+          "nome": "Febshy",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "251",
+          "team": "SMI",
+          "nome": "SMI_Doc1975tor",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "244",
+          "team": "RSR",
+          "nome": "Stewar7tano",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "255",
+          "team": "SRT",
+          "nome": "M.Genovese",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "195",
+          "team": "DCT",
+          "nome": "TER-CAR-MELO74",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "187",
+          "team": "CBR",
+          "nome": "jr88",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "199",
+          "team": "EVO",
+          "nome": "EVO_Sbeucchia70",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "243",
+          "team": "RSR",
+          "nome": "RsR_Brucomela53",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "207",
+          "team": "GTID",
+          "nome": "GTID_N3tZ666",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "191",
+          "team": "DCT",
+          "nome": "Cpma",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "246",
+          "team": "SCGT",
+          "nome": "M.Ruggieri",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "183",
+          "team": "CBR",
+          "nome": "CBR_BAFFOKILLER_",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "247",
+          "team": "SMI",
+          "nome": "Leo-80",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "203",
+          "team": "FFM",
+          "nome": "S3mb4",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 21:00",
+      "name": "A25",
+      "category": "PRO SILVER",
+      "host": "Fratta_motor_clb",
+      "live": "FMC- Fratta_motor_clb",
+      "url": "https://youtube.com/@frattagaming",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "314",
+          "team": "PRT",
+          "nome": "Snorky-70",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "271",
+          "team": "ARC",
+          "nome": "KSI-Texport",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "336",
+          "team": "SMI",
+          "nome": "SMI_Maximuccio73",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "288",
+          "team": "EVO",
+          "nome": "EVO_Willy#43",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "323",
+          "team": "RRT",
+          "nome": "RRT_SNERZZZ",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "299",
+          "team": "MMS",
+          "nome": "DRT-ARBAXX76",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "339",
+          "team": "SRT",
+          "nome": "Dome98",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "275",
+          "team": "CBR",
+          "nome": "CBR_Mava",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "311",
+          "team": "PRT",
+          "nome": "PRT_neapolis100",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "328",
+          "team": "SMI",
+          "nome": "FMC_Roax1984",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "283",
+          "team": "DCT",
+          "nome": "GTR Gius73",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "302",
+          "team": "OES",
+          "nome": "MT-Boss95",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "293",
+          "team": "GTID",
+          "nome": "GTID-Vinc3Clerc",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 21:00",
+      "name": "A26",
+      "category": "PRO AMA",
+      "host": "Lok-1973",
+      "live": "SRT- Lok-1973",
+      "url": "https://www.twitch.tv/lok1973",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "395",
+          "team": "MFC",
+          "nome": "MF_Maxlaqualunque",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "407",
+          "team": "PRT",
+          "nome": "muffo007",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "365",
+          "team": "CBR",
+          "nome": "CBR_Diavolo983",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "425",
+          "team": "SMI",
+          "nome": "Flippo-Trippo",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "383",
+          "team": "GTID",
+          "nome": "GTID_Berti62",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "431",
+          "team": "SMI",
+          "nome": "snoop",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "371",
+          "team": "CBR",
+          "nome": "Nobita",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "413",
+          "team": "PRT",
+          "nome": "wwp76",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "389",
+          "team": "GTRC",
+          "nome": "GTRC_AleRasato",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "419",
+          "team": "RRT",
+          "nome": "ErMau07",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "377",
+          "team": "EVO",
+          "nome": "TER_minetor",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "437",
+          "team": "SRT",
+          "nome": "Zagaracing",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "401",
+          "team": "PBC",
+          "nome": "OmgTommie",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "439",
+          "team": "TLM",
+          "nome": "Rikas78",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 22:00",
+      "name": "A27",
+      "category": "AMA",
+      "host": "GTIDsacco72",
+      "live": "GTID- Cornazzai73",
+      "url": "https://www.twitch.tv/gtid_team",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "511",
+          "team": "SMI",
+          "nome": "SMI_Thomas1927",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "451",
+          "team": "ARC",
+          "nome": "KSI-VecchioBimbo",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_Muso_2692_gt",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "469",
+          "team": "GTRC",
+          "nome": "GTRC_Ganciocielo",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "522",
+          "team": "SRT",
+          "nome": "michele",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "477",
+          "team": "OES",
+          "nome": "vicconegt69",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "504",
+          "team": "SCGT",
+          "nome": "skils137",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "460",
+          "team": "DCT",
+          "nome": "TER_R.Leta",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "490",
+          "team": "RMT",
+          "nome": "barso91",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "515",
+          "team": "SMI",
+          "nome": "SMI_Cristian16",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "466",
+          "team": "FMC",
+          "nome": "Fmc_Marcosanta",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "495",
+          "team": "RMT",
+          "nome": "RMT-Ghigno 4",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "481",
+          "team": "PRT",
+          "nome": "simoppr",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 22:00",
+      "name": "A28",
+      "category": "PRO GOLD",
+      "host": "Lok-1973",
+      "live": "SRT- Lok-1973",
+      "url": "https://www.twitch.tv/lok1973",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "219",
+          "team": "MFC",
+          "nome": "MF_Walter784",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "232",
+          "team": "PRT",
+          "nome": "Zak",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "256",
+          "team": "SRT",
+          "nome": "Daiard95",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "240",
+          "team": "RRT",
+          "nome": "Cristian",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "248",
+          "team": "SMI",
+          "nome": "SAPHIR",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "228",
+          "team": "PRT",
+          "nome": "JM_focuss_71",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "214",
+          "team": "GTV",
+          "nome": "Mirco",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "252",
+          "team": "SMI",
+          "nome": "SMI_KrA7oS",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "260",
+          "team": "TLM",
+          "nome": "IoSonoBatman_",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "236",
+          "team": "RCE",
+          "nome": "RCE-Man2298",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "210",
+          "team": "GTV",
+          "nome": "Andre86",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "218",
+          "team": "MFC",
+          "nome": "MF_TORETTO",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "224",
+          "team": "PBC",
+          "nome": "Parigi02",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 22:00",
+      "name": "A29",
+      "category": "STAR",
+      "host": "pinpinella95",
+      "live": "OES- pinpinella95",
+      "url": "https://youtube.com/@officialorionesports",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "31",
+          "team": "MFC",
+          "nome": "VRT Flexciccio",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "14",
+          "team": "DCT",
+          "nome": "F.Narga",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "41",
+          "team": "PRT",
+          "nome": "FrRoGaMeR",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "10",
+          "team": "CBR",
+          "nome": "I.Ventura",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "60",
+          "team": "RMT",
+          "nome": "RMT-Paperoski_#4",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "35",
+          "team": "PBC",
+          "nome": "G. Scardin",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "55",
+          "team": "RCE",
+          "nome": "The iceman00",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "76",
+          "team": "TLM",
+          "nome": "Buitre83gt",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "1",
+          "team": "ARC",
+          "nome": "G. Belletti",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "22",
+          "team": "GTID",
+          "nome": "GTID_Mr PoP_Jr",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "72",
+          "team": "SMI",
+          "nome": "SMI_V3sP4",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "66",
+          "team": "RSR",
+          "nome": "SeaWolf",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "51",
+          "team": "PRT",
+          "nome": "ValMar",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 22:00",
+      "name": "A30",
+      "category": "ELITE",
+      "host": "Albixximo",
+      "live": "PRT- Albixximo",
+      "url": "http://www.youtube.com/@AlbixximoLive",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "101",
+          "team": "CBR",
+          "nome": "CBR_Samu12",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "91",
+          "team": "ARC",
+          "nome": "TRT-Lupo_Sauro-7",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "149",
+          "team": "RMT",
+          "nome": "RITIRATO POSTO LIBERO",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "137",
+          "team": "PRT",
+          "nome": "Luis_Mel",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "123",
+          "team": "GTID",
+          "nome": "M.PIRRELLO",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "161",
+          "team": "SMI",
+          "nome": "R1-2007 (1966)",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "118",
+          "team": "GTID",
+          "nome": "GTID_Cornazzai73",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "128",
+          "team": "MFC",
+          "nome": "Vigio899",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "165",
+          "team": "SMI",
+          "nome": "SMI_Syd",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "154",
+          "team": "RRT",
+          "nome": "GIO",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "112",
+          "team": "EVO",
+          "nome": "EVO_pericoloso",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "143",
+          "team": "RCE",
+          "nome": "Biso_44",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "95",
+          "team": "BCSC",
+          "nome": "Cacino95",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 21:00",
+      "name": "A31",
+      "category": "PRO GOLD",
+      "host": "MF_maxlaqualunque",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@mfcorse-46",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "261",
+          "team": "TLM",
+          "nome": "Thanos_Manny",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "237",
+          "team": "RMT",
+          "nome": "RMT ste",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "212",
+          "team": "GTV",
+          "nome": "Brook24",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "225",
+          "team": "PBC",
+          "nome": "S.Lavigna",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "241",
+          "team": "RRT",
+          "nome": "Pazzatu",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "233",
+          "team": "RCE",
+          "nome": "Herix87",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "217",
+          "team": "MFC",
+          "nome": "MF_Marekiaro",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "257",
+          "team": "SRT",
+          "nome": "Lok",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "221",
+          "team": "MMS",
+          "nome": "MMS_Peppezip",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "245",
+          "team": "SCGT",
+          "nome": "ENZO_72V",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "253",
+          "team": "SMI",
+          "nome": "SMI_Shadakar71",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "249",
+          "team": "SMI",
+          "nome": "SMI Kami0067",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "229",
+          "team": "PRT",
+          "nome": "Masta",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 21:00",
+      "name": "A32",
+      "category": "PRO AMA",
+      "host": "Tiskitoski",
+      "live": "SMI- Tiskitoski",
+      "url": "https://twitch.tv/shoganai_motorsportitalia",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "430",
+          "team": "SMI",
+          "nome": "SMI_NuvolaRossa",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "388",
+          "team": "GTRC",
+          "nome": "DRT_CALIGOLA",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "364",
+          "team": "ARC",
+          "nome": "TRT-Claudione83",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "418",
+          "team": "RMT",
+          "nome": "RMT_Morphix-_-",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "400",
+          "team": "OES",
+          "nome": "_st257",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "376",
+          "team": "DCT",
+          "nome": "Kevin-giusepp",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "424",
+          "team": "SCGT",
+          "nome": "Sukku-29",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "406",
+          "team": "PRT",
+          "nome": "Luni55",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "394",
+          "team": "GTV",
+          "nome": "Scrocchio98",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "412",
+          "team": "PRT",
+          "nome": "verdi76",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "382",
+          "team": "GTID",
+          "nome": "GiamP_29",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "370",
+          "team": "CBR",
+          "nome": "K",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "436",
+          "team": "SRT",
+          "nome": "SRT_Rinthedream",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 21:00",
+      "name": "A33",
+      "category": "AMA",
+      "host": "AndreaJonniFly",
+      "live": "RRT- AndreaJonniFly",
+      "url": "https://www.twitch.tv/gamesmotortv",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "462",
+          "team": "EVO",
+          "nome": "TER_K3R0",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "513",
+          "team": "SMI",
+          "nome": "Smi_Cremix14",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "475",
+          "team": "MMS",
+          "nome": "Bolker",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "498",
+          "team": "RRT",
+          "nome": "Bambasten 90",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "457",
+          "team": "BCSC",
+          "nome": "BCSC_L_uboldese",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "508",
+          "team": "SCGT",
+          "nome": "Maciaddu",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "473",
+          "team": "GTV",
+          "nome": "Drivergt1985",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "486",
+          "team": "PRT",
+          "nome": "theblakcorsair1",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "527",
+          "team": "TLM",
+          "nome": "Gheige",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "453",
+          "team": "ARC",
+          "nome": "TRT-Arbr82",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "502",
+          "team": "RRT",
+          "nome": "Fla60",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "464",
+          "team": "FFM",
+          "nome": "FFM_FilippoFm89",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "492",
+          "team": "RMT",
+          "nome": "RMT-Alzoal_7.6",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:00",
+      "name": "A34",
+      "category": "STAR",
+      "host": "MF_GioBar73",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@mfcorse-46",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "58",
+          "team": "RMT",
+          "nome": "RMT FIERA 69",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "38",
+          "team": "PBC",
+          "nome": "PBC_Giulio",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "27",
+          "team": "GTV",
+          "nome": "Bowie knife99",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "6",
+          "team": "BCSC",
+          "nome": "Pardus",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "69",
+          "team": "SMI",
+          "nome": "SMI_Massi_TopGun",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "65",
+          "team": "RSR",
+          "nome": "RsR_Shura",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "54",
+          "team": "RCE",
+          "nome": "RCE_Pinkuino97",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "15",
+          "team": "DCT",
+          "nome": "Kanu",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "34",
+          "team": "PBC",
+          "nome": "G.Fanara",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "74",
+          "team": "SMI",
+          "nome": "SMI-Lellobello",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "47",
+          "team": "PRT",
+          "nome": "PRT_Leox86",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "42",
+          "team": "PRT",
+          "nome": "lee_boon",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "19",
+          "team": "EVO",
+          "nome": "TER_Antonio78x",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:00",
+      "name": "A35",
+      "category": "ELITE",
+      "host": "lupo_verde_3",
+      "live": "SMI- lupo_verde_3",
+      "url": "https://twitch.tv/shoganai_motorsportitalia",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "139",
+          "team": "PRT",
+          "nome": "Sandro 71",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "105",
+          "team": "CBR",
+          "nome": "Ninonitros1",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "156",
+          "team": "RSR",
+          "nome": "M.Mastantuono",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "117",
+          "team": "GTID",
+          "nome": "G.Altin",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "134",
+          "team": "PRT",
+          "nome": "Ermy",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "94",
+          "team": "BCSC",
+          "nome": "BAD_Ken Miles",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "122",
+          "team": "GTID",
+          "nome": "GTIDsacco72",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "146",
+          "team": "RCE",
+          "nome": "RCE_Hipp086",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "99",
+          "team": "CBR",
+          "nome": "CBR_Giuliano.Vi",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "150",
+          "team": "RMT",
+          "nome": "JOKERVR46",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "162",
+          "team": "SMI",
+          "nome": "SMI_#Gianni",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "127",
+          "team": "MFC",
+          "nome": "G.Mantineo",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "110",
+          "team": "DCT",
+          "nome": "PeppeSR",
+          "auto": ""
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:00",
+      "name": "A36",
+      "category": "PRO SILVER",
+      "host": "ORT_iaakk1983",
+      "live": "RRT - ORT_iaakk1983",
+      "url": "https://www.twitch.tv/gamesmotortv",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "324",
+          "team": "RRT",
+          "nome": "ScarsFess",
+          "auto": ""
+        },
+        {
+          "pos": 2,
+          "matricola": "279",
+          "team": "CBR",
+          "nome": "Simoneval8",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "334",
+          "team": "SMI",
+          "nome": "SMI_k67AVE",
+          "auto": ""
+        },
+        {
+          "pos": 4,
+          "matricola": "290",
+          "team": "FMC",
+          "nome": "Agif89",
+          "auto": ""
+        },
+        {
+          "pos": 5,
+          "matricola": "317",
+          "team": "RMT",
+          "nome": "RITIRATO POSTO LIBERO",
+          "auto": ""
+        },
+        {
+          "pos": 6,
+          "matricola": "286",
+          "team": "DCT",
+          "nome": "Shider-02",
+          "auto": ""
+        },
+        {
+          "pos": 7,
+          "matricola": "309",
+          "team": "PRT",
+          "nome": "M_ApeX__",
+          "auto": ""
+        },
+        {
+          "pos": 8,
+          "matricola": "320",
+          "team": "RMT",
+          "nome": "RMT-CAMI",
+          "auto": ""
+        },
+        {
+          "pos": 9,
+          "matricola": "282",
+          "team": "DCT",
+          "nome": "CiccioSta76",
+          "auto": ""
+        },
+        {
+          "pos": 10,
+          "matricola": "307",
+          "team": "PBC",
+          "nome": "RRT SMEZZ-SIZZ",
+          "auto": ""
+        },
+        {
+          "pos": 11,
+          "matricola": "313",
+          "team": "PRT",
+          "nome": "Rekkia-Speed",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "297",
+          "team": "GTV",
+          "nome": "Sun|)own",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "304",
+          "team": "PBC",
+          "nome": "PBC_Pegaso",
+          "auto": ""
+        }
+      ]
+    }
+  ],
+  "pilots": [
+    {
+      "prog": 1,
+      "team": "ARC",
+      "nome": "G. Belletti",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "ARC",
+      "nome": "KSI-JonMazzo",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "ARC",
+      "nome": "KSI-VintageAR",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "ARC",
+      "nome": "TRT-AlexoPazz",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "ARC",
+      "nome": "TRT-Lupo_Sauro-7",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "ARC",
+      "nome": "TRT-Tommizio",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "ARC",
+      "nome": "TRT-Turino",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "ARC",
+      "nome": "KSI-Bambolone78",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 9,
+      "team": "ARC",
+      "nome": "KSI-firefoxgold",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 10,
+      "team": "ARC",
+      "nome": "KSI-Texport",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 11,
+      "team": "ARC",
+      "nome": "TRT-Awesalvo",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 12,
+      "team": "ARC",
+      "nome": "KSI-AreS_GlaDiuS",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 13,
+      "team": "ARC",
+      "nome": "KSI-TheHammer44",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 14,
+      "team": "ARC",
+      "nome": "SalvinoKing",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 15,
+      "team": "ARC",
+      "nome": "TRT-Bingo",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 16,
+      "team": "ARC",
+      "nome": "TRT-Claudione83",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 17,
+      "team": "ARC",
+      "nome": "ARGAMERR",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 18,
+      "team": "ARC",
+      "nome": "giggggetto87",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 19,
+      "team": "ARC",
+      "nome": "KSI-MarinaioPazz",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 20,
+      "team": "ARC",
+      "nome": "KSI-VecchioBimbo",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 21,
+      "team": "ARC",
+      "nome": "Razor",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 22,
+      "team": "ARC",
+      "nome": "TRT-Arbr82",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 23,
+      "team": "ARC",
+      "nome": "TRT-Ultras68",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "BCSC",
+      "nome": "BAD_brucem84",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "BCSC",
+      "nome": "BCSC_IL MALEDETTO",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "BCSC",
+      "nome": "Pardus",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "BCSC",
+      "nome": "BAD_Ken Miles",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "BCSC",
+      "nome": "Cacino95",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "BCSC",
+      "nome": "CSC_Cicciodi94",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "BCSC",
+      "nome": "ITA_SOLID_SNAKE",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "BCSC",
+      "nome": "BAD_lupogrigio",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 9,
+      "team": "BCSC",
+      "nome": "BCSC_Grabuxero",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 10,
+      "team": "BCSC",
+      "nome": "TER_Axel79",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 11,
+      "team": "BCSC",
+      "nome": "BCSC_L_uboldese",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "CBR",
+      "nome": "CBR_GABRIEL",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "CBR",
+      "nome": "CBR_Ircaliffo91",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "CBR",
+      "nome": "F.Tommasini",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "CBR",
+      "nome": "I.Ventura",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "CBR",
+      "nome": "Al_Rizlas",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "CBR",
+      "nome": "CBR_Giuliano.Vi",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "CBR",
+      "nome": "CBR_JOHNNY",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "CBR",
+      "nome": "CBR_Samu12",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "CBR",
+      "nome": "DavideRui",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "CBR",
+      "nome": "E. Caizzone",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 11,
+      "team": "CBR",
+      "nome": "M. Busato",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 12,
+      "team": "CBR",
+      "nome": "Ninonitros1",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 13,
+      "team": "CBR",
+      "nome": "U.Virivè",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 14,
+      "team": "CBR",
+      "nome": "AgaresErkekjette",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 15,
+      "team": "CBR",
+      "nome": "CBR_BAFFOKILLER_",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 16,
+      "team": "CBR",
+      "nome": "CBR_il_Coach",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 17,
+      "team": "CBR",
+      "nome": "CBR_Paolucci",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 18,
+      "team": "CBR",
+      "nome": "CBR_Simello",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 19,
+      "team": "CBR",
+      "nome": "jr88",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 20,
+      "team": "CBR",
+      "nome": "Natalino Vezzani",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 21,
+      "team": "CBR",
+      "nome": "P.Vicari",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 22,
+      "team": "CBR",
+      "nome": "CBR_Mava",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 23,
+      "team": "CBR",
+      "nome": "CBR_Renegade21",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 24,
+      "team": "CBR",
+      "nome": "Clesh555",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 25,
+      "team": "CBR",
+      "nome": "M.Gatti",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 26,
+      "team": "CBR",
+      "nome": "Simoneval8",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 27,
+      "team": "CBR",
+      "nome": "Sintoh87",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 28,
+      "team": "CBR",
+      "nome": "CBR_Diavolo983",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 29,
+      "team": "CBR",
+      "nome": "CBR_FELIX",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 30,
+      "team": "CBR",
+      "nome": "CBR_gattipaolo86",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 31,
+      "team": "CBR",
+      "nome": "CBR_MBBerto",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 32,
+      "team": "CBR",
+      "nome": "CBR_Sarade",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 33,
+      "team": "CBR",
+      "nome": "K",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 34,
+      "team": "CBR",
+      "nome": "Nobita",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 35,
+      "team": "CBR",
+      "nome": "Alex Lilla",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "DCT",
+      "nome": "DCT-Ziototoooo",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "DCT",
+      "nome": "DRT-XaserTek",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "DCT",
+      "nome": "F.Narga",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "DCT",
+      "nome": "Kanu",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "DCT",
+      "nome": "DRT-Nanix84",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 6,
+      "team": "DCT",
+      "nome": "Sam-750",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 7,
+      "team": "DCT",
+      "nome": "DCT_Fiume11",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "DCT",
+      "nome": "DCT_Radik",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "DCT",
+      "nome": "Er meyo",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "DCT",
+      "nome": "PeppeSR",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 11,
+      "team": "DCT",
+      "nome": "animasarda81",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "DCT",
+      "nome": "Cpma",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "DCT",
+      "nome": "DCT_mercenario94",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 14,
+      "team": "DCT",
+      "nome": "Gjca-76",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 15,
+      "team": "DCT",
+      "nome": "MattiaLingua",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 16,
+      "team": "DCT",
+      "nome": "TER-CAR-MELO74",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 17,
+      "team": "DCT",
+      "nome": "aquila d'oro",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 18,
+      "team": "DCT",
+      "nome": "CiccioSta76",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 19,
+      "team": "DCT",
+      "nome": "GTR Gius73",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 20,
+      "team": "DCT",
+      "nome": "Libix888",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 21,
+      "team": "DCT",
+      "nome": "Matteo.R 00",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 22,
+      "team": "DCT",
+      "nome": "Shider-02",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 23,
+      "team": "DCT",
+      "nome": "Shudew",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 24,
+      "team": "DCT",
+      "nome": "Cipo",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 25,
+      "team": "DCT",
+      "nome": "erikspadino77",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 26,
+      "team": "DCT",
+      "nome": "Iuppino",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 27,
+      "team": "DCT",
+      "nome": "Kevin-giusepp",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 28,
+      "team": "DCT",
+      "nome": "DCT_Pescepoldo",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 29,
+      "team": "DCT",
+      "nome": "DRT-Marras83",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 30,
+      "team": "DCT",
+      "nome": "Praetorian_001",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 31,
+      "team": "DCT",
+      "nome": "TER_R.Leta",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "EVO",
+      "nome": "EVO_il_Cuuc",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "EVO",
+      "nome": "EVO_lama85",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "EVO",
+      "nome": "TER_Antonio78x",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "EVO",
+      "nome": "EVO_Bricca",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "EVO",
+      "nome": "EVO_pericoloso",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "EVO",
+      "nome": "EVO_Piccuz",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "EVO",
+      "nome": "TITT__ONE",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "EVO",
+      "nome": "Wilpy235",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "EVO",
+      "nome": "EVO_AleTDx",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 10,
+      "team": "EVO",
+      "nome": "EVO_Manu81",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 11,
+      "team": "EVO",
+      "nome": "EVO_Piraz",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "EVO",
+      "nome": "Ric_hero1971",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "EVO",
+      "nome": "Ter_effe355",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 14,
+      "team": "EVO",
+      "nome": "EVO_Sbeucchia70",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 15,
+      "team": "EVO",
+      "nome": "EVO_Willy#43",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 16,
+      "team": "EVO",
+      "nome": "Fanatec73",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 17,
+      "team": "EVO",
+      "nome": "TER_minetor",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 18,
+      "team": "EVO",
+      "nome": "TER_Brazorf",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 19,
+      "team": "EVO",
+      "nome": "TER_K3R0",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "FFM",
+      "nome": "FFM_Nic_Cannone",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "FFM",
+      "nome": "FFM_Beppolo",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 3,
+      "team": "FFM",
+      "nome": "FFM_M a z e sBin",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 4,
+      "team": "FFM",
+      "nome": "S3mb4",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 5,
+      "team": "FFM",
+      "nome": "R.Napoletano",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 6,
+      "team": "FFM",
+      "nome": "FFM_FilippoFm89",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 7,
+      "team": "FFM",
+      "nome": "Imperatore128",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "FMC",
+      "nome": "Fmc_pipino1983",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 2,
+      "team": "FMC",
+      "nome": "Uburoi",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 3,
+      "team": "FMC",
+      "nome": "Agif89",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 4,
+      "team": "FMC",
+      "nome": "Fmc_blackbeard8007",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 5,
+      "team": "FMC",
+      "nome": "Fmc_Fulminato199",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 6,
+      "team": "FMC",
+      "nome": "Fmc_Marcosanta",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 7,
+      "team": "FMC",
+      "nome": "FMC_Samu4Seven",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 8,
+      "team": "FMC",
+      "nome": "Fratta_motor_clb",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "GTID",
+      "nome": "A.D’alba",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "GTID",
+      "nome": "GTID_Mr PoP_Jr",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "GTID",
+      "nome": "G.Altin",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 4,
+      "team": "GTID",
+      "nome": "GTID_Cornazzai73",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "GTID",
+      "nome": "GTID_Gsadventure",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "GTID",
+      "nome": "GTID_Tia10",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "GTID",
+      "nome": "GTID_vaiper—ste",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "GTID",
+      "nome": "GTIDsacco72",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "GTID",
+      "nome": "M.PIRRELLO",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "GTID",
+      "nome": "GTID_Ale #77",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 11,
+      "team": "GTID",
+      "nome": "GTID_N3tZ666",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "GTID",
+      "nome": "GTID_pienobonus",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "GTID",
+      "nome": "F.Amerio",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 14,
+      "team": "GTID",
+      "nome": "GTID_Salma81",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 15,
+      "team": "GTID",
+      "nome": "GTID-Vinc3Clerc",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 16,
+      "team": "GTID",
+      "nome": "Davide 1972 Ita",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 17,
+      "team": "GTID",
+      "nome": "GiamP_29",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 18,
+      "team": "GTID",
+      "nome": "GTID_Berti62",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 19,
+      "team": "GTID",
+      "nome": "GTID_D3LZ719",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 20,
+      "team": "GTID",
+      "nome": "GTID-D3sTr0X",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 21,
+      "team": "GTID",
+      "nome": "Ice_Fire",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 22,
+      "team": "GTID",
+      "nome": "Xelavr6",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 1,
+      "team": "GTRC",
+      "nome": "GTRC_Emilios98",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "GTRC",
+      "nome": "GTRC_FrenkMik93",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "GTRC",
+      "nome": "GTRC- TROTOTEK",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "GTRC",
+      "nome": "GTRC-MIKY",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "GTRC",
+      "nome": "GTRC-AMALA-ETNA",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "GTRC",
+      "nome": "GTRC-Checco",
+      "categoria": "PROSILVER",
+      "lobby_group": ""
+    },
+    {
+      "prog": 7,
+      "team": "GTRC",
+      "nome": "GTRC-MirkoZaffa",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 8,
+      "team": "GTRC",
+      "nome": "twinggy",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 9,
+      "team": "GTRC",
+      "nome": "DRT_CALIGOLA",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 10,
+      "team": "GTRC",
+      "nome": "GTRC_AleRasato",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 11,
+      "team": "GTRC",
+      "nome": "GTRC-Kelone74",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 12,
+      "team": "GTRC",
+      "nome": "GTRC-Squinzi76",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 13,
+      "team": "GTRC",
+      "nome": "TodayTek",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 14,
+      "team": "GTRC",
+      "nome": "GTRC_Ganciocielo",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "GTV",
+      "nome": "Bowie knife99",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "GTV",
+      "nome": "InuyashaGodYokai",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "GTV",
+      "nome": "Maverick",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "GTV",
+      "nome": "Nicco.rs",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "GTV",
+      "nome": "Giusdandri",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "GTV",
+      "nome": "Iceman",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "GTV",
+      "nome": "Andre86",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 8,
+      "team": "GTV",
+      "nome": "Barda88",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 9,
+      "team": "GTV",
+      "nome": "Brook24",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 10,
+      "team": "GTV",
+      "nome": "GTV-legendafluo6",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 11,
+      "team": "GTV",
+      "nome": "Mirco",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "GTV",
+      "nome": "Vale34",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "GTV",
+      "nome": "Sun|)own",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 14,
+      "team": "GTV",
+      "nome": "Zabo",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 15,
+      "team": "GTV",
+      "nome": "Sauzer",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 16,
+      "team": "GTV",
+      "nome": "Scrocchio98",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 17,
+      "team": "GTV",
+      "nome": "Drivergt1985",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 18,
+      "team": "GTV",
+      "nome": "Frasalvo96",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 19,
+      "team": "GTV",
+      "nome": "Goose",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 20,
+      "team": "GTV",
+      "nome": "GTSCode",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "MFC",
+      "nome": "VRT Flexciccio",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "MFC",
+      "nome": "castoshi",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 3,
+      "team": "MFC",
+      "nome": "G.Mantineo",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 4,
+      "team": "MFC",
+      "nome": "Vigio899",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "MFC",
+      "nome": "GioBar73 @ PRT",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "MFC",
+      "nome": "MF_Marekiaro",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 7,
+      "team": "MFC",
+      "nome": "MF_TORETTO",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 8,
+      "team": "MFC",
+      "nome": "MF_Walter784",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 9,
+      "team": "MFC",
+      "nome": "MF_Maxlaqualunque",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 1,
+      "team": "MMS",
+      "nome": "A.Reitano",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "MMS",
+      "nome": "mms_babide46",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "MMS",
+      "nome": "Angelo_6896",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 4,
+      "team": "MMS",
+      "nome": "Jakarta69",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "MMS",
+      "nome": "Faraone65",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "MMS",
+      "nome": "MMS_Peppezip",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 7,
+      "team": "MMS",
+      "nome": "Suka",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 8,
+      "team": "MMS",
+      "nome": "DRT-ARBAXX76",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 9,
+      "team": "MMS",
+      "nome": "MMS_Gattonero70",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 10,
+      "team": "MMS",
+      "nome": "Sard Lander",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 11,
+      "team": "MMS",
+      "nome": "JackVenom",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 12,
+      "team": "MMS",
+      "nome": "Mms_dpgurney78",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 13,
+      "team": "MMS",
+      "nome": "MMS-DOCTORWEB",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 14,
+      "team": "MMS",
+      "nome": "Saetta Assidua",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 15,
+      "team": "MMS",
+      "nome": "A.Papotto",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 16,
+      "team": "MMS",
+      "nome": "Bolker",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 17,
+      "team": "MMS",
+      "nome": "Travis199ita",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 18,
+      "team": "OES",
+      "nome": "Alex",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 19,
+      "team": "OES",
+      "nome": "MT-Boss95",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 20,
+      "team": "OES",
+      "nome": "Pinpinella95",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 21,
+      "team": "OES",
+      "nome": "_st257",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 22,
+      "team": "OES",
+      "nome": "SMI_Fabry_colo86",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 23,
+      "team": "OES",
+      "nome": "vicconegt69",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "PBC",
+      "nome": "G.Fanara",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "PBC",
+      "nome": "G. Scardin",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "PBC",
+      "nome": "M. Pennisi",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "PBC",
+      "nome": "manu08FL",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "PBC",
+      "nome": "PBC_Giulio",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 6,
+      "team": "PBC",
+      "nome": "Richie",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 7,
+      "team": "PBC",
+      "nome": "SimoT_18",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 8,
+      "team": "PBC",
+      "nome": "Danny Bonny",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "PBC",
+      "nome": "PBC_Goivas",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "PBC",
+      "nome": "Parigi02",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 11,
+      "team": "PBC",
+      "nome": "S.Lavigna",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "PBC",
+      "nome": "PBC_Pegaso",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 13,
+      "team": "PBC",
+      "nome": "Pete",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 14,
+      "team": "PBC",
+      "nome": "Poluz",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 15,
+      "team": "PBC",
+      "nome": "RRT SMEZZ-SIZZ",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 16,
+      "team": "PBC",
+      "nome": "OmgTommie",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 1,
+      "team": "PRT",
+      "nome": "FrRoGaMeR",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "PRT",
+      "nome": "lee_boon",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "PRT",
+      "nome": "Perdinci",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "PRT",
+      "nome": "Phin",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "PRT",
+      "nome": "Lusu_Hard_98",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 6,
+      "team": "PRT",
+      "nome": "PRT_Danielex84",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 7,
+      "team": "PRT",
+      "nome": "PRT_Leox86",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 8,
+      "team": "PRT",
+      "nome": "PRT_MaxLukex",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 9,
+      "team": "PRT",
+      "nome": "Rareseed92",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 10,
+      "team": "PRT",
+      "nome": "S.Mancabelli",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 11,
+      "team": "PRT",
+      "nome": "ValMar",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 12,
+      "team": "PRT",
+      "nome": "dev_ferio",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 13,
+      "team": "PRT",
+      "nome": "Ermy",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 14,
+      "team": "PRT",
+      "nome": "G.Bozzo",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 15,
+      "team": "PRT",
+      "nome": "H7-25YT",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 16,
+      "team": "PRT",
+      "nome": "Luis_Mel",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 17,
+      "team": "PRT",
+      "nome": "PRT_Fr0sT",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 18,
+      "team": "PRT",
+      "nome": "Sandro 71",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 19,
+      "team": "PRT",
+      "nome": "Sulimanov",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 20,
+      "team": "PRT",
+      "nome": "VeGe",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 21,
+      "team": "PRT",
+      "nome": "Denni",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 22,
+      "team": "PRT",
+      "nome": "Jaiss84",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 23,
+      "team": "PRT",
+      "nome": "JM_focuss_71",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 24,
+      "team": "PRT",
+      "nome": "Masta",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 25,
+      "team": "PRT",
+      "nome": "montlorenzo",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 26,
+      "team": "PRT",
+      "nome": "shark929292",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 27,
+      "team": "PRT",
+      "nome": "Zak",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 28,
+      "team": "PRT",
+      "nome": "blaze",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 29,
+      "team": "PRT",
+      "nome": "M_ApeX__",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 30,
+      "team": "PRT",
+      "nome": "N_Spec2",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 31,
+      "team": "PRT",
+      "nome": "PRT_neapolis100",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 32,
+      "team": "PRT",
+      "nome": "Ptr.bso",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 33,
+      "team": "PRT",
+      "nome": "Rekkia-Speed",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 34,
+      "team": "PRT",
+      "nome": "Snorky-70",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 35,
+      "team": "PRT",
+      "nome": "astrorock285",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 36,
+      "team": "PRT",
+      "nome": "Baba_Voss",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 37,
+      "team": "PRT",
+      "nome": "fedemastro",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 38,
+      "team": "PRT",
+      "nome": "Giannivir64",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 39,
+      "team": "PRT",
+      "nome": "Luni55",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 40,
+      "team": "PRT",
+      "nome": "muffo007",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 41,
+      "team": "PRT",
+      "nome": "PRT-Timmycicc",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 42,
+      "team": "PRT",
+      "nome": "roncoa73",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 43,
+      "team": "PRT",
+      "nome": "tcarlisi",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 44,
+      "team": "PRT",
+      "nome": "The-Knipex",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 45,
+      "team": "PRT",
+      "nome": "verdi76",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 46,
+      "team": "PRT",
+      "nome": "wwp76",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 47,
+      "team": "PRT",
+      "nome": "conradveron59",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 48,
+      "team": "PRT",
+      "nome": "KedoK956",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 49,
+      "team": "PRT",
+      "nome": "Luca R72",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 50,
+      "team": "PRT",
+      "nome": "Margotone",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 51,
+      "team": "PRT",
+      "nome": "S. Di Giovanni",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 52,
+      "team": "PRT",
+      "nome": "simoppr",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 53,
+      "team": "PRT",
+      "nome": "Step87",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 54,
+      "team": "PRT",
+      "nome": "theblakcorsair1",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 55,
+      "team": "PRT",
+      "nome": "Zio_zero7",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "RCE",
+      "nome": "RCE_DarkneSS",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "RCE",
+      "nome": "RCE_Freej",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "RCE",
+      "nome": "RCE_Pinkuino97",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "RCE",
+      "nome": "The iceman00",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "RCE",
+      "nome": "Ayrton16",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "RCE",
+      "nome": "Biso_44",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "RCE",
+      "nome": "Flotta muscoso",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "RCE",
+      "nome": "Rce_ Patrick85",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "RCE",
+      "nome": "RCE_Hipp086",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "RCE",
+      "nome": "RCE_MVedovi59",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 11,
+      "team": "RCE",
+      "nome": "RCE_Seccoide87",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 12,
+      "team": "RCE",
+      "nome": "Herix87",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "RCE",
+      "nome": "RCE_Leobustv",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 14,
+      "team": "RCE",
+      "nome": "RCE_pirati",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 15,
+      "team": "RCE",
+      "nome": "RCE-Man2298",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 16,
+      "team": "RCE",
+      "nome": "RCE_fabryct90",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 17,
+      "team": "RCE",
+      "nome": "RCE_mauris72",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 18,
+      "team": "RCE",
+      "nome": "RCE-warrior",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 19,
+      "team": "RCE",
+      "nome": "RCE_Dingo77",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "RMT",
+      "nome": "L. Silvestri",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "RMT",
+      "nome": "RMT_87_TOMMY",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "RMT",
+      "nome": "RMT-FIERA-69",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "RMT",
+      "nome": "RMT-Paperoski_#4",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "RMT",
+      "nome": "Tlm_Sile",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 6,
+      "team": "RMT",
+      "nome": "#GO1FREE!!!!",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "RMT",
+      "nome": "JOKERVR46",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "RMT",
+      "nome": "RMT_Deadpaul_87",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 9,
+      "team": "RMT",
+      "nome": "RMT_MWalter",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 10,
+      "team": "RMT",
+      "nome": "RMT-Axel K",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 11,
+      "team": "RMT",
+      "nome": "RMT ste",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 12,
+      "team": "RMT",
+      "nome": "RMT_misterful.IT",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 13,
+      "team": "RMT",
+      "nome": "RMT_PINOAWAY",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 14,
+      "team": "RMT",
+      "nome": "RMT-AT83Andrea",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 15,
+      "team": "RMT",
+      "nome": "RMT-Atawolf",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 16,
+      "team": "RMT",
+      "nome": "RMT-CAMI",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 17,
+      "team": "RMT",
+      "nome": "RMT-FABBIO696",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 18,
+      "team": "RMT",
+      "nome": "Tlm_Gamma",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 19,
+      "team": "RMT",
+      "nome": "Fabrifox99",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 20,
+      "team": "RMT",
+      "nome": "LID_Nelloz",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 21,
+      "team": "RMT",
+      "nome": "Micius",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 22,
+      "team": "RMT",
+      "nome": "RMT Mario84",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 23,
+      "team": "RMT",
+      "nome": "RMT_Morphix-_-",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 24,
+      "team": "RMT",
+      "nome": "barso91",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 25,
+      "team": "RMT",
+      "nome": "RMT Moody33",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 26,
+      "team": "RMT",
+      "nome": "RMT-Alzoal_7.6",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 27,
+      "team": "RMT",
+      "nome": "RMT-Ghigno 4",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 28,
+      "team": "RMT",
+      "nome": "RMT-Marck_84",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 29,
+      "team": "RMT",
+      "nome": "RMTSuperSic",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 30,
+      "team": "RMT",
+      "nome": "SCGT-amofede01",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "RRT",
+      "nome": "TER_Barba",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "RRT",
+      "nome": "GIO",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 3,
+      "team": "RRT",
+      "nome": "Cristian",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 4,
+      "team": "RRT",
+      "nome": "Pazzatu",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 5,
+      "team": "RRT",
+      "nome": "RRT_iaakk1983",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "RRT",
+      "nome": "RRT_SNERZZZ",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 7,
+      "team": "RRT",
+      "nome": "ScarsFess",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 8,
+      "team": "RRT",
+      "nome": "ErMau07",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 9,
+      "team": "RRT",
+      "nome": "J-Fly",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 10,
+      "team": "RRT",
+      "nome": "Bambasten 90",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 11,
+      "team": "RRT",
+      "nome": "Fabrix88",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 12,
+      "team": "RRT",
+      "nome": "Fla60",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 13,
+      "team": "RRT",
+      "nome": "Pierpynolo76",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 14,
+      "team": "RRT",
+      "nome": "RRT_Andovè",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 15,
+      "team": "RRT",
+      "nome": "RRT_Muso_2692_gt",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "RSR",
+      "nome": "C.Zuccaro",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "RSR",
+      "nome": "M.Caruso",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "RSR",
+      "nome": "RsR_Shura",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "RSR",
+      "nome": "SeaWolf",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "RSR",
+      "nome": "C.Leclecca",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 6,
+      "team": "RSR",
+      "nome": "M.Mastantuono",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 7,
+      "team": "RSR",
+      "nome": "Mat-bull11",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 8,
+      "team": "RSR",
+      "nome": "RsR_Brucomela53",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 9,
+      "team": "RSR",
+      "nome": "Stewar7tano",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 10,
+      "team": "RSR",
+      "nome": "K.Zele",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "SCGT",
+      "nome": "Gigikom75",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 2,
+      "team": "SCGT",
+      "nome": "ENZO72V",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 3,
+      "team": "SCGT",
+      "nome": "SCGT_ruggio82",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 4,
+      "team": "SCGT",
+      "nome": "Mattia13491",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 5,
+      "team": "SCGT",
+      "nome": "SCGT_Salvatore",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 6,
+      "team": "SCGT",
+      "nome": "Basilio1969",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 7,
+      "team": "SCGT",
+      "nome": "Djvituc",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 8,
+      "team": "SCGT",
+      "nome": "simothesniper23",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 9,
+      "team": "SCGT",
+      "nome": "Sukku-29",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 10,
+      "team": "SCGT",
+      "nome": "Domydero",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 11,
+      "team": "SCGT",
+      "nome": "gas_95_",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 12,
+      "team": "SCGT",
+      "nome": "Maciaddu",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 13,
+      "team": "SCGT",
+      "nome": "mcogons83",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 14,
+      "team": "SCGT",
+      "nome": "Sim7one",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 15,
+      "team": "SCGT",
+      "nome": "skils137",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "SMI",
+      "nome": "Drugo",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "SMI",
+      "nome": "FFM_Prinz17",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "SMI",
+      "nome": "SMI_Mustangblack",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "SMI",
+      "nome": "SMI_Massi_TopGun",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 5,
+      "team": "SMI",
+      "nome": "SMI_Minchippo",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 6,
+      "team": "SMI",
+      "nome": "SMI_V3sP4",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 7,
+      "team": "SMI",
+      "nome": "SMI_vicktor21",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 8,
+      "team": "SMI",
+      "nome": "SMI-Lellobello",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 9,
+      "team": "SMI",
+      "nome": "SMI-Marcus_Pilot",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 10,
+      "team": "SMI",
+      "nome": "Henryk",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 11,
+      "team": "SMI",
+      "nome": "Lo Iacono D.",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 12,
+      "team": "SMI",
+      "nome": "R1-2007 (1966)",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 13,
+      "team": "SMI",
+      "nome": "SMI_#Gianni",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 14,
+      "team": "SMI",
+      "nome": "SMI_GREEN21",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 15,
+      "team": "SMI",
+      "nome": "SMI_Maverick88",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 16,
+      "team": "SMI",
+      "nome": "SMI_Syd",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 17,
+      "team": "SMI",
+      "nome": "Leo-80",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 18,
+      "team": "SMI",
+      "nome": "SAPHIR",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 19,
+      "team": "SMI",
+      "nome": "SMI Kami0067",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 20,
+      "team": "SMI",
+      "nome": "SMI_DENI_BURIDA",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 21,
+      "team": "SMI",
+      "nome": "SMI_Doc1975tor",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 22,
+      "team": "SMI",
+      "nome": "SMI_KrA7oS",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 23,
+      "team": "SMI",
+      "nome": "SMI_Shadakar71",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 24,
+      "team": "SMI",
+      "nome": "vanveremberg-87",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 25,
+      "team": "SMI",
+      "nome": "Ciccio_Vona-1994",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 26,
+      "team": "SMI",
+      "nome": "FMC_Roax1984",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 27,
+      "team": "SMI",
+      "nome": "Marco pugnaghi67",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 28,
+      "team": "SMI",
+      "nome": "SMI Mimmogr",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 29,
+      "team": "SMI",
+      "nome": "SMI Niki Lauda",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 30,
+      "team": "SMI",
+      "nome": "SMI_DeliciousBBQ",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 31,
+      "team": "SMI",
+      "nome": "SMI_Jackengi",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 32,
+      "team": "SMI",
+      "nome": "SMI_k67AVE",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 33,
+      "team": "SMI",
+      "nome": "SMI_Maureddu77",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 34,
+      "team": "SMI",
+      "nome": "SMI_Maximuccio73",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 35,
+      "team": "SMI",
+      "nome": "SMI_tiskitoski",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 36,
+      "team": "SMI",
+      "nome": "SMI_Stefano",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 37,
+      "team": "SMI",
+      "nome": "Flippo-Trippo",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 38,
+      "team": "SMI",
+      "nome": "HULK1959",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 39,
+      "team": "SMI",
+      "nome": "SMI_Bibieffe",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 40,
+      "team": "SMI",
+      "nome": "SMI_Desmo77",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 41,
+      "team": "SMI",
+      "nome": "SMI_Gas89",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 42,
+      "team": "SMI",
+      "nome": "SMI_NuvolaRossa",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 43,
+      "team": "SMI",
+      "nome": "snoop",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 44,
+      "team": "SMI",
+      "nome": "zarsantez",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 45,
+      "team": "SMI",
+      "nome": "SMI_Cristian16",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 46,
+      "team": "SMI",
+      "nome": "SMI-Slimer",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 47,
+      "team": "SMI",
+      "nome": "Smi_Cremix14",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 48,
+      "team": "SMI",
+      "nome": "SMI_dragulillo",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 49,
+      "team": "SMI",
+      "nome": "SMI_Kaiser",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 50,
+      "team": "SMI",
+      "nome": "SMI_Missidenis54",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 51,
+      "team": "SMI",
+      "nome": "SMI_RomeLu",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 52,
+      "team": "SMI",
+      "nome": "SMI_Thomas1927",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 53,
+      "team": "SMI",
+      "nome": "SMI-Mandrake",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "SRT",
+      "nome": "V. Uva",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 2,
+      "team": "SRT",
+      "nome": "M.Genovese",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 3,
+      "team": "SRT",
+      "nome": "Daiard95",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 4,
+      "team": "SRT",
+      "nome": "Lok",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 5,
+      "team": "SRT",
+      "nome": "Rikosmo94",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "SRT",
+      "nome": "Dome98",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 7,
+      "team": "SRT",
+      "nome": "SRT_Rinthedream",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 8,
+      "team": "SRT",
+      "nome": "Il Giuda22",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 9,
+      "team": "SRT",
+      "nome": "landre",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 10,
+      "team": "SRT",
+      "nome": "SRT KAIDO",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 11,
+      "team": "SRT",
+      "nome": "Zagaracing",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 12,
+      "team": "SRT",
+      "nome": "habanero",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 13,
+      "team": "SRT",
+      "nome": "kiank87",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 14,
+      "team": "SRT",
+      "nome": "michele",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 15,
+      "team": "SRT",
+      "nome": "TSR_LK№³",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 16,
+      "team": "SRT",
+      "nome": "Yanuzzo_44",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 1,
+      "team": "TLM",
+      "nome": "Buitre83gt",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 2,
+      "team": "TLM",
+      "nome": "RupeTheKing",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 3,
+      "team": "TLM",
+      "nome": "TonyRoto",
+      "categoria": "Star",
+      "lobby_group": "1"
+    },
+    {
+      "prog": 4,
+      "team": "TLM",
+      "nome": "Mark126p",
+      "categoria": "ELITE",
+      "lobby_group": "2"
+    },
+    {
+      "prog": 5,
+      "team": "TLM",
+      "nome": "Febshy",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 6,
+      "team": "TLM",
+      "nome": "IoSonoBatman_",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 7,
+      "team": "TLM",
+      "nome": "Thanos_Manny",
+      "categoria": "Pro Gold",
+      "lobby_group": "3"
+    },
+    {
+      "prog": 8,
+      "team": "TLM",
+      "nome": "AngeloIaia",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 9,
+      "team": "TLM",
+      "nome": "Blokkobubbles",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 10,
+      "team": "TLM",
+      "nome": "G.C.C.8",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 11,
+      "team": "TLM",
+      "nome": "Hellios_778",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 12,
+      "team": "TLM",
+      "nome": "Jack187",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 13,
+      "team": "TLM",
+      "nome": "Kratos88",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 14,
+      "team": "TLM",
+      "nome": "Michael_Fox",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 15,
+      "team": "TLM",
+      "nome": "Mikerine92",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 16,
+      "team": "TLM",
+      "nome": "MikiRua",
+      "categoria": "PROSILVER",
+      "lobby_group": "4"
+    },
+    {
+      "prog": 17,
+      "team": "TLM",
+      "nome": "Jonny_Rotten",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 18,
+      "team": "TLM",
+      "nome": "Rikas78",
+      "categoria": "Pro Ama",
+      "lobby_group": "5"
+    },
+    {
+      "prog": 19,
+      "team": "TLM",
+      "nome": "BabyKiller",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 20,
+      "team": "TLM",
+      "nome": "Gheige",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 21,
+      "team": "TLM",
+      "nome": "mancinelli2002",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    },
+    {
+      "prog": 22,
+      "team": "TLM",
+      "nome": "Talsigiano",
+      "categoria": "AMA",
+      "lobby_group": "6"
+    }
+  ]
+}

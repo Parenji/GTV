@@ -46,8 +46,11 @@
                 <a href="#regolamento" class="menu-link">
                     Regolamento
                 </a>
-                <a href="#documenti" class="menu-link">
-                    Documenti
+                <a href="#calendario" class="menu-link">
+                    Calendario
+                </a>
+                <a href="#lobby" class="menu-link">
+                    Lobby
                 </a>
                 <a href="index.html" class="menu-link">
                     <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
@@ -62,7 +65,7 @@
 
             </a>
             <a href="index.html">
-                                <span class="sottotitolo"> La casa dei  </span>
+                                <span class="sottotitolo">LEGA UNION · La casa dei  </span>
                 <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
             </a>
         </div>
@@ -131,11 +134,16 @@
         </section>
 
         <section id="piloti" class="section">
+                                <div class="pdf-button-container">
+                        <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
+                            PDF con tutti i team e piloti
+                        </button>
+                    </div>
 
             <div class="calendar-home">
                 <div class="calendar-header">
-                    <div class="calendar-title">Piloti Iscritti</div>
-                    <div class="calendar-subtitle">Squadra partecipante alla LEGA UNION E-SPORT</div>
+                    <div class="calendar-title">GTV Iscritti</div>
+                    <div class="calendar-subtitle">LEGA UNION  · ROUND 2</div>
                 </div>
                 <div class="calendar-grid">
                     <div class="table-container">
@@ -173,22 +181,53 @@
 
         </section>
 
-        <section id="documenti" class="section">
+        <section id="calendario" class="section">
 
             <div class="calendar-home">
                 <div class="calendar-header">
-                    <div class="calendar-title">Documenti</div>
-                    <div class="calendar-subtitle">Lista piloti e calendario</div>
+                    <div class="calendar-title">Calendario</div>
+                    <div class="calendar-subtitle">Date degli appuntamenti del campionato</div>
                 </div>
                 <div class="calendar-grid">
                     <div class="calendar-content">
                         <div class="pdf-button-container">
-                            <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
-                                Lista Piloti
-                            </button>
                             <button class="pdf-button" onclick="window.open('pdf/union/Calendario Union 2026.pdf', '_blank')">
                                 Calendario
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="lobby" class="section">
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Piloti GTV · Lobby</div>
+                    <div class="calendar-subtitle">Specchietto riassuntivo · Gara 1</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="union-specchietto-body" class="union-specchietto-body loading-message">
+                            <div class="loading-spinner"></div>
+                            Caricamento specchietto in corso...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-home">
+                <div class="calendar-header">
+                    <div class="calendar-title">Tutte le Lobby</div>
+                    <div class="calendar-subtitle">Schieramenti completi per giorno</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div id="union-lobby-body" class="union-lobby-body loading-message">
+                            <div class="loading-spinner"></div>
+                            Caricamento lobby in corso...
                         </div>
                     </div>
                 </div>
