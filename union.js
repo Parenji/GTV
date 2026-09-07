@@ -341,7 +341,7 @@ function renderUnionSpecchietto(container, data) {
   var html =
     '<div class="union-specchietto">' +
     '<div class="union-specch-intro">' +
-    "Clicca sulla <em>Lobby</em> per vedere lo schieramento completo." +
+    "Clicca sulla <em>Lobby</em> per vedere lo schieramento completo, gli host e la live." +
     "</div>" +
     '<div class="union-count">' + rows.length + " piloti GTV iscritti</div>" +
     '<div class="union-table-scroll">' +
@@ -469,11 +469,11 @@ function unionLobbyCardHtml(lb) {
     "</button>" +
     '<div class="union-acc-body">' +
     '<div class="lobby-info-section">' +
-    '<div class="lobby-host"><div class="lobby-host-icon">👑</div>' +
+    '<div class="lobby-host"><div class="lobby-host-icon"><img src="images/icons/host.svg" alt="Host" class="lobby-icon"></div>' +
     '<div class="lobby-host-content"><div class="lobby-host-label">Host</div>' +
     hostLink +
     "</div></div>" +
-    '<div class="lobby-live"><div class="lobby-live-icon">📺</div>' +
+    '<div class="lobby-live"><div class="lobby-live-icon"><img src="images/icons/live.svg" alt="Live" class="lobby-icon"></div>' +
     '<div class="lobby-live-content"><div class="lobby-live-label">Live</div>' +
     liveBlock +
     "</div></div>" +
