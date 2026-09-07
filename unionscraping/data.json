@@ -58,9 +58,9 @@
         },
         {
           "pos": 3,
-          "matricola": "33",
-          "team": "MMS",
-          "nome": "mms_babide46",
+          "matricola": "41",
+          "team": "PRT",
+          "nome": "FrRoGaMeR",
           "auto": ""
         },
         {
@@ -100,9 +100,9 @@
         },
         {
           "pos": 9,
-          "matricola": "12",
+          "matricola": "14",
           "team": "DCT",
-          "nome": "DRT-Nanix84",
+          "nome": "F.Narga",
           "auto": ""
         },
         {
@@ -181,9 +181,9 @@
         },
         {
           "pos": 6,
-          "matricola": "111",
+          "matricola": "114",
           "team": "EVO",
-          "nome": "EVO_Bricca",
+          "nome": "TITT__ONE",
           "auto": ""
         },
         {
@@ -264,7 +264,7 @@
           "pos": 3,
           "matricola": "213",
           "team": "GTV",
-          "nome": "GTV-legendafluo6",
+          "nome": "GTV-Oriano06",
           "auto": ""
         },
         {
@@ -276,16 +276,16 @@
         },
         {
           "pos": 5,
-          "matricola": "192",
-          "team": "DCT",
-          "nome": "DCT_mercenario94",
+          "matricola": "227",
+          "team": "PRT",
+          "nome": "Jaiss84",
           "auto": ""
         },
         {
           "pos": 6,
-          "matricola": "234",
+          "matricola": "236",
           "team": "RCE",
-          "nome": "RCE_Leobustv",
+          "nome": "RCE-Man2298",
           "auto": ""
         },
         {
@@ -325,9 +325,9 @@
         },
         {
           "pos": 12,
-          "matricola": "220",
-          "team": "MMS",
-          "nome": "Faraone65",
+          "matricola": "190",
+          "team": "DCT",
+          "nome": "animasarda81",
           "auto": ""
         },
         {
@@ -420,9 +420,9 @@
         },
         {
           "pos": 10,
-          "matricola": "289",
-          "team": "EVO",
-          "nome": "Fanatec73",
+          "matricola": "320",
+          "team": "RMT",
+          "nome": "RMT-CAMI",
           "auto": ""
         },
         {
@@ -457,7 +457,7 @@
     },
     {
       "day": "LUNEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A5",
       "category": "STAR",
       "host": "Leobustv_18",
@@ -494,9 +494,9 @@
         },
         {
           "pos": 5,
-          "matricola": "62",
-          "team": "RRT",
-          "nome": "TER_Barba",
+          "matricola": "3",
+          "team": "ARC",
+          "nome": "KSI-VintageAR",
           "auto": ""
         },
         {
@@ -543,9 +543,9 @@
         },
         {
           "pos": 12,
-          "matricola": "2",
+          "matricola": "1",
           "team": "ARC",
-          "nome": "KSI-JonMazzo",
+          "nome": "G. Belletti",
           "auto": ""
         },
         {
@@ -559,7 +559,7 @@
     },
     {
       "day": "LUNEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A6",
       "category": "PRO AMA",
       "host": "MirkoDC10",
@@ -610,9 +610,9 @@
         },
         {
           "pos": 7,
-          "matricola": "426",
-          "team": "SMI",
-          "nome": "HULK1959",
+          "matricola": "398",
+          "team": "MMS",
+          "nome": "MMS-DOCTORWEB",
           "auto": ""
         },
         {
@@ -661,7 +661,7 @@
     },
     {
       "day": "LUNEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A7",
       "category": "AMA",
       "host": "MF_GioBar73",
@@ -967,7 +967,7 @@
     },
     {
       "day": "MARTEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A12",
       "category": "ELITE",
       "host": "Pardus—89",
@@ -990,16 +990,16 @@
         },
         {
           "pos": 3,
-          "matricola": "136",
-          "team": "PRT",
-          "nome": "H7-25YT",
+          "matricola": "122",
+          "team": "GTID",
+          "nome": "GTIDsacco72",
           "auto": ""
         },
         {
           "pos": 4,
-          "matricola": "114",
+          "matricola": "111",
           "team": "EVO",
-          "nome": "TITT__ONE",
+          "nome": "EVO_Bricca",
           "auto": ""
         },
         {
@@ -1041,7 +1041,7 @@
           "pos": 10,
           "matricola": "92",
           "team": "ARC",
-          "nome": "TRT-Tommizio",
+          "nome": "ARC-Tommizio",
           "auto": ""
         },
         {
@@ -1069,7 +1069,7 @@
     },
     {
       "day": "MARTEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A13",
       "category": "PRO SILVER",
       "host": "RMT_AXEL_K_17",
@@ -1171,7 +1171,7 @@
     },
     {
       "day": "MARTEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A14",
       "category": "PRO GOLD",
       "host": "VintageAR",
@@ -1201,9 +1201,9 @@
         },
         {
           "pos": 4,
-          "matricola": "227",
-          "team": "PRT",
-          "nome": "Jaiss84",
+          "matricola": "192",
+          "team": "DCT",
+          "nome": "DCT_mercenario94",
           "auto": ""
         },
         {
@@ -1250,9 +1250,9 @@
         },
         {
           "pos": 11,
-          "matricola": "193",
+          "matricola": "195",
           "team": "DCT",
-          "nome": "Gjca-76",
+          "nome": "TER-CAR-MELO74",
           "auto": ""
         },
         {
@@ -1280,7 +1280,7 @@
     },
     {
       "day": "MARTEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A15",
       "category": "PRO AMA",
       "host": "GTV_legendafluo",
@@ -1310,9 +1310,9 @@
         },
         {
           "pos": 4,
-          "matricola": "397",
-          "team": "MMS",
-          "nome": "Mms_dpgurney78",
+          "matricola": "407",
+          "team": "PRT",
+          "nome": "muffo007",
           "auto": ""
         },
         {
@@ -1359,9 +1359,9 @@
         },
         {
           "pos": 11,
-          "matricola": "391",
-          "team": "GTRC",
-          "nome": "GTRC-Squinzi76",
+          "matricola": "436",
+          "team": "SRT",
+          "nome": "SRT_Rinthedream",
           "auto": ""
         },
         {
@@ -1500,9 +1500,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "312",
+          "matricola": "309",
           "team": "PRT",
-          "nome": "Ptr.bso",
+          "nome": "M_ApeX__",
           "auto": ""
         },
         {
@@ -1644,9 +1644,9 @@
         },
         {
           "pos": 7,
-          "matricola": "398",
-          "team": "MMS",
-          "nome": "MMS-DOCTORWEB",
+          "matricola": "426",
+          "team": "SMI",
+          "nome": "HULK1959",
           "auto": ""
         },
         {
@@ -1704,9 +1704,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "3",
-          "team": "ARC",
-          "nome": "KSI-VintageAR",
+          "matricola": "62",
+          "team": "RRT",
+          "nome": "TER_Barba",
           "auto": ""
         },
         {
@@ -1725,9 +1725,9 @@
         },
         {
           "pos": 4,
-          "matricola": "18",
+          "matricola": "19",
           "team": "EVO",
-          "nome": "EVO_lama85",
+          "nome": "TER_Antonio78x",
           "auto": ""
         },
         {
@@ -1760,9 +1760,9 @@
         },
         {
           "pos": 9,
-          "matricola": "24",
-          "team": "GTRC",
-          "nome": "GTRC_FrenkMik93",
+          "matricola": "76",
+          "team": "TLM",
+          "nome": "Buitre83gt",
           "auto": ""
         },
         {
@@ -1827,9 +1827,9 @@
         },
         {
           "pos": 4,
-          "matricola": "108",
+          "matricola": "110",
           "team": "DCT",
-          "nome": "DCT_Radik",
+          "nome": "PeppeSR",
           "auto": ""
         },
         {
@@ -1883,9 +1883,9 @@
         },
         {
           "pos": 12,
-          "matricola": "116",
-          "team": "FFM",
-          "nome": "FFM_Beppolo",
+          "matricola": "154",
+          "team": "RRT",
+          "nome": "GIO",
           "auto": ""
         },
         {
@@ -1985,9 +1985,9 @@
         },
         {
           "pos": 12,
-          "matricola": "491",
+          "matricola": "492",
           "team": "RMT",
-          "nome": "RMTSuperSic",
+          "nome": "RMT-Alzoal_7.6",
           "auto": ""
         },
         {
@@ -2001,7 +2001,7 @@
     },
     {
       "day": "MERCOLEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A20",
       "category": "PRO AMA",
       "host": "FFM_HOST",
@@ -2038,9 +2038,9 @@
         },
         {
           "pos": 5,
-          "matricola": "387",
+          "matricola": "382",
           "team": "GTID",
-          "nome": "Xelavr6",
+          "nome": "GiamP_29",
           "auto": ""
         },
         {
@@ -2103,7 +2103,7 @@
     },
     {
       "day": "MERCOLEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A21",
       "category": "PRO GOLD",
       "host": "xSamueLx",
@@ -2147,9 +2147,9 @@
         },
         {
           "pos": 6,
-          "matricola": "190",
-          "team": "DCT",
-          "nome": "animasarda81",
+          "matricola": "220",
+          "team": "MMS",
+          "nome": "Faraone65",
           "auto": ""
         },
         {
@@ -2212,7 +2212,7 @@
     },
     {
       "day": "MERCOLEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A22",
       "category": "PRO SILVER",
       "host": "Babide46",
@@ -2221,9 +2221,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "292",
-          "team": "GTID",
-          "nome": "GTID_Salma81",
+          "matricola": "324",
+          "team": "RRT",
+          "nome": "ScarsFess",
           "auto": ""
         },
         {
@@ -2330,9 +2330,9 @@
         },
         {
           "pos": 2,
-          "matricola": "520",
-          "team": "SRT",
-          "nome": "kiank87",
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_Muso_2692_gt",
           "auto": ""
         },
         {
@@ -2393,9 +2393,9 @@
         },
         {
           "pos": 11,
-          "matricola": "459",
+          "matricola": "460",
           "team": "DCT",
-          "nome": "DRT-Marras83",
+          "nome": "TER_R.Leta",
           "auto": ""
         },
         {
@@ -2419,7 +2419,7 @@
       "time": "Ore 21:00",
       "name": "A24",
       "category": "PRO GOLD",
-      "host": "Cornazzai73",
+      "host": "GTIDsacco72",
       "live": "GTID- Cornazzai73",
       "url": "https://www.twitch.tv/gtid_team",
       "pilots": [
@@ -2453,9 +2453,9 @@
         },
         {
           "pos": 5,
-          "matricola": "195",
+          "matricola": "193",
           "team": "DCT",
-          "nome": "TER-CAR-MELO74",
+          "nome": "Gjca-76",
           "auto": ""
         },
         {
@@ -2583,9 +2583,9 @@
         },
         {
           "pos": 8,
-          "matricola": "275",
-          "team": "CBR",
-          "nome": "CBR_Mava",
+          "matricola": "286",
+          "team": "DCT",
+          "nome": "Shider-02",
           "auto": ""
         },
         {
@@ -2643,9 +2643,9 @@
         },
         {
           "pos": 2,
-          "matricola": "407",
-          "team": "PRT",
-          "nome": "muffo007",
+          "matricola": "397",
+          "team": "MMS",
+          "nome": "Mms_dpgurney78",
           "auto": ""
         },
         {
@@ -2736,7 +2736,7 @@
     },
     {
       "day": "GIOVEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A27",
       "category": "AMA",
       "host": "GTIDsacco72",
@@ -2759,9 +2759,9 @@
         },
         {
           "pos": 3,
-          "matricola": "500",
-          "team": "RRT",
-          "nome": "RRT_Muso_2692_gt",
+          "matricola": "520",
+          "team": "SRT",
+          "nome": "kiank87",
           "auto": ""
         },
         {
@@ -2794,9 +2794,9 @@
         },
         {
           "pos": 8,
-          "matricola": "460",
+          "matricola": "459",
           "team": "DCT",
-          "nome": "TER_R.Leta",
+          "nome": "DRT-Marras83",
           "auto": ""
         },
         {
@@ -2838,7 +2838,7 @@
     },
     {
       "day": "GIOVEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A28",
       "category": "PRO GOLD",
       "host": "Lok-1973",
@@ -2854,9 +2854,9 @@
         },
         {
           "pos": 2,
-          "matricola": "232",
-          "team": "PRT",
-          "nome": "Zak",
+          "matricola": "217",
+          "team": "MFC",
+          "nome": "MF_Marekiaro",
           "auto": ""
         },
         {
@@ -2910,9 +2910,9 @@
         },
         {
           "pos": 10,
-          "matricola": "236",
+          "matricola": "234",
           "team": "RCE",
-          "nome": "RCE-Man2298",
+          "nome": "RCE_Leobustv",
           "auto": ""
         },
         {
@@ -2940,7 +2940,7 @@
     },
     {
       "day": "GIOVEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A29",
       "category": "STAR",
       "host": "pinpinella95",
@@ -2956,16 +2956,16 @@
         },
         {
           "pos": 2,
-          "matricola": "14",
+          "matricola": "12",
           "team": "DCT",
-          "nome": "F.Narga",
+          "nome": "DRT-Nanix84",
           "auto": ""
         },
         {
           "pos": 3,
-          "matricola": "41",
-          "team": "PRT",
-          "nome": "FrRoGaMeR",
+          "matricola": "33",
+          "team": "MMS",
+          "nome": "mms_babide46",
           "auto": ""
         },
         {
@@ -2998,16 +2998,16 @@
         },
         {
           "pos": 8,
-          "matricola": "76",
-          "team": "TLM",
-          "nome": "Buitre83gt",
+          "matricola": "24",
+          "team": "GTRC",
+          "nome": "GTRC_FrenkMik93",
           "auto": ""
         },
         {
           "pos": 9,
-          "matricola": "1",
+          "matricola": "2",
           "team": "ARC",
-          "nome": "G. Belletti",
+          "nome": "KSI-JonMazzo",
           "auto": ""
         },
         {
@@ -3042,7 +3042,7 @@
     },
     {
       "day": "GIOVEDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A30",
       "category": "ELITE",
       "host": "Albixximo",
@@ -3065,9 +3065,9 @@
         },
         {
           "pos": 3,
-          "matricola": "149",
-          "team": "RMT",
-          "nome": "RITIRATO POSTO LIBERO",
+          "matricola": "95",
+          "team": "BCSC",
+          "nome": "Cacino95",
           "auto": ""
         },
         {
@@ -3114,9 +3114,9 @@
         },
         {
           "pos": 10,
-          "matricola": "154",
-          "team": "RRT",
-          "nome": "GIO",
+          "matricola": "116",
+          "team": "FFM",
+          "nome": "FFM_Beppolo",
           "auto": ""
         },
         {
@@ -3132,13 +3132,6 @@
           "team": "RCE",
           "nome": "Biso_44",
           "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "95",
-          "team": "BCSC",
-          "nome": "Cacino95",
-          "auto": ""
         }
       ]
     },
@@ -3147,7 +3140,7 @@
       "time": "Ore 21:00",
       "name": "A31",
       "category": "PRO GOLD",
-      "host": "MF_maxlaqualunque",
+      "host": "MF_maxlaqualunqe",
       "live": "MFC- MF_maxlaqualunque",
       "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
@@ -3195,9 +3188,9 @@
         },
         {
           "pos": 7,
-          "matricola": "217",
-          "team": "MFC",
-          "nome": "MF_Marekiaro",
+          "matricola": "232",
+          "team": "PRT",
+          "nome": "Zak",
           "auto": ""
         },
         {
@@ -3325,9 +3318,9 @@
         },
         {
           "pos": 11,
-          "matricola": "382",
+          "matricola": "387",
           "team": "GTID",
-          "nome": "GiamP_29",
+          "nome": "Xelavr6",
           "auto": ""
         },
         {
@@ -3339,9 +3332,9 @@
         },
         {
           "pos": 13,
-          "matricola": "436",
-          "team": "SRT",
-          "nome": "SRT_Rinthedream",
+          "matricola": "391",
+          "team": "GTRC",
+          "nome": "GTRC-Squinzi76",
           "auto": ""
         }
       ]
@@ -3441,16 +3434,16 @@
         },
         {
           "pos": 13,
-          "matricola": "492",
+          "matricola": "491",
           "team": "RMT",
-          "nome": "RMT-Alzoal_7.6",
+          "nome": "RMTSuperSic",
           "auto": ""
         }
       ]
     },
     {
       "day": "VENERDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A34",
       "category": "STAR",
       "host": "MF_GioBar73",
@@ -3543,16 +3536,16 @@
         },
         {
           "pos": 13,
-          "matricola": "19",
+          "matricola": "18",
           "team": "EVO",
-          "nome": "TER_Antonio78x",
+          "nome": "EVO_lama85",
           "auto": ""
         }
       ]
     },
     {
       "day": "VENERDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A35",
       "category": "ELITE",
       "host": "lupo_verde_3",
@@ -3603,9 +3596,9 @@
         },
         {
           "pos": 7,
-          "matricola": "122",
-          "team": "GTID",
-          "nome": "GTIDsacco72",
+          "matricola": "136",
+          "team": "PRT",
+          "nome": "H7-25YT",
           "auto": ""
         },
         {
@@ -3645,16 +3638,16 @@
         },
         {
           "pos": 13,
-          "matricola": "110",
+          "matricola": "108",
           "team": "DCT",
-          "nome": "PeppeSR",
+          "nome": "DCT_Radik",
           "auto": ""
         }
       ]
     },
     {
       "day": "VENERDI",
-      "time": "Ore 22:00",
+      "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
       "host": "ORT_iaakk1983",
@@ -3663,9 +3656,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "324",
-          "team": "RRT",
-          "nome": "ScarsFess",
+          "matricola": "292",
+          "team": "GTID",
+          "nome": "GTID_Salma81",
           "auto": ""
         },
         {
@@ -3691,62 +3684,55 @@
         },
         {
           "pos": 5,
-          "matricola": "317",
-          "team": "RMT",
-          "nome": "RITIRATO POSTO LIBERO",
+          "matricola": "275",
+          "team": "CBR",
+          "nome": "CBR_Mava",
           "auto": ""
         },
         {
           "pos": 6,
-          "matricola": "286",
-          "team": "DCT",
-          "nome": "Shider-02",
+          "matricola": "312",
+          "team": "PRT",
+          "nome": "Ptr.bso",
           "auto": ""
         },
         {
           "pos": 7,
-          "matricola": "309",
-          "team": "PRT",
-          "nome": "M_ApeX__",
+          "matricola": "289",
+          "team": "EVO",
+          "nome": "Fanatec73",
           "auto": ""
         },
         {
           "pos": 8,
-          "matricola": "320",
-          "team": "RMT",
-          "nome": "RMT-CAMI",
-          "auto": ""
-        },
-        {
-          "pos": 9,
           "matricola": "282",
           "team": "DCT",
           "nome": "CiccioSta76",
           "auto": ""
         },
         {
-          "pos": 10,
+          "pos": 9,
           "matricola": "307",
           "team": "PBC",
           "nome": "RRT SMEZZ-SIZZ",
           "auto": ""
         },
         {
-          "pos": 11,
+          "pos": 10,
           "matricola": "313",
           "team": "PRT",
           "nome": "Rekkia-Speed",
           "auto": ""
         },
         {
-          "pos": 12,
+          "pos": 11,
           "matricola": "297",
           "team": "GTV",
           "nome": "Sun|)own",
           "auto": ""
         },
         {
-          "pos": 13,
+          "pos": 12,
           "matricola": "304",
           "team": "PBC",
           "nome": "PBC_Pegaso",
