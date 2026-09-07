@@ -4662,14 +4662,89 @@ body#worldchampionship {
   scroll-margin-top: 68px;
 }
 
-/* Testata card: lascia andare a capo la categoria se serve */
-.union-lobby-card .lobby-card-header {
-  flex-wrap: wrap;
-  gap: 10px;
+/* --- Testata accordion: cliccabile, espande il corpo --- */
+.union-acc {
+  overflow: hidden;
 }
 
-.union-lobby-card .lobby-category {
-  text-align: right;
+.union-acc-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(191, 239, 255, 0.05);
+  border: none;
+  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.union-acc-head:hover {
+  background: rgba(191, 239, 255, 0.1);
+}
+
+.union-acc-head-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.union-acc-head-main .lobby-datetime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.union-acc-head-main .lobby-category {
+  color: var(--giallogtv);
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.union-acc-count {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.union-acc-chevron {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(191, 239, 255, 0.12);
+  color: #fff;
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+}
+
+.union-acc.open .union-acc-chevron {
+  transform: rotate(180deg);
+  background: var(--giallogtv);
+  color: #000;
+}
+
+/* Corpo accordion: nascosto di default, visibile quando .open */
+.union-acc-body {
+  display: none;
+}
+
+.union-acc.open .union-acc-body {
+  display: block;
+  padding: 6px 16px;
 }
 
 .union-lobby-pos {

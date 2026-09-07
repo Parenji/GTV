@@ -358,10 +358,13 @@ function renderUnionSpecchietto(container, data) {
   container.innerHTML =
     html || '<div class="error-message">Nessun pilota GTV trovato nelle lobby.</div>';
 
-  // Link dello specchietto: scrolla alla lobby completa corrispondente
+  // Link dello specchietto: apri l'accordion della lobby e scrolla ad essa
   Array.from(container.querySelectorAll(".union-specch-link")).forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var target = document.getElementById(btn.getAttribute("data-target"));
+      var id = btn.getAttribute("data-target");
+      // Apri l'accordion (se esiste) così il contenuto è visibile
+      openUnionLobby(id);
+      var target = document.getElementById(id);
       if (target) {
         // Offset per l'header sticky: scorrimento più preciso per
         // far comparire la lobby cliccata in cima (non quella precedente)
@@ -411,6 +414,8 @@ function renderUnionLobbyBody(container, data) {
 
   container.innerHTML =
     daysHtml || '<div class="error-message">Nessuna lobby trovata.</div>';
+
+  initUnionAccordions(container);
 }
 
 function unionLobbyCardHtml(lb) {
@@ -448,15 +453,21 @@ function unionLobbyCardHtml(lb) {
         "</a>"
       : '<span class="lobby-live-name">—</span>';
 
+  // Accordeon: la testata è cliccabile e mostra/espande il corpo
   return (
-    '<div id="' + id + '" class="lobby-card union-lobby-card">' +
-    '<div class="lobby-card-header">' +
+    '<div id="' + id + '" class="lobby-card union-lobby-card union-acc">' +
+    '<button type="button" class="union-acc-head" data-acc-target="' + id + '" aria-expanded="false">' +
+    '<div class="union-acc-head-main">' +
     '<div class="lobby-datetime">' +
     '<div class="lobby-date">' + escapeHtml(lb.day) + "</div>" +
     '<div class="lobby-time">' + escapeHtml(time) + "</div>" +
     "</div>" +
     '<div class="lobby-category">' + escapeHtml(lb.category) + " · Lobby " + escapeHtml(lb.name) + "</div>" +
     "</div>" +
+    '<span class="union-acc-count">' + lb.pilots.length + " piloti</span>" +
+    '<span class="union-acc-chevron">▾</span>' +
+    "</button>" +
+    '<div class="union-acc-body">' +
     '<div class="lobby-info-section">' +
     '<div class="lobby-host"><div class="lobby-host-icon">👑</div>' +
     '<div class="lobby-host-content"><div class="lobby-host-label">Host</div>' +
@@ -471,6 +482,30 @@ function unionLobbyCardHtml(lb) {
     '<div class="lobby-pilots-title">Piloti <span class="union-lobby-count">(' + lb.pilots.length + ")</span></div>" +
     '<div class="lobby-pilots-grid">' +
     pilots +
-    "</div></div></div>"
+    "</div></div>" +
+    "</div></div>"
   );
+}
+
+// Apre/chiude un accordeon al click sulla testata
+function initUnionAccordions(container) {
+  Array.from(container.querySelectorAll(".union-acc-head")).forEach(function (head) {
+    head.addEventListener("click", function () {
+      var card = document.getElementById(head.getAttribute("data-acc-target"));
+      if (!card) return;
+      var isOpen = card.classList.contains("open");
+      card.classList.toggle("open");
+      head.setAttribute("aria-expanded", isOpen ? "false" : "true");
+    });
+  });
+}
+
+// Apre l'accordion della lobby indicata (usato dallo specchietto riassuntivo)
+function openUnionLobby(id) {
+  var card = document.getElementById(id);
+  if (!card) return false;
+  card.classList.add("open");
+  var head = card.querySelector(".union-acc-head");
+  if (head) head.setAttribute("aria-expanded", "true");
+  return true;
 }
