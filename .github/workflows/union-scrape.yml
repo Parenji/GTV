@@ -2,7 +2,7 @@ name: Union Scraper
 
 # Esegue automaticamente lo scraper delle lobby Union ogni 12 ore
 # sui server di GitHub (cloud) → funziona anche a computer spento.
-# Dopo lo scrape fa push di data.json/index.html sul branch main,
+# Dopo lo scrape fa push di data.json sul branch main,
 # e il push sul repo innesca il redeploy automatico di Vercel,
 # così il sito live si aggiorna da solo.
 on:
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add unionscraping/data.json unionscraping/index.html
+          git add unionscraping/data.json
           if git diff --cached --quiet; then
             echo "Nessuna modifica ai dati: niente commit."
             exit 0
