@@ -84,6 +84,9 @@ function initCarousel() {
 // -------------------------------------------------------------
 // TABELLA PILOTI ISCRITTI (dati dal CSV piloti di index.html)
 // Colonna F (indice 5) = partecipazione Union
+// La colonna MATRICOLA viene invece presa da unionscraping/data.json
+// (ctech: il nome in lobby del JSON corrisponde al PSN r[0] del CSV,
+// con fallback sul nickname GT7 r[1]).
 // -------------------------------------------------------------
 function loadUnionPiloti() {
   var container = document.getElementById("union-piloti-body");
@@ -100,12 +103,21 @@ function loadUnionPiloti() {
     return;
   }
 
-  fetch(url)
-    .then(function (response) {
+  // Carica in parallelo il CSV piloti e il data.json dello scraper
+  // (quest'ultimo è opzionale: se manca, le matricole restano "—").
+  Promise.all([
+    fetch(url).then(function (response) {
       if (!response.ok) throw new Error("Errore HTTP " + response.status);
       return response.text();
-    })
-    .then(function (csvText) {
+    }),
+    fetchUnionLobbyData().catch(function () {
+      return null;
+    }),
+  ])
+    .then(function (results) {
+      var csvText = results[0];
+      var unionData = results[1];
+
       var rows = parseCsv(csvText);
       if (!rows || rows.length === 0) {
         container.innerHTML = '<div class="error-message">Nessun dato.</div>';
@@ -117,13 +129,41 @@ function loadUnionPiloti() {
         return participa === "x" || participa === "✓" || participa === "1";
       });
 
-      renderUnionPilotiTable(container, unionRows);
+      renderUnionPilotiTable(container, unionRows, unionData);
     })
     .catch(function (error) {
       console.error("Errore caricamento piloti Union:", error);
       container.innerHTML =
         '<div class="error-message">Impossibile caricare i piloti Union.</div>';
     });
+}
+
+// Costruisce una mappa nome (in lobby) -> matricola dai dati dello scraper.
+// Il nome viene normalizzato (trim + lowercase) per una corrispondenza
+// robusta e case-insensitive; il primo valore trovato ha la precedenza.
+function buildUnionMatricolaMap(unionData) {
+  var map = {};
+  if (!unionData || !unionData.lobbies) return map;
+  unionData.lobbies.forEach(function (lb) {
+    (lb.pilots || []).forEach(function (p) {
+      var nome = String(p.nome || "").trim().toLowerCase();
+      if (!nome) return;
+      if (map[nome] === undefined) {
+        map[nome] = String(p.matricola === undefined ? "" : p.matricola).trim();
+      }
+    });
+  });
+  return map;
+}
+
+// Cerca la matricola di un pilota: prima per PSN, poi (fallback) per GT7.
+function lookupUnionMatricola(map, psn, gt7) {
+  var key = String(psn || "").trim().toLowerCase();
+  if (!key || map[key] === undefined || map[key] === "") {
+    key = String(gt7 || "").trim().toLowerCase();
+  }
+  if (key && map[key] !== undefined && map[key] !== "") return map[key];
+  return "—";
 }
 
 // Parser CSV semplice (il CSV di Google non ha campi tra virgolette usati qui)
@@ -177,17 +217,19 @@ function brandLogoHtml(brand) {
   return out;
 }
 
-function renderUnionPilotiTable(container, rows) {
+function renderUnionPilotiTable(container, rows, unionData) {
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
     if (tierDiff !== 0) return tierDiff;
     return String(a[0] || "").localeCompare(String(b[0] || ""));
   });
 
+  var matricolaMap = buildUnionMatricolaMap(unionData);
+
   var html =
     '<table class="union-lista">' +
     "<thead><tr>" +
-    "<th>N°</th><th>PSN</th><th>GT7</th>" +
+    "<th>N°</th><th>Matri.</th><th>PSN</th><th>GT7</th>" +
     "<th>Categoria</th><th>Marca</th><th>Auto</th>" +
     "</tr></thead><tbody>";
 
@@ -199,12 +241,15 @@ function renderUnionPilotiTable(container, rows) {
     var auto = r[7] || "—";
     var marchio = r[8] || "";
 
+    var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
+
     html +=
       "<tr>" +
       '<td class="union-num" data-label="N°">#' + escapeHtml(numero) + "</td>" +
+      '<td class="union-matricola" data-label="Matricola">' + escapeHtml(matricola) + "</td>" +
       '<td data-label="PSN">' + escapeHtml(psn) + "</td>" +
       '<td class="union-gt7" data-label="GT7">' + escapeHtml(gt7) + "</td>" +
-      '<td data-label="Categoria"><span class="union-tier">' + escapeHtml(cat) + "</span></td>" +
+      '<td data-label="Categoria"><span class="union-specch-patch ' + unionCategoryColorClass(cat) + '">' + escapeHtml(cat) + "</span></td>" +
       brandLogoCell(marchio) +
       '<td data-label="Auto">' + escapeHtml(auto) + "</td>" +
       "</tr>";
@@ -241,21 +286,37 @@ function brandLogoCell(brand) {
 // Dati generati dallo scraper (stessi campi di data.json)
 var UNION_LOBBY_DAYS = ["LUNEDI", "MARTEDI", "MERCOLEDI", "GIOVEDI", "VENERDI"];
 
+// URL dei dati estratti dallo scraper
+function unionLobbyDataUrl() {
+  return window.GTV_CONFIG && window.GTV_CONFIG.unionLobbyData
+    ? window.GTV_CONFIG.unionLobbyData
+    : "unionscraping/data.json";
+}
+
+// Fetch condiviso e memoizzato: data.json viene scaricato una sola volta
+// e riusato sia dalle lobby sia dalla tabella piloti (colonna Matricola).
+var _unionLobbyDataPromise = null;
+function fetchUnionLobbyData() {
+  if (!_unionLobbyDataPromise) {
+    _unionLobbyDataPromise = fetch(unionLobbyDataUrl())
+      .then(function (response) {
+        if (!response.ok) throw new Error("Errore HTTP " + response.status);
+        return response.json();
+      })
+      .catch(function (err) {
+        _unionLobbyDataPromise = null; // consente un nuovo tentativo
+        throw err;
+      });
+  }
+  return _unionLobbyDataPromise;
+}
+
 function loadUnionLobby() {
   var specchietto = document.getElementById("union-specchietto-body");
   var body = document.getElementById("union-lobby-body");
   if (!specchietto && !body) return;
 
-  var url =
-    window.GTV_CONFIG && window.GTV_CONFIG.unionLobbyData
-      ? window.GTV_CONFIG.unionLobbyData
-      : "unionscraping/data.json";
-
-  fetch(url)
-    .then(function (response) {
-      if (!response.ok) throw new Error("Errore HTTP " + response.status);
-      return response.json();
-    })
+  fetchUnionLobbyData()
     .then(function (data) {
       if (!data || !data.lobbies) {
         throw new Error("Dati non validi");
@@ -291,6 +352,29 @@ var UNION_DAY_SHORT = {
   VENERDI: "VEN",
 };
 
+// Colore della patch in base alla categoria della lobby.
+// La normalizzazione elimina spazi/maiuscole: così "PRO GOLD"/"PROGOLD",
+// "PRO SILVER"/"PROSILVER" e "PRO AMA"/"PROAMA" coincidono.
+function unionCategoryColorClass(category) {
+  var c = String(category || "").trim().toUpperCase().replace(/\s+/g, "");
+  switch (c) {
+    case "STAR":
+      return "union-patch-star";
+    case "PROGOLD":
+      return "union-patch-gold";
+    case "PROSILVER":
+      return "union-patch-silver";
+    case "PROAMA":
+      return "union-patch-ama";
+    case "ELITE":
+      return "union-patch-elite";
+    case "AMA":
+      return "union-patch-base";
+    default:
+      return "";
+  }
+}
+
 // -------------------------------------------------------------
 // Specchietto riassuntivo: una riga per ogni pilota GTV iscritto
 // -------------------------------------------------------------
@@ -325,9 +409,13 @@ function renderUnionSpecchietto(container, data) {
       var id = lobbyCardId(r.day, r.name);
       var dayShort = UNION_DAY_SHORT[String(r.day || "").toUpperCase()] || r.day;
       var hour = String(r.time || "").replace("Ore ", "").trim();
+      var patchClass = unionCategoryColorClass(r.category);
       return (
         "<tr>" +
-        '<td class="union-specch-pilot" data-label="Pilota">' + escapeHtml(r.pilot) + "</td>" +
+        '<td class="union-specch-pilot" data-label="Pilota">' +
+        '<div class="union-specch-pilot-name">' + escapeHtml(r.pilot) + "</div>" +
+        '<div class="union-specch-patch ' + patchClass + '">' + escapeHtml(r.category) + "</div>" +
+        "</td>" +
         '<td class="union-specch-lobby" data-label="Lobby">' +
         '<button class="union-specch-link" data-target="' + id + '">' + escapeHtml(r.name) + "</button>" +
         "</td>" +
@@ -462,7 +550,8 @@ function unionLobbyCardHtml(lb) {
     '<div class="lobby-date">' + escapeHtml(lb.day) + "</div>" +
     '<div class="lobby-time">' + escapeHtml(time) + "</div>" +
     "</div>" +
-    '<div class="lobby-category">' + escapeHtml(lb.category) + " · Lobby " + escapeHtml(lb.name) + "</div>" +
+    '<div class="lobby-category">' +
+     escapeHtml(lb.name) + " · " + '<span class="union-specch-patch ' + unionCategoryColorClass(lb.category) + '">' + escapeHtml(lb.category) + "</span>" + "</div>" +
     "</div>" +
     '<span class="union-acc-count">' + lb.pilots.length + " piloti</span>" +
     '<span class="union-acc-chevron">▾</span>' +

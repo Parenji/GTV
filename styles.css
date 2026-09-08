@@ -4466,15 +4466,14 @@ body#worldchampionship {
 .union-gt7 {
   color: rgba(255, 255, 255, 0.75);
 }
-.union-tier {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: rgba(191, 239, 255, 0.12);
-  border: 1px solid rgba(191, 239, 255, 0.3);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.8em;
+.union-matricola {
+  color: rgba(255, 255, 255, 0.75);
+  font-variant-numeric: tabular-nums;
+}
+/* Patch categoria nella tabella piloti: stesso stile delle altre patch,
+   ma senza margin-top (la cella è già centrata verticalmente) */
+.union-lista .union-specch-patch {
+  margin-top: 0;
 }
 .union-brand {
   text-align: center;
@@ -4572,26 +4571,82 @@ body#worldchampionship {
    Ordine: 1=Pilota 2=Lobby 3=Giorno 4=Ora */
 .union-specch-table th:nth-child(1),
 .union-specch-table td:nth-child(1) {
-  width: 46%;
+  width: 48%;
 }
 .union-specch-table th:nth-child(2),
 .union-specch-table td:nth-child(2) {
-  width: 22%;
+  width: 19%;
 }
 .union-specch-table th:nth-child(3),
 .union-specch-table td:nth-child(3) {
-  width: 13%;
+  width: 16%;
 }
 .union-specch-table th:nth-child(4),
 .union-specch-table td:nth-child(4) {
-  width: 19%;
+  width: 17%;
 }
 
 .union-specch-table .union-specch-pilot {
   font-weight: 600;
+}
+
+.union-specch-pilot-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Piccola patch della categoria sotto il nome del pilota (compatta,
+   non allarga sensibilmente l'altezza della riga) */
+.union-specch-patch {
+  display: inline-block;
+  background: rgba(191, 239, 255, 0.1);
+  border: 1px solid rgba(191, 239, 255, 0.28);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+  padding: 0 7px;
+  border-radius: 8px;
+  margin-top: 2px;
+}
+
+/* Colori della patch per categoria (sfondo+testo+bordura adatti a stile GTV) */
+.union-specch-patch.union-patch-star {
+  background: rgba(245, 255, 60, 0.16);
+  border-color: rgba(245, 255, 60, 0.5);
+  color: #f5ff3c;
+}
+
+.union-specch-patch.union-patch-gold {
+  background: rgba(255, 170, 0, 0.14);
+  border-color: rgba(255, 170, 0, 0.5);
+  color: #ffb300;
+}
+
+.union-specch-patch.union-patch-silver {
+  background: rgba(192, 192, 200, 0.14);
+  border-color: rgba(192, 192, 200, 0.5);
+  color: #d8d8e0;
+}
+
+.union-specch-patch.union-patch-ama {
+  background: rgba(0, 220, 150, 0.13);
+  border-color: rgba(0, 220, 150, 0.5);
+  color: #00df9f;
+}
+
+.union-specch-patch.union-patch-elite {
+  background: rgba(255, 40, 60, 0.14);
+  border-color: rgba(255, 40, 60, 0.5);
+  color: #ff4d5e;
+}
+
+.union-specch-patch.union-patch-base {
+  background: rgba(0, 180, 255, 0.14);
+  border-color: rgba(0, 180, 255, 0.5);
+  color: #38b8ff;
 }
 
 .union-specch-table .union-specch-day {
@@ -4672,10 +4727,7 @@ body#worldchampionship {
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 14px 16px;
-  background: rgba(191, 239, 255, 0.05);
   border: none;
-  border-bottom: 1px solid rgba(191, 239, 255, 0.2);
   color: inherit;
   font-family: inherit;
   font-size: 1em;
@@ -4684,9 +4736,6 @@ body#worldchampionship {
   transition: background 0.2s ease;
 }
 
-.union-acc-head:hover {
-  background: rgba(191, 239, 255, 0.1);
-}
 
 .union-acc-head-main {
   flex: 1;
@@ -4708,6 +4757,13 @@ body#worldchampionship {
   font-size: 0.9em;
   font-weight: 700;
   letter-spacing: 0.5px;
+}
+
+/* La patch in testata resta allineata col testo "· Lobby X":
+   niente margin-top (utile solo sotto il nome) e centratura verticale */
+.union-acc-head-main .union-specch-patch {
+  margin-top: 0;
+  vertical-align: middle;
 }
 
 .union-acc-count {
@@ -4818,7 +4874,7 @@ body#worldchampionship {
     text-align: left;
     min-height: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.78em;
+    font-size: 0.88em;
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -4839,7 +4895,7 @@ body#worldchampionship {
   }
 
   .union-specch-link {
-    padding: 7px 16px;
+    padding: 7px 0px;
     font-size: 0.9em;
   }
 
