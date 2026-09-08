@@ -17,6 +17,7 @@ import re
 import sys
 import urllib.request
 from collections import Counter, OrderedDict
+from datetime import datetime, timezone
 
 # ---------------------------------------------------------------------------
 # Configurazione: fogli pubblicati estratti dalle pagine Google Sites
@@ -202,8 +203,18 @@ def main():
               f"{lb['time']:8s} host={lb['host'] or '-':20s} piloti={len(lb['pilots'])}")
 
     stats = build_stats(lobbies, pilots)
-    data = {"meta": {"source": SITE, "title": "HUB UNION - Campionato Union 2026 Round 2"},
-            "stats": stats, "lobbies": lobbies, "pilots": pilots}
+    data = {
+        "meta": {
+            "source": SITE,
+            "title": "HUB UNION - Campionato Union 2026 Round 2",
+            # Momento (UTC) in cui lo scraper ha generato i dati:
+            # coincide con l'ultimo aggiornamento automatico.
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        },
+        "stats": stats,
+        "lobbies": lobbies,
+        "pilots": pilots,
+    }
 
     out_json = "data.json"
     with open(out_json, "w", encoding="utf-8") as f:

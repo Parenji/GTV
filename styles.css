@@ -4690,6 +4690,20 @@ body#worldchampionship {
   padding: 10px 0;
 }
 
+/* Scritta "ultimo aggiornamento automatico" in cima alla sezione lobby */
+.union-last-update {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: right;
+  padding: 4px 10px 0;
+  letter-spacing: 0.3px;
+}
+
+.union-last-update b {
+  color: var(--giallogtv);
+  font-weight: 600;
+}
+
 .union-lobby-day-block {
   margin-bottom: 24px;
 }

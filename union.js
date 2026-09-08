@@ -321,6 +321,7 @@ function loadUnionLobby() {
       if (!data || !data.lobbies) {
         throw new Error("Dati non validi");
       }
+      setUnionLastUpdate(data);
       if (specchietto) renderUnionSpecchietto(specchietto, data);
       if (body) renderUnionLobbyBody(body, data);
     })
@@ -330,6 +331,29 @@ function loadUnionLobby() {
       if (specchietto) specchietto.innerHTML = msg;
       if (body) body.innerHTML = msg;
     });
+}
+
+// Scritta "ultimo aggiornamento automatico" nella sezione lobby.
+// Legge meta.generated_at (timestamp UTC scritto dallo scraper in data.json)
+// e lo mostra in data/ora locali del visitatore.
+function setUnionLastUpdate(data) {
+  var el = document.getElementById("union-last-update");
+  if (!el) return;
+  var iso = data && data.meta && data.meta.generated_at;
+  if (!iso) return; // assente → elemento resta nascosto
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return;
+  el.innerHTML =
+    "Ultimo aggiornamento automatico: <b>" +
+    d.toLocaleString("it-IT", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    }) +
+    "</b>";
+  el.hidden = false;
 }
 
 // Id univoco di una card-lobby (per gli ancoraggi dello specchietto)
