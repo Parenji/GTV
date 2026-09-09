@@ -1,6 +1,6 @@
 // ============================================================
 // GTV UNION - logica dedicata a union.html
-// Carousel delle grafiche di categoria + tabella piloti iscritti
+// Tabella piloti iscritti + lobby
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,77 +8,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initUnionPage() {
-  initCarousel();
   loadUnionPiloti();
   loadUnionLobby();
+  loadUnionStats();
 }
 
 // -------------------------------------------------------------
-// CAROUSEL delle grafiche di categoria
+// STATS in evidenza nella hero (stile OpenRouter)
+// - Piloti iscritti totali: data.json stats.total_pilots
+// - Piloti GTV: conteggio team "GTV" in data.json pilots
+// - Gare: conteggio delle card .race-item nella sezione Calendario
+// I numeri si aggiornano da soli quando vengono caricati i dati.
 // -------------------------------------------------------------
-function initCarousel() {
-  var track = document.getElementById("carousel-track");
-  var prevBtn = document.getElementById("carousel-prev");
-  var nextBtn = document.getElementById("carousel-next");
-  var dotsContainer = document.getElementById("carousel-dots");
-
-  if (!track || !prevBtn || !nextBtn) return;
-
-  var slides = Array.from(track.children);
-  var total = slides.length;
-  var current = 0;
-  var autoTimer = null;
-
-  if (total === 0) return;
-
-  dotsContainer.innerHTML = "";
-  slides.forEach(function (_, i) {
-    var dot = document.createElement("button");
-    dot.className = "carousel-dot";
-    dot.setAttribute("aria-label", "Vai alla slide " + (i + 1));
-    if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", function () {
-      goTo(i);
-      restartAuto();
-    });
-    dotsContainer.appendChild(dot);
-  });
-
-  var dots = Array.from(dotsContainer.children);
-
-  function goTo(index) {
-    current = (index + total) % total;
-    track.style.transform = "translateX(-" + current * 100 + "%)";
-    dots.forEach(function (d, i) {
-      d.classList.toggle("active", i === current);
-    });
+function loadUnionStats() {
+  var gareEl = document.getElementById("union-stat-gare");
+  if (gareEl) {
+    var gare = document.querySelectorAll("#calendario .race-item").length;
+    if (gare > 0) gareEl.textContent = gare;
   }
 
-  function restartAuto() {
-    if (autoTimer) clearInterval(autoTimer);
-    autoTimer = setInterval(function () {
-      goTo(current + 1);
-    }, 6000);
-  }
+  fetchUnionLobbyData()
+    .then(function (data) {
+      if (!data) return;
+      var totalEl = document.getElementById("union-stat-piloti");
+      if (totalEl && data.stats && data.stats.total_pilots) {
+        totalEl.textContent = data.stats.total_pilots;
+      }
 
-  prevBtn.addEventListener("click", function () {
-    goTo(current - 1);
-    restartAuto();
-  });
-  nextBtn.addEventListener("click", function () {
-    goTo(current + 1);
-    restartAuto();
-  });
-
-  var carousel = document.getElementById("union-carousel");
-  if (carousel) {
-    carousel.addEventListener("mouseenter", function () {
-      if (autoTimer) clearInterval(autoTimer);
+      var gtvEl = document.getElementById("union-stat-gtv");
+      if (gtvEl) {
+        var gtv = 0;
+        (data.pilots || []).forEach(function (p) {
+          if (String(p.team || "").trim().toUpperCase() === "GTV") gtv++;
+        });
+        gtvEl.textContent = gtv > 0 ? gtv : "—";
+      }
+    })
+    .catch(function () {
+      // Dati non ancora disponibili: i segnaposto restano visibili
+      console.warn("Impossibile caricare le statistiche Union.");
     });
-    carousel.addEventListener("mouseleave", restartAuto);
-  }
-
-  restartAuto();
 }
 
 // -------------------------------------------------------------
@@ -129,7 +98,7 @@ function loadUnionPiloti() {
         return participa === "x" || participa === "✓" || participa === "1";
       });
 
-      renderUnionPilotiTable(container, unionRows, unionData);
+      renderUnionPilotiCards(container, unionRows, unionData);
     })
     .catch(function (error) {
       console.error("Errore caricamento piloti Union:", error);
@@ -192,7 +161,9 @@ function parseCsv(csvText) {
 }
 
 // -------------------------------------------------------------
-// RENDER della tabella piloti iscritti
+// RENDER card piloti GTV iscritti (mobile-first, niente tabelle)
+// Ogni pilota è una card con N°, matricola, PSN, GT7, categoria,
+// marca (logo) e auto — tutte le info che prima erano in tabella.
 // -------------------------------------------------------------
 var UNION_TIERS = ["STAR", "ELITE", "PRO GOLD", "PRO SILVER", "PRO AMA", "AMA"];
 
@@ -217,7 +188,7 @@ function brandLogoHtml(brand) {
   return out;
 }
 
-function renderUnionPilotiTable(container, rows, unionData) {
+function renderUnionPilotiCards(container, rows, unionData) {
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
     if (tierDiff !== 0) return tierDiff;
@@ -226,12 +197,7 @@ function renderUnionPilotiTable(container, rows, unionData) {
 
   var matricolaMap = buildUnionMatricolaMap(unionData);
 
-  var html =
-    '<table class="union-lista">' +
-    "<thead><tr>" +
-    "<th>N°</th><th>Matri.</th><th>PSN</th><th>GT7</th>" +
-    "<th>Categoria</th><th>Marca</th><th>Auto</th>" +
-    "</tr></thead><tbody>";
+  var html = '<div class="union-pilot-cards">';
 
   rows.forEach(function (r) {
     var numero = r[2] || "—";
@@ -243,38 +209,55 @@ function renderUnionPilotiTable(container, rows, unionData) {
 
     var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
 
+    var brandBlock = marchio
+      ? brandLogoHtml(marchio) +
+        '<div class="union-brand-name">' +
+        escapeHtml(marchio) +
+        "</div>"
+      : '<span class="union-empty">—</span>';
+
+    var catPatch =
+      cat !== "—"
+        ? '<span class="union-specch-patch ' +
+          unionCategoryColorClass(cat) +
+          '">' +
+          escapeHtml(cat) +
+          "</span>"
+        : "";
+
+    var nicknameBlock =
+      gt7 !== "—" && gt7 !== psn
+        ? '<div class="union-pilot-nickname">' + escapeHtml(gt7) + "</div>"
+        : "";
+
     html +=
-      "<tr>" +
-      '<td class="union-num" data-label="N°">#' + escapeHtml(numero) + "</td>" +
-      '<td class="union-matricola" data-label="Matricola">' + escapeHtml(matricola) + "</td>" +
-      '<td data-label="PSN">' + escapeHtml(psn) + "</td>" +
-      '<td class="union-gt7" data-label="GT7">' + escapeHtml(gt7) + "</td>" +
-      '<td data-label="Categoria"><span class="union-specch-patch ' + unionCategoryColorClass(cat) + '">' + escapeHtml(cat) + "</span></td>" +
-      brandLogoCell(marchio) +
-      '<td data-label="Auto">' + escapeHtml(auto) + "</td>" +
-      "</tr>";
+      '<div class="union-pilot-card">' +
+      '<div class="union-pilot-head">' +
+      '<span class="union-pilot-num">#' + escapeHtml(numero) + "</span>" +
+      catPatch +
+      '<div class="union-pilot-brand">' + brandBlock + "</div>" +
+      "</div>" +
+      '<div class="union-pilot-name">' + escapeHtml(psn) + "</div>" +
+      nicknameBlock +
+      '<div class="union-pilot-meta">' +
+      '<span class="union-pilot-meta-item">' +
+      '<span class="union-pilot-meta-label">Matricola</span>' +
+      escapeHtml(matricola) +
+      "</span>" +
+      '<span class="union-pilot-meta-item">' +
+      '<span class="union-pilot-meta-label">Auto</span>' +
+      escapeHtml(auto) +
+      "</span>" +
+      "</div>" +
+      "</div>";
   });
 
-  html += "</tbody></table>";
+  html += "</div>";
 
   var count =
     '<div class="union-count">' + rows.length + " piloti iscritti</div>";
 
-  container.innerHTML = html + count;
-}
-
-function brandLogoCell(brand) {
-  var b = String(brand || "").trim();
-  if (!b) {
-    return '<td class="union-brand"><span class="union-empty">—</span></td>';
-  }
-  return (
-    '<td class="union-brand">' +
-    brandLogoHtml(b) +
-    '<div class="union-brand-name">' +
-    escapeHtml(b) +
-    "</div></td>"
-  );
+  container.innerHTML = count + html;
 }
 
 // -------------------------------------------------------------

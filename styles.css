@@ -4362,77 +4362,156 @@ body#worldchampionship {
   color: var(--giallogtv);
 }
 
-/* --- Carousel --- */
-.union-carousel {
-  position: relative;
-  max-width: 620px;
-  margin: 0 auto 8px;
-  overflow: hidden;
+/* --- Hero centrale (stile OpenRouter) --- */
+.union-hero {
+  text-align: center;
+  padding: 48px 16px 28px;
 }
-.carousel-viewport {
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(191, 239, 255, 0.2);
-  background: rgba(0, 0, 0, 0.3);
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-.carousel-slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-.carousel-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.union-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  background: rgba(0, 0, 0, 0.55);
+.union-hero-badge {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   color: var(--giallogtv);
-  border: 1px solid rgba(191, 239, 255, 0.4);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+.union-hero-title {
+  font-size: 3.4em;
+  font-weight: 800;
+  line-height: 1.08;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.union-hero-title span {
+  color: var(--giallogtv);
+}
+.union-hero-subtitle {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 560px;
+  margin: 0 auto 30px;
+}
+.union-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 42px;
+}
+.union-hero-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  background-color: var(--giallogtv);
+  color: #000000;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
 }
-.union-carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
+.union-hero-btn:hover {
+  background-color: var(--giallogtvhover);
 }
-.carousel-prev {
-  left: 8px;
-}
-.carousel-next {
-  right: 8px;
-}
-.carousel-dots {
+.union-hero-stats {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
 }
-.carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  border: none;
-  transition: background 0.2s;
+.union-hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
-.carousel-dot.active {
-  background: var(--giallogtv);
+.union-hero-stat-num {
+  font-size: 3.6em;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.union-hero-stat-label {
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.75);
+}
+@media (max-width: 600px) {
+  .union-hero-title {
+    font-size: 2.2em;
+  }
+  .union-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+  .union-hero-stat {
+    gap: 2px;
+  }
+  .union-hero-stat-num {
+    font-size: 2em;
+  }
+  .union-hero-stat-label {
+    font-size: 0.6em;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+}
+
+/* --- Reminder scadenze campionato --- */
+.union-reminder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  padding: 14px;
+}
+.union-reminder-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.union-reminder-item:hover {
+  background: rgba(191, 239, 255, 0.08);
+  border-color: rgba(191, 239, 255, 0.2);
+}
+.union-reminder-icon {
+  font-size: 1.7em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.union-reminder-title {
+  font-size: 0.85em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--giallogtv);
+  margin-bottom: 6px;
+}
+.union-reminder-item p {
+  margin: 0;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+.union-reminder-item strong {
+  color: var(--giallogtv);
+  font-weight: 700;
 }
 
 /* --- Tabella piloti iscritti --- */
@@ -4536,6 +4615,88 @@ body#worldchampionship {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.55);
   }
+}
+
+/* --- Card piloti GTV iscritti (mobile-first, niente tabelle) --- */
+.union-pilot-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  padding: 4px 0;
+}
+.union-pilot-card {
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.union-pilot-card:hover {
+  border-color: var(--giallogtv);
+  transform: translateY(-2px);
+}
+.union-pilot-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.union-pilot-num {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--giallogtv);
+}
+.union-pilot-card .union-specch-patch {
+  margin-top: 0;
+}
+.union-pilot-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  line-height: 1.1;
+}
+.union-pilot-brand .union-brand-logo {
+  max-height: 26px;
+}
+.union-pilot-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.union-pilot-nickname {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.55);
+}
+.union-pilot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+.union-pilot-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.72em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.union-pilot-meta-label {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-size: 0.62em;
 }
 
 /* --- Specchietto riassuntivo piloti GTV (sezione Lobby) --- */

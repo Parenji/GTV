@@ -91,22 +91,38 @@
                 </div>
             </div> -->
 
-<!-- Carousel delle grafiche di categoria -->
-            <div class="union-carousel" id="union-carousel">
-                <button class="union-carousel-arrow carousel-prev" id="carousel-prev" aria-label="Precedente">&#10094;</button>
-                <div class="carousel-viewport">
-                    <div class="carousel-track" id="carousel-track">
-                        <div class="carousel-slide"><img src="images/union/1_STAR.png" alt="Categoria STAR"></div>
-                        <div class="carousel-slide"><img src="images/union/2_ELITE.png" alt="Categoria ELITE"></div>
-                        <div class="carousel-slide"><img src="images/union/3_PRO_GOLD.png" alt="Categoria PRO GOLD"></div>
-                        <div class="carousel-slide"><img src="images/union/4_PRO_SILVER.png" alt="Categoria PRO SILVER"></div>
-                        <div class="carousel-slide"><img src="images/union/5_PRO_AMA.png" alt="Categoria PRO AMA"></div>
-                        <div class="carousel-slide"><img src="images/union/6_AMA.png" alt="Categoria AMA"></div>
+<!-- Hero centrale, stile OpenRouter -->
+            <div class="union-hero">
+                <h1 class="union-hero-title">LEGA UNION</h1>
+                                <div class="union-hero-badge">ROUND 2 · 2026</div>
+
+                <p class="union-hero-subtitle">
+                    La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.
+                </p>
+                <div class="union-hero-actions">
+                    <a href="#lobby" class="union-hero-btn">
+                        Lobby
+                    </a>
+                    <a href="#calendario" class="union-hero-btn">
+                        Calendario
+                    </a>
+                </div>
+                <div class="union-hero-stats">
+                    <div class="union-hero-stat">
+                        <div class="union-hero-stat-num" id="union-stat-piloti">—</div>
+                        <div class="union-hero-stat-label">Piloti iscritti</div>
+                    </div>
+                    <div class="union-hero-stat">
+                        <div class="union-hero-stat-num" id="union-stat-gtv">—</div>
+                        <div class="union-hero-stat-label">Piloti GTV</div>
+                    </div>
+                    <div class="union-hero-stat">
+                        <div class="union-hero-stat-num" id="union-stat-gare">—</div>
+                        <div class="union-hero-stat-label">Gare</div>
                     </div>
                 </div>
-                <button class="union-carousel-arrow carousel-next" id="carousel-next" aria-label="Immagine successiva">&#10095;</button>
             </div>
-            <div class="carousel-dots" id="carousel-dots"></div>
+
             <div class="calendar-home">
                 <div class="calendar-header">
                     <div class="calendar-title">Documenti utili</div>
@@ -118,14 +134,36 @@
                             Regolamento
                             </button>
                             <button class="pdf-button" onclick="window.open('pdf/union/impostazioni lobby v.2.01_-1.pdf', '_blank')">
-                            Opzioni stanza Round 2
+                            Opzioni stanza
                             </button>
-                            <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
-                            Lista iscritti Round 2
-                            </button>
-                            <button class="pdf-button" onclick="window.open('pdf/union/Calendario Union 2026.pdf', '_blank')">
-                            Calendario
-                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reminder scadenze campionato -->
+            <div class="calendar-home union-reminder">
+                <div class="calendar-header">
+                    <div class="calendar-title">Scadenze da ricordare</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-content">
+                        <div class="union-reminder-grid">
+                            <div class="union-reminder-item">
+                                <div class="union-reminder-icon">🏁</div>
+                                <div class="union-reminder-title">Spostamento Lobby</div>
+                                <p>Le richieste di spostamento devono essere inoltrate tramite l'apposito modulo su <strong>Discord</strong> entro e non oltre le <strong>23:59</strong> del <strong>giovedì</strong> precedente la settimana di gara.</p>
+                            </div>
+                            <div class="union-reminder-item">
+                                <div class="union-reminder-icon">🤝</div>
+                                <div class="union-reminder-title">Amicizia all'Host</div>
+                                <p>La richiesta di amicizia all'Host di riferimento deve essere inviata dal pilota entro le <strong>12:00</strong> del giorno della gara.</p>
+                            </div>
+                            <div class="union-reminder-item">
+                                <div class="union-reminder-icon">📨</div>
+                                <div class="union-reminder-title">Reclami alla Direzione Gara</div>
+                                <p>L'invio di eventuali reclami deve essere effettuato tramite il proprio <strong>capo team</strong> entro le <strong>23:59</strong> del giorno successivo alla gara.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -146,12 +184,10 @@
                     <div class="calendar-subtitle">LEGA UNION  · ROUND 2</div>
                 </div>
                 <div class="calendar-grid">
-                    <div class="table-container">
-                        <div id="union-piloti-body" class="responsive-table union-piloti-table">
-                            <div class="loading-message">
-                                <div class="loading-spinner"></div>
-                                Caricamento dati in corso...
-                            </div>
+                    <div id="union-piloti-body" class="union-piloti-container">
+                        <div class="loading-message">
+                            <div class="loading-spinner"></div>
+                            Caricamento dati in corso...
                         </div>
                     </div>
                 </div>
