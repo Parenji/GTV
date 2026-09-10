@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-09T15:22:21+00:00"
+    "generated_at": "2026-09-10T01:35:13+00:00"
   },
   "stats": {
     "total_pilots": 473,
@@ -333,9 +333,9 @@
         },
         {
           "pos": 13,
-          "matricola": "196",
+          "matricola": "201",
           "team": "EVO",
-          "nome": "EVO_AleTDx",
+          "nome": "Ter_effe355",
           "auto": ""
         },
         {
@@ -352,7 +352,7 @@
       "time": "Ore 21:00",
       "name": "A4",
       "category": "PRO SILVER",
-      "host": "hellboy",
+      "host": "HellBoy8408",
       "live": "SCGT- hellboy",
       "url": "https://www.twitch.tv/squadracorsegt",
       "pilots": [
@@ -395,7 +395,7 @@
           "pos": 6,
           "matricola": "273",
           "team": "BCSC",
-          "nome": "BCSC_Grabuxero",
+          "nome": "BCSC_Gravebuxero",
           "auto": ""
         },
         {
@@ -727,9 +727,9 @@
         },
         {
           "pos": 9,
-          "matricola": "468",
+          "matricola": "467",
           "team": "FMC",
-          "nome": "Fratta_motor_clb",
+          "nome": "FMC_Samu4Seven",
           "auto": ""
         },
         {
@@ -769,7 +769,7 @@
       "category": "STAR",
       "host": "TRT-Tommizio",
       "live": "ARC- TRT-Tommizio",
-      "url": "https://youtube.com/@kronosesportitalia",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -889,9 +889,9 @@
         },
         {
           "pos": 3,
-          "matricola": "456",
+          "matricola": "455",
           "team": "ARC",
-          "nome": "ARGAMERR",
+          "nome": "giggggetto87",
           "auto": ""
         },
         {
@@ -1033,9 +1033,9 @@
         },
         {
           "pos": 9,
-          "matricola": "160",
+          "matricola": "159",
           "team": "SMI",
-          "nome": "Lo Iacono D.",
+          "nome": "Henryk",
           "auto": ""
         },
         {
@@ -1177,13 +1177,13 @@
       "category": "PRO GOLD",
       "host": "VintageAR",
       "live": "ARC- VintageAR",
-      "url": "https://youtube.com/@kronosesportitalia",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
-          "matricola": "201",
+          "matricola": "196",
           "team": "EVO",
-          "nome": "Ter_effe355",
+          "nome": "EVO_AleTDx",
           "auto": ""
         },
         {
@@ -1265,9 +1265,9 @@
         },
         {
           "pos": 13,
-          "matricola": "197",
+          "matricola": "198",
           "team": "EVO",
-          "nome": "EVO_Manu81",
+          "nome": "EVO_piraz",
           "auto": ""
         },
         {
@@ -1339,9 +1339,9 @@
         },
         {
           "pos": 8,
-          "matricola": "427",
+          "matricola": "428",
           "team": "SMI",
-          "nome": "SMI_Bibieffe",
+          "nome": "SMI_Desmo77",
           "auto": ""
         },
         {
@@ -1455,9 +1455,9 @@
         },
         {
           "pos": 9,
-          "matricola": "102",
+          "matricola": "105",
           "team": "CBR",
-          "nome": "DavideRui",
+          "nome": "Ninonitros1",
           "auto": ""
         },
         {
@@ -1673,9 +1673,9 @@
         },
         {
           "pos": 11,
-          "matricola": "428",
+          "matricola": "427",
           "team": "SMI",
-          "nome": "SMI_Desmo77",
+          "nome": "SMI_Bibieffe",
           "auto": ""
         },
         {
@@ -1870,9 +1870,9 @@
         },
         {
           "pos": 10,
-          "matricola": "159",
+          "matricola": "160",
           "team": "SMI",
-          "nome": "Henryk",
+          "nome": "Lo Iacono D.",
           "auto": ""
         },
         {
@@ -1903,7 +1903,7 @@
       "time": "Ore 21:00",
       "name": "A19",
       "category": "AMA",
-      "host": "MF_maxlaqualunque",
+      "host": "MF_maxlaqualunqe",
       "live": "MFC- MF_maxlaqualunque",
       "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
@@ -1951,9 +1951,9 @@
         },
         {
           "pos": 7,
-          "matricola": "452",
+          "matricola": "456",
           "team": "ARC",
-          "nome": "KSI-MarinaioPazz",
+          "nome": "ARGAMERR",
           "auto": ""
         },
         {
@@ -1979,9 +1979,9 @@
         },
         {
           "pos": 11,
-          "matricola": "467",
+          "matricola": "468",
           "team": "FMC",
-          "nome": "FMC_Samu4Seven",
+          "nome": "Fratta_motor_clb",
           "auto": ""
         },
         {
@@ -2127,9 +2127,9 @@
         },
         {
           "pos": 3,
-          "matricola": "198",
+          "matricola": "197",
           "team": "EVO",
-          "nome": "EVO_piraz",
+          "nome": "EVO_Manu81",
           "auto": ""
         },
         {
@@ -2338,9 +2338,9 @@
         },
         {
           "pos": 3,
-          "matricola": "455",
+          "matricola": "452",
           "team": "ARC",
-          "nome": "giggggetto87",
+          "nome": "KSI-MarinaioPazz",
           "auto": ""
         },
         {
@@ -3562,9 +3562,9 @@
         },
         {
           "pos": 2,
-          "matricola": "105",
+          "matricola": "102",
           "team": "CBR",
-          "nome": "Ninonitros1",
+          "nome": "DavideRui",
           "auto": ""
         },
         {
