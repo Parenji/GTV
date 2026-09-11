@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-10T15:16:47+00:00"
+    "generated_at": "2026-09-11T01:34:18+00:00"
   },
   "stats": {
     "total_pilots": 473,
@@ -108,9 +108,9 @@
         },
         {
           "pos": 10,
-          "matricola": "37",
+          "matricola": "38",
           "team": "PBC",
-          "nome": "manu08FL",
+          "nome": "PBC_Giulio",
           "auto": ""
         },
         {
@@ -161,9 +161,9 @@
         },
         {
           "pos": 3,
-          "matricola": "145",
+          "matricola": "143",
           "team": "RCE",
-          "nome": "Rce_ Patrick85",
+          "nome": "Biso_44",
           "auto": ""
         },
         {
@@ -407,9 +407,9 @@
         },
         {
           "pos": 8,
-          "matricola": "305",
-          "team": "PBC",
-          "nome": "Pete",
+          "matricola": "285",
+          "team": "DCT",
+          "nome": "Matteo.R 00",
           "auto": ""
         },
         {
@@ -564,7 +564,7 @@
       "name": "A6",
       "category": "PRO AMA",
       "host": "MirkoDC10",
-      "live": "DCT- fiume11",
+      "live": "DCT- MirkoDC10",
       "url": "https://www.twitch.tv/dclab_channel_1",
       "pilots": [
         {
@@ -604,9 +604,9 @@
         },
         {
           "pos": 6,
-          "matricola": "366",
+          "matricola": "371",
           "team": "CBR",
-          "nome": "CBR_FELIX",
+          "nome": "Nobita",
           "auto": ""
         },
         {
@@ -734,9 +734,9 @@
         },
         {
           "pos": 10,
-          "matricola": "497",
+          "matricola": "501",
           "team": "RRT",
-          "nome": "Pierpynolo76",
+          "nome": "Fabrix88",
           "auto": ""
         },
         {
@@ -903,9 +903,9 @@
         },
         {
           "pos": 5,
-          "matricola": "512",
-          "team": "SMI",
-          "nome": "SMI_dragulillo",
+          "matricola": "490",
+          "team": "RMT",
+          "nome": "barso91",
           "auto": ""
         },
         {
@@ -917,9 +917,9 @@
         },
         {
           "pos": 7,
-          "matricola": "501",
+          "matricola": "497",
           "team": "RRT",
-          "nome": "Fabrix88",
+          "nome": "Pierpynolo76",
           "auto": ""
         },
         {
@@ -1230,9 +1230,9 @@
         },
         {
           "pos": 8,
-          "matricola": "185",
+          "matricola": "182",
           "team": "CBR",
-          "nome": "CBR_Paolucci",
+          "nome": "AgaresErkekjette",
           "auto": ""
         },
         {
@@ -1265,9 +1265,9 @@
         },
         {
           "pos": 13,
-          "matricola": "198",
-          "team": "EVO",
-          "nome": "EVO_piraz",
+          "matricola": "261",
+          "team": "TLM",
+          "nome": "Thanos_Manny",
           "auto": ""
         },
         {
@@ -2120,9 +2120,9 @@
         },
         {
           "pos": 2,
-          "matricola": "182",
+          "matricola": "185",
           "team": "CBR",
-          "nome": "AgaresErkekjette",
+          "nome": "CBR_Paolucci",
           "auto": ""
         },
         {
@@ -2257,9 +2257,9 @@
         },
         {
           "pos": 6,
-          "matricola": "285",
-          "team": "DCT",
-          "nome": "Matteo.R 00",
+          "matricola": "305",
+          "team": "PBC",
+          "nome": "Pete",
           "auto": ""
         },
         {
@@ -2679,9 +2679,9 @@
         },
         {
           "pos": 7,
-          "matricola": "371",
+          "matricola": "366",
           "team": "CBR",
-          "nome": "Nobita",
+          "nome": "CBR_FELIX",
           "auto": ""
         },
         {
@@ -2802,9 +2802,9 @@
         },
         {
           "pos": 9,
-          "matricola": "490",
-          "team": "RMT",
-          "nome": "barso91",
+          "matricola": "512",
+          "team": "SMI",
+          "nome": "SMI_dragulillo",
           "auto": ""
         },
         {
@@ -2944,8 +2944,8 @@
       "time": "Ore 22:20",
       "name": "A29",
       "category": "STAR",
-      "host": "pinpinella95",
-      "live": "OES- pinpinella95",
+      "host": "MNY-MirwoTangi",
+      "live": "OES- MNY-MirwoTangi",
       "url": "https://youtube.com/@officialorionesports",
       "pilots": [
         {
@@ -3129,9 +3129,9 @@
         },
         {
           "pos": 12,
-          "matricola": "143",
+          "matricola": "145",
           "team": "RCE",
-          "nome": "Biso_44",
+          "nome": "Rce_ Patrick85",
           "auto": ""
         }
       ]
@@ -3147,9 +3147,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "261",
-          "team": "TLM",
-          "nome": "Thanos_Manny",
+          "matricola": "198",
+          "team": "EVO",
+          "nome": "EVO_piraz",
           "auto": ""
         },
         {
@@ -3460,9 +3460,9 @@
         },
         {
           "pos": 2,
-          "matricola": "38",
+          "matricola": "37",
           "team": "PBC",
-          "nome": "PBC_Giulio",
+          "nome": "manu08FL",
           "auto": ""
         },
         {
