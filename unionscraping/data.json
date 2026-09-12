@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-12T01:40:35+00:00"
+    "generated_at": "2026-09-12T14:26:21+00:00"
   },
   "stats": {
     "total_pilots": 473,
@@ -523,9 +523,9 @@
         },
         {
           "pos": 9,
-          "matricola": "52",
+          "matricola": "53",
           "team": "RCE",
-          "nome": "RCE_DarkneSS",
+          "nome": "RCE_Freej",
           "auto": ""
         },
         {
@@ -592,7 +592,7 @@
           "pos": 4,
           "matricola": "365",
           "team": "CBR",
-          "nome": "CBR_Diavolo983",
+          "nome": "CBR_CrisZ.9",
           "auto": ""
         },
         {
@@ -720,9 +720,9 @@
         },
         {
           "pos": 8,
-          "matricola": "514",
+          "matricola": "518",
           "team": "SMI",
-          "nome": "SMI-Mandrake",
+          "nome": "SMI_RomeLu",
           "auto": ""
         },
         {
@@ -822,9 +822,9 @@
         },
         {
           "pos": 8,
-          "matricola": "53",
+          "matricola": "52",
           "team": "RCE",
-          "nome": "RCE_Freej",
+          "nome": "RCE_DarkneSS",
           "auto": ""
         },
         {
@@ -1079,9 +1079,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "287",
-          "team": "DCT",
-          "nome": "Shudew",
+          "matricola": "323",
+          "team": "RRT",
+          "nome": "RRT_SNERZZZ",
           "auto": ""
         },
         {
@@ -2359,9 +2359,9 @@
         },
         {
           "pos": 6,
-          "matricola": "518",
+          "matricola": "514",
           "team": "SMI",
-          "nome": "SMI_RomeLu",
+          "nome": "SMI-Mandrake",
           "auto": ""
         },
         {
@@ -2563,9 +2563,9 @@
         },
         {
           "pos": 5,
-          "matricola": "323",
-          "team": "RRT",
-          "nome": "RRT_SNERZZZ",
+          "matricola": "287",
+          "team": "DCT",
+          "nome": "Shudew",
           "auto": ""
         },
         {
