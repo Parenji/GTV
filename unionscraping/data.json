@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-14T01:49:08+00:00"
+    "generated_at": "2026-09-14T17:05:09+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -108,9 +108,9 @@
         },
         {
           "pos": 10,
-          "matricola": "54",
-          "team": "RCE",
-          "nome": "RCE_Pinkuino97",
+          "matricola": "39",
+          "team": "PBC",
+          "nome": "Richie",
           "auto": ""
         },
         {
@@ -243,9 +243,9 @@
       "time": "Ore 21:00",
       "name": "A3",
       "category": "PRO GOLD",
-      "host": "DA DEFINIRE",
-      "live": "DA DEFINIRE",
-      "url": "",
+      "host": "CBR_Mava",
+      "live": "CBR- Live_cobraracing",
+      "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
         {
           "pos": 1,
@@ -767,8 +767,8 @@
       "time": "Ore 21:00",
       "name": "A10",
       "category": "STAR",
-      "host": "TRT-Tommizio",
-      "live": "ARC- TRT-Tommizio",
+      "host": "VintageAR",
+      "live": "ARC- VintageAR",
       "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
@@ -3495,9 +3495,9 @@
         },
         {
           "pos": 7,
-          "matricola": "39",
-          "team": "PBC",
-          "nome": "Richie",
+          "matricola": "54",
+          "team": "RCE",
+          "nome": "RCE_Pinkuino97",
           "auto": ""
         },
         {
