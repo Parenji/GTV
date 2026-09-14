@@ -2,14 +2,14 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-13T15:07:34+00:00"
+    "generated_at": "2026-09-14T01:49:08+00:00"
   },
   "stats": {
-    "total_pilots": 473,
+    "total_pilots": 472,
     "total_lobbies": 36,
     "total_teams": 23,
     "categories": {
-      "Star": 77,
+      "Star": 76,
       "ELITE": 78,
       "Pro Gold": 82,
       "PROSILVER": 78,
@@ -17,7 +17,7 @@
       "AMA": 78
     },
     "lobby_groups": {
-      "1": 77,
+      "1": 76,
       "2": 78,
       "3": 82,
       "4": 77,
@@ -108,9 +108,9 @@
         },
         {
           "pos": 10,
-          "matricola": "38",
-          "team": "PBC",
-          "nome": "PBC_Giulio",
+          "matricola": "54",
+          "team": "RCE",
+          "nome": "RCE_Pinkuino97",
           "auto": ""
         },
         {
@@ -243,9 +243,9 @@
       "time": "Ore 21:00",
       "name": "A3",
       "category": "PRO GOLD",
-      "host": "Villab90",
-      "live": "TLM- Villab90",
-      "url": "https://youtube.com/@teamlionmotorsport",
+      "host": "DA DEFINIRE",
+      "live": "DA DEFINIRE",
+      "url": "",
       "pilots": [
         {
           "pos": 1,
@@ -474,9 +474,9 @@
         },
         {
           "pos": 2,
-          "matricola": "39",
+          "matricola": "38",
           "team": "PBC",
-          "nome": "Richie",
+          "nome": "PBC_Giulio",
           "auto": ""
         },
         {
@@ -1448,9 +1448,9 @@
         },
         {
           "pos": 8,
-          "matricola": "132",
-          "team": "PBC",
-          "nome": "PBC_Goivas",
+          "matricola": "94",
+          "team": "BCSC",
+          "nome": "BAD_Ken Miles",
           "auto": ""
         },
         {
@@ -3495,9 +3495,9 @@
         },
         {
           "pos": 7,
-          "matricola": "54",
-          "team": "RCE",
-          "nome": "RCE_Pinkuino97",
+          "matricola": "39",
+          "team": "PBC",
+          "nome": "Richie",
           "auto": ""
         },
         {
@@ -3590,9 +3590,9 @@
         },
         {
           "pos": 6,
-          "matricola": "94",
-          "team": "BCSC",
-          "nome": "BAD_Ken Miles",
+          "matricola": "132",
+          "team": "PBC",
+          "nome": "PBC_Goivas",
           "auto": ""
         },
         {
@@ -4950,124 +4950,117 @@
     {
       "prog": 3,
       "team": "GTV",
-      "nome": "Maverick",
+      "nome": "Nicco.rs",
       "categoria": "Star",
       "lobby_group": "1"
     },
     {
       "prog": 4,
       "team": "GTV",
-      "nome": "Nicco.rs",
-      "categoria": "Star",
-      "lobby_group": "1"
-    },
-    {
-      "prog": 5,
-      "team": "GTV",
       "nome": "Giusdandri",
       "categoria": "ELITE",
       "lobby_group": "2"
     },
     {
-      "prog": 6,
+      "prog": 5,
       "team": "GTV",
       "nome": "Iceman",
       "categoria": "ELITE",
       "lobby_group": "2"
     },
     {
-      "prog": 7,
+      "prog": 6,
       "team": "GTV",
       "nome": "Andre86",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 8,
+      "prog": 7,
       "team": "GTV",
       "nome": "Barda88",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 9,
+      "prog": 8,
       "team": "GTV",
       "nome": "Brook24",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 10,
+      "prog": 9,
       "team": "GTV",
       "nome": "GTV-legendafluo6",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 11,
+      "prog": 10,
       "team": "GTV",
       "nome": "Mirco",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 12,
+      "prog": 11,
       "team": "GTV",
       "nome": "Vale34",
       "categoria": "Pro Gold",
       "lobby_group": "3"
     },
     {
-      "prog": 13,
+      "prog": 12,
       "team": "GTV",
       "nome": "Sun|)own",
       "categoria": "PROSILVER",
       "lobby_group": "4"
     },
     {
-      "prog": 14,
+      "prog": 13,
       "team": "GTV",
       "nome": "Zabo",
       "categoria": "PROSILVER",
       "lobby_group": "4"
     },
     {
-      "prog": 15,
+      "prog": 14,
       "team": "GTV",
       "nome": "Sauzer",
       "categoria": "Pro Ama",
       "lobby_group": "5"
     },
     {
-      "prog": 16,
+      "prog": 15,
       "team": "GTV",
       "nome": "Scrocchio98",
       "categoria": "Pro Ama",
       "lobby_group": "5"
     },
     {
-      "prog": 17,
+      "prog": 16,
       "team": "GTV",
       "nome": "Drivergt1985",
       "categoria": "AMA",
       "lobby_group": "6"
     },
     {
-      "prog": 18,
+      "prog": 17,
       "team": "GTV",
       "nome": "Frasalvo96",
       "categoria": "AMA",
       "lobby_group": "6"
     },
     {
-      "prog": 19,
+      "prog": 18,
       "team": "GTV",
       "nome": "Goose",
       "categoria": "AMA",
       "lobby_group": "6"
     },
     {
-      "prog": 20,
+      "prog": 19,
       "team": "GTV",
       "nome": "GTSCode",
       "categoria": "AMA",
