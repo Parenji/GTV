@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-14T17:05:09+00:00"
+    "generated_at": "2026-09-15T01:58:49+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -625,9 +625,9 @@
         },
         {
           "pos": 9,
-          "matricola": "420",
-          "team": "RRT",
-          "nome": "J-Fly",
+          "matricola": "423",
+          "team": "SCGT",
+          "nome": "simothesniper23",
           "auto": ""
         },
         {
@@ -678,9 +678,9 @@
         },
         {
           "pos": 2,
-          "matricola": "458",
-          "team": "CBR",
-          "nome": "Alex Lilla",
+          "matricola": "474",
+          "team": "MMS",
+          "nome": "A.Papotto",
           "auto": ""
         },
         {
@@ -843,9 +843,9 @@
         },
         {
           "pos": 11,
-          "matricola": "9",
+          "matricola": "10",
           "team": "CBR",
-          "nome": "F.Tommasini",
+          "nome": "I.Ventura",
           "auto": ""
         },
         {
@@ -1012,9 +1012,9 @@
         },
         {
           "pos": 6,
-          "matricola": "164",
-          "team": "SMI",
-          "nome": "SMI_Maverick88",
+          "matricola": "146",
+          "team": "RCE",
+          "nome": "RCE_Hipp086",
           "auto": ""
         },
         {
@@ -1061,9 +1061,9 @@
         },
         {
           "pos": 13,
-          "matricola": "141",
+          "matricola": "135",
           "team": "PRT",
-          "nome": "VeGe",
+          "nome": "G. Bozzo",
           "auto": ""
         }
       ]
@@ -1149,9 +1149,9 @@
         },
         {
           "pos": 11,
-          "matricola": "332",
+          "matricola": "328",
           "team": "SMI",
-          "nome": "SMI_DeliciousBBQ",
+          "nome": "FMC_Roax1984",
           "auto": ""
         },
         {
@@ -1807,16 +1807,16 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "135",
+          "matricola": "141",
           "team": "PRT",
-          "nome": "G. Bozzo",
+          "nome": "VeGe",
           "auto": ""
         },
         {
           "pos": 2,
-          "matricola": "146",
-          "team": "RCE",
-          "nome": "RCE_Hipp086",
+          "matricola": "164",
+          "team": "SMI",
+          "nome": "SMI_Maverick88",
           "auto": ""
         },
         {
@@ -1930,9 +1930,9 @@
         },
         {
           "pos": 4,
-          "matricola": "474",
-          "team": "MMS",
-          "nome": "A.Papotto",
+          "matricola": "458",
+          "team": "CBR",
+          "nome": "Alex Lilla",
           "auto": ""
         },
         {
@@ -2011,9 +2011,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "423",
-          "team": "SCGT",
-          "nome": "simothesniper23",
+          "matricola": "420",
+          "team": "RRT",
+          "nome": "J-Fly",
           "auto": ""
         },
         {
@@ -2598,9 +2598,9 @@
         },
         {
           "pos": 10,
-          "matricola": "328",
+          "matricola": "332",
           "team": "SMI",
-          "nome": "FMC_Roax1984",
+          "nome": "SMI_DeliciousBBQ",
           "auto": ""
         },
         {
@@ -2971,9 +2971,9 @@
         },
         {
           "pos": 4,
-          "matricola": "10",
+          "matricola": "9",
           "team": "CBR",
-          "nome": "I.Ventura",
+          "nome": "F.Tommasini",
           "auto": ""
         },
         {
