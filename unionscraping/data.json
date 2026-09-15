@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-15T01:58:49+00:00"
+    "generated_at": "2026-09-15T15:44:47+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -393,9 +393,9 @@
         },
         {
           "pos": 6,
-          "matricola": "273",
+          "matricola": "274",
           "team": "BCSC",
-          "nome": "BCSC_Gravebuxero",
+          "nome": "TER_Axel79",
           "auto": ""
         },
         {
@@ -604,9 +604,9 @@
         },
         {
           "pos": 6,
-          "matricola": "371",
-          "team": "CBR",
-          "nome": "Nobita",
+          "matricola": "402",
+          "team": "PRT",
+          "nome": "astrorock285",
           "auto": ""
         },
         {
@@ -650,13 +650,6 @@
           "team": "ARC",
           "nome": "KSI-AreS_GlaDiuS",
           "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "402",
-          "team": "PRT",
-          "nome": "astrorock285",
-          "auto": ""
         }
       ]
     },
@@ -667,7 +660,7 @@
       "category": "AMA",
       "host": "MF_GioBar73",
       "live": "MFC- MF_GioBar73",
-      "url": "https://youtube.com/@mfcorse-46",
+      "url": "https://youtube.com/@GioBar73",
       "pilots": [
         {
           "pos": 1,
@@ -854,13 +847,6 @@
           "team": "FFM",
           "nome": "FFM_Nic_Cannone",
           "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "29",
-          "team": "GTV",
-          "nome": "Maverick",
-          "auto": ""
         }
       ]
     },
@@ -1033,34 +1019,27 @@
         },
         {
           "pos": 9,
-          "matricola": "159",
-          "team": "SMI",
-          "nome": "Henryk",
-          "auto": ""
-        },
-        {
-          "pos": 10,
           "matricola": "92",
           "team": "ARC",
           "nome": "ARC-Tommizio",
           "auto": ""
         },
         {
-          "pos": 11,
+          "pos": 10,
           "matricola": "124",
           "team": "GTV",
           "nome": "Giusdandri",
           "auto": ""
         },
         {
-          "pos": 12,
+          "pos": 11,
           "matricola": "107",
           "team": "DCT",
           "nome": "DCT_Fiume11",
           "auto": ""
         },
         {
-          "pos": 13,
+          "pos": 12,
           "matricola": "135",
           "team": "PRT",
           "nome": "G. Bozzo",
@@ -1093,9 +1072,9 @@
         },
         {
           "pos": 3,
-          "matricola": "274",
+          "matricola": "273",
           "team": "BCSC",
-          "nome": "TER_Axel79",
+          "nome": "BCSC_Gravebuxero",
           "auto": ""
         },
         {
@@ -1905,7 +1884,7 @@
       "category": "AMA",
       "host": "MF_maxlaqualunqe",
       "live": "MFC- MF_maxlaqualunque",
-      "url": "https://youtube.com/@mfcorse-46",
+      "url": "https://youtube.com/@max_71_mf",
       "pilots": [
         {
           "pos": 1,
@@ -3142,7 +3121,7 @@
       "name": "A31",
       "category": "PRO GOLD",
       "host": "MF_maxlaqualunqe",
-      "live": "MFC- MF_maxlaqualunque",
+      "live": "MFC- MFCorse-46",
       "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
@@ -3447,8 +3426,8 @@
       "time": "Ore 22:20",
       "name": "A34",
       "category": "STAR",
-      "host": "MF_GioBar73",
-      "live": "MFC- MF_maxlaqualunque",
+      "host": "MF_maxlaqualunqe",
+      "live": "MFC- MFCorse-46",
       "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
