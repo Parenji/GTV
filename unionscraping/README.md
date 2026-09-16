@@ -1,0 +1,197 @@
+# Promemoria gare UNION → WhatsApp / Telegram
+
+Due strumenti che condividono gli stessi dati (`data.json` + `union.html`):
+
+| | cosa fa |
+|---|---|
+| `whatsapp_reminder.py` | genera i messaggi (e li invia su Telegram) — usato dal cron |
+| `gtv_bot.py` | **pannello di controllo su Telegram** con menu interattivo |
+
+Genera, per **ogni giorno di gara**, il messaggio pronto da inoltrare nella
+bacheca WhatsApp del team GTV: riepilogo dei piloti GTV che corrono quella sera
+(lobby, categoria, orario, host, link della live), incitamento e promemoria
+della richiesta di amicizia all'Host **entro le 12:00**.
+
+## Come funziona
+
+```
+union.html  ──►  calendario Round 2 (pista + settimane di gara)
+data.json   ──►  lobby + piloti (generato da scraper.py dai fogli Union)
+                          │
+              ┌───────────┴────────────┐
+              ▼                        ▼
+  whatsapp_reminder.py          gtv_bot.py (pannello Telegram)
+  • cron a mezzanotte           • /start → menu
+  • file .txt + invio           • Union → giorno → messaggio
+```
+
+- I giorni di gara sono **lunedì–venerdì** delle settimane indicate in
+  `union.html` (sabato e domenica non si corre).
+- Vengono elencate solo le lobby con almeno un pilota con `team == "GTV"`.
+- Nei giorni non di gara non viene generato né inviato nulla.
+
+## Uso manuale
+
+```bash
+cd unionscraping
+
+python3 whatsapp_reminder.py --list          # elenca tutti i giorni di gara
+python3 whatsapp_reminder.py                 # messaggio di oggi (se è giorno di gara)
+python3 whatsapp_reminder.py --date 2026-09-21
+python3 whatsapp_reminder.py --all           # tutti i giorni del prossimo round
+python3 whatsapp_reminder.py --round 2 --all # tutti i giorni della Gara 2
+python3 whatsapp_reminder.py --season        # tutta la stagione (30 messaggi)
+python3 whatsapp_reminder.py --all --copy    # e copia negli appunti (macOS)
+
+# Anteprima di quello che partirebbe a mezzanotte, senza inviare:
+python3 whatsapp_reminder.py --today
+
+# Invio Telegram reale (richiede le credenziali, vedi sotto):
+python3 whatsapp_reminder.py --date 2026-09-21 --send-telegram --force
+```
+
+I messaggi generati finiscono in `unionscraping/whatsapp/` (cartella ignorata da git).
+
+## Pannello di controllo (`gtv_bot.py`)
+
+Un bot Telegram con menu a pulsanti: apri **@GTVadminbot** e premi **Start**,
+poi `/menu`.
+
+```
+🎛 GTV Control Panel
+   🏁 Union
+      📤 Messaggio di oggi            (se oggi è giorno di gara)
+      📅 Gara 1 · Red Bull Ring       → Lun / Mar / Mer / Gio / Ven
+                                       → 📦 Tutta la settimana
+      🏆 Scegli un'altra gara         → Gara 1 … Finale
+      📋 Calendario giorni di gara
+```
+
+Ogni messaggio generato arriva in chat già formattato per WhatsApp
+(`*grassetto*`), con il pulsante **📄 Invia come file .txt** se preferisci
+il file. Comandi disponibili: `/start`, `/menu`, `/union`, `/oggi`, `/id`,
+`/help`.
+
+Il bot è progettato per crescere: i futuri task diventano nuovi moduli nel
+menu principale (in `gtv_bot.py`, metodo `build_main_menu`).
+
+### Avvio manuale
+
+```bash
+cd unionscraping
+python3 gtv_bot.py                 # long polling: il pannello risponde
+python3 gtv_bot.py --set-commands  # registra i comandi nel menu di Telegram
+python3 gtv_bot.py --once          # processa i comandi in sospeso ed esce
+```
+
+### Avvio automatico su macOS (consigliato)
+
+```bash
+cd unionscraping
+./macos_bot_service.sh install     # avvia il bot a ogni login e lo tiene vivo
+./macos_bot_service.sh status      # stato + ultime righe di log
+./macos_bot_service.sh restart
+./macos_bot_service.sh uninstall
+```
+
+Il servizio (launchd) riavvia il bot se crasha. Se il Mac è spento o in
+letargo il pannello non risponde, ma i comandi restano in coda su Telegram e
+vengono eseguiti appena il Mac si riaccende. **L'invio automatico di
+mezzanotte resta su GitHub Actions e funziona anche a Mac spento.**
+
+### Limitare l'accesso
+
+Il bot risponde a chiunque finché non imposti l'allowlist. Mandagli `/id` per
+vedere il tuo `chat_id`, poi aggiungilo in `.env.telegram`:
+
+```ini
+TELEGRAM_ALLOWED_CHAT_IDS=123456789
+```
+
+## Credenziali Telegram
+
+Ordine di priorità:
+
+1. `--token` / `--chat-id` sulla riga di comando;
+2. variabili d'ambiente `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID`;
+3. file locale **git-ignorato** `unionscraping/.env.telegram`.
+
+```ini
+# unionscraping/.env.telegram
+TELEGRAM_BOT_TOKEN=123456789:AA...
+TELEGRAM_CHAT_ID=-1001234567890   # gruppo (id negativo) o chat privata
+```
+
+Il token **non va mai committato**: il file è già in `.gitignore`.
+
+### Setup del bot (una volta sola)
+
+1. Su Telegram apri **@BotFather** → `/newbot` → copia il token.
+2. **Apri il bot e premi Start** (chat privata) — oppure aggiungilo a un
+   gruppo e scrivi lì un messaggio.
+3. Ricava l'id della destinazione:
+
+   ```bash
+   cd unionscraping
+   python3 whatsapp_reminder.py --detect-chat-id
+   ```
+
+4. Incolla l'id in `unionscraping/.env.telegram` (`TELEGRAM_CHAT_ID=...`).
+5. Prova subito con un invio forzato:
+
+   ```bash
+   python3 whatsapp_reminder.py --date 2026-09-21 --send-telegram --force
+   ```
+
+### Sicurezza del token
+
+Il token è l'unica credenziale del bot: chi lo possiede può scrivere a nome
+del bot. Se viene condiviso o sospetti una fuga, su **@BotFather** →
+`/revoke` → scegli il bot: ottieni un token nuovo da sostituire in
+`.env.telegram` e nel secret GitHub.
+
+## Automazione (GitHub Actions)
+
+Il workflow `.github/workflows/union-race-message.yml` parte da solo:
+
+- **22:00 e 23:00 UTC** = 00:00 italiane (una delle due a seconda di ora
+  legale/solare); lo script invia solo se in Italia sono le 00:00, quindi
+  **mai due volte**;
+- aggiorna prima `data.json` con `scraper.py` (se lo scraping fallisce usa
+  quello già nel repo);
+- nei giorni non di gara non invia nulla;
+- si può lanciare a mano da **Actions → Union Race Message → Run workflow**
+  (con data opzionale, e invio forzato fuori orario);
+- salva i `.txt` generati come artifact del run.
+
+### Secrets da configurare sul repo GitHub
+
+Un *secret* è una variabile segreta che GitHub inietta nel workflow: serve
+perché il token non può stare nel codice (chiunque lo leggerebbe).
+
+**Settings → Secrets and variables → Actions → New repository secret**
+
+| Nome | Valore |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | token di @BotFather |
+| `TELEGRAM_CHAT_ID` | id della chat privata con il bot (da `--detect-chat-id`) |
+
+I secrets non finiscono mai nel repository e non sono visibili nemmeno dopo
+il salvataggio (GitHub li mostra solo come `***`).
+
+## WhatsApp: si può automatizzare?
+
+No, non in modo sicuro: WhatsApp non offre un'API ufficiale per gli account
+personali e le librerie non ufficiali (whatsapp-web.js, Baileys…) violano i
+termini di servizio e possono far **bannare il numero**. Per questo il flusso
+scelto è: Telegram come "sveglia" a mezzanotte → tu inoltri il messaggio nella
+bacheca WhatsApp con due tap. Il messaggio è scritto con la sintassi
+`*grassetto*` di WhatsApp, quindi il copia/incolla conserva la formattazione.
+
+## Note
+
+- I link delle live e gli host arrivano dai fogli Union: se cambiano, si
+  aggiornano da soli al giro di scraping successivo.
+- L'assegnazione lobby/piloti è quella per giorno della settimana pubblicata
+  dalla lega (vale per tutti i round).
+- `python3 whatsapp_reminder.py --help` per tutte le opzioni.

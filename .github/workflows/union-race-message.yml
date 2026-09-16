@@ -1,0 +1,86 @@
+name: Union Race Message
+
+# Genera (e invia su Telegram) il messaggio promemoria del giorno di gara
+# alle 00:00 italiane: cosi' il messaggio e' gia' pronto in chat e puoi
+# inoltrarlo su WhatsApp nella bacheca del team quando vuoi.
+#
+# Fusi orari: GitHub Actions usa sempre UTC (niente ora legale).
+#   00:00 italiane (estate, CEST = UTC+2) -> 22:00 UTC del giorno prima
+#   00:00 italiane (inverno, CET  = UTC+1) -> 23:00 UTC del giorno prima
+# Lanciamo il workflow a entrambe le ore: lo script invia solo se l'ora
+# locale italiana e' 00 (finestra di mezzanotte), quindi mai due volte.
+#
+# Nei giorni non di gara (sab/dom e settimane di pausa) lo script non
+# genera e non invia nulla: esce con successo e basta.
+on:
+  schedule:
+    - cron: "0 22 * * *"
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Data di gara da generare (YYYY-MM-DD). Vuoto = oggi."
+        required: false
+      force:
+        description: "Invia subito, ignorando la finestra di mezzanotte"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# Se due esecuzioni si sovrappongono, l'ultima attende invece di duplicare.
+concurrency:
+  group: union-race-message
+  cancel-in-progress: false
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Aggiorna i dati Union
+        working-directory: unionscraping
+        # Se lo scraping fallisce (rete/Google), si prosegue con il
+        # data.json gia' presente nel repo: il messaggio parte comunque.
+        continue-on-error: true
+        run: python3 scraper.py
+
+      - name: Genera e invia il messaggio del giorno di gara
+        working-directory: unionscraping
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          ARGS="--send-telegram"
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            ARGS="$ARGS --date ${{ github.event.inputs.date }}"
+          else
+            ARGS="$ARGS --today"
+          fi
+          # Solo il lancio manuale ignora la finestra di mezzanotte,
+          # il cron automatico invia soltanto a mezzanotte italiana.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+             && [ "${{ github.event.inputs.force }}" != "false" ]; then
+            ARGS="$ARGS --force"
+          fi
+          echo "Eseguo: python3 whatsapp_reminder.py $ARGS"
+          python3 whatsapp_reminder.py $ARGS
+
+      - name: Salva i messaggi generati come artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: messaggi-union
+          path: unionscraping/whatsapp/*.txt
+          if-no-files-found: ignore
+          retention-days: 14

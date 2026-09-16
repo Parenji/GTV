@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Segreti locali (token Telegram, chat id...) — NON vanno mai committati
+.env
+.env.*
+unionscraping/.env
+unionscraping/.env.*
+
+# Messaggi generati (rigenerabili con whatsapp_reminder.py)
+unionscraping/whatsapp/
+
+# Stato e log del bot Telegram
+unionscraping/.bot_state.json
+unionscraping/bot.log
+unionscraping/bot.log.*
