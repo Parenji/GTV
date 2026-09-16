@@ -38,6 +38,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -310,10 +311,22 @@ def build_message(round_info, dt, day_name, lobbies, badge):
 # Output locale
 # ---------------------------------------------------------------------------
 def write_message_file(dt, day_name, text):
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    path = OUT_DIR / f"{dt.isoformat()}_{day_name.lower()}.txt"
-    path.write_text(text, encoding="utf-8")
-    return path
+    """Salva il messaggio in un file .txt.
+
+    Prova prima la cartella del progetto; se non e' scrivibile (es. su una
+    funzione serverless il filesystem e' di sola lettura) ripiega sulla
+    cartella temporanea di sistema. Ritorna il percorso, o None se fallisce.
+    """
+    name = f"{dt.isoformat()}_{day_name.lower()}.txt"
+    for base in (OUT_DIR, Path(tempfile.gettempdir()) / "gtv_messaggi"):
+        try:
+            base.mkdir(parents=True, exist_ok=True)
+            path = base / name
+            path.write_text(text, encoding="utf-8")
+            return path
+        except OSError:
+            continue
+    return None
 
 
 def copy_to_clipboard(text):
@@ -532,7 +545,8 @@ def main():
         print(f"\n===== {dt.isoformat()} · {day_name} · {round_info['label']} "
               f"({round_info['track']}) =====")
         print(text)
-        print(f"\n-> salvato in {path}")
+        print(f"\n-> salvato in {path}" if path else
+              "\n-> file non salvato (filesystem di sola lettura)")
 
         if args.copy and len(target_days) == 1:
             if copy_to_clipboard(text):

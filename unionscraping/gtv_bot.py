@@ -27,6 +27,7 @@ Nessuna dipendenza esterna: solo libreria standard.
 """
 
 import argparse
+import hashlib
 import json
 import os
 import signal
@@ -318,7 +319,8 @@ class GtvBot:
         if text is None:
             self.send(chat_id, f"⚠️ {extra}")
             return
-        if as_file:
+        # extra e' il percorso del .txt: None se il filesystem non e' scrivibile
+        if as_file and extra:
             self.send_document(chat_id, extra, caption=f"Messaggio {dt.strftime('%d/%m/%Y')}")
         else:
             self.send(chat_id, text, self.build_message_keyboard(dt))
@@ -496,11 +498,13 @@ class GtvBot:
             self._save_offset()
         return len(updates)
 
-    def run(self):
+    def run(self, max_runtime=0):
         signal.signal(signal.SIGINT, self.stop)
         signal.signal(signal.SIGTERM, self.stop)
+        deadline = time.monotonic() + max_runtime if max_runtime else None
         log(f"GTV Control Panel avviato (offset={self.offset}, "
-            f"allowlist={'tutti' if not self.allowed else sorted(self.allowed)})")
+            f"allowlist={'tutti' if not self.allowed else sorted(self.allowed)}"
+            + (f", stop fra {max_runtime}s" if deadline else "") + ")")
         if not self.allowed:
             log("ATTENZIONE: nessuna allowlist configurata, il bot risponde a chiunque. "
                 "Imposta TELEGRAM_ALLOWED_CHAT_IDS in .env.telegram", "WARN")
@@ -515,7 +519,24 @@ class GtvBot:
             except Exception:
                 log("errore inatteso:\n" + traceback.format_exc(), "ERROR")
                 time.sleep(BACKOFF)
+            if deadline and time.monotonic() >= deadline:
+                log("raggiunta la durata massima, esco.")
+                break
         log("bot terminato.")
+
+
+# ---------------------------------------------------------------------------
+# Webhook (modalita' serverless, es. Vercel)
+# ---------------------------------------------------------------------------
+def webhook_secret(token):
+    """Segreto condiviso con Telegram, derivato dal token.
+
+    Telegram lo rimanda in ogni richiesta nell'header
+    `X-Telegram-Bot-Api-Secret-Token`: cosi' la funzione serverless sa che la
+    chiamata arriva davvero da Telegram e non da un estraneo. Derivandolo dal
+    token non serve una variabile d'ambiente in piu'.
+    """
+    return hashlib.sha256(f"gtv-webhook:{token}".encode("utf-8")).hexdigest()[:40]
 
 
 # ---------------------------------------------------------------------------
@@ -542,10 +563,45 @@ def main():
                        help="processa gli update in sospeso ed esce")
     parser.add_argument("--set-commands", action="store_true",
                        help="registra i comandi nel menu di Telegram ed esce")
+    parser.add_argument("--set-webhook", metavar="URL",
+                       help="passa il bot in modalita' webhook sull'URL indicato")
+    parser.add_argument("--delete-webhook", action="store_true",
+                       help="torna alla modalita' polling (rimuove il webhook)")
+    parser.add_argument("--webhook-info", action="store_true",
+                       help="mostra lo stato attuale del webhook")
+    parser.add_argument("--max-runtime", type=int, default=0, metavar="SECONDI",
+                       help="esci dopo N secondi (per job a durata limitata)")
     args = parser.parse_args()
 
     bot = build_bot_from_env(args)
 
+    if args.webhook_info:
+        info = bot.tg.call("getWebhookInfo")
+        pending = info.get("pending_update_count")
+        print(f"url:                 {info.get('url') or '(nessuno: modalita polling)'}")
+        print(f"update in attesa:    {pending}")
+        if info.get("last_error_message"):
+            print(f"ultimo errore:       {info['last_error_message']} "
+                  f"({info.get('last_error_date')})")
+        return 0
+    if args.set_webhook:
+        if not args.set_webhook.startswith("https://"):
+            print("x L'URL del webhook deve essere https://", file=sys.stderr)
+            return 2
+        bot.tg.call("setWebhook", {
+            "url": args.set_webhook,
+            "secret_token": webhook_secret(bot.tg.token),
+            "allowed_updates": json.dumps(["message", "callback_query"]),
+            "drop_pending_updates": "true",
+        })
+        print(f"Webhook impostato: {args.set_webhook}")
+        print("(da adesso il polling locale non funziona piu': usa --delete-webhook "
+              "per tornare indietro)")
+        return 0
+    if args.delete_webhook:
+        bot.tg.call("deleteWebhook", {"drop_pending_updates": "false"})
+        print("Webhook rimosso: il bot torna in modalita' polling.")
+        return 0
     if args.set_commands:
         bot.set_commands()
         print("Comandi registrati.")
@@ -554,7 +610,7 @@ def main():
         n = bot.run_once()
         print(f"Update processati: {n}")
         return 0
-    bot.run()
+    bot.run(max_runtime=args.max_runtime)
     return 0
 
 

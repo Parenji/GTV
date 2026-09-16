@@ -1,11 +1,12 @@
 # Promemoria gare UNION → WhatsApp / Telegram
 
-Due strumenti che condividono gli stessi dati (`data.json` + `union.html`):
+Tre pezzi che condividono gli stessi dati (`data.json` + `union.html`):
 
 | | cosa fa |
 |---|---|
 | `whatsapp_reminder.py` | genera i messaggi (e li invia su Telegram) — usato dal cron |
 | `gtv_bot.py` | **pannello di controllo su Telegram** con menu interattivo |
+| `api/telegram.py` | webhook per Vercel: rende il pannello sempre attivo, senza Mac acceso |
 
 Genera, per **ogni giorno di gara**, il messaggio pronto da inoltrare nella
 bacheca WhatsApp del team GTV: riepilogo dei piloti GTV che corrono quella sera
@@ -21,8 +22,8 @@ data.json   ──►  lobby + piloti (generato da scraper.py dai fogli Union)
               ┌───────────┴────────────┐
               ▼                        ▼
   whatsapp_reminder.py          gtv_bot.py (pannello Telegram)
-  • cron a mezzanotte           • /start → menu
-  • file .txt + invio           • Union → giorno → messaggio
+  • cron a mezzanotte           • in locale: polling (Mac accesso)
+  • file .txt + invio           • su Vercel: api/telegram.py (sempre attivo)
 ```
 
 - I giorni di gara sono **lunedì–venerdì** delle settimane indicate in
@@ -84,7 +85,54 @@ python3 gtv_bot.py --set-commands  # registra i comandi nel menu di Telegram
 python3 gtv_bot.py --once          # processa i comandi in sospeso ed esce
 ```
 
-### Avvio automatico su macOS (consigliato)
+### Sempre attivo su Vercel (webhook) — consigliato
+
+Il pannello gira su Vercel e risponde **anche a Mac spento**. Non c'è nessun
+processo da tenere acceso: Telegram consegna i comandi direttamente
+all'indirizzo pubblico della funzione.
+
+```
+https://granturismotv.vercel.app/api/telegram
+```
+
+**Variabili d'ambiente da impostare su Vercel** (Project → Settings →
+Environment Variables, per *tutti* gli ambienti):
+
+| Nome | Valore |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | token di @BotFather |
+| `TELEGRAM_ALLOWED_CHAT_IDS` | il tuo `chat_id` (es. `75176189`) |
+
+**Attivare il webhook** (una volta sola, dopo il deploy):
+
+```bash
+cd unionscraping
+python3 gtv_bot.py --set-webhook https://granturismotv.vercel.app/api/telegram
+python3 gtv_bot.py --webhook-info     # controlla che sia tutto a posto
+```
+
+> ⚠️ Telegram non permette di usare polling e webhook insieme: dopo
+> `--set-webhook` il bot lanciato sul Mac smette di ricevere i comandi. Per
+> tornare alla modalità locale: `python3 gtv_bot.py --delete-webhook`.
+
+**Diagnostica**: una GET sullo stesso URL risponde con lo stato della funzione
+(non espone segreti):
+
+```bash
+curl https://granturismotv.vercel.app/api/telegram
+```
+
+**Come è protetto**: ogni richiesta deve portare l'header
+`X-Telegram-Bot-Api-Secret-Token`, un segreto derivato dal token del bot
+(`webhook_secret()` in `gtv_bot.py`). Le chiamate senza header valido
+ricevono `401`, quindi nessun estraneo può far parlare il bot.
+
+Se per qualche motivo `unionscraping/` non finisse nel bundle della funzione,
+`api/telegram.py` scarica `union.html` e `data.json` dal repo pubblico
+(`includeFiles` in `vercel.json` è la strada normale, il download è la rete di
+sicurezza).
+
+### Avvio automatico su macOS (alternativa al webhook)
 
 ```bash
 cd unionscraping
@@ -98,6 +146,8 @@ Il servizio (launchd) riavvia il bot se crasha. Se il Mac è spento o in
 letargo il pannello non risponde, ma i comandi restano in coda su Telegram e
 vengono eseguiti appena il Mac si riaccende. **L'invio automatico di
 mezzanotte resta su GitHub Actions e funziona anche a Mac spento.**
+
+Usa questa modalità **solo se non attivi il webhook**: sono alternative.
 
 ### Limitare l'accesso
 

@@ -1,0 +1,4 @@
+# Il bot e il generatore dei messaggi usano solo la libreria standard di
+# Python: nessuna dipendenza da installare.
+# Questo file serve a Vercel per riconoscere il runtime Python delle funzioni
+# in api/.
