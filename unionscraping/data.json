@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-17T01:53:26+00:00"
+    "generated_at": "2026-09-17T15:42:34+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -319,9 +319,9 @@
         },
         {
           "pos": 11,
-          "matricola": "200",
-          "team": "EVO",
-          "nome": "Ric_hero1971",
+          "matricola": "238",
+          "team": "RMT",
+          "nome": "RMT_misterful. IT",
           "auto": ""
         },
         {
@@ -336,13 +336,6 @@
           "matricola": "201",
           "team": "EVO",
           "nome": "Ter_effe355",
-          "auto": ""
-        },
-        {
-          "pos": 14,
-          "matricola": "238",
-          "team": "RMT",
-          "nome": "RMT_misterful. IT",
           "auto": ""
         }
       ]
@@ -847,6 +840,13 @@
           "team": "FFM",
           "nome": "FFM_Nic_Cannone",
           "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "69",
+          "team": "SMI",
+          "nome": "SMI_Massi_TopGun",
+          "auto": ""
         }
       ]
     },
@@ -948,6 +948,13 @@
           "matricola": "483",
           "team": "PRT",
           "nome": "Zio_zero7",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "475",
+          "team": "MMS",
+          "nome": "Bolker",
           "auto": ""
         }
       ]
@@ -1420,9 +1427,9 @@
         },
         {
           "pos": 7,
-          "matricola": "109",
-          "team": "DCT",
-          "nome": "Er meyo",
+          "matricola": "153",
+          "team": "RMT",
+          "nome": "RMT-Axel K",
           "auto": ""
         },
         {
@@ -1458,13 +1465,6 @@
           "matricola": "140",
           "team": "PRT",
           "nome": "Sulimanov",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "153",
-          "team": "RMT",
-          "nome": "RMT-Axel K",
           "auto": ""
         }
       ]
@@ -2025,9 +2025,9 @@
         },
         {
           "pos": 6,
-          "matricola": "363",
-          "team": "ARC",
-          "nome": "TRT-Bingo",
+          "matricola": "399",
+          "team": "MMS",
+          "nome": "Saetta Assidua",
           "auto": ""
         },
         {
@@ -2070,13 +2070,6 @@
           "matricola": "383",
           "team": "GTID",
           "nome": "GTID_Berti62",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "399",
-          "team": "MMS",
-          "nome": "Saetta Assidua",
           "auto": ""
         }
       ]
@@ -2257,9 +2250,9 @@
         },
         {
           "pos": 9,
-          "matricola": "319",
-          "team": "RMT",
-          "nome": "RMT-Atawolf",
+          "matricola": "345",
+          "team": "TLM",
+          "nome": "Kratos88",
           "auto": ""
         },
         {
@@ -2281,13 +2274,6 @@
           "matricola": "313",
           "team": "PRT",
           "nome": "Rekkiaspeed",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "345",
-          "team": "TLM",
-          "nome": "Kratos88",
           "auto": ""
         }
       ]
@@ -2324,9 +2310,9 @@
         },
         {
           "pos": 4,
-          "matricola": "503",
-          "team": "RSR",
-          "nome": "K.Zele",
+          "matricola": "484",
+          "team": "PRT",
+          "nome": "Luca R72",
           "auto": ""
         },
         {
@@ -2383,13 +2369,6 @@
           "matricola": "496",
           "team": "RMT",
           "nome": "RMT Moody33",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "484",
-          "team": "PRT",
-          "nome": "Luca R72",
           "auto": ""
         }
       ]
@@ -2549,9 +2528,9 @@
         },
         {
           "pos": 6,
-          "matricola": "301",
-          "team": "MMS",
-          "nome": "Sard Lander",
+          "matricola": "293",
+          "team": "GTID",
+          "nome": "GTID-Vinc3Clerc",
           "auto": ""
         },
         {
@@ -2594,13 +2573,6 @@
           "matricola": "302",
           "team": "OES",
           "nome": "MT-Boss95",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "293",
-          "team": "GTID",
-          "nome": "GTID-Vinc3Clerc",
           "auto": ""
         }
       ]
@@ -2915,6 +2887,13 @@
           "team": "PBC",
           "nome": "Parigi02",
           "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "200",
+          "team": "EVO",
+          "nome": "Ric_hero1971",
+          "auto": ""
         }
       ]
     },
@@ -3111,6 +3090,13 @@
           "matricola": "145",
           "team": "RCE",
           "nome": "Rce_ Patrick85",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "109",
+          "team": "DCT",
+          "nome": "Er meyo",
           "auto": ""
         }
       ]
@@ -3316,6 +3302,13 @@
           "team": "GTRC",
           "nome": "GTRC-Squinzi76",
           "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "363",
+          "team": "ARC",
+          "nome": "TRT-Bingo",
+          "auto": ""
         }
       ]
     },
@@ -3344,9 +3337,9 @@
         },
         {
           "pos": 3,
-          "matricola": "475",
-          "team": "MMS",
-          "nome": "Bolker",
+          "matricola": "491",
+          "team": "RMT",
+          "nome": "RMTSuperSic",
           "auto": ""
         },
         {
@@ -3411,13 +3404,6 @@
           "team": "GTRC",
           "nome": "GTRC_Ganciocielo",
           "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "491",
-          "team": "RMT",
-          "nome": "RMTSuperSic",
-          "auto": ""
         }
       ]
     },
@@ -3460,9 +3446,9 @@
         },
         {
           "pos": 5,
-          "matricola": "69",
-          "team": "SMI",
-          "nome": "SMI_Massi_TopGun",
+          "matricola": "18",
+          "team": "EVO",
+          "nome": "EVO_lama85",
           "auto": ""
         },
         {
@@ -3512,13 +3498,6 @@
           "matricola": "42",
           "team": "PRT",
           "nome": "lee_boon",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "18",
-          "team": "EVO",
-          "nome": "EVO_lama85",
           "auto": ""
         }
       ]
@@ -3716,6 +3695,20 @@
           "matricola": "304",
           "team": "PBC",
           "nome": "PBC_Pegaso",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "319",
+          "team": "RMT",
+          "nome": "RMT-Atawolf",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "301",
+          "team": "MMS",
+          "nome": "Sard Lander",
           "auto": ""
         }
       ]
