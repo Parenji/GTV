@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-18T01:40:46+00:00"
+    "generated_at": "2026-09-18T15:15:15+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -108,9 +108,9 @@
         },
         {
           "pos": 10,
-          "matricola": "39",
-          "team": "PBC",
-          "nome": "Richie",
+          "matricola": "54",
+          "team": "RCE",
+          "nome": "RCE_Pinkuino97",
           "auto": ""
         },
         {
@@ -219,7 +219,7 @@
           "pos": 10,
           "matricola": "93",
           "team": "ARC",
-          "nome": "TRT-Turino",
+          "nome": "ARC-Turino",
           "auto": ""
         },
         {
@@ -722,7 +722,7 @@
           "pos": 7,
           "matricola": "450",
           "team": "ARC",
-          "nome": "TRT-Ultras68",
+          "nome": "ARC-Ultras68",
           "auto": ""
         },
         {
@@ -1474,8 +1474,8 @@
       "time": "Ore 21:00",
       "name": "A9",
       "category": "PRO SILVER",
-      "host": "BAD_brucem84",
-      "live": "BCSC- BAD_brucem84",
+      "host": "Pardus—89",
+      "live": "BCSC- Pardus—89",
       "url": "https://youtube.com/@badcerbero23",
       "pilots": [
         {
@@ -1576,7 +1576,7 @@
       "time": "Ore 21:00",
       "name": "A16",
       "category": "PRO AMA",
-      "host": "slaydei2",
+      "host": "slaydei2_",
       "live": "PBC- Goivas80",
       "url": "https://youtube.com/@performancebearcrew4660",
       "pilots": [
@@ -1668,7 +1668,7 @@
           "pos": 13,
           "matricola": "362",
           "team": "ARC",
-          "nome": "SalvinoKing",
+          "nome": "ARC-SalvinoKing",
           "auto": ""
         }
       ]
@@ -1780,8 +1780,8 @@
       "time": "Ore 21:00",
       "name": "A18",
       "category": "ELITE",
-      "host": "Buitre83gt",
-      "live": "TLM- Buitre83gt",
+      "host": "Spake_Mosconi",
+      "live": "TLM- Spake_Mosconi",
       "url": "https://youtube.com/@teamlionmotorsport",
       "pilots": [
         {
@@ -3467,9 +3467,9 @@
         },
         {
           "pos": 7,
-          "matricola": "54",
-          "team": "RCE",
-          "nome": "RCE_Pinkuino97",
+          "matricola": "39",
+          "team": "PBC",
+          "nome": "Richie",
           "auto": ""
         },
         {
@@ -3616,9 +3616,9 @@
       "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
-      "host": "ORT_iaakk1983",
-      "live": "RRT - ORT_iaakk1983",
-      "url": "https://www.twitch.tv/gamesmotortv",
+      "host": "Muso_2692-gt",
+      "live": "RMT- RMT_AXEL_K_17",
+      "url": "https://www.twitch.tv/racing_monster_team_",
       "pilots": [
         {
           "pos": 1,
