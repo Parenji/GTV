@@ -772,9 +772,8 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             "classifica": voci,
         })
 
-    # --- Statistiche e storico per pilota
+    # --- Statistiche per pilota
     statistiche = []
-    storico = []
     rank_del_team = []
     for p in piloti:
         prof = profili.get(p["psn"])
@@ -789,6 +788,20 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         ultima_data = max([d for d in
                            ([e.get("data_fine") for e in eventi] +
                             [g.get("data_iso") for g in gare]) if d] or [None])
+
+        # Elenco datato degli eventi: serve al sito per filtrare le statistiche
+        # per periodo (tutto, ultimo anno, ultimi 3 mesi).
+        elenco = (
+            [{"data": e.get("data_fine"), "tipo": "time_trial",
+              "rank": e.get("rank_int"), "tempo": e.get("tempo"),
+              "evento": e.get("pista")} for e in eventi]
+            + [{"data": g.get("data_iso"), "tipo": "gara",
+                "rank": g.get("rank_int"), "tempo": g.get("tempo"),
+                "evento": g.get("pista")} for g in gare]
+        )
+        elenco = [x for x in elenco if x["data"]]
+        elenco.sort(key=lambda x: x["data"], reverse=True)
+
         statistiche.append({
             "psn": p["psn"],
             "gt7name": p["gt7name"] or prof.get("gt7name") or p["psn"],
@@ -804,29 +817,8 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             "ultimo_evento_data": ultima_data,
             "ultimo_evento": eventi[0]["pista"] if eventi else None,
             "ultima_gara": gare[0]["pista"] if gare else None,
+            "eventi": elenco,
         })
-        for e in eventi[:8]:
-            storico.append({
-                "data": data_it(e["fine"]), "data_iso": e.get("data_fine"),
-                "psn": p["psn"],
-                "gt7name": p["gt7name"] or p["psn"],
-                "squadra": p.get("squadra", "GTV"),
-                "evento": f"Time Trial · {e['pista']}",
-                "pos": e["rank"], "tempo": e["tempo"], "tipo": "time_trial",
-            })
-        for g in gare[:8]:
-            storico.append({
-                "data": data_it(g["data"]), "data_iso": g.get("data_iso"),
-                "psn": p["psn"],
-                "gt7name": p["gt7name"] or p["psn"],
-                "squadra": p.get("squadra", "GTV"),
-                "evento": f"{g['gara']} · {g['pista']}",
-                "pos": g["rank"], "tempo": g["tempo"], "tipo": "gara",
-            })
-
-    # lo storico si legge dal piu' recente al piu' vecchio
-    storico.sort(key=lambda s: (s.get("data_iso") or ""), reverse=True)
-
     # --- Grafico: come si distribuiscono i piazzamenti mondiali del team
     fasce = [("Top 100", 0, 100), ("101 – 500", 101, 500),
              ("501 – 1.000", 501, 1000), ("1.001 – 5.000", 1001, 5000),
@@ -836,28 +828,6 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         n = sum(1 for r in rank_del_team
                 if r >= minimo and (massimo is None or r <= massimo))
         grafico_rank.append({"etichetta": etichetta, "conteggio": n})
-        for e in eventi[:8]:
-            storico.append({
-                "data": data_it(e["fine"]), "data_iso": e.get("data_fine"),
-                "psn": p["psn"],
-                "gt7name": p["gt7name"] or p["psn"],
-                "squadra": p.get("squadra", "GTV"),
-                "evento": f"Time Trial · {e['pista']}",
-                "pos": e["rank"], "tempo": e["tempo"], "tipo": "time_trial",
-            })
-        for g in gare[:8]:
-            storico.append({
-                "data": data_it(g["data"]), "data_iso": g.get("data_iso"),
-                "psn": p["psn"],
-                "gt7name": p["gt7name"] or p["psn"],
-                "squadra": p.get("squadra", "GTV"),
-                "evento": f"{g['gara']} · {g['pista']}",
-                "pos": g["rank"], "tempo": g["tempo"], "tipo": "gara",
-            })
-
-    # lo storico si legge dal piu' recente al piu' vecchio
-    storico.sort(key=lambda s: (s.get("data_iso") or ""), reverse=True)
-
     return {
         "meta": {
             "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -869,7 +839,6 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         "time_trial": time_trial,
         "gare_settimanali": gare_settimanali,
         "piloti": statistiche,
-        "storico": storico,
         "grafici": {
             "fasce_rank": grafico_rank,
             "eventi_totali": len(rank_del_team),
@@ -1057,7 +1026,8 @@ def main():
               f"{len(e['classifica'])} piloti del team in classifica")
     print(f"   time trial passate: {len(tt['passati'])}")
     print(f"   gare settimanali: {len(dati['gare_settimanali'])} eventi · "
-          f"storico: {len(dati['storico'])} voci · piloti: {len(dati['piloti'])}")
+          f"eventi per pilota: {sum(len(p['eventi']) for p in dati['piloti'])} "
+          f"· piloti: {len(dati['piloti'])}")
     return 0
 
 

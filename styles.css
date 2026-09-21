@@ -5188,6 +5188,43 @@ body#worldchampionship {
   letter-spacing: 0.5px;
 }
 
+/* Filtri temporali della tabella piloti */
+.sport-filtri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 8px;
+}
+
+.sport-filtro {
+  font-family: inherit;
+  font-size: 0.78em;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.sport-filtro:hover {
+  border-color: var(--giallogtvhover);
+  color: #fff;
+}
+
+.sport-filtro-attivo {
+  background: var(--giallogtv);
+  border-color: var(--giallogtv);
+  color: #000;
+  font-weight: 700;
+}
+
 .sport-note {
   font-size: 0.72em;
   color: rgba(255, 255, 255, 0.55);

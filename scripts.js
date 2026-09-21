@@ -2874,52 +2874,116 @@ function sportRankChart(grafici) {
   return html;
 }
 
+/* Filtri temporali della tabella piloti */
+const SPORT_FINESTRE = [
+  { id: "all", etichetta: "ALL TIME", giorni: null },
+  { id: "anno", etichetta: "Ultimo anno", giorni: 365 },
+  { id: "trimestre", etichetta: "Ultimi 3 mesi", giorni: 90 },
+];
+
+let sportDati = null;
+let sportFinestra = "all";
+
+/* Ricalcola le statistiche di ogni pilota sugli eventi del periodo scelto */
+function sportStatistichePeriodo(piloti, giorni) {
+  const limite = giorni ? Date.now() - giorni * 86400000 : null;
+  return piloti.map((p) => {
+    const eventi = (p.eventi || []).filter((e) => {
+      if (!limite) return true;
+      const t = Date.parse(e.data);
+      return !Number.isNaN(t) && t >= limite;
+    });
+    const rank = eventi.map((e) => e.rank).filter((r) => typeof r === "number");
+    return Object.assign({}, p, {
+      _eventi: eventi.length,
+      _miglior: rank.length ? Math.min.apply(null, rank) : null,
+      _medio: rank.length
+        ? Math.round(rank.reduce((a, b) => a + b, 0) / rank.length)
+        : null,
+    });
+  });
+}
+
 function renderSportStats(data) {
   const body = document.getElementById("sport-stats-body");
   if (!body) return;
 
-  const piloti = data.piloti || [];
+  if (data) sportDati = data;
+  const dati = sportDati;
+  const piloti = (dati && dati.piloti) || [];
   if (piloti.length === 0) {
     body.innerHTML =
       '<div class="sport-empty">Nessuna statistica disponibile al momento.</div>';
     return;
   }
 
-  let html = sportRankChart(data.grafici);
-
-  // Ordino per miglior piazzamento mondiale ottenuto
-  const ordinati = piloti.slice().sort((a, b) => {
-    const ra = a.miglior_rank ?? Number.MAX_SAFE_INTEGER;
-    const rb = b.miglior_rank ?? Number.MAX_SAFE_INTEGER;
+  const finestra =
+    SPORT_FINESTRE.filter((f) => f.id === sportFinestra)[0] || SPORT_FINESTRE[0];
+  const righe = sportStatistichePeriodo(piloti, finestra.giorni).sort((a, b) => {
+    const ra = a._miglior === null ? Number.MAX_SAFE_INTEGER : a._miglior;
+    const rb = b._miglior === null ? Number.MAX_SAFE_INTEGER : b._miglior;
     return ra - rb;
   });
+  const eventiPeriodo = righe.reduce((t, p) => t + p._eventi, 0);
+
+  let html = sportRankChart(dati.grafici);
 
   html += '<h3 class="sport-subtitle">Piloti del team</h3>';
+  html += '<div class="sport-filtri">';
+  SPORT_FINESTRE.forEach((f) => {
+    const attivo = f.id === sportFinestra ? " sport-filtro-attivo" : "";
+    html +=
+      '<button type="button" class="sport-filtro' +
+      attivo +
+      '" data-finestra="' +
+      f.id +
+      '">' +
+      f.etichetta +
+      "</button>";
+  });
+  html += "</div>";
+  html +=
+    '<div class="sport-note" style="text-align:left">' +
+    sportNum(eventiPeriodo) +
+    " eventi del team nel periodo" +
+    (finestra.giorni ? "" : " (tutti quelli pubblicati dalla fonte)") +
+    ".</div>";
+
   html += '<div class="table-container"><table class="sport-table">';
   html += "<thead><tr>";
   html += "<th>#</th><th>Pilota</th><th>DR</th><th>SR</th>";
-  html += "<th title='Miglior posizione mondiale ottenuta'>Miglior rank</th>";
-  html += "<th title='Posizione mondiale media'>Rank medio</th>";
+  html += "<th title='Miglior posizione mondiale nel periodo'>Miglior rank</th>";
+  html += "<th title='Posizione mondiale media nel periodo'>Rank medio</th>";
+  html += "<th title='Eventi considerati nel periodo'>Eventi</th>";
   html += "<th title=\"Data dell'ultimo evento registrato\">Ultimo evento</th>";
   html += "</tr></thead><tbody>";
 
   const rank = (v) =>
-    v === null || v === undefined ? "—" : "#" + Number(v).toLocaleString("it-IT");
+    v === null || v === undefined ? "\u2014" : "#" + Number(v).toLocaleString("it-IT");
 
-  ordinati.forEach((p, i) => {
+  righe.forEach((p, i) => {
     html += "<tr>";
     html += `<td>${i + 1}</td>`;
     html += `<td class="sport-driver">${sportDriverLabel(p)}</td>`;
     html += `<td>${sportEscape(p.dr)}</td>`;
     html += `<td>${sportEscape(p.sr)}</td>`;
-    html += `<td>${rank(p.miglior_rank)}</td>`;
-    html += `<td>${rank(p.rank_medio)}</td>`;
+    html += `<td>${rank(p._miglior)}</td>`;
+    html += `<td>${rank(p._medio)}</td>`;
+    html += `<td>${sportNum(p._eventi)}</td>`;
     html += `<td>${sportData(p.ultimo_evento_data)}</td>`;
     html += "</tr>";
   });
 
   html += "</tbody></table></div>";
   body.innerHTML = html;
+
+  body.querySelectorAll("[data-finestra]").forEach((bottone) => {
+    bottone.addEventListener("click", () => {
+      if (sportFinestra === bottone.dataset.finestra) return;
+      sportFinestra = bottone.dataset.finestra;
+      renderSportStats();
+    });
+  });
 }
 
 async function loadSportData() {
