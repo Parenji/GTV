@@ -22,6 +22,16 @@ Comandi utili:
   python3 whatsapp_reminder.py --today --send-telegram
   python3 whatsapp_reminder.py --detect-chat-id
 
+Invio automatico (quello che usa il cron di GitHub Actions):
+  python3 whatsapp_reminder.py --auto            # aspetta la mezzanotte e invia
+  python3 whatsapp_reminder.py --auto --no-wait  # invia subito, senza aspettare
+
+--auto sceglie da solo il giorno di gara da annunciare, non invia mai due volte
+lo stesso giorno (registro in .sent_state.json) e non fa nulla nei giorni
+senza gara. Il flag esiste perche' i cron di GitHub Actions possono partire con
+parecchie ore di ritardo: il job parte la sera, aspetta la mezzanotte italiana
+e solo allora invia.
+
 Credenziali Telegram, in ordine di priorita':
   1. --token / --chat-id sulla riga di comando
   2. variabili d'ambiente TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID
@@ -39,6 +49,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -60,6 +71,7 @@ REPO_DIR = BASE_DIR.parent                          # radice del repository
 DATA_JSON = BASE_DIR / "data.json"
 UNION_HTML = REPO_DIR / "union.html"
 OUT_DIR = BASE_DIR / "whatsapp"                     # file .txt generati
+SENT_STATE = BASE_DIR / ".sent_state.json"          # registro degli invii fatti
 
 # File locali (git-ignorati) da cui leggere token e chat id quando si lancia
 # lo script a mano. Su GitHub Actions questi file non esistono: i valori
@@ -439,6 +451,120 @@ def resolve_target_days(args, rounds, days_map):
 
 
 # ---------------------------------------------------------------------------
+# Invio automatico (usato dal cron): sceglie il giorno giusto, aspetta la
+# mezzanotte italiana e invia una volta sola per giorno.
+#
+# Perche' cosi': GitHub Actions non e' puntuale sui cron (osservati ritardi
+# anche di ~2 ore). Se ci basassimo sull'orario di partenza del job,
+# rischieremmo di non inviare nulla (successo il 21/09/2026) o di inviare il
+# messaggio del giorno sbagliato. Quindi: il job parte la sera, controlla che
+# il giorno target sia davvero un giorno di gara, aspetta la mezzanotte
+# italiana e solo allora invia. Un secondo cron la mattina fa da rete di
+# sicurezza; il registro `.sent_state.json` impedisce i doppioni.
+# ---------------------------------------------------------------------------
+def load_sent_dates():
+    """Date (ISO) per cui il messaggio risulta gia' inviato."""
+    try:
+        payload = json.loads(SENT_STATE.read_text(encoding="utf-8"))
+        return set(payload.get("sent", []))
+    except Exception:
+        return set()
+
+
+def mark_sent(dt):
+    """Registra l'avvio riuscito, cosi' nessun altro giro lo rimanda."""
+    dates = sorted(load_sent_dates() | {dt.isoformat()})[-90:]
+    payload = {
+        "sent": dates,
+        "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    try:
+        SENT_STATE.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    except OSError as e:
+        print(f"! Impossibile salvare il registro degli invii: {e}", file=sys.stderr)
+
+
+def auto_target_day(now_ro):
+    """Quale giorno di gara annunciare adesso.
+
+    Prima delle 12 si annuncia la gara di oggi; dal pomeriggio in poi quella di
+    domani (il job parte la sera e poi aspetta la mezzanotte).
+    """
+    if now_ro.hour < 12:
+        return now_ro.date()
+    return now_ro.date() + timedelta(days=1)
+
+
+def wait_until_midnight(target, max_wait):
+    """Aspetta la mezzanotte italiana del giorno `target` (al massimo max_wait)."""
+    midnight = datetime.combine(target, datetime.min.time(), tzinfo=ROME_TZ)
+    remaining = (midnight - datetime.now(ROME_TZ)).total_seconds()
+    if remaining <= 0:
+        return
+    if remaining > max_wait:
+        print(f"- Mancano {remaining / 3600:.1f} h alla mezzanotte: troppo, non aspetto.")
+        return
+    print(f"- Aspetto la mezzanotte italiana ({remaining / 60:.0f} minuti)...", flush=True)
+    last_log = time.monotonic()
+    while True:
+        remaining = (midnight - datetime.now(ROME_TZ)).total_seconds()
+        if remaining <= 0:
+            break
+        time.sleep(min(remaining, 30))
+        if time.monotonic() - last_log >= 900:
+            print(f"  ...mancano {remaining / 60:.0f} minuti", flush=True)
+            last_log = time.monotonic()
+    print("- E' mezzanotte in Italia: procedo con l'invio.", flush=True)
+
+
+def run_auto(args, rounds, days_map, badge, data, token, chat_id):
+    if not token or not chat_id:
+        print("x L'invio automatico richiede TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID.",
+              file=sys.stderr)
+        return 2
+
+    now_ro = datetime.now(ROME_TZ)
+    target = auto_target_day(now_ro)
+    print(f"- Ora italiana: {now_ro:%Y-%m-%d %H:%M} · giorno da annunciare: {target}")
+
+    # Controlli PRIMA di aspettare: nei giorni senza gara il job esce subito
+    # e non tiene occupato un runner per ore.
+    if target not in days_map:
+        print(f"- {target} non e' un giorno di gara: nulla da inviare.")
+        return 0
+    if target.isoformat() in load_sent_dates():
+        print(f"- Il messaggio del {target} risulta gia' inviato: salto.")
+        return 0
+    day_name = DAY_NAMES[target.weekday()]
+    lobbies = gtv_lobbies_for_day(data, day_name)
+    if not lobbies:
+        print(f"- {target} ({day_name}): nessun pilota GTV in pista.")
+        return 0
+
+    if not args.no_wait:
+        wait_until_midnight(target, args.max_wait)
+
+    # Ricontrollo dopo l'attesa (potrebbe essere cambiato il fuso o lo stato)
+    if target.isoformat() in load_sent_dates():
+        print(f"- Il messaggio del {target} risulta gia' inviato: salto.")
+        return 0
+
+    rd = days_map[target]
+    text = build_message(rd, target, day_name, lobbies, badge)
+    write_message_file(target, day_name, text)
+    print(f"\n===== {target} · {day_name} · {rd['label']} ({rd['track']}) =====")
+    print(text)
+
+    res = telegram_send(token, chat_id, text)
+    if not res.get("ok"):
+        print(f"x Errore Telegram: {res}", file=sys.stderr)
+        return 1
+    mark_sent(target)
+    print(f"\n-> inviato su Telegram OK ({target})")
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -455,6 +581,13 @@ def main():
                        help="tutti i giorni di gara di tutti i round in calendario")
     group.add_argument("--list", action="store_true",
                        help="elenca i giorni di gara del calendario ed esce")
+    group.add_argument("--auto", action="store_true",
+                       help="invio automatico: sceglie il giorno di gara, "
+                            "aspetta la mezzanotte e invia una volta sola")
+    parser.add_argument("--max-wait", type=int, default=4 * 3600, metavar="SECONDI",
+                        help="attesa massima fino alla mezzanotte (default 4h)")
+    parser.add_argument("--no-wait", action="store_true",
+                        help="con --auto: invia subito senza aspettare la mezzanotte")
     parser.add_argument("--round", type=int,
                         help="numero del round da usare con --all (default: prossimo in calendario)")
     parser.add_argument("--copy", action="store_true",
@@ -518,6 +651,10 @@ def main():
             print(f"  {d.isoformat()}  {day_name:9s}  {rd['label']:7s} "
                   f"{rd['track']:18s} piloti GTV: {n}{mark}")
         return 0
+
+    # --auto: invio automatico gestito dal cron (aspetta la mezzanotte)
+    if args.auto:
+        return run_auto(args, rounds, days_map, badge, data, token, chat_id)
 
     target_days = resolve_target_days(args, rounds, days_map)
 

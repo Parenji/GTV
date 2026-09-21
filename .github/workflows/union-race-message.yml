@@ -1,33 +1,31 @@
 name: Union Race Message
 
-# Genera (e invia su Telegram) il messaggio promemoria del giorno di gara
-# alle 00:00 italiane: cosi' il messaggio e' gia' pronto in chat e puoi
-# inoltrarlo su WhatsApp nella bacheca del team quando vuoi.
+# Invia su Telegram il messaggio promemoria del giorno di gara, a mezzanotte
+# italiana, cosi' e' gia' in chat e puoi inoltrarlo su WhatsApp quando vuoi.
 #
-# Fusi orari: GitHub Actions usa sempre UTC (niente ora legale).
-#   00:00 italiane (estate, CEST = UTC+2) -> 22:00 UTC del giorno prima
-#   00:00 italiane (inverno, CET  = UTC+1) -> 23:00 UTC del giorno prima
-# Lanciamo il workflow a entrambe le ore: lo script invia solo se l'ora
-# locale italiana e' 00 (finestra di mezzanotte), quindi mai due volte.
+# ATTENZIONE (lezione del 21/09/2026): i cron di GitHub Actions NON sono
+# puntuali, possono partire con ore di ritardo (osservati ~1h50m). Per questo
+# il job non si fida dell'orario di partenza: parte la sera, verifica che il
+# giorno target sia un giorno di gara, ASPETTA la mezzanotte italiana e solo
+# allora invia (--auto). Il secondo cron, la mattina, e' una rete di
+# sicurezza se il primo giro non e' mai partito.
 #
-# Nei giorni non di gara (sab/dom e settimane di pausa) lo script non
-# genera e non invia nulla: esce con successo e basta.
+# Il registro unionscraping/.sent_state.json impedisce che lo stesso giorno
+# venga inviato due volte.
 on:
   schedule:
-    - cron: "0 22 * * *"
-    - cron: "0 23 * * *"
+    # 20:00 UTC = 22:00 italiane (estate) / 21:00 (inverno): si mette in attesa
+    - cron: "0 20 * * *"
+    # rete di sicurezza: 05:00 UTC = 07:00 italiane (estate) / 06:00 (inverno)
+    - cron: "0 5 * * *"
   workflow_dispatch:
     inputs:
       date:
-        description: "Data di gara da generare (YYYY-MM-DD). Vuoto = oggi."
+        description: "Data di gara da generare (YYYY-MM-DD). Vuoto = automatico."
         required: false
-      force:
-        description: "Invia subito, ignorando la finestra di mezzanotte"
-        type: boolean
-        default: true
 
 permissions:
-  contents: read
+  contents: write
 
 # Se due esecuzioni si sovrappongono, l'ultima attende invece di duplicare.
 concurrency:
@@ -37,7 +35,8 @@ concurrency:
 jobs:
   message:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # il job puo' restare in attesa della mezzanotte per alcune ore
+    timeout-minutes: 330
 
     steps:
       - name: Checkout del repo
@@ -55,26 +54,48 @@ jobs:
         continue-on-error: true
         run: python3 scraper.py
 
-      - name: Genera e invia il messaggio del giorno di gara
+      - name: Invia il messaggio del giorno di gara
         working-directory: unionscraping
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          ARGS="--send-telegram"
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            ARGS="$ARGS --date ${{ github.event.inputs.date }}"
+            # lancio manuale con data esplicita: invio immediato
+            echo "Eseguo: invio manuale del ${{ github.event.inputs.date }}"
+            python3 whatsapp_reminder.py --date "${{ github.event.inputs.date }}" \
+              --send-telegram --force
           else
-            ARGS="$ARGS --today"
+            echo "Eseguo: invio automatico (--auto)"
+            python3 whatsapp_reminder.py --auto
           fi
-          # Solo il lancio manuale ignora la finestra di mezzanotte,
-          # il cron automatico invia soltanto a mezzanotte italiana.
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
-             && [ "${{ github.event.inputs.force }}" != "false" ]; then
-            ARGS="$ARGS --force"
+
+      - name: Registra l'invio nel repo
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if [ ! -f unionscraping/.sent_state.json ]; then
+            echo "Nessun registro di invio da salvare."
+            exit 0
           fi
-          echo "Eseguo: python3 whatsapp_reminder.py $ARGS"
-          python3 whatsapp_reminder.py $ARGS
+          if git diff --quiet -- unionscraping/.sent_state.json; then
+            echo "Registro invariato: niente da committare."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add unionscraping/.sent_state.json
+          git commit -m "chore(bot): registra l'invio del messaggio di oggi"
+          # lo scraper pusha ogni 12h: allineo prima di pushare
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Registro salvato."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::warning::Non sono riuscito a salvare il registro degli invii."
+          exit 0
 
       - name: Salva i messaggi generati come artifact
         if: always()

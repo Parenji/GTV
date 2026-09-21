@@ -202,17 +202,29 @@ del bot. Se viene condiviso o sospetti una fuga, su **@BotFather** →
 
 ## Automazione (GitHub Actions)
 
-Il workflow `.github/workflows/union-race-message.yml` parte da solo:
+Il workflow `.github/workflows/union-race-message.yml` invia il messaggio a
+**mezzanotte italiana** nei giorni di gara:
 
-- **22:00 e 23:00 UTC** = 00:00 italiane (una delle due a seconda di ora
-  legale/solare); lo script invia solo se in Italia sono le 00:00, quindi
-  **mai due volte**;
+- il job parte la sera (20:00 UTC = 22:00 italiane d'estate / 21:00 d'inverno),
+  controlla che il giorno target sia davvero un giorno di gara, **aspetta la
+  mezzanotte italiana** e solo allora invia (`--auto`);
+- un secondo cron la mattina (05:00 UTC = 07:00 italiane) fa da **rete di
+  sicurezza** se il primo giro non è mai partito;
+- `unionscraping/.sent_state.json` registra i giorni già inviati: **lo stesso
+  giorno non parte mai due volte**;
 - aggiorna prima `data.json` con `scraper.py` (se lo scraping fallisce usa
   quello già nel repo);
-- nei giorni non di gara non invia nulla;
+- nei giorni non di gara esce subito, senza aspettare e senza inviare;
 - si può lanciare a mano da **Actions → Union Race Message → Run workflow**
-  (con data opzionale, e invio forzato fuori orario);
+  (con una data esplicita per un invio immediato);
 - salva i `.txt` generati come artifact del run.
+
+> **Perché l'attesa e non un semplice cron a mezzanotte.** I cron di GitHub
+> Actions non sono puntuali: il 21/09/2026 i due job previsti per le 22:00 e
+> 23:00 UTC sono partiti con ~1h50m di ritardo (01:50 e 02:47 italiane) e il
+> vecchio controllo "invia solo se sono le 00:xx" li ha scartati entrambi,
+> **in silenzio**. Ora il job non si fida dell'orario di partenza: aspetta lui
+> la mezzanotte. Un ritardo del cron non può più far saltare un invio.
 
 ### Secrets da configurare sul repo GitHub
 
