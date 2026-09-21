@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T08:17:59+00:00",
+    "updated_at": "2026-09-21T10:27:57+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -15,9 +15,9 @@
         "inizio": "17 Set 2026",
         "fine": "01 Ott 2026",
         "scadenza": "01 Ott 2026",
-        "miglior_tempo": "1:52.486",
-        "leader": "MetalGear9493",
-        "partecipanti": 87499,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": false,
         "classifica": [
           {
@@ -27,22 +27,22 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 4276,
+            "pos_assoluta": 4320,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.919
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
             "gt7name": "Yukimura",
             "numero": "106",
             "squadra": "GTV",
-            "tempo": "1:56.549",
-            "tempo_ms": 116549,
-            "pos_assoluta": 6885,
+            "tempo": "1:56.221",
+            "tempo_ms": 116221,
+            "pos_assoluta": 5847,
             "pos_gtv": 2,
-            "distacco_gtv_pct": 0.674,
-            "distacco_assoluto_pct": 3.612
+            "distacco_gtv_pct": 0.39,
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -54,7 +54,7 @@
             "pos_assoluta": 23504,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.666,
-            "distacco_assoluto_pct": 5.662
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -65,9 +65,9 @@
         "inizio": "10 Set 2026",
         "fine": "24 Set 2026",
         "scadenza": "24 Set 2026",
-        "miglior_tempo": "1:20.044",
-        "leader": "SFE_Damian",
-        "partecipanti": 162862,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": false,
         "classifica": [
           {
@@ -77,10 +77,10 @@
             "squadra": "GTV",
             "tempo": "1:21.129",
             "tempo_ms": 81129,
-            "pos_assoluta": 1402,
+            "pos_assoluta": 1403,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.356
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -92,7 +92,7 @@
             "pos_assoluta": 28310,
             "pos_gtv": 2,
             "distacco_gtv_pct": 1.544,
-            "distacco_assoluto_pct": 2.921
+            "distacco_assoluto_pct": null
           }
         ]
       }
@@ -105,9 +105,9 @@
         "inizio": "03 Set 2026",
         "fine": "17 Set 2026",
         "scadenza": "17 Set 2026",
-        "miglior_tempo": "1:58.416",
-        "leader": "HeAvN_-",
-        "partecipanti": 182336,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -120,7 +120,7 @@
             "pos_assoluta": 3251,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.109
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -132,7 +132,7 @@
             "pos_assoluta": 3881,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.088,
-            "distacco_assoluto_pct": 2.198
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Giusdandri",
@@ -144,7 +144,7 @@
             "pos_assoluta": 4815,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.201,
-            "distacco_assoluto_pct": 2.314
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -156,7 +156,7 @@
             "pos_assoluta": 4986,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.217,
-            "distacco_assoluto_pct": 2.33
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -168,7 +168,7 @@
             "pos_assoluta": 10836,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.591,
-            "distacco_assoluto_pct": 2.712
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Scalmanuto",
@@ -180,7 +180,7 @@
             "pos_assoluta": 13697,
             "pos_gtv": 6,
             "distacco_gtv_pct": 0.69,
-            "distacco_assoluto_pct": 2.813
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -192,7 +192,7 @@
             "pos_assoluta": 21311,
             "pos_gtv": 7,
             "distacco_gtv_pct": 0.964,
-            "distacco_assoluto_pct": 3.092
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "marse9191",
@@ -204,7 +204,7 @@
             "pos_assoluta": 21497,
             "pos_gtv": 8,
             "distacco_gtv_pct": 0.98,
-            "distacco_assoluto_pct": 3.109
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -216,7 +216,7 @@
             "pos_assoluta": 42081,
             "pos_gtv": 9,
             "distacco_gtv_pct": 2.001,
-            "distacco_assoluto_pct": 4.151
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -227,9 +227,9 @@
         "inizio": "27 Ago 2026",
         "fine": "10 Set 2026",
         "scadenza": "10 Set 2026",
-        "miglior_tempo": "1:23.470",
-        "leader": "Damiannn_96",
-        "partecipanti": 164564,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -242,7 +242,7 @@
             "pos_assoluta": 336,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.575
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -254,7 +254,7 @@
             "pos_assoluta": 1353,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.619,
-            "distacco_assoluto_pct": 2.204
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -266,7 +266,7 @@
             "pos_assoluta": 2868,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.932,
-            "distacco_assoluto_pct": 2.522
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -278,7 +278,7 @@
             "pos_assoluta": 8014,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.315,
-            "distacco_assoluto_pct": 2.911
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -290,7 +290,7 @@
             "pos_assoluta": 14123,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.053,
-            "distacco_assoluto_pct": 3.661
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Carlos_mania",
@@ -302,7 +302,7 @@
             "pos_assoluta": 15338,
             "pos_gtv": 6,
             "distacco_gtv_pct": 2.169,
-            "distacco_assoluto_pct": 3.779
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -314,7 +314,7 @@
             "pos_assoluta": 21820,
             "pos_gtv": 7,
             "distacco_gtv_pct": 2.617,
-            "distacco_assoluto_pct": 4.234
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -326,7 +326,7 @@
             "pos_assoluta": 22465,
             "pos_gtv": 8,
             "distacco_gtv_pct": 2.647,
-            "distacco_assoluto_pct": 4.264
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Scalmanuto",
@@ -338,7 +338,7 @@
             "pos_assoluta": 31420,
             "pos_gtv": 9,
             "distacco_gtv_pct": 3.002,
-            "distacco_assoluto_pct": 4.624
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -350,7 +350,7 @@
             "pos_assoluta": 93989,
             "pos_gtv": 10,
             "distacco_gtv_pct": 5.854,
-            "distacco_assoluto_pct": 7.521
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -361,9 +361,9 @@
         "inizio": "20 Ago 2026",
         "fine": "03 Set 2026",
         "scadenza": "03 Set 2026",
-        "miglior_tempo": "9:26.605",
-        "leader": "Adam18_26",
-        "partecipanti": 78476,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -376,7 +376,7 @@
             "pos_assoluta": 2426,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 3.274
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -388,7 +388,7 @@
             "pos_assoluta": 2675,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.096,
-            "distacco_assoluto_pct": 3.373
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -400,7 +400,7 @@
             "pos_assoluta": 20918,
             "pos_gtv": 3,
             "distacco_gtv_pct": 3.686,
-            "distacco_assoluto_pct": 7.08
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -412,7 +412,7 @@
             "pos_assoluta": 41666,
             "pos_gtv": 4,
             "distacco_gtv_pct": 5.836,
-            "distacco_assoluto_pct": 9.301
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -423,9 +423,9 @@
         "inizio": "20 Ago 2026",
         "fine": "27 Ago 2026",
         "scadenza": "27 Ago 2026",
-        "miglior_tempo": "1:13.474",
-        "leader": "AT__1826",
-        "partecipanti": 149030,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -438,7 +438,7 @@
             "pos_assoluta": 661,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.678
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -450,7 +450,7 @@
             "pos_assoluta": 977,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.162,
-            "distacco_assoluto_pct": 1.843
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "marse9191",
@@ -462,7 +462,7 @@
             "pos_assoluta": 2357,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.541,
-            "distacco_assoluto_pct": 2.228
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -474,7 +474,7 @@
             "pos_assoluta": 2567,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.576,
-            "distacco_assoluto_pct": 2.263
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -486,7 +486,7 @@
             "pos_assoluta": 4954,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.853,
-            "distacco_assoluto_pct": 2.545
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -498,7 +498,7 @@
             "pos_assoluta": 6535,
             "pos_gtv": 6,
             "distacco_gtv_pct": 0.953,
-            "distacco_assoluto_pct": 2.647
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Carlos_mania",
@@ -510,7 +510,7 @@
             "pos_assoluta": 11376,
             "pos_gtv": 7,
             "distacco_gtv_pct": 1.17,
-            "distacco_assoluto_pct": 2.868
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Hawk_MaveNich",
@@ -522,7 +522,7 @@
             "pos_assoluta": 14206,
             "pos_gtv": 8,
             "distacco_gtv_pct": 1.273,
-            "distacco_assoluto_pct": 2.972
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -534,7 +534,7 @@
             "pos_assoluta": 21983,
             "pos_gtv": 9,
             "distacco_gtv_pct": 1.822,
-            "distacco_assoluto_pct": 3.531
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -546,7 +546,7 @@
             "pos_assoluta": 31251,
             "pos_gtv": 10,
             "distacco_gtv_pct": 2.309,
-            "distacco_assoluto_pct": 4.026
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Kappaonegt",
@@ -558,7 +558,7 @@
             "pos_assoluta": 32333,
             "pos_gtv": 11,
             "distacco_gtv_pct": 2.355,
-            "distacco_assoluto_pct": 4.072
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Scalmanuto",
@@ -570,7 +570,7 @@
             "pos_assoluta": 46982,
             "pos_gtv": 12,
             "distacco_gtv_pct": 2.802,
-            "distacco_assoluto_pct": 4.527
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Grandisil_2",
@@ -582,7 +582,7 @@
             "pos_assoluta": 57485,
             "pos_gtv": 13,
             "distacco_gtv_pct": 3.044,
-            "distacco_assoluto_pct": 4.773
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Pulcy85",
@@ -594,7 +594,7 @@
             "pos_assoluta": 100298,
             "pos_gtv": 14,
             "distacco_gtv_pct": 4.757,
-            "distacco_assoluto_pct": 6.515
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -606,7 +606,7 @@
             "pos_assoluta": 123818,
             "pos_gtv": 15,
             "distacco_gtv_pct": 6.077,
-            "distacco_assoluto_pct": 7.857
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -617,9 +617,9 @@
         "inizio": "13 Ago 2026",
         "fine": "20 Ago 2026",
         "scadenza": "20 Ago 2026",
-        "miglior_tempo": "0:51.859",
-        "leader": "AT__1826",
-        "partecipanti": 128911,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -632,7 +632,7 @@
             "pos_assoluta": 1044,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.545
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -644,7 +644,7 @@
             "pos_assoluta": 1285,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.084,
-            "distacco_assoluto_pct": 1.629
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -656,7 +656,7 @@
             "pos_assoluta": 1497,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.15,
-            "distacco_assoluto_pct": 1.697
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -668,7 +668,7 @@
             "pos_assoluta": 1853,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.226,
-            "distacco_assoluto_pct": 1.774
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -680,7 +680,7 @@
             "pos_assoluta": 44088,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.706,
-            "distacco_assoluto_pct": 4.292
+            "distacco_assoluto_pct": null
           }
         ]
       }
@@ -806,7 +806,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 733,
-      "rank_medio": 6520,
+      "rank_medio": 6522,
       "eventi_pubblicati": 22,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -1001,7 +1001,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2799,
-      "rank_medio": 15301,
+      "rank_medio": 15249,
       "eventi_pubblicati": 20,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -1102,7 +1102,7 @@
       "gt7name": "Brook24",
       "squadra": "GTV",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
-      "pos": "#4,276",
+      "pos": "#4,320",
       "tempo": "1:55.769",
       "tipo": "time_trial"
     },
@@ -1113,8 +1113,8 @@
       "gt7name": "Yukimura",
       "squadra": "GTV",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
-      "pos": "#6,885",
-      "tempo": "1:56.549",
+      "pos": "#5,847",
+      "tempo": "1:56.221",
       "tipo": "time_trial"
     },
     {
@@ -1124,7 +1124,7 @@
       "gt7name": "Vale34",
       "squadra": "GTV",
       "evento": "Time Trial · Willow Springs International Raceway: Big Willow",
-      "pos": "#1,402",
+      "pos": "#1,403",
       "tempo": "1:21.129",
       "tipo": "time_trial"
     },
