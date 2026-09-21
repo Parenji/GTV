@@ -2889,8 +2889,6 @@ function renderSportStats(data) {
   });
 
   html += '<h3 class="sport-subtitle">Piloti del team</h3>';
-  html +=
-    '<div class="sport-note" style="text-align:left">I rank si riferiscono agli eventi pubblicati dalla fonte (circa gli ultimi 10-20 di ogni pilota).</div>';
   html += '<div class="table-container"><table class="sport-table">';
   html += "<thead><tr>";
   html += "<th>#</th><th>Pilota</th><th>DR</th><th>SR</th>";
