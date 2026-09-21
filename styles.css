@@ -5112,9 +5112,23 @@ body#worldchampionship {
 .sport-card {
   background: linear-gradient(135deg, var(--grigio-box), #111);
   border: 1px solid #2c2c2c;
-  border-left: 3px solid var(--giallogtv);
   border-radius: 12px;
   padding: 14px;
+}
+
+.sport-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.sport-card-logo {
+  height: 38px;
+  width: auto;
+  max-width: 132px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .sport-card-title {

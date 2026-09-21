@@ -64,6 +64,54 @@ WEB_API = "https://web-api.gt7.game.gran-turismo.com"
 REGIONE_EU = 2          # 2 = Europa (i piloti GTV corrono in questa regione)
 FOLDER_TIME_TRIAL = 249
 
+# Loghi dei circuiti: si riusano i file gia' presenti in images/tracks/ del
+# sito (nessun doppione), aggiungendo solo quelli che mancavano.
+# La chiave e' un pezzo del nome pista cosi' come lo scrive la fonte.
+LOGHI = (
+    ("spa", "spa.png"),
+    ("dragon trail", "dragon.png"),
+    ("maggiore", "lagom.png"),
+    ("laguna seca", "lagunaseca.png"),
+    ("deep forest", "deep-forest.png"),
+    ("daytona", "daytona.png"),
+    ("tokyo expressway", "tokyo.png"),
+    ("sainte-croix", "scroix.png"),
+    ("monza", "monza.png"),
+    ("suzuka", "suzuka.png"),
+    ("interlagos", "interlagos.png"),
+    ("mount panorama", "mountpanorama.png"),
+    ("autopolis", "autopolis.png"),
+    ("sardegna", "sardegna.png"),
+    ("yas marina", "yasmarina.png"),
+    ("nurburgring", "nurburgring.png"),
+    ("nürburgring", "nurburgring.png"),
+    ("fuji", "fuji.png"),
+    ("watkins", "watkins.png"),
+    ("red bull ring", "rbr.png"),
+    ("catalunya", "barcelona.png"),
+    ("barcelona", "barcelona.png"),
+    ("willow springs", "willowsprings.png"),
+    ("brands hatch", "brandshatch.png"),
+    ("sarthe", "lemans.png"),
+    ("du mans", "lemans.png"),
+    ("heures du mans", "lemans.png"),
+    ("le mans", "lemans.png"),
+    ("grand valley", "grandvalley.png"),
+    ("gilles-villeneuve", "gillesvilleneuve.png"),
+    ("kyoto", "kyoto.png"),
+)
+
+
+def logo_pista(nome):
+    """Percorso del logo del circuito, o None se non ne abbiamo uno."""
+    if not nome:
+        return None
+    testo = nome.lower()
+    for chiave, file_ in LOGHI:
+        if chiave in testo:
+            return f"images/tracks/{file_}"
+    return None
+
 MESI = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
         "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
 
@@ -625,8 +673,9 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
 
         etichetta = _iso_a_it(fine)
         return {
-            "nome": f"Time Trial · {pista or 'evento'}",
+            "nome": pista or "Evento",
             "pista": pista,
+            "logo": logo_pista(pista),
             "auto": auto_,
             "inizio": data_it(_iso_a_it(inizio)),
             "fine": data_it(etichetta),
@@ -718,6 +767,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         gare_settimanali.append({
             "nome": f"{gara['nome']} · {gara['pista']}",
             "pista": gara["pista"],
+            "logo": logo_pista(gara["pista"]),
             "impostazioni": gara.get("impostazioni"),
             "classifica": voci,
         })

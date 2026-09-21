@@ -2778,9 +2778,6 @@ function sportEventCard(evento) {
     const periodo = [evento.inizio, evento.fine].filter(Boolean).join(" → ");
     dettagli.push("📅 " + periodo);
   }
-  if (evento.partecipanti) {
-    dettagli.push("👥 " + sportNum(evento.partecipanti) + " partecipanti");
-  }
   if (evento.miglior_tempo) {
     const chi = evento.leader ? " (" + sportEscape(evento.leader) + ")" : "";
     dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
@@ -2789,7 +2786,16 @@ function sportEventCard(evento) {
   const vuoto = "Nessun pilota del team ha girato qui questa settimana.";
 
   let html = '<div class="sport-card">';
+  html += '<div class="sport-card-head">';
+  if (evento.logo) {
+    html +=
+      '<img src="' +
+      sportEscape(evento.logo) +
+      '" alt="" class="sport-card-logo" loading="lazy"' +
+      " onerror=\"this.style.display='none'\">";
+  }
   html += `<div class="sport-card-title">${nome}</div>`;
+  html += "</div>";
   if (dettagli.length) {
     html += `<div class="sport-card-meta">${dettagli.join(" · ")}</div>`;
   }

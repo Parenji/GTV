@@ -161,3 +161,37 @@ La pagina `/dailies` cambia layout spesso (il 21/09/2026 e' passata da 3 a 4
 schede, con due "Race B" di cui una vecchia). Il parser ora legge le schede in
 modo strutturale e, se trova piu' schede per lo stesso codice, **tiene quella
 aggiornata piu' di recente** (`Updated: HH:MM / DD/MM/YYYY`).
+
+## Loghi dei circuiti
+
+Nelle card compare il logo ufficiale del circuito. I file stanno in
+`images/tracks/` insieme a quelli già usati dal sito: **nessun doppione**,
+si riusa quello che c'era.
+
+Fonte: il sito ufficiale GT7 espone i loghi in
+`common/dist/gt7/tracklist/assets/<hash>-<hash>.png` (400x200, PNG con canale
+alpha, quindi **senza sfondo bianco**). Il bundle `tracklist/assets/index-*.js`
+contiene la mappa `hash -> chunk`, e ogni chunk rivela l'URL reale dell'immagine.
+
+Aggiunti l'11/09/2026 (mancavano):
+
+| Circuito | File |
+|---|---|
+| Willow Springs | `willowsprings.png` |
+| Brands Hatch | `brandshatch.png` |
+| 24 Heures du Mans (Sarthe) | `lemans.png` |
+| Grand Valley Highway-1 | `grandvalley.png` |
+| Circuit Gilles-Villeneuve | `gillesvilleneuve.png` |
+| Kyoto Driving Park | `kyoto.png` |
+| Nürburgring | `nurburgring.png` |
+| Fuji Speedway | `fuji.png` |
+| Watkins Glen | `watkins.png` |
+| Red Bull Ring | `rbr.png` |
+| Barcelona-Catalunya | `barcelona.png` |
+
+Gli ultimi cinque avevano in cartella solo la **mappa** del tracciato in SVG
+(usata dal calendario di `union.html`): ho aggiunto il logo accanto, senza
+toccare le mappe, così le card della sezione Sport sono tutte omogenee.
+
+Per aggiungere un circuito nuovo basta una riga nella tupla `LOGHI` di
+`gt7_sport.py` (chiave = pezzo del nome pista, valore = file).
