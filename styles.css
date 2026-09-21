@@ -4472,6 +4472,101 @@ body#worldchampionship {
   }
 }
 
+/* --- Banner flash reclami --- */
+.union-flash {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 22px;
+  padding: 15px 18px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 255, 60, 0.14),
+    rgba(245, 255, 60, 0.03)
+  );
+  border: 1px solid rgba(245, 255, 60, 0.45);
+  border-radius: 12px;
+  animation: union-flash-glow 2.6s ease-in-out infinite;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.union-flash:hover {
+  transform: translateY(-2px);
+  border-color: var(--giallogtv);
+}
+
+@keyframes union-flash-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(245, 255, 60, 0);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(245, 255, 60, 0.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .union-flash {
+    animation: none;
+  }
+}
+
+.union-flash-tag {
+  flex-shrink: 0;
+  background: var(--giallogtv);
+  color: #000;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.union-flash-content {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.union-flash-title {
+  font-size: 0.88em;
+  font-weight: 700;
+  color: var(--giallogtv);
+  line-height: 1.4;
+}
+
+.union-flash-list {
+  margin: 7px 0 0 18px;
+  padding: 0;
+  font-size: 0.8em;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.union-flash-cta {
+  flex-shrink: 0;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--giallogtv);
+  white-space: nowrap;
+}
+
+.union-flash-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.union-flash:hover .union-flash-arrow {
+  transform: translateX(4px);
+}
+
 /* --- Reminder scadenze campionato --- */
 .union-reminder-grid {
   display: grid;
@@ -4479,6 +4574,7 @@ body#worldchampionship {
   gap: 12px;
   padding: 14px;
 }
+
 .union-reminder-item {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
