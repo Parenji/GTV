@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T02:10:55+00:00",
+    "updated_at": "2026-09-21T02:15:05+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -17,7 +17,7 @@
         "scadenza": "01 Ott 2026",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 86061,
+        "partecipanti": 86074,
         "conclusa": false,
         "classifica": [
           {
@@ -67,7 +67,7 @@
         "scadenza": "24 Set 2026",
         "miglior_tempo": "1:20.044",
         "leader": "SFE_Damian",
-        "partecipanti": 161840,
+        "partecipanti": 161856,
         "conclusa": false,
         "classifica": [
           {
@@ -611,15 +611,15 @@
         ]
       },
       {
-        "nome": "Time Trial · Deep Forest Raceway Reverse",
-        "pista": "Deep Forest Raceway Reverse",
-        "auto": "Gran Turismo Red Bull X2019 25th Anniversary",
-        "inizio": "06 Ago 2026",
+        "nome": "Time Trial · Autodrome Lago Maggiore - East End",
+        "pista": "Autodrome Lago Maggiore - East End",
+        "auto": "Toyota MR2 GT-S",
+        "inizio": "13 Ago 2026",
         "fine": "20 Ago 2026",
         "scadenza": "20 Ago 2026",
-        "miglior_tempo": "1:07.290",
-        "leader": "SFE_BRacer",
-        "partecipanti": 161534,
+        "miglior_tempo": "0:51.859",
+        "leader": "AT__1826",
+        "partecipanti": 128911,
         "conclusa": true,
         "classifica": [
           {
@@ -632,7 +632,7 @@
             "pos_assoluta": 1044,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": -21.742
+            "distacco_assoluto_pct": 1.545
           },
           {
             "psn": "titirolamadonn",
@@ -644,7 +644,7 @@
             "pos_assoluta": 1285,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.084,
-            "distacco_assoluto_pct": -21.676
+            "distacco_assoluto_pct": 1.629
           },
           {
             "psn": "Utile_ruspante",
@@ -656,7 +656,7 @@
             "pos_assoluta": 1497,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.15,
-            "distacco_assoluto_pct": -21.624
+            "distacco_assoluto_pct": 1.697
           },
           {
             "psn": "Vale34_",
@@ -668,7 +668,7 @@
             "pos_assoluta": 1853,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.226,
-            "distacco_assoluto_pct": -21.565
+            "distacco_assoluto_pct": 1.774
           },
           {
             "psn": "Yukimura9221",
@@ -680,175 +680,7 @@
             "pos_assoluta": 44088,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.706,
-            "distacco_assoluto_pct": -19.624
-          },
-          {
-            "psn": "titirolamadonn",
-            "gt7name": "Bowie knife99",
-            "numero": "666",
-            "squadra": "GTV",
-            "tempo": "1:08.180",
-            "tempo_ms": 68180,
-            "pos_assoluta": 236,
-            "pos_gtv": 6,
-            "distacco_gtv_pct": 29.472,
-            "distacco_assoluto_pct": 1.323
-          },
-          {
-            "psn": "Hawk_MaveNich",
-            "gt7name": "Nicco.rs",
-            "numero": "18",
-            "squadra": "GTV",
-            "tempo": "1:08.276",
-            "tempo_ms": 68276,
-            "pos_assoluta": 321,
-            "pos_gtv": 7,
-            "distacco_gtv_pct": 29.654,
-            "distacco_assoluto_pct": 1.465
-          },
-          {
-            "psn": "marse9191",
-            "gt7name": "Brook24",
-            "numero": "24",
-            "squadra": "GTV",
-            "tempo": "1:08.586",
-            "tempo_ms": 68586,
-            "pos_assoluta": 907,
-            "pos_gtv": 8,
-            "distacco_gtv_pct": 30.243,
-            "distacco_assoluto_pct": 1.926
-          },
-          {
-            "psn": "Yukimura9221",
-            "gt7name": "Yukimura",
-            "numero": "106",
-            "squadra": "GTV",
-            "tempo": "1:08.947",
-            "tempo_ms": 68947,
-            "pos_assoluta": 2886,
-            "pos_gtv": 9,
-            "distacco_gtv_pct": 30.929,
-            "distacco_assoluto_pct": 2.462
-          },
-          {
-            "psn": "Vale34_",
-            "gt7name": "Vale34",
-            "numero": "34",
-            "squadra": "GTV",
-            "tempo": "1:09.047",
-            "tempo_ms": 69047,
-            "pos_assoluta": 4164,
-            "pos_gtv": 10,
-            "distacco_gtv_pct": 31.118,
-            "distacco_assoluto_pct": 2.611
-          },
-          {
-            "psn": "Utile_ruspante",
-            "gt7name": "Barda88",
-            "numero": "88",
-            "squadra": "GTV",
-            "tempo": "1:10.130",
-            "tempo_ms": 70130,
-            "pos_assoluta": 20804,
-            "pos_gtv": 11,
-            "distacco_gtv_pct": 33.175,
-            "distacco_assoluto_pct": 4.221
-          },
-          {
-            "psn": "Giusdandri",
-            "gt7name": "Giusdandri",
-            "numero": "87",
-            "squadra": "GTV",
-            "tempo": "1:10.729",
-            "tempo_ms": 70729,
-            "pos_assoluta": 38618,
-            "pos_gtv": 12,
-            "distacco_gtv_pct": 34.313,
-            "distacco_assoluto_pct": 5.111
-          },
-          {
-            "psn": "Pulcy85",
-            "gt7name": "Drivergt1985",
-            "numero": "11",
-            "squadra": "GTV",
-            "tempo": "1:11.021",
-            "tempo_ms": 71021,
-            "pos_assoluta": 44090,
-            "pos_gtv": 13,
-            "distacco_gtv_pct": 34.867,
-            "distacco_assoluto_pct": 5.545
-          },
-          {
-            "psn": "Scalmanuto",
-            "gt7name": "Capa Gloriosa",
-            "numero": "80",
-            "squadra": "JGTV",
-            "tempo": "1:11.383",
-            "tempo_ms": 71383,
-            "pos_assoluta": 51718,
-            "pos_gtv": 14,
-            "distacco_gtv_pct": 35.555,
-            "distacco_assoluto_pct": 6.083
-          },
-          {
-            "psn": "Snake-asr88",
-            "gt7name": "Iceman",
-            "numero": "8",
-            "squadra": "GTV",
-            "tempo": "1:11.482",
-            "tempo_ms": 71482,
-            "pos_assoluta": 53893,
-            "pos_gtv": 15,
-            "distacco_gtv_pct": 35.742,
-            "distacco_assoluto_pct": 6.23
-          },
-          {
-            "psn": "titirolamadonn",
-            "gt7name": "Bowie knife99",
-            "numero": "666",
-            "squadra": "GTV",
-            "tempo": "1:51.675",
-            "tempo_ms": 111675,
-            "pos_assoluta": 119,
-            "pos_gtv": 16,
-            "distacco_gtv_pct": 112.068,
-            "distacco_assoluto_pct": 65.961
-          },
-          {
-            "psn": "marse9191",
-            "gt7name": "Brook24",
-            "numero": "24",
-            "squadra": "GTV",
-            "tempo": "1:52.389",
-            "tempo_ms": 112389,
-            "pos_assoluta": 733,
-            "pos_gtv": 17,
-            "distacco_gtv_pct": 113.424,
-            "distacco_assoluto_pct": 67.022
-          },
-          {
-            "psn": "Vale34_",
-            "gt7name": "Vale34",
-            "numero": "34",
-            "squadra": "GTV",
-            "tempo": "1:52.558",
-            "tempo_ms": 112558,
-            "pos_assoluta": 1043,
-            "pos_gtv": 18,
-            "distacco_gtv_pct": 113.745,
-            "distacco_assoluto_pct": 67.273
-          },
-          {
-            "psn": "Utile_ruspante",
-            "gt7name": "Barda88",
-            "numero": "88",
-            "squadra": "GTV",
-            "tempo": "1:55.290",
-            "tempo_ms": 115290,
-            "pos_assoluta": 35741,
-            "pos_gtv": 19,
-            "distacco_gtv_pct": 118.933,
-            "distacco_assoluto_pct": 71.333
+            "distacco_assoluto_pct": 4.292
           }
         ]
       }

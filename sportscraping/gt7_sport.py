@@ -472,26 +472,51 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         if d:
             nomi_per_inizio[d.isoformat()] = ev
 
-    # raggruppo le time trial dei piloti per data di fine evento: cosi' due
-    # eventi sovrapposti restano distinti e si confrontano solo tempi della
-    # stessa pista.
+    # Raggruppo le time trial dei piloti per EVENTO: (inizio, fine, pista).
+    # La sola data di fine non basta: piu' time trial si chiudono lo stesso
+    # giorno (partono a settimane sfalsate) e raggrupparle per data mescolava
+    # eventi diversi nella stessa classifica, con lo stesso pilota due volte e
+    # tempi di piste diverse a confronto.
     per_evento = {}
     for p in piloti:
         prof = profili.get(p["psn"])
         if not prof:
             continue
         for e in prof["eventi"]:
-            if e.get("data_fine"):
-                per_evento.setdefault(e["data_fine"], []).append((p, e))
+            if not (e.get("data_inizio") and e.get("data_fine")):
+                continue
+            per_evento.setdefault(
+                (e["data_inizio"], e["data_fine"], e["pista"]), []).append((p, e))
 
-    def scheda_evento(uff, conclusa):
-        fine = uff["end"]
-        sorgente = per_evento.get(fine, [])
-        info = board_info(uff.get("ranking_id")) if uff.get("ranking_id") else {}
-        nome = nomi_per_inizio.get(uff.get("begin")) or {}
-        pista = nome.get("pista") or (sorgente[0][1]["pista"] if sorgente else None)
+    def scegli_board(begin, end, migliore_ms):
+        """Fra piu' eventi ufficiali con le stesse date sceglie quello giusto.
+
+        Le date da sole non bastano a identificarli: il leader dell'evento
+        corretto deve essere piu' veloce del miglior tempo del team, quindi
+        scelgo il piu' lento fra quelli ancora piu' veloci del team.
+        """
+        schede = []
+        for u in ufficiali:
+            if u["begin"] != begin or u["end"] != end:
+                continue
+            info = board_info(u.get("ranking_id"))
+            if info.get("leader_ms"):
+                schede.append(info)
+        if not schede:
+            return {}
+        if migliore_ms:
+            plausibili = [s for s in schede if s["leader_ms"] <= migliore_ms]
+            if plausibili:
+                return max(plausibili, key=lambda s: s["leader_ms"])
+        return min(schede, key=lambda s: abs(s["leader_ms"] - (migliore_ms or s["leader_ms"])))
+
+    def scheda_evento(chiave, conclusa):
+        inizio, fine, pista = chiave
+        sorgente = per_evento.get(chiave, [])
+        nome = nomi_per_inizio.get(inizio) or {}
+        if not pista:
+            pista = nome.get("pista")
         auto_ = nome.get("auto") or (sorgente[0][1]["auto"] if sorgente else None)
-        leader_ms = info.get("leader_ms")
 
         voci = [{
             "psn": p["psn"],
@@ -505,6 +530,8 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
 
         voci.sort(key=lambda v: v["tempo_ms"] or 10 ** 9)
         mig = voci[0]["tempo_ms"] if voci else None
+        info = scegli_board(inizio, fine, mig)
+        leader_ms = info.get("leader_ms")
         for i, v in enumerate(voci, start=1):
             v["pos_gtv"] = i
             v["distacco_gtv_pct"] = (
@@ -519,7 +546,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             "nome": f"Time Trial · {pista or 'evento'}",
             "pista": pista,
             "auto": auto_,
-            "inizio": data_it(_iso_a_it(uff.get("begin"))),
+            "inizio": data_it(_iso_a_it(inizio)),
             "fine": data_it(etichetta),
             "scadenza": data_it(etichetta),
             "miglior_tempo": _ms_a_tempo(leader_ms),
@@ -529,21 +556,41 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             "classifica": voci,
         }
 
-    if ufficiali:
-        attivi = [e for e in ufficiali if e["end"] >= oggi]
-        passati = [e for e in ufficiali if e["end"] < oggi][:n_passati]
-    else:
-        # rete di sicurezza: se l'API ufficiale non risponde ricostruisco gli
-        # eventi dalle date viste nei profili
-        pseudo = [{"begin": None, "end": f, "ranking_id": None}
-                  for f in sorted(per_evento, reverse=True)]
-        attivi = [e for e in pseudo if e["end"] >= oggi]
-        passati = [e for e in pseudo if e["end"] < oggi][:n_passati]
+    # Eventi in corso: quelli ufficiali (anche se nessuno del team ha girato)
+    attivi, usate = [], set()
+    for u in ufficiali:
+        if u["end"] < oggi:
+            continue
+        nome = nomi_per_inizio.get(u["begin"]) or {}
+        chiavi = [k for k in per_evento if k[0] == u["begin"] and k[1] == u["end"]]
+        if nome.get("pista"):
+            preferite = [k for k in chiavi if k[2] == nome["pista"]]
+            chiavi = preferite or chiavi
+        chiave = chiavi[0] if chiavi else (u["begin"], u["end"], nome.get("pista"))
+        if chiave in usate:
+            continue
+        usate.add(chiave)
+        attivi.append(scheda_evento(chiave, False))
 
-    time_trial = {
-        "attivi": [scheda_evento(e, False) for e in attivi],
-        "passati": [scheda_evento(e, True) for e in passati],
-    }
+    # Eventi conclusi: quelli per cui il team ha davvero dei tempi
+    passati = []
+    for chiave in sorted(per_evento, key=lambda k: (k[1], k[0]), reverse=True):
+        if chiave[1] >= oggi or chiave in usate:
+            continue
+        usate.add(chiave)
+        passati.append(scheda_evento(chiave, True))
+        if len(passati) >= n_passati:
+            break
+
+    # rete di sicurezza: se l'API ufficiale non risponde, gli eventi in corso
+    # si ricavano dalle date viste nei profili
+    if not attivi:
+        for chiave in sorted(per_evento, key=lambda k: (k[1], k[0]), reverse=True):
+            if chiave[1] >= oggi and chiave not in usate:
+                usate.add(chiave)
+                attivi.append(scheda_evento(chiave, False))
+
+    time_trial = {"attivi": attivi, "passati": passati}
 
     # --- Gare settimanali: le 3 gare ATTIVE adesso (Race A/B/C), con i tempi
     #     del team. Una gara cambia ogni settimana, quindi i tempi vecchi sulla

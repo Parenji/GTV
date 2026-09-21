@@ -89,8 +89,24 @@ massimo restano i dati del giro prima.
   login; tutto ciò che è specifico di un giocatore (profilo, storico, DR/SR
   aggiornati) richiede un accesso PSN, che non usiamo.
 - Se gt-gridstats cambia l'HTML delle sue pagine, i parser in `gt7_sport.py`
-  vanno riallineati: i punti da toccare sono `parse_profilo()` e
-  `parse_explore_events()`.
+  vanno riallineati: i punti da toccare sono `parse_profilo()`,
+  `parse_explore_events()` e `parse_dailies()`.
+
+## La trappola delle time trial sovrapposte
+
+In GT7 le time trial durano due settimane e ne parte una a settimana: quindi
+**piu' eventi diversi si chiudono lo stesso giorno**. Il 20 agosto 2026 ne
+finivano tre (Daytona, Deep Forest Reverse, Lago Maggiore) — raggrupparli per
+sola data di fine mescolava piste diverse in un'unica classifica, con lo
+stesso pilota ripetuto due volte e distacchi negativi.
+
+Per questo gli eventi si raggruppano per **(data di inizio, data di fine,
+pista)**, e quando due eventi ufficiali hanno le stesse date si sceglie quello
+il cui leader e' piu' veloce del miglior tempo del team (`scegli_board()`).
+
+La stessa accortezza vale per le **gare settimanali**: contano solo i tempi
+degli ultimi 7 giorni, perche' la stessa pista torna in rotazione dopo mesi e
+un tempo di agosto non e' il tempo della gara di adesso.
 
 ## Perché alcune colonne non ci sono più
 

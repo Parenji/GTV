@@ -2714,7 +2714,7 @@ function sportPct(value) {
   const n = Number(value);
   if (Number.isNaN(n)) return String(value);
   if (n === 0) return '<span class="sport-best">riferimento</span>';
-  return "+" + n.toFixed(3) + "%";
+  return (n > 0 ? "+" : "") + n.toFixed(3) + "%";
 }
 
 /* Riga di classifica: tempo + posizioni + distacchi */
