@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T01:37:34+00:00",
+    "updated_at": "2026-09-21T01:39:48+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 22,
     "piloti_con_dati": 21,
@@ -10,10 +10,10 @@
     "nome": "Time Trial · Dragon Trail - Seaside Reverse",
     "pista": "Dragon Trail - Seaside Reverse",
     "auto": "Lexus RC F '14",
-    "scadenza": "01 Oct 2026",
+    "scadenza": "01 Ott 2026",
     "miglior_tempo": "1:52.486",
     "leader": "MetalGear9493",
-    "partecipanti": 85907,
+    "partecipanti": 85913,
     "classifica": [
       {
         "psn": "marse9191",
@@ -60,7 +60,7 @@
     {
       "nome": "Daily: C · Brands Hatch Grand Prix Circuit",
       "pista": "Brands Hatch Grand Prix Circuit",
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "data_iso": "2026-09-14",
       "classifica": [
         {
@@ -69,7 +69,7 @@
           "numero": "87",
           "pista": "Brands Hatch Grand Prix Circuit",
           "auto": "Hyundai ELANTRA N TC '24",
-          "data": "14 Sep 2026",
+          "data": "14 Set 2026",
           "tempo": "1:30.018",
           "tempo_ms": 90018,
           "pos_assoluta": 3004,
@@ -83,7 +83,7 @@
           "numero": "14",
           "pista": "Brands Hatch Grand Prix Circuit",
           "auto": "Hyundai ELANTRA N TC '24",
-          "data": "14 Sep 2026",
+          "data": "14 Set 2026",
           "tempo": "1:30.833",
           "tempo_ms": 90833,
           "pos_assoluta": 7007,
@@ -96,7 +96,7 @@
     {
       "nome": "Daily: B · Autodromo Nazionale Monza",
       "pista": "Autodromo Nazionale Monza",
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "data_iso": "2026-09-14",
       "classifica": [
         {
@@ -105,7 +105,7 @@
           "numero": "26",
           "pista": "Autodromo Nazionale Monza",
           "auto": "Ferrari 296 GT3 '23",
-          "data": "14 Sep 2026",
+          "data": "14 Set 2026",
           "tempo": "1:51.454",
           "tempo_ms": 111454,
           "pos_assoluta": 7012,
@@ -119,7 +119,7 @@
           "numero": "14",
           "pista": "Autodromo Nazionale Monza",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "14 Sep 2026",
+          "data": "14 Set 2026",
           "tempo": "1:51.538",
           "tempo_ms": 111538,
           "pos_assoluta": 7780,
@@ -133,7 +133,7 @@
           "numero": "106",
           "pista": "Autodromo Nazionale Monza",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "14 Sep 2026",
+          "data": "14 Set 2026",
           "tempo": "1:51.727",
           "tempo_ms": 111727,
           "pos_assoluta": 9691,
@@ -146,7 +146,7 @@
     {
       "nome": "Daily: C · Dragon Trail - Seaside",
       "pista": "Dragon Trail - Seaside",
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "data_iso": "2026-09-07",
       "classifica": [
         {
@@ -155,7 +155,7 @@
           "numero": "36",
           "pista": "Dragon Trail - Seaside",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:36.123",
           "tempo_ms": 96123,
           "pos_assoluta": 201,
@@ -169,7 +169,7 @@
           "numero": "87",
           "pista": "Dragon Trail - Seaside",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:36.928",
           "tempo_ms": 96928,
           "pos_assoluta": 2488,
@@ -183,7 +183,7 @@
           "numero": "26",
           "pista": "Dragon Trail - Seaside",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:37.724",
           "tempo_ms": 97724,
           "pos_assoluta": 8085,
@@ -197,7 +197,7 @@
           "numero": "88",
           "pista": "Dragon Trail - Seaside",
           "auto": "Hyundai Genesis Gr.3",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:38.291",
           "tempo_ms": 98291,
           "pos_assoluta": 13692,
@@ -211,7 +211,7 @@
           "numero": "106",
           "pista": "Dragon Trail - Seaside",
           "auto": "Audi R8 LMS Evo '19",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:38.978",
           "tempo_ms": 98978,
           "pos_assoluta": 22167,
@@ -225,7 +225,7 @@
           "numero": "6",
           "pista": "Dragon Trail - Seaside",
           "auto": "Ferrari 296 GT3 '23",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "1:40.576",
           "tempo_ms": 100576,
           "pos_assoluta": 40619,
@@ -238,7 +238,7 @@
     {
       "nome": "Daily: B · Mount Panorama Motor Racing Circuit",
       "pista": "Mount Panorama Motor Racing Circuit",
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "data_iso": "2026-09-07",
       "classifica": [
         {
@@ -247,7 +247,7 @@
           "numero": "34",
           "pista": "Mount Panorama Motor Racing Circuit",
           "auto": "Hyundai ELANTRA N TC '24",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "2:15.489",
           "tempo_ms": 135489,
           "pos_assoluta": 1854,
@@ -261,7 +261,7 @@
           "numero": "87",
           "pista": "Mount Panorama Motor Racing Circuit",
           "auto": "Hyundai ELANTRA N TC '24",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "2:15.870",
           "tempo_ms": 135870,
           "pos_assoluta": 2892,
@@ -275,7 +275,7 @@
           "numero": "26",
           "pista": "Mount Panorama Motor Racing Circuit",
           "auto": "Hyundai ELANTRA N TC '24",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "2:15.975",
           "tempo_ms": 135975,
           "pos_assoluta": 3278,
@@ -289,7 +289,7 @@
           "numero": "14",
           "pista": "Mount Panorama Motor Racing Circuit",
           "auto": "Jaguar F-type Gr.4",
-          "data": "07 Sep 2026",
+          "data": "07 Set 2026",
           "tempo": "2:20.065",
           "tempo_ms": 140065,
           "pos_assoluta": 23103,
@@ -302,7 +302,7 @@
     {
       "nome": "Daily: B · Watkins Glen Long Course",
       "pista": "Watkins Glen Long Course",
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "data_iso": "2026-08-31",
       "classifica": [
         {
@@ -311,7 +311,7 @@
           "numero": "36",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Sprint Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:45.093",
           "tempo_ms": 105093,
           "pos_assoluta": 359,
@@ -325,7 +325,7 @@
           "numero": "26",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Sprint Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:45.992",
           "tempo_ms": 105992,
           "pos_assoluta": 3050,
@@ -339,7 +339,7 @@
           "numero": "24",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Endurance Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:46.446",
           "tempo_ms": 106446,
           "pos_assoluta": 5960,
@@ -353,7 +353,7 @@
           "numero": "87",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Sprint Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:46.573",
           "tempo_ms": 106573,
           "pos_assoluta": 7163,
@@ -367,7 +367,7 @@
           "numero": "88",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Sprint Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:46.662",
           "tempo_ms": 106662,
           "pos_assoluta": 8037,
@@ -381,7 +381,7 @@
           "numero": "6",
           "pista": "Watkins Glen Long Course",
           "auto": "BMW M6 GT3 Endurance Model '16",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "1:47.021",
           "tempo_ms": 107021,
           "pos_assoluta": 12164,
@@ -394,7 +394,7 @@
     {
       "nome": "Daily: C · 24 Heures du Mans race track",
       "pista": "24 Heures du Mans race track",
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "data_iso": "2026-08-31",
       "classifica": [
         {
@@ -403,7 +403,7 @@
           "numero": "88",
           "pista": "24 Heures du Mans race track",
           "auto": "Porsche 963 '24",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "3:31.238",
           "tempo_ms": 211238,
           "pos_assoluta": 1348,
@@ -417,7 +417,7 @@
           "numero": "87",
           "pista": "24 Heures du Mans race track",
           "auto": "Porsche 963 '24",
-          "data": "31 Aug 2026",
+          "data": "31 Ago 2026",
           "tempo": "3:32.219",
           "tempo_ms": 212219,
           "pos_assoluta": 2345,
@@ -768,7 +768,7 @@
   ],
   "storico": [
     {
-      "data": "01 Oct 2026",
+      "data": "01 Ott 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
@@ -777,7 +777,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · Suzuka Circuit",
@@ -786,7 +786,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -795,7 +795,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -804,7 +804,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · Fuji International Speedway",
@@ -813,7 +813,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "23 Jul 2026",
+      "data": "23 Lug 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -822,7 +822,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -831,7 +831,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "GTV_legendafluo",
       "gt7name": "GTV-Oriano06",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -876,7 +876,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Snake-asr88",
       "gt7name": "Iceman",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -885,7 +885,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Snake-asr88",
       "gt7name": "Iceman",
       "evento": "Time Trial · Fuji International Speedway",
@@ -894,7 +894,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "23 Jul 2026",
+      "data": "23 Lug 2026",
       "psn": "Snake-asr88",
       "gt7name": "Iceman",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -903,7 +903,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Snake-asr88",
       "gt7name": "Iceman",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -957,7 +957,7 @@
       "tipo": "gara"
     },
     {
-      "data": "22 Dec 2025",
+      "data": "22 Dic 2025",
       "psn": "Snake-asr88",
       "gt7name": "Iceman",
       "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
@@ -984,7 +984,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -993,7 +993,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -1002,7 +1002,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Fuji International Speedway",
@@ -1011,7 +1011,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "23 Jul 2026",
+      "data": "23 Lug 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1020,7 +1020,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "09 Jul 2026",
+      "data": "09 Lug 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Willow Springs International Raceway: Horse Thief Mile",
@@ -1029,7 +1029,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1038,7 +1038,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: B · Autodrome Lago Maggiore - Full Course Reverse",
@@ -1047,7 +1047,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -1056,7 +1056,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: B · Fuji International Speedway",
@@ -1065,7 +1065,7 @@
       "tipo": "gara"
     },
     {
-      "data": "13 Jul 2026",
+      "data": "13 Lug 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: C · Suzuka Circuit",
@@ -1074,7 +1074,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Jul 2026",
+      "data": "06 Lug 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: C · Watkins Glen Long Course",
@@ -1083,7 +1083,7 @@
       "tipo": "gara"
     },
     {
-      "data": "22 Jun 2026",
+      "data": "22 Giu 2026",
       "psn": "Pulcy85",
       "gt7name": "Drivergt1985",
       "evento": "Daily: C · 24 Heures du Mans race track",
@@ -1092,7 +1092,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · Suzuka Circuit",
@@ -1101,7 +1101,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1110,7 +1110,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "03 Sep 2026",
+      "data": "03 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · Nürburgring 24h",
@@ -1119,7 +1119,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1128,7 +1128,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "30 Jul 2026",
+      "data": "30 Lug 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · Kyoto Driving Park - Yamagiwa Reverse",
@@ -1137,7 +1137,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "23 Jul 2026",
+      "data": "23 Lug 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1146,7 +1146,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: C · Brands Hatch Grand Prix Circuit",
@@ -1155,7 +1155,7 @@
       "tipo": "gara"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: B · Autodromo Nazionale Monza",
@@ -1164,7 +1164,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
@@ -1173,7 +1173,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Aug 2026",
+      "data": "24 Ago 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: A · Blue Moon Bay Speedway - Infield A Reverse",
@@ -1182,7 +1182,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Jul 2026",
+      "data": "20 Lug 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: C · Circuit Gilles-Villeneuve",
@@ -1191,7 +1191,7 @@
       "tipo": "gara"
     },
     {
-      "data": "13 Jul 2026",
+      "data": "13 Lug 2026",
       "psn": "Abramo1991",
       "gt7name": "Maverick",
       "evento": "Daily: B · Nürburgring GP",
@@ -1200,7 +1200,7 @@
       "tipo": "gara"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -1209,7 +1209,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Jun 2026",
+      "data": "10 Giu 2026",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1218,7 +1218,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "28 May 2026",
+      "data": "28 Mag 2026",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · Circuit Gilles-Villeneuve",
@@ -1227,7 +1227,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Sep 2025",
+      "data": "11 Set 2025",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1236,7 +1236,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "04 Sep 2025",
+      "data": "04 Set 2025",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · Dragon Trail - Gardens",
@@ -1245,7 +1245,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "07 Aug 2025",
+      "data": "07 Ago 2025",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Time Trial · Kyoto Driving Park - Yamagiwa",
@@ -1254,7 +1254,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "15 Dec 2025",
+      "data": "15 Dic 2025",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Daily: B · Sardegna - Road Track - A",
@@ -1290,7 +1290,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Jan 2025",
+      "data": "20 Gen 2025",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Daily: B · Nürburgring Sprint",
@@ -1299,7 +1299,7 @@
       "tipo": "gara"
     },
     {
-      "data": "12 Aug 2024",
+      "data": "12 Ago 2024",
       "psn": "Parenji",
       "gt7name": "L. Parenti",
       "evento": "Daily: C · Nürburgring Endurance",
@@ -1308,7 +1308,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1317,7 +1317,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · Autodrome Lago Maggiore - East End",
@@ -1326,7 +1326,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -1335,7 +1335,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · Fuji International Speedway",
@@ -1344,7 +1344,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1353,7 +1353,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -1398,7 +1398,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Jan 2025",
+      "data": "27 Gen 2025",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Daily: B · Autódromo de Interlagos",
@@ -1407,7 +1407,7 @@
       "tipo": "gara"
     },
     {
-      "data": "13 Jan 2025",
+      "data": "13 Gen 2025",
       "psn": "Hawk_MaveNich",
       "gt7name": "Nicco.rs",
       "evento": "Daily: C · 24 Heures du Mans race track, no chicane",
@@ -1416,7 +1416,7 @@
       "tipo": "gara"
     },
     {
-      "data": "01 Oct 2026",
+      "data": "01 Ott 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
@@ -1425,7 +1425,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Suzuka Circuit",
@@ -1434,7 +1434,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1443,7 +1443,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -1452,7 +1452,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Daytona Road Course",
@@ -1461,7 +1461,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Time Trial · Fuji International Speedway",
@@ -1470,7 +1470,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -1479,7 +1479,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: B · Fuji International Speedway",
@@ -1488,7 +1488,7 @@
       "tipo": "gara"
     },
     {
-      "data": "29 Jun 2026",
+      "data": "29 Giu 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: C · Deep Forest Raceway",
@@ -1497,7 +1497,7 @@
       "tipo": "gara"
     },
     {
-      "data": "08 Jun 2026",
+      "data": "08 Giu 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: C · Autódromo de Interlagos",
@@ -1506,7 +1506,7 @@
       "tipo": "gara"
     },
     {
-      "data": "25 May 2026",
+      "data": "25 Mag 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: C · Watkins Glen Long Course",
@@ -1515,7 +1515,7 @@
       "tipo": "gara"
     },
     {
-      "data": "18 May 2026",
+      "data": "18 Mag 2026",
       "psn": "marse9191",
       "gt7name": "Brook24",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -1524,7 +1524,7 @@
       "tipo": "gara"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1533,7 +1533,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -1542,7 +1542,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Jun 2026",
+      "data": "11 Giu 2026",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Time Trial · Eiger Nordwand",
@@ -1551,7 +1551,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Jun 2026",
+      "data": "10 Giu 2026",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1560,7 +1560,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "28 May 2026",
+      "data": "28 Mag 2026",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Time Trial · Autodromo Nazionale Monza",
@@ -1587,7 +1587,7 @@
       "tipo": "gara"
     },
     {
-      "data": "28 Jul 2025",
+      "data": "28 Lug 2025",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Daily: B · Sardegna - Road Track - A",
@@ -1596,7 +1596,7 @@
       "tipo": "gara"
     },
     {
-      "data": "23 Jun 2025",
+      "data": "23 Giu 2025",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Daily: C · Fuji International Speedway",
@@ -1614,7 +1614,7 @@
       "tipo": "gara"
     },
     {
-      "data": "14 Oct 2024",
+      "data": "14 Ott 2024",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Daily: C · Circuit de Spa-Francorchamps",
@@ -1623,7 +1623,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Jun 2024",
+      "data": "10 Giu 2024",
       "psn": "SP_Samuele",
       "gt7name": "Zabo",
       "evento": "Daily: B · Red Bull Ring",
@@ -1632,7 +1632,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1641,7 +1641,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Time Trial · Fuji International Speedway",
@@ -1650,7 +1650,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Jun 2026",
+      "data": "10 Giu 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1659,7 +1659,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "28 May 2026",
+      "data": "28 Mag 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Time Trial · Autodromo Nazionale Monza",
@@ -1686,7 +1686,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: B · Autodromo Nazionale Monza",
@@ -1695,7 +1695,7 @@
       "tipo": "gara"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: A · Deep Forest Raceway",
@@ -1704,7 +1704,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -1713,7 +1713,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: A · Michelin Raceway Road Atlanta",
@@ -1722,7 +1722,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
@@ -1731,7 +1731,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "Kappaonegt",
       "gt7name": "Kappaonegt",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -1740,7 +1740,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Fuji International Speedway",
@@ -1749,7 +1749,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Dec 2025",
+      "data": "25 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Tsukuba Circuit",
@@ -1758,7 +1758,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Dec 2025",
+      "data": "25 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -1767,7 +1767,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Dec 2025",
+      "data": "11 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Brands Hatch Indy Circuit",
@@ -1776,7 +1776,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Dec 2025",
+      "data": "11 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Autodrome Lago Maggiore - East",
@@ -1785,7 +1785,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "04 Dec 2025",
+      "data": "04 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Time Trial · Northern Isle Speedway",
@@ -1794,7 +1794,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "13 Jul 2026",
+      "data": "13 Lug 2026",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Daily: C · Suzuka Circuit",
@@ -1803,7 +1803,7 @@
       "tipo": "gara"
     },
     {
-      "data": "01 Dec 2025",
+      "data": "01 Dic 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Daily: B · Autodrome Lago Maggiore - Full Course",
@@ -1821,7 +1821,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Oct 2025",
+      "data": "06 Ott 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Daily: C · Watkins Glen Short Course",
@@ -1830,7 +1830,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Oct 2025",
+      "data": "06 Ott 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Daily: B · Spa 24h layout",
@@ -1839,7 +1839,7 @@
       "tipo": "gara"
     },
     {
-      "data": "29 Sep 2025",
+      "data": "29 Set 2025",
       "psn": "Alesimo82",
       "gt7name": "Goose",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -1848,7 +1848,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Sep 2026",
+      "data": "24 Set 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · Willow Springs International Raceway: Big Willow",
@@ -1857,7 +1857,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · Suzuka Circuit",
@@ -1866,7 +1866,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1875,7 +1875,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "03 Sep 2026",
+      "data": "03 Set 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · Nürburgring 24h",
@@ -1884,7 +1884,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1893,7 +1893,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Time Trial · Autodrome Lago Maggiore - East End",
@@ -1902,7 +1902,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
@@ -1911,7 +1911,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: B · Fuji International Speedway",
@@ -1920,7 +1920,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Jul 2026",
+      "data": "06 Lug 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: B · Circuit de Spa-Francorchamps",
@@ -1929,7 +1929,7 @@
       "tipo": "gara"
     },
     {
-      "data": "22 Jun 2026",
+      "data": "22 Giu 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: A · Kyoto Driving Park - Miyabi",
@@ -1938,7 +1938,7 @@
       "tipo": "gara"
     },
     {
-      "data": "15 Jun 2026",
+      "data": "15 Giu 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: A · Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -1947,7 +1947,7 @@
       "tipo": "gara"
     },
     {
-      "data": "08 Jun 2026",
+      "data": "08 Giu 2026",
       "psn": "Vale34_",
       "gt7name": "Vale34",
       "evento": "Daily: C · Autódromo de Interlagos",
@@ -1956,7 +1956,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -1965,7 +1965,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -1974,7 +1974,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -1983,7 +1983,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "18 Jun 2026",
+      "data": "18 Giu 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -1992,7 +1992,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Jun 2026",
+      "data": "11 Giu 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · Eiger Nordwand",
@@ -2001,7 +2001,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Dec 2025",
+      "data": "11 Dic 2025",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Time Trial · Brands Hatch Indy Circuit",
@@ -2010,7 +2010,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -2019,7 +2019,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -2028,7 +2028,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -2037,7 +2037,7 @@
       "tipo": "gara"
     },
     {
-      "data": "03 Aug 2026",
+      "data": "03 Ago 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: C · Tokyo Expressway - East Clockwise",
@@ -2046,7 +2046,7 @@
       "tipo": "gara"
     },
     {
-      "data": "08 Jun 2026",
+      "data": "08 Giu 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: C · Autódromo de Interlagos",
@@ -2055,7 +2055,7 @@
       "tipo": "gara"
     },
     {
-      "data": "01 Jun 2026",
+      "data": "01 Giu 2026",
       "psn": "InuyashaGodYokai",
       "gt7name": "InuyashaGodYokai",
       "evento": "Daily: C · Fuji International Speedway",
@@ -2064,7 +2064,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2073,7 +2073,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2082,7 +2082,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "16 Jul 2026",
+      "data": "16 Lug 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · Autódromo de Interlagos",
@@ -2091,7 +2091,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Jun 2026",
+      "data": "11 Giu 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · Eiger Nordwand",
@@ -2100,7 +2100,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Jun 2026",
+      "data": "10 Giu 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2109,7 +2109,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "04 Jun 2026",
+      "data": "04 Giu 2026",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Time Trial · Autodromo Nazionale Monza",
@@ -2118,7 +2118,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "29 Dec 2025",
+      "data": "29 Dic 2025",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Daily: B · Autodrome Lago Maggiore - Full Course Reverse",
@@ -2127,7 +2127,7 @@
       "tipo": "gara"
     },
     {
-      "data": "14 Jul 2025",
+      "data": "14 Lug 2025",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Daily: B · Autodrome Lago Maggiore - Full Course",
@@ -2145,7 +2145,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Jan 2025",
+      "data": "20 Gen 2025",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Daily: C · Red Bull Ring",
@@ -2154,7 +2154,7 @@
       "tipo": "gara"
     },
     {
-      "data": "06 Jan 2025",
+      "data": "06 Gen 2025",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Daily: B · Suzuka Circuit",
@@ -2163,7 +2163,7 @@
       "tipo": "gara"
     },
     {
-      "data": "30 Dec 2024",
+      "data": "30 Dic 2024",
       "psn": "Carlos_mania",
       "gt7name": "Sun|)own",
       "evento": "Daily: B · Deep Forest Raceway Reverse",
@@ -2172,7 +2172,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · Suzuka Circuit",
@@ -2181,7 +2181,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2190,7 +2190,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "03 Sep 2026",
+      "data": "03 Set 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · Nürburgring 24h",
@@ -2199,7 +2199,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2208,7 +2208,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -2217,7 +2217,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "18 Jun 2026",
+      "data": "18 Giu 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -2226,7 +2226,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "24 Aug 2026",
+      "data": "24 Ago 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: B · Autopolis International Racing Course",
@@ -2235,7 +2235,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -2244,7 +2244,7 @@
       "tipo": "gara"
     },
     {
-      "data": "04 May 2026",
+      "data": "04 Mag 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: B · Kyoto Driving Park - Yamagiwa",
@@ -2253,7 +2253,7 @@
       "tipo": "gara"
     },
     {
-      "data": "12 Jan 2026",
+      "data": "12 Gen 2026",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: B · Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -2262,7 +2262,7 @@
       "tipo": "gara"
     },
     {
-      "data": "22 Sep 2025",
+      "data": "22 Set 2025",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: B · Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -2271,7 +2271,7 @@
       "tipo": "gara"
     },
     {
-      "data": "15 Sep 2025",
+      "data": "15 Set 2025",
       "psn": "GTS-codebreaker",
       "gt7name": "GTSCode",
       "evento": "Daily: B · Nürburgring 24h",
@@ -2280,7 +2280,7 @@
       "tipo": "gara"
     },
     {
-      "data": "09 Jul 2026",
+      "data": "09 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Time Trial · Willow Springs International Raceway: Horse Thief Mile",
@@ -2289,7 +2289,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -2298,7 +2298,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "11 Jun 2026",
+      "data": "11 Giu 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Time Trial · Eiger Nordwand",
@@ -2307,7 +2307,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Jun 2026",
+      "data": "10 Giu 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2334,7 +2334,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -2343,7 +2343,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: B · Fuji International Speedway",
@@ -2352,7 +2352,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Jul 2026",
+      "data": "27 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: C · Circuit de Barcelona-Catalunya GP Layout",
@@ -2361,7 +2361,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Jul 2026",
+      "data": "20 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: C · Circuit Gilles-Villeneuve",
@@ -2370,7 +2370,7 @@
       "tipo": "gara"
     },
     {
-      "data": "20 Jul 2026",
+      "data": "20 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: B · Brands Hatch Grand Prix Circuit",
@@ -2379,7 +2379,7 @@
       "tipo": "gara"
     },
     {
-      "data": "13 Jul 2026",
+      "data": "13 Lug 2026",
       "psn": "Fil_GTracing",
       "gt7name": "F.Kaniewski",
       "evento": "Daily: B · Nürburgring GP",
@@ -2397,7 +2397,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "04 Jan 2024",
+      "data": "04 Gen 2024",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Time Trial · Fuji International Speedway (Short)",
@@ -2406,7 +2406,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "28 Dec 2023",
+      "data": "28 Dic 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Time Trial · Deep Forest Raceway",
@@ -2424,7 +2424,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "12 Oct 2023",
+      "data": "12 Ott 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Time Trial · Tsukuba Circuit",
@@ -2433,7 +2433,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "28 Sep 2023",
+      "data": "28 Set 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Time Trial · Circuit de Barcelona-Catalunya GP Layout",
@@ -2442,7 +2442,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "02 Oct 2023",
+      "data": "02 Ott 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Daily: B · Trial Mountain Circuit Reverse",
@@ -2451,7 +2451,7 @@
       "tipo": "gara"
     },
     {
-      "data": "11 Sep 2023",
+      "data": "11 Set 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Daily: B · Fuji International Speedway (Short)",
@@ -2460,7 +2460,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Aug 2023",
+      "data": "07 Ago 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Daily: C · Autódromo de Interlagos",
@@ -2469,7 +2469,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Jul 2023",
+      "data": "24 Lug 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Daily: B · Daytona Road Course",
@@ -2478,7 +2478,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Jul 2023",
+      "data": "10 Lug 2023",
       "psn": "GTV_christian",
       "gt7name": "LID_christodio",
       "evento": "Daily: B · Sardegna - Road Track - B",
@@ -2487,7 +2487,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · Suzuka Circuit",
@@ -2496,7 +2496,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -2505,7 +2505,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "06 Aug 2026",
+      "data": "06 Ago 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · Fuji International Speedway",
@@ -2514,7 +2514,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "23 Jul 2026",
+      "data": "23 Lug 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -2523,7 +2523,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -2532,7 +2532,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "25 Jun 2026",
+      "data": "25 Giu 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Time Trial · 24 Heures du Mans race track",
@@ -2541,7 +2541,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: C · Brands Hatch Grand Prix Circuit",
@@ -2550,7 +2550,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
@@ -2559,7 +2559,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -2568,7 +2568,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: C · 24 Heures du Mans race track",
@@ -2577,7 +2577,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -2586,7 +2586,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "Giusdandri",
       "gt7name": "Giusdandri",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -2595,7 +2595,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Sep 2026",
+      "data": "24 Set 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · Willow Springs International Raceway: Big Willow",
@@ -2604,7 +2604,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · Suzuka Circuit",
@@ -2613,7 +2613,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2622,7 +2622,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2631,7 +2631,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · Autodrome Lago Maggiore - East End",
@@ -2640,7 +2640,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -2649,7 +2649,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -2658,7 +2658,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: B · Watkins Glen Long Course",
@@ -2667,7 +2667,7 @@
       "tipo": "gara"
     },
     {
-      "data": "31 Aug 2026",
+      "data": "31 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: C · 24 Heures du Mans race track",
@@ -2676,7 +2676,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Aug 2026",
+      "data": "24 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: B · Autopolis International Racing Course",
@@ -2685,7 +2685,7 @@
       "tipo": "gara"
     },
     {
-      "data": "24 Aug 2026",
+      "data": "24 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: C · Circuit de Sainte-Croix - B",
@@ -2694,7 +2694,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "Utile_ruspante",
       "gt7name": "Barda88",
       "evento": "Daily: C · Grand Valley - Highway 1",
@@ -2703,7 +2703,7 @@
       "tipo": "gara"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Grandisil_2",
       "gt7name": "Scrocchio98",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2712,7 +2712,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "19 Jul 2026",
+      "data": "19 Lug 2026",
       "psn": "Grandisil_2",
       "gt7name": "Scrocchio98",
       "evento": "Time Trial · Circuit de Spa-Francorchamps",
@@ -2748,7 +2748,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "04 Dec 2025",
+      "data": "04 Dic 2025",
       "psn": "Grandisil_2",
       "gt7name": "Scrocchio98",
       "evento": "Time Trial · Northern Isle Speedway",
@@ -2757,7 +2757,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "22 Jun 2026",
+      "data": "22 Giu 2026",
       "psn": "Grandisil_2",
       "gt7name": "Scrocchio98",
       "evento": "Daily: C · 24 Heures du Mans race track",
@@ -2811,7 +2811,7 @@
       "tipo": "gara"
     },
     {
-      "data": "01 Oct 2026",
+      "data": "01 Ott 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
@@ -2820,7 +2820,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "17 Sep 2026",
+      "data": "17 Set 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · Suzuka Circuit",
@@ -2829,7 +2829,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2838,7 +2838,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2847,7 +2847,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · Autodrome Lago Maggiore - East End",
@@ -2856,7 +2856,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -2865,7 +2865,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "14 Sep 2026",
+      "data": "14 Set 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: B · Autodromo Nazionale Monza",
@@ -2874,7 +2874,7 @@
       "tipo": "gara"
     },
     {
-      "data": "07 Sep 2026",
+      "data": "07 Set 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: C · Dragon Trail - Seaside",
@@ -2883,7 +2883,7 @@
       "tipo": "gara"
     },
     {
-      "data": "17 Aug 2026",
+      "data": "17 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: C · Yas Marina Circuit",
@@ -2892,7 +2892,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: B · Fuji International Speedway",
@@ -2901,7 +2901,7 @@
       "tipo": "gara"
     },
     {
-      "data": "03 Aug 2026",
+      "data": "03 Ago 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: B · Red Bull Ring",
@@ -2910,7 +2910,7 @@
       "tipo": "gara"
     },
     {
-      "data": "13 Jul 2026",
+      "data": "13 Lug 2026",
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "evento": "Daily: C · Suzuka Circuit",
@@ -2919,7 +2919,7 @@
       "tipo": "gara"
     },
     {
-      "data": "10 Sep 2026",
+      "data": "10 Set 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · WeatherTech Raceway Laguna Seca",
@@ -2928,7 +2928,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "03 Sep 2026",
+      "data": "03 Set 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · Nürburgring 24h",
@@ -2937,7 +2937,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "27 Aug 2026",
+      "data": "27 Ago 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · Autopolis International Racing Course - Short Course",
@@ -2946,7 +2946,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · Autodrome Lago Maggiore - East End",
@@ -2955,7 +2955,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · Daytona Road Course",
@@ -2964,7 +2964,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "20 Aug 2026",
+      "data": "20 Ago 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Time Trial · Deep Forest Raceway Reverse",
@@ -2973,7 +2973,7 @@
       "tipo": "time_trial"
     },
     {
-      "data": "10 Aug 2026",
+      "data": "10 Ago 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Daily: B · Fuji International Speedway",
@@ -2982,7 +2982,7 @@
       "tipo": "gara"
     },
     {
-      "data": "25 May 2026",
+      "data": "25 Mag 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Daily: C · Watkins Glen Long Course",
@@ -2991,7 +2991,7 @@
       "tipo": "gara"
     },
     {
-      "data": "11 May 2026",
+      "data": "11 Mag 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Daily: C · WeatherTech Raceway Laguna Seca",
@@ -3000,7 +3000,7 @@
       "tipo": "gara"
     },
     {
-      "data": "11 May 2026",
+      "data": "11 Mag 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Daily: B · Willow Springs International Raceway: Big Willow",
@@ -3009,7 +3009,7 @@
       "tipo": "gara"
     },
     {
-      "data": "04 May 2026",
+      "data": "04 Mag 2026",
       "psn": "titirolamadonn",
       "gt7name": "Bowie knife99",
       "evento": "Daily: B · Kyoto Driving Park - Yamagiwa",

@@ -67,6 +67,21 @@ FOLDER_TIME_TRIAL = 249
 MESI = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
         "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
 
+MESI_IT = {"Jan": "Gen", "Feb": "Feb", "Mar": "Mar", "Apr": "Apr", "May": "Mag",
+           "Jun": "Giu", "Jul": "Lug", "Aug": "Ago", "Sep": "Set", "Oct": "Ott",
+           "Nov": "Nov", "Dec": "Dic"}
+
+
+def data_it(valore):
+    """'01 Oct 2026' -> '01 Ott 2026' (il sito e' in italiano)."""
+    if not valore:
+        return valore
+    return re.sub(
+        r"(\d{1,2}\s+)([A-Za-z]{3})(\s+\d{4})",
+        lambda m: m.group(1) + MESI_IT.get(m.group(2).title(), m.group(2)) + m.group(3),
+        str(valore),
+    )
+
 
 # ---------------------------------------------------------------------------
 # Rete
@@ -454,7 +469,7 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
             "nome": "Time Trial · " + (attivo.get("pista") or (voci_tt[0]["pista"] if voci_tt else "")),
             "pista": attivo.get("pista") or (voci_tt[0]["pista"] if voci_tt else None),
             "auto": attivo.get("auto") or (voci_tt[0]["auto"] if voci_tt else None),
-            "scadenza": attivo.get("fine") or (ufficiale.get("fine") or "")[:10] or None,
+            "scadenza": data_it(attivo.get("fine") or (ufficiale.get("fine") or "")[:10] or None),
             "miglior_tempo": _ms_a_tempo(leader_ms),
             "leader": leader_psn,
             "partecipanti": partecipanti,
@@ -479,7 +494,7 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
                 "numero": p["numero"],
                 "pista": g["pista"],
                 "auto": g["auto"],
-                "data": g["data"],
+                "data": data_it(g["data"]),
                 "tempo": g["tempo"],
                 "tempo_ms": g["tempo_ms"],
                 "pos_assoluta": g["rank_int"],
@@ -500,7 +515,7 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
         gare_settimanali.append({
             "nome": f"{gara} · {pista}",
             "pista": pista,
-            "data": voci[0]["data"],
+            "data": data_it(voci[0]["data"]),
             "data_iso": data_iso,
             "classifica": voci,
         })
@@ -537,14 +552,14 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
         })
         for e in eventi[:6]:
             storico.append({
-                "data": e["fine"], "psn": p["psn"],
+                "data": data_it(e["fine"]), "psn": p["psn"],
                 "gt7name": p["gt7name"] or p["psn"],
                 "evento": f"Time Trial · {e['pista']}",
                 "pos": e["rank"], "tempo": e["tempo"], "tipo": "time_trial",
             })
         for g in gare[:6]:
             storico.append({
-                "data": g["data"], "psn": p["psn"],
+                "data": data_it(g["data"]), "psn": p["psn"],
                 "gt7name": p["gt7name"] or p["psn"],
                 "evento": f"{g['gara']} · {g['pista']}",
                 "pos": g["rank"], "tempo": g["tempo"], "tipo": "gara",
