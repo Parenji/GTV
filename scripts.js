@@ -2718,9 +2718,11 @@ function sportPct(value) {
 }
 
 /* Riga di classifica: tempo + posizioni + distacchi */
-function sportEventTable(entries, partecipanti) {
+function sportEventTable(entries, partecipanti, messaggioVuoto) {
   if (!entries || entries.length === 0) {
-    return '<div class="sport-empty">Nessun pilota GTV in classifica.</div>';
+    return `<div class="sport-empty">${
+      messaggioVuoto || "Nessun pilota del team in classifica."
+    }</div>`;
   }
   let html = '<div class="table-container"><table class="sport-table">';
   html += "<thead><tr>";
@@ -2767,8 +2769,11 @@ function sportEventCard(evento) {
   if (!evento) return "";
   const nome = sportEscape(evento.nome || evento.titolo || "Evento");
   const dettagli = [];
-  if (evento.pista) dettagli.push("🏁 " + sportEscape(evento.pista));
+  if (evento.pista && !String(evento.nome || "").includes(evento.pista)) {
+    dettagli.push("🏁 " + sportEscape(evento.pista));
+  }
   if (evento.auto) dettagli.push("🚗 " + sportEscape(evento.auto));
+  if (evento.impostazioni) dettagli.push("⚙️ " + sportEscape(evento.impostazioni));
   if (evento.inizio || evento.fine) {
     const periodo = [evento.inizio, evento.fine].filter(Boolean).join(" → ");
     dettagli.push("📅 " + periodo);
@@ -2781,12 +2786,27 @@ function sportEventCard(evento) {
     dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
   }
 
+  let vuoto = "Nessun pilota del team ha ancora girato qui questa settimana.";
+  if (evento.ultima_partecipazione) {
+    const u = evento.ultima_partecipazione;
+    vuoto +=
+      " Ultima volta: " +
+      sportEscape(u.data) +
+      " — " +
+      sportEscape(u.pilota) +
+      " (" +
+      sportEscape(u.pos) +
+      ", " +
+      sportEscape(u.tempo) +
+      ").";
+  }
+
   let html = '<div class="sport-card">';
   html += `<div class="sport-card-title">${nome}</div>`;
   if (dettagli.length) {
     html += `<div class="sport-card-meta">${dettagli.join(" · ")}</div>`;
   }
-  html += sportEventTable(evento.classifica, evento.partecipanti);
+  html += sportEventTable(evento.classifica, evento.partecipanti, vuoto);
   html += "</div>";
   return html;
 }
@@ -2812,7 +2832,7 @@ function renderSportSection(data) {
     html += attivi.map(sportEventCard).join("");
   }
   if (gare.length) {
-    html += '<h3 class="sport-subtitle">Gare settimanali</h3>';
+    html += '<h3 class="sport-subtitle">Gare settimanali in corso</h3>';
     html += gare.map(sportEventCard).join("");
   }
   if (passati.length) {
@@ -2820,6 +2840,45 @@ function renderSportSection(data) {
     html += passati.map(sportEventCard).join("");
   }
   body.innerHTML = html;
+}
+
+function sportData(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "—";
+  return d.toLocaleDateString("it-IT", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+/* Grafico: distribuzione dei piazzamenti mondiali del team */
+function sportRankChart(grafici) {
+  const fasce = (grafici && grafici.fasce_rank) || [];
+  const totale = (grafici && grafici.eventi_totali) || 0;
+  if (!fasce.length || !totale) return "";
+  const massimo = Math.max(...fasce.map((f) => f.conteggio), 1);
+
+  let html = '<h3 class="sport-subtitle">Dove si piazzano i piloti del team</h3>';
+  html +=
+    '<div class="sport-note" style="text-align:left">' +
+    sportNum(totale) +
+    " eventi registrati, divisi per posizione nella classifica mondiale.</div>";
+  html += '<div class="sport-chart">';
+  fasce.forEach((f) => {
+    const pct = f.conteggio ? Math.max(Math.round((f.conteggio / massimo) * 100), 3) : 0;
+    html += '<div class="sport-bar-row">';
+    html += `<div class="sport-bar-label">${sportEscape(f.etichetta)}</div>`;
+    html +=
+      '<div class="sport-bar-track"><div class="sport-bar-fill" style="width:' +
+      pct +
+      '%"></div></div>';
+    html += `<div class="sport-bar-value">${sportNum(f.conteggio)}</div>`;
+    html += "</div>";
+  });
+  html += "</div>";
+  return html;
 }
 
 function renderSportStats(data) {
@@ -2833,6 +2892,8 @@ function renderSportStats(data) {
     return;
   }
 
+  let html = sportRankChart(data.grafici);
+
   // Ordino per miglior piazzamento mondiale ottenuto
   const ordinati = piloti.slice().sort((a, b) => {
     const ra = a.miglior_rank ?? Number.MAX_SAFE_INTEGER;
@@ -2840,55 +2901,33 @@ function renderSportStats(data) {
     return ra - rb;
   });
 
-  let html = '<div class="table-container"><table class="sport-table">';
+  html += '<h3 class="sport-subtitle">Piloti del team</h3>';
+  html +=
+    '<div class="sport-note" style="text-align:left">I rank si riferiscono agli eventi pubblicati dalla fonte (circa gli ultimi 10-20 di ogni pilota).</div>';
+  html += '<div class="table-container"><table class="sport-table">';
   html += "<thead><tr>";
-  html += "<th>#</th><th>Pilota GTV</th><th>DR</th><th>SR</th>";
-  html += "<th title='Time trial registrate'>Time trial</th>";
-  html += "<th title='Gare settimanali registrate'>Gare</th>";
+  html += "<th>#</th><th>Pilota</th><th>DR</th><th>SR</th>";
   html += "<th title='Miglior posizione mondiale ottenuta'>Miglior rank</th>";
   html += "<th title='Posizione mondiale media'>Rank medio</th>";
+  html += "<th title=\"Data dell'ultimo evento registrato\">Ultimo evento</th>";
   html += "</tr></thead><tbody>";
 
+  const rank = (v) =>
+    v === null || v === undefined ? "—" : "#" + Number(v).toLocaleString("it-IT");
+
   ordinati.forEach((p, i) => {
-    const rank = (v) =>
-      v === null || v === undefined ? "—" : "#" + Number(v).toLocaleString("it-IT");
     html += "<tr>";
     html += `<td>${i + 1}</td>`;
     html += `<td class="sport-driver">${sportDriverLabel(p)}</td>`;
     html += `<td>${sportEscape(p.dr)}</td>`;
     html += `<td>${sportEscape(p.sr)}</td>`;
-    html += `<td>${sportNum(p.time_trial)}</td>`;
-    html += `<td>${sportNum(p.gare)}</td>`;
     html += `<td>${rank(p.miglior_rank)}</td>`;
     html += `<td>${rank(p.rank_medio)}</td>`;
+    html += `<td>${sportData(p.ultimo_evento_data)}</td>`;
     html += "</tr>";
   });
 
   html += "</tbody></table></div>";
-
-  // Storico: dal piu' recente al piu' vecchio, cosi' si capisce a colpo
-  // d'occhio chi sta correndo adesso e chi no.
-  const storico = data.storico || [];
-  if (storico.length) {
-    html += '<h3 class="sport-subtitle">Ultimi eventi del team</h3>';
-    html +=
-      '<div class="sport-note" style="text-align:left">Dal più recente. Un pilota che non corre da mesi compare in fondo, non in cima.</div>';
-    html += '<div class="table-container"><table class="sport-table">';
-    html +=
-      "<thead><tr><th>Data</th><th>Pilota</th><th>Tipo</th><th>Evento</th><th>Rank</th><th>Tempo</th></tr></thead><tbody>";
-    storico.slice(0, 60).forEach((r) => {
-      html += "<tr>";
-      html += `<td>${sportEscape(r.data)}</td>`;
-      html += `<td class="sport-driver">${sportDriverLabel(r)}</td>`;
-      html += `<td>${r.tipo === "gara" ? "Gara" : "Time trial"}</td>`;
-      html += `<td>${sportEscape(r.evento)}</td>`;
-      html += `<td>${r.pos ? sportEscape(r.pos) : "—"}</td>`;
-      html += `<td class="sport-time">${sportEscape(r.tempo)}</td>`;
-      html += "</tr>";
-    });
-    html += "</tbody></table></div>";
-  }
-
   body.innerHTML = html;
 }
 

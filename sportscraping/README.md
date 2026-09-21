@@ -11,9 +11,10 @@ le due sezioni omonime.
 | `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati |
 | `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
 | `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
-| `gare_settimanali` | le gare settimanali, raggruppate **per evento identico** (stessa gara, pista e data), con rank mondiale, tempo e distacco tra i piloti del team |
-| `piloti` | statistiche per pilota: DR, SR, time trial e gare registrate, miglior piazzamento mondiale, piazzamento medio |
-| `storico` | ultimi eventi di ogni pilota, **ordinati dal più recente** |
+| `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni e i tempi del team degli ultimi 7 giorni |
+| `piloti` | statistiche per pilota: DR, SR, miglior piazzamento mondiale, piazzamento medio e data dell'ultimo evento |
+| `grafici.fasce_rank` | quanti eventi del team sono finiti in ciascuna fascia di classifica (per il grafico) |
+| `storico` | archivio degli ultimi eventi per pilota (non più mostrato nel sito) |
 
 Le squadre sono due: **GTV** (22 piloti) e **JGTV** (4 piloti). Nel sito i
 piloti JGTV hanno un'etichetta accanto al nome.
@@ -33,7 +34,8 @@ piloti JGTV hanno un'etichetta accanto al nome.
 2. **gt-gridstats.com** (sito della community, non ufficiale):
    - `/player/<PSN>` → DR, SR e le tabelle *Event History* (time trial) e
      *Daily Race History* (gare settimanali) con rank mondiale e tempo;
-   - `/explore-events` → nome della pista e dell'auto del time trial in corso.
+   - `/explore-events` → nome della pista e dell'auto delle time trial in corso;
+   - `/dailies` → le 3 gare settimanali attive (Race A/B/C).
 
 Senza gt-gridstats il rank personale oltre il 100° non sarebbe recuperabile.
 
@@ -68,3 +70,15 @@ quindi la sezione non si svuota.
 - Se gt-gridstats cambia l'HTML delle sue pagine, i parser in `gt7_sport.py`
   vanno riallineati: i punti da toccare sono `parse_profilo()` e
   `parse_explore_events()`.
+
+## Perché alcune colonne non ci sono più
+
+- **"Time trial" e "Gare" (conteggi)**: gt-gridstats pubblica al massimo ~10
+  righe di storico per tabella, quindi 22 piloti su 25 risultavano avere
+  esattamente "10". Era un troncamento della fonte, non un dato: le colonne
+  sono state rimosse e sostituite con la **data dell'ultimo evento**, che dice
+  davvero chi sta correndo.
+- **"Ultimi eventi"**: tabella eliminata perché mescolava eventi recenti e
+  vecchi in un unico elenco poco leggibile. Al suo posto c'è un grafico a barre
+  che mostra in quali fasce di classifica mondiale finiscono i risultati del
+  team.
