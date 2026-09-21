@@ -36,12 +36,14 @@ jobs:
 
       - name: Raccogli i dati Sport Mode
         working-directory: sportscraping
-        # Se una fonte non risponde il file precedente resta valido:
-        # meglio dati di 12 ore fa che una sezione vuota.
-        continue-on-error: true
+        # Volutamente SENZA continue-on-error: se lo script fallisce (fonte giu'
+        # o raccolta troppo parziale) il run diventa rosso e te ne accorgi.
+        # In quel caso sport.json non viene toccato e il sito tiene i dati
+        # precedenti, quindi non si rompe niente: ma si vede.
         run: python3 gt7_sport.py
 
       - name: Commit e push dei dati aggiornati
+        if: always()
         run: |
           cd "$GITHUB_WORKSPACE"
           if git diff --quiet -- sportscraping/sport.json; then
