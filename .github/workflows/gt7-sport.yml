@@ -23,7 +23,7 @@ concurrency:
 jobs:
   sport:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
 
     steps:
       - name: Checkout del repo
@@ -40,7 +40,19 @@ jobs:
         # o raccolta troppo parziale) il run diventa rosso e te ne accorgi.
         # In quel caso sport.json non viene toccato e il sito tiene i dati
         # precedenti, quindi non si rompe niente: ma si vede.
-        run: python3 gt7_sport.py
+        #
+        # Lo storico dei piloti e' paginato (10 eventi per pagina). Il giro
+        # delle 05:00 scarica TUTTE le pagine (circa 10 minuti), quello delle
+        # 17:00 solo la prima: lo storico profondo resta perche' i dati nuovi
+        # vengono uniti a quelli gia' salvati.
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 5 * * *" ]; then
+            echo "Giro completo: scarico tutto lo storico"
+            python3 gt7_sport.py --full
+          else
+            echo "Giro leggero: aggiorno solo il periodo recente"
+            python3 gt7_sport.py
+          fi
 
       - name: Commit e push dei dati aggiornati
         if: always()

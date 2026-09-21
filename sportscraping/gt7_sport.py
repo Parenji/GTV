@@ -52,7 +52,8 @@ OUT_JSON = BASE_DIR / "sport.json"
 
 USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36")
-PAUSA = 1.2                 # secondi fra una richiesta e l'altra (gentile)
+PAUSA = 1.0                 # secondi fra un pilota e l'altro (gentile)
+PAUSA_PAGINE = 0.5          # secondi fra una pagina di storico e la successiva
 TIMEOUT = 30
 
 PILOTI_URL = ("https://docs.google.com/spreadsheets/d/e/"
@@ -609,6 +610,81 @@ def parse_explore_events(raw_html):
 
 
 # ---------------------------------------------------------------------------
+# Profilo completo di un pilota (lo storico e' PAGINATO: vedi sotto)
+# ---------------------------------------------------------------------------
+def _chiave_evento(e):
+    return (e.get("pista"), e.get("inizio"), e.get("fine"))
+
+
+def _chiave_gara(g):
+    return (g.get("pista"), g.get("gara"), g.get("data_iso"))
+
+
+def _aggiungi_univoci(destinazione, viste, nuove, chiave):
+    """Aggiunge solo le voci mai viste, cosi' le pagine non si sovrappongono."""
+    aggiunte = 0
+    for voce in nuove:
+        k = chiave(voce)
+        if k in viste:
+            continue
+        viste.add(k)
+        destinazione.append(voce)
+        aggiunte += 1
+    return aggiunte
+
+
+def profilo_completo(psn, full=False, max_eventi=10, max_daily=6, verbose=False):
+    """Scarica il profilo e, con full=True, TUTTE le pagine dello storico.
+
+    Il profilo mostra 10 eventi e 10 gare per pagina: senza paginare si vede
+    solo l'ultimo periodo, che e' il motivo per cui le statistiche "all time"
+    erano in realta' limitate agli ultimi 20 eventi.
+    """
+    quotato = urllib.parse.quote(psn)
+    base = parse_profilo(fetch(f"{GRIDSTATS}/player/{quotato}"))
+    base["psn"] = base.get("psn") or psn
+    if not full:
+        return base
+
+    eventi, visti_e = [], set()
+    _aggiungi_univoci(eventi, visti_e, base["eventi"], _chiave_evento)
+    pagina = 2
+    while pagina <= max_eventi:
+        try:
+            altra = parse_profilo(
+                fetch(f"{GRIDSTATS}/player/{quotato}?eventPage={pagina}"))
+        except Exception:
+            break
+        if _aggiungi_univoci(eventi, visti_e, altra["eventi"], _chiave_evento) == 0:
+            break
+        pagina += 1
+        time.sleep(PAUSA_PAGINE)
+
+    gare, visti_g = [], set()
+    _aggiungi_univoci(gare, visti_g, base["gare"], _chiave_gara)
+    pagina = 2
+    while pagina <= max_daily:
+        try:
+            altra = parse_profilo(
+                fetch(f"{GRIDSTATS}/player/{quotato}?dailyPage={pagina}"))
+        except Exception:
+            break
+        if _aggiungi_univoci(gare, visti_g, altra["gare"], _chiave_gara) == 0:
+            break
+        pagina += 1
+        time.sleep(PAUSA_PAGINE)
+
+    base["eventi"] = sorted(eventi, key=lambda e: e.get("data_fine") or "",
+                            reverse=True)
+    base["gare"] = sorted(gare, key=lambda g: g.get("data_iso") or "",
+                          reverse=True)
+    if verbose:
+        print(f"      storico completo: {len(eventi)} time trial · "
+              f"{len(gare)} gare")
+    return base
+
+
+# ---------------------------------------------------------------------------
 # Piloti GTV (dal foglio pubblico del team)
 # ---------------------------------------------------------------------------
 def carica_piloti_gtv():
@@ -649,6 +725,15 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
     """
     gare_attive = gare_attive or []
     settimana_prec = settimana_prec or {}
+
+    # Storico gia' salvato, per non perdere le pagine profonde nei giri leggeri
+    storico_precedente = {}
+    try:
+        if OUT_JSON.exists():
+            for voce in json.loads(OUT_JSON.read_text(encoding="utf-8")).get("piloti", []):
+                storico_precedente[voce.get("psn")] = voce.get("eventi", [])
+    except Exception:
+        storico_precedente = {}
     oggi = date.today().isoformat()
 
     # nomi (pista/auto) degli eventi attivi, presi dall'elenco di gt-gridstats
@@ -883,11 +968,6 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
         if not prof:
             continue
         eventi, gare = prof["eventi"], prof["gare"]
-        rank_tt = [e["rank_int"] for e in eventi if e["rank_int"]]
-        rank_gare = [g["rank_int"] for g in gare if g["rank_int"]]
-        tutti_i_rank = rank_tt + rank_gare
-        rank_del_team.extend(tutti_i_rank)
-        miglior_rank = min(tutti_i_rank) if tutti_i_rank else None
         ultima_data = max([d for d in
                            ([e.get("data_fine") for e in eventi] +
                             [g.get("data_iso") for g in gare]) if d] or [None])
@@ -903,7 +983,21 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                 "evento": g.get("pista")} for g in gare]
         )
         elenco = [x for x in elenco if x["data"]]
-        elenco.sort(key=lambda x: x["data"], reverse=True)
+
+        # Unione con lo storico del giro precedente: il giro "leggero" legge
+        # solo la prima pagina del profilo e non deve far sparire quello
+        # profondo scaricato dal giro completo.
+        for vecchio in storico_precedente.get(p["psn"], []):
+            elenco.append({k: vecchio.get(k) for k in
+                           ("data", "tipo", "rank", "tempo", "evento")})
+        unici = {}
+        for e in elenco:
+            unici.setdefault((e["data"], e["tipo"], e["evento"]), e)
+        elenco = sorted(unici.values(), key=lambda x: x["data"], reverse=True)
+
+        tutti_i_rank = [e["rank"] for e in elenco if isinstance(e.get("rank"), int)]
+        rank_del_team.extend(tutti_i_rank)
+        miglior_rank = min(tutti_i_rank) if tutti_i_rank else None
 
         statistiche.append({
             "psn": p["psn"],
@@ -1022,8 +1116,11 @@ def main():
     ap = argparse.ArgumentParser(description="Raccoglie i dati Sport Mode GT7 dei piloti GTV.")
     ap.add_argument("--limit", type=int, help="limita il numero di piloti (per prove)")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--full", action="store_true",
+                    help="scarica TUTTE le pagine dello storico (piu' lento)")
     args = ap.parse_args()
 
+    sys.stdout.reconfigure(line_buffering=True)
     print("Leggo l'elenco dei piloti del team dal foglio...")
     piloti = carica_piloti_gtv()
     if args.limit:
@@ -1083,17 +1180,13 @@ def main():
 
     profili = {}
     for i, p in enumerate(piloti, start=1):
-        url = f"{GRIDSTATS}/player/{urllib.parse.quote(p['psn'])}"
         try:
-            prof = parse_profilo(fetch(url))
-            prof["psn"] = prof.get("psn") or p["psn"]
-            profili[p["psn"]] = prof
-            if args.verbose:
-                print(f"  [{i}/{len(piloti)}] {p['psn']:<22} "
-                      f"DR={prof['dr']} SR={prof['sr']} "
-                      f"TT={len(prof['eventi'])} gare={len(prof['gare'])}")
-            else:
-                print(f"  [{i}/{len(piloti)}] {p['psn']}")
+            profili[p["psn"]] = profilo_completo(
+                p["psn"], full=args.full, verbose=args.verbose)
+            prof = profili[p["psn"]]
+            print(f"  [{i}/{len(piloti)}] {p['psn']:<22} "
+                  f"DR={prof['dr']} SR={prof['sr']} "
+                  f"TT={len(prof['eventi'])} gare={len(prof['gare'])}")
         except urllib.error.HTTPError as e:
             print(f"  [{i}/{len(piloti)}] {p['psn']}: HTTP {e.code} (saltato)")
         except Exception as e:

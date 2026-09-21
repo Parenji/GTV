@@ -206,3 +206,32 @@ Per aggiungere un circuito nuovo basta una riga nella tupla `LOGHI` di
 - **Archivio**: due pannelli che si alternano per non allungare la pagina —
   *"Ultime N time trial concluse"* e *"Ultime daily"* (le Race A/B/C della
   settimana precedente). Si cambia con i pulsanti in cima all'archivio.
+
+## Lo storico dei piloti e' PAGINATO (scoperta del 21/09/2026)
+
+`/player/<PSN>` mostra solo **10 time trial e 10 gare per pagina**. Leggendo
+solo la prima pagina, le statistiche "ALL TIME" erano in realta' limitate agli
+ultimi ~20 eventi: per questo quasi tutti i piloti risultavano fermi a 20.
+
+La paginazione di Livewire risponde anche via URL:
+
+```
+https://gt-gridstats.com/player/<PSN>?eventPage=2
+https://gt-gridstats.com/player/<PSN>?dailyPage=2
+```
+
+`profilo_completo()` le scorre tutte (max 15 pagine, si ferma quando una
+pagina non aggiunge eventi nuovi) e ricostruisce lo storico reale: da ~20 a
+~120 eventi per pilota.
+
+### Per non pesare sulla fonte
+
+Scaricare tutto sono ~13 richieste per pilota (~340 per giro). Percio':
+
+- il giro delle **05:00 UTC** usa `--full` e scarica tutte le pagine;
+- quello delle **17:00 UTC** legge solo la prima pagina;
+- i dati nuovi vengono **uniti** a quelli gia' salvati, quindi il giro
+  leggero non fa mai sparire lo storico profondo.
+
+Il workflow sceglie in base a `github.event.schedule`, che contiene
+l'espressione cron che ha avviato il run.

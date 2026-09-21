@@ -2894,8 +2894,54 @@ function renderSportSection(data) {
   });
 }
 
+/* Filtri temporali della tabella piloti */
+const SPORT_FINESTRE = [
+  { id: "all", etichetta: "ALL TIME", giorni: null },
+  { id: "anno", etichetta: "Ultimo anno", giorni: 365 },
+  { id: "trimestre", etichetta: "Ultimi 3 mesi", giorni: 90 },
+];
+
 let sportDati = null;
 let sportFinestra = "all";
+
+function sportData(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "—";
+  return d.toLocaleDateString("it-IT", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+/* Grafico: distribuzione dei piazzamenti mondiali del team */
+function sportRankChart(grafici) {
+  const fasce = (grafici && grafici.fasce_rank) || [];
+  const totale = (grafici && grafici.eventi_totali) || 0;
+  if (!fasce.length || !totale) return "";
+  const massimo = Math.max(...fasce.map((f) => f.conteggio), 1);
+
+  let html = '<h3 class="sport-subtitle">Dove si piazzano i piloti del team</h3>';
+  html +=
+    '<div class="sport-note" style="text-align:left">' +
+    sportNum(totale) +
+    " eventi registrati, divisi per posizione nella classifica mondiale.</div>";
+  html += '<div class="sport-chart">';
+  fasce.forEach((f) => {
+    const pct = f.conteggio ? Math.max(Math.round((f.conteggio / massimo) * 100), 3) : 0;
+    html += '<div class="sport-bar-row">';
+    html += `<div class="sport-bar-label">${sportEscape(f.etichetta)}</div>`;
+    html +=
+      '<div class="sport-bar-track"><div class="sport-bar-fill" style="width:' +
+      pct +
+      '%"></div></div>';
+    html += `<div class="sport-bar-value">${sportNum(f.conteggio)}</div>`;
+    html += "</div>";
+  });
+  html += "</div>";
+  return html;
+}
 
 /* Ricalcola le statistiche di ogni pilota sugli eventi del periodo scelto */
 function sportStatistichePeriodo(piloti, giorni) {
