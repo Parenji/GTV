@@ -5176,6 +5176,18 @@ body#worldchampionship {
   text-align: right;
 }
 
+.sport-badge-jgtv {
+  display: inline-block;
+  font-size: 0.62em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 4px;
+  padding: 1px 5px;
+  vertical-align: middle;
+}
+
 @media (max-width: 768px) {
   .sport-card {
     padding: 10px 8px;

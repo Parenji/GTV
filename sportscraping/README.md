@@ -8,11 +8,18 @@ le due sezioni omonime.
 
 | Blocco | Contenuto |
 |---|---|
-| `meta` | quando è stato aggiornato, quante fonti hanno risposto |
-| `time_trial` | time trial in corso: pista, auto, scadenza, leader mondiale, numero iscritti e la classifica dei piloti GTV con tempo, posizione tra i GTV, posizione mondiale e distacco % (relativo e assoluto) |
-| `gare_settimanali` | le gare settimanali, raggruppate **per evento identico** (stessa gara, pista e data), con rank mondiale, tempo e distacco tra i GTV |
+| `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati |
+| `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
+| `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
+| `gare_settimanali` | le gare settimanali, raggruppate **per evento identico** (stessa gara, pista e data), con rank mondiale, tempo e distacco tra i piloti del team |
 | `piloti` | statistiche per pilota: DR, SR, time trial e gare registrate, miglior piazzamento mondiale, piazzamento medio |
-| `storico` | ultimi eventi di ogni pilota (time trial e gare) |
+| `storico` | ultimi eventi di ogni pilota, **ordinati dal più recente** |
+
+Le squadre sono due: **GTV** (22 piloti) e **JGTV** (4 piloti). Nel sito i
+piloti JGTV hanno un'etichetta accanto al nome.
+
+> ⚠️ Un pilota che non corre da mesi compare **in fondo** allo storico, non in
+> cima: è il motivo per cui la tabella è ordinata per data e non per pilota.
 
 ## Da dove arrivano i dati
 
@@ -34,7 +41,7 @@ Senza gt-gridstats il rank personale oltre il 100° non sarebbe recuperabile.
 
 ```bash
 cd sportscraping
-python3 gt7_sport.py             # aggiorna sport.json (≈45 s per 22 piloti)
+python3 gt7_sport.py             # aggiorna sport.json (≈60 s per 26 piloti)
 python3 gt7_sport.py --limit 4   # prova su 4 piloti
 python3 gt7_sport.py --verbose   # mostra anche DR/SR e quanti eventi per pilota
 ```

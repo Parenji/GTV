@@ -83,6 +83,21 @@ def data_it(valore):
     )
 
 
+MESI_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _iso_a_it(iso):
+    """'2026-10-01' -> '01 Oct 2026' (poi data_it() lo rende '01 Ott 2026')."""
+    if not iso:
+        return None
+    try:
+        d = date.fromisoformat(str(iso)[:10])
+    except ValueError:
+        return iso
+    return f"{d.day:02d} {MESI_ABBR[d.month - 1]} {d.year}"
+
+
 # ---------------------------------------------------------------------------
 # Rete
 # ---------------------------------------------------------------------------
@@ -118,42 +133,38 @@ def post_json(path, body, timeout=TIMEOUT):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def time_trial_ufficiale(region_id=REGIONE_EU):
-    """Classifica ufficiale del time trial in corso: leader e partecipanti.
+def eventi_ufficiali(region_id=REGIONE_EU):
+    """Tutti gli eventi time trial pubblicati (passati e in corso).
 
-    L'API ufficiale espone solo la top 100: il rank personale oltre il 100
-    arriva da gt-gridstats. Da qui prendiamo il tempo del leader (per il
-    distacco assoluto) e il numero totale di iscritti.
+    Ritorna [{begin, end, ranking_id, event_id}] con date ISO.
     """
     eventi = post_json("/event/get_folder",
                        {"region_id": region_id,
                         "folder_id": FOLDER_TIME_TRIAL}).get("result") or []
-    oggi = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    attivi = []
+    out = []
     for ev in eventi:
         online = (ev.get("parameters") or {}).get("online") or {}
-        inizio, fine = online.get("begin_date", ""), online.get("end_date", "")
-        if inizio and fine and inizio[:10] <= oggi <= fine[:10]:
-            attivi.append((fine, online.get("ranking_id"), ev.get("event_id")))
-    if not attivi:
-        return None
-    attivi.sort()
-    fine, ranking_id, event_id = attivi[-1]
+        begin, end = (online.get("begin_date") or "")[:10], (online.get("end_date") or "")[:10]
+        if not begin or not end:
+            continue
+        out.append({"begin": begin, "end": end,
+                    "ranking_id": online.get("ranking_id"),
+                    "event_id": ev.get("event_id")})
+    out.sort(key=lambda e: e["end"], reverse=True)
+    return out
+
+
+def board_ufficiale(ranking_id):
+    """Leader mondiale e numero di iscritti di una classifica ufficiale."""
     if not ranking_id:
-        return None
+        return {}
     res = post_json("/ranking/get_top_list", {"board_id": ranking_id}).get("result") or {}
     top = res.get("list") or []
     leader = top[0] if top else {}
     return {
-        "event_id": event_id,
-        "ranking_id": ranking_id,
-        "fine": fine,
         "partecipanti": res.get("total"),
         "leader": (leader.get("user") or {}).get("np_online_id"),
         "leader_ms": leader.get("score"),
-        "top": [{"pos": t.get("display_rank"),
-                 "psn": (t.get("user") or {}).get("np_online_id"),
-                 "tempo_ms": t.get("score")} for t in top],
     }
 
 
@@ -329,20 +340,27 @@ def parse_profilo(raw_html):
 
 
 def parse_explore_events(raw_html):
-    """Time trial in corso + classifica mondiale top 100."""
+    """Eventi time trial attivi (nome pista e auto) + classifica mondiale top 100."""
     righe = testo_righe(raw_html)
 
-    attivo = {}
+    # In cima ci sono TUTTE le time trial attive (di norma 2 in contemporanea)
+    eventi = []
     if "Active Events" in righe:
-        i = righe.index("Active Events")
-        # la card attiva e' l'ultima: cerca il blocco con "Live"
-        for k in range(i, min(i + 60, len(righe))):
-            if righe[k].lower() == "live":
-                # struttura: time trial | inizio | fine | Live | pista | auto
-                if k + 2 < len(righe):
-                    attivo = {"inizio": righe[k - 3], "fine": righe[k - 1],
-                              "pista": righe[k + 1], "auto": righe[k + 2]}
+        k = righe.index("Active Events") + 1
+        while k + 3 < len(righe) and righe[k].lower() == "time trial":
+            inizio, pista, auto_ = righe[k + 1], righe[k + 2], righe[k + 3]
+            if not data_da_testo(inizio):
                 break
+            eventi.append({"inizio": inizio, "pista": pista, "auto": auto_})
+            k += 4
+
+    # Il blocco marcato "Live" e' quello in evidenza (con la classifica sotto)
+    attivo = {}
+    for k, r in enumerate(righe):
+        if r.lower() == "live" and k >= 3 and k + 2 < len(righe):
+            attivo = {"inizio": righe[k - 3], "fine": righe[k - 1],
+                      "pista": righe[k + 1], "auto": righe[k + 2]}
+            break
 
     classifica = []
     if "Pos" in righe and "Driver" in righe:
@@ -365,7 +383,7 @@ def parse_explore_events(raw_html):
                 "distacco_leader": distacco if distacco.startswith("+") else None,
             })
             k += 5
-    return {"attivo": attivo, "top": classifica}
+    return {"eventi": eventi, "attivo": attivo, "top": classifica}
 
 
 # ---------------------------------------------------------------------------
@@ -378,7 +396,9 @@ def carica_piloti_gtv():
     righe = list(csv.reader(io.StringIO(raw)))
     piloti = []
     for r in righe[1:]:
-        if len(r) < 6 or r[3].strip().upper() != "GTV":
+        squadra = r[3].strip().upper() if len(r) > 3 else ""
+        # il team schiera due formazioni: GTV (principale) e JGTV (junior)
+        if squadra not in ("GTV", "JGTV"):
             continue
         psn = r[0].strip()
         if not psn:
@@ -390,6 +410,7 @@ def carica_piloti_gtv():
             "psn": psn,
             "gt7name": nome_gt7,
             "numero": r[2].strip(),
+            "squadra": squadra,
             "categoria": r[6].strip() if len(r) > 6 else "",
         })
     return piloti
@@ -398,83 +419,92 @@ def carica_piloti_gtv():
 # ---------------------------------------------------------------------------
 # Costruzione di sport.json
 # ---------------------------------------------------------------------------
-def build(piloti, profili, esplora, ufficiale=None, verbose=False):
-    oggi = date.today()
-    attivo = esplora["attivo"]
-    top = esplora["top"]
-    ufficiale = ufficiale or {}
-    # Il tempo del leader viene dall'API ufficiale (esatto); se non c'e',
-    # ripiego sulla top 100 letta da gt-gridstats.
-    leader_ms = ufficiale.get("leader_ms") or next(
-        (t["tempo_ms"] for t in top if t["pos"] == 1 and t["tempo_ms"]), None)
-    leader_psn = ufficiale.get("leader") or next(
-        (t["psn"] for t in top if t["pos"] == 1), None)
-    partecipanti = ufficiale.get("partecipanti")
+def build(piloti, profili, esplora, ufficiali, board_info, n_passati=5):
+    """Costruisce il contenuto di sport.json.
 
-    # ATTENZIONE: in GT7 due time trial si sovrappongono per una settimana,
-    # quindi "copre oggi" non basta a identificare quella corrente. Usiamo la
-    # data di fine dell'evento ufficiale come impronta.
-    scadenza_iso = (ufficiale.get("fine") or "")[:10] or None
-    if not scadenza_iso and attivo.get("fine"):
-        d = data_da_testo(attivo["fine"])
-        scadenza_iso = d.isoformat() if d else None
+    board_info(ranking_id) -> {leader, leader_ms, partecipanti}
+    """
+    oggi = date.today().isoformat()
 
-    def evento_corrente(prof):
-        for e in prof["eventi"]:
-            if scadenza_iso and e.get("data_fine") == scadenza_iso:
-                return e
-        if not scadenza_iso:      # fallback: primo evento che copre oggi
-            for e in prof["eventi"]:
-                di, df = e.get("data_inizio"), e.get("data_fine")
-                if di and df and di <= oggi.isoformat() <= df:
-                    return e
-        return None
+    # nomi (pista/auto) degli eventi attivi, presi dall'elenco di gt-gridstats
+    nomi_per_inizio = {}
+    for ev in esplora.get("eventi", []):
+        d = data_da_testo(ev.get("inizio"))
+        if d:
+            nomi_per_inizio[d.isoformat()] = ev
 
-    # --- Time trial in corso: per ogni pilota l'evento ufficiale corrente
-    voci_tt = []
+    # raggruppo le time trial dei piloti per data di fine evento: cosi' due
+    # eventi sovrapposti restano distinti e si confrontano solo tempi della
+    # stessa pista.
+    per_evento = {}
     for p in piloti:
         prof = profili.get(p["psn"])
         if not prof:
             continue
-        corrente = evento_corrente(prof)
-        if not corrente:
-            continue
-        voci_tt.append({
+        for e in prof["eventi"]:
+            if e.get("data_fine"):
+                per_evento.setdefault(e["data_fine"], []).append((p, e))
+
+    def scheda_evento(uff, conclusa):
+        fine = uff["end"]
+        sorgente = per_evento.get(fine, [])
+        info = board_info(uff.get("ranking_id")) if uff.get("ranking_id") else {}
+        nome = nomi_per_inizio.get(uff.get("begin")) or {}
+        pista = nome.get("pista") or (sorgente[0][1]["pista"] if sorgente else None)
+        auto_ = nome.get("auto") or (sorgente[0][1]["auto"] if sorgente else None)
+        leader_ms = info.get("leader_ms")
+
+        voci = [{
             "psn": p["psn"],
-            "gt7name": p["gt7name"] or prof.get("gt7name") or p["psn"],
+            "gt7name": p["gt7name"] or p["psn"],
             "numero": p["numero"],
-            "tempo": corrente["tempo"],
-            "tempo_ms": corrente["tempo_ms"],
-            "pos_assoluta": corrente["rank_int"],
-            "pista": corrente["pista"],
-            "auto": corrente["auto"],
-        })
+            "squadra": p.get("squadra", "GTV"),
+            "tempo": e["tempo"],
+            "tempo_ms": e["tempo_ms"],
+            "pos_assoluta": e["rank_int"],
+        } for p, e in sorgente]
 
-    voci_tt.sort(key=lambda v: v["tempo_ms"] or 10 ** 9)
-    miglior_gtv = voci_tt[0]["tempo_ms"] if voci_tt else None
-    for i, v in enumerate(voci_tt, start=1):
-        v["pos_gtv"] = i
-        v["distacco_gtv_pct"] = (
-            round((v["tempo_ms"] - miglior_gtv) / miglior_gtv * 100, 3)
-            if v["tempo_ms"] and miglior_gtv else None
-        )
-        v["distacco_assoluto_pct"] = (
-            round((v["tempo_ms"] - leader_ms) / leader_ms * 100, 3)
-            if v["tempo_ms"] and leader_ms else None
-        )
+        voci.sort(key=lambda v: v["tempo_ms"] or 10 ** 9)
+        mig = voci[0]["tempo_ms"] if voci else None
+        for i, v in enumerate(voci, start=1):
+            v["pos_gtv"] = i
+            v["distacco_gtv_pct"] = (
+                round((v["tempo_ms"] - mig) / mig * 100, 3)
+                if v["tempo_ms"] and mig else None)
+            v["distacco_assoluto_pct"] = (
+                round((v["tempo_ms"] - leader_ms) / leader_ms * 100, 3)
+                if v["tempo_ms"] and leader_ms else None)
 
-    time_trial = None
-    if voci_tt or attivo:
-        time_trial = {
-            "nome": "Time Trial · " + (attivo.get("pista") or (voci_tt[0]["pista"] if voci_tt else "")),
-            "pista": attivo.get("pista") or (voci_tt[0]["pista"] if voci_tt else None),
-            "auto": attivo.get("auto") or (voci_tt[0]["auto"] if voci_tt else None),
-            "scadenza": data_it(attivo.get("fine") or (ufficiale.get("fine") or "")[:10] or None),
+        etichetta = _iso_a_it(fine)
+        return {
+            "nome": f"Time Trial · {pista or 'evento'}",
+            "pista": pista,
+            "auto": auto_,
+            "inizio": data_it(_iso_a_it(uff.get("begin"))),
+            "fine": data_it(etichetta),
+            "scadenza": data_it(etichetta),
             "miglior_tempo": _ms_a_tempo(leader_ms),
-            "leader": leader_psn,
-            "partecipanti": partecipanti,
-            "classifica": voci_tt,
+            "leader": info.get("leader"),
+            "partecipanti": info.get("partecipanti"),
+            "conclusa": conclusa,
+            "classifica": voci,
         }
+
+    if ufficiali:
+        attivi = [e for e in ufficiali if e["end"] >= oggi]
+        passati = [e for e in ufficiali if e["end"] < oggi][:n_passati]
+    else:
+        # rete di sicurezza: se l'API ufficiale non risponde ricostruisco gli
+        # eventi dalle date viste nei profili
+        pseudo = [{"begin": None, "end": f, "ranking_id": None}
+                  for f in sorted(per_evento, reverse=True)]
+        attivi = [e for e in pseudo if e["end"] >= oggi]
+        passati = [e for e in pseudo if e["end"] < oggi][:n_passati]
+
+    time_trial = {
+        "attivi": [scheda_evento(e, False) for e in attivi],
+        "passati": [scheda_evento(e, True) for e in passati],
+    }
 
     # --- Gare settimanali: confronto solo fra piloti che hanno corso lo
     #     STESSO evento (stessa gara, stessa pista, stessa data). Confrontare
@@ -492,6 +522,7 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
                 "psn": p["psn"],
                 "gt7name": (p["gt7name"] or p["psn"]),
                 "numero": p["numero"],
+                "squadra": p.get("squadra", "GTV"),
                 "pista": g["pista"],
                 "auto": g["auto"],
                 "data": data_it(g["data"]),
@@ -537,6 +568,7 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
             "psn": p["psn"],
             "gt7name": p["gt7name"] or prof.get("gt7name") or p["psn"],
             "numero": p["numero"],
+            "squadra": p.get("squadra", "GTV"),
             "categoria": p["categoria"],
             "dr": prof["dr"],
             "sr": prof["sr"],
@@ -550,20 +582,27 @@ def build(piloti, profili, esplora, ufficiale=None, verbose=False):
             "ultimo_evento": eventi[0]["pista"] if eventi else None,
             "ultima_gara": gare[0]["pista"] if gare else None,
         })
-        for e in eventi[:6]:
+        for e in eventi[:8]:
             storico.append({
-                "data": data_it(e["fine"]), "psn": p["psn"],
+                "data": data_it(e["fine"]), "data_iso": e.get("data_fine"),
+                "psn": p["psn"],
                 "gt7name": p["gt7name"] or p["psn"],
+                "squadra": p.get("squadra", "GTV"),
                 "evento": f"Time Trial · {e['pista']}",
                 "pos": e["rank"], "tempo": e["tempo"], "tipo": "time_trial",
             })
-        for g in gare[:6]:
+        for g in gare[:8]:
             storico.append({
-                "data": data_it(g["data"]), "psn": p["psn"],
+                "data": data_it(g["data"]), "data_iso": g.get("data_iso"),
+                "psn": p["psn"],
                 "gt7name": p["gt7name"] or p["psn"],
+                "squadra": p.get("squadra", "GTV"),
                 "evento": f"{g['gara']} · {g['pista']}",
                 "pos": g["rank"], "tempo": g["tempo"], "tipo": "gara",
             })
+
+    # lo storico si legge dal piu' recente al piu' vecchio
+    storico.sort(key=lambda s: (s.get("data_iso") or ""), reverse=True)
 
     return {
         "meta": {
@@ -589,30 +628,47 @@ def main():
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
-    print("Leggo l'elenco dei piloti GTV dal foglio del team...")
+    print("Leggo l'elenco dei piloti del team dal foglio...")
     piloti = carica_piloti_gtv()
     if args.limit:
         piloti = piloti[:args.limit]
-    print(f"  {len(piloti)} piloti GTV")
+    squadre = {}
+    for p in piloti:
+        squadre[p.get("squadra", "GTV")] = squadre.get(p.get("squadra", "GTV"), 0) + 1
+    print(f"  {len(piloti)} piloti " + " + ".join(f"{n} {s}" for s, n in sorted(squadre.items())))
 
-    print("Scarico la classifica del time trial in corso...")
-    ufficiale = None
+    print("Scarico l'elenco ufficiale delle time trial...")
+    ufficiali = []
     try:
-        ufficiale = time_trial_ufficiale()
-        if ufficiale:
-            print(f"  API ufficiale: {ufficiale['partecipanti']} iscritti · "
-                  f"leader {ufficiale['leader']} "
-                  f"{_ms_a_tempo(ufficiale['leader_ms'])}")
+        ufficiali = eventi_ufficiali()
+        attivi = [e for e in ufficiali if e["end"] >= date.today().isoformat()]
+        print(f"  {len(ufficiali)} eventi totali · {len(attivi)} in corso")
+        for e in attivi:
+            print(f"     in corso: {e['begin']} -> {e['end']}")
     except Exception as e:
         print(f"  ! API ufficiale non disponibile: {e}", file=sys.stderr)
 
+    cache_board = {}
+
+    def board_info(ranking_id):
+        if not ranking_id:
+            return {}
+        if ranking_id not in cache_board:
+            try:
+                cache_board[ranking_id] = board_ufficiale(ranking_id)
+                time.sleep(0.4)
+            except Exception as e:
+                print(f"  ! classifica {ranking_id}: {e}", file=sys.stderr)
+                cache_board[ranking_id] = {}
+        return cache_board[ranking_id]
+
     try:
         esplora = parse_explore_events(fetch(f"{GRIDSTATS}/explore-events"))
-        print(f"  evento: {esplora['attivo'].get('pista')} "
-              f"(scade {esplora['attivo'].get('fine')}) · top {len(esplora['top'])}")
+        print(f"  time trial attive su gt-gridstats: "
+              f"{', '.join(e['pista'] for e in esplora['eventi'])}")
     except Exception as e:
-        print(f"  ! classifica non disponibile: {e}", file=sys.stderr)
-        esplora = {"attivo": {}, "top": []}
+        print(f"  ! pagina eventi non disponibile: {e}", file=sys.stderr)
+        esplora = {"eventi": [], "attivo": {}, "top": []}
 
     profili = {}
     for i, p in enumerate(piloti, start=1):
@@ -633,13 +689,16 @@ def main():
             print(f"  [{i}/{len(piloti)}] {p['psn']}: {e} (saltato)")
         time.sleep(PAUSA)
 
-    dati = build(piloti, profili, esplora, ufficiale, args.verbose)
+    dati = build(piloti, profili, esplora, ufficiali, board_info)
     OUT_JSON.write_text(json.dumps(dati, ensure_ascii=False, indent=2), encoding="utf-8")
     tt = dati["time_trial"]
     print(f"\nOK -> {OUT_JSON}")
-    print(f"   time trial: {(tt or {}).get('pista')} · "
-          f"{len((tt or {}).get('classifica', []))} piloti GTV in classifica")
-    print(f"   gare settimanali: {len(dati['gare_settimanali'])} gruppi · "
+    print(f"   time trial in corso: {len(tt['attivi'])}")
+    for e in tt["attivi"]:
+        print(f"     {e['pista']} (scade {e['scadenza']}) · "
+              f"{len(e['classifica'])} piloti del team in classifica")
+    print(f"   time trial passate: {len(tt['passati'])}")
+    print(f"   gare settimanali: {len(dati['gare_settimanali'])} eventi · "
           f"storico: {len(dati['storico'])} voci · piloti: {len(dati['piloti'])}")
     return 0
 

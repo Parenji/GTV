@@ -2740,7 +2740,7 @@ function sportEventTable(entries, partecipanti) {
       : "—";
     html += `<tr${rowClass}>`;
     html += `<td>${sportNum(posGtv)}</td>`;
-    html += `<td class="sport-driver">${sportEscape(e.gt7name || e.psn)}</td>`;
+    html += `<td class="sport-driver">${sportDriverLabel(e)}</td>`;
     html += `<td class="sport-time">${sportEscape(e.tempo || e.time)}</td>`;
     html += `<td>${sportNum(posGtv)}</td>`;
     html += `<td>${posAbsLabel}</td>`;
@@ -2756,18 +2756,29 @@ function sportEventTable(entries, partecipanti) {
   return html;
 }
 
+function sportDriverLabel(e) {
+  const nome = sportEscape(e.gt7name || e.psn);
+  const badge =
+    e.squadra === "JGTV" ? ' <span class="sport-badge-jgtv">JGTV</span>' : "";
+  return nome + badge;
+}
+
 function sportEventCard(evento) {
   if (!evento) return "";
   const nome = sportEscape(evento.nome || evento.titolo || "Evento");
   const dettagli = [];
   if (evento.pista) dettagli.push("🏁 " + sportEscape(evento.pista));
   if (evento.auto) dettagli.push("🚗 " + sportEscape(evento.auto));
-  if (evento.scadenza) dettagli.push("⏳ scade " + sportEscape(evento.scadenza));
+  if (evento.inizio || evento.fine) {
+    const periodo = [evento.inizio, evento.fine].filter(Boolean).join(" → ");
+    dettagli.push("📅 " + periodo);
+  }
   if (evento.partecipanti) {
     dettagli.push("👥 " + sportNum(evento.partecipanti) + " partecipanti");
   }
   if (evento.miglior_tempo) {
-    dettagli.push("🥇 miglior tempo " + sportEscape(evento.miglior_tempo));
+    const chi = evento.leader ? " (" + sportEscape(evento.leader) + ")" : "";
+    dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
   }
 
   let html = '<div class="sport-card">';
@@ -2784,16 +2795,31 @@ function renderSportSection(data) {
   const body = document.getElementById("sport-body");
   if (!body) return;
 
-  const sezioni = [];
-  if (data.time_trial) sezioni.push(data.time_trial);
-  (data.gare_settimanali || []).forEach((g) => sezioni.push(g));
+  const tt = data.time_trial || {};
+  const attivi = tt.attivi || [];
+  const passati = tt.passati || [];
+  const gare = data.gare_settimanali || [];
 
-  if (sezioni.length === 0) {
+  if (!attivi.length && !passati.length && !gare.length) {
     body.innerHTML =
-      '<div class="sport-empty">Nessun evento Sport Mode disponibile al momento.</div>';
+      '<div class="sport-empty">Nessun dato Sport Mode disponibile al momento.</div>';
     return;
   }
-  body.innerHTML = sezioni.map(sportEventCard).join("");
+
+  let html = "";
+  if (attivi.length) {
+    html += '<h3 class="sport-subtitle">Time trial in corso</h3>';
+    html += attivi.map(sportEventCard).join("");
+  }
+  if (gare.length) {
+    html += '<h3 class="sport-subtitle">Gare settimanali</h3>';
+    html += gare.map(sportEventCard).join("");
+  }
+  if (passati.length) {
+    html += '<h3 class="sport-subtitle">Time trial concluse</h3>';
+    html += passati.map(sportEventCard).join("");
+  }
+  body.innerHTML = html;
 }
 
 function renderSportStats(data) {
@@ -2828,7 +2854,7 @@ function renderSportStats(data) {
       v === null || v === undefined ? "—" : "#" + Number(v).toLocaleString("it-IT");
     html += "<tr>";
     html += `<td>${i + 1}</td>`;
-    html += `<td class="sport-driver">${sportEscape(p.gt7name || p.psn)}</td>`;
+    html += `<td class="sport-driver">${sportDriverLabel(p)}</td>`;
     html += `<td>${sportEscape(p.dr)}</td>`;
     html += `<td>${sportEscape(p.sr)}</td>`;
     html += `<td>${sportNum(p.time_trial)}</td>`;
@@ -2840,17 +2866,21 @@ function renderSportStats(data) {
 
   html += "</tbody></table></div>";
 
-  // Storico recente, se disponibile
+  // Storico: dal piu' recente al piu' vecchio, cosi' si capisce a colpo
+  // d'occhio chi sta correndo adesso e chi no.
   const storico = data.storico || [];
   if (storico.length) {
-    html += '<h3 class="sport-subtitle">Ultimi eventi</h3>';
+    html += '<h3 class="sport-subtitle">Ultimi eventi del team</h3>';
+    html +=
+      '<div class="sport-note" style="text-align:left">Dal più recente. Un pilota che non corre da mesi compare in fondo, non in cima.</div>';
     html += '<div class="table-container"><table class="sport-table">';
     html +=
-      "<thead><tr><th>Data</th><th>Pilota</th><th>Evento</th><th>Rank</th><th>Tempo</th></tr></thead><tbody>";
-    storico.slice(0, 80).forEach((r) => {
+      "<thead><tr><th>Data</th><th>Pilota</th><th>Tipo</th><th>Evento</th><th>Rank</th><th>Tempo</th></tr></thead><tbody>";
+    storico.slice(0, 60).forEach((r) => {
       html += "<tr>";
       html += `<td>${sportEscape(r.data)}</td>`;
-      html += `<td class="sport-driver">${sportEscape(r.gt7name || r.psn)}</td>`;
+      html += `<td class="sport-driver">${sportDriverLabel(r)}</td>`;
+      html += `<td>${r.tipo === "gara" ? "Gara" : "Time trial"}</td>`;
       html += `<td>${sportEscape(r.evento)}</td>`;
       html += `<td>${r.pos ? sportEscape(r.pos) : "—"}</td>`;
       html += `<td class="sport-time">${sportEscape(r.tempo)}</td>`;
