@@ -496,14 +496,20 @@ def auto_target_day(now_ro):
 
 
 def wait_until_midnight(target, max_wait):
-    """Aspetta la mezzanotte italiana del giorno `target` (al massimo max_wait)."""
+    """Aspetta la mezzanotte italiana del giorno `target`.
+
+    Ritorna True se e' il momento giusto di inviare, False se manca troppo
+    tempo (in quel caso non si invia: meglio nulla che un messaggio con ore
+    di anticipo).
+    """
     midnight = datetime.combine(target, datetime.min.time(), tzinfo=ROME_TZ)
     remaining = (midnight - datetime.now(ROME_TZ)).total_seconds()
     if remaining <= 0:
-        return
+        return True                      # mezzanotte gia' passata: invia ora
     if remaining > max_wait:
-        print(f"- Mancano {remaining / 3600:.1f} h alla mezzanotte: troppo, non aspetto.")
-        return
+        print(f"- Mancano {remaining / 3600:.1f} h alla mezzanotte: troppo presto, "
+              f"non invio.")
+        return False
     print(f"- Aspetto la mezzanotte italiana ({remaining / 60:.0f} minuti)...", flush=True)
     last_log = time.monotonic()
     while True:
@@ -515,6 +521,7 @@ def wait_until_midnight(target, max_wait):
             print(f"  ...mancano {remaining / 60:.0f} minuti", flush=True)
             last_log = time.monotonic()
     print("- E' mezzanotte in Italia: procedo con l'invio.", flush=True)
+    return True
 
 
 def run_auto(args, rounds, days_map, badge, data, token, chat_id):
@@ -542,7 +549,8 @@ def run_auto(args, rounds, days_map, badge, data, token, chat_id):
         return 0
 
     if not args.no_wait:
-        wait_until_midnight(target, args.max_wait)
+        if not wait_until_midnight(target, args.max_wait):
+            return 0
 
     # Ricontrollo dopo l'attesa (potrebbe essere cambiato il fuso o lo stato)
     if target.isoformat() in load_sent_dates():
