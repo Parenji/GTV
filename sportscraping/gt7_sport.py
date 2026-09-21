@@ -556,7 +556,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
     gare_settimanali = []
     for gara in gare_attive:
         codice = codice_gara(gara["nome"])
-        voci, ultima = [], None
+        voci = []
         for p in piloti:
             prof = profili.get(p["psn"])
             if not prof:
@@ -564,10 +564,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             for g in prof["gare"]:
                 if codice_gara(g.get("gara")) != codice or g.get("pista") != gara["pista"]:
                     continue
-                data_iso = g.get("data_iso") or ""
-                if ultima is None or data_iso > ultima[0]:
-                    ultima = (data_iso, p, g)
-                if data_iso >= limite_settimana:
+                if (g.get("data_iso") or "") >= limite_settimana:
                     voci.append({
                         "psn": p["psn"],
                         "gt7name": p["gt7name"] or p["psn"],
@@ -589,19 +586,11 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
                 if v["tempo_ms"] and mig else None)
             v["distacco_assoluto_pct"] = None   # leader mondiale non pubblico
 
-        precedente = None
-        if not voci and ultima:
-            _, p_ult, g_ult = ultima
-            precedente = {"data": data_it(g_ult["data"]),
-                          "pilota": p_ult["gt7name"] or p_ult["psn"],
-                          "pos": g_ult["rank"], "tempo": g_ult["tempo"]}
         gare_settimanali.append({
             "nome": f"{gara['nome']} · {gara['pista']}",
             "pista": gara["pista"],
             "impostazioni": gara.get("impostazioni"),
             "classifica": voci,
-            "week": limite_settimana,
-            "ultima_partecipazione": precedente,
         })
 
     # --- Statistiche e storico per pilota

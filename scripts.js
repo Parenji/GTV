@@ -2786,20 +2786,7 @@ function sportEventCard(evento) {
     dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
   }
 
-  let vuoto = "Nessun pilota del team ha ancora girato qui questa settimana.";
-  if (evento.ultima_partecipazione) {
-    const u = evento.ultima_partecipazione;
-    vuoto +=
-      " Ultima volta: " +
-      sportEscape(u.data) +
-      " — " +
-      sportEscape(u.pilota) +
-      " (" +
-      sportEscape(u.pos) +
-      ", " +
-      sportEscape(u.tempo) +
-      ").";
-  }
+  const vuoto = "Nessun pilota del team ha girato qui questa settimana.";
 
   let html = '<div class="sport-card">';
   html += `<div class="sport-card-title">${nome}</div>`;

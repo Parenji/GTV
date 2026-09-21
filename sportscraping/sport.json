@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T01:57:46+00:00",
+    "updated_at": "2026-09-21T02:02:00+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -17,7 +17,7 @@
         "scadenza": "01 Ott 2026",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 85991,
+        "partecipanti": 86011,
         "conclusa": false,
         "classifica": [
           {
@@ -67,7 +67,7 @@
         "scadenza": "24 Set 2026",
         "miglior_tempo": "1:20.044",
         "leader": "SFE_Damian",
-        "partecipanti": 161793,
+        "partecipanti": 161813,
         "conclusa": false,
         "classifica": [
           {
@@ -77,7 +77,7 @@
             "squadra": "GTV",
             "tempo": "1:21.129",
             "tempo_ms": 81129,
-            "pos_assoluta": 1396,
+            "pos_assoluta": 1397,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.356
@@ -859,30 +859,19 @@
       "nome": "Race A · WeatherTech Raceway Laguna Seca",
       "pista": "WeatherTech Raceway Laguna Seca",
       "impostazioni": "Comfort S · Fuel x1 · Tires x1",
-      "classifica": [],
-      "week": "2026-09-14",
-      "ultima_partecipazione": null
+      "classifica": []
     },
     {
       "nome": "Race B · Fuji International Speedway",
       "pista": "Fuji International Speedway",
       "impostazioni": "Racing M · Fuel x1 · Tires x1",
-      "classifica": [],
-      "week": "2026-09-14",
-      "ultima_partecipazione": {
-        "data": "10 Ago 2026",
-        "pilota": "Drivergt1985",
-        "pos": "#22,107",
-        "tempo": "1:40.794"
-      }
+      "classifica": []
     },
     {
       "nome": "Race C · Sardegna - Road Track - A",
       "pista": "Sardegna - Road Track - A",
       "impostazioni": "Racing M · Fuel x2 · Tires x8",
-      "classifica": [],
-      "week": "2026-09-14",
-      "ultima_partecipazione": null
+      "classifica": []
     }
   ],
   "piloti": [
@@ -1303,7 +1292,7 @@
       "gt7name": "Vale34",
       "squadra": "GTV",
       "evento": "Time Trial · Willow Springs International Raceway: Big Willow",
-      "pos": "#1,396",
+      "pos": "#1,397",
       "tempo": "1:21.129",
       "tipo": "time_trial"
     },

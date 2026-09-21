@@ -11,7 +11,7 @@ le due sezioni omonime.
 | `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati |
 | `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
 | `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
-| `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni e i tempi del team degli ultimi 7 giorni |
+| `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni e i tempi del team degli **ultimi 7 giorni** (la gara cambia ogni settimana, quindi i tempi delle rotazioni precedenti non valgono e non vengono mostrati) |
 | `piloti` | statistiche per pilota: DR, SR, miglior piazzamento mondiale, piazzamento medio e data dell'ultimo evento |
 | `grafici.fasce_rank` | quanti eventi del team sono finiti in ciascuna fascia di classifica (per il grafico) |
 | `storico` | archivio degli ultimi eventi per pilota (non più mostrato nel sito) |
