@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T02:15:05+00:00",
+    "updated_at": "2026-09-21T08:17:59+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -17,7 +17,7 @@
         "scadenza": "01 Ott 2026",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 86074,
+        "partecipanti": 87499,
         "conclusa": false,
         "classifica": [
           {
@@ -27,7 +27,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 4187,
+            "pos_assoluta": 4276,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.919
@@ -39,7 +39,7 @@
             "squadra": "GTV",
             "tempo": "1:56.549",
             "tempo_ms": 116549,
-            "pos_assoluta": 6765,
+            "pos_assoluta": 6885,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.674,
             "distacco_assoluto_pct": 3.612
@@ -67,7 +67,7 @@
         "scadenza": "24 Set 2026",
         "miglior_tempo": "1:20.044",
         "leader": "SFE_Damian",
-        "partecipanti": 161856,
+        "partecipanti": 162862,
         "conclusa": false,
         "classifica": [
           {
@@ -77,7 +77,7 @@
             "squadra": "GTV",
             "tempo": "1:21.129",
             "tempo_ms": 81129,
-            "pos_assoluta": 1397,
+            "pos_assoluta": 1402,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.356
@@ -690,19 +690,19 @@
     {
       "nome": "Race A · WeatherTech Raceway Laguna Seca",
       "pista": "WeatherTech Raceway Laguna Seca",
-      "impostazioni": "Comfort S · Fuel x1 · Tires x1",
+      "impostazioni": "6 giri · Road · Comfort S · Carburante x1 · Gomme x1 · auto più usata: Ford Mustang Mach 1 '71",
       "classifica": []
     },
     {
       "nome": "Race B · Fuji International Speedway",
       "pista": "Fuji International Speedway",
-      "impostazioni": "Racing M · Fuel x1 · Tires x1",
+      "impostazioni": "6 giri · Gr.4 · Racing M · Carburante x1 · Gomme x1 · auto più usata: GT by Citroën Gr.4",
       "classifica": []
     },
     {
       "nome": "Race C · Sardegna - Road Track - A",
       "pista": "Sardegna - Road Track - A",
-      "impostazioni": "Racing M · Fuel x2 · Tires x8",
+      "impostazioni": "11 giri · Gr.3 · Racing M · Carburante x2 · Gomme x8 · auto più usata: Hyundai Genesis Gr.3",
       "classifica": []
     }
   ],
@@ -761,7 +761,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 5080,
-      "rank_medio": 19309,
+      "rank_medio": 19417,
       "eventi_pubblicati": 20,
       "ultimo_evento_data": "2026-09-17",
       "ultimo_evento": "Suzuka Circuit",
@@ -806,7 +806,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 733,
-      "rank_medio": 6516,
+      "rank_medio": 6520,
       "eventi_pubblicati": 22,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -836,11 +836,11 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 816,
-      "rank_medio": 21648,
+      "rank_medio": 21529,
       "eventi_pubblicati": 23,
       "ultimo_evento_data": "2026-09-14",
       "ultimo_evento": "Autopolis International Racing Course - Short Course",
-      "ultima_gara": "Autodromo Nazionale Monza"
+      "ultima_gara": "Deep Forest Raceway"
     },
     {
       "psn": "Alesimo82",
@@ -866,7 +866,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 7860,
+      "rank_medio": 7861,
       "eventi_pubblicati": 21,
       "ultimo_evento_data": "2026-09-24",
       "ultimo_evento": "Willow Springs International Raceway: Big Willow",
@@ -956,7 +956,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 15150,
+      "rank_medio": 15151,
       "eventi_pubblicati": 21,
       "ultimo_evento_data": "2026-09-17",
       "ultimo_evento": "Suzuka Circuit",
@@ -1001,11 +1001,11 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2799,
-      "rank_medio": 14337,
+      "rank_medio": 15301,
       "eventi_pubblicati": 20,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
-      "ultima_gara": "Autodromo Nazionale Monza"
+      "ultima_gara": "Dragon Trail - Seaside"
     },
     {
       "psn": "titirolamadonn",
@@ -1061,11 +1061,11 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 941,
-      "rank_medio": 16979,
+      "rank_medio": 16798,
       "eventi_pubblicati": 25,
       "ultimo_evento_data": "2026-09-17",
       "ultimo_evento": "Suzuka Circuit",
-      "ultima_gara": "Autodromo Nazionale Monza"
+      "ultima_gara": "Michelin Raceway Road Atlanta"
     },
     {
       "psn": "Mirco94-",
@@ -1076,11 +1076,11 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 5961,
-      "rank_medio": 25248,
+      "rank_medio": 25289,
       "eventi_pubblicati": 21,
-      "ultimo_evento_data": "2026-09-14",
+      "ultimo_evento_data": "2026-09-07",
       "ultimo_evento": "Fuji International Speedway",
-      "ultima_gara": "Autodromo Nazionale Monza"
+      "ultima_gara": "Mount Panorama Motor Racing Circuit"
     }
   ],
   "storico": [
@@ -1102,7 +1102,7 @@
       "gt7name": "Brook24",
       "squadra": "GTV",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
-      "pos": "#4,187",
+      "pos": "#4,276",
       "tempo": "1:55.769",
       "tipo": "time_trial"
     },
@@ -1113,7 +1113,7 @@
       "gt7name": "Yukimura",
       "squadra": "GTV",
       "evento": "Time Trial · Dragon Trail - Seaside Reverse",
-      "pos": "#6,765",
+      "pos": "#6,885",
       "tempo": "1:56.549",
       "tipo": "time_trial"
     },
@@ -1124,7 +1124,7 @@
       "gt7name": "Vale34",
       "squadra": "GTV",
       "evento": "Time Trial · Willow Springs International Raceway: Big Willow",
-      "pos": "#1,397",
+      "pos": "#1,402",
       "tempo": "1:21.129",
       "tipo": "time_trial"
     },
@@ -1245,30 +1245,8 @@
       "gt7name": "Maverick",
       "squadra": "GTV",
       "evento": "Daily: C · Brands Hatch Grand Prix Circuit",
-      "pos": "#7,007",
+      "pos": "#7,089",
       "tempo": "1:30.833",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Abramo1991",
-      "gt7name": "Maverick",
-      "squadra": "GTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#7,780",
-      "tempo": "1:51.538",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Kappaonegt",
-      "gt7name": "Kevin",
-      "squadra": "GTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#7,012",
-      "tempo": "1:51.454",
       "tipo": "gara"
     },
     {
@@ -1289,107 +1267,8 @@
       "gt7name": "Giusdandri",
       "squadra": "GTV",
       "evento": "Daily: C · Brands Hatch Grand Prix Circuit",
-      "pos": "#3,004",
+      "pos": "#3,035",
       "tempo": "1:30.018",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Yukimura9221",
-      "gt7name": "Yukimura",
-      "squadra": "GTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,691",
-      "tempo": "1:51.727",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Scalmanuto",
-      "gt7name": "Capa Gloriosa",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#7,501",
-      "tempo": "1:51.508",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
-      "tipo": "gara"
-    },
-    {
-      "data": "14 Set 2026",
-      "data_iso": "2026-09-14",
-      "psn": "Mirco94-",
-      "gt7name": "Mirco",
-      "squadra": "JGTV",
-      "evento": "Daily: B · Autodromo Nazionale Monza",
-      "pos": "#9,345",
-      "tempo": "1:51.692",
       "tipo": "gara"
     },
     {
@@ -1530,9 +1409,9 @@
       "psn": "Kappaonegt",
       "gt7name": "Kevin",
       "squadra": "GTV",
-      "evento": "Daily: C · Dragon Trail - Seaside",
-      "pos": "#8,085",
-      "tempo": "1:37.724",
+      "evento": "Daily: A · Michelin Raceway Road Atlanta",
+      "pos": "#816",
+      "tempo": "1:28.246",
       "tipo": "gara"
     },
     {
@@ -1541,9 +1420,9 @@
       "psn": "Kappaonegt",
       "gt7name": "Kevin",
       "squadra": "GTV",
-      "evento": "Daily: A · Michelin Raceway Road Atlanta",
-      "pos": "#816",
-      "tempo": "1:28.246",
+      "evento": "Daily: C · Dragon Trail - Seaside",
+      "pos": "#8,085",
+      "tempo": "1:37.724",
       "tipo": "gara"
     },
     {
@@ -1630,7 +1509,7 @@
       "gt7name": "Capa Gloriosa",
       "squadra": "JGTV",
       "evento": "Daily: A · Michelin Raceway Road Atlanta",
-      "pos": "#7,857",
+      "pos": "#7,982",
       "tempo": "1:30.280",
       "tipo": "gara"
     },
@@ -2168,9 +2047,9 @@
       "psn": "Scalmanuto",
       "gt7name": "Capa Gloriosa",
       "squadra": "JGTV",
-      "evento": "Daily: C · Circuit de Sainte-Croix - B",
-      "pos": "#6,152",
-      "tempo": "1:54.351",
+      "evento": "Daily: B · Autopolis International Racing Course",
+      "pos": "#13,381",
+      "tempo": "1:50.824",
       "tipo": "gara"
     },
     {
@@ -2179,9 +2058,9 @@
       "psn": "Scalmanuto",
       "gt7name": "Capa Gloriosa",
       "squadra": "JGTV",
-      "evento": "Daily: B · Autopolis International Racing Course",
-      "pos": "#13,381",
-      "tempo": "1:50.824",
+      "evento": "Daily: C · Circuit de Sainte-Croix - B",
+      "pos": "#6,152",
+      "tempo": "1:54.351",
       "tipo": "gara"
     },
     {
@@ -2982,9 +2861,20 @@
       "psn": "Scalmanuto",
       "gt7name": "Capa Gloriosa",
       "squadra": "JGTV",
-      "evento": "Daily: C · Tokyo Expressway - East Clockwise",
-      "pos": "#15,813",
-      "tempo": "2:02.370",
+      "evento": "Daily: B · Red Bull Ring",
+      "pos": "#32,050",
+      "tempo": "1:39.694",
+      "tipo": "gara"
+    },
+    {
+      "data": "03 Ago 2026",
+      "data_iso": "2026-08-03",
+      "psn": "Scalmanuto",
+      "gt7name": "Capa Gloriosa",
+      "squadra": "JGTV",
+      "evento": "Daily: A · Autodromo Nazionale Monza",
+      "pos": "#16,994",
+      "tempo": "1:55.153",
       "tipo": "gara"
     },
     {
@@ -3029,6 +2919,17 @@
       "evento": "Daily: A · Tsukuba Circuit",
       "pos": "#33,968",
       "tempo": "1:05.124",
+      "tipo": "gara"
+    },
+    {
+      "data": "27 Lug 2026",
+      "data_iso": "2026-07-27",
+      "psn": "Kappaonegt",
+      "gt7name": "Kevin",
+      "squadra": "GTV",
+      "evento": "Daily: B · Trial Mountain Circuit",
+      "pos": "#33,249",
+      "tempo": "1:55.395",
       "tipo": "gara"
     },
     {
@@ -3565,9 +3466,9 @@
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "squadra": "GTV",
-      "evento": "Daily: C · Suzuka Circuit",
-      "pos": "#9,740",
-      "tempo": "2:01.326",
+      "evento": "Daily: B · Nürburgring GP",
+      "pos": "#4,688",
+      "tempo": "2:06.577",
       "tipo": "gara"
     },
     {
@@ -3576,9 +3477,9 @@
       "psn": "Yukimura9221",
       "gt7name": "Yukimura",
       "squadra": "GTV",
-      "evento": "Daily: B · Nürburgring GP",
-      "pos": "#4,688",
-      "tempo": "2:06.577",
+      "evento": "Daily: C · Suzuka Circuit",
+      "pos": "#9,740",
+      "tempo": "2:01.326",
       "tipo": "gara"
     },
     {
@@ -4074,6 +3975,17 @@
       "evento": "Daily: C · 24 Heures du Mans race track",
       "pos": "#25,839",
       "tempo": "3:37.197",
+      "tipo": "gara"
+    },
+    {
+      "data": "22 Giu 2026",
+      "data_iso": "2026-06-22",
+      "psn": "Yukimura9221",
+      "gt7name": "Yukimura",
+      "squadra": "GTV",
+      "evento": "Daily: C · 24 Heures du Mans race track",
+      "pos": "#23,307",
+      "tempo": "3:36.350",
       "tipo": "gara"
     },
     {
@@ -4679,6 +4591,83 @@
       "evento": "Daily: B · Yas Marina Circuit",
       "pos": "#341",
       "tempo": "1:55.613",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
+      "tipo": "gara"
+    },
+    {
+      "data": "01 Giu 2026",
+      "data_iso": "2026-06-01",
+      "psn": "Mirco94-",
+      "gt7name": "Mirco",
+      "squadra": "JGTV",
+      "evento": "Daily: B · Yas Marina Circuit",
+      "pos": "#7,823",
+      "tempo": "1:57.531",
       "tipo": "gara"
     },
     {
@@ -5881,6 +5870,17 @@
       "tipo": "time_trial"
     },
     {
+      "data": "07 Lug 2025",
+      "data_iso": "2025-07-07",
+      "psn": "Abramo1991",
+      "gt7name": "Maverick",
+      "squadra": "GTV",
+      "evento": "Daily: B · Mount Panorama Motor Racing Circuit",
+      "pos": "#11,255",
+      "tempo": "2:17.289",
+      "tipo": "gara"
+    },
+    {
       "data": "03 Lug 2025",
       "data_iso": "2025-07-03",
       "psn": "Parenji",
@@ -6370,15 +6370,15 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 113
+        "conteggio": 115
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 182
+        "conteggio": 179
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 175
+        "conteggio": 176
       }
     ],
     "eventi_totali": 534

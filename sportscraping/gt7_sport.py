@@ -339,42 +339,124 @@ def parse_profilo(raw_html):
     }
 
 
+def _e_classe_gara(valore):
+    """'Road', 'Racing', 'Gr.3', 'Gr.4', 'Gr.B'..."""
+    return valore in ("Road", "Racing") or bool(re.match(r"^Gr\.[1-4BN]$", valore or ""))
+
+
+def _molt(valore):
+    """'x1' -> 'x1', '1' -> 'x1'."""
+    v = (valore or "").strip()
+    return v if v.startswith("x") else f"x{v}"
+
+
+def _chiave_aggiornamento(valore):
+    """'09:00 / 21/09/2026' -> tupla ordinabile."""
+    m = re.match(r"^(\d{2}):(\d{2})\s*/\s*(\d{2})/(\d{2})/(\d{4})$", (valore or "").strip())
+    if not m:
+        return (0, 0, 0, 0, 0)
+    h, mi, d, mo, y = m.groups()
+    return (int(y), int(mo), int(d), int(h), int(mi))
+
+
 def parse_dailies(raw_html):
-    """Le 3 gare settimanali attive (Race A/B/C) con pista e impostazioni."""
+    """Le gare settimanali attive (Race A/B/C), con pista e impostazioni.
+
+    La pagina puo' elencare piu' schede per lo stesso codice gara (per esempio
+    una vecchia "Race B" non ancora rimossa): tengo quella aggiornata piu'
+    di recente, cosi' non finiscono due Race B nel sito.
+    """
     righe = testo_righe(raw_html)
     try:
         i = righe.index("Current Races")
     except ValueError:
         return []
-    # la sezione finisce dove iniziano gli archivi delle settimane precedenti
     fine = righe.index("Previous Week") if "Previous Week" in righe[i:] else len(righe)
-    gare = []
+
+    schede = {}
+    aggiornamento = None
     k = i + 1
     while k < fine:
-        m = re.match(r"^Race ([ABC])$", righe[k])
+        riga = righe[k]
+        if riga == "Updated:" and k + 1 < fine:
+            aggiornamento = righe[k + 1]
+            k += 2
+            continue
+        m = re.match(r"^Race ([ABC])$", riga)
         if not m:
             k += 1
             continue
-        if k + 1 >= fine:
-            break
-        pista = righe[k + 1]
-        pezzi = []
-        j = k + 2
-        while (j < fine and righe[j] not in ("Top 100", "Close")
-               and not righe[j].startswith("Race ")):
-            if righe[j] != "|" and "Pending first scrape" not in righe[j]:
-                pezzi.append(righe[j])
+
+        codice = m.group(1)
+        j = k + 1
+        giri = classe = None
+        if j < fine and re.match(r"^\d+\s+Laps$", righe[j]):
+            giri = righe[j]
             j += 1
-        # le righe vanno a coppie: "Comfort S", "Fuel x1", "Tires x1"...
-        impostazioni = [f"{a} {b}" if b else a
-                        for a, b in zip(pezzi[0::2], pezzi[1::2] + [""])]
-        gare.append({
-            "nome": f"Race {m.group(1)}",
+        if j < fine and _e_classe_gara(righe[j]):
+            classe = righe[j]
+            j += 1
+        pista = righe[j] if j < fine else None
+        j += 1
+
+        resto = []
+        while j < fine and righe[j] not in ("Top 100", "Close"):
+            resto.append(righe[j])
+            j += 1
+
+        if "|" in resto:
+            taglio = resto.index("|")
+            compound = " ".join(resto[:taglio])
+            dopo = resto[taglio + 1:]
+        else:
+            compound, dopo = "", resto
+
+        carburante = gomme = auto_meta = None
+        z = 0
+        while z < len(dopo):
+            voce = dopo[z]
+            if voce == "Fuel" and z + 1 < len(dopo):
+                carburante = dopo[z + 1]
+                z += 2
+                continue
+            if voce == "Tires" and z + 1 < len(dopo):
+                gomme = dopo[z + 1]
+                z += 2
+                continue
+            if voce == "Meta" and z + 2 < len(dopo):
+                auto_meta = dopo[z + 2]
+                z += 3
+                continue
+            z += 1
+
+        parti = []
+        if giri:
+            parti.append(giri.replace("Laps", "giri").strip())
+        if classe:
+            parti.append(classe)
+        if compound:
+            parti.append(compound)
+        if carburante is not None:
+            parti.append("Carburante " + _molt(carburante))
+        if gomme is not None:
+            parti.append("Gomme " + _molt(gomme))
+        if auto_meta:
+            parti.append(f"auto più usata: {auto_meta}")
+
+        scheda = {
+            "nome": f"Race {codice}",
             "pista": pista,
-            "impostazioni": " · ".join(impostazioni[:6]) or None,
-        })
-        k = j + 1
-    return gare
+            "impostazioni": " · ".join(parti) or None,
+            "_agg": _chiave_aggiornamento(aggiornamento),
+        }
+        precedente = schede.get(codice)
+        if precedente is None or scheda["_agg"] >= precedente["_agg"]:
+            schede[codice] = scheda
+        k = j
+
+    for scheda in schede.values():
+        scheda.pop("_agg", None)
+    return [schede[c] for c in sorted(schede)]
 
 
 def parse_explore_events(raw_html):
@@ -746,6 +828,70 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
 
 
 # ---------------------------------------------------------------------------
+# Controlli di coerenza
+# ---------------------------------------------------------------------------
+def valida(dati):
+    """Verifica che i dati raccolti stiano in piedi. Ritorna i problemi trovati.
+
+    Serve a non pubblicare MAI dati incoerenti: se qualcosa non torna il file
+    non viene scritto, il workflow diventa rosso e il sito tiene i dati
+    precedenti. Cosi' un errore si vede subito invece di comparire in pagina.
+
+    L'invariante piu' importante: in una classifica il leader mondiale non puo'
+    essere piu' lento di un pilota del team (il team e' un sottoinsieme dei
+    partecipanti). Se succede, i tempi in quella card vengono da eventi
+    diversi mescolati insieme: e' esattamente il bug di Deep Forest del
+    21/09/2026.
+    """
+    problemi = []
+    voci_da_controllare = (
+        [("time trial in corso", e) for e in dati["time_trial"]["attivi"]]
+        + [("time trial conclusa", e) for e in dati["time_trial"]["passati"]]
+        + [("gara settimanale", g) for g in dati["gare_settimanali"]]
+    )
+
+    for tipo, ev in voci_da_controllare:
+        nome = ev.get("nome") or ev.get("pista") or "evento senza nome"
+        voci = ev.get("classifica") or []
+
+        # 1. nessun pilota due volte nella stessa classifica
+        nomi = [v.get("gt7name") or v.get("psn") for v in voci]
+        doppi = sorted({n for n in nomi if nomi.count(n) > 1})
+        if doppi:
+            problemi.append(f"[{tipo}] {nome}: pilota ripetuto ({', '.join(doppi)})")
+
+        # 2. nessun distacco negativo
+        for v in voci:
+            for campo in ("distacco_gtv_pct", "distacco_assoluto_pct"):
+                gap = v.get(campo)
+                if gap is not None and gap < 0:
+                    problemi.append(
+                        f"[{tipo}] {nome}: {campo} negativo per "
+                        f"{v.get('gt7name')} ({gap}%)")
+
+        # 3. il leader mondiale deve essere piu' veloce del miglior tempo del team
+        tempi = [v["tempo_ms"] for v in voci if v.get("tempo_ms")]
+        leader_ms = tempo_in_ms(ev.get("miglior_tempo") or "")
+        if tempi and leader_ms and leader_ms > min(tempi):
+            problemi.append(
+                f"[{tipo}] {nome}: il leader ({ev.get('miglior_tempo')}) e' piu' "
+                f"lento del miglior tempo del team ({_ms_a_tempo(min(tempi))}) "
+                f"— probabile evento mescolato con un altro")
+
+        # 4. coerenza fra tempo e posizione mondiale (avviso, non bloccante)
+        ordinati = sorted([v for v in voci if v.get("tempo_ms") and v.get("pos_assoluta")],
+                          key=lambda v: v["tempo_ms"])
+        for a, b in zip(ordinati, ordinati[1:]):
+            if a["pos_assoluta"] > b["pos_assoluta"] * 3:
+                problemi.append(
+                    f"[{tipo}] {nome}: {a['gt7name']} ha tempo migliore ma "
+                    f"posizione molto peggiore di {b['gt7name']} "
+                    f"(#{a['pos_assoluta']} contro #{b['pos_assoluta']})")
+
+    return problemi
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -841,6 +987,17 @@ def main():
         return 1
 
     dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive)
+
+    # Controlli di coerenza PRIMA di scrivere: se qualcosa non torna non
+    # pubblichiamo, cosi' l'errore si vede subito invece di finire in pagina.
+    problemi = valida(dati)
+    if problemi:
+        print("\nx Dati incoerenti: non aggiorno sport.json.", file=sys.stderr)
+        for p in problemi:
+            print(f"   - {p}", file=sys.stderr)
+        print("   (il sito mantiene i dati precedenti)", file=sys.stderr)
+        return 1
+
     OUT_JSON.write_text(json.dumps(dati, ensure_ascii=False, indent=2), encoding="utf-8")
     tt = dati["time_trial"]
     print(f"\nOK -> {OUT_JSON}")

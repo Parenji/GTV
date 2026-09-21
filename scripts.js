@@ -2930,12 +2930,30 @@ async function loadSportData() {
     if (statsBody) renderSportStats(data);
 
     const when = data.meta && data.meta.updated_at ? data.meta.updated_at : null;
-    const label = when
-      ? `Ultimo aggiornamento: ${new Date(when).toLocaleString("it-IT")}`
-      : "";
+    let label = "";
+    let vecchi = false;
+    if (when) {
+      const d = new Date(when);
+      const ore = (Date.now() - d.getTime()) / 3600000;
+      vecchi = ore > 24;
+      label =
+        "Ultimo aggiornamento: " +
+        d.toLocaleString("it-IT", {
+          day: "2-digit",
+          month: "short",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      if (vecchi) {
+        label +=
+          " ⚠️ dati fermi da " + Math.floor(ore) + " ore (l'aggiornamento automatico non sta girando)";
+      }
+    }
     ["sport-updated", "sport-stats-updated"].forEach((id) => {
       const el = document.getElementById(id);
-      if (el) el.textContent = label;
+      if (!el) return;
+      el.textContent = label;
+      el.classList.toggle("sport-updated-vecchi", vecchi && !!label);
     });
   } catch (err) {
     console.error("Errore nel caricamento dei dati Sport:", err);

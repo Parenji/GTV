@@ -119,3 +119,45 @@ un tempo di agosto non e' il tempo della gara di adesso.
   vecchi in un unico elenco poco leggibile. Al suo posto c'è un grafico a barre
   che mostra in quali fasce di classifica mondiale finiscono i risultati del
   team.
+
+## Come facciamo a non far ripresentare gli errori
+
+Tre livelli, dal piu' forte al piu' debole.
+
+### 1. Controlli automatici prima di pubblicare (`valida()`)
+
+Prima di scrivere `sport.json` lo script verifica che i dati stiano in piedi.
+Se un controllo fallisce **il file non viene toccato** e il run diventa rosso:
+
+| Controllo | Cosa intercetta |
+|---|---|
+| Nessun pilota ripetuto nella stessa classifica | eventi fusi insieme |
+| Nessun distacco percentuale negativo | leader di un evento sbagliato |
+| **Il leader mondiale non puo' essere piu' lento di un pilota del team** | l'evento e' stato mescolato con un altro |
+| Coerenza tempo/posizione (chi ha tempo migliore non puo' avere posizione molto peggiore) | classifiche di eventi diversi |
+
+Il terzo e' quello decisivo: il team e' un sottoinsieme dei partecipanti,
+quindi il leader assoluto **deve** essere piu' veloce di tutti i piloti del
+team. Se non lo e', i tempi vengono da due eventi diversi — esattamente il bug
+di Deep Forest del 21/09/2026.
+
+### 2. Rete di sicurezza sulla quantita' di dati
+
+Se in un giro si leggono meno del 60% dei profili del giro precedente, il file
+non viene sovrascritto: una giornata di rete instabile non puo' svuotare le
+sezioni del sito.
+
+### 3. Come te ne accorgi
+
+- **Run rosso** su GitHub: il passo di raccolta non ha `continue-on-error`,
+  quindi un fallimento si vede nella scheda Actions e GitHub manda una mail.
+- **Avviso in pagina**: se `sport.json` ha piu' di 24 ore, sotto il titolo
+  delle sezioni Sport compare *"⚠️ dati fermi da N ore"*.
+- In ogni caso **il sito non si rompe mai**: resta l'ultima versione buona.
+
+### 4. Il parser delle gare settimanali
+
+La pagina `/dailies` cambia layout spesso (il 21/09/2026 e' passata da 3 a 4
+schede, con due "Race B" di cui una vecchia). Il parser ora legge le schede in
+modo strutturale e, se trova piu' schede per lo stesso codice, **tiene quella
+aggiornata piu' di recente** (`Updated: HH:MM / DD/MM/YYYY`).

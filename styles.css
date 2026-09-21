@@ -5097,6 +5097,11 @@ body#worldchampionship {
   margin-bottom: 10px;
 }
 
+.sport-updated-vecchi {
+  color: var(--giallogtv);
+  font-weight: 700;
+}
+
 .sport-loader,
 .sport-empty {
   text-align: center;
