@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T13:33:32+00:00",
+    "updated_at": "2026-09-21T13:37:31+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -18,7 +18,7 @@
         "scadenza": "01 Ott 2026",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 89340,
+        "partecipanti": 89367,
         "conclusa": false,
         "classifica": [
           {
@@ -28,7 +28,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 3947,
+            "pos_assoluta": 3954,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.854
@@ -40,7 +40,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 4382,
+            "pos_assoluta": 4393,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": 2.919
@@ -69,7 +69,7 @@
         "scadenza": "24 Set 2026",
         "miglior_tempo": "1:20.044",
         "leader": "SFE_Damian",
-        "partecipanti": 164166,
+        "partecipanti": 164189,
         "conclusa": false,
         "classifica": [
           {
@@ -726,6 +726,76 @@
           "pos_assoluta": 2947,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
+    }
+  ],
+  "gare_precedenti": [
+    {
+      "nome": "Race A · Deep Forest Raceway",
+      "pista": "Deep Forest Raceway",
+      "logo": "images/tracks/deep-forest.png",
+      "impostazioni": "Road",
+      "settimana": "14 Set 2026",
+      "classifica": [
+        {
+          "psn": "Kappaonegt",
+          "gt7name": "Kevin",
+          "numero": "26",
+          "squadra": "GTV",
+          "auto": "Porsche 911 GT3 (996) '01",
+          "data": "14 Set 2026",
+          "tempo": "1:38.681",
+          "tempo_ms": 98681,
+          "pos_assoluta": 1324,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
+    },
+    {
+      "nome": "Race B · Autodromo Nazionale Monza",
+      "pista": "Autodromo Nazionale Monza",
+      "logo": "images/tracks/monza.png",
+      "impostazioni": "Gr.3",
+      "settimana": "14 Set 2026",
+      "classifica": []
+    },
+    {
+      "nome": "Race C · Brands Hatch Grand Prix Circuit",
+      "pista": "Brands Hatch Grand Prix Circuit",
+      "logo": "images/tracks/brandshatch.png",
+      "impostazioni": "Gr.4",
+      "settimana": "14 Set 2026",
+      "classifica": [
+        {
+          "psn": "Giusdandri",
+          "gt7name": "Giusdandri",
+          "numero": "87",
+          "squadra": "GTV",
+          "auto": "Hyundai ELANTRA N TC '24",
+          "data": "14 Set 2026",
+          "tempo": "1:30.018",
+          "tempo_ms": 90018,
+          "pos_assoluta": 3035,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
+          "psn": "Abramo1991",
+          "gt7name": "Maverick",
+          "numero": "14",
+          "squadra": "GTV",
+          "auto": "Hyundai ELANTRA N TC '24",
+          "data": "14 Set 2026",
+          "tempo": "1:30.833",
+          "tempo_ms": 90833,
+          "pos_assoluta": 7089,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 0.905,
           "distacco_assoluto_pct": null
         }
       ]
@@ -1683,7 +1753,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 733,
-      "rank_medio": 6524,
+      "rank_medio": 6525,
       "eventi_pubblicati": 22,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -1692,7 +1762,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 4382,
+          "rank": 4393,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -3677,7 +3747,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 3947,
+          "rank": 3954,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },

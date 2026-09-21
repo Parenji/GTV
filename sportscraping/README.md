@@ -12,6 +12,7 @@ le due sezioni omonime.
 | `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
 | `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
 | `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni e i tempi del team degli **ultimi 7 giorni** (la gara cambia ogni settimana, quindi i tempi delle rotazioni precedenti non valgono e non vengono mostrati) |
+| `gare_precedenti` | le **3 gare della settimana scorsa**, lette dalla sezione "Previous Week" della stessa pagina, con i tempi di quella settimana |
 | `piloti` | statistiche per pilota: DR, SR, miglior piazzamento mondiale, piazzamento medio, data dell'ultimo evento e l'elenco datato degli eventi (`eventi`) |
 | | nel sito la tabella "Piloti del team" si filtra su **ALL TIME / Ultimo anno / Ultimi 3 mesi**: il filtro ricalcola rank e conteggi lato browser usando `eventi`, senza riscaricare nulla |
 | `grafici.fasce_rank` | quanti eventi del team sono finiti in ciascuna fascia di classifica (per il grafico) |
@@ -36,7 +37,8 @@ piloti JGTV hanno un'etichetta accanto al nome.
    - `/player/<PSN>` → DR, SR e le tabelle *Event History* (time trial) e
      *Daily Race History* (gare settimanali) con rank mondiale e tempo;
    - `/explore-events` → nome della pista e dell'auto delle time trial in corso;
-   - `/dailies` → le 3 gare settimanali attive (Race A/B/C).
+   - `/dailies` → le 3 gare settimanali attive (Race A/B/C) e quelle della
+     settimana precedente.
 
 Senza gt-gridstats il rank personale oltre il 100° non sarebbe recuperabile.
 
@@ -196,3 +198,11 @@ toccare le mappe, così le card della sezione Sport sono tutte omogenee.
 
 Per aggiungere un circuito nuovo basta una riga nella tupla `LOGHI` di
 `gt7_sport.py` (chiave = pezzo del nome pista, valore = file).
+
+## Struttura della sezione Sport
+
+- **Time trial in corso** (2 card) e **Gare settimanali in corso** (3 card):
+  sempre visibili.
+- **Archivio**: due pannelli che si alternano per non allungare la pagina —
+  *"Ultime N time trial concluse"* e *"Ultime daily"* (le Race A/B/C della
+  settimana precedente). Si cambia con i pulsanti in cima all'archivio.

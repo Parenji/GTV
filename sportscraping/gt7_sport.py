@@ -504,7 +504,61 @@ def parse_dailies(raw_html):
 
     for scheda in schede.values():
         scheda.pop("_agg", None)
-    return [schede[c] for c in sorted(schede)]
+
+    return {
+        "correnti": [schede[c] for c in sorted(schede)],
+        "precedente": _parse_settimana_precedente(righe),
+    }
+
+
+MESI_EN = {m: i + 1 for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july",
+     "august", "september", "october", "november", "december"])}
+
+
+def _data_etichetta(testo):
+    """'Monday, 14th September 2026' -> '2026-09-14'."""
+    m = re.match(r"^[A-Za-z]+,\s*(\d{1,2})\w{2}\s+([A-Za-z]+)\s+(\d{4})$",
+                 (testo or "").strip())
+    if not m:
+        return None
+    mese = MESI_EN.get(m.group(2).lower())
+    if not mese:
+        return None
+    return date(int(m.group(3)), mese, int(m.group(1))).isoformat()
+
+
+def _parse_settimana_precedente(righe):
+    """Le 3 gare della settimana scorsa, con la data del lunedi' di inizio."""
+    try:
+        i = righe.index("Previous Week") + 1
+    except ValueError:
+        return {}
+    out = {"settimana": None, "inizio": None, "gare": []}
+    if i < len(righe):
+        out["settimana"] = righe[i]
+        out["inizio"] = _data_etichetta(righe[i])
+        i += 1
+    while i < len(righe) and not righe[i].startswith("View Dailies"):
+        m = re.match(r"^Race ([ABC])$", righe[i])
+        if not m:
+            i += 1
+            continue
+        # struttura: Race X | compound | grado | Top 100 | classe | pista | View Leaderboard
+        blocco = righe[i + 1:i + 7]
+        if "View Leaderboard" in blocco:
+            taglio = blocco.index("View Leaderboard")
+            prima = blocco[:taglio]
+            pista = prima[-1] if prima else None
+            classe = prima[-2] if len(prima) > 1 else None
+        else:
+            pista = blocco[-1] if blocco else None
+            classe = None
+        if pista:
+            out["gare"].append({"nome": f"Race {m.group(1)}",
+                                "pista": pista, "classe": classe})
+        i += 1
+    return out
 
 
 def parse_explore_events(raw_html):
@@ -587,12 +641,14 @@ def carica_piloti_gtv():
 # ---------------------------------------------------------------------------
 # Costruzione di sport.json
 # ---------------------------------------------------------------------------
-def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_passati=5):
+def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
+          settimana_prec=None, n_passati=5):
     """Costruisce il contenuto di sport.json.
 
     board_info(ranking_id) -> {leader, leader_ms, partecipanti}
     """
     gare_attive = gare_attive or []
+    settimana_prec = settimana_prec or {}
     oggi = date.today().isoformat()
 
     # nomi (pista/auto) degli eventi attivi, presi dall'elenco di gt-gridstats
@@ -772,6 +828,53 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
             "classifica": voci,
         })
 
+    # --- Gare della settimana scorsa (stessa pista, ma rotazione precedente:
+    #     contano solo i tempi di QUELLA settimana)
+    gare_precedenti = []
+    inizio_sett = settimana_prec.get("inizio")
+    if inizio_sett:
+        fine_sett = (date.fromisoformat(inizio_sett) + timedelta(days=6)).isoformat()
+        for gara in settimana_prec.get("gare", []):
+            codice = codice_gara(gara["nome"])
+            voci = []
+            for p in piloti:
+                prof = profili.get(p["psn"])
+                if not prof:
+                    continue
+                for g in prof["gare"]:
+                    if (codice_gara(g.get("gara")) != codice
+                            or g.get("pista") != gara["pista"]):
+                        continue
+                    data_iso = g.get("data_iso") or ""
+                    if inizio_sett <= data_iso <= fine_sett:
+                        voci.append({
+                            "psn": p["psn"],
+                            "gt7name": p["gt7name"] or p["psn"],
+                            "numero": p["numero"],
+                            "squadra": p.get("squadra", "GTV"),
+                            "auto": g["auto"],
+                            "data": data_it(g["data"]),
+                            "tempo": g["tempo"],
+                            "tempo_ms": g["tempo_ms"],
+                            "pos_assoluta": g["rank_int"],
+                        })
+            voci.sort(key=lambda v: v["tempo_ms"] or 10 ** 9)
+            mig = voci[0]["tempo_ms"] if voci else None
+            for i, v in enumerate(voci, start=1):
+                v["pos_gtv"] = i
+                v["distacco_gtv_pct"] = (
+                    round((v["tempo_ms"] - mig) / mig * 100, 3)
+                    if v["tempo_ms"] and mig else None)
+                v["distacco_assoluto_pct"] = None
+            gare_precedenti.append({
+                "nome": f"{gara['nome']} · {gara['pista']}",
+                "pista": gara["pista"],
+                "logo": logo_pista(gara["pista"]),
+                "impostazioni": gara.get("classe"),
+                "settimana": data_it(_iso_a_it(inizio_sett)),
+                "classifica": voci,
+            })
+
     # --- Statistiche per pilota
     statistiche = []
     rank_del_team = []
@@ -838,6 +941,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None, n_p
         },
         "time_trial": time_trial,
         "gare_settimanali": gare_settimanali,
+        "gare_precedenti": gare_precedenti,
         "piloti": statistiche,
         "grafici": {
             "fasce_rank": grafico_rank,
@@ -866,7 +970,8 @@ def valida(dati):
     voci_da_controllare = (
         [("time trial in corso", e) for e in dati["time_trial"]["attivi"]]
         + [("time trial conclusa", e) for e in dati["time_trial"]["passati"]]
-        + [("gara settimanale", g) for g in dati["gare_settimanali"]]
+        + [("gara settimanale", g) for g in dati.get("gare_settimanali", [])]
+        + [("gara settimana scorsa", g) for g in dati.get("gare_precedenti", [])]
     )
 
     for tipo, ev in voci_da_controllare:
@@ -961,12 +1066,18 @@ def main():
         print(f"  ! pagina eventi non disponibile: {e}", file=sys.stderr)
         esplora = {"eventi": [], "attivo": {}, "top": []}
 
-    print("Scarico le gare settimanali attive...")
-    gare_attive = []
+    print("Scarico le gare settimanali (in corso e scorsa settimana)...")
+    gare_attive, settimana_prec = [], {}
     try:
-        gare_attive = parse_dailies(fetch(f"{GRIDSTATS}/dailies"))
+        daily = parse_dailies(fetch(f"{GRIDSTATS}/dailies"))
+        gare_attive = daily.get("correnti", [])
+        settimana_prec = daily.get("precedente") or {}
         print(f"  {len(gare_attive)} gare attive: "
               + ", ".join(f"{g['nome']} ({g['pista']})" for g in gare_attive))
+        if settimana_prec.get("gare"):
+            print(f"  settimana del {settimana_prec.get('inizio')}: "
+                  + ", ".join(f"{g['nome']} ({g['pista']})"
+                              for g in settimana_prec["gare"]))
     except Exception as e:
         print(f"  ! pagina gare non disponibile: {e}", file=sys.stderr)
 
@@ -1005,7 +1116,8 @@ def main():
               file=sys.stderr)
         return 1
 
-    dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive)
+    dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive,
+                 settimana_prec)
 
     # Controlli di coerenza PRIMA di scrivere: se qualcosa non torna non
     # pubblichiamo, cosi' l'errore si vede subito invece di finire in pagina.

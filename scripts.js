@@ -2783,7 +2783,9 @@ function sportEventCard(evento) {
     dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
   }
 
-  const vuoto = "Nessun pilota del team ha girato qui questa settimana.";
+  const vuoto = evento.settimana
+    ? "Nessun pilota del team ha corso questa gara."
+    : "Nessun pilota del team ha girato qui questa settimana.";
 
   let html = '<div class="sport-card">';
   html += '<div class="sport-card-head">';
@@ -2804,16 +2806,22 @@ function sportEventCard(evento) {
   return html;
 }
 
+let sportDatiSport = null;
+let sportPannello = "tt";
+
 function renderSportSection(data) {
   const body = document.getElementById("sport-body");
   if (!body) return;
 
-  const tt = data.time_trial || {};
+  if (data) sportDatiSport = data;
+  const d = sportDatiSport || {};
+  const tt = d.time_trial || {};
   const attivi = tt.attivi || [];
   const passati = tt.passati || [];
-  const gare = data.gare_settimanali || [];
+  const inCorso = d.gare_settimanali || [];
+  const precedenti = d.gare_precedenti || [];
 
-  if (!attivi.length && !passati.length && !gare.length) {
+  if (!attivi.length && !passati.length && !inCorso.length && !precedenti.length) {
     body.innerHTML =
       '<div class="sport-empty">Nessun dato Sport Mode disponibile al momento.</div>';
     return;
@@ -2824,62 +2832,67 @@ function renderSportSection(data) {
     html += '<h3 class="sport-subtitle">Time trial in corso</h3>';
     html += attivi.map(sportEventCard).join("");
   }
-  if (gare.length) {
+  if (inCorso.length) {
     html += '<h3 class="sport-subtitle">Gare settimanali in corso</h3>';
-    html += gare.map(sportEventCard).join("");
+    html += inCorso.map(sportEventCard).join("");
   }
+
+  // Le due sezioni "passate" si alternano per non allungare troppo la pagina
+  const pannelli = [];
   if (passati.length) {
-    html += '<h3 class="sport-subtitle">Time trial concluse</h3>';
-    html += passati.map(sportEventCard).join("");
+    pannelli.push({
+      id: "tt",
+      etichetta: "Ultime " + passati.length + " time trial concluse",
+      eventi: passati,
+      nota: null,
+    });
   }
-  body.innerHTML = html;
-}
+  if (precedenti.length) {
+    const settimana = precedenti[0] && precedenti[0].settimana;
+    pannelli.push({
+      id: "daily",
+      etichetta: "Ultime daily",
+      eventi: precedenti,
+      nota: settimana ? "Gare della settimana del " + settimana + "." : null,
+    });
+  }
 
-function sportData(iso) {
-  if (!iso) return "—";
-  const d = new Date(iso);
-  if (isNaN(d.getTime())) return "—";
-  return d.toLocaleDateString("it-IT", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
-}
-
-/* Grafico: distribuzione dei piazzamenti mondiali del team */
-function sportRankChart(grafici) {
-  const fasce = (grafici && grafici.fasce_rank) || [];
-  const totale = (grafici && grafici.eventi_totali) || 0;
-  if (!fasce.length || !totale) return "";
-  const massimo = Math.max(...fasce.map((f) => f.conteggio), 1);
-
-  let html = '<h3 class="sport-subtitle">Dove si piazzano i piloti del team</h3>';
-  html +=
-    '<div class="sport-note" style="text-align:left">' +
-    sportNum(totale) +
-    " eventi registrati, divisi per posizione nella classifica mondiale.</div>";
-  html += '<div class="sport-chart">';
-  fasce.forEach((f) => {
-    const pct = f.conteggio ? Math.max(Math.round((f.conteggio / massimo) * 100), 3) : 0;
-    html += '<div class="sport-bar-row">';
-    html += `<div class="sport-bar-label">${sportEscape(f.etichetta)}</div>`;
-    html +=
-      '<div class="sport-bar-track"><div class="sport-bar-fill" style="width:' +
-      pct +
-      '%"></div></div>';
-    html += `<div class="sport-bar-value">${sportNum(f.conteggio)}</div>`;
+  if (pannelli.length) {
+    const scelto =
+      pannelli.filter((p) => p.id === sportPannello)[0] || pannelli[0];
+    html += '<h3 class="sport-subtitle">Archivio</h3>';
+    html += '<div class="sport-filtri">';
+    pannelli.forEach((p) => {
+      const cls = p.id === scelto.id ? " sport-filtro-attivo" : "";
+      html +=
+        '<button type="button" class="sport-filtro' +
+        cls +
+        '" data-pannello="' +
+        p.id +
+        '">' +
+        p.etichetta +
+        "</button>";
+    });
     html += "</div>";
-  });
-  html += "</div>";
-  return html;
-}
+    if (scelto.nota) {
+      html +=
+        '<div class="sport-note" style="text-align:left">' +
+        sportEscape(scelto.nota) +
+        "</div>";
+    }
+    html += scelto.eventi.map(sportEventCard).join("");
+  }
 
-/* Filtri temporali della tabella piloti */
-const SPORT_FINESTRE = [
-  { id: "all", etichetta: "ALL TIME", giorni: null },
-  { id: "anno", etichetta: "Ultimo anno", giorni: 365 },
-  { id: "trimestre", etichetta: "Ultimi 3 mesi", giorni: 90 },
-];
+  body.innerHTML = html;
+
+  body.querySelectorAll("[data-pannello]").forEach((bottone) => {
+    bottone.addEventListener("click", () => {
+      if (sportPannello === bottone.dataset.pannello) return;
+      sportPannello = bottone.dataset.pannello;
+      renderSportSection();
+    });
+  });
+}
 
 let sportDati = null;
 let sportFinestra = "all";
