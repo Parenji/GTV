@@ -50,11 +50,32 @@ python3 gt7_sport.py --verbose   # mostra anche DR/SR e quanti eventi per pilota
 
 ## Aggiornamento automatico
 
-`.github/workflows/gt7-sport.yml` gira **ogni 12 ore** (05:00 e 17:00 UTC),
-esegue lo script, e se `sport.json` è cambiato lo committa: il push fa
-ripartire il deploy di Vercel e le sezioni del sito si aggiornano da sole.
-Nei giorni in cui una fonte non risponde il file precedente resta in piedi,
-quindi la sezione non si svuota.
+`.github/workflows/gt7-sport.yml` gira **ogni 12 ore** (05:00 e 17:00 UTC, cioè
+07:00 e 19:00 italiane d'estate), esegue lo script e — se `sport.json` è
+cambiato — lo committa: il push fa ripartire il deploy di Vercel e le sezioni
+del sito si aggiornano da sole.
+
+### Se cambio l'elenco dei piloti sul foglio del team
+
+**Sì, si aggiorna da solo.** `carica_piloti_gtv()` rilegge il foglio a ogni
+giro: aggiungere, togliere o spostare un pilota (GTV ↔ JGTV) nel foglio è
+sufficiente, entro 12 ore le sezioni Sport si allineano.
+
+Due cose da sapere:
+
+- un pilota **nuovo** compare solo se ha un profilo Sport Mode pubblico su
+  gt-gridstats (`/player/<PSN>` esiste). Chi non ha mai corso in Sport Mode
+  non ha dati da mostrare e viene saltato: `meta.piloti_con_dati` dice quanti
+  sono stati letti davvero;
+- il **PSN deve essere quello vero** (colonna *Pilota* del foglio), non il
+  GT7NAME: la ricerca della fonte usa l'ID PlayStation Network.
+
+### Rete di sicurezza
+
+Lo script legge quanti profili aveva il file precedente e, se in un giro ne
+legge meno del 60%, **non sovrascrive** `sport.json` (esce con errore). Così
+una giornata di rete instabile non può svuotare le sezioni del sito: al
+massimo restano i dati del giro prima.
 
 ## Note e limiti (onesti)
 

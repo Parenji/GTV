@@ -777,6 +777,22 @@ def main():
             print(f"  [{i}/{len(piloti)}] {p['psn']}: {e} (saltato)")
         time.sleep(PAUSA)
 
+    # Rete di sicurezza: se la fonte risponde male e leggiamo molti meno
+    # profili del giro precedente, NON sovrascriviamo un file buono con uno
+    # quasi vuoto (il workflow committa solo se il file cambia).
+    precedenti = 0
+    if OUT_JSON.exists():
+        try:
+            precedenti = json.loads(OUT_JSON.read_text(encoding="utf-8")) \
+                .get("meta", {}).get("piloti_con_dati", 0)
+        except Exception:
+            precedenti = 0
+    if precedenti and len(profili) < precedenti * 0.6:
+        print(f"x Letti {len(profili)} profili su {len(piloti)} (nel giro precedente "
+              f"erano {precedenti}): non sovrascrivo {OUT_JSON.name}.",
+              file=sys.stderr)
+        return 1
+
     dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive)
     OUT_JSON.write_text(json.dumps(dati, ensure_ascii=False, indent=2), encoding="utf-8")
     tt = dati["time_trial"]
