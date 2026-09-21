@@ -5079,3 +5079,114 @@ body#worldchampionship {
     gap: 14px;
   }
 }
+
+/* ========================================
+   SPORT MODE · GRAN TURISMO 7
+   ======================================== */
+.sport-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+.sport-updated {
+  text-align: center;
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 10px;
+}
+
+.sport-loader,
+.sport-empty {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sport-card {
+  background: linear-gradient(135deg, var(--grigio-box), #111);
+  border: 1px solid #2c2c2c;
+  border-left: 3px solid var(--giallogtv);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.sport-card-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--giallogtv);
+}
+
+.sport-card-meta {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 6px 0 12px;
+  line-height: 1.5;
+}
+
+.sport-table {
+  font-size: 0.85em;
+}
+
+.sport-table th {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sport-table td,
+.sport-table th {
+  white-space: nowrap;
+}
+
+.sport-driver {
+  text-align: left;
+  font-weight: 600;
+}
+
+.sport-time {
+  color: var(--giallogtv);
+  font-variant-numeric: tabular-nums;
+}
+
+.sport-row-best td {
+  background-color: #262a10;
+}
+
+.sport-best {
+  color: var(--giallogtv);
+  font-weight: 700;
+}
+
+.sport-subtitle {
+  margin: 22px 0 10px;
+  color: var(--giallogtv);
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sport-note {
+  font-size: 0.72em;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .sport-card {
+    padding: 10px 8px;
+  }
+
+  .sport-table {
+    font-size: 0.72em;
+  }
+
+  .sport-table td,
+  .sport-table th {
+    padding: 4px 3px;
+  }
+}

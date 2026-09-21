@@ -2680,3 +2680,216 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+/* ==========================================================================
+   SPORT MODE · GRAN TURISMO 7
+   --------------------------------------------------------------------------
+   Legge sportscraping/sport.json (rigenerato ogni 12 ore dal workflow
+   gt7-sport.yml) e disegna due sezioni di index.html:
+     #sport       -> time trial in corso + gare settimanali, con tempo,
+                     posizione tra i GTV, posizione assoluta e distacchi %
+     #sportstats  -> statistiche aggregate e storico dei piloti GTV
+   Il renderer e' difensivo: qualunque campo mancante diventa "—".
+   ========================================================================== */
+
+const SPORT_DATA_URL = "sportscraping/sport.json";
+
+function sportEscape(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  return typeof escapeHtml === "function"
+    ? escapeHtml(String(value))
+    : String(value);
+}
+
+function sportNum(value, suffix = "") {
+  if (value === null || value === undefined || value === "") return "—";
+  if (typeof value === "number") {
+    return value.toLocaleString("it-IT") + suffix;
+  }
+  return String(value) + suffix;
+}
+
+function sportPct(value) {
+  if (value === null || value === undefined || value === "") return "—";
+  const n = Number(value);
+  if (Number.isNaN(n)) return String(value);
+  if (n === 0) return '<span class="sport-best">riferimento</span>';
+  return "+" + n.toFixed(3) + "%";
+}
+
+/* Riga di classifica: tempo + posizioni + distacchi */
+function sportEventTable(entries, partecipanti) {
+  if (!entries || entries.length === 0) {
+    return '<div class="sport-empty">Nessun pilota GTV in classifica.</div>';
+  }
+  let html = '<div class="table-container"><table class="sport-table">';
+  html += "<thead><tr>";
+  html += "<th>#</th><th>Pilota GTV</th><th>Tempo</th>";
+  html += "<th title='Posizione tra i piloti GTV'>Pos. GTV</th>";
+  html += "<th title='Posizione nella classifica mondiale'>Pos. assoluta</th>";
+  html += "<th title='Distacco percentuale dal miglior tempo GTV'>Dist. GTV %</th>";
+  html += "<th title='Distacco percentuale dal miglior tempo assoluto'>Dist. assoluto %</th>";
+  html += "</tr></thead><tbody>";
+
+  entries.forEach((e, i) => {
+    const posGtv = e.pos_gtv || i + 1;
+    const rowClass = posGtv === 1 ? ' class="sport-row-best"' : "";
+    const posAbs = e.pos_assoluta ?? e.pos_abs;
+    const posAbsLabel = posAbs
+      ? "#" + Number(posAbs).toLocaleString("it-IT")
+      : "—";
+    html += `<tr${rowClass}>`;
+    html += `<td>${sportNum(posGtv)}</td>`;
+    html += `<td class="sport-driver">${sportEscape(e.gt7name || e.psn)}</td>`;
+    html += `<td class="sport-time">${sportEscape(e.tempo || e.time)}</td>`;
+    html += `<td>${sportNum(posGtv)}</td>`;
+    html += `<td>${posAbsLabel}</td>`;
+    html += `<td>${sportPct(e.distacco_gtv_pct)}</td>`;
+    html += `<td>${sportPct(e.distacco_assoluto_pct ?? e.distacco_abs_pct)}</td>`;
+    html += "</tr>";
+  });
+
+  html += "</tbody></table></div>";
+  if (partecipanti) {
+    html += `<div class="sport-note">Classifica mondiale su ${sportNum(partecipanti)} partecipanti.</div>`;
+  }
+  return html;
+}
+
+function sportEventCard(evento) {
+  if (!evento) return "";
+  const nome = sportEscape(evento.nome || evento.titolo || "Evento");
+  const dettagli = [];
+  if (evento.pista) dettagli.push("🏁 " + sportEscape(evento.pista));
+  if (evento.auto) dettagli.push("🚗 " + sportEscape(evento.auto));
+  if (evento.scadenza) dettagli.push("⏳ scade " + sportEscape(evento.scadenza));
+  if (evento.partecipanti) {
+    dettagli.push("👥 " + sportNum(evento.partecipanti) + " partecipanti");
+  }
+  if (evento.miglior_tempo) {
+    dettagli.push("🥇 miglior tempo " + sportEscape(evento.miglior_tempo));
+  }
+
+  let html = '<div class="sport-card">';
+  html += `<div class="sport-card-title">${nome}</div>`;
+  if (dettagli.length) {
+    html += `<div class="sport-card-meta">${dettagli.join(" · ")}</div>`;
+  }
+  html += sportEventTable(evento.classifica, evento.partecipanti);
+  html += "</div>";
+  return html;
+}
+
+function renderSportSection(data) {
+  const body = document.getElementById("sport-body");
+  if (!body) return;
+
+  const sezioni = [];
+  if (data.time_trial) sezioni.push(data.time_trial);
+  (data.gare_settimanali || []).forEach((g) => sezioni.push(g));
+
+  if (sezioni.length === 0) {
+    body.innerHTML =
+      '<div class="sport-empty">Nessun evento Sport Mode disponibile al momento.</div>';
+    return;
+  }
+  body.innerHTML = sezioni.map(sportEventCard).join("");
+}
+
+function renderSportStats(data) {
+  const body = document.getElementById("sport-stats-body");
+  if (!body) return;
+
+  const piloti = data.piloti || [];
+  if (piloti.length === 0) {
+    body.innerHTML =
+      '<div class="sport-empty">Nessuna statistica disponibile al momento.</div>';
+    return;
+  }
+
+  // Ordino per miglior piazzamento mondiale ottenuto
+  const ordinati = piloti.slice().sort((a, b) => {
+    const ra = a.miglior_rank ?? Number.MAX_SAFE_INTEGER;
+    const rb = b.miglior_rank ?? Number.MAX_SAFE_INTEGER;
+    return ra - rb;
+  });
+
+  let html = '<div class="table-container"><table class="sport-table">';
+  html += "<thead><tr>";
+  html += "<th>#</th><th>Pilota GTV</th><th>DR</th><th>SR</th>";
+  html += "<th title='Time trial registrate'>Time trial</th>";
+  html += "<th title='Gare settimanali registrate'>Gare</th>";
+  html += "<th title='Miglior posizione mondiale ottenuta'>Miglior rank</th>";
+  html += "<th title='Posizione mondiale media'>Rank medio</th>";
+  html += "</tr></thead><tbody>";
+
+  ordinati.forEach((p, i) => {
+    const rank = (v) =>
+      v === null || v === undefined ? "—" : "#" + Number(v).toLocaleString("it-IT");
+    html += "<tr>";
+    html += `<td>${i + 1}</td>`;
+    html += `<td class="sport-driver">${sportEscape(p.gt7name || p.psn)}</td>`;
+    html += `<td>${sportEscape(p.dr)}</td>`;
+    html += `<td>${sportEscape(p.sr)}</td>`;
+    html += `<td>${sportNum(p.time_trial)}</td>`;
+    html += `<td>${sportNum(p.gare)}</td>`;
+    html += `<td>${rank(p.miglior_rank)}</td>`;
+    html += `<td>${rank(p.rank_medio)}</td>`;
+    html += "</tr>";
+  });
+
+  html += "</tbody></table></div>";
+
+  // Storico recente, se disponibile
+  const storico = data.storico || [];
+  if (storico.length) {
+    html += '<h3 class="sport-subtitle">Ultimi eventi</h3>';
+    html += '<div class="table-container"><table class="sport-table">';
+    html +=
+      "<thead><tr><th>Data</th><th>Pilota</th><th>Evento</th><th>Rank</th><th>Tempo</th></tr></thead><tbody>";
+    storico.slice(0, 80).forEach((r) => {
+      html += "<tr>";
+      html += `<td>${sportEscape(r.data)}</td>`;
+      html += `<td class="sport-driver">${sportEscape(r.gt7name || r.psn)}</td>`;
+      html += `<td>${sportEscape(r.evento)}</td>`;
+      html += `<td>${r.pos ? sportEscape(r.pos) : "—"}</td>`;
+      html += `<td class="sport-time">${sportEscape(r.tempo)}</td>`;
+      html += "</tr>";
+    });
+    html += "</tbody></table></div>";
+  }
+
+  body.innerHTML = html;
+}
+
+async function loadSportData() {
+  const sportBody = document.getElementById("sport-body");
+  const statsBody = document.getElementById("sport-stats-body");
+  if (!sportBody && !statsBody) return;
+
+  try {
+    const response = await fetch(SPORT_DATA_URL + "?v=" + Date.now());
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const data = await response.json();
+
+    if (sportBody) renderSportSection(data);
+    if (statsBody) renderSportStats(data);
+
+    const when = data.meta && data.meta.updated_at ? data.meta.updated_at : null;
+    const label = when
+      ? `Ultimo aggiornamento: ${new Date(when).toLocaleString("it-IT")}`
+      : "";
+    ["sport-updated", "sport-stats-updated"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = label;
+    });
+  } catch (err) {
+    console.error("Errore nel caricamento dei dati Sport:", err);
+    const msg =
+      '<div class="sport-empty">Dati Sport Mode non disponibili al momento.</div>';
+    if (sportBody) sportBody.innerHTML = msg;
+    if (statsBody) statsBody.innerHTML = msg;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadSportData);

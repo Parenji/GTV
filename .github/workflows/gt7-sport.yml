@@ -1,0 +1,63 @@
+name: GT7 Sport Data
+
+# Aggiorna sportscraping/sport.json con i dati Sport Mode dei piloti GTV:
+# time trial in corso (rank mondiale + tempo) e gare settimanali, piu' lo
+# storico per le sezioni "Sport" e "Sport Stats" di index.html.
+#
+# Gira ogni 12 ore sui server di GitHub, quindi anche a computer spento.
+# Dopo la raccolta fa push di sport.json: il push fa ripartire il deploy
+# automatico di Vercel e le sezioni del sito si aggiornano da sole.
+on:
+  schedule:
+    # 05:00 e 17:00 UTC (07:00 e 19:00 italiane d'estate)
+    - cron: "0 5,17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gt7-sport
+  cancel-in-progress: false
+
+jobs:
+  sport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Raccogli i dati Sport Mode
+        working-directory: sportscraping
+        # Se una fonte non risponde il file precedente resta valido:
+        # meglio dati di 12 ore fa che una sezione vuota.
+        continue-on-error: true
+        run: python3 gt7_sport.py
+
+      - name: Commit e push dei dati aggiornati
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if git diff --quiet -- sportscraping/sport.json; then
+            echo "Nessuna modifica ai dati Sport: niente commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sportscraping/sport.json
+          git commit -m "chore(sport): aggiornamento dati Sport Mode GT7"
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Dati Sport aggiornati."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::warning::Push dei dati Sport non riuscito."
+          exit 0
