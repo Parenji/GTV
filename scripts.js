@@ -2726,10 +2726,10 @@ function sportEventTable(entries, partecipanti, messaggioVuoto) {
   }
   let html = '<div class="table-container"><table class="sport-table">';
   html += "<thead><tr>";
-  html += "<th>#</th><th>Pilota GTV</th><th>Tempo</th>";
-  html += "<th title='Posizione tra i piloti GTV'>Pos. GTV</th>";
+  html += "<th title='Posizione tra i piloti del team'>#</th>";
+  html += "<th>Pilota GTV</th><th>Tempo</th>";
   html += "<th title='Posizione nella classifica mondiale'>Pos. assoluta</th>";
-  html += "<th title='Distacco percentuale dal miglior tempo GTV'>Dist. GTV %</th>";
+  html += "<th title='Distacco percentuale dal miglior tempo del team'>Dist. team %</th>";
   html += "<th title='Distacco percentuale dal miglior tempo assoluto'>Dist. assoluto %</th>";
   html += "</tr></thead><tbody>";
 
@@ -2744,7 +2744,6 @@ function sportEventTable(entries, partecipanti, messaggioVuoto) {
     html += `<td>${sportNum(posGtv)}</td>`;
     html += `<td class="sport-driver">${sportDriverLabel(e)}</td>`;
     html += `<td class="sport-time">${sportEscape(e.tempo || e.time)}</td>`;
-    html += `<td>${sportNum(posGtv)}</td>`;
     html += `<td>${posAbsLabel}</td>`;
     html += `<td>${sportPct(e.distacco_gtv_pct)}</td>`;
     html += `<td>${sportPct(e.distacco_assoluto_pct ?? e.distacco_abs_pct)}</td>`;
