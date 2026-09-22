@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-21T20:51:35+00:00",
+    "updated_at": "2026-09-22T09:41:18+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 26,
     "piloti_con_dati": 25,
@@ -28,7 +28,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 4186,
+            "pos_assoluta": 4347,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -40,7 +40,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 4645,
+            "pos_assoluta": 4834,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": null
@@ -52,7 +52,7 @@
             "squadra": "GTV",
             "tempo": "1:58.855",
             "tempo_ms": 118855,
-            "pos_assoluta": 23504,
+            "pos_assoluta": 26253,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.73,
             "distacco_assoluto_pct": null
@@ -79,7 +79,7 @@
             "squadra": "GTV",
             "tempo": "1:21.129",
             "tempo_ms": 81129,
-            "pos_assoluta": 1427,
+            "pos_assoluta": 1449,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -91,7 +91,7 @@
             "squadra": "GTV",
             "tempo": "1:22.382",
             "tempo_ms": 82382,
-            "pos_assoluta": 28310,
+            "pos_assoluta": 29681,
             "pos_gtv": 2,
             "distacco_gtv_pct": 1.544,
             "distacco_assoluto_pct": null
@@ -716,7 +716,7 @@
           "data": "21 Set 2026",
           "tempo": "1:50.102",
           "tempo_ms": 110102,
-          "pos_assoluta": 3671,
+          "pos_assoluta": 5127,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -738,7 +738,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.461",
           "tempo_ms": 103461,
-          "pos_assoluta": 6754,
+          "pos_assoluta": 9211,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -826,7 +826,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28417,
+      "rank_medio": 28444,
       "eventi_pubblicati": 101,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -835,7 +835,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 23504,
+          "rank": 26253,
           "tempo": "1:58.855",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -5100,7 +5100,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19091,
+      "rank_medio": 19092,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -5109,7 +5109,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 4645,
+          "rank": 4834,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -7816,7 +7816,7 @@
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 1427,
+          "rank": 1449,
           "tempo": "1:21.129",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
@@ -12714,7 +12714,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19937,
+      "rank_medio": 19978,
       "eventi_pubblicati": 93,
       "ultimo_evento_data": "2026-09-24",
       "ultimo_evento": "Willow Springs International Raceway: Big Willow",
@@ -12723,14 +12723,14 @@
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 28310,
+          "rank": 29681,
           "tempo": "1:22.382",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 6754,
+          "rank": 9211,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
@@ -13637,7 +13637,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49788,
+      "rank_medio": 49789,
       "eventi_pubblicati": 136,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13646,7 +13646,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 4186,
+          "rank": 4347,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -16312,7 +16312,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26622,
+      "rank_medio": 26633,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": "Fuji International Speedway",
@@ -16321,7 +16321,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 3671,
+          "rank": 5127,
           "tempo": "1:50.102",
           "evento": "Fuji International Speedway"
         },
@@ -17268,11 +17268,11 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 297
+        "conteggio": 296
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 725
+        "conteggio": 726
       },
       {
         "etichetta": "oltre 20.000",
