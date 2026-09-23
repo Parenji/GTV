@@ -178,6 +178,13 @@ function unionTierIndex(cat) {
   return i === -1 ? UNION_TIERS.length : i;
 }
 
+// Nome con cui ordinare le card: quello GT7 se presente, altrimenti il PSN.
+function unionNomeOrdinamento(riga) {
+  var gt7 = String(riga[1] || "").trim();
+  var psn = String(riga[0] || "").trim();
+  return (gt7 || psn).toLowerCase();
+}
+
 // Logo marca con fallback PNG -> SVG (come worldchampionship)
 function brandLogoHtml(brand) {
   var b = String(brand || "").trim();
@@ -194,10 +201,12 @@ function brandLogoHtml(brand) {
 }
 
 function renderUnionPilotiCards(container, rows, unionData, autoData) {
+  // L'ordine segue il nome mostrato in evidenza (GT7, con il PSN come
+  // ripiego), così la lista appare ordinata come viene letta.
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
     if (tierDiff !== 0) return tierDiff;
-    return String(a[0] || "").localeCompare(String(b[0] || ""));
+    return unionNomeOrdinamento(a).localeCompare(unionNomeOrdinamento(b));
   });
 
   var matricolaMap = buildUnionMatricolaMap(unionData);
@@ -207,8 +216,8 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
 
   rows.forEach(function (r) {
     var numero = r[2] || "—";
-    var psn = r[0] || "—";
-    var gt7 = r[1] || "—";
+    var psn = String(r[0] || "").trim();
+    var gt7 = String(r[1] || "").trim();
     var cat = r[6] || "—";
     // Auto e marchio: prima il foglio Google, altrimenti il fallback
     // con le auto lette dalle classifiche ufficiali delle gare.
@@ -217,6 +226,12 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
     var marchio = r[8] || (autoRec ? autoRec.marchio : "") || "";
 
     var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
+
+    // Il nome in evidenza è quello GT7: è il soprannome che si vede in
+    // gioco e nelle classifiche ufficiali. Il PSN resta come riga
+    // secondaria, e solo quando è diverso.
+    var nomePrincipale = gt7 || psn || "—";
+    var nomeSecondario = psn && psn !== nomePrincipale ? psn : "";
 
     var brandBlock = marchio
       ? brandLogoHtml(marchio) +
@@ -234,10 +249,9 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
           "</span>"
         : "";
 
-    var nicknameBlock =
-      gt7 !== "—" && gt7 !== psn
-        ? '<div class="union-pilot-nickname">' + escapeHtml(gt7) + "</div>"
-        : "";
+    var nicknameBlock = nomeSecondario
+      ? '<div class="union-pilot-nickname">' + escapeHtml(nomeSecondario) + "</div>"
+      : "";
 
     html +=
       '<div class="union-pilot-card">' +
@@ -246,7 +260,7 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
       catPatch +
       '<div class="union-pilot-brand">' + brandBlock + "</div>" +
       "</div>" +
-      '<div class="union-pilot-name">' + escapeHtml(psn) + "</div>" +
+      '<div class="union-pilot-name">' + escapeHtml(nomePrincipale) + "</div>" +
       nicknameBlock +
       '<div class="union-pilot-meta">' +
       '<span class="union-pilot-meta-item">' +
