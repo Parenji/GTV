@@ -1,41 +1,23 @@
 {
   "meta": {
     "generated_at": "2026-09-23T19:15:00+00:00",
+    "updated_at": "2026-09-23T20:00:29+00:00",
     "source": "UNION SCREENSHOT — screenshot ufficiali delle classifiche di gara",
     "app": "https://script.google.com/macros/s/AKfycbwHrAkGESRER3qYrGJVr3KfukzkNgFUzdEOX0w2dPuhEEjR_-YWbdPwIRZErctykXr3vg/exec",
-    "gare_esaminate": ["GARA 1"],
-    "lobby_esaminate": [
-      "A1", "A2", "A3", "A4", "A5", "A6", "A7",
-      "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"
+    "gare_esaminate": [
+      "GARA 1"
     ],
-    "note": "Auto lette dalle classifiche ufficiali (qualifiche + gara) delle gare finora disputate. Sono elencati solo i piloti GTV che hanno già corso: le colonne Union_auto/Union_marchio del foglio Google restano la fonte primaria, questo file interviene solo come fallback quando sono vuote.",
+    "note": "Auto lette dalle classifiche ufficiali (qualifiche + gara) delle gare finora disputate. Sono elencati solo i piloti GTV che hanno gia' corso: le colonne Union_auto/Union_marchio del foglio Google restano la fonte primaria, questo file interviene solo come fallback quando sono vuote.",
     "avvertenze": [
-      "Gli screenshot della lobby A9 nella cartella Drive sono copie identiche di quelli della A7 (probabile errore di caricamento): la A9 non contiene piloti GTV, quindi non incide su questi dati."
+      "A9_Q_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
+      "A9_Q_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
+      "A9_R_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
+      "A9_R_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
+      "A12_Q_1-8.png: archiviato in A12 ma la classifica dice A9 — uso A9",
+      "A12_Q_9-14.png: archiviato in A12 ma la classifica dice A9 — uso A9"
     ]
   },
   "piloti": {
-    "InuyashaGodYokai": {
-      "psn": "InuyashaGodYokai",
-      "gt7": "InuyashaGodYokai",
-      "categoria": "STAR",
-      "auto": "RC F GT500 '16",
-      "marchio": "Lexus",
-      "gara": "GARA 1",
-      "lobby": "A1",
-      "pos_quali": 7,
-      "pos_gara": 7
-    },
-    "GTV_legendafluo": {
-      "psn": "GTV_legendafluo",
-      "gt7": "GTV-Oriano06",
-      "categoria": "PRO GOLD",
-      "auto": "GT-R NISMO GT500 '16",
-      "marchio": "Nissan",
-      "gara": "GARA 1",
-      "lobby": "A3",
-      "pos_quali": 2,
-      "pos_gara": 11
-    },
     "Fra_salvo96": {
       "psn": "Fra_salvo96",
       "gt7": "Frasalvo96",
@@ -45,7 +27,19 @@
       "gara": "GARA 1",
       "lobby": "A7",
       "pos_quali": 5,
-      "pos_gara": 5
+      "pos_gara": 5,
+      "fonte": "A7_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A7",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 5,
+          "pos_gara": 5
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
     },
     "GTS-codebreaker": {
       "psn": "GTS-codebreaker",
@@ -56,7 +50,42 @@
       "gara": "GARA 1",
       "lobby": "A11",
       "pos_quali": 2,
-      "pos_gara": 2
+      "pos_gara": 2,
+      "fonte": "A11_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A11",
+          "auto": "RS 5 Turbo DTM '19",
+          "marchio": "Audi",
+          "pos_quali": 2,
+          "pos_gara": 2
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+    },
+    "GTV_legendafluo": {
+      "psn": "GTV_legendafluo",
+      "gt7": "GTV-Oriano06",
+      "categoria": "PRO GOLD",
+      "auto": "GT-R NISMO GT500 '16",
+      "marchio": "Nissan",
+      "gara": "GARA 1",
+      "lobby": "A3",
+      "pos_quali": 2,
+      "pos_gara": 11,
+      "fonte": "A3_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A3",
+          "auto": "GT-R NISMO GT500 '16",
+          "marchio": "Nissan",
+          "pos_quali": 2,
+          "pos_gara": 11
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
     },
     "Giusdandri": {
       "psn": "Giusdandri",
@@ -67,7 +96,42 @@
       "gara": "GARA 1",
       "lobby": "A12",
       "pos_quali": null,
-      "pos_gara": 2
+      "pos_gara": 2,
+      "fonte": "A12_R_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A12",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": null,
+          "pos_gara": 2
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+    },
+    "InuyashaGodYokai": {
+      "psn": "InuyashaGodYokai",
+      "gt7": "InuyashaGodYokai",
+      "categoria": "STAR",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A1",
+      "pos_quali": 7,
+      "pos_gara": 7,
+      "fonte": "A1_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A1",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 7,
+          "pos_gara": 7
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
     },
     "Vale34_": {
       "psn": "Vale34_",
@@ -78,7 +142,19 @@
       "gara": "GARA 1",
       "lobby": "A14",
       "pos_quali": 4,
-      "pos_gara": 4
+      "pos_gara": 4,
+      "fonte": "A14_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A14",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 4,
+          "pos_gara": 4
+        }
+      ],
+      "aggiornato_il": "2026-09-23T20:00:29+00:00"
     }
   }
 }
