@@ -72,8 +72,9 @@ function loadUnionPiloti() {
     return;
   }
 
-  // Carica in parallelo il CSV piloti e il data.json dello scraper
-  // (quest'ultimo è opzionale: se manca, le matricole restano "—").
+  // Carica in parallelo il CSV piloti, il data.json dello scraper e il
+  // file con le auto usate in gara. Gli ultimi due sono opzionali: se
+  // mancano, le matricole restano "—" e le auto restano quelle del CSV.
   Promise.all([
     fetch(url).then(function (response) {
       if (!response.ok) throw new Error("Errore HTTP " + response.status);
@@ -82,10 +83,14 @@ function loadUnionPiloti() {
     fetchUnionLobbyData().catch(function () {
       return null;
     }),
+    fetchUnionAutoData().catch(function () {
+      return null;
+    }),
   ])
     .then(function (results) {
       var csvText = results[0];
       var unionData = results[1];
+      var autoData = results[2];
 
       var rows = parseCsv(csvText);
       if (!rows || rows.length === 0) {
@@ -98,7 +103,7 @@ function loadUnionPiloti() {
         return participa === "x" || participa === "✓" || participa === "1";
       });
 
-      renderUnionPilotiCards(container, unionRows, unionData);
+      renderUnionPilotiCards(container, unionRows, unionData, autoData);
     })
     .catch(function (error) {
       console.error("Errore caricamento piloti Union:", error);
@@ -188,7 +193,7 @@ function brandLogoHtml(brand) {
   return out;
 }
 
-function renderUnionPilotiCards(container, rows, unionData) {
+function renderUnionPilotiCards(container, rows, unionData, autoData) {
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
     if (tierDiff !== 0) return tierDiff;
@@ -196,6 +201,7 @@ function renderUnionPilotiCards(container, rows, unionData) {
   });
 
   var matricolaMap = buildUnionMatricolaMap(unionData);
+  var autoMap = buildUnionAutoMap(autoData);
 
   var html = '<div class="union-pilot-cards">';
 
@@ -204,8 +210,11 @@ function renderUnionPilotiCards(container, rows, unionData) {
     var psn = r[0] || "—";
     var gt7 = r[1] || "—";
     var cat = r[6] || "—";
-    var auto = r[7] || "—";
-    var marchio = r[8] || "";
+    // Auto e marchio: prima il foglio Google, altrimenti il fallback
+    // con le auto lette dalle classifiche ufficiali delle gare.
+    var autoRec = lookupUnionAuto(autoMap, psn, gt7);
+    var auto = r[7] || (autoRec ? autoRec.auto : "") || "—";
+    var marchio = r[8] || (autoRec ? autoRec.marchio : "") || "";
 
     var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
 
@@ -257,7 +266,16 @@ function renderUnionPilotiCards(container, rows, unionData) {
   var count =
     '<div class="union-count">' + rows.length + " piloti iscritti</div>";
 
-  container.innerHTML = count + html;
+  // Nota su da dove arrivano le auto mostrate (solo se il fallback esiste)
+  var autoNote = "";
+  if (autoData && autoData.meta && autoData.meta.gare_esaminate) {
+    autoNote =
+      '<div class="union-last-update">Auto desunte dalle classifiche ufficiali: <b>' +
+      escapeHtml(autoData.meta.gare_esaminate.join(", ")) +
+      "</b></div>";
+  }
+
+  container.innerHTML = count + autoNote + html;
 }
 
 // -------------------------------------------------------------
@@ -292,6 +310,59 @@ function fetchUnionLobbyData() {
       });
   }
   return _unionLobbyDataPromise;
+}
+
+// -------------------------------------------------------------
+// AUTO USATE IN GARA (unionscraping/auto.json)
+// Le colonne Union_auto / Union_marchio del foglio Google restano la
+// fonte primaria: questo file interviene solo se sono vuote, così la
+// sezione piloti mostra comunque l'auto realmente usata in pista.
+// -------------------------------------------------------------
+function unionAutoDataUrl() {
+  return window.GTV_CONFIG && window.GTV_CONFIG.unionAutoData
+    ? window.GTV_CONFIG.unionAutoData
+    : "unionscraping/auto.json";
+}
+
+var _unionAutoDataPromise = null;
+function fetchUnionAutoData() {
+  if (!_unionAutoDataPromise) {
+    _unionAutoDataPromise = fetch(unionAutoDataUrl())
+      .then(function (response) {
+        if (!response.ok) throw new Error("Errore HTTP " + response.status);
+        return response.json();
+      })
+      .catch(function (err) {
+        _unionAutoDataPromise = null; // consente un nuovo tentativo
+        throw err;
+      });
+  }
+  return _unionAutoDataPromise;
+}
+
+// Mappa PSN/GT7 (normalizzati) -> record auto. Ogni pilota è indicizzato
+// sia con la chiave dell'oggetto sia con i campi psn e gt7, così la
+// corrispondenza con il CSV regge anche se una delle due grafie cambia.
+function buildUnionAutoMap(autoData) {
+  var map = {};
+  if (!autoData || !autoData.piloti) return map;
+  Object.keys(autoData.piloti).forEach(function (key) {
+    var rec = autoData.piloti[key] || {};
+    [key, rec.psn, rec.gt7].forEach(function (alias) {
+      var k = String(alias || "").trim().toLowerCase();
+      if (k && map[k] === undefined) map[k] = rec;
+    });
+  });
+  return map;
+}
+
+// Cerca il record auto di un pilota: prima per PSN, poi per GT7.
+function lookupUnionAuto(map, psn, gt7) {
+  var k = String(psn || "").trim().toLowerCase();
+  if (k && map[k]) return map[k];
+  k = String(gt7 || "").trim().toLowerCase();
+  if (k && map[k]) return map[k];
+  return null;
 }
 
 function loadUnionLobby() {

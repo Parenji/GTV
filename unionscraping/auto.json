@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "generated_at": "2026-09-23T19:15:00+00:00",
+    "source": "UNION SCREENSHOT — screenshot ufficiali delle classifiche di gara",
+    "app": "https://script.google.com/macros/s/AKfycbwHrAkGESRER3qYrGJVr3KfukzkNgFUzdEOX0w2dPuhEEjR_-YWbdPwIRZErctykXr3vg/exec",
+    "gare_esaminate": ["GARA 1"],
+    "lobby_esaminate": [
+      "A1", "A2", "A3", "A4", "A5", "A6", "A7",
+      "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"
+    ],
+    "note": "Auto lette dalle classifiche ufficiali (qualifiche + gara) delle gare finora disputate. Sono elencati solo i piloti GTV che hanno già corso: le colonne Union_auto/Union_marchio del foglio Google restano la fonte primaria, questo file interviene solo come fallback quando sono vuote.",
+    "avvertenze": [
+      "Gli screenshot della lobby A9 nella cartella Drive sono copie identiche di quelli della A7 (probabile errore di caricamento): la A9 non contiene piloti GTV, quindi non incide su questi dati."
+    ]
+  },
+  "piloti": {
+    "InuyashaGodYokai": {
+      "psn": "InuyashaGodYokai",
+      "gt7": "InuyashaGodYokai",
+      "categoria": "STAR",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A1",
+      "pos_quali": 7,
+      "pos_gara": 7
+    },
+    "GTV_legendafluo": {
+      "psn": "GTV_legendafluo",
+      "gt7": "GTV-Oriano06",
+      "categoria": "PRO GOLD",
+      "auto": "GT-R NISMO GT500 '16",
+      "marchio": "Nissan",
+      "gara": "GARA 1",
+      "lobby": "A3",
+      "pos_quali": 2,
+      "pos_gara": 11
+    },
+    "Fra_salvo96": {
+      "psn": "Fra_salvo96",
+      "gt7": "Frasalvo96",
+      "categoria": "AMA",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A7",
+      "pos_quali": 5,
+      "pos_gara": 5
+    },
+    "GTS-codebreaker": {
+      "psn": "GTS-codebreaker",
+      "gt7": "GTSCode",
+      "categoria": "AMA",
+      "auto": "RS 5 Turbo DTM '19",
+      "marchio": "Audi",
+      "gara": "GARA 1",
+      "lobby": "A11",
+      "pos_quali": 2,
+      "pos_gara": 2
+    },
+    "Giusdandri": {
+      "psn": "Giusdandri",
+      "gt7": "Giusdandri",
+      "categoria": "ELITE",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A12",
+      "pos_quali": null,
+      "pos_gara": 2
+    },
+    "Vale34_": {
+      "psn": "Vale34_",
+      "gt7": "Vale34",
+      "categoria": "PRO GOLD",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A14",
+      "pos_quali": 4,
+      "pos_gara": 4
+    }
+  }
+}
