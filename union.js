@@ -280,16 +280,7 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
   var count =
     '<div class="union-count">' + rows.length + " piloti iscritti</div>";
 
-  // Nota su da dove arrivano le auto mostrate (solo se il fallback esiste)
-  var autoNote = "";
-  if (autoData && autoData.meta && autoData.meta.gare_esaminate) {
-    autoNote =
-      '<div class="union-last-update">Auto desunte dalle classifiche ufficiali: <b>' +
-      escapeHtml(autoData.meta.gare_esaminate.join(", ")) +
-      "</b></div>";
-  }
-
-  container.innerHTML = count + autoNote + html;
+  container.innerHTML = count + html;
 }
 
 // -------------------------------------------------------------
