@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-22T20:02:44+00:00",
+    "updated_at": "2026-09-23T09:48:35+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -28,7 +28,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 4577,
+            "pos_assoluta": 4786,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -40,7 +40,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 5094,
+            "pos_assoluta": 5319,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": null
@@ -50,11 +50,11 @@
             "gt7name": "GTV-Oriano06",
             "numero": "6",
             "squadra": "GTV",
-            "tempo": "1:58.855",
-            "tempo_ms": 118855,
-            "pos_assoluta": 26253,
+            "tempo": "1:58.488",
+            "tempo_ms": 118488,
+            "pos_assoluta": 25635,
             "pos_gtv": 3,
-            "distacco_gtv_pct": 2.73,
+            "distacco_gtv_pct": 2.413,
             "distacco_assoluto_pct": null
           }
         ]
@@ -79,7 +79,7 @@
             "squadra": "GTV",
             "tempo": "1:21.129",
             "tempo_ms": 81129,
-            "pos_assoluta": 1482,
+            "pos_assoluta": 1499,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -91,7 +91,7 @@
             "squadra": "GTV",
             "tempo": "1:21.752",
             "tempo_ms": 81752,
-            "pos_assoluta": 6769,
+            "pos_assoluta": 6884,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.768,
             "distacco_assoluto_pct": null
@@ -103,7 +103,7 @@
             "squadra": "GTV",
             "tempo": "1:22.382",
             "tempo_ms": 82382,
-            "pos_assoluta": 29681,
+            "pos_assoluta": 31067,
             "pos_gtv": 3,
             "distacco_gtv_pct": 1.544,
             "distacco_assoluto_pct": null
@@ -692,7 +692,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 1799,
+          "pos_assoluta": 2109,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -706,6 +706,20 @@
       "impostazioni": "11 giri · Gr.3 · Racing M · Carburante x2 · Gomme x8 · auto più usata: Hyundai Genesis Gr.3",
       "classifica": [
         {
+          "psn": "Giusdandri",
+          "gt7name": "Giusdandri",
+          "numero": "87",
+          "squadra": "GTV",
+          "auto": "Toyota Supra GT500 '97",
+          "data": "21 Set 2026",
+          "tempo": "1:43.151",
+          "tempo_ms": 103151,
+          "pos_assoluta": 10650,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
           "psn": "Utile_ruspante",
           "gt7name": "Barda88",
           "numero": "88",
@@ -714,9 +728,9 @@
           "data": "21 Set 2026",
           "tempo": "1:43.461",
           "tempo_ms": 103461,
-          "pos_assoluta": 11303,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
+          "pos_assoluta": 12932,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 0.301,
           "distacco_assoluto_pct": null
         }
       ]
@@ -802,7 +816,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28231,
+      "rank_medio": 28226,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -811,14 +825,14 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 26253,
-          "tempo": "1:58.855",
+          "rank": 25635,
+          "tempo": "1:58.488",
           "evento": "Dragon Trail - Seaside Reverse"
         },
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 6769,
+          "rank": 6884,
           "tempo": "1:21.752",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
@@ -5083,7 +5097,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19094,
+      "rank_medio": 19096,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -5092,7 +5106,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5094,
+          "rank": 5319,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -7799,7 +7813,7 @@
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 1482,
+          "rank": 1499,
           "tempo": "1:21.129",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
@@ -11938,12 +11952,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 19933,
-      "eventi_pubblicati": 106,
-      "ultimo_evento_data": "2026-09-17",
+      "rank_medio": 19846,
+      "eventi_pubblicati": 107,
+      "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": "Suzuka Circuit",
-      "ultima_gara": "Brands Hatch Grand Prix Circuit",
+      "ultima_gara": "Sardegna - Road Track - A",
       "eventi": [
+        {
+          "data": "2026-09-21",
+          "tipo": "gara",
+          "rank": 10650,
+          "tempo": "1:43.151",
+          "evento": "Sardegna - Road Track - A"
+        },
         {
           "data": "2026-09-17",
           "tipo": "time_trial",
@@ -12017,16 +12038,16 @@
         {
           "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 3518,
-          "tempo": "1:37.301",
-          "evento": "Red Bull Ring"
+          "rank": 4363,
+          "tempo": "2:00.776",
+          "evento": "Tokyo Expressway - East Clockwise"
         },
         {
           "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 4363,
-          "tempo": "2:00.776",
-          "evento": "Tokyo Expressway - East Clockwise"
+          "rank": 3518,
+          "tempo": "1:37.301",
+          "evento": "Red Bull Ring"
         },
         {
           "data": "2026-07-27",
@@ -12697,7 +12718,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 20001,
+      "rank_medio": 20033,
       "eventi_pubblicati": 93,
       "ultimo_evento_data": "2026-09-24",
       "ultimo_evento": "Willow Springs International Raceway: Big Willow",
@@ -12706,14 +12727,14 @@
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 29681,
+          "rank": 31067,
           "tempo": "1:22.382",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 11303,
+          "rank": 12932,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
@@ -13620,7 +13641,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49791,
+      "rank_medio": 49792,
       "eventi_pubblicati": 136,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13629,7 +13650,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 4577,
+          "rank": 4786,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15578,7 +15599,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26608,
+      "rank_medio": 26610,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": "Fuji International Speedway",
@@ -15587,7 +15608,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 1799,
+          "rank": 2109,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },
@@ -16538,13 +16559,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 683
+        "conteggio": 684
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1029
       }
     ],
-    "eventi_totali": 2188
+    "eventi_totali": 2189
   }
 }
