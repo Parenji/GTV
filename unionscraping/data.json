@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-23T01:55:09+00:00"
+    "generated_at": "2026-09-23T15:36:53+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -286,7 +286,7 @@
           "pos": 4,
           "matricola": "208",
           "team": "GTID",
-          "nome": "GTID_pienobonus",
+          "nome": "GTID _pienobonus",
           "auto": ""
         },
         {
@@ -634,7 +634,7 @@
           "pos": 8,
           "matricola": "384",
           "team": "GTID",
-          "nome": "GTID_D3LZ719",
+          "nome": "GTID_D3Lz719",
           "auto": ""
         },
         {
@@ -1894,13 +1894,6 @@
       "url": "https://youtube.com/@max_71_mf",
       "pilots": [
         {
-          "pos": 1,
-          "matricola": "506",
-          "team": "SCGT",
-          "nome": "Sim7one",
-          "auto": ""
-        },
-        {
           "pos": 2,
           "matricola": "461",
           "team": "DCT",
@@ -2290,9 +2283,9 @@
       "time": "Ore 21:00",
       "name": "A23",
       "category": "AMA",
-      "host": "MNY-MirwoTangi",
-      "live": "OES- MNY-MirwoTangi",
-      "url": "https://youtube.com/@officialorionesports",
+      "host": "TRT-Tommizio",
+      "live": "ARC- TRT-Tommizio",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -2320,13 +2313,6 @@
           "matricola": "484",
           "team": "PRT",
           "nome": "Luca R72",
-          "auto": ""
-        },
-        {
-          "pos": 5,
-          "matricola": "472",
-          "team": "GTV",
-          "nome": "Goose",
           "auto": ""
         },
         {
@@ -2916,9 +2902,9 @@
       "time": "Ore 22:20",
       "name": "A29",
       "category": "STAR",
-      "host": "MNY-MirwoTangi",
-      "live": "OES- MNY-MirwoTangi",
-      "url": "https://youtube.com/@officialorionesports",
+      "host": "MF_GioBar73",
+      "live": "MFC- MF_GioBar73",
+      "url": "https://youtube.com/@GioBar73",
       "pilots": [
         {
           "pos": 1,
