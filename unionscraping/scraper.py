@@ -18,6 +18,13 @@ import sys
 import urllib.request
 from collections import Counter, OrderedDict
 from datetime import datetime, timezone
+from pathlib import Path
+
+# Cartella dello script: i file generati finiscono sempre qui, anche se lo
+# scraper viene lanciato da un'altra directory. Senza questo, un `python3
+# unionscraping/scraper.py` dalla root del repo creava un data.json duplicato
+# e orfano nella root (il sito legge solo unionscraping/data.json).
+BASE_DIR = Path(__file__).resolve().parent
 
 # ---------------------------------------------------------------------------
 # Configurazione: fogli pubblicati estratti dalle pagine Google Sites
@@ -216,11 +223,11 @@ def main():
         "pilots": pilots,
     }
 
-    out_json = "data.json"
+    out_json = BASE_DIR / "data.json"
     with open(out_json, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"\nOK → {out_json} ({len(pilots)} piloti, {len(lobbies)} lobby)")
+    print(f"\nOK → {out_json.name} ({len(pilots)} piloti, {len(lobbies)} lobby)")
 
 
 if __name__ == "__main__":

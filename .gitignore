@@ -19,3 +19,11 @@ unionscraping/whatsapp/
 unionscraping/.bot_state.json
 unionscraping/bot.log
 unionscraping/bot.log.*
+
+# Cache di auto_from_screenshots.py: screenshot scaricati, testo OCR e
+# binario dell'helper. Si rigenera da solo con lo script.
+unionscraping/.screenshots/
+
+# Foglietti di telecronaca generati (rigenerabili con telecronaca.py)
+unionscraping/telecronaca/
+
