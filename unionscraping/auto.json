@@ -1,7 +1,7 @@
 {
   "meta": {
     "generated_at": "2026-09-23T19:15:00+00:00",
-    "updated_at": "2026-09-23T20:00:29+00:00",
+    "updated_at": "2026-09-23T21:16:34+00:00",
     "source": "UNION SCREENSHOT — screenshot ufficiali delle classifiche di gara",
     "app": "https://script.google.com/macros/s/AKfycbwHrAkGESRER3qYrGJVr3KfukzkNgFUzdEOX0w2dPuhEEjR_-YWbdPwIRZErctykXr3vg/exec",
     "gare_esaminate": [
@@ -39,7 +39,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     },
     "GTS-codebreaker": {
       "psn": "GTS-codebreaker",
@@ -62,7 +62,7 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     },
     "GTV_legendafluo": {
       "psn": "GTV_legendafluo",
@@ -85,7 +85,7 @@
           "pos_gara": 11
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     },
     "Giusdandri": {
       "psn": "Giusdandri",
@@ -108,7 +108,30 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+    },
+    "Hawk_MaveNich": {
+      "psn": "Hawk_MaveNich",
+      "gt7": "Nicco.rs",
+      "categoria": "STAR",
+      "auto": "RS 5 Turbo DTM '19",
+      "marchio": "Audi",
+      "gara": "GARA 1",
+      "lobby": "A17",
+      "pos_quali": 4,
+      "pos_gara": 5,
+      "fonte": "A17_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A17",
+          "auto": "RS 5 Turbo DTM '19",
+          "marchio": "Audi",
+          "pos_quali": 4,
+          "pos_gara": 5
+        }
+      ],
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     },
     "InuyashaGodYokai": {
       "psn": "InuyashaGodYokai",
@@ -131,7 +154,7 @@
           "pos_gara": 7
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     },
     "Vale34_": {
       "psn": "Vale34_",
@@ -154,7 +177,7 @@
           "pos_gara": 4
         }
       ],
-      "aggiornato_il": "2026-09-23T20:00:29+00:00"
+      "aggiornato_il": "2026-09-23T21:16:34+00:00"
     }
   }
 }
