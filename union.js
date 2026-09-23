@@ -228,10 +228,10 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
     var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
 
     // Il nome in evidenza è quello GT7: è il soprannome che si vede in
-    // gioco e nelle classifiche ufficiali. Il PSN resta come riga
-    // secondaria, e solo quando è diverso.
+    // gioco e nelle classifiche ufficiali. Sotto c'è sempre il PSN, anche
+    // quando coincide con il GT7.
     var nomePrincipale = gt7 || psn || "—";
-    var nomeSecondario = psn && psn !== nomePrincipale ? psn : "";
+    var nomeSecondario = psn;
 
     var brandBlock = marchio
       ? brandLogoHtml(marchio) +
