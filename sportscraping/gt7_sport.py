@@ -25,7 +25,9 @@ Fonti (pubbliche, nessuna autenticazione):
 gt-gridstats.com e' un sito non ufficiale della community (non affiliato a
 Polyphony Digital / Sony): i dati arrivano dal loro sync con i server del
 gioco. Lo scraping e' volutamente gentile (una richiesta alla volta con pausa)
-e il file viene rigenerato 2 volte al giorno.
+e il file viene rigenerato piu' volte al giorno: la piu' importante e' subito
+dopo la rotazione degli eventi (le time trial chiudono alle 06:59:59Z), cosi'
+l'evento chiuso passa in archivio e i nuovi compaiono in "Time trial in corso".
 
 Uso:
     python3 gt7_sport.py                # aggiorna sport.json
@@ -147,6 +149,55 @@ def _iso_a_it(iso):
     return f"{d.day:02d} {MESI_ABBR[d.month - 1]} {d.year}"
 
 
+# Orario con cui chiudono le time trial: l'API ufficiale da' sempre
+# 06:59:59Z dell'ultimo giorno (08:59 italiane d'estate, 07:59 d'inverno).
+# Serve quando l'istante esatto non e' disponibile: le date di gt-gridstats
+# sono solo giorni, e a mezzanotte l'evento sarebbe ancora "in corso".
+ORA_CHIUSURA_UTC = "06:59:59+00:00"
+
+
+def _istante_utc(valore):
+    """'2026-09-24T06:59:59Z' -> datetime con fuso UTC (None se illeggibile)."""
+    if not valore:
+        return None
+    try:
+        istante = datetime.fromisoformat(str(valore).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if istante.tzinfo is None:
+        istante = istante.replace(tzinfo=timezone.utc)
+    return istante.astimezone(timezone.utc)
+
+
+def _chiusura(fine_iso, end_ts=None):
+    """Istante in cui l'evento chiude: quello ufficiale se c'e', altrimenti
+    le ORA_CHIUSURA_UTC del giorno di fine."""
+    if end_ts:
+        return end_ts
+    if not fine_iso:
+        return None
+    return _istante_utc(f"{str(fine_iso)[:10]}T{ORA_CHIUSURA_UTC}")
+
+
+def _chiusura_iso(fine_iso, end_ts=None):
+    """Come _chiusura(), ma pronta per il sito ('2026-09-24T06:59:59Z')."""
+    chiude = _chiusura(fine_iso, end_ts)
+    return chiude.isoformat().replace("+00:00", "Z") if chiude else None
+
+
+def evento_chiuso(fine_iso, end_ts=None, adesso=None):
+    """True se l'evento ha gia' chiuso.
+
+    Si confronta l'ISTANTE, non il giorno: le time trial chiudono a meta'
+    mattina dell'ultimo giorno (06:59:59Z), quindi lo stesso giorno della
+    scadenza l'evento puo' essere ancora aperto oppure gia' finito.
+    """
+    chiude = _chiusura(fine_iso, end_ts)
+    if chiude is None:
+        return False
+    return (adesso or datetime.now(timezone.utc)) >= chiude
+
+
 # ---------------------------------------------------------------------------
 # Rete
 # ---------------------------------------------------------------------------
@@ -185,7 +236,10 @@ def post_json(path, body, timeout=TIMEOUT):
 def eventi_ufficiali(region_id=REGIONE_EU):
     """Tutti gli eventi time trial pubblicati (passati e in corso).
 
-    Ritorna [{begin, end, ranking_id, event_id}] con date ISO.
+    Ritorna [{begin, end, end_ts, ranking_id, event_id}]: `begin`/`end` sono i
+    giorni ISO (come li mostra il sito), `end_ts` e' l'istante di chiusura
+    esatto preso dall'API (le time trial chiudono a meta' mattina, quindi la
+    sola data non basta a decidere se un evento e' ancora in corso).
     """
     eventi = post_json("/event/get_folder",
                        {"region_id": region_id,
@@ -193,10 +247,12 @@ def eventi_ufficiali(region_id=REGIONE_EU):
     out = []
     for ev in eventi:
         online = (ev.get("parameters") or {}).get("online") or {}
-        begin, end = (online.get("begin_date") or "")[:10], (online.get("end_date") or "")[:10]
+        begin_raw, end_raw = online.get("begin_date") or "", online.get("end_date") or ""
+        begin, end = begin_raw[:10], end_raw[:10]
         if not begin or not end:
             continue
         out.append({"begin": begin, "end": end,
+                    "end_ts": _istante_utc(end_raw),
                     "ranking_id": online.get("ranking_id"),
                     "event_id": ev.get("event_id")})
     out.sort(key=lambda e: e["end"], reverse=True)
@@ -734,14 +790,25 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                 storico_precedente[voce.get("psn")] = voce.get("eventi", [])
     except Exception:
         storico_precedente = {}
-    oggi = date.today().isoformat()
 
-    # nomi (pista/auto) degli eventi attivi, presi dall'elenco di gt-gridstats
-    nomi_per_inizio = {}
+    # Eventi di gt-gridstats (pista/auto) indicizzati per data di inizio e per
+    # pista. Piu' time trial possono partire lo stesso giorno, quindi per la
+    # data tengo una LISTA da consumare: con un solo nome il secondo evento
+    # sparirebbe dal sito.
+    esplora_per_inizio, esplora_per_pista = {}, {}
     for ev in esplora.get("eventi", []):
         d = data_da_testo(ev.get("inizio"))
         if d:
-            nomi_per_inizio[d.isoformat()] = ev
+            esplora_per_inizio.setdefault(d.isoformat(), []).append(ev)
+        if ev.get("pista"):
+            esplora_per_pista.setdefault(ev["pista"], ev)
+
+    def esplora_libero(begin, usati):
+        """Primo evento gt-gridstats di quella data non ancora abbinato."""
+        for ev in esplora_per_inizio.get(begin, []):
+            if id(ev) not in usati:
+                return ev
+        return None
 
     # Raggruppo le time trial dei piloti per EVENTO: (inizio, fine, pista).
     # La sola data di fine non basta: piu' time trial si chiudono lo stesso
@@ -781,10 +848,12 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                 return max(plausibili, key=lambda s: s["leader_ms"])
         return min(schede, key=lambda s: abs(s["leader_ms"] - (migliore_ms or s["leader_ms"])))
 
-    def scheda_evento(chiave, conclusa):
+    def scheda_evento(chiave, conclusa, nome=None, end_ts=None):
         inizio, fine, pista = chiave
         sorgente = per_evento.get(chiave, [])
-        nome = nomi_per_inizio.get(inizio) or {}
+        # pista/auto: l'evento gt-gridstats abbinato, altrimenti quello con la
+        # stessa pista (gt-gridstats e' l'unica fonte del nome del circuito)
+        nome = nome or esplora_per_pista.get(pista) or {}
         if not pista:
             pista = nome.get("pista")
         auto_ = nome.get("auto") or (sorgente[0][1]["auto"] if sorgente else None)
@@ -821,6 +890,9 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
             "inizio": data_it(_iso_a_it(inizio)),
             "fine": data_it(etichetta),
             "scadenza": data_it(etichetta),
+            # istante esatto di chiusura: il sito lo usa per spostare l'evento
+            # in archivio appena scade, senza aspettare il prossimo giro
+            "chiusura": _chiusura_iso(fine, end_ts),
             "miglior_tempo": _ms_a_tempo(leader_ms),
             "leader": info.get("leader"),
             "partecipanti": info.get("partecipanti"),
@@ -828,26 +900,33 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
             "classifica": voci,
         }
 
-    # Eventi in corso: quelli ufficiali (anche se nessuno del team ha girato)
-    attivi, usate = [], set()
+    # Eventi in corso: quelli ufficiali (anche se nessuno del team ha girato).
+    # Ogni evento ufficiale consuma un evento gt-gridstats della sua data di
+    # inizio, cosi' due time trial partite lo stesso giorno restano due card.
+    attivi, usate, esplora_usati = [], set(), set()
     for u in ufficiali:
-        if u["end"] < oggi:
+        if evento_chiuso(u["end"], u.get("end_ts")):
             continue
-        nome = nomi_per_inizio.get(u["begin"]) or {}
-        chiavi = [k for k in per_evento if k[0] == u["begin"] and k[1] == u["end"]]
-        if nome.get("pista"):
-            preferite = [k for k in chiavi if k[2] == nome["pista"]]
-            chiavi = preferite or chiavi
-        chiave = chiavi[0] if chiavi else (u["begin"], u["end"], nome.get("pista"))
+        chiavi = [k for k in per_evento
+                  if k[0] == u["begin"] and k[1] == u["end"] and k not in usate]
+        if chiavi:
+            chiave = chiavi[0]
+            nome = esplora_per_pista.get(chiave[2]) or esplora_libero(u["begin"], esplora_usati)
+        else:
+            # nessun tempo del team: la card si costruisce dall'evento ufficiale
+            nome = esplora_libero(u["begin"], esplora_usati)
+            chiave = (u["begin"], u["end"], nome.get("pista") if nome else None)
         if chiave in usate:
             continue
         usate.add(chiave)
-        attivi.append(scheda_evento(chiave, False))
+        if nome:
+            esplora_usati.add(id(nome))
+        attivi.append(scheda_evento(chiave, False, nome, u.get("end_ts")))
 
     # Eventi conclusi: quelli per cui il team ha davvero dei tempi
     passati = []
     for chiave in sorted(per_evento, key=lambda k: (k[1], k[0]), reverse=True):
-        if chiave[1] >= oggi or chiave in usate:
+        if not evento_chiuso(chiave[1]) or chiave in usate:
             continue
         usate.add(chiave)
         passati.append(scheda_evento(chiave, True))
@@ -858,7 +937,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
     # si ricavano dalle date viste nei profili
     if not attivi:
         for chiave in sorted(per_evento, key=lambda k: (k[1], k[0]), reverse=True):
-            if chiave[1] >= oggi and chiave not in usate:
+            if not evento_chiuso(chiave[1]) and chiave not in usate:
                 usate.add(chiave)
                 attivi.append(scheda_evento(chiave, False))
 
@@ -872,6 +951,15 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
         return m.group(1) if m else None
 
     limite_settimana = (date.today() - timedelta(days=7)).isoformat()
+    # Settimana in corso: le daily ruotano il lunedi', quindi quella attiva e'
+    # la successiva a quella mostrata come "Previous Week". Serve al sito per
+    # sapere quando queste gare sono scadute e vanno in archivio.
+    inizio_corrente = fine_corrente = None
+    if settimana_prec.get("inizio"):
+        inizio_corrente = (date.fromisoformat(settimana_prec["inizio"])
+                           + timedelta(days=7)).isoformat()
+        fine_corrente = (date.fromisoformat(inizio_corrente)
+                         + timedelta(days=6)).isoformat()
     gare_settimanali = []
     for gara in gare_attive:
         codice = codice_gara(gara["nome"])
@@ -910,6 +998,9 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
             "pista": gara["pista"],
             "logo": logo_pista(gara["pista"]),
             "impostazioni": gara.get("impostazioni"),
+            "inizio": data_it(_iso_a_it(inizio_corrente)) if inizio_corrente else None,
+            "fine": data_it(_iso_a_it(fine_corrente)) if fine_corrente else None,
+            "settimana": data_it(_iso_a_it(inizio_corrente)) if inizio_corrente else None,
             "classifica": voci,
         })
 
@@ -1130,17 +1221,10 @@ def main():
         squadre[p.get("squadra", "GTV")] = squadre.get(p.get("squadra", "GTV"), 0) + 1
     print(f"  {len(piloti)} piloti " + " + ".join(f"{n} {s}" for s, n in sorted(squadre.items())))
 
-    print("Scarico l'elenco ufficiale delle time trial...")
-    ufficiali = []
-    try:
-        ufficiali = eventi_ufficiali()
-        attivi = [e for e in ufficiali if e["end"] >= date.today().isoformat()]
-        print(f"  {len(ufficiali)} eventi totali · {len(attivi)} in corso")
-        for e in attivi:
-            print(f"     in corso: {e['begin']} -> {e['end']}")
-    except Exception as e:
-        print(f"  ! API ufficiale non disponibile: {e}", file=sys.stderr)
-
+    # NOTA: l'elenco ufficiale degli eventi, la pagina gt-gridstats e le gare
+    # settimanali si scaricano DOPO i profili (vedi sotto). Sono le informazioni
+    # che cambiano con la rotazione degli eventi: leggerle all'inizio significa
+    # scrivere un file con la rotazione vecchia se lo scraping dura qualche minuto.
     cache_board = {}
 
     def board_info(ranking_id):
@@ -1154,29 +1238,6 @@ def main():
                 print(f"  ! classifica {ranking_id}: {e}", file=sys.stderr)
                 cache_board[ranking_id] = {}
         return cache_board[ranking_id]
-
-    try:
-        esplora = parse_explore_events(fetch(f"{GRIDSTATS}/explore-events"))
-        print(f"  time trial attive su gt-gridstats: "
-              f"{', '.join(e['pista'] for e in esplora['eventi'])}")
-    except Exception as e:
-        print(f"  ! pagina eventi non disponibile: {e}", file=sys.stderr)
-        esplora = {"eventi": [], "attivo": {}, "top": []}
-
-    print("Scarico le gare settimanali (in corso e scorsa settimana)...")
-    gare_attive, settimana_prec = [], {}
-    try:
-        daily = parse_dailies(fetch(f"{GRIDSTATS}/dailies"))
-        gare_attive = daily.get("correnti", [])
-        settimana_prec = daily.get("precedente") or {}
-        print(f"  {len(gare_attive)} gare attive: "
-              + ", ".join(f"{g['nome']} ({g['pista']})" for g in gare_attive))
-        if settimana_prec.get("gare"):
-            print(f"  settimana del {settimana_prec.get('inizio')}: "
-                  + ", ".join(f"{g['nome']} ({g['pista']})"
-                              for g in settimana_prec["gare"]))
-    except Exception as e:
-        print(f"  ! pagina gare non disponibile: {e}", file=sys.stderr)
 
     profili = {}
     for i, p in enumerate(piloti, start=1):
@@ -1208,6 +1269,42 @@ def main():
               f"erano {precedenti}): non sovrascrivo {OUT_JSON.name}.",
               file=sys.stderr)
         return 1
+
+    # Solo ora le fonti che cambiano con la rotazione: cosi' l'elenco eventi e'
+    # quello del momento in cui si scrive il file, non di mezz'ora prima.
+    print("Scarico l'elenco ufficiale delle time trial...")
+    ufficiali = []
+    try:
+        ufficiali = eventi_ufficiali()
+        aperti = [e for e in ufficiali if not evento_chiuso(e["end"], e.get("end_ts"))]
+        print(f"  {len(ufficiali)} eventi totali · {len(aperti)} in corso")
+        for e in aperti:
+            print(f"     in corso: {e['begin']} -> {e['end']} (chiude {e['end_ts']})")
+    except Exception as e:
+        print(f"  ! API ufficiale non disponibile: {e}", file=sys.stderr)
+
+    try:
+        esplora = parse_explore_events(fetch(f"{GRIDSTATS}/explore-events"))
+        print(f"  time trial attive su gt-gridstats: "
+              f"{', '.join(e['pista'] for e in esplora['eventi'])}")
+    except Exception as e:
+        print(f"  ! pagina eventi non disponibile: {e}", file=sys.stderr)
+        esplora = {"eventi": [], "attivo": {}, "top": []}
+
+    print("Scarico le gare settimanali (in corso e scorsa settimana)...")
+    gare_attive, settimana_prec = [], {}
+    try:
+        daily = parse_dailies(fetch(f"{GRIDSTATS}/dailies"))
+        gare_attive = daily.get("correnti", [])
+        settimana_prec = daily.get("precedente") or {}
+        print(f"  {len(gare_attive)} gare attive: "
+              + ", ".join(f"{g['nome']} ({g['pista']})" for g in gare_attive))
+        if settimana_prec.get("gare"):
+            print(f"  settimana del {settimana_prec.get('inizio')}: "
+                  + ", ".join(f"{g['nome']} ({g['pista']})"
+                              for g in settimana_prec["gare"]))
+    except Exception as e:
+        print(f"  ! pagina gare non disponibile: {e}", file=sys.stderr)
 
     dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive,
                  settimana_prec)

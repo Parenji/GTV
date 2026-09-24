@@ -2717,6 +2717,83 @@ function sportPct(value) {
   return (n > 0 ? "+" : "") + n.toFixed(3) + "%";
 }
 
+/* --------------------------------------------------------------------------
+   Ciclo di vita degli eventi (in corso -> archivio)
+   Le date in sport.json sono in italiano ("01 Ott 2026") e `chiusura` e'
+   l'istante esatto in ISO UTC. Lo scraper sposta gia' gli eventi chiusi, ma
+   gira poche volte al giorno: qui il controllo viene fatto anche nel browser,
+   cosi' un evento chiuso passa in archivio subito, senza aspettare il
+   prossimo aggiornamento dei dati (e anche se GitHub ritarda il workflow).
+   -------------------------------------------------------------------------- */
+const SPORT_MESI = {
+  gen: 0, feb: 1, mar: 2, apr: 3, mag: 4, giu: 5,
+  lug: 6, ago: 7, set: 8, ott: 9, nov: 10, dic: 11,
+};
+
+function sportDataISO(valore) {
+  if (!valore) return null;
+  const m = /^(\d{1,2})\s+([A-Za-z]{3})[a-z]*\.?\s+(\d{4})$/.exec(
+    String(valore).trim()
+  );
+  if (!m) return null;
+  const mese = SPORT_MESI[m[2].toLowerCase()];
+  if (mese === undefined) return null;
+  const d = new Date(Number(m[3]), mese, Number(m[1]));
+  if (Number.isNaN(d.getTime())) return null;
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+/* Scaduto quando l'istante di chiusura e' passato.
+
+   `chiusura` e' l'orario esatto scritto dallo scraper ("2026-09-24T06:59:59Z"):
+   le time trial chiudono a meta' mattina dell'ultimo giorno, quindi la sola
+   data non basta e l'evento resterebbe "in corso" fino a mezzanotte. Se il
+   campo manca (file vecchio, evento senza orario ufficiale) si ripiega sul
+   giorno: vale fino a fine giornata. */
+function sportEventoConcluso(evento) {
+  if (!evento) return false;
+  if (evento.conclusa === true) return true;
+  if (evento.chiusura) {
+    const quando = Date.parse(evento.chiusura);
+    if (!Number.isNaN(quando)) return Date.now() >= quando;
+  }
+  const fine = sportDataISO(evento.scadenza || evento.fine);
+  if (!fine) return false;
+  const oggi = new Date();
+  oggi.setHours(0, 0, 0, 0);
+  return fine.getTime() < oggi.getTime();
+}
+
+function sportChiaveEvento(evento) {
+  return [
+    evento.nome || evento.pista || "",
+    evento.fine || evento.scadenza || "",
+    evento.settimana || "",
+  ].join("|");
+}
+
+/* Divide gli eventi elencati come "in corso" da quelli ormai scaduti, che
+   finiscono in testa all'archivio (senza duplicare quelli gia' archiviati
+   dallo scraper). */
+function sportSeparaEventi(inCorso, archivio) {
+  const attivi = [];
+  const scaduti = [];
+  const vecchi = (archivio || []).slice();
+  const visti = new Set(vecchi.map(sportChiaveEvento));
+  (inCorso || []).forEach((evento) => {
+    if (!sportEventoConcluso(evento)) {
+      attivi.push(evento);
+      return;
+    }
+    const chiave = sportChiaveEvento(evento);
+    if (visti.has(chiave)) return;
+    visti.add(chiave);
+    scaduti.push(Object.assign({}, evento, { conclusa: true }));
+  });
+  return { attivi: attivi, archivio: scaduti.concat(vecchi) };
+}
+
 /* Riga di classifica: tempo + posizioni + distacchi */
 function sportEventTable(entries, partecipanti, messaggioVuoto) {
   if (!entries || entries.length === 0) {
@@ -2815,10 +2892,15 @@ function renderSportSection(data) {
   if (data) sportDatiSport = data;
   const d = sportDatiSport || {};
   const tt = d.time_trial || {};
-  const attivi = tt.attivi || [];
-  const passati = tt.passati || [];
-  const inCorso = d.gare_settimanali || [];
-  const precedenti = d.gare_precedenti || [];
+
+  // Un evento chiuso va in archivio anche se sport.json lo elenca ancora fra
+  // gli "in corso" (i dati si aggiornano poche volte al giorno, la chiusura e' netta).
+  const ttDivisi = sportSeparaEventi(tt.attivi, tt.passati);
+  const attivi = ttDivisi.attivi;
+  const passati = ttDivisi.archivio;
+  const gareDivise = sportSeparaEventi(d.gare_settimanali, d.gare_precedenti);
+  const inCorso = gareDivise.attivi;
+  const precedenti = gareDivise.archivio;
 
   if (!attivi.length && !passati.length && !inCorso.length && !precedenti.length) {
     body.innerHTML =
@@ -2847,12 +2929,19 @@ function renderSportSection(data) {
     });
   }
   if (precedenti.length) {
-    const settimana = precedenti[0] && precedenti[0].settimana;
+    // Se nell'archivio ci sono piu' settimane (perche' le daily appena scadute
+    // si sono aggiunte a quelle della settimana scorsa) la nota non vale piu'.
+    const settimane = Array.from(
+      new Set(precedenti.map((e) => e.settimana).filter(Boolean))
+    );
     pannelli.push({
       id: "daily",
       etichetta: "Ultime daily",
       eventi: precedenti,
-      nota: settimana ? "Gare della settimana del " + settimana + "." : null,
+      nota:
+        settimane.length === 1
+          ? "Gare della settimana del " + settimane[0] + "."
+          : null,
     });
   }
 
