@@ -63,7 +63,7 @@ le note sulle API di GT7 GridStats.
 | Workflow | Quando | Cosa aggiorna |
 |---|---|---|
 | `union-scrape.yml` | ogni 12 ore | `unionscraping/data.json` |
-| `gt7-sport.yml` | ogni 12 ore | `sportscraping/sport.json` |
+| `gt7-sport.yml` | 4 volte al giorno: 05:00 e 17:00 UTC, più 07:15 UTC (rotazione degli eventi) e 08:20 UTC di controllo | `sportscraping/sport.json` |
 | `union-race-message.yml` | la sera dei giorni di gara | messaggio Telegram |
 
 Tutti fanno push su `main`, e ogni push fa ripartire il deploy di Vercel.

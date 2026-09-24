@@ -11,7 +11,7 @@ le due sezioni omonime.
 | `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati |
 | `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
 | `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
-| `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni e i tempi del team degli **ultimi 7 giorni** (la gara cambia ogni settimana, quindi i tempi delle rotazioni precedenti non valgono e non vengono mostrati) |
+| `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni, il periodo (`inizio`/`fine`/`settimana`, calcolato dalla rotazione del lunedì) e i tempi del team degli **ultimi 7 giorni** (la gara cambia ogni settimana, quindi i tempi delle rotazioni precedenti non valgono e non vengono mostrati) |
 | `gare_precedenti` | le **3 gare della settimana scorsa**, lette dalla sezione "Previous Week" della stessa pagina, con i tempi di quella settimana |
 | `piloti` | statistiche per pilota: DR, SR, miglior piazzamento mondiale, piazzamento medio, data dell'ultimo evento e l'elenco datato degli eventi (`eventi`) |
 | | nel sito la tabella "Piloti del team" si filtra su **ALL TIME / Ultimo anno / Ultimi 3 mesi**: il filtro ricalcola rank e conteggi lato browser usando `eventi`, senza riscaricare nulla |
@@ -53,16 +53,31 @@ python3 gt7_sport.py --verbose   # mostra anche DR/SR e quanti eventi per pilota
 
 ## Aggiornamento automatico
 
-`.github/workflows/gt7-sport.yml` gira **ogni 12 ore** (05:00 e 17:00 UTC, cioè
-07:00 e 19:00 italiane d'estate), esegue lo script e — se `sport.json` è
-cambiato — lo committa: il push fa ripartire il deploy di Vercel e le sezioni
-del sito si aggiornano da sole.
+`.github/workflows/gt7-sport.yml` gira **quattro volte al giorno** (orari UTC,
+perché il reset del gioco è a UTC fisso e non si sposta con l'ora legale):
+
+| Cron | Cosa fa |
+|---|---|
+| `0 5 * * *` | giro **completo**: scarica tutto lo storico dei piloti (prima della rotazione) |
+| `15 7 * * *` | giro **della rotazione**: il gioco chiude gli eventi alle 06:59:59Z e ne apre di nuovi alle 07:00:00Z, quindi qui l'evento chiuso va in archivio e i nuovi entrano in pagina |
+| `20 8 * * *` | **controllo post-rotazione**: recupera i nomi dei circuiti se gt-gridstats era ancora indietro |
+| `0 17 * * *` | giro **leggero** di fine giornata |
+
+Lo script esegue e — se `sport.json` è cambiato — lo committa: il push fa
+ripartire il deploy di Vercel e le sezioni del sito si aggiornano da sole.
+
+> Il reset di GT7 è alle **07:00 UTC** tutto l'anno: le time trial chiudono alle
+> 06:59:59Z e i nuovi eventi partono alle 07:00:00Z (in Italia sono le 09:00
+> d'estate e le 08:00 d'inverno). Per questo il cron della rotazione è a UTC e
+> non a un'ora italiana fissa. GitHub può ritardare le partenze programmate:
+> il controllo delle date nel browser (vedi "Il passaggio in archivio è
+> automatico") copre anche quel caso, archiviando l'evento all'istante esatto.
 
 ### Se cambio l'elenco dei piloti sul foglio del team
 
 **Sì, si aggiorna da solo.** `carica_piloti_gtv()` rilegge il foglio a ogni
 giro: aggiungere, togliere o spostare un pilota (GTV ↔ JGTV) nel foglio è
-sufficiente, entro 12 ore le sezioni Sport si allineano.
+sufficiente, entro poche ore le sezioni Sport si allineano.
 
 Due cose da sapere:
 
@@ -207,6 +222,34 @@ Per aggiungere un circuito nuovo basta una riga nella tupla `LOGHI` di
   *"Ultime N time trial concluse"* e *"Ultime daily"* (le Race A/B/C della
   settimana precedente). Si cambia con i pulsanti in cima all'archivio.
 
+### Il passaggio in archivio e' automatico
+
+Un evento esce da "in corso" ed entra in **Archivio** da solo, senza toccare
+nulla a mano, in due momenti che si completano a vicenda:
+
+1. **nello scraper** (`build()`): le time trial chiuse non finiscono piu' in
+   `time_trial.attivi`, e le gare settimanali cambiano con la rotazione del
+   lunedi' (`gare_settimanali` → `gare_precedenti`);
+2. **nel browser** (`sportSeparaEventi()` in `scripts.js`): `sport.json` si
+   aggiorna poche volte al giorno, quindi il renderer ricontrolla le date a ogni
+   caricamento della pagina e sposta subito in archivio quello che risulta
+   scaduto, anche se il file lo elenca ancora fra gli "in corso".
+
+Il confronto e' a **istante**, non a giorno: ogni evento porta un campo
+`chiusura` in ISO UTC (es. `2026-09-24T06:59:59Z`) preso dall'API ufficiale.
+Le time trial chiudono a meta' mattina dell'ultimo giorno, quindi con la sola
+data l'evento resterebbe "in corso" fino a mezzanotte. Quando l'orario ufficiale
+non c'e' (evento ricostruito solo dai profili) si usa comunque `06:59:59Z` del
+giorno di fine, che e' l'orario con cui chiudono tutte le time trial.
+
+> Le time trial di GT7 durano due settimane e ne partono una o due a settimana:
+> nel periodo di sovrapposizione **piu' eventi sono davvero aperti insieme**
+> (a settembre 2026 ne sono arrivati a tre), quindi in "Time trial in corso"
+> restano piu' card finche' non scadono. Non e' un dato vecchio: e' il
+> calendario del gioco. Il codice tiene una **lista** di eventi per data di
+> inizio, non un solo nome, altrimenti i due eventi partiti lo stesso giorno
+> si sovrascriverebbero e uno sparirebbe dal sito.
+
 ## Lo storico dei piloti e' PAGINATO (scoperta del 21/09/2026)
 
 `/player/<PSN>` mostra solo **10 time trial e 10 gare per pagina**. Leggendo
@@ -229,9 +272,11 @@ pagina non aggiunge eventi nuovi) e ricostruisce lo storico reale: da ~20 a
 Scaricare tutto sono ~13 richieste per pilota (~340 per giro). Percio':
 
 - il giro delle **05:00 UTC** usa `--full` e scarica tutte le pagine;
-- quello delle **17:00 UTC** legge solo la prima pagina;
+- quelli delle **07:15, 08:20 e 17:00 UTC** leggono solo la prima pagina;
 - i dati nuovi vengono **uniti** a quelli gia' salvati, quindi il giro
   leggero non fa mai sparire lo storico profondo.
 
 Il workflow sceglie in base a `github.event.schedule`, che contiene
-l'espressione cron che ha avviato il run.
+l'espressione cron che ha avviato il run: per questo le tre schedulazioni sono
+tre voci separate e non una sola con `5,17` (con la voce unica il confronto non
+scattava mai e il giro completo non partiva).

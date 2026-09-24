@@ -4,13 +4,28 @@ name: GT7 Sport Data
 # time trial in corso (rank mondiale + tempo) e gare settimanali, piu' lo
 # storico per le sezioni "Sport" e "Sport Stats" di index.html.
 #
-# Gira ogni 12 ore sui server di GitHub, quindi anche a computer spento.
+# Gira piu' volte al giorno sui server di GitHub, quindi anche a computer spento.
 # Dopo la raccolta fa push di sport.json: il push fa ripartire il deploy
 # automatico di Vercel e le sezioni del sito si aggiornano da sole.
 on:
   schedule:
-    # 05:00 e 17:00 UTC (07:00 e 19:00 italiane d'estate)
-    - cron: "0 5,17 * * *"
+    # Ogni voce e' separata apposta: il passo qui sotto distingue il giro
+    # completo da quello leggero confrontando github.event.schedule con
+    # "0 5 * * *". Con una sola voce "0 5,17 * * *" quel confronto non
+    # scattava mai e il giro completo non partiva.
+    #
+    # Giro completo: 05:00 UTC (prima della rotazione, scarica tutto lo storico)
+    - cron: "0 5 * * *"
+    # Rotazione degli eventi: le time trial chiudono alle 06:59:59 UTC e i
+    # nuovi eventi partono alle 07:00:00 UTC. Questo e' il giro che archivia
+    # quello chiuso e mette in pagina i nuovi, pochi minuti dopo il gioco.
+    - cron: "15 7 * * *"
+    # Controllo post-rotazione: gt-gridstats (l'unica fonte dei nomi dei
+    # circuiti) si sincronizza con i server del gioco a intervalli, quindi se
+    # al giro delle 07:15 mancava ancora un nome questo lo recupera.
+    - cron: "20 8 * * *"
+    # Giro leggero di fine giornata: 17:00 UTC
+    - cron: "0 17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,9 +57,10 @@ jobs:
         # precedenti, quindi non si rompe niente: ma si vede.
         #
         # Lo storico dei piloti e' paginato (10 eventi per pagina). Il giro
-        # delle 05:00 scarica TUTTE le pagine (circa 10 minuti), quello delle
-        # 17:00 solo la prima: lo storico profondo resta perche' i dati nuovi
-        # vengono uniti a quelli gia' salvati.
+        # delle 05:00 scarica TUTTE le pagine (circa 10 minuti), gli altri
+        # (07:15 rotazione, 08:20 controllo, 17:00 sera) solo la prima: lo
+        # storico profondo resta perche' i dati nuovi vengono uniti a quelli
+        # gia' salvati.
         run: |
           if [ "${{ github.event.schedule }}" = "0 5 * * *" ]; then
             echo "Giro completo: scarico tutto lo storico"
