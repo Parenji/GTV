@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-24T12:00:00+00:00",
+    "updated_at": "2026-09-24T12:06:25+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -19,14 +19,14 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:34.666",
         "leader": "YouTube_Tidgney",
-        "partecipanti": 6893,
+        "partecipanti": 7082,
         "conclusa": false,
         "classifica": []
       },
       {
         "nome": "Michelin Raceway Road Atlanta",
         "pista": "Michelin Raceway Road Atlanta",
-        "logo": null,
+        "logo": "images/tracks/atlanta.png",
         "auto": "Porsche 963 '24",
         "inizio": "24 Set 2026",
         "fine": "08 Ott 2026",
@@ -34,7 +34,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:34.666",
         "leader": "YouTube_Tidgney",
-        "partecipanti": 6893,
+        "partecipanti": 7082,
         "conclusa": false,
         "classifica": []
       },
@@ -49,7 +49,7 @@
         "chiusura": "2026-10-01T06:59:59Z",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 109825,
+        "partecipanti": 109854,
         "conclusa": false,
         "classifica": [
           {
@@ -59,7 +59,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 5184,
+            "pos_assoluta": 5190,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.854
@@ -71,7 +71,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 5779,
+            "pos_assoluta": 5788,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": 2.919
@@ -659,7 +659,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 2642,
+          "pos_assoluta": 2647,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -5076,7 +5076,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5779,
+          "rank": 5788,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -13620,7 +13620,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5184,
+          "rank": 5190,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15578,7 +15578,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 2642,
+          "rank": 2647,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },

@@ -191,6 +191,25 @@ Fonte: il sito ufficiale GT7 espone i loghi in
 alpha, quindi **senza sfondo bianco**). Il bundle `tracklist/assets/index-*.js`
 contiene la mappa `hash -> chunk`, e ogni chunk rivela l'URL reale dell'immagine.
 
+### Come trovare il logo di un circuito (procedura esatta)
+
+L'id del logo non è il nome del circuito: l'unico modo affidabile di risalire
+all'id è la tabella dati del sito ufficiale, che accoppia nome e `baseId`.
+
+1. dalla pagina `gran-turismo.com/<lingua>/gt7/tracklist/` prendi il nome del
+   bundle, es. `common/dist/gt7/tracklist/assets/index-D6LP397v.js`;
+2. dentro il bundle cerca `track_logos/light/`: c'è la mappa
+   `id -> chunk` (es. `"051834.png":()=>import("./051834-Be_Zvqok.js")`);
+3. scarica `tracks.it-<hash>.js` dallo stesso bundle: ogni voce ha
+   `baseId` (= id del logo), `nameBase` e `nameLong` — è così che si sa che
+   **Road Atlanta = 051834**;
+4. scarica il chunk `051834-*.js`: contiene una riga sola con l'URL del PNG,
+   es. `/common/dist/gt7/tracklist/assets/051834-BK1vS4TT.png`;
+5. salva il PNG in `images/tracks/` e aggiungi la riga in `LOGHI`.
+
+Verifica che il file scaricato sia un **400x200 RGBA con il primo pixel
+trasparente**: è la firma dei loghi ufficiali (senza sfondo bianco).
+
 Aggiunti l'11/09/2026 (mancavano):
 
 | Circuito | File |
@@ -211,8 +230,37 @@ Gli ultimi cinque avevano in cartella solo la **mappa** del tracciato in SVG
 (usata dal calendario di `union.html`): ho aggiunto il logo accanto, senza
 toccare le mappe, così le card della sezione Sport sono tutte omogenee.
 
+Aggiunti il 24/09/2026, dopo la segnalazione che **Road Atlanta** (entrata in
+rotazione quel giorno) usciva senza logo — l'audit ha trovato altri 12 circuiti
+scoperti e una chiave sbagliata:
+
+| Circuito | File |
+|---|---|
+| Michelin Raceway Road Atlanta | `atlanta.png` |
+| Alsace | `alsace.png` |
+| BB Raceway | `bb-raceway.png` |
+| Blue Moon Bay Speedway | `bluemoonbay.png` |
+| Colorado Springs | `coloradosprings.png` |
+| Eiger Nordwand | `eiger.png` |
+| Fishermans Ranch | `fishermansranch.png` |
+| Goodwood | `goodwood.png` |
+| High Speed Ring | `highspeedring.png` |
+| Lake Louise | `lake louise.png` |
+| Northern Isle Speedway | `northernisle.png` |
+| Special Stage Route X | `routex.png` |
+| Trial Mountain | `trialmountain.png` |
+| Tsukuba | `tsukuba.png` |
+
+> **Bug trovato nello stesso giro**: `Circuit Gilles Villeneuve` era mappato
+> come `("gilles-villeneuve", ...)`, ma il nome ufficiale non ha il trattino,
+> quindi quel logo non è mai comparso. Ora ci sono entrambe le chiavi.
+>
+> Con questi file **tutti i 41 circuiti dell'elenco ufficiale GT7** hanno un
+> logo: la verifica è automatica, basta confrontare i `nameBase` di
+> `tracks.it-*.js` con `logo_pista()`.
+
 Per aggiungere un circuito nuovo basta una riga nella tupla `LOGHI` di
-`gt7_sport.py` (chiave = pezzo del nome pista, valore = file).
+`gt7_sport.py` (chiave = pezzo del nome pista in minuscolo, valore = file).
 
 ## Struttura della sezione Sport
 
