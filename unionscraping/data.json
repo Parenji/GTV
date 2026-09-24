@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-24T01:44:16+00:00"
+    "generated_at": "2026-09-24T15:57:44+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -2481,8 +2481,8 @@
       "name": "A25",
       "category": "PRO SILVER",
       "host": "Samu4sevenGT",
-      "live": "FMC- Fratta_motor_clb",
-      "url": "https://youtube.com/@frattagaming",
+      "live": "FMC- Samu4sevenGT",
+      "url": "https://youtube.com/@samu4seven",
       "pilots": [
         {
           "pos": 1,
@@ -2734,7 +2734,7 @@
           "pos": 6,
           "matricola": "477",
           "team": "OES",
-          "nome": "vicconegt69",
+          "nome": "OES-Vicconegt69",
           "auto": ""
         },
         {
@@ -3339,7 +3339,7 @@
           "pos": 4,
           "matricola": "498",
           "team": "RRT",
-          "nome": "Bambasten 90",
+          "nome": "RRT_BAMBASTEN",
           "auto": ""
         },
         {
