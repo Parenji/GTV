@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-24T12:06:25+00:00",
+    "updated_at": "2026-09-24T20:18:54+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -8,21 +8,6 @@
   },
   "time_trial": {
     "attivi": [
-      {
-        "nome": "Circuit de Sainte-Croix - B Reverse",
-        "pista": "Circuit de Sainte-Croix - B Reverse",
-        "logo": "images/tracks/scroix.png",
-        "auto": "Gran Turismo Red Bull X2019 25th Anniversary",
-        "inizio": "24 Set 2026",
-        "fine": "08 Ott 2026",
-        "scadenza": "08 Ott 2026",
-        "chiusura": "2026-10-08T06:59:59Z",
-        "miglior_tempo": "1:34.666",
-        "leader": "YouTube_Tidgney",
-        "partecipanti": 7082,
-        "conclusa": false,
-        "classifica": []
-      },
       {
         "nome": "Michelin Raceway Road Atlanta",
         "pista": "Michelin Raceway Road Atlanta",
@@ -32,11 +17,24 @@
         "fine": "08 Ott 2026",
         "scadenza": "08 Ott 2026",
         "chiusura": "2026-10-08T06:59:59Z",
-        "miglior_tempo": "1:34.666",
-        "leader": "YouTube_Tidgney",
-        "partecipanti": 7082,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": false,
-        "classifica": []
+        "classifica": [
+          {
+            "psn": "Utile_ruspante",
+            "gt7name": "Barda88",
+            "numero": "88",
+            "squadra": "GTV",
+            "tempo": "1:10.247",
+            "tempo_ms": 70247,
+            "pos_assoluta": 1746,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": null
+          }
+        ]
       },
       {
         "nome": "Dragon Trail - Seaside Reverse",
@@ -47,9 +45,9 @@
         "fine": "01 Ott 2026",
         "scadenza": "01 Ott 2026",
         "chiusura": "2026-10-01T06:59:59Z",
-        "miglior_tempo": "1:52.486",
-        "leader": "MetalGear9493",
-        "partecipanti": 109854,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": false,
         "classifica": [
           {
@@ -59,10 +57,10 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 5190,
+            "pos_assoluta": 5353,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.854
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "marse9191",
@@ -71,10 +69,10 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 5788,
+            "pos_assoluta": 5970,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
-            "distacco_assoluto_pct": 2.919
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -86,7 +84,7 @@
             "pos_assoluta": 27466,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.413,
-            "distacco_assoluto_pct": 5.336
+            "distacco_assoluto_pct": null
           }
         ]
       }
@@ -101,9 +99,9 @@
         "fine": "24 Set 2026",
         "scadenza": "24 Set 2026",
         "chiusura": "2026-09-24T06:59:59Z",
-        "miglior_tempo": "1:20.044",
-        "leader": "SFE_Damian",
-        "partecipanti": 180785,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -116,7 +114,7 @@
             "pos_assoluta": 1535,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.356
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -128,7 +126,7 @@
             "pos_assoluta": 7094,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.768,
-            "distacco_assoluto_pct": 2.134
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -140,7 +138,7 @@
             "pos_assoluta": 32516,
             "pos_gtv": 3,
             "distacco_gtv_pct": 1.544,
-            "distacco_assoluto_pct": 2.921
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -153,9 +151,9 @@
         "fine": "17 Set 2026",
         "scadenza": "17 Set 2026",
         "chiusura": "2026-09-17T06:59:59Z",
-        "miglior_tempo": "1:58.416",
-        "leader": "HeAvN_-",
-        "partecipanti": 182336,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -168,7 +166,7 @@
             "pos_assoluta": 3251,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.109
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -180,7 +178,7 @@
             "pos_assoluta": 3881,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.088,
-            "distacco_assoluto_pct": 2.198
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Giusdandri",
@@ -192,7 +190,7 @@
             "pos_assoluta": 4815,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.201,
-            "distacco_assoluto_pct": 2.314
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -204,7 +202,7 @@
             "pos_assoluta": 4986,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.217,
-            "distacco_assoluto_pct": 2.33
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -216,7 +214,7 @@
             "pos_assoluta": 10836,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.591,
-            "distacco_assoluto_pct": 2.712
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -228,7 +226,7 @@
             "pos_assoluta": 21311,
             "pos_gtv": 6,
             "distacco_gtv_pct": 0.964,
-            "distacco_assoluto_pct": 3.092
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "marse9191",
@@ -240,7 +238,7 @@
             "pos_assoluta": 21497,
             "pos_gtv": 7,
             "distacco_gtv_pct": 0.98,
-            "distacco_assoluto_pct": 3.109
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -252,7 +250,7 @@
             "pos_assoluta": 42081,
             "pos_gtv": 8,
             "distacco_gtv_pct": 2.001,
-            "distacco_assoluto_pct": 4.151
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -265,9 +263,9 @@
         "fine": "10 Set 2026",
         "scadenza": "10 Set 2026",
         "chiusura": "2026-09-10T06:59:59Z",
-        "miglior_tempo": "1:23.470",
-        "leader": "Damiannn_96",
-        "partecipanti": 164564,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -280,7 +278,7 @@
             "pos_assoluta": 336,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.575
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -292,7 +290,7 @@
             "pos_assoluta": 1353,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.619,
-            "distacco_assoluto_pct": 2.204
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -304,7 +302,7 @@
             "pos_assoluta": 2868,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.932,
-            "distacco_assoluto_pct": 2.522
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -316,7 +314,7 @@
             "pos_assoluta": 8014,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.315,
-            "distacco_assoluto_pct": 2.911
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -328,7 +326,7 @@
             "pos_assoluta": 14123,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.053,
-            "distacco_assoluto_pct": 3.661
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Carlos_mania",
@@ -340,7 +338,7 @@
             "pos_assoluta": 15338,
             "pos_gtv": 6,
             "distacco_gtv_pct": 2.169,
-            "distacco_assoluto_pct": 3.779
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -352,7 +350,7 @@
             "pos_assoluta": 21820,
             "pos_gtv": 7,
             "distacco_gtv_pct": 2.617,
-            "distacco_assoluto_pct": 4.234
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -364,7 +362,7 @@
             "pos_assoluta": 22465,
             "pos_gtv": 8,
             "distacco_gtv_pct": 2.647,
-            "distacco_assoluto_pct": 4.264
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -376,7 +374,7 @@
             "pos_assoluta": 93989,
             "pos_gtv": 9,
             "distacco_gtv_pct": 5.854,
-            "distacco_assoluto_pct": 7.521
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -389,9 +387,9 @@
         "fine": "03 Set 2026",
         "scadenza": "03 Set 2026",
         "chiusura": "2026-09-03T06:59:59Z",
-        "miglior_tempo": "9:26.605",
-        "leader": "Adam18_26",
-        "partecipanti": 78476,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -404,7 +402,7 @@
             "pos_assoluta": 2426,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 3.274
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -416,7 +414,7 @@
             "pos_assoluta": 2675,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.096,
-            "distacco_assoluto_pct": 3.373
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -428,7 +426,7 @@
             "pos_assoluta": 20918,
             "pos_gtv": 3,
             "distacco_gtv_pct": 3.686,
-            "distacco_assoluto_pct": 7.08
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -440,7 +438,7 @@
             "pos_assoluta": 41666,
             "pos_gtv": 4,
             "distacco_gtv_pct": 5.836,
-            "distacco_assoluto_pct": 9.301
+            "distacco_assoluto_pct": null
           }
         ]
       },
@@ -453,9 +451,9 @@
         "fine": "27 Ago 2026",
         "scadenza": "27 Ago 2026",
         "chiusura": "2026-08-27T06:59:59Z",
-        "miglior_tempo": "1:13.474",
-        "leader": "AT__1826",
-        "partecipanti": 149030,
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
         "conclusa": true,
         "classifica": [
           {
@@ -468,7 +466,7 @@
             "pos_assoluta": 661,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.678
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "titirolamadonn",
@@ -480,7 +478,7 @@
             "pos_assoluta": 977,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.162,
-            "distacco_assoluto_pct": 1.843
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "marse9191",
@@ -492,7 +490,7 @@
             "pos_assoluta": 2357,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.541,
-            "distacco_assoluto_pct": 2.228
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Vale34_",
@@ -504,7 +502,7 @@
             "pos_assoluta": 2567,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.576,
-            "distacco_assoluto_pct": 2.263
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Utile_ruspante",
@@ -516,7 +514,7 @@
             "pos_assoluta": 4954,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.853,
-            "distacco_assoluto_pct": 2.545
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTV_legendafluo",
@@ -528,7 +526,7 @@
             "pos_assoluta": 6535,
             "pos_gtv": 6,
             "distacco_gtv_pct": 0.953,
-            "distacco_assoluto_pct": 2.647
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Carlos_mania",
@@ -540,7 +538,7 @@
             "pos_assoluta": 11376,
             "pos_gtv": 7,
             "distacco_gtv_pct": 1.17,
-            "distacco_assoluto_pct": 2.868
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Hawk_MaveNich",
@@ -552,7 +550,7 @@
             "pos_assoluta": 14206,
             "pos_gtv": 8,
             "distacco_gtv_pct": 1.273,
-            "distacco_assoluto_pct": 2.972
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Yukimura9221",
@@ -564,7 +562,7 @@
             "pos_assoluta": 21983,
             "pos_gtv": 9,
             "distacco_gtv_pct": 1.822,
-            "distacco_assoluto_pct": 3.531
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Abramo1991",
@@ -576,7 +574,7 @@
             "pos_assoluta": 31251,
             "pos_gtv": 10,
             "distacco_gtv_pct": 2.309,
-            "distacco_assoluto_pct": 4.026
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Kappaonegt",
@@ -588,7 +586,7 @@
             "pos_assoluta": 32333,
             "pos_gtv": 11,
             "distacco_gtv_pct": 2.355,
-            "distacco_assoluto_pct": 4.072
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Grandisil_2",
@@ -600,7 +598,7 @@
             "pos_assoluta": 57485,
             "pos_gtv": 12,
             "distacco_gtv_pct": 3.044,
-            "distacco_assoluto_pct": 4.773
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "Pulcy85",
@@ -612,7 +610,7 @@
             "pos_assoluta": 100298,
             "pos_gtv": 13,
             "distacco_gtv_pct": 4.757,
-            "distacco_assoluto_pct": 6.515
+            "distacco_assoluto_pct": null
           },
           {
             "psn": "GTS-codebreaker",
@@ -624,7 +622,7 @@
             "pos_assoluta": 123818,
             "pos_gtv": 14,
             "distacco_gtv_pct": 6.077,
-            "distacco_assoluto_pct": 7.857
+            "distacco_assoluto_pct": null
           }
         ]
       }
@@ -635,7 +633,7 @@
       "nome": "Race A · WeatherTech Raceway Laguna Seca",
       "pista": "WeatherTech Raceway Laguna Seca",
       "logo": "images/tracks/lagunaseca.png",
-      "impostazioni": "6 giri · Road · Comfort S · Carburante x1 · Gomme x1 · auto più usata: Ford Mustang Mach 1 '71",
+      "impostazioni": "6 giri · Comfort S · Carburante x1 · Gomme x1 · auto più usata: Ford Mustang Mach 1 '71",
       "inizio": "21 Set 2026",
       "fine": "27 Set 2026",
       "settimana": "21 Set 2026",
@@ -645,7 +643,7 @@
       "nome": "Race B · Fuji International Speedway",
       "pista": "Fuji International Speedway",
       "logo": "images/tracks/fuji.png",
-      "impostazioni": "6 giri · Gr.4 · Racing M · Carburante x1 · Gomme x1 · auto più usata: GT by Citroën Gr.4",
+      "impostazioni": "6 giri · Racing M · Carburante x1 · Gomme x1 · auto più usata: GT by Citroën Gr.4",
       "inizio": "21 Set 2026",
       "fine": "27 Set 2026",
       "settimana": "21 Set 2026",
@@ -659,7 +657,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 2647,
+          "pos_assoluta": 2822,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -670,40 +668,11 @@
       "nome": "Race C · Sardegna - Road Track - A",
       "pista": "Sardegna - Road Track - A",
       "logo": "images/tracks/sardegna.png",
-      "impostazioni": "11 giri · Gr.3 · Racing M · Carburante x2 · Gomme x8 · auto più usata: Hyundai Genesis Gr.3",
+      "impostazioni": "11 giri · Racing M · Carburante x2 · Gomme x8 · auto più usata: Hyundai Genesis Gr.3",
       "inizio": "21 Set 2026",
       "fine": "27 Set 2026",
       "settimana": "21 Set 2026",
-      "classifica": [
-        {
-          "psn": "Giusdandri",
-          "gt7name": "Giusdandri",
-          "numero": "87",
-          "squadra": "GTV",
-          "auto": "Toyota Supra GT500 '97",
-          "data": "21 Set 2026",
-          "tempo": "1:43.151",
-          "tempo_ms": 103151,
-          "pos_assoluta": 12852,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Utile_ruspante",
-          "gt7name": "Barda88",
-          "numero": "88",
-          "squadra": "GTV",
-          "auto": "Hyundai Genesis Gr.3",
-          "data": "21 Set 2026",
-          "tempo": "1:43.461",
-          "tempo_ms": 103461,
-          "pos_assoluta": 15674,
-          "pos_gtv": 2,
-          "distacco_gtv_pct": 0.301,
-          "distacco_assoluto_pct": null
-        }
-      ]
+      "classifica": []
     }
   ],
   "gare_precedenti": [
@@ -5067,7 +5036,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19099,
+      "rank_medio": 19101,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -5076,7 +5045,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5788,
+          "rank": 5970,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -11924,9 +11893,9 @@
       "miglior_rank": 2345,
       "rank_medio": 19866,
       "eventi_pubblicati": 107,
-      "ultimo_evento_data": "2026-09-21",
+      "ultimo_evento_data": "2026-09-17",
       "ultimo_evento": "Suzuka Circuit",
-      "ultima_gara": "Sardegna - Road Track - A",
+      "ultima_gara": "Brands Hatch Grand Prix Circuit",
       "eventi": [
         {
           "data": "2026-09-21",
@@ -12008,16 +11977,16 @@
         {
           "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 4363,
-          "tempo": "2:00.776",
-          "evento": "Tokyo Expressway - East Clockwise"
+          "rank": 3518,
+          "tempo": "1:37.301",
+          "evento": "Red Bull Ring"
         },
         {
           "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 3518,
-          "tempo": "1:37.301",
-          "evento": "Red Bull Ring"
+          "rank": 4363,
+          "tempo": "2:00.776",
+          "evento": "Tokyo Expressway - East Clockwise"
         },
         {
           "data": "2026-07-27",
@@ -12688,12 +12657,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 20078,
-      "eventi_pubblicati": 93,
-      "ultimo_evento_data": "2026-09-24",
-      "ultimo_evento": "Willow Springs International Raceway: Big Willow",
-      "ultima_gara": "Sardegna - Road Track - A",
+      "rank_medio": 19883,
+      "eventi_pubblicati": 94,
+      "ultimo_evento_data": "2026-10-08",
+      "ultimo_evento": "Michelin Raceway Road Atlanta",
+      "ultima_gara": "Dragon Trail - Seaside",
       "eventi": [
+        {
+          "data": "2026-10-08",
+          "tipo": "time_trial",
+          "rank": 1746,
+          "tempo": "1:10.247",
+          "evento": "Michelin Raceway Road Atlanta"
+        },
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
@@ -12732,16 +12708,16 @@
         {
           "data": "2026-08-31",
           "tipo": "gara",
-          "rank": 1348,
-          "tempo": "3:31.238",
-          "evento": "24 Heures du Mans race track"
+          "rank": 8037,
+          "tempo": "1:46.662",
+          "evento": "Watkins Glen Long Course"
         },
         {
           "data": "2026-08-31",
           "tipo": "gara",
-          "rank": 8037,
-          "tempo": "1:46.662",
-          "evento": "Watkins Glen Long Course"
+          "rank": 1348,
+          "tempo": "3:31.238",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2026-08-27",
@@ -12823,16 +12799,16 @@
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 34636,
-          "tempo": "1:55.525",
-          "evento": "Trial Mountain Circuit"
+          "rank": 20784,
+          "tempo": "1:35.873",
+          "evento": "Circuit de Barcelona-Catalunya GP Layout"
         },
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 20784,
-          "tempo": "1:35.873",
-          "evento": "Circuit de Barcelona-Catalunya GP Layout"
+          "rank": 34636,
+          "tempo": "1:55.525",
+          "evento": "Trial Mountain Circuit"
         },
         {
           "data": "2026-07-19",
@@ -13611,7 +13587,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49795,
+      "rank_medio": 49797,
       "eventi_pubblicati": 136,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13620,7 +13596,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5190,
+          "rank": 5353,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15569,7 +15545,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26614,
+      "rank_medio": 26615,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": "Fuji International Speedway",
@@ -15578,7 +15554,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 2647,
+          "rank": 2822,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },
@@ -16525,7 +16501,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 279
+        "conteggio": 280
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16536,6 +16512,6 @@
         "conteggio": 1029
       }
     ],
-    "eventi_totali": 2189
+    "eventi_totali": 2190
   }
 }
