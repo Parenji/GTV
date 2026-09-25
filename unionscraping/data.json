@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-25T02:01:20+00:00"
+    "generated_at": "2026-09-25T15:58:49+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -1110,13 +1110,6 @@
           "matricola": "321",
           "team": "RMT",
           "nome": "RMT-FABBIO696",
-          "auto": ""
-        },
-        {
-          "pos": 7,
-          "matricola": "295",
-          "team": "GTRC",
-          "nome": "twinggy",
           "auto": ""
         },
         {
@@ -2731,13 +2724,6 @@
           "auto": ""
         },
         {
-          "pos": 6,
-          "matricola": "477",
-          "team": "OES",
-          "nome": "OES-Vicconegt69",
-          "auto": ""
-        },
-        {
           "pos": 7,
           "matricola": "504",
           "team": "SCGT",
@@ -3595,7 +3581,7 @@
       "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
-      "host": "Muso_2692-gt",
+      "host": "Muso_2692_gt",
       "live": "RRT- AndreaJonniFly",
       "url": "https://www.twitch.tv/gamesmotortv",
       "pilots": [
