@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-25T12:45:35+00:00",
+    "updated_at": "2026-09-25T13:53:35+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -29,7 +29,47 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 2794,
+            "pos_assoluta": 2862,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": null
+          },
+          {
+            "psn": "Giusdandri",
+            "gt7name": "Giusdandri",
+            "numero": "87",
+            "squadra": "GTV",
+            "tempo": "1:11.021",
+            "tempo_ms": 71021,
+            "pos_assoluta": 6980,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 1.102,
+            "distacco_assoluto_pct": null
+          }
+        ]
+      },
+      {
+        "nome": "Circuit de Sainte-Croix - B Reverse",
+        "pista": "Circuit de Sainte-Croix - B Reverse",
+        "logo": "images/tracks/scroix.png",
+        "auto": "Gran Turismo Red Bull X2019 25th Anniversary",
+        "inizio": "24 Set 2026",
+        "fine": "08 Ott 2026",
+        "scadenza": "08 Ott 2026",
+        "chiusura": "2026-10-08T06:59:59Z",
+        "miglior_tempo": null,
+        "leader": null,
+        "partecipanti": null,
+        "conclusa": false,
+        "classifica": [
+          {
+            "psn": "Giusdandri",
+            "gt7name": "Giusdandri",
+            "numero": "87",
+            "squadra": "GTV",
+            "tempo": "1:38.851",
+            "tempo_ms": 98851,
+            "pos_assoluta": 4127,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -57,7 +97,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 5493,
+            "pos_assoluta": 5505,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -69,7 +109,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 6133,
+            "pos_assoluta": 6145,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": null
@@ -657,7 +697,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 3004,
+          "pos_assoluta": 3020,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -5045,7 +5085,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 6133,
+          "rank": 6145,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -11891,12 +11931,26 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 19866,
-      "eventi_pubblicati": 107,
-      "ultimo_evento_data": "2026-09-17",
-      "ultimo_evento": "Suzuka Circuit",
+      "rank_medio": 19604,
+      "eventi_pubblicati": 109,
+      "ultimo_evento_data": "2026-10-08",
+      "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Brands Hatch Grand Prix Circuit",
       "eventi": [
+        {
+          "data": "2026-10-08",
+          "tipo": "time_trial",
+          "rank": 6980,
+          "tempo": "1:11.021",
+          "evento": "Michelin Raceway Road Atlanta"
+        },
+        {
+          "data": "2026-10-08",
+          "tipo": "time_trial",
+          "rank": 4127,
+          "tempo": "1:38.851",
+          "evento": "Circuit de Sainte-Croix - B Reverse"
+        },
         {
           "data": "2026-09-21",
           "tipo": "gara",
@@ -12657,7 +12711,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19894,
+      "rank_medio": 19895,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12666,7 +12720,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2794,
+          "rank": 2862,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -13596,7 +13650,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5493,
+          "rank": 5505,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15554,7 +15608,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 3004,
+          "rank": 3020,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },
@@ -16501,17 +16555,17 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 280
+        "conteggio": 281
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 685
+        "conteggio": 686
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1029
       }
     ],
-    "eventi_totali": 2190
+    "eventi_totali": 2192
   }
 }
