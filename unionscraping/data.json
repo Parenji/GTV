@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-24T15:57:44+00:00"
+    "generated_at": "2026-09-25T02:01:20+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -3107,8 +3107,8 @@
       "name": "A31",
       "category": "PRO GOLD",
       "host": "MF_maxlaqualunqe",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@max_71_mf",
       "pilots": [
         {
           "pos": 1,
@@ -3210,13 +3210,6 @@
           "matricola": "430",
           "team": "SMI",
           "nome": "SMI_NuvolaRossa",
-          "auto": ""
-        },
-        {
-          "pos": 2,
-          "matricola": "388",
-          "team": "GTRC",
-          "nome": "DRT_CALIGOLA",
           "auto": ""
         },
         {
