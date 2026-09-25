@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-25T10:14:09+00:00",
+    "updated_at": "2026-09-25T12:45:35+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -29,7 +29,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 2629,
+            "pos_assoluta": 2794,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -57,7 +57,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 5472,
+            "pos_assoluta": 5493,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": null
@@ -69,7 +69,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 6111,
+            "pos_assoluta": 6133,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": null
@@ -657,7 +657,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 2971,
+          "pos_assoluta": 3004,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -5045,7 +5045,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 6111,
+          "rank": 6133,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -11020,7 +11020,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12657,7 +12657,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19893,
+      "rank_medio": 19894,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12666,7 +12666,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2629,
+          "rank": 2794,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -13587,7 +13587,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49797,
+      "rank_medio": 49798,
       "eventi_pubblicati": 136,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13596,7 +13596,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 5472,
+          "rank": 5493,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15554,7 +15554,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 2971,
+          "rank": 3004,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },
