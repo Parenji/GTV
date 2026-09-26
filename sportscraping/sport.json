@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-26T00:13:39+00:00",
+    "updated_at": "2026-09-26T00:36:28+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 62497,
+        "partecipanti": 62779,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.866",
         "leader": "ZETA_Miyazono",
-        "partecipanti": 43458,
+        "partecipanti": 43662,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -90,7 +90,7 @@
         "chiusura": "2026-10-01T06:59:59Z",
         "miglior_tempo": "1:52.486",
         "leader": "MetalGear9493",
-        "partecipanti": 120101,
+        "partecipanti": 120167,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -743,7 +743,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.151",
           "tempo_ms": 103151,
-          "pos_assoluta": 15571,
+          "pos_assoluta": 15565,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -757,7 +757,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.461",
           "tempo_ms": 103461,
-          "pos_assoluta": 19047,
+          "pos_assoluta": 19041,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.301,
           "distacco_assoluto_pct": null
@@ -12011,7 +12011,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 15571,
+          "rank": 15565,
           "tempo": "1:43.151",
           "evento": "Sardegna - Road Track - A"
         },
@@ -12791,7 +12791,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 19047,
+          "rank": 19041,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
