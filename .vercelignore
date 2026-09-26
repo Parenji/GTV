@@ -13,6 +13,7 @@
 
 # Materiale di ricerca e note (non serve a nessuna pagina)
 sportscraping/ricerca/
+sportscraping/diagnostica.txt
 
 # Cache e artefatti locali
 **/__pycache__/

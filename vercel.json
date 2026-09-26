@@ -5,5 +5,28 @@
       "includeFiles": "unionscraping/**",
       "maxDuration": 30
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/sportscraping/sport.json",
+      "headers": [
+        { "key": "CDN-Cache-Control", "value": "no-store" },
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/unionscraping/data.json",
+      "headers": [
+        { "key": "CDN-Cache-Control", "value": "no-store" },
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/unionscraping/auto.json",
+      "headers": [
+        { "key": "CDN-Cache-Control", "value": "no-store" },
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    }
+  ]
 }

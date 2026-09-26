@@ -3139,7 +3139,13 @@ async function loadSportData() {
   if (!sportBody && !statsBody) return;
 
   try {
-    const response = await fetch(SPORT_DATA_URL + "?v=" + Date.now());
+    // cache: "no-store" perche' l'edge di Vercel tiene i file statici per
+    // percorso e ignora la query string: senza questo il browser puo' ricevere
+    // una copia vecchia di sport.json anche con il "?v=" nuovo (visto il
+    // 26/09/2026, con la pagina ferma al file del giorno prima).
+    const response = await fetch(SPORT_DATA_URL + "?v=" + Date.now(), {
+      cache: "no-store",
+    });
     if (!response.ok) throw new Error("HTTP " + response.status);
     const data = await response.json();
 
