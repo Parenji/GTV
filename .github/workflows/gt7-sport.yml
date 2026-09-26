@@ -27,6 +27,13 @@ on:
     # Giro leggero di fine giornata: 17:00 UTC
     - cron: "0 17 * * *"
   workflow_dispatch:
+    # Lanciandolo a mano si puo' chiedere il giro completo (tutto lo storico),
+    # che altrimenti gira solo alle 05:00 UTC.
+    inputs:
+      completo:
+        description: "Scarica tutto lo storico dei piloti (piu' lento, ~10 min)"
+        type: boolean
+        default: false
   # Rigenera i dati quando cambia lo scraper: cosi' una modifica al codice
   # viene provata subito sul runner vero. Il filtro esclude sport.json, che il
   # workflow stesso committa: senza l'esclusione ogni run ne innescherebbe un
@@ -70,7 +77,7 @@ jobs:
         # storico profondo resta perche' i dati nuovi vengono uniti a quelli
         # gia' salvati.
         run: |
-          if [ "${{ github.event.schedule }}" = "0 5 * * *" ]; then
+          if [ "${{ github.event.schedule }}" = "0 5 * * *" ] || [ "${{ inputs.completo }}" = "true" ]; then
             echo "Giro completo: scarico tutto lo storico"
             python3 gt7_sport.py --full
           else
