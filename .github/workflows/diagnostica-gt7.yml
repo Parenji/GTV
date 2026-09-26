@@ -1,0 +1,62 @@
+name: Diagnostica fonti Sport
+
+# Referto sulle fonti dati Sport Mode, da leggere quando il sito mostra dati
+# strani: verifica se l'API ufficiale Polyphony (tempo del leader e numero di
+# partecipanti) e' raggiungibile da GitHub Actions, dove invece gt-gridstats
+# funziona sempre.
+#
+# Il referto viene scritto in sportscraping/diagnostica.txt e committato, cosi'
+# si legge dal repo senza dover aprire i log del workflow (che richiedono
+# permessi di amministratore). Onesta' del caso: non contiene credenziali.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "sportscraping/diagnostica.py"
+      - ".github/workflows/diagnostica-gt7.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: diagnostica-gt7
+  cancel-in-progress: false
+
+jobs:
+  diagnostica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Esegui la diagnostica
+        working-directory: sportscraping
+        run: python3 diagnostica.py --scrivi
+
+      - name: Committa il referto
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if git diff --quiet -- sportscraping/diagnostica.txt; then
+            echo "Referto invariato."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sportscraping/diagnostica.txt
+          git commit -m "chore(sport): referto diagnostica fonti dati"
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::warning::Push del referto non riuscito."
+          exit 0
