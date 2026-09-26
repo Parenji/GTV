@@ -1,5 +1,5 @@
 Diagnostica fonti Sport Mode GT7
-  quando:  2026-09-26T00:07:09+00:00
+  quando:  2026-09-26T00:12:29+00:00
   macchina: Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 · Python 3.12.14
   OpenSSL: OpenSSL 3.0.13 30 Jan 2024
 
@@ -10,10 +10,13 @@ Diagnostica fonti Sport Mode GT7
    gt-gridstats.com/explore-events -> HTTP 200 · 342981 byte · 1.3s
    api.github.com                  -> HTTP 200 · 2262 byte · 0.2s
 
-3. API ufficiale Polyphony (e' quella che manca dai runner)
+3. API ufficiale Polyphony (bloccata dai datacenter)
    POST /event/get_folder    -> HTTPError 403 (Forbidden) · risposta: '<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body>\r\n<center><h1>403 Forbidden</h1></center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding '
    POST /ranking/get_top_list -> HTTPError 403 (Forbidden) · risposta: '<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body>\r\n<center><h1>403 Forbidden</h1></center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding '
 
-Se qui compare un HTTPError 403/429 o un timeout, la fonte ufficiale
-non e' raggiungibile da questa macchina: i leader e i partecipanti
-restano quelli della riserva (gt-gridstats), il conteggio no.
+4. Proxy su Vercel (api/gt7.py: e' la strada usata dai runner)
+   GET /api/gt7?board=p_rt_1014922_001 -> HTTP 200 · 114 byte · 0.4s
+
+Se al punto 3 compare HTTPError 403 e al punto 4 un 200, tutto
+regolare: l'API ufficiale blocca gli IP dei datacenter e i dati
+ufficiali arrivano dal proxy.
