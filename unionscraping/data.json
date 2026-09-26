@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-26T02:06:55+00:00"
+    "generated_at": "2026-09-26T15:09:56+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -40,7 +40,7 @@
       "name": "A1",
       "category": "STAR",
       "host": "HellBoy8408",
-      "live": "SCGT- hellboy",
+      "live": "SCGT_Giorgetto",
       "url": "https://www.twitch.tv/squadracorsegt",
       "pilots": [
         {
@@ -634,7 +634,7 @@
           "pos": 9,
           "matricola": "423",
           "team": "SCGT",
-          "nome": "simothesniper23",
+          "nome": "SCGT-SimoSniper",
           "auto": ""
         },
         {
@@ -701,7 +701,7 @@
           "pos": 5,
           "matricola": "505",
           "team": "SCGT",
-          "nome": "mcogons83",
+          "nome": "Matte#83",
           "auto": ""
         },
         {
@@ -750,7 +750,7 @@
           "pos": 12,
           "matricola": "509",
           "team": "SCGT",
-          "nome": "Domydero",
+          "nome": "domydero",
           "auto": ""
         },
         {
@@ -1292,7 +1292,7 @@
           "pos": 2,
           "matricola": "421",
           "team": "SCGT",
-          "nome": "Basilio1969",
+          "nome": "SCGT Basilio",
           "auto": ""
         },
         {
@@ -1464,7 +1464,7 @@
           "pos": 12,
           "matricola": "158",
           "team": "SCGT",
-          "nome": "Gigikom75",
+          "nome": "SCGT-GIGIKOM75",
           "auto": ""
         }
       ]
@@ -1510,7 +1510,7 @@
           "pos": 5,
           "matricola": "325",
           "team": "SCGT",
-          "nome": "Mattia13491",
+          "nome": "Scgt-mattia",
           "auto": ""
         },
         {
@@ -1598,7 +1598,7 @@
           "pos": 3,
           "matricola": "422",
           "team": "SCGT",
-          "nome": "Djvituc",
+          "nome": "SCGT-DjVituc",
           "auto": ""
         },
         {
@@ -2217,7 +2217,7 @@
           "pos": 5,
           "matricola": "326",
           "team": "SCGT",
-          "nome": "SCGT_Salvatore",
+          "nome": "SCGT-Salvatore",
           "auto": ""
         },
         {
@@ -2333,7 +2333,7 @@
           "pos": 8,
           "matricola": "507",
           "team": "SCGT",
-          "nome": "gas_95_",
+          "nome": "Gass95",
           "auto": ""
         },
         {
@@ -2734,7 +2734,7 @@
           "pos": 7,
           "matricola": "504",
           "team": "SCGT",
-          "nome": "skils137",
+          "nome": "S.Buccheri",
           "auto": ""
         },
         {
@@ -3223,7 +3223,7 @@
           "pos": 7,
           "matricola": "424",
           "team": "SCGT",
-          "nome": "Sukku-29",
+          "nome": "TER_Sukku",
           "auto": ""
         },
         {
