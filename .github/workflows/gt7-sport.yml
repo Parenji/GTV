@@ -27,6 +27,14 @@ on:
     # Giro leggero di fine giornata: 17:00 UTC
     - cron: "0 17 * * *"
   workflow_dispatch:
+  # Rigenera i dati quando cambia lo scraper: cosi' una modifica al codice
+  # viene provata subito sul runner vero. Il filtro esclude sport.json, che il
+  # workflow stesso committa: senza l'esclusione ogni run ne innescherebbe un
+  # altro all'infinito.
+  push:
+    paths:
+      - "sportscraping/**.py"
+      - ".github/workflows/gt7-sport.yml"
 
 permissions:
   contents: write

@@ -41,6 +41,7 @@ import html
 import http.cookiejar
 import io
 import json
+import os
 import re
 import sys
 import time
@@ -67,6 +68,12 @@ GRIDSTATS = "https://gt-gridstats.com"
 WEB_API = "https://web-api.gt7.game.gran-turismo.com"
 REGIONE_EU = 2          # 2 = Europa (i piloti GTV corrono in questa regione)
 FOLDER_TIME_TRIAL = 249
+
+# Ponte verso l'API ufficiale, ospitato sulla funzione Vercel del sito
+# (api/gt7.py). Serve perche' Polyphony risponde 403 agli IP dei datacenter,
+# quindi dai runner di GitHub l'API diretta non e' utilizzabile.
+PROXY_GT7 = os.environ.get("GTV_GT7_PROXY",
+                           "https://granturismotv.vercel.app/api/gt7")
 
 # Loghi dei circuiti: si riusano i file gia' presenti in images/tracks/ del
 # sito (nessun doppione), aggiungendo solo quelli che mancavano.
@@ -249,17 +256,8 @@ def post_json(path, body, timeout=TIMEOUT):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def eventi_ufficiali(region_id=REGIONE_EU):
-    """Tutti gli eventi time trial pubblicati (passati e in corso).
-
-    Ritorna [{begin, end, end_ts, ranking_id, event_id}]: `begin`/`end` sono i
-    giorni ISO (come li mostra il sito), `end_ts` e' l'istante di chiusura
-    esatto preso dall'API (le time trial chiudono a meta' mattina, quindi la
-    sola data non basta a decidere se un evento e' ancora in corso).
-    """
-    eventi = post_json("/event/get_folder",
-                       {"region_id": region_id,
-                        "folder_id": FOLDER_TIME_TRIAL}).get("result") or []
+def _eventi_da_folder(eventi):
+    """Normalizza il risultato di /event/get_folder."""
     out = []
     for ev in eventi:
         online = (ev.get("parameters") or {}).get("online") or {}
@@ -275,11 +273,76 @@ def eventi_ufficiali(region_id=REGIONE_EU):
     return out
 
 
+def _da_proxy(querystring, timeout=25):
+    """Legge dal proxy su Vercel (api/gt7.py), che non e' bloccato da Polyphony.
+
+    Il runner di GitHub riceve 403 dall'API ufficiale: Vercel invece risponde,
+    quindi il proxy fa da ponte. Solleva se il proxy non e' disponibile.
+    """
+    req = urllib.request.Request(f"{PROXY_GT7}?{querystring}",
+                                 headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        dati = json.loads(resp.read().decode("utf-8", "replace"))
+    if not dati.get("ok"):
+        raise RuntimeError(dati.get("errore") or "proxy senza dati")
+    return dati
+
+
+def eventi_ufficiali(region_id=REGIONE_EU):
+    """Tutti gli eventi time trial pubblicati (passati e in corso).
+
+    Ritorna [{begin, end, end_ts, ranking_id, event_id}]: `begin`/`end` sono i
+    giorni ISO (come li mostra il sito), `end_ts` e' l'istante di chiusura
+    esatto preso dall'API (le time trial chiudono a meta' mattina, quindi la
+    sola data non basta a decidere se un evento e' ancora in corso).
+
+    Prova prima l'API ufficiale e, se risponde 403 (succede sempre dai runner
+    di GitHub), passa dal proxy su Vercel.
+    """
+    try:
+        eventi = post_json("/event/get_folder",
+                           {"region_id": region_id,
+                            "folder_id": FOLDER_TIME_TRIAL}).get("result") or []
+        return _eventi_da_folder(eventi)
+    except Exception as diretto:
+        try:
+            dati = _da_proxy("events=1")
+        except Exception as proxy:
+            print(f"  ! API ufficiale ({diretto}) e proxy ({proxy}) "
+                  f"non disponibili", file=sys.stderr)
+            raise diretto
+        print(f"  · API ufficiale non raggiungibile ({diretto}): "
+              f"eventi letti dal proxy Vercel", file=sys.stderr)
+        out = []
+        for e in dati.get("eventi") or []:
+            if not e.get("begin") or not e.get("end"):
+                continue
+            out.append({"begin": e["begin"], "end": e["end"],
+                        "end_ts": _istante_utc(e.get("end_ts")),
+                        "ranking_id": e.get("ranking_id"),
+                        "event_id": e.get("event_id")})
+        out.sort(key=lambda e: e["end"], reverse=True)
+        return out
+
+
 def board_ufficiale(ranking_id):
-    """Leader mondiale e numero di iscritti di una classifica ufficiale."""
+    """Leader mondiale e numero di iscritti di una classifica ufficiale.
+
+    Come eventi_ufficiali(): API ufficiale e, se bloccata, proxy su Vercel.
+    """
     if not ranking_id:
         return {}
-    res = post_json("/ranking/get_top_list", {"board_id": ranking_id}).get("result") or {}
+    try:
+        res = post_json("/ranking/get_top_list",
+                        {"board_id": ranking_id}).get("result") or {}
+    except Exception as diretto:
+        try:
+            dati = _da_proxy(f"board={urllib.parse.quote(ranking_id)}")
+        except Exception as proxy:
+            print(f"  ! classifica {ranking_id}: API ufficiale ({diretto}) "
+                  f"e proxy ({proxy}) non disponibili", file=sys.stderr)
+            raise diretto
+        return dati.get("classifica") or {}
     top = res.get("list") or []
     leader = top[0] if top else {}
     return {

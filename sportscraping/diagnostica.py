@@ -18,6 +18,7 @@ Il referto non contiene credenziali: solo esiti HTTP e messaggi d'errore.
 
 import argparse
 import json
+import os
 import platform
 import socket
 import ssl
@@ -29,6 +30,8 @@ from datetime import datetime, timezone
 
 WEB_API = "https://web-api.gt7.game.gran-turismo.com"
 GRIDSTATS = "https://gt-gridstats.com"
+PROXY_GT7 = os.environ.get("GTV_GT7_PROXY",
+                           "https://granturismotv.vercel.app/api/gt7")
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 BOARD = "p_rt_1014922_001"          # una classifica time trial qualsiasi
@@ -91,15 +94,20 @@ def referto():
     scrivi(f"   api.github.com                  -> {_get('https://api.github.com')}")
     scrivi()
 
-    scrivi("3. API ufficiale Polyphony (e' quella che manca dai runner)")
+    scrivi("3. API ufficiale Polyphony (bloccata dai datacenter)")
     scrivi("   POST /event/get_folder    -> " + _post(
         f"{WEB_API}/event/get_folder", {"region_id": 2, "folder_id": 249}, timeout=30))
     scrivi("   POST /ranking/get_top_list -> " + _post(
         f"{WEB_API}/ranking/get_top_list", {"board_id": BOARD}))
     scrivi()
-    scrivi("Se qui compare un HTTPError 403/429 o un timeout, la fonte ufficiale")
-    scrivi("non e' raggiungibile da questa macchina: i leader e i partecipanti")
-    scrivi("restano quelli della riserva (gt-gridstats), il conteggio no.")
+
+    scrivi("4. Proxy su Vercel (api/gt7.py: e' la strada usata dai runner)")
+    scrivi(f"   GET /api/gt7?board={BOARD} -> " + _get(
+        f"{PROXY_GT7}?board={BOARD}"))
+    scrivi()
+    scrivi("Se al punto 3 compare HTTPError 403 e al punto 4 un 200, tutto")
+    scrivi("regolare: l'API ufficiale blocca gli IP dei datacenter e i dati")
+    scrivi("ufficiali arrivano dal proxy.")
     return "\n".join(righe) + "\n"
 
 

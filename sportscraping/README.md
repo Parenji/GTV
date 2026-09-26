@@ -43,7 +43,7 @@ piloti JGTV hanno un'etichetta accanto al nome.
 
 Senza gt-gridstats il rank personale oltre il 100° non sarebbe recuperabile.
 
-### Le due fonti sono indipendenti (e una non risponde da GitHub)
+### Le due fonti sono indipendenti (e una è bloccata da GitHub)
 
 I **piazzamenti dei piloti** vengono da gt-gridstats, il **tempo del leader
 mondiale e il numero di partecipanti** dall'API ufficiale. Sono due host
@@ -58,19 +58,30 @@ Verificato sui commit di `sport.json`:
 | GitHub Actions (49 giri) | **0** |
 | esecuzione locale (86 giri) | **86** |
 
-L'API ufficiale non è raggiungibile dai runner di GitHub. Per non lasciare il
-sito senza leader, `classifiche_gridstats()` legge la **top 100 di ogni evento
-attivo da gt-gridstats** (che invece da GitHub funziona) usando la chiamata
-Livewire `selectEvent(<id>)` della pagina `/explore-events`:
+La causa è nel referto di `diagnostica.py` girato sul runner: l'API ufficiale
+risponde **403 Forbidden** (mentre gt-gridstats e api.github.com rispondono
+200). Polyphony blocca gli IP dei datacenter: non c'è niente da correggere nel
+codice.
 
-- **1ª fonte**: scheda ufficiale (`/ranking/get_top_list`), che porta anche il
-  numero di partecipanti;
-- **2ª fonte**: gt-gridstats, quando l'ufficiale non risponde — dà il leader ma
-  **non** il conteggio dei partecipanti, che su gt-gridstats non esiste;
-- **3ª fonte**: il leader già salvato nel `sport.json` precedente, così un
-  evento appena archiviato non perde il distacco assoluto;
-- ogni card dice da dove viene il suo leader (`fonte_leader`), e
-  `meta.fonte_ufficiale` dice se l'API ufficiale ha risposto in quel giro.
+**La soluzione è un ponte**: `api/gt7.py`, una funzione serverless del sito
+(gira su Vercel, che *non* è bloccata), espone
+
+- `GET /api/gt7?board=<ranking_id>` → leader, tempo e partecipanti;
+- `GET /api/gt7?events=1` → l'elenco eventi con date e `ranking_id`.
+
+`gt7_sport.py` prova prima l'API ufficiale e, se riceve 403, passa dal proxy:
+così anche dai runner tornano **sia il leader sia il numero di partecipanti**.
+Se nemmeno il proxy risponde restano le riserve:
+
+- **gt-gridstats** — `classifiche_gridstats()` legge la top 100 di ogni evento
+  attivo con la chiamata Livewire `selectEvent(<id>)` di `/explore-events`:
+  dà il leader ma **non** il conteggio dei partecipanti (che lì non esiste);
+- **il file precedente** — il leader già salvato, così un evento appena
+  archiviato non perde il distacco assoluto.
+
+Ogni card dice da dove viene il suo leader (`fonte_leader`: `ufficiale`,
+`gt-gridstats` o `cache`) e `meta.fonte_ufficiale` dice se in quel giro l'API
+ufficiale ha risposto (`ok` oppure il messaggio d'errore).
 
 La top 100 di gt-gridstats serve anche a **capire quale scheda ufficiale
 appartiene a quale evento** quando due time trial condividono le date: senza
