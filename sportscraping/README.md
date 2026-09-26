@@ -8,8 +8,8 @@ le due sezioni omonime.
 
 | Blocco | Contenuto |
 |---|---|
-| `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati |
-| `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
+| `meta` | quando è stato aggiornato, quanti piloti ha il team, quanti hanno dati, e se l'API ufficiale ha risposto in quel giro (`fonte_ufficiale`: `ok` oppure il messaggio d'errore) |
+| `time_trial.attivi` | **tutte** le time trial in corso (in GT7 ne sono attive due in contemporanea, sfalsate di una settimana): pista, auto, periodo, leader mondiale, numero iscritti, da dove viene il leader (`fonte_leader`) e la classifica dei piloti del team con tempo, posizione tra i compagni, posizione mondiale e distacco % (relativo e assoluto) |
 | `time_trial.passati` | le ultime 5 time trial concluse, con la stessa struttura |
 | `gare_settimanali` | le **3 gare attive adesso** (Race A/B/C) lette da `/dailies`, con pista, impostazioni, il periodo (`inizio`/`fine`/`settimana`, calcolato dalla rotazione del lunedì) e i tempi del team degli **ultimi 7 giorni** (la gara cambia ogni settimana, quindi i tempi delle rotazioni precedenti non valgono e non vengono mostrati) |
 | `gare_precedenti` | le **3 gare della settimana scorsa**, lette dalla sezione "Previous Week" della stessa pagina, con i tempi di quella settimana |
@@ -36,11 +36,72 @@ piloti JGTV hanno un'etichetta accanto al nome.
 2. **gt-gridstats.com** (sito della community, non ufficiale):
    - `/player/<PSN>` → DR, SR e le tabelle *Event History* (time trial) e
      *Daily Race History* (gare settimanali) con rank mondiale e tempo;
-   - `/explore-events` → nome della pista e dell'auto delle time trial in corso;
+   - `/explore-events` → nome della pista e dell'auto delle time trial in corso
+     **e la top 100 mondiale di ogni evento** (vedi sotto);
    - `/dailies` → le 3 gare settimanali attive (Race A/B/C) e quelle della
      settimana precedente.
 
 Senza gt-gridstats il rank personale oltre il 100° non sarebbe recuperabile.
+
+### Le due fonti sono indipendenti (e una non risponde da GitHub)
+
+I **piazzamenti dei piloti** vengono da gt-gridstats, il **tempo del leader
+mondiale e il numero di partecipanti** dall'API ufficiale. Sono due host
+diversi, quindi può succedere che uno funzioni e l'altro no: è esattamente
+quello che si è visto il 24/09/2026, con i piazzamenti a posto e la colonna
+"Dist. assoluto %" vuota.
+
+Verificato sui commit di `sport.json`:
+
+| Autore del giro | Eventi con il tempo del leader |
+|---|---|
+| GitHub Actions (49 giri) | **0** |
+| esecuzione locale (86 giri) | **86** |
+
+L'API ufficiale non è raggiungibile dai runner di GitHub. Per non lasciare il
+sito senza leader, `classifiche_gridstats()` legge la **top 100 di ogni evento
+attivo da gt-gridstats** (che invece da GitHub funziona) usando la chiamata
+Livewire `selectEvent(<id>)` della pagina `/explore-events`:
+
+- **1ª fonte**: scheda ufficiale (`/ranking/get_top_list`), che porta anche il
+  numero di partecipanti;
+- **2ª fonte**: gt-gridstats, quando l'ufficiale non risponde — dà il leader ma
+  **non** il conteggio dei partecipanti, che su gt-gridstats non esiste;
+- **3ª fonte**: il leader già salvato nel `sport.json` precedente, così un
+  evento appena archiviato non perde il distacco assoluto;
+- ogni card dice da dove viene il suo leader (`fonte_leader`), e
+  `meta.fonte_ufficiale` dice se l'API ufficiale ha risposto in quel giro.
+
+La top 100 di gt-gridstats serve anche a **capire quale scheda ufficiale
+appartiene a quale evento** quando due time trial condividono le date: senza
+questo confronto due eventi partiti lo stesso giorno (24/09/2026: Sainte-Croix
+e Road Atlanta) mostravano lo stesso identico leader.
+
+### Perché il file dati non passa dalla cache (26/09/2026)
+
+Il sito chiede `sportscraping/sport.json?v=<timestamp>` per non ricevere una
+copia vecchia, ma **la cache dell'edge di Vercel usa il percorso e ignora la
+query string**: il `?v=` ferma la cache del browser, non quella del CDN. Il
+25/09/2026 la pagina è rimasta per ore sul file del giorno prima pur essendo
+il deploy aggiornato.
+
+Per questo in `vercel.json` i file generati (`sportscraping/sport.json`,
+`unionscraping/data.json`, `unionscraping/auto.json`) hanno
+`CDN-Cache-Control: no-store` (l'edge va sempre all'origine) e
+`Cache-Control: no-cache, must-revalidate` (il browser rivalida), e il fetch di
+`sport.json` usa `cache: "no-store"`.
+
+> Regola pratica: **un file che viene rigenerato non deve mai dipendere dalla
+> cache dell'edge**. Se un giorno si aggiunge un altro JSON generato, va
+> aggiunto anche lì.
+
+### Diagnostica
+
+`python3 diagnostica.py` (o il workflow *Diagnostica fonti Sport*, anche
+manuale) controlla DNS, rete e le due fonti e scrive il referto in
+`sportscraping/diagnostica.txt`: è il modo per sapere se un buco nei dati
+dipende dalla fonte ufficiale o da altro. I log dei workflow non sono
+leggibili dal repo (servono permessi di amministratore), il referto sì.
 
 ## Uso
 

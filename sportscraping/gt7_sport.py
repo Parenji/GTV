@@ -38,6 +38,7 @@ Uso:
 import argparse
 import csv
 import html
+import http.cookiejar
 import io
 import json
 import re
@@ -656,28 +657,146 @@ def parse_explore_events(raw_html):
                       "pista": righe[k + 1], "auto": righe[k + 2]}
             break
 
+    return {"eventi": eventi, "attivo": attivo,
+            "top": _parse_top(righe)}
+
+
+def _parse_top(righe):
+    """Legge la tabella mondiale 'Pos | Driver | DR/SR | Tempo | Distacco'."""
     classifica = []
-    if "Pos" in righe and "Driver" in righe:
-        i = righe.index("Driver", righe.index("Pos"))
-        k = i + 1
-        # salta le intestazioni residue ("Time", "Gap") fino alla prima posizione
-        while k < len(righe) and not re.match(r"^\d+$", righe[k]):
-            k += 1
-        while k + 4 < len(righe) and re.match(r"^\d+$", righe[k]):
-            pos, driver, drsr, tempo = righe[k], righe[k + 1], righe[k + 2], righe[k + 3]
-            distacco = righe[k + 4]
-            m = re.search(r"DR:\s*([\w+]+).*?SR:\s*([\w+]+)", drsr)
-            classifica.append({
-                "pos": int(pos),
-                "psn": driver,
-                "dr": m.group(1) if m else None,
-                "sr": m.group(2) if m else None,
-                "tempo": tempo,
-                "tempo_ms": tempo_in_ms(tempo),
-                "distacco_leader": distacco if distacco.startswith("+") else None,
-            })
-            k += 5
-    return {"eventi": eventi, "attivo": attivo, "top": classifica}
+    if "Pos" not in righe or "Driver" not in righe:
+        return classifica
+    i = righe.index("Driver", righe.index("Pos"))
+    k = i + 1
+    # salta le intestazioni residue ("Time", "Gap") fino alla prima posizione
+    while k < len(righe) and not re.match(r"^\d+$", righe[k]):
+        k += 1
+    while k + 4 < len(righe) and re.match(r"^\d+$", righe[k]):
+        pos, driver, drsr, tempo = righe[k], righe[k + 1], righe[k + 2], righe[k + 3]
+        distacco = righe[k + 4]
+        m = re.search(r"DR:\s*([\w+]+).*?SR:\s*([\w+]+)", drsr)
+        classifica.append({
+            "pos": int(pos),
+            "psn": driver,
+            "dr": m.group(1) if m else None,
+            "sr": m.group(2) if m else None,
+            "tempo": tempo,
+            "tempo_ms": tempo_in_ms(tempo),
+            "distacco_leader": distacco if distacco.startswith("+") else None,
+        })
+        k += 5
+    return classifica
+
+
+# ---------------------------------------------------------------------------
+# Classifica mondiale da gt-gridstats (riserva per l'API ufficiale)
+# ---------------------------------------------------------------------------
+def _apri_gridstats(url):
+    """Apre una pagina di gt-gridstats tenendo i cookie (serve per Livewire)."""
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    req = urllib.request.Request(url, headers={
+        "User-Agent": USER_AGENT,
+        "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
+    })
+    with opener.open(req, timeout=TIMEOUT) as resp:
+        return opener, resp.read().decode("utf-8", errors="replace")
+
+
+def eventi_attivi_con_id(raw_html):
+    """[(id_evento, pista), ...] delle time trial attive mostrate da gt-gridstats.
+
+    La pagina e' Livewire: ogni card ha `wire:key="event-<id>"` e la chiamata
+    `selectEvent(<id>)` cambia la classifica mostrata. L'id non appare nel
+    testo, quindi si legge dagli attributi HTML.
+    """
+    schede = []
+    marcatori = [(m.start(), m.group(1)) for m in
+                 re.finditer(r'wire:key="event-(\d+)"', raw_html)]
+    for n, (pos, eid) in enumerate(marcatori):
+        fine = marcatori[n + 1][0] if n + 1 < len(marcatori) else len(raw_html)
+        blocco = raw_html[pos:fine]
+        m = re.search(r"<h4[^>]*>\s*(.*?)\s*</h4>", blocco, re.S)
+        if not m:
+            continue
+        pista = html.unescape(re.sub(r"\s+", " ", m.group(1))).strip()
+        if pista:
+            schede.append((eid, pista))
+    return schede
+
+
+def classifiche_gridstats(raw_html, opener):
+    """Tempo del leader mondiale di OGNI time trial attiva, da gt-gridstats.
+
+    L'API ufficiale Polyphony non e' raggiungibile dai runner di GitHub (tutti
+    i giri automatici finora hanno scritto eventi senza leader), mentre
+    gt-gridstats si'. La pagina /explore-events mostra la top 100 di un solo
+    evento: per avere le altre si usa la chiamata Livewire `selectEvent(<id>)`,
+    riusando lo snapshot e il token della pagina appena scaricata (stessa
+    sessione, quindi stesso `opener`).
+
+    Ritorna {pista: {"leader": psn, "leader_ms": ms, "top": [...]}}, vuoto se
+    qualcosa non risponde (in quel caso il sito resta senza leader, come prima).
+    """
+    try:
+        csrf, snapshot = _token_livewire(raw_html)
+    except Exception as e:
+        print(f"  ! classifica gt-gridstats non disponibile: {e}", file=sys.stderr)
+        return {}
+
+    out = {}
+    for eid, pista in eventi_attivi_con_id(raw_html):
+        try:
+            top = _livewire_select_event(opener, csrf, snapshot, eid)
+        except Exception as e:
+            print(f"  ! top {pista}: {e}", file=sys.stderr)
+            continue
+        if top:
+            out[pista] = {"leader": top[0]["psn"],
+                          "leader_ms": top[0]["tempo_ms"],
+                          "top": top}
+        time.sleep(PAUSA_PAGINE)
+    return out
+
+
+def _token_livewire(raw_html):
+    """Token CSRF e snapshot Livewire estratti dalla pagina eventi."""
+    m = re.search(r'data-csrf="([^"]+)"', raw_html)
+    s = re.search(r'wire:snapshot="([^"]*)"', raw_html)
+    if not m or not s:
+        raise RuntimeError("token o snapshot Livewire non trovati nella pagina")
+    return m.group(1), html.unescape(s.group(1))
+
+
+def _livewire_select_event(opener, csrf, snapshot, event_id):
+    """Chiede a gt-gridstats la classifica dell'evento `event_id`."""
+    corpo = {
+        "_token": csrf,
+        "components": [{
+            "snapshot": snapshot,
+            "updates": {},
+            "calls": [{"path": "", "method": "selectEvent",
+                       "params": [int(event_id)]}],
+        }],
+    }
+    req = urllib.request.Request(
+        f"{GRIDSTATS}/livewire/update",
+        data=json.dumps(corpo).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "User-Agent": USER_AGENT,
+            "X-Livewire": "true",
+            "X-CSRF-TOKEN": csrf,
+            "Referer": f"{GRIDSTATS}/explore-events",
+        },
+    )
+    with opener.open(req, timeout=TIMEOUT) as resp:
+        risposta = json.loads(resp.read().decode("utf-8", errors="replace"))
+    componenti = risposta.get("components") or []
+    if not componenti:
+        return []
+    frammento = (componenti[0].get("effects") or {}).get("html") or ""
+    return _parse_top(testo_righe(frammento))
 
 
 # ---------------------------------------------------------------------------
@@ -797,14 +916,27 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
     gare_attive = gare_attive or []
     settimana_prec = settimana_prec or {}
 
-    # Storico gia' salvato, per non perdere le pagine profonde nei giri leggeri
-    storico_precedente = {}
+    # File precedente: serve per due cose.
+    # 1. non perdere le pagine profonde nei giri leggeri (storico_precedente);
+    # 2. ricordare il tempo del leader di ogni evento (leader_precedenti):
+    #    quando un evento passa in archivio gt-gridstats non lo copre piu' e,
+    #    se l'API ufficiale e' giu', senza questa cache il distacco assoluto
+    #    sparirebbe dalle card appena archiviate.
+    storico_precedente, leader_precedenti = {}, {}
     try:
         if OUT_JSON.exists():
-            for voce in json.loads(OUT_JSON.read_text(encoding="utf-8")).get("piloti", []):
+            salvato = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+            for voce in salvato.get("piloti", []):
                 storico_precedente[voce.get("psn")] = voce.get("eventi", [])
+            for e in salvato.get("time_trial", {}).get("attivi", []):
+                if e.get("miglior_tempo"):
+                    leader_precedenti[(e.get("nome"), e.get("fine"))] = {
+                        "leader": e.get("leader"),
+                        "miglior_tempo": e.get("miglior_tempo"),
+                        "partecipanti": e.get("partecipanti"),
+                    }
     except Exception:
-        storico_precedente = {}
+        storico_precedente, leader_precedenti = {}, {}
 
     # Eventi di gt-gridstats (pista/auto) indicizzati per data di inizio e per
     # pista. Piu' time trial possono partire lo stesso giorno, quindi per la
@@ -817,6 +949,11 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
             esplora_per_inizio.setdefault(d.isoformat(), []).append(ev)
         if ev.get("pista"):
             esplora_per_pista.setdefault(ev["pista"], ev)
+
+    # Classifiche mondiali lette da gt-gridstats: riserva quando l'API ufficiale
+    # non risponde (su GitHub non risponde mai) e ancora per capire quale scheda
+    # ufficiale appartiene a quale evento quando due condividono le date.
+    classifiche = esplora.get("classifiche") or {}
 
     def esplora_libero(begin, usati):
         """Primo evento gt-gridstats di quella data non ancora abbinato."""
@@ -841,12 +978,18 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
             per_evento.setdefault(
                 (e["data_inizio"], e["data_fine"], e["pista"]), []).append((p, e))
 
-    def scegli_board(begin, end, migliore_ms):
+    def scegli_board(begin, end, migliore_ms, leader_atteso=None):
         """Fra piu' eventi ufficiali con le stesse date sceglie quello giusto.
 
-        Le date da sole non bastano a identificarli: il leader dell'evento
-        corretto deve essere piu' veloce del miglior tempo del team, quindi
-        scelgo il piu' lento fra quelli ancora piu' veloci del team.
+        Le date da sole non bastano a identificarli. Tre indizi, in ordine:
+        1. il tempo del leader visto su gt-gridstats per QUELLA pista: se
+           combacia con una scheda ufficiale, quella e' l'accoppiata giusta
+           (senza questo, due eventi partiti lo stesso giorno prendevano la
+           stessa classifica e mostravano lo stesso leader);
+        2. il leader deve essere piu' veloce del miglior tempo del team;
+        3. se la scheda e' una sola non c'e' niente da scegliere.
+        Se resta ambiguo ritorna vuoto: meglio nessun leader che quello di un
+        altro evento (la riserva gt-gridstats lo riempie comunque).
         """
         schede = []
         for u in ufficiali:
@@ -857,11 +1000,16 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                 schede.append(info)
         if not schede:
             return {}
+        if leader_atteso:
+            vicini = [s for s in schede
+                      if abs(s["leader_ms"] - leader_atteso) <= 1000]
+            if vicini:
+                return min(vicini, key=lambda s: abs(s["leader_ms"] - leader_atteso))
         if migliore_ms:
             plausibili = [s for s in schede if s["leader_ms"] <= migliore_ms]
             if plausibili:
                 return max(plausibili, key=lambda s: s["leader_ms"])
-        return min(schede, key=lambda s: abs(s["leader_ms"] - (migliore_ms or s["leader_ms"])))
+        return schede[0] if len(schede) == 1 else {}
 
     def scheda_evento(chiave, conclusa, nome=None, end_ts=None):
         inizio, fine, pista = chiave
@@ -885,8 +1033,17 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
 
         voci.sort(key=lambda v: v["tempo_ms"] or 10 ** 9)
         mig = voci[0]["tempo_ms"] if voci else None
-        info = scegli_board(inizio, fine, mig)
-        leader_ms = info.get("leader_ms")
+        # riserva: la classifica mondiale letta da gt-gridstats per questa pista
+        gs = classifiche.get(pista) or {}
+        info = scegli_board(inizio, fine, mig, gs.get("leader_ms"))
+        etichetta = _iso_a_it(fine)
+        etichetta_it = data_it(etichetta)
+        # ultima riserva: il leader che questo evento aveva nel file precedente
+        cache = leader_precedenti.get((pista, etichetta_it)) or {}
+        leader_ms = (info.get("leader_ms") or gs.get("leader_ms")
+                     or tempo_in_ms(cache.get("miglior_tempo") or ""))
+        leader_nome = info.get("leader") or gs.get("leader") or cache.get("leader")
+        partecipanti = info.get("partecipanti") or cache.get("partecipanti")
         for i, v in enumerate(voci, start=1):
             v["pos_gtv"] = i
             v["distacco_gtv_pct"] = (
@@ -896,21 +1053,24 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                 round((v["tempo_ms"] - leader_ms) / leader_ms * 100, 3)
                 if v["tempo_ms"] and leader_ms else None)
 
-        etichetta = _iso_a_it(fine)
         return {
             "nome": pista or "Evento",
             "pista": pista,
             "logo": logo_pista(pista),
             "auto": auto_,
             "inizio": data_it(_iso_a_it(inizio)),
-            "fine": data_it(etichetta),
-            "scadenza": data_it(etichetta),
+            "fine": etichetta_it,
+            "scadenza": etichetta_it,
             # istante esatto di chiusura: il sito lo usa per spostare l'evento
             # in archivio appena scade, senza aspettare il prossimo giro
             "chiusura": _chiusura_iso(fine, end_ts),
             "miglior_tempo": _ms_a_tempo(leader_ms),
-            "leader": info.get("leader"),
-            "partecipanti": info.get("partecipanti"),
+            "leader": leader_nome,
+            "partecipanti": partecipanti,
+            # da dove arriva il tempo del leader (per capire i dati a colpo d'occhio)
+            "fonte_leader": ("ufficiale" if info.get("leader_ms")
+                             else "gt-gridstats" if gs.get("leader_ms")
+                             else "cache" if leader_ms else None),
             "conclusa": conclusa,
             "classifica": voci,
         }
@@ -1289,6 +1449,7 @@ def main():
     # quello del momento in cui si scrive il file, non di mezz'ora prima.
     print("Scarico l'elenco ufficiale delle time trial...")
     ufficiali = []
+    errore_ufficiale = None
     try:
         ufficiali = eventi_ufficiali()
         aperti = [e for e in ufficiali if not evento_chiuso(e["end"], e.get("end_ts"))]
@@ -1296,15 +1457,25 @@ def main():
         for e in aperti:
             print(f"     in corso: {e['begin']} -> {e['end']} (chiude {e['end_ts']})")
     except Exception as e:
+        errore_ufficiale = f"{type(e).__name__}: {e}"
         print(f"  ! API ufficiale non disponibile: {e}", file=sys.stderr)
+        print("    (i tempi dei leader arrivano da gt-gridstats)", file=sys.stderr)
 
     try:
-        esplora = parse_explore_events(fetch(f"{GRIDSTATS}/explore-events"))
+        # stessa sessione per la pagina e per le chiamate Livewire che seguono
+        opener_esplora, raw_esplora = _apri_gridstats(f"{GRIDSTATS}/explore-events")
+        esplora = parse_explore_events(raw_esplora)
         print(f"  time trial attive su gt-gridstats: "
               f"{', '.join(e['pista'] for e in esplora['eventi'])}")
+        esplora["classifiche"] = classifiche_gridstats(raw_esplora, opener_esplora)
+        print(f"  classifiche mondiali lette: "
+              f"{len(esplora['classifiche'])}/{len(esplora['eventi'])}")
+        for pista, classifica in esplora["classifiche"].items():
+            print(f"     {pista}: leader {classifica['leader']} "
+                  f"({_ms_a_tempo(classifica['leader_ms'])})")
     except Exception as e:
         print(f"  ! pagina eventi non disponibile: {e}", file=sys.stderr)
-        esplora = {"eventi": [], "attivo": {}, "top": []}
+        esplora = {"eventi": [], "attivo": {}, "top": [], "classifiche": {}}
 
     print("Scarico le gare settimanali (in corso e scorsa settimana)...")
     gare_attive, settimana_prec = [], {}
@@ -1323,6 +1494,12 @@ def main():
 
     dati = build(piloti, profili, esplora, ufficiali, board_info, gare_attive,
                  settimana_prec)
+
+    # Traccia quale fonte ha fornito l'elenco eventi: se l'API ufficiale e' giu'
+    # (su GitHub succede sempre) lo si legge nel file invece di scoprirlo dal
+    # sito. Serve anche a distinguere "nessun leader" da "fonte non raggiunta".
+    dati["meta"]["fonte_ufficiale"] = ("ok" if ufficiali
+                                       else (errore_ufficiale or "vuoto"))
 
     # Controlli di coerenza PRIMA di scrivere: se qualcosa non torna non
     # pubblichiamo, cosi' l'errore si vede subito invece di finire in pagina.
