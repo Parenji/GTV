@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-09-27T01:58:42+00:00"
+    "generated_at": "2026-09-27T15:51:14+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -94,9 +94,9 @@
         },
         {
           "pos": 8,
-          "matricola": "70",
+          "matricola": "74",
           "team": "SMI",
-          "nome": "SMI_Minchippo",
+          "nome": "SMI-Lellobello",
           "auto": ""
         },
         {
@@ -374,7 +374,7 @@
           "pos": 2,
           "matricola": "281",
           "team": "DCT",
-          "nome": "aquila d'oro",
+          "nome": "DCT_AquilaDoro",
           "auto": ""
         },
         {
@@ -530,9 +530,9 @@
         },
         {
           "pos": 9,
-          "matricola": "53",
+          "matricola": "52",
           "team": "RCE",
-          "nome": "RCE_Freej",
+          "nome": "RCE_DarkneSS",
           "auto": ""
         },
         {
@@ -822,9 +822,9 @@
         },
         {
           "pos": 8,
-          "matricola": "52",
+          "matricola": "53",
           "team": "RCE",
-          "nome": "RCE_DarkneSS",
+          "nome": "RCE_Freej",
           "auto": ""
         },
         {
@@ -903,9 +903,9 @@
         },
         {
           "pos": 5,
-          "matricola": "512",
-          "team": "SMI",
-          "nome": "SMI_dragulillo",
+          "matricola": "469",
+          "team": "GTRC",
+          "nome": "GTRC_Ganciocielo",
           "auto": ""
         },
         {
@@ -1035,7 +1035,7 @@
           "pos": 8,
           "matricola": "130",
           "team": "MMS",
-          "nome": "Jakarta69",
+          "nome": "Mms_Jakarta",
           "auto": ""
         },
         {
@@ -1054,9 +1054,9 @@
         },
         {
           "pos": 11,
-          "matricola": "107",
+          "matricola": "109",
           "team": "DCT",
-          "nome": "DCT_Fiume11",
+          "nome": "Er meyo",
           "auto": ""
         },
         {
@@ -1244,9 +1244,9 @@
         },
         {
           "pos": 11,
-          "matricola": "195",
+          "matricola": "191",
           "team": "DCT",
-          "nome": "TER-CAR-MELO74",
+          "nome": "Cpma",
           "auto": ""
         },
         {
@@ -1821,9 +1821,9 @@
         },
         {
           "pos": 6,
-          "matricola": "131",
-          "team": "PBC",
-          "nome": "Danny Bonny",
+          "matricola": "118",
+          "team": "GTID",
+          "nome": "GTID-Cornazzai73",
           "auto": ""
         },
         {
@@ -2354,7 +2354,7 @@
           "pos": 11,
           "matricola": "460",
           "team": "DCT",
-          "nome": "TER_R.Leta",
+          "nome": "DCT_R.Leta",
           "auto": ""
         }
       ]
@@ -2711,9 +2711,9 @@
         },
         {
           "pos": 4,
-          "matricola": "469",
-          "team": "GTRC",
-          "nome": "GTRC_Ganciocielo",
+          "matricola": "512",
+          "team": "SMI",
+          "nome": "SMI_dragulillo",
           "auto": ""
         },
         {
@@ -2957,9 +2957,9 @@
         },
         {
           "pos": 10,
-          "matricola": "22",
-          "team": "GTID",
-          "nome": "GTID_Mr PoP_jr",
+          "matricola": "37",
+          "team": "PBC",
+          "nome": "manu08FL",
           "auto": ""
         },
         {
@@ -3038,9 +3038,9 @@
         },
         {
           "pos": 7,
-          "matricola": "118",
-          "team": "GTID",
-          "nome": "GTID-Cornazzai73",
+          "matricola": "131",
+          "team": "PBC",
+          "nome": "Danny Bonny",
           "auto": ""
         },
         {
@@ -3066,9 +3066,9 @@
         },
         {
           "pos": 11,
-          "matricola": "109",
+          "matricola": "107",
           "team": "DCT",
-          "nome": "Er meyo",
+          "nome": "DCT_Fiume11",
           "auto": ""
         },
         {
@@ -3161,9 +3161,9 @@
         },
         {
           "pos": 11,
-          "matricola": "191",
+          "matricola": "195",
           "team": "DCT",
-          "nome": "Cpma",
+          "nome": "TER-CAR-MELO74",
           "auto": ""
         }
       ]
@@ -3376,9 +3376,9 @@
         },
         {
           "pos": 2,
-          "matricola": "37",
-          "team": "PBC",
-          "nome": "manu08FL",
+          "matricola": "22",
+          "team": "GTID",
+          "nome": "GTID_Mr PoP_jr",
           "auto": ""
         },
         {
@@ -3432,9 +3432,9 @@
         },
         {
           "pos": 10,
-          "matricola": "74",
+          "matricola": "70",
           "team": "SMI",
-          "nome": "SMI-Lellobello",
+          "nome": "SMI_Minchippo",
           "auto": ""
         },
         {
