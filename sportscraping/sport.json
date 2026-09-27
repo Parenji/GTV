@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-27T10:35:10+00:00",
+    "updated_at": "2026-09-27T13:00:21+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 88456,
+        "partecipanti": 90448,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 1142,
+            "pos_assoluta": 1189,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.288
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 3161,
+            "pos_assoluta": 3257,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.733
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 5434,
+            "pos_assoluta": 5618,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.097
@@ -85,7 +85,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.866",
         "leader": "ZETA_Miyazono",
-        "partecipanti": 62975,
+        "partecipanti": 64577,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:38.851",
             "tempo_ms": 98851,
-            "pos_assoluta": 8283,
+            "pos_assoluta": 8597,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 5.311
@@ -112,9 +112,9 @@
         "fine": "01 Ott 2026",
         "scadenza": "01 Ott 2026",
         "chiusura": "2026-10-01T06:59:59Z",
-        "miglior_tempo": "1:52.486",
-        "leader": "MetalGear9493",
-        "partecipanti": 128454,
+        "miglior_tempo": "1:52.427",
+        "leader": "SZ_yuhki02",
+        "partecipanti": 129291,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -125,10 +125,10 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 6064,
+            "pos_assoluta": 6113,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.854
+            "distacco_assoluto_pct": 2.908
           },
           {
             "psn": "marse9191",
@@ -137,10 +137,10 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 6780,
+            "pos_assoluta": 6834,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
-            "distacco_assoluto_pct": 2.919
+            "distacco_assoluto_pct": 2.973
           },
           {
             "psn": "Abramo1991",
@@ -152,7 +152,7 @@
             "pos_assoluta": 25456,
             "pos_gtv": 3,
             "distacco_gtv_pct": 1.932,
-            "distacco_assoluto_pct": 4.841
+            "distacco_assoluto_pct": 4.896
           },
           {
             "psn": "GTV_legendafluo",
@@ -164,7 +164,7 @@
             "pos_assoluta": 32022,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.413,
-            "distacco_assoluto_pct": 5.336
+            "distacco_assoluto_pct": 5.391
           }
         ]
       }
@@ -767,7 +767,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.151",
           "tempo_ms": 103151,
-          "pos_assoluta": 17094,
+          "pos_assoluta": 17148,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -781,7 +781,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.461",
           "tempo_ms": 103461,
-          "pos_assoluta": 20852,
+          "pos_assoluta": 20898,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.301,
           "distacco_assoluto_pct": null
@@ -795,7 +795,7 @@
           "data": "21 Set 2026",
           "tempo": "1:45.247",
           "tempo_ms": 105247,
-          "pos_assoluta": 40324,
+          "pos_assoluta": 40366,
           "pos_gtv": 3,
           "distacco_gtv_pct": 2.032,
           "distacco_assoluto_pct": null
@@ -3872,7 +3872,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 1142,
+          "rank": 1189,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -5187,7 +5187,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 6780,
+          "rank": 6834,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -6507,7 +6507,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20850,
+      "rank_medio": 20852,
       "eventi_pubblicati": 85,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6516,7 +6516,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 3161,
+          "rank": 3257,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -11169,7 +11169,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12040,7 +12040,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 19726,
+      "rank_medio": 19729,
       "eventi_pubblicati": 109,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12056,14 +12056,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 8283,
+          "rank": 8597,
           "tempo": "1:38.851",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 17094,
+          "rank": 17148,
           "tempo": "1:43.151",
           "evento": "Sardegna - Road Track - A"
         },
@@ -12820,7 +12820,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19978,
+      "rank_medio": 19980,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12829,7 +12829,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 5434,
+          "rank": 5618,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -12843,7 +12843,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 20852,
+          "rank": 20898,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
@@ -13759,7 +13759,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 6064,
+          "rank": 6113,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -15338,7 +15338,7 @@
       "dr": "?",
       "sr": "N/A",
       "miglior_rank": 14470,
-      "rank_medio": 33204,
+      "rank_medio": 33207,
       "eventi_pubblicati": 15,
       "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": null,
@@ -15347,7 +15347,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 40324,
+          "rank": 40366,
           "tempo": "1:45.247",
           "evento": "Sardegna - Road Track - A"
         },
