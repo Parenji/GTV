@@ -1,7 +1,7 @@
 {
   "meta": {
     "generated_at": "2026-09-23T19:15:00+00:00",
-    "updated_at": "2026-09-23T21:16:34+00:00",
+    "updated_at": "2026-09-28T15:33:10+00:00",
     "source": "UNION SCREENSHOT — screenshot ufficiali delle classifiche di gara",
     "app": "https://script.google.com/macros/s/AKfycbwHrAkGESRER3qYrGJVr3KfukzkNgFUzdEOX0w2dPuhEEjR_-YWbdPwIRZErctykXr3vg/exec",
     "gare_esaminate": [
@@ -9,15 +9,39 @@
     ],
     "note": "Auto lette dalle classifiche ufficiali (qualifiche + gara) delle gare finora disputate. Sono elencati solo i piloti GTV che hanno gia' corso: le colonne Union_auto/Union_marchio del foglio Google restano la fonte primaria, questo file interviene solo come fallback quando sono vuote.",
     "avvertenze": [
+      "A12_Q_1-8.png: archiviato in A12 ma la classifica dice A9 — uso A9",
+      "A12_Q_9-14.png: archiviato in A12 ma la classifica dice A9 — uso A9",
       "A9_Q_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
       "A9_Q_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
       "A9_R_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
       "A9_R_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
-      "A12_Q_1-8.png: archiviato in A12 ma la classifica dice A9 — uso A9",
-      "A12_Q_9-14.png: archiviato in A12 ma la classifica dice A9 — uso A9"
+      "screenshot identici (probabile copia): A18/A18_Q_9-14.png, A18/A18_R_9-14.png"
     ]
   },
   "piloti": {
+    "Carlos_mania": {
+      "psn": "Carlos_mania",
+      "gt7": "Sun|)own",
+      "categoria": "PRO SILVER",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A22",
+      "pos_quali": 11,
+      "pos_gara": 5,
+      "fonte": "A22_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A22",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 11,
+          "pos_gara": 5
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
     "Fra_salvo96": {
       "psn": "Fra_salvo96",
       "gt7": "Frasalvo96",
@@ -39,7 +63,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     },
     "GTS-codebreaker": {
       "psn": "GTS-codebreaker",
@@ -62,7 +86,7 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     },
     "GTV_legendafluo": {
       "psn": "GTV_legendafluo",
@@ -85,7 +109,7 @@
           "pos_gara": 11
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     },
     "Giusdandri": {
       "psn": "Giusdandri",
@@ -108,7 +132,30 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Grandisil_2": {
+      "psn": "Grandisil_2",
+      "gt7": "Scrocchio98",
+      "categoria": "PRO AMA",
+      "auto": "GT-R NISMO GT500 '16",
+      "marchio": "Nissan",
+      "gara": "GARA 1",
+      "lobby": "A33",
+      "pos_quali": 11,
+      "fonte": "A33_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A33",
+          "auto": "GT-R NISMO GT500 '16",
+          "marchio": "Nissan",
+          "pos_quali": 11,
+          "pos_gara": null
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00",
+      "pos_gara": null
     },
     "Hawk_MaveNich": {
       "psn": "Hawk_MaveNich",
@@ -131,7 +178,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     },
     "InuyashaGodYokai": {
       "psn": "InuyashaGodYokai",
@@ -154,7 +201,168 @@
           "pos_gara": 7
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Kiwi_caloroso123": {
+      "psn": "Kiwi_caloroso123",
+      "gt7": "Andre86",
+      "categoria": "PRO GOLD",
+      "auto": "RS 5 Turbo DTM '19",
+      "marchio": "Audi",
+      "gara": "GARA 1",
+      "lobby": "A28",
+      "pos_quali": 12,
+      "pos_gara": 7,
+      "fonte": "A28_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A28",
+          "auto": "RS 5 Turbo DTM '19",
+          "marchio": "Audi",
+          "pos_quali": 12,
+          "pos_gara": 7
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Mirco94-": {
+      "psn": "Mirco94-",
+      "gt7": "Mirco",
+      "categoria": "PRO GOLD",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A28",
+      "pos_quali": 13,
+      "pos_gara": 12,
+      "fonte": "A28_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A28",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 13,
+          "pos_gara": 12
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Pulcy85": {
+      "psn": "Pulcy85",
+      "gt7": "Drivergt1985",
+      "categoria": "AMA",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A33",
+      "pos_quali": 2,
+      "pos_gara": 2,
+      "fonte": "A33_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A33",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 2,
+          "pos_gara": 2
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "SP_Samuele": {
+      "psn": "SP_Samuele",
+      "gt7": "Zabo",
+      "categoria": "PRO SILVER",
+      "auto": "GT-R NISMO GT500 '16",
+      "marchio": "Nissan",
+      "gara": "GARA 1",
+      "lobby": "A22",
+      "pos_quali": 10,
+      "pos_gara": 9,
+      "fonte": "A22_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A22",
+          "auto": "GT-R NISMO GT500 '16",
+          "marchio": "Nissan",
+          "pos_quali": 10,
+          "pos_gara": 9
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Sauzer27": {
+      "psn": "Sauzer27",
+      "gt7": "Sauzer",
+      "categoria": "PRO AMA",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A20",
+      "pos_quali": 5,
+      "pos_gara": 2,
+      "fonte": "A20_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A20",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 5,
+          "pos_gara": 2
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Snake-asr88": {
+      "psn": "Snake-asr88",
+      "gt7": "Iceman",
+      "categoria": "ELITE",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A18",
+      "pos_quali": 11,
+      "pos_gara": null,
+      "fonte": "A18_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A18",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 11,
+          "pos_gara": null
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "Utile_ruspante": {
+      "psn": "Utile_ruspante",
+      "gt7": "Barda88",
+      "categoria": "PRO GOLD",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A21",
+      "pos_quali": 10,
+      "pos_gara": 4,
+      "fonte": "A21_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A21",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 10,
+          "pos_gara": 4
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     },
     "Vale34_": {
       "psn": "Vale34_",
@@ -177,7 +385,53 @@
           "pos_gara": 4
         }
       ],
-      "aggiornato_il": "2026-09-23T21:16:34+00:00"
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "marse9191": {
+      "psn": "marse9191",
+      "gt7": "Brook24",
+      "categoria": "PRO GOLD",
+      "auto": "RC F GT500 '16",
+      "marchio": "Lexus",
+      "gara": "GARA 1",
+      "lobby": "A31",
+      "pos_quali": 8,
+      "pos_gara": 9,
+      "fonte": "A31_Q_1-8.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A31",
+          "auto": "RC F GT500 '16",
+          "marchio": "Lexus",
+          "pos_quali": 8,
+          "pos_gara": 9
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+    },
+    "titirolamadonn": {
+      "psn": "titirolamadonn",
+      "gt7": "Bowie knife99",
+      "categoria": "STAR",
+      "auto": "RS 5 Turbo DTM '19",
+      "marchio": "Audi",
+      "gara": "GARA 1",
+      "lobby": "A34",
+      "pos_quali": 9,
+      "pos_gara": 8,
+      "fonte": "A34_Q_9-14.png",
+      "storico": [
+        {
+          "gara": "GARA 1",
+          "lobby": "A34",
+          "auto": "RS 5 Turbo DTM '19",
+          "marchio": "Audi",
+          "pos_quali": 9,
+          "pos_gara": 8
+        }
+      ],
+      "aggiornato_il": "2026-09-28T15:33:10+00:00"
     }
   }
 }

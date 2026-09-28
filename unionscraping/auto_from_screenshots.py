@@ -458,12 +458,13 @@ def leggi_riga(celle: list, avvisi: list, contesto: str):
         return None
 
     # Auto: cella singola o unita alla successiva (l'anno cade a capo).
+    # Prima si cercano le celle singole su tutta la riga, poi le coppie:
+    # altrimenti un soprannome corto unito all'auto ("Zabo GT-R NISMO GT500")
+    # supera la soglia di somiglianza e il pilota viene scambiato per l'auto.
     auto = marca = None
     auto_idx = auto_span = None
-    for i in range(pos_idx + 1, len(celle)):
-        for span in (1, 2):
-            if i + span > len(celle):
-                continue
+    for span in (1, 2):
+        for i in range(pos_idx + 1, len(celle) - span + 1):
             unito = " ".join(celle[j][1].strip() for j in range(i, i + span))
             trovata = riconosci_auto(unito)
             if trovata:
@@ -596,14 +597,18 @@ def abbina_pilota(nome: str, elenco: list):
     for pilota in elenco:
         if chiave in (normalizza(pilota["psn"]), normalizza(pilota["gt7"])):
             return pilota
-    # I soprannomi possono essere troncati nelle schermate ("S. Di Giovanni"):
-    # si accetta anche un rapporto di contenimento sufficientemente lungo.
+    # I soprannomi possono avere la sigla del team davanti ("GTV Drivergt1985")
+    # o essere troncati nelle schermate ("S. Di Giovanni"): si accettano solo
+    # questi due casi, e con nomi abbastanza lunghi. Un contenimento qualsiasi
+    # abbinerebbe "The Iceman00" a "Iceman" o "_#4" a "Brook24".
     for pilota in elenco:
         for alias in (pilota["psn"], pilota["gt7"]):
             alias_norm = normalizza(alias)
             if len(alias_norm) < 6:
                 continue
-            if alias_norm in chiave or chiave in alias_norm:
+            if chiave.endswith(alias_norm):
+                return pilota
+            if len(chiave) >= 6 and alias_norm.startswith(chiave):
                 return pilota
             if difflib.SequenceMatcher(None, chiave, alias_norm).ratio() >= SOGLIA_PILOTA:
                 return pilota
@@ -767,6 +772,10 @@ def fondi_con_esistente(trovati: dict, gare: list, avvisi: list) -> dict:
         precedente = piloti.get(chiave, {})
         record = dict(precedente)
         record.update({k: v for k, v in nuovo.items() if v not in (None, "")})
+        # Le posizioni si riferiscono alla gara appena letta: un null e' un
+        # dato (non in classifica), non va coperto da quello della lettura prima.
+        record["pos_quali"] = nuovo.get("pos_quali")
+        record["pos_gara"] = nuovo.get("pos_gara")
 
         storico = list(precedente.get("storico", []))
         voce = {
