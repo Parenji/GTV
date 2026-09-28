@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-28T11:42:39+00:00",
+    "updated_at": "2026-09-28T15:25:06+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 101900,
+        "partecipanti": 103738,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 1358,
+            "pos_assoluta": 1390,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.288
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 3789,
+            "pos_assoluta": 3861,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.733
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 6554,
+            "pos_assoluta": 6684,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.097
@@ -85,7 +85,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.866",
         "leader": "ZETA_Miyazono",
-        "partecipanti": 73478,
+        "partecipanti": 74897,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -114,7 +114,7 @@
         "chiusura": "2026-10-01T06:59:59Z",
         "miglior_tempo": "1:52.427",
         "leader": "SZ_yuhki02",
-        "partecipanti": 134062,
+        "partecipanti": 134890,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -125,7 +125,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 6443,
+            "pos_assoluta": 6498,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.908
@@ -137,7 +137,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 7212,
+            "pos_assoluta": 7275,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": 2.973
@@ -149,7 +149,7 @@
             "squadra": "GTV",
             "tempo": "1:56.176",
             "tempo_ms": 116176,
-            "pos_assoluta": 9070,
+            "pos_assoluta": 9131,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.415,
             "distacco_assoluto_pct": 3.335
@@ -744,7 +744,22 @@
       "inizio": "28 Set 2026",
       "fine": "04 Ott 2026",
       "settimana": "28 Set 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Yukimura9221",
+          "gt7name": "Yukimura",
+          "numero": "106",
+          "squadra": "GTV",
+          "auto": "Ferrari 296 GT3 '23",
+          "data": "28 Set 2026",
+          "tempo": "2:00.934",
+          "tempo_ms": 120934,
+          "pos_assoluta": 3251,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     },
     {
       "nome": "Race C · Red Bull Ring",
@@ -782,7 +797,7 @@
           "data": "21 Set 2026",
           "tempo": "1:48.906",
           "tempo_ms": 108906,
-          "pos_assoluta": 3478,
+          "pos_assoluta": 3868,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -3831,7 +3846,7 @@
       "dr": "A+",
       "sr": "S",
       "miglior_rank": 37,
-      "rank_medio": 7436,
+      "rank_medio": 7437,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -3840,7 +3855,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 1358,
+          "rank": 1390,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -5146,7 +5161,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19110,
+      "rank_medio": 19111,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -5155,7 +5170,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 7212,
+          "rank": 7275,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -6475,7 +6490,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20858,
+      "rank_medio": 20859,
       "eventi_pubblicati": 85,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6484,7 +6499,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 3789,
+          "rank": 3861,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -7860,7 +7875,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19998,
+      "rank_medio": 19999,
       "eventi_pubblicati": 90,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -7869,7 +7884,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 9070,
+          "rank": 9131,
           "tempo": "1:56.176",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -11151,7 +11166,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12802,7 +12817,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19992,
+      "rank_medio": 19993,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12811,7 +12826,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6554,
+          "rank": 6684,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -13732,18 +13747,25 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49805,
-      "eventi_pubblicati": 136,
+      "rank_medio": 49465,
+      "eventi_pubblicati": 137,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
-      "ultima_gara": "Dragon Trail - Seaside",
+      "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
       "eventi": [
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 6443,
+          "rank": 6498,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
+        },
+        {
+          "data": "2026-09-28",
+          "tipo": "gara",
+          "rank": 3251,
+          "tempo": "2:00.934",
+          "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
         {
           "data": "2026-09-17",
@@ -13839,16 +13861,16 @@
         {
           "data": "2026-07-13",
           "tipo": "gara",
-          "rank": 4688,
-          "tempo": "2:06.577",
-          "evento": "Nürburgring GP"
+          "rank": 9740,
+          "tempo": "2:01.326",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-07-13",
           "tipo": "gara",
-          "rank": 9740,
-          "tempo": "2:01.326",
-          "evento": "Suzuka Circuit"
+          "rank": 4688,
+          "tempo": "2:06.577",
+          "evento": "Nürburgring GP"
         },
         {
           "data": "2026-07-06",
@@ -15697,7 +15719,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26620,
+      "rank_medio": 26623,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-09-21",
       "ultimo_evento": "Fuji International Speedway",
@@ -15706,7 +15728,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 3478,
+          "rank": 3868,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
         },
@@ -16653,7 +16675,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 281
+        "conteggio": 282
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16664,6 +16686,6 @@
         "conteggio": 1033
       }
     ],
-    "eventi_totali": 2198
+    "eventi_totali": 2199
   }
 }
