@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Granturismo TV</title>
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="ui.css" />
 
         <!-- favicon -->
         <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -25,7 +26,7 @@
     </head>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  a che serve questo?-->
 
-    <body>
+    <body class="ui-site">
         <!-- container dove contiene logo per tornare al menù principale-->
         <header>
             <div class="title-container index">
@@ -85,186 +86,177 @@
 
         </header>
 
-        <!-- container principale con le notizie -->
+        <!-- Icone (stroke, ereditano il colore del testo) -->
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+            <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+            <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></symbol>
+        </svg>
+
+        <!-- container principale -->
         <div class="main-container" id="main-container">
 
-
-
-            <!--homepage sarà la storia del team-->
             <section id="home" class="section">
-                <div class="linktree-container">
+                <div class="ui-page">
 
-                    <div class="linktree-buttons">
-                        <a href="union.html" class="linktree-button gtec-button only-logo">
-                            <img src="images/Campionati/union.png" alt="union" class="linktree-icon gtec-icon">
-                            <div>Union Round 2 2026</div>
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Campionati</h2></div>
+                        <a class="ui-link" href="union.html">
+                            <span class="ui-link-media"><img src="images/Campionati/union.png" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">Union Round 2 2026</span><span class="ui-link-sub" style="display:block">Lobby, risultati e classifiche della Lega Union</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
-                        <a href="worldchampionship.html" class="linktree-button gtec-button only-logo">
-                            <img src="images/wc.png" alt="worldchampionship" class="linktree-icon gtec-icon">
-                            <div> Campionato interno</div>
+                        <a class="ui-link" href="worldchampionship.html">
+                            <span class="ui-link-media"><img src="images/wc.png" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">World Championship</span><span class="ui-link-sub" style="display:block">Campionato interno</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
+                    </section>
 
-                        <a href="https://www.instagram.com/gtvcorse_" target="_blank"
-                            class="linktree-button instagram-button">
-                            <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram"
-                                class="linktree-icon">
-                            <span>Seguici su Instagram</span>
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Social</h2></div>
+                        <a class="ui-link" href="https://www.instagram.com/gtvcorse_" target="_blank" rel="noopener">
+                            <span class="ui-link-media"><svg width="28" height="28"><use href="#i-instagram"/></svg></span>
+                            <span class="ui-link-body"><span class="ui-link-title">Seguici su Instagram</span><span class="ui-link-sub" style="display:block">@gtvcorse_</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-external"/></svg>
                         </a>
-
-                        <a href="https://www.twitch.tv/legendafluo6" target="_blank"
-                            class="linktree-button twitch-button">
-                            <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch"
-                                class="linktree-icon">
-                            <span>Guarda su Twitch</span>
+                        <a class="ui-link" href="https://www.twitch.tv/legendafluo6" target="_blank" rel="noopener">
+                            <span class="ui-link-media"><img src="images/social/twitch.svg" alt="" style="width:28px"></span>
+                            <span class="ui-link-body"><span class="ui-link-title">Guarda su Twitch</span><span class="ui-link-sub" style="display:block">legendafluo6</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-external"/></svg>
                         </a>
-                    </div>
-
-                    <div class="additional-logos">
-                        <img src="images/Campionati/as.png" alt="All star by DC Team" class="additional-logo">
-                        <img src="images/Campionati/union.png" alt="Union" class="additional-logo">
-                        <img src="images/Campionati/federation.svg" alt="Federation" class="additional-logo">
-                    </div>
-
-                    <div class="sponsor-section">
-                        <h2>Sponsor</h2>
-                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m"
-                                target="_blank" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
-                                <img src="images/sponsor/vitastrong.png" alt="VITASTRONG Sponsor">
-                                <span style="margin-top: 10px;">Codice GTVCORSE per 20% di sconto sul tuo ordine</span>
-                            </a>
+                        <div class="ui-logos" aria-label="Campionati a cui partecipiamo">
+                            <img src="images/Campionati/as.png" alt="All Star by DC Team">
+                            <img src="images/Campionati/union.png" alt="Union">
+                            <img src="images/Campionati/federation.svg" alt="Federation">
                         </div>
+                    </section>
 
-                        <div>
-                            <a href="https://www.monkeyzone.it/" target="_blank">
-                                <img src="images/sponsor/monkeyzone.svg" alt="Monkeyzone Sponsor" style="filter: invert(1);">
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Sponsor</h2></div>
+                        <div class="ui-grid" style="--ui-grid-min: 220px">
+                            <a class="ui-card ui-card--logo" href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m" target="_blank" rel="noopener">
+                                <img src="images/sponsor/vitastrong.png" alt="Vitastrong">
+                                <span class="ui-text">Codice <strong>GTVCORSE</strong> per il 20% di sconto sul tuo ordine</span>
                             </a>
-                        </div>
-                        <div>
-                            <a href="https://japancarroma.com/" target="_blank">
-                                <img src="images/sponsor/japancar.png" alt="Japan Car Roma Sponsor">
+                            <a class="ui-card ui-card--logo" href="https://www.lorasport.com/" target="_blank" rel="noopener">
+                                <img src="images/sponsor/lora.svg" alt="Lora Sport">
+                                <span class="ui-text">Codice <strong>GTVCORSE</strong> per il 20% di sconto sul tuo ordine</span>
                             </a>
-                        </div>
-                        <div>
-                            <a href="https://www.instagram.com/kustom.wrap/" target="_blank">
+                            <a class="ui-card ui-card--logo" href="https://www.monkeyzone.it/" target="_blank" rel="noopener">
+                                <img src="images/sponsor/monkeyzone.svg" alt="Monkeyzone" style="filter: invert(1)">
+                            </a>
+                            <a class="ui-card ui-card--logo" href="https://japancarroma.com/" target="_blank" rel="noopener">
+                                <img src="images/sponsor/japancar.png" alt="Japan Car Roma">
+                            </a>
+                            <a class="ui-card ui-card--logo" href="https://www.instagram.com/kustom.wrap/" target="_blank" rel="noopener">
                                 <img src="images/sponsor/kustom.png" alt="Kustom Wrap">
                             </a>
                         </div>
-                        <div>
-                            <a style="display: flex; flex-direction: column; align-items: center; text-align: center;" href="https://www.lorasport.com/" target="_blank">
-                                <img src="images/sponsor/lora.svg" alt="Lora Sport Sponsor">
-                                <span style="margin-top: 10px;">Codice GTVCORSE per 20% di sconto sul tuo ordine</span>
+                    </section>
 
-                            </a>
-                        </div>
-                    </div>
+                </div>
             </section>
-
-
 
             <section id="piloti" class="section">
-
-                <div class="table-container">
-                    <div id="piloti-body" class="piloti-container">
-                        <div style="text-align: center; padding: 20px;">
-                            Caricamento dati in corso...
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head">
+                            <h2 class="ui-section-title">Piloti</h2>
+                            <span class="ui-section-meta" id="piloti-count">Team GTV</span>
                         </div>
-                    </div>
+                        <div id="piloti-body" class="ui-grid" style="--ui-grid-min: 240px">
+                            <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento piloti…</div>
+                        </div>
+                    </section>
                 </div>
-
-                <footer class="simple-footer"></footer>
             </section>
-
-
 
             <section id="sport" class="section">
-
-                <h2>Sport</h2>
-                <div class="sport-updated" id="sport-updated"></div>
-                <div id="sport-body" class="sport-container">
-                    <div class="sport-loader">Caricamento dati in corso...</div>
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head">
+                            <h2 class="ui-section-title">Sport</h2>
+                            <span class="ui-section-meta" id="sport-updated"></span>
+                        </div>
+                        <div id="sport-body">
+                            <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento dati Sport…</div>
+                        </div>
+                    </section>
                 </div>
-
-                <footer class="simple-footer"></footer>
             </section>
-
-
 
             <section id="sportstats" class="section">
-
-                <h2>Sport Stats</h2>
-                <div class="sport-updated" id="sport-stats-updated"></div>
-                <div id="sport-stats-body" class="sport-container">
-                    <div class="sport-loader">Caricamento dati in corso...</div>
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head">
+                            <h2 class="ui-section-title">Sport Stats</h2>
+                            <span class="ui-section-meta" id="sport-stats-updated"></span>
+                        </div>
+                        <div id="sport-stats-body">
+                            <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento statistiche…</div>
+                        </div>
+                    </section>
                 </div>
-
-                <footer class="simple-footer"></footer>
             </section>
-
-
-
 
             <section id="admin" class="section">
-
-
-
-                <div class="table-container">
-                    <div class="linktree-container">
-                        <div id="admin-body" class="linktree-buttons">
-                            <div style="text-align: center; padding: 20px;">
-                                Caricamento dati in corso...
-                            </div>
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Admin</h2><span class="ui-section-meta">Chi gestisce il team</span></div>
+                        <div id="admin-body" class="ui-list">
+                            <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento…</div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-
             </section>
-
-
-
-
-            </section>
-
 
             <section id="campionati" class="section">
-                <div class="linktree-container">
-                    <div class="linktree-buttons">
-                        <a href="union.html" class="campionati-button">
-                            <img src="images/Campionati/union.png" alt="Logo Union" class="button-logo">
-                            <span>Union</span>
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Campionati</h2></div>
+                        <a class="ui-link" href="union.html">
+                            <span class="ui-link-media"><img src="images/Campionati/union.png" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">Union</span><span class="ui-link-sub" style="display:block">Lega Union E-Sport, Round 2 2026</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
-                        <a href="worldchampionship.html" class="campionati-button">
-                            <img src="images/wc.png" alt="Logo worldchampionship" class="button-logo gtec">
-                            <span>World Championship</span>
+                        <a class="ui-link" href="worldchampionship.html">
+                            <span class="ui-link-media"><img src="images/wc.png" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">World Championship</span><span class="ui-link-sub" style="display:block">Campionato interno</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
-                        <!-- <a href="gtec.html" class="campionati-button">
-                            <img src="images/Campionati/gtec.png" alt="Logo GTEC" class="button-logo gtec">
-                            <span>GTEC</span>
-                        </a>
-                        <a href="#" class="campionati-button">
-                            <img src="images/Campionati/federation.svg" alt="Logo Federation" class="button-logo">
-                            <span>Federation</span>
+                        <!-- <a class="ui-link" href="gtec.html">
+                            <span class="ui-link-media"><img src="images/Campionati/gtec.png" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">GTEC</span></span>
+                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a> -->
-                    </div>
-                </div>
-                <div class="buttons-secondary-group">
-
-
-
+                    </section>
                 </div>
             </section>
 
             <section id="palmares" class="section">
-
-
-                <h2>Palmares del Team</h2>
-
-
+                <div class="ui-page">
+                    <section class="ui-section">
+                        <div class="ui-section-head"><h2 class="ui-section-title">Palmares del team</h2></div>
+                        <div class="ui-state">Sezione in preparazione.</div>
+                    </section>
+                </div>
             </section>
-
 
         </div>
 
+        <!-- Scheda pilota (si apre toccando un pilota) -->
+        <div id="pilot-modal" class="ui-sheet" hidden>
+            <div class="ui-sheet-backdrop" data-close></div>
+            <div class="ui-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="pilot-modal-title">
+                <div class="ui-sheet-head">
+                    <div id="pilot-modal-head"></div>
+                    <button type="button" class="ui-icon-btn" data-close aria-label="Chiudi"><svg><use href="#i-close"/></svg></button>
+                </div>
+                <div class="ui-sheet-body" id="pilot-modal-body"></div>
+            </div>
+        </div>
 
     </body>
     <script src="config.js" defer></script>

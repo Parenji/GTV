@@ -1,6 +1,7 @@
 // ============================================================
 // GTV UNION - logica dedicata a union.html
-// Tabella piloti iscritti + lobby
+// Piloti iscritti, lobby, risultati e classifiche.
+// Il markup usa gli elementi di ui.css (vetrina: stile.html).
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,22 +9,90 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initUnionPage() {
+  markUnionCalendario();
   loadUnionPiloti();
   loadUnionLobby();
   loadUnionStats();
+  loadUnionClassifiche();
 }
 
 // -------------------------------------------------------------
-// STATS in evidenza nella hero (stile OpenRouter)
+// Utilita' condivise
+// -------------------------------------------------------------
+var UNION_LEGHE = ["STAR", "ELITE", "PRO GOLD", "PRO SILVER", "PRO AMA", "AMA"];
+
+// Classe colore della categoria (--cat): stessi colori ovunque
+function unionCategoryColorClass(category) {
+  var c = String(category || "").trim().toUpperCase().replace(/\s+/g, "");
+  switch (c) {
+    case "STAR":
+      return "ui-cat-star";
+    case "ELITE":
+      return "ui-cat-elite";
+    case "PROGOLD":
+      return "ui-cat-gold";
+    case "PROSILVER":
+      return "ui-cat-silver";
+    case "PROAMA":
+      return "ui-cat-proama";
+    case "AMA":
+      return "ui-cat-ama";
+    default:
+      return "";
+  }
+}
+
+function unionCatBadge(category) {
+  if (!category) return "";
+  return (
+    '<span class="ui-badge ui-badge--cat ' + unionCategoryColorClass(category) + '">' +
+    escapeHtml(category) +
+    "</span>"
+  );
+}
+
+function unionState(testo, tipo) {
+  var spinner = tipo === "loading" ? '<span class="ui-spinner" aria-hidden="true"></span>' : "";
+  var cls = tipo === "error" ? " ui-state--error" : "";
+  return '<div class="ui-state' + cls + '">' + spinner + escapeHtml(testo) + "</div>";
+}
+
+// -------------------------------------------------------------
+// CALENDARIO: segna la settimana di gara in corso o la prossima
+// (le date stanno negli attributi data-dal / data-al delle card)
+// -------------------------------------------------------------
+function markUnionCalendario() {
+  var cards = document.querySelectorAll("#union-calendario .ui-race");
+  if (!cards.length) return;
+  var oggi = new Date();
+  oggi.setHours(0, 0, 0, 0);
+  var segnata = false;
+  Array.prototype.forEach.call(cards, function (card) {
+    var dal = new Date(card.getAttribute("data-dal") + "T00:00:00");
+    var al = new Date(card.getAttribute("data-al") + "T23:59:59");
+    var etichetta = card.querySelector(".ui-race-round");
+    if (segnata || isNaN(dal) || isNaN(al) || al < oggi) return;
+    card.classList.add("is-next");
+    if (etichetta) {
+      etichetta.insertAdjacentHTML(
+        "beforeend",
+        ' <span class="ui-badge ui-badge--accent">' + (dal <= oggi ? "In corso" : "Prossima") + "</span>"
+      );
+    }
+    segnata = true;
+  });
+}
+
+// -------------------------------------------------------------
+// STATS della testata
 // - Piloti iscritti totali: data.json stats.total_pilots
-// - Piloti GTV: conteggio team "GTV" in data.json pilots
-// - Gare: conteggio delle card .race-item nella sezione Calendario
-// I numeri si aggiornano da soli quando vengono caricati i dati.
+// - Piloti GTV: GTV unici presenti nelle lobby
+// - Gare: card del calendario
 // -------------------------------------------------------------
 function loadUnionStats() {
   var gareEl = document.getElementById("union-stat-gare");
   if (gareEl) {
-    var gare = document.querySelectorAll("#calendario .race-item").length;
+    var gare = document.querySelectorAll("#calendario .ui-race").length;
     if (gare > 0) gareEl.textContent = gare;
   }
 
@@ -35,12 +104,21 @@ function loadUnionStats() {
         totalEl.textContent = data.stats.total_pilots;
       }
 
+      // Piloti GTV: si contano i GTV unici presenti nelle lobby, così il
+      // numero della testata coincide con lo specchietto e con la lista
+      // iscritti (il roster data.pilots può contenere nomi vecchi/non
+      // schierati, es. GTV-legendafluo6 al posto di GTV-Oriano06).
       var gtvEl = document.getElementById("union-stat-gtv");
       if (gtvEl) {
-        var gtv = 0;
-        (data.pilots || []).forEach(function (p) {
-          if (String(p.team || "").trim().toUpperCase() === "GTV") gtv++;
+        var gtvNomi = {};
+        (data.lobbies || []).forEach(function (lb) {
+          (lb.pilots || []).forEach(function (p) {
+            if (String(p.team || "").trim().toUpperCase() === "GTV") {
+              gtvNomi[String(p.nome || "").trim().toLowerCase()] = true;
+            }
+          });
         });
+        var gtv = Object.keys(gtvNomi).length;
         gtvEl.textContent = gtv > 0 ? gtv : "—";
       }
     })
@@ -51,11 +129,10 @@ function loadUnionStats() {
 }
 
 // -------------------------------------------------------------
-// TABELLA PILOTI ISCRITTI (dati dal CSV piloti di index.html)
+// PILOTI ISCRITTI (dati dal CSV piloti di index.html)
 // Colonna F (indice 5) = partecipazione Union
-// La colonna MATRICOLA viene invece presa da unionscraping/data.json
-// (ctech: il nome in lobby del JSON corrisponde al PSN r[0] del CSV,
-// con fallback sul nickname GT7 r[1]).
+// La matricola viene presa da unionscraping/data.json (il nome in
+// lobby corrisponde al PSN r[0] del CSV, con ripiego sul GT7 r[1]).
 // -------------------------------------------------------------
 function loadUnionPiloti() {
   var container = document.getElementById("union-piloti-body");
@@ -67,8 +144,7 @@ function loadUnionPiloti() {
       : "";
 
   if (!url) {
-    container.innerHTML =
-      '<div class="error-message">Configurazione non trovata.</div>';
+    container.innerHTML = unionState("Configurazione non trovata.", "error");
     return;
   }
 
@@ -94,7 +170,7 @@ function loadUnionPiloti() {
 
       var rows = parseCsv(csvText);
       if (!rows || rows.length === 0) {
-        container.innerHTML = '<div class="error-message">Nessun dato.</div>';
+        container.innerHTML = unionState("Nessun dato.", "empty");
         return;
       }
 
@@ -107,8 +183,7 @@ function loadUnionPiloti() {
     })
     .catch(function (error) {
       console.error("Errore caricamento piloti Union:", error);
-      container.innerHTML =
-        '<div class="error-message">Impossibile caricare i piloti Union.</div>';
+      container.innerHTML = unionState("Impossibile caricare i piloti Union.", "error");
     });
 }
 
@@ -142,7 +217,7 @@ function lookupUnionMatricola(map, psn, gt7) {
 
 // Parser CSV semplice (il CSV di Google non ha campi tra virgolette usati qui)
 function parseCsv(csvText) {
-  var text = (csvText || "").replace(/^\uFEFF/, "");
+  var text = (csvText || "").replace(/^﻿/, "");
   var lines = text.split("\n");
   var rows = [];
   for (var i = 0; i < lines.length; i++) {
@@ -165,17 +240,10 @@ function parseCsv(csvText) {
   return rows;
 }
 
-// -------------------------------------------------------------
-// RENDER card piloti GTV iscritti (mobile-first, niente tabelle)
-// Ogni pilota è una card con N°, matricola, PSN, GT7, categoria,
-// marca (logo) e auto — tutte le info che prima erano in tabella.
-// -------------------------------------------------------------
-var UNION_TIERS = ["STAR", "ELITE", "PRO GOLD", "PRO SILVER", "PRO AMA", "AMA"];
-
 function unionTierIndex(cat) {
   var c = String(cat || "").trim().toUpperCase();
-  var i = UNION_TIERS.indexOf(c);
-  return i === -1 ? UNION_TIERS.length : i;
+  var i = UNION_LEGHE.indexOf(c);
+  return i === -1 ? UNION_LEGHE.length : i;
 }
 
 // Nome con cui ordinare le card: quello GT7 se presente, altrimenti il PSN.
@@ -185,24 +253,21 @@ function unionNomeOrdinamento(riga) {
   return (gt7 || psn).toLowerCase();
 }
 
-// Logo marca con fallback PNG -> SVG (come worldchampionship)
+// Logo marca con ripiego PNG -> SVG (come worldchampionship)
 function brandLogoHtml(brand) {
   var b = String(brand || "").trim();
   if (!b) return "";
   var slug = b.toLowerCase().replace(/[^a-z0-9]+/g, "");
   var png = "images/marchi-auto/" + slug + ".png";
   var svg = "images/marchi-auto/" + slug + ".svg";
-  var out =
-    '<img src="' + png + '" alt="' + escapeHtml(b) + '" class="union-brand-logo" ';
-  out += ' onerror="if(this.src.indexOf(\'.png\') !== -1){this.onerror=null;this.src=\'';
-  out += svg;
-  out += '\';}" />';
-  return out;
+  return (
+    '<img src="' + png + '" alt="' + escapeHtml(b) + '" class="ui-pilot-brand"' +
+    " onerror=\"if(this.src.indexOf('.png') !== -1){this.src='" + svg + "';}else{this.style.display='none';}\">"
+  );
 }
 
 function renderUnionPilotiCards(container, rows, unionData, autoData) {
-  // L'ordine segue il nome mostrato in evidenza (GT7, con il PSN come
-  // ripiego), così la lista appare ordinata come viene letta.
+  // Per categoria, poi per il nome mostrato in evidenza (GT7, o PSN)
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
     if (tierDiff !== 0) return tierDiff;
@@ -212,85 +277,56 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
   var matricolaMap = buildUnionMatricolaMap(unionData);
   var autoMap = buildUnionAutoMap(autoData);
 
-  var html = '<div class="union-pilot-cards">';
+  var cards = rows
+    .map(function (r) {
+      var numero = r[2] || "—";
+      var psn = String(r[0] || "").trim();
+      var gt7 = String(r[1] || "").trim();
+      var cat = String(r[6] || "").trim();
+      // Auto e marchio: prima il foglio Google, altrimenti il ripiego
+      // con le auto lette dalle classifiche ufficiali delle gare.
+      var autoRec = lookupUnionAuto(autoMap, psn, gt7);
+      var auto = r[7] || (autoRec ? autoRec.auto : "") || "—";
+      var marchio = r[8] || (autoRec ? autoRec.marchio : "") || "";
+      var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
 
-  rows.forEach(function (r) {
-    var numero = r[2] || "—";
-    var psn = String(r[0] || "").trim();
-    var gt7 = String(r[1] || "").trim();
-    var cat = r[6] || "—";
-    // Auto e marchio: prima il foglio Google, altrimenti il fallback
-    // con le auto lette dalle classifiche ufficiali delle gare.
-    var autoRec = lookupUnionAuto(autoMap, psn, gt7);
-    var auto = r[7] || (autoRec ? autoRec.auto : "") || "—";
-    var marchio = r[8] || (autoRec ? autoRec.marchio : "") || "";
-
-    var matricola = lookupUnionMatricola(matricolaMap, psn, gt7);
-
-    // Il nome in evidenza è quello GT7: è il soprannome che si vede in
-    // gioco e nelle classifiche ufficiali. Sotto c'è sempre il PSN, anche
-    // quando coincide con il GT7.
-    var nomePrincipale = gt7 || psn || "—";
-    var nomeSecondario = psn;
-
-    var brandBlock = marchio
-      ? brandLogoHtml(marchio) +
-        '<div class="union-brand-name">' +
-        escapeHtml(marchio) +
+      // In evidenza il nome GT7 (quello visto in gioco e nelle classifiche),
+      // sotto sempre il PSN, anche quando coincide.
+      return (
+        '<div class="ui-card ui-pilot">' +
+        '<div class="ui-pilot-top"><span class="ui-pilot-num">#' + escapeHtml(numero) + "</span>" +
+        unionCatBadge(cat) + "</div>" +
+        (marchio ? brandLogoHtml(marchio) : "<span></span>") +
+        '<div class="ui-pilot-name">' + escapeHtml(gt7 || psn || "—") + "</div>" +
+        '<div class="ui-pilot-sub">' + escapeHtml(psn) + "</div>" +
+        '<dl class="ui-kv">' +
+        "<div><dt>Matricola</dt><dd>" + escapeHtml(matricola) + "</dd></div>" +
+        "<div><dt>Auto</dt><dd>" + escapeHtml(auto) + "</dd></div>" +
+        "</dl>" +
         "</div>"
-      : '<span class="union-empty">—</span>';
+      );
+    })
+    .join("");
 
-    var catPatch =
-      cat !== "—"
-        ? '<span class="union-specch-patch ' +
-          unionCategoryColorClass(cat) +
-          '">' +
-          escapeHtml(cat) +
-          "</span>"
-        : "";
+  var meta = document.getElementById("union-piloti-count");
+  if (meta) meta.textContent = rows.length + " piloti";
 
-    var nicknameBlock = nomeSecondario
-      ? '<div class="union-pilot-nickname">' + escapeHtml(nomeSecondario) + "</div>"
-      : "";
-
-    html +=
-      '<div class="union-pilot-card">' +
-      '<div class="union-pilot-head">' +
-      '<span class="union-pilot-num">#' + escapeHtml(numero) + "</span>" +
-      catPatch +
-      '<div class="union-pilot-brand">' + brandBlock + "</div>" +
-      "</div>" +
-      '<div class="union-pilot-name">' + escapeHtml(nomePrincipale) + "</div>" +
-      nicknameBlock +
-      '<div class="union-pilot-meta">' +
-      '<span class="union-pilot-meta-item">' +
-      '<span class="union-pilot-meta-label">Matricola</span>' +
-      escapeHtml(matricola) +
-      "</span>" +
-      '<span class="union-pilot-meta-item">' +
-      '<span class="union-pilot-meta-label">Auto</span>' +
-      escapeHtml(auto) +
-      "</span>" +
-      "</div>" +
-      "</div>";
-  });
-
-  html += "</div>";
-
-  var count =
-    '<div class="union-count">' + rows.length + " piloti iscritti</div>";
-
-  container.innerHTML = count + html;
+  container.innerHTML = '<div class="ui-grid" style="--ui-grid-min: 260px">' + cards + "</div>";
 }
 
 // -------------------------------------------------------------
-// SEZIONE LOBBY - dati estratti da unionscraping/data.json
+// LOBBY - dati estratti da unionscraping/data.json
 // 1) Specchietto riassuntivo dei piloti GTV con link alla lobby
 // 2) Tutte le lobby (schieramenti completi) raggruppate per giorno
 // -------------------------------------------------------------
-
-// Dati generati dallo scraper (stessi campi di data.json)
 var UNION_LOBBY_DAYS = ["LUNEDI", "MARTEDI", "MERCOLEDI", "GIOVEDI", "VENERDI"];
+var UNION_DAY_LABEL = {
+  LUNEDI: "Lunedì",
+  MARTEDI: "Martedì",
+  MERCOLEDI: "Mercoledì",
+  GIOVEDI: "Giovedì",
+  VENERDI: "Venerdì",
+};
 
 // URL dei dati estratti dallo scraper
 function unionLobbyDataUrl() {
@@ -300,7 +336,7 @@ function unionLobbyDataUrl() {
 }
 
 // Fetch condiviso e memoizzato: data.json viene scaricato una sola volta
-// e riusato sia dalle lobby sia dalla tabella piloti (colonna Matricola).
+// e riusato da lobby, testata e piloti (colonna Matricola).
 var _unionLobbyDataPromise = null;
 function fetchUnionLobbyData() {
   if (!_unionLobbyDataPromise) {
@@ -320,8 +356,7 @@ function fetchUnionLobbyData() {
 // -------------------------------------------------------------
 // AUTO USATE IN GARA (unionscraping/auto.json)
 // Le colonne Union_auto / Union_marchio del foglio Google restano la
-// fonte primaria: questo file interviene solo se sono vuote, così la
-// sezione piloti mostra comunque l'auto realmente usata in pista.
+// fonte primaria: questo file interviene solo se sono vuote.
 // -------------------------------------------------------------
 function unionAutoDataUrl() {
   return window.GTV_CONFIG && window.GTV_CONFIG.unionAutoData
@@ -386,15 +421,14 @@ function loadUnionLobby() {
     })
     .catch(function (err) {
       console.error("Errore caricamento lobby:", err);
-      var msg = '<div class="error-message">Impossibile caricare le lobby Union.</div>';
+      var msg = unionState("Impossibile caricare le lobby Union.", "error");
       if (specchietto) specchietto.innerHTML = msg;
       if (body) body.innerHTML = msg;
     });
 }
 
-// Scritta "ultimo aggiornamento automatico" nella sezione lobby.
-// Legge meta.generated_at (timestamp UTC scritto dallo scraper in data.json)
-// e lo mostra in data/ora locali del visitatore.
+// "Ultimo aggiornamento automatico": meta.generated_at (UTC) di data.json
+// mostrato in data/ora locali del visitatore.
 function setUnionLastUpdate(data) {
   var el = document.getElementById("union-last-update");
   if (!el) return;
@@ -402,20 +436,19 @@ function setUnionLastUpdate(data) {
   if (!iso) return; // assente → elemento resta nascosto
   var d = new Date(iso);
   if (isNaN(d.getTime())) return;
-  el.innerHTML =
-    "Ultimo aggiornamento automatico: <b>" +
+  el.textContent =
+    "Ultimo aggiornamento automatico: " +
     d.toLocaleString("it-IT", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-    }) +
-    "</b>";
+    });
   el.hidden = false;
 }
 
-// Id univoco di una card-lobby (per gli ancoraggi dello specchietto)
+// Id univoco di una lobby (per gli ancoraggi dello specchietto)
 function lobbyCardId(day, name) {
   return "union-lobby-" + String(day || "").toLowerCase() + "-" + String(name || "").toLowerCase();
 }
@@ -426,258 +459,637 @@ function unionDayIndex(day) {
   return i === -1 ? UNION_LOBBY_DAYS.length : i;
 }
 
-// Abbreviazioni per i giorni (per risparmiare spazio su mobile)
-var UNION_DAY_SHORT = {
-  LUNEDI: "LUN",
-  MARTEDI: "MAR",
-  MERCOLEDI: "MER",
-  GIOVEDI: "GIO",
-  VENERDI: "VEN",
-};
-
-// Colore della patch in base alla categoria della lobby.
-// La normalizzazione elimina spazi/maiuscole: così "PRO GOLD"/"PROGOLD",
-// "PRO SILVER"/"PROSILVER" e "PRO AMA"/"PROAMA" coincidono.
-function unionCategoryColorClass(category) {
-  var c = String(category || "").trim().toUpperCase().replace(/\s+/g, "");
-  switch (c) {
-    case "STAR":
-      return "union-patch-star";
-    case "PROGOLD":
-      return "union-patch-gold";
-    case "PROSILVER":
-      return "union-patch-silver";
-    case "PROAMA":
-      return "union-patch-ama";
-    case "ELITE":
-      return "union-patch-elite";
-    case "AMA":
-      return "union-patch-base";
-    default:
-      return "";
-  }
+function unionOra(time) {
+  return String(time || "").replace("Ore ", "").trim();
 }
 
-// -------------------------------------------------------------
-// Specchietto riassuntivo: una riga per ogni pilota GTV iscritto
-// -------------------------------------------------------------
+// Specchietto: i piloti GTV divisi per categoria, con il salto alla lobby
 function renderUnionSpecchietto(container, data) {
-  container.classList.remove("loading-message");
-
   var rows = [];
   data.lobbies.forEach(function (lb) {
     lb.pilots.forEach(function (p) {
-      var team = String(p.team || "").trim().toUpperCase();
-      if (team !== "GTV") return;
-      rows.push({
-        name: lb.name,
-        day: lb.day,
-        time: lb.time,
-        category: lb.category,
-        host: lb.host || "",
-        pilot: p.nome || "",
-      });
+      if (String(p.team || "").trim().toUpperCase() !== "GTV") return;
+      rows.push({ name: lb.name, day: lb.day, time: lb.time, category: lb.category, pilot: p.nome || "" });
     });
   });
 
-  // Ordina per giorno e poi per nome lobby
-  rows.sort(function (a, b) {
-    var diff = unionDayIndex(a.day) - unionDayIndex(b.day);
-    if (diff !== 0) return diff;
-    return String(a.name).localeCompare(String(b.name));
-  });
+  if (!rows.length) {
+    container.innerHTML = unionState("Nessun pilota GTV trovato nelle lobby.", "empty");
+    return;
+  }
 
-  var rowsHtml = rows
-    .map(function (r) {
-      var id = lobbyCardId(r.day, r.name);
-      var dayShort = UNION_DAY_SHORT[String(r.day || "").toUpperCase()] || r.day;
-      var hour = String(r.time || "").replace("Ore ", "").trim();
-      var patchClass = unionCategoryColorClass(r.category);
-      return (
-        "<tr>" +
-        '<td class="union-specch-pilot" data-label="Pilota">' +
-        '<div class="union-specch-pilot-name">' + escapeHtml(r.pilot) + "</div>" +
-        '<div class="union-specch-patch ' + patchClass + '">' + escapeHtml(r.category) + "</div>" +
-        "</td>" +
-        '<td class="union-specch-lobby" data-label="Lobby">' +
-        '<button class="union-specch-link" data-target="' + id + '">' + escapeHtml(r.name) + "</button>" +
-        "</td>" +
-        '<td class="union-specch-day" data-label="Data">' + escapeHtml(dayShort) + "</td>" +
-        '<td class="union-specch-time" data-label="Ora">' + escapeHtml(hour) + "</td>" +
-        "</tr>"
-      );
-    })
-    .join("");
+  // Dentro ogni categoria: per giorno, poi per lobby
+  rows.sort(function (a, b) {
+    var diff = unionTierIndex(a.category) - unionTierIndex(b.category);
+    if (diff !== 0) return diff;
+    diff = unionDayIndex(a.day) - unionDayIndex(b.day);
+    if (diff !== 0) return diff;
+    return String(a.name).localeCompare(String(b.name), undefined, { numeric: true });
+  });
 
   var html =
-    '<div class="union-specchietto">' +
-    '<div class="union-specch-intro">' +
-    "Clicca sulla <em>Lobby</em> per vedere lo schieramento completo, gli host e la live." +
-    "</div>" +
-    '<div class="union-count">' + rows.length + " piloti GTV iscritti</div>" +
-    '<div class="union-table-scroll">' +
-    '<table class="union-lista union-specch-table">' +
-    "<thead><tr>" +
-    '<th class="union-specch-th">Pilota</th>' +
-    '<th class="union-specch-th">Lobby</th>' +
-    '<th class="union-specch-th">Data</th>' +
-    '<th class="union-specch-th">Ora</th>' +
-    "</tr></thead><tbody>" +
-    rowsHtml +
-    "</tbody></table></div></div>";
+    '<p class="ui-text" style="margin-top:0">' + rows.length +
+    " piloti GTV iscritti. Tocca la lobby per vedere lo schieramento completo, l'host e la live.</p>";
 
-  container.innerHTML =
-    html || '<div class="error-message">Nessun pilota GTV trovato nelle lobby.</div>';
+  var categorie = [];
+  rows.forEach(function (r) {
+    if (categorie.indexOf(r.category) === -1) categorie.push(r.category);
+  });
 
-  // Link dello specchietto: apri l'accordion della lobby e scrolla ad essa
-  Array.from(container.querySelectorAll(".union-specch-link")).forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var id = btn.getAttribute("data-target");
-      // Apri l'accordion (se esiste) così il contenuto è visibile
-      openUnionLobby(id);
-      var target = document.getElementById(id);
-      if (target) {
-        // Offset per l'header sticky: scorrimento più preciso per
-        // far comparire la lobby cliccata in cima (non quella precedente)
-        var offset = 68;
-        var y = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
-      }
-    });
+  categorie.forEach(function (cat) {
+    var righe = rows
+      .filter(function (r) {
+        return r.category === cat;
+      })
+      .map(function (r) {
+        var giorno = UNION_DAY_LABEL[String(r.day || "").toUpperCase()] || r.day;
+        return (
+          "<tr>" +
+          '<td><span class="ui-strong">' + escapeHtml(r.pilot) + "</span></td>" +
+          '<td><button type="button" class="ui-btn ui-btn--sm ui-btn--block" data-target="' + lobbyCardId(r.day, r.name) + '">' +
+          escapeHtml(r.name) + "</button></td>" +
+          "<td>" + escapeHtml(giorno) + "</td>" +
+          '<td class="ui-num">' + escapeHtml(unionOra(r.time)) + "</td>" +
+          "</tr>"
+        );
+      })
+      .join("");
+
+    html +=
+      '<div class="ui-subhead ' + unionCategoryColorClass(cat) + '">' + escapeHtml(cat) + "</div>" +
+      '<div class="ui-table-wrap"><table class="ui-table ui-table--fixed">' +
+      '<thead><tr><th>Pilota</th><th class="ui-w-sm">Lobby</th><th class="ui-w-md">Giorno</th><th class="ui-num ui-w-xs">Ora</th></tr></thead>' +
+      "<tbody>" + righe + "</tbody></table></div>";
+  });
+
+  container.innerHTML = html;
+
+  // Apre la lobby e ci scorre sopra (tenendo conto dell'header fisso)
+  container.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-target]");
+    if (!btn) return;
+    var id = btn.getAttribute("data-target");
+    openUnionLobby(id);
+    var target = document.getElementById(id);
+    if (target) {
+      var y = target.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+    }
   });
 }
 
-// -------------------------------------------------------------
-// Tutte le lobby, raggruppate per giorno, in stile GTV
-// -------------------------------------------------------------
+// Tutte le lobby, per giorno, come accordion (details/summary)
 function renderUnionLobbyBody(container, data) {
-  container.classList.remove("loading-message");
-
   var byDay = {};
-  UNION_LOBBY_DAYS.forEach(function (d) {
-    byDay[d] = [];
-  });
   data.lobbies.forEach(function (lb) {
     var d = String(lb.day || "").toUpperCase();
     (byDay[d] = byDay[d] || []).push(lb);
   });
 
-  var daysHtml = UNION_LOBBY_DAYS
-    .filter(function (d) {
-      return byDay[d] && byDay[d].length;
-    })
+  var html = UNION_LOBBY_DAYS.filter(function (d) {
+    return byDay[d] && byDay[d].length;
+  })
     .map(function (d) {
-      var cards = byDay[d]
-        .map(function (lb) {
-          return unionLobbyCardHtml(lb);
-        })
-        .join("");
-
       return (
-        '<div class="union-lobby-day-block">' +
-        '<div class="union-lobby-day-title">' + d + "</div>" +
-        '<div class="lobby-card-container">' +
-        cards +
-        "</div></div>"
+        '<div class="ui-subhead">' + escapeHtml(UNION_DAY_LABEL[d] || d) + "</div>" +
+        byDay[d].map(unionLobbyCardHtml).join("")
       );
     })
     .join("");
 
-  container.innerHTML =
-    daysHtml || '<div class="error-message">Nessuna lobby trovata.</div>';
-
-  initUnionAccordions(container);
+  container.innerHTML = html || unionState("Nessuna lobby trovata.", "empty");
 }
 
 function unionLobbyCardHtml(lb) {
-  var id = lobbyCardId(lb.day, lb.name);
-  var time = String(lb.time || "").replace("Ore ", "");
+  var gtv = lb.pilots.filter(function (p) {
+    return String(p.team || "").trim().toUpperCase() === "GTV";
+  }).length;
 
   var pilots = lb.pilots
     .map(function (p) {
       var isGtv = String(p.team || "").trim().toUpperCase() === "GTV";
       return (
-        '<div class="lobby-pilot' + (isGtv ? " union-lobby-pilot-gtv" : "") + '">' +
-        '<div class="lobby-pilot-header">' +
-        '<div class="union-lobby-pos">' + escapeHtml(p.pos) + "</div>" +
-        '<div class="lobby-pilot-info">' +
-        '<div class="lobby-pilot-name">' + escapeHtml(p.nome) + "</div>" +
-        '<div class="lobby-pilot-team">' + escapeHtml(p.team) + "</div>" +
-        "</div></div></div>"
+        '<li class="ui-row' + (isGtv ? " is-gtv" : "") + '">' +
+        '<span class="ui-pos">' + escapeHtml(p.pos) + "</span>" +
+        '<span class="ui-muted">' + escapeHtml(p.team) + "</span>" +
+        '<span class="ui-ellipsis' + (isGtv ? " ui-strong" : "") + '">' + escapeHtml(p.nome) + "</span>" +
+        "</li>"
       );
     })
     .join("");
 
-  var hostLink =
-    lb.host
-      ? '<a href="https://profile.playstation.com/' +
-        encodeURIComponent(lb.host) +
-        '/add" target="_blank" class="lobby-host-name">' +
-        escapeHtml(lb.host) +
-        "</a>"
-      : '<span class="lobby-host-name">—</span>';
+  var host = lb.host
+    ? '<a href="https://profile.playstation.com/' + encodeURIComponent(lb.host) +
+      '/add" target="_blank" rel="noopener">' + escapeHtml(lb.host) + "</a>"
+    : "—";
+  var live = lb.url
+    ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener">' +
+      escapeHtml(lb.live || "Canale live") + "</a>"
+    : "—";
 
-  var liveBlock =
-    lb.url
-      ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener" class="lobby-live-name">' +
-        escapeHtml(lb.live || "Canale live") +
-        "</a>"
-      : '<span class="lobby-live-name">—</span>';
-
-  // Accordeon: la testata è cliccabile e mostra/espande il corpo
   return (
-    '<div id="' + id + '" class="lobby-card union-lobby-card union-acc">' +
-    '<button type="button" class="union-acc-head" data-acc-target="' + id + '" aria-expanded="false">' +
-    '<div class="union-acc-head-main">' +
-    '<div class="lobby-datetime">' +
-    '<div class="lobby-date">' + escapeHtml(lb.day) + "</div>" +
-    '<div class="lobby-time">' + escapeHtml(time) + "</div>" +
+    '<details class="ui-acc" id="' + lobbyCardId(lb.day, lb.name) + '">' +
+    "<summary>" +
+    '<span class="ui-badge">' + escapeHtml(unionOra(lb.time)) + "</span>" +
+    '<span class="ui-strong">' + escapeHtml(lb.name) + "</span>" +
+    unionCatBadge(lb.category) +
+    '<span class="ui-muted" style="font-size: var(--ui-fs-xs)">' + lb.pilots.length + " piloti" +
+    (gtv ? ", " + gtv + " GTV" : "") + "</span>" +
+    "</summary>" +
+    '<div class="ui-acc-body">' +
+    '<dl class="ui-kv union-lobby-info" style="margin: 0 0 var(--ui-s3)"><div><dt>Host</dt><dd>' + host +
+    "</dd></div><div><dt>Live</dt><dd>" + live + "</dd></div></dl>" +
+    '<ol class="ui-list" style="--ui-row-cols: 32px 64px 1fr">' + pilots + "</ol>" +
     "</div>" +
-    '<div class="lobby-category">' +
-     escapeHtml(lb.name) + " · " + '<span class="union-specch-patch ' + unionCategoryColorClass(lb.category) + '">' + escapeHtml(lb.category) + "</span>" + "</div>" +
-    "</div>" +
-    '<span class="union-acc-count">' + lb.pilots.length + " piloti</span>" +
-    '<span class="union-acc-chevron">▾</span>' +
-    "</button>" +
-    '<div class="union-acc-body">' +
-    '<div class="lobby-info-section">' +
-    '<div class="lobby-host"><div class="lobby-host-icon"><img src="images/icons/host.svg" alt="Host" class="lobby-icon"></div>' +
-    '<div class="lobby-host-content"><div class="lobby-host-label">Host</div>' +
-    hostLink +
-    "</div></div>" +
-    '<div class="lobby-live"><div class="lobby-live-icon"><img src="images/icons/live.svg" alt="Live" class="lobby-icon"></div>' +
-    '<div class="lobby-live-content"><div class="lobby-live-label">Live</div>' +
-    liveBlock +
-    "</div></div>" +
-    "</div>" +
-    '<div class="lobby-pilots-section">' +
-    '<div class="lobby-pilots-title">Piloti <span class="union-lobby-count">(' + lb.pilots.length + ")</span></div>" +
-    '<div class="lobby-pilots-grid">' +
-    pilots +
-    "</div></div>" +
-    "</div></div>"
+    "</details>"
   );
 }
 
-// Apre/chiude un accordeon al click sulla testata
-function initUnionAccordions(container) {
-  Array.from(container.querySelectorAll(".union-acc-head")).forEach(function (head) {
-    head.addEventListener("click", function () {
-      var card = document.getElementById(head.getAttribute("data-acc-target"));
-      if (!card) return;
-      var isOpen = card.classList.contains("open");
-      card.classList.toggle("open");
-      head.setAttribute("aria-expanded", isOpen ? "false" : "true");
+// Apre la lobby indicata (usato dallo specchietto)
+function openUnionLobby(id) {
+  var el = document.getElementById(id);
+  if (!el) return false;
+  el.open = true;
+  return true;
+}
+
+// =============================================================
+// RISULTATI E CLASSIFICHE (unionscraping/classifiche.json)
+// Dati dal Portale Classifiche Union (classifiche/classifiche.py);
+// qualifica, auto e distacchi arrivano dagli screenshot ufficiali.
+// =============================================================
+var UNION_PISTE = ["Red Bull Ring", "Watkins Glen", "Suzuka Circuit", "Autopolis", "Nürburgring GP"];
+var UNION_NUM_GARE = 5;
+
+var unionCls = {
+  data: null,
+  gara: null, // gara mostrata nei risultati
+  lega: "STAR", // lega mostrata nelle classifiche
+  tutti: {}, // lega -> true se "mostra tutti"
+  aperti: {}, // lega -> {indice di inizio del tratto compresso: true}
+};
+
+function unionClassificheUrl() {
+  return window.GTV_CONFIG && window.GTV_CONFIG.unionClassificheData
+    ? window.GTV_CONFIG.unionClassificheData
+    : "unionscraping/classifiche.json";
+}
+
+function unionNorm(s) {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function unionIsGtv(p) {
+  return String((p && p.team) || "").trim().toUpperCase() === "GTV";
+}
+
+function loadUnionClassifiche() {
+  var resBody = document.getElementById("union-res-body");
+  var clsBody = document.getElementById("union-cls-body");
+  if (!resBody && !clsBody) return;
+
+  fetch(unionClassificheUrl())
+    .then(function (response) {
+      if (!response.ok) throw new Error("Errore HTTP " + response.status);
+      return response.json();
+    })
+    .then(function (data) {
+      if (!data || !data.leghe) throw new Error("Dati non validi");
+      unionCls.data = data;
+      var pubblicate = (data.meta && data.meta.gare_pubblicate) || [];
+      unionCls.gara = pubblicate.length ? pubblicate[pubblicate.length - 1] : null;
+      initUnionPanel();
+      if (resBody) renderUnionRisultati();
+      if (clsBody) renderUnionClassifiche();
+    })
+    .catch(function (err) {
+      console.error("Errore caricamento classifiche:", err);
+      var msg = unionState("Impossibile caricare risultati e classifiche.", "error");
+      if (resBody) resBody.innerHTML = msg;
+      if (clsBody) clsBody.innerHTML = msg;
     });
+}
+
+// -------------------------------------------------------------
+// Risultati: schede minimal dei piloti GTV, divise per lega
+// -------------------------------------------------------------
+function unionGaraData(gara) {
+  var gare = (unionCls.data && unionCls.data.gare) || {};
+  return gare[String(gara)] || null;
+}
+
+// Riga del pilota nella classifica di una delle lobby della sua lega
+function unionTrovaRisultato(garaData, lega, nome) {
+  if (!garaData || !garaData.lobby) return null;
+  var chiave = unionNorm(nome);
+  var trovato = null;
+  Object.keys(garaData.lobby).forEach(function (nomeLobby) {
+    var lb = garaData.lobby[nomeLobby];
+    if (trovato || lb.lega !== lega) return;
+    (lb.classifica || []).forEach(function (riga) {
+      if (!trovato && unionNorm(riga.nome) === chiave) {
+        trovato = { lobby: nomeLobby, lb: lb, riga: riga };
+      }
+    });
+  });
+  return trovato;
+}
+
+function unionDots(lb, nome) {
+  var html = "";
+  if (lb.pole && unionNorm(lb.pole) === unionNorm(nome)) {
+    html += '<span class="ui-dot ui-dot--pole" title="Pole position nella lobby">P</span>';
+  }
+  if (lb.giro_veloce && unionNorm(lb.giro_veloce) === unionNorm(nome)) {
+    html += '<span class="ui-dot ui-dot--fl" title="Giro più veloce in gara nella lobby"></span>';
+  }
+  return html;
+}
+
+function renderUnionRisultati() {
+  var body = document.getElementById("union-res-body");
+  var selettore = document.getElementById("union-res-gare");
+  var sottotitolo = document.getElementById("union-res-subtitle");
+  var data = unionCls.data;
+  var pubblicate = (data.meta && data.meta.gare_pubblicate) || [];
+
+  if (selettore) {
+    var bottoni = "";
+    for (var g = 1; g <= UNION_NUM_GARE; g++) {
+      var ok = pubblicate.indexOf(g) !== -1;
+      bottoni +=
+        '<button type="button" class="ui-seg-btn"' +
+        (ok ? ' data-gara="' + g + '"' : " disabled") +
+        ' aria-pressed="' + (g === unionCls.gara) + '"' +
+        ' title="' + escapeHtml(UNION_PISTE[g - 1] + (ok ? "" : " (non ancora pubblicata)")) + '">G' + g + "</button>";
+    }
+    selettore.innerHTML = bottoni;
+  }
+
+  if (!unionCls.gara) {
+    if (sottotitolo) sottotitolo.textContent = "Round 2";
+    body.innerHTML = unionState(
+      "I risultati compariranno qui appena la Lega pubblica le classifiche di gara sul portale Union.",
+      "empty"
+    );
+    return;
+  }
+
+  if (sottotitolo) sottotitolo.textContent = "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1];
+  var garaData = unionGaraData(unionCls.gara);
+  var html = "";
+
+  UNION_LEGHE.forEach(function (lega) {
+    var legaData = data.leghe[lega];
+    var gtv = ((legaData && legaData.piloti) || []).filter(unionIsGtv);
+    if (!gtv.length) return;
+
+    var schede = gtv
+      .map(function (p) {
+        return { p: p, r: unionTrovaRisultato(garaData, lega, p.nome) };
+      })
+      .sort(function (a, b) {
+        return (a.r ? a.r.riga.pos : 999) - (b.r ? b.r.riga.pos : 999);
+      })
+      .map(function (x) {
+        if (!x.r) {
+          return (
+            '<div class="ui-card is-off">' +
+            '<span class="ui-result-top"><span class="ui-result-name">' + escapeHtml(x.p.nome) + "</span></span>" +
+            '<span class="ui-result-bottom"><span class="ui-result-pos">—</span>' +
+            '<span class="ui-result-lobby">non classificato</span></span>' +
+            "</div>"
+          );
+        }
+        var riga = x.r.riga;
+        return (
+          '<button type="button" class="ui-card' + (riga.pos <= 3 ? " is-highlight" : "") + '"' +
+          ' data-lobby="' + escapeHtml(x.r.lobby) + '">' +
+          '<span class="ui-result-top"><span class="ui-result-name">' + escapeHtml(x.p.nome) + "</span>" +
+          '<span class="ui-dots">' + unionDots(x.r.lb, riga.nome) + "</span></span>" +
+          '<span class="ui-result-bottom"><span class="ui-result-pos">P' + riga.pos + "</span>" +
+          '<span class="ui-result-lobby">' + escapeHtml(x.r.lobby) + "</span></span>" +
+          "</button>"
+        );
+      })
+      .join("");
+
+    html +=
+      '<div class="ui-subhead ' + unionCategoryColorClass(lega) + '">' + escapeHtml(lega) + "</div>" +
+      '<div class="ui-grid">' + schede + "</div>";
+  });
+
+  body.innerHTML =
+    html +
+    '<div class="ui-legend" style="margin-top: var(--ui-s5)">' +
+    '<span><span class="ui-dot ui-dot--pole">P</span> pole position</span>' +
+    '<span><span class="ui-dot ui-dot--fl"></span> giro più veloce in gara</span>' +
+    "<span>Tocca una scheda per la classifica della lobby</span>" +
+    "</div>";
+}
+
+// -------------------------------------------------------------
+// Pannello della lobby: classifica di gara + grafico qualifica → gara
+// -------------------------------------------------------------
+function initUnionPanel() {
+  var panel = document.getElementById("union-panel");
+  var res = document.getElementById("union-res-body");
+  var sel = document.getElementById("union-res-gare");
+  if (!panel || panel.dataset.ready) return;
+  panel.dataset.ready = "1";
+
+  if (res) {
+    res.addEventListener("click", function (e) {
+      var card = e.target.closest("[data-lobby]");
+      if (card) openUnionPanel(card.getAttribute("data-lobby"), card);
+    });
+  }
+  if (sel) {
+    sel.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-gara]");
+      if (!btn) return;
+      unionCls.gara = Number(btn.getAttribute("data-gara"));
+      renderUnionRisultati();
+    });
+  }
+  panel.addEventListener("click", function (e) {
+    if (e.target.closest("[data-close]")) closeUnionPanel();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !panel.hidden) closeUnionPanel();
   });
 }
 
-// Apre l'accordion della lobby indicata (usato dallo specchietto riassuntivo)
-function openUnionLobby(id) {
-  var card = document.getElementById(id);
-  if (!card) return false;
-  card.classList.add("open");
-  var head = card.querySelector(".union-acc-head");
-  if (head) head.setAttribute("aria-expanded", "true");
-  return true;
+var _unionPanelOrigin = null;
+
+function openUnionPanel(nomeLobby, origine) {
+  var garaData = unionGaraData(unionCls.gara);
+  var lb = garaData && garaData.lobby && garaData.lobby[nomeLobby];
+  var panel = document.getElementById("union-panel");
+  if (!lb || !panel) return;
+
+  document.getElementById("union-panel-title").innerHTML =
+    "Lobby " + escapeHtml(nomeLobby) + " " + unionCatBadge(lb.lega);
+  document.getElementById("union-panel-sub").textContent =
+    "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1];
+  document.getElementById("union-panel-body").innerHTML = unionLobbyPanelHtml(lb);
+
+  _unionPanelOrigin = origine || null;
+  panel.hidden = false;
+  document.body.style.overflow = "hidden";
+  var chiudi = panel.querySelector(".ui-icon-btn");
+  if (chiudi) chiudi.focus();
+}
+
+function closeUnionPanel() {
+  var panel = document.getElementById("union-panel");
+  if (!panel) return;
+  panel.hidden = true;
+  document.body.style.overflow = "";
+  if (_unionPanelOrigin) _unionPanelOrigin.focus();
+}
+
+function unionLobbyPanelHtml(lb) {
+  var righe = (lb.classifica || []).slice().sort(function (a, b) {
+    return a.pos - b.pos;
+  });
+
+  if (!righe.length) {
+    return (
+      '<div class="ui-state">Classifica non ancora leggibile.' +
+      (lb.immagine
+        ? ' <a class="ui-btn ui-btn--sm" href="' + escapeHtml(lb.immagine) + '" target="_blank" rel="noopener">Apri la classifica ufficiale</a>'
+        : "") +
+      "</div>"
+    );
+  }
+
+  var tabella =
+    '<div class="ui-table-wrap"><table class="ui-table"><thead><tr>' +
+    '<th>Pos</th><th>Q</th><th>Pilota</th><th>Team</th><th class="ui-hide-sm">Auto</th><th class="ui-num">Distacco</th>' +
+    "</tr></thead><tbody>" +
+    righe
+      .map(function (r) {
+        return (
+          '<tr class="' + (unionIsGtv(r) ? "is-gtv" : "") + '">' +
+          '<td class="ui-pos">' + r.pos + "</td>" +
+          '<td class="ui-muted">' + (r.q ? r.q : "—") + "</td>" +
+          '<td><span class="ui-strong">' + escapeHtml(r.nome) + "</span> " + unionDots(lb, r.nome) + "</td>" +
+          '<td class="ui-muted">' + escapeHtml(r.team || "") + "</td>" +
+          '<td class="ui-muted ui-hide-sm">' + escapeHtml(r.auto || "") + "</td>" +
+          '<td class="ui-num">' + escapeHtml(r.distacco || "") + "</td>" +
+          "</tr>"
+        );
+      })
+      .join("") +
+    "</tbody></table></div>";
+
+  var provv = (lb.provvedimenti || []).length
+    ? '<p class="ui-text"><strong>Provvedimenti della direzione gara:</strong> ' +
+      lb.provvedimenti
+        .map(function (p) {
+          return escapeHtml(p.nome) + " (" + escapeHtml(p.sanzione) + ")";
+        })
+        .join(", ") +
+      "</p>"
+    : "";
+
+  return tabella + unionQtoGChart(righe) + provv;
+}
+
+// Barre divergenti: posizioni guadagnate (giallo) o perse (blu) dalla
+// qualifica all'arrivo, per tutti i piloti della lobby con la qualifica nota.
+function unionQtoGChart(righe) {
+  var dati = righe
+    .filter(function (r) {
+      return r.q;
+    })
+    .map(function (r) {
+      return { r: r, d: r.q - r.pos };
+    })
+    .sort(function (a, b) {
+      return b.d - a.d || a.r.pos - b.r.pos;
+    });
+  if (dati.length < 2) return "";
+
+  var max = Math.max.apply(null, dati.map(function (x) { return Math.abs(x.d); }).concat([1]));
+  var righeHtml = dati
+    .map(function (x) {
+      var w = Math.round((Math.abs(x.d) / max) * 100) + "%";
+      var neg = "";
+      var pos = "";
+      if (x.d > 0) pos = '<span class="ui-bar" style="width:' + w + '"></span>+' + x.d;
+      else if (x.d < 0) neg = "−" + Math.abs(x.d) + '<span class="ui-bar" style="width:' + w + '"></span>';
+      else pos = '<span class="ui-muted">0</span>';
+      return (
+        '<div class="ui-diverge-row' + (unionIsGtv(x.r) ? " is-gtv" : "") + '">' +
+        '<span class="ui-ellipsis">' + escapeHtml(x.r.nome) + "<small>P" + x.r.q + " → P" + x.r.pos + "</small></span>" +
+        '<span class="ui-diverge-neg">' + neg + "</span>" +
+        '<span class="ui-diverge-pos">' + pos + "</span>" +
+        "</div>"
+      );
+    })
+    .join("");
+
+  return (
+    '<div class="ui-subhead" style="margin-top: var(--ui-s6)">Qualifica → gara</div>' +
+    '<div class="ui-legend"><span><i style="background: var(--ui-accent)"></i>posizioni guadagnate</span>' +
+    '<span><i style="background: var(--ui-down)"></i>posizioni perse</span></div>' +
+    righeHtml
+  );
+}
+
+// -------------------------------------------------------------
+// Classifiche generali: una scheda per lega, finestra sui GTV
+// -------------------------------------------------------------
+function renderUnionClassifiche() {
+  var tabs = document.getElementById("union-cls-leghe");
+  var body = document.getElementById("union-cls-body");
+  var data = unionCls.data;
+
+  if (tabs) {
+    tabs.innerHTML = UNION_LEGHE.map(function (lega) {
+      var piloti = (data.leghe[lega] && data.leghe[lega].piloti) || [];
+      var gtv = piloti.filter(unionIsGtv).length;
+      var attiva = lega === unionCls.lega;
+      return (
+        '<button type="button" role="tab" class="ui-tab ' + unionCategoryColorClass(lega) + '"' +
+        ' aria-selected="' + attiva + '" data-lega="' + escapeHtml(lega) + '">' +
+        escapeHtml(lega) + (gtv ? ' <span class="ui-tab-count">' + gtv + "</span>" : "") +
+        "</button>"
+      );
+    }).join("");
+    if (!tabs.dataset.ready) {
+      tabs.dataset.ready = "1";
+      tabs.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-lega]");
+        if (!btn) return;
+        unionCls.lega = btn.getAttribute("data-lega");
+        renderUnionClassifiche();
+      });
+    }
+  }
+
+  if (!body.dataset.ready) {
+    body.dataset.ready = "1";
+    body.addEventListener("click", function (e) {
+      var gap = e.target.closest("[data-gap]");
+      if (gap) {
+        var aperti = (unionCls.aperti[unionCls.lega] = unionCls.aperti[unionCls.lega] || {});
+        aperti[gap.getAttribute("data-gap")] = true;
+        renderUnionClassifiche();
+        return;
+      }
+      if (e.target.closest("[data-tutti]")) {
+        unionCls.tutti[unionCls.lega] = !unionCls.tutti[unionCls.lega];
+        renderUnionClassifiche();
+        return;
+      }
+      var riga = e.target.closest(".ui-row[aria-expanded]");
+      if (riga) {
+        riga.classList.toggle("is-open");
+        riga.setAttribute("aria-expanded", riga.classList.contains("is-open"));
+      }
+    });
+    body.addEventListener("keydown", function (e) {
+      if ((e.key === "Enter" || e.key === " ") && e.target.matches(".ui-row[aria-expanded]")) {
+        e.preventDefault();
+        e.target.click();
+      }
+    });
+  }
+
+  body.innerHTML = unionClassificaLegaHtml(unionCls.lega);
+  setUnionClsUpdate(data);
+}
+
+function unionMovimento(p) {
+  var s = p.storico_pos || [];
+  if (s.length < 2) return "";
+  var d = s[s.length - 2] - s[s.length - 1];
+  if (d > 0) return ' <span class="ui-delta ui-delta--up" title="Guadagnate ' + d + ' posizioni">▲' + d + "</span>";
+  if (d < 0) return ' <span class="ui-delta ui-delta--down" title="Perse ' + -d + ' posizioni">▼' + -d + "</span>";
+  return ' <span class="ui-delta ui-delta--same" title="Stessa posizione">=</span>';
+}
+
+function unionClsRowHtml(p) {
+  var gtv = unionIsGtv(p);
+  var gare = "";
+  for (var i = 0; i < UNION_NUM_GARE; i++) {
+    var v = p.gare && p.gare[i];
+    gare += "<span><small>G" + (i + 1) + "</small>" + (v === null || v === undefined ? "—" : v) + "</span>";
+  }
+  return (
+    '<li class="ui-row' + (gtv ? " is-gtv" : "") + '" tabindex="0" aria-expanded="false">' +
+    '<span class="ui-pos">' + (p.pos || "") + "</span>" +
+    '<span class="ui-muted">' + escapeHtml(p.team || "") + "</span>" +
+    '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + escapeHtml(p.nome) + (gtv ? unionMovimento(p) : "") + "</span>" +
+    '<span class="ui-num">' + (p.punti || 0) + "</span>" +
+    '<span class="ui-row-more">' + gare + "</span>" +
+    "</li>"
+  );
+}
+
+function unionClassificaLegaHtml(lega) {
+  var piloti = ((unionCls.data.leghe[lega] || {}).piloti || []).slice().sort(function (a, b) {
+    return (a.pos || 999) - (b.pos || 999);
+  });
+  if (!piloti.length) return unionState("Classifica non disponibile.", "empty");
+
+  var nota = piloti.every(function (p) { return !p.punti; })
+    ? '<p class="ui-text ui-muted" style="margin-top:0">Il Round 2 non è ancora iniziato: tutti a 0 punti, in ordine alfabetico.</p>'
+    : "";
+  var tutti = !!unionCls.tutti[lega];
+  var aperti = unionCls.aperti[lega] || {};
+
+  // Finestra: podio + ogni GTV con due piloti sopra e due sotto
+  var visibile = piloti.map(function (p, i) { return tutti || i < 3; });
+  piloti.forEach(function (p, i) {
+    if (!unionIsGtv(p)) return;
+    for (var k = Math.max(0, i - 2); k <= Math.min(piloti.length - 1, i + 2); k++) visibile[k] = true;
+  });
+
+  var html = "";
+  var i = 0;
+  while (i < piloti.length) {
+    if (visibile[i]) {
+      html += unionClsRowHtml(piloti[i]);
+      i++;
+      continue;
+    }
+    var inizio = i;
+    while (i < piloti.length && !visibile[i]) i++;
+    if (aperti[inizio]) {
+      for (var k = inizio; k < i; k++) html += unionClsRowHtml(piloti[k]);
+    } else {
+      var n = i - inizio;
+      html +=
+        '<li><button type="button" class="ui-row-gap" data-gap="' + inizio + '">Mostra altri ' +
+        n + (n === 1 ? " pilota" : " piloti") + "</button></li>";
+    }
+  }
+
+  return (
+    nota +
+    '<ol class="ui-list">' +
+    '<li class="ui-row ui-row--head"><span>Pos</span><span>Team</span><span>Pilota</span><span class="ui-num">Punti</span></li>' +
+    html +
+    "</ol>" +
+    '<div class="ui-btn-row ui-btn-row--center" style="margin-top: var(--ui-s4)">' +
+    '<button type="button" class="ui-btn ui-btn--ghost" data-tutti>' +
+    (tutti ? "Mostra solo la finestra sui GTV" : "Mostra tutti i " + piloti.length + " piloti") +
+    "</button></div>"
+  );
+}
+
+function setUnionClsUpdate(data) {
+  var el = document.getElementById("union-cls-update");
+  var iso = data && data.meta && data.meta.generated_at;
+  if (!el || !iso) return;
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return;
+  el.textContent =
+    "Dati dal portale classifiche Union, aggiornati il " +
+    d.toLocaleString("it-IT", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+  el.hidden = false;
 }

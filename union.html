@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Granturismo TV - UNION</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ui.css" />
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -23,7 +24,7 @@
 
 </head>
 
-<body id="union">
+<body id="union" class="ui-site">
 
     <header>
         <button id="menu-toggle" class="hamburger-button">
@@ -42,6 +43,12 @@
                 </a>
                 <a href="#piloti" class="menu-link">
                     Piloti
+                </a>
+                <a href="#risultati" class="menu-link">
+                    Risultati
+                </a>
+                <a href="#classifiche" class="menu-link">
+                    Classifiche
                 </a>
                 <a href="#regolamento" class="menu-link">
                     Regolamento
@@ -65,7 +72,7 @@
 
             </a>
             <a href="index.html">
-                                <span class="sottotitolo">LEGA UNION · La casa dei  </span>
+                                <span class="sottotitolo">La casa dei  </span>
                 <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
             </a>
         </div>
@@ -73,348 +80,244 @@
     </header>
 
 
+    <!-- Icone (stroke, ereditano il colore del testo) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.6"/></symbol>
+        <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+    </svg>
+
     <div class="main-container">
 
         <section id="home" class="section">
+            <div class="ui-page">
 
-            <!-- <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Union</div>
-                    <div class="calendar-subtitle">LEGA UNION E-SPORT · 2026 · ROUND 2 · GTV CORSE</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="union-intro">
-                        <p>Ecco i piloti della squadra iscritti alla <strong>LEGA UNION E-SPORT</strong> per il
-                            round 2 della stagione 2026, divisi per categoria. Scorri le grafiche per vedere gli
-                            schieramenti.</p>
+                <div class="ui-hero">
+                    <div class="ui-eyebrow">Stagione 2026, Round 2</div>
+                    <h1 class="ui-display">Lega Union</h1>
+                    <p class="ui-lead">La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.</p>
+                    <div class="ui-btn-row ui-btn-row--center" style="margin: var(--ui-s5) 0 var(--ui-s6)">
+                        <a href="#risultati" class="ui-btn ui-btn--primary">Risultati</a>
+                        <a href="#classifiche" class="ui-btn">Classifiche</a>
+                        <a href="#lobby" class="ui-btn">Lobby</a>
+                        <a href="#calendario" class="ui-btn">Calendario</a>
+                        <!-- TEMPORANEAMENTE NASCOSTO — riattivare togliendo i commenti
+                        <a href="https://forms.gle/ctX1BTc8a5TkQXzv7" target="_blank" rel="noopener" class="ui-btn">Modulo reclami</a>
+                        -->
+                    </div>
+                    <div class="ui-stats">
+                        <div><div class="ui-stat-num" id="union-stat-piloti">—</div><div class="ui-stat-label">Piloti iscritti</div></div>
+                        <div><div class="ui-stat-num" id="union-stat-gtv">—</div><div class="ui-stat-label">Piloti GTV</div></div>
+                        <div><div class="ui-stat-num" id="union-stat-gare">—</div><div class="ui-stat-label">Gare</div></div>
                     </div>
                 </div>
-            </div> -->
 
-<!-- Hero centrale, stile OpenRouter -->
-            <div class="union-hero">
-                <h1 class="union-hero-title">LEGA UNION</h1>
-                                <div class="union-hero-badge">ROUND 2 · 2026</div>
+                <section class="ui-section">
+                    <div class="ui-section-head"><h2 class="ui-section-title">Documenti utili</h2></div>
+                    <div class="ui-btn-row">
+                        <a class="ui-btn" href="pdf/union/Regolamento Generale Union 2026_V2-3.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Regolamento</a>
+                        <a class="ui-btn" href="pdf/union/impostazioni lobby v.2.01_-1.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Opzioni stanza</a>
+                    </div>
+                </section>
 
-                <p class="union-hero-subtitle">
-                    La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.
-                </p>
-                <div class="union-hero-actions">
-                    <a href="#lobby" class="union-hero-btn">
-                        Lobby
-                    </a>
-                    <a href="#calendario" class="union-hero-btn">
-                        Calendario
-                    </a>
-                    <!-- TEMPORANEAMENTE NASCOSTO — riattivare togliendo i commenti
-                    <a href="https://forms.gle/ctX1BTc8a5TkQXzv7" target="_blank" rel="noopener"
-                       class="union-hero-btn">
-                        Modulo reclami
-                    </a>
-                    -->
-                </div>
-                <div class="union-hero-stats">
-                    <div class="union-hero-stat">
-                        <div class="union-hero-stat-num" id="union-stat-piloti">—</div>
-                        <div class="union-hero-stat-label">Piloti iscritti</div>
-                    </div>
-                    <div class="union-hero-stat">
-                        <div class="union-hero-stat-num" id="union-stat-gtv">—</div>
-                        <div class="union-hero-stat-label">Piloti GTV</div>
-                    </div>
-                    <div class="union-hero-stat">
-                        <div class="union-hero-stat-num" id="union-stat-gare">—</div>
-                        <div class="union-hero-stat-label">Gare</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Documenti utili</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div class="pdf-button-container">
-                            <button class="pdf-button" onclick="window.open('pdf/union/Regolamento Generale Union 2026_V2-3.pdf', '_blank')">
-                            Regolamento
-                            </button>
-                            <button class="pdf-button" onclick="window.open('pdf/union/impostazioni lobby v.2.01_-1.pdf', '_blank')">
-                            Opzioni stanza
-                            </button>
+                <!-- Scadenze del campionato -->
+                <section class="ui-section">
+                    <div class="ui-section-head"><h2 class="ui-section-title">Scadenze da ricordare</h2></div>
+                    <div class="ui-note">
+                        <svg><use href="#i-flag"/></svg>
+                        <div>
+                            <div class="ui-note-title">Spostamento lobby</div>
+                            <p class="ui-text" style="margin:0">Le richieste di spostamento devono essere inoltrate tramite l'apposito modulo su <strong>Discord</strong> entro e non oltre le <strong>23:59</strong> del <strong>giovedì</strong> precedente la settimana di gara.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Reminder scadenze campionato -->
-            <div class="calendar-home union-reminder">
-                <div class="calendar-header">
-                    <div class="calendar-title">Scadenze da ricordare</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div class="union-reminder-grid">
-                            <div class="union-reminder-item">
-                                <div class="union-reminder-icon">🏁</div>
-                                <div class="union-reminder-title">Spostamento Lobby</div>
-                                <p>Le richieste di spostamento devono essere inoltrate tramite l'apposito modulo su <strong>Discord</strong> entro e non oltre le <strong>23:59</strong> del <strong>giovedì</strong> precedente la settimana di gara.</p>
-                            </div>
-                            <div class="union-reminder-item">
-                                <div class="union-reminder-icon">🤝</div>
-                                <div class="union-reminder-title">Amicizia all'Host</div>
-                                <p>La richiesta di amicizia all'Host di riferimento deve essere inviata dal pilota entro le <strong>12:00</strong> del giorno della gara.</p>
-                            </div>
-                            <div class="union-reminder-item">
-                                <div class="union-reminder-icon">📨</div>
-                                <div class="union-reminder-title">Reclami alla Direzione Gara</div>
-                                <p>L'invio di eventuali reclami deve essere effettuato tramite il proprio <strong>capo team</strong> entro le <strong>23:59</strong> del giorno successivo alla gara.</p>
-                                <!-- TEMPORANEAMENTE NASCOSTO — riattivare togliendo i commenti
-                                <p>ATTENZIONE: Per poter fare reclamo è necessario avere gli screenshot dei risultati finali della gara (entrambe le pagine) e due videoclip, uno per ogni auto coinvolta, visuale in terza persona, con telemetria visibile.</p>
-                                -->
-                            </div>
+                    <div class="ui-note">
+                        <svg><use href="#i-users"/></svg>
+                        <div>
+                            <div class="ui-note-title">Amicizia all'Host</div>
+                            <p class="ui-text" style="margin:0">La richiesta di amicizia all'Host di riferimento deve essere inviata dal pilota entro le <strong>12:00</strong> del giorno della gara.</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="ui-note">
+                        <svg><use href="#i-send"/></svg>
+                        <div>
+                            <div class="ui-note-title">Reclami alla Direzione Gara</div>
+                            <p class="ui-text" style="margin:0">L'invio di eventuali reclami deve essere effettuato tramite il proprio <strong>capo team</strong> entro le <strong>23:59</strong> del giorno successivo alla gara.</p>
+                            <!-- TEMPORANEAMENTE NASCOSTO — riattivare togliendo i commenti
+                            <p class="ui-text">ATTENZIONE: Per poter fare reclamo è necessario avere gli screenshot dei risultati finali della gara (entrambe le pagine) e due videoclip, uno per ogni auto coinvolta, visuale in terza persona, con telemetria visibile.</p>
+                            -->
+                        </div>
+                    </div>
+                </section>
 
+            </div>
         </section>
 
         <section id="piloti" class="section">
-                                <div class="pdf-button-container">
-                        <button class="pdf-button" onclick="window.open('pdf/union/Lista_PILOTI_V1-1.pdf', '_blank')">
-                            PDF con tutti i team e piloti
-                        </button>
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">GTV iscritti</h2>
+                        <span class="ui-section-meta" id="union-piloti-count">Round 2</span>
                     </div>
-
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">GTV Iscritti</div>
-                    <div class="calendar-subtitle">LEGA UNION  · ROUND 2</div>
-                </div>
-                <div class="calendar-grid">
-                    <div id="union-piloti-body" class="union-piloti-container">
-                        <div class="loading-message">
-                            <div class="loading-spinner"></div>
-                            Caricamento dati in corso...
-                        </div>
+                    <div id="union-piloti-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento piloti…</div>
                     </div>
-                </div>
+                    <div class="ui-btn-row ui-btn-row--center" style="margin-top: var(--ui-s5)">
+                        <a class="ui-btn ui-btn--ghost" href="pdf/union/Lista_PILOTI_V1-1.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>PDF con tutti i team e piloti</a>
+                    </div>
+                </section>
             </div>
-
         </section>
-<section id="regolamento" class="section">
 
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Regolamento</div>
-                    <div class="calendar-subtitle">Documenti ufficiali campionato</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div class="pdf-button-container">
-                            <button class="pdf-button" onclick="window.open('pdf/union/Regolamento Generale Union 2026_V2-3.pdf', '_blank')">
-                                Regolamento
-                            </button>
-                            <button class="pdf-button" onclick="window.open('pdf/union/impostazioni lobby v.2.01_-1.pdf', '_blank')">
-                                Opzioni stanza
-                            </button>
-                        </div>
+        <section id="risultati" class="section">
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Risultati GTV</h2>
+                        <span class="ui-section-meta" id="union-res-subtitle">Round 2</span>
                     </div>
-                </div>
+                    <div id="union-res-gare" class="ui-seg" role="group" aria-label="Scegli la gara" style="margin-bottom: var(--ui-s4)"></div>
+                    <div id="union-res-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento risultati…</div>
+                    </div>
+                </section>
             </div>
+        </section>
 
+        <section id="classifiche" class="section">
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Classifiche</h2>
+                        <span class="ui-section-meta">Classifica generale piloti</span>
+                    </div>
+                    <div id="union-cls-leghe" class="ui-tabs" role="tablist" aria-label="Leghe"></div>
+                    <div id="union-cls-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento classifiche…</div>
+                    </div>
+                    <div id="union-cls-update" class="ui-updated" hidden></div>
+                </section>
+            </div>
+        </section>
+
+        <section id="regolamento" class="section">
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Regolamento</h2>
+                        <span class="ui-section-meta">Documenti ufficiali del campionato</span>
+                    </div>
+                    <div class="ui-btn-row">
+                        <a class="ui-btn" href="pdf/union/Regolamento Generale Union 2026_V2-3.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Regolamento</a>
+                        <a class="ui-btn" href="pdf/union/impostazioni lobby v.2.01_-1.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Opzioni stanza</a>
+                    </div>
+                </section>
+            </div>
         </section>
 
         <section id="calendario" class="section">
-
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Calendario</div>
-                    <div class="calendar-subtitle">Date degli appuntamenti Union 2026</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div class="pdf-button-container">
-                            <button class="pdf-button" onclick="window.open('pdf/union/Calendario Union 2026.pdf', '_blank')">
-                                Calendario annuale
-                            </button>
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Round 2</h2>
+                        <span class="ui-section-meta">Si corre a settimane alterne</span>
+                    </div>
+                    <!-- data-dal / data-al: settimana di gara, per segnare quella in corso o la prossima -->
+                    <div class="ui-grid" id="union-calendario">
+                        <div class="ui-card ui-race" data-dal="2026-09-21" data-al="2026-09-27">
+                            <span class="ui-race-round">Gara 1</span>
+                            <span class="ui-race-track"><img src="images/bandiere/at.svg" alt="">Red Bull Ring</span>
+                            <span class="ui-race-date">21 – 27 set 2026</span>
+                            <img class="ui-race-map" src="images/tracks/rbr.svg" alt="" onerror="this.style.display='none'">
+                        </div>
+                        <div class="ui-card ui-race" data-dal="2026-10-05" data-al="2026-10-11">
+                            <span class="ui-race-round">Gara 2</span>
+                            <span class="ui-race-track"><img src="images/bandiere/us.svg" alt="">Watkins Glen</span>
+                            <span class="ui-race-date">5 – 11 ott 2026</span>
+                            <img class="ui-race-map" src="images/tracks/watkins.svg" alt="" onerror="this.style.display='none'">
+                        </div>
+                        <div class="ui-card ui-race" data-dal="2026-10-19" data-al="2026-10-25">
+                            <span class="ui-race-round">Gara 3</span>
+                            <span class="ui-race-track"><img src="images/bandiere/jp.svg" alt="">Suzuka Circuit</span>
+                            <span class="ui-race-date">19 – 25 ott 2026</span>
+                            <img class="ui-race-map" src="images/tracks/suzuka.png" alt="" onerror="this.style.display='none'">
+                        </div>
+                        <div class="ui-card ui-race" data-dal="2026-11-02" data-al="2026-11-08">
+                            <span class="ui-race-round">Gara 4</span>
+                            <span class="ui-race-track"><img src="images/bandiere/jp.svg" alt="">Autopolis</span>
+                            <span class="ui-race-date">2 – 8 nov 2026</span>
+                            <img class="ui-race-map" src="images/tracks/autopolis.png" alt="" onerror="this.style.display='none'">
+                        </div>
+                        <div class="ui-card ui-race" data-dal="2026-11-16" data-al="2026-11-22">
+                            <span class="ui-race-round">Gara 5</span>
+                            <span class="ui-race-track"><img src="images/bandiere/de.svg" alt="">Nürburgring GP</span>
+                            <span class="ui-race-date">16 – 22 nov 2026</span>
+                            <img class="ui-race-map" src="images/tracks/nurburgring.svg" alt="" onerror="this.style.display='none'">
+                        </div>
+                        <div class="ui-card ui-race" data-dal="2026-11-30" data-al="2026-12-06">
+                            <span class="ui-race-round">Finale</span>
+                            <span class="ui-race-track"><img src="images/bandiere/es.svg" alt="">Barcelona GP</span>
+                            <span class="ui-race-date">30 nov – 6 dic 2026</span>
+                            <span><span class="ui-badge">No chicane</span></span>
+                            <img class="ui-race-map" src="images/tracks/barcelona.svg" alt="" onerror="this.style.display='none'">
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
 
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Round 2</div>
-                    <div class="calendar-subtitle">Si corre a settimane alterne</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div class="calendar-grid-2-columns" style="display: grid; grid-template-columns: 1fr 1fr; gap:  16px;">
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/at.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border: 1px solid rgba(255,255,255,0.3); border-radius: 12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">Gara 1</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/at.svg" alt="Austria" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">Red Bull Ring</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">21 – 27 SET 2026</span>
-                                    </div>
-                                    <div>
-                                        <img src="images/tracks/rbr.svg" alt="Red Bull Ring" class="circuit-icon" style="width: 100%; max-width: 160px; height: 45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/us.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border: 1px solid rgba(255,255,255,0.3); border-radius: 12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">Gara 2</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/us.svg" alt="Stati Uniti" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">Watkins Glen</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">5 – 11 OTT 2026</span>
-                                    </div>
-                                    <div>
-                                        <img src="images/tracks/watkins.svg" alt="Watkins Glen" class="circuit-icon" style="width: 100%; max-width: 160px; height: 45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/jp.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border: 1px solid rgba(255,255,255,0.3); border-radius: 12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow:  0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow:  0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">Gara 3</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/jp.svg" alt="Giappone" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">Suzuka Circuit</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding:  6px 10px; border-radius: 6px; border:  1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">19 – 25 OTT 2026</span>
-                                    </div>
-                                    <div>
-                                        <img src="images/tracks/suzuka.png" alt="Suzuka Circuit" class="circuit-icon" style="width: 100%; max-width: 160px; height:  45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/jp.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border:  1px solid rgba(255,255,255,0.3); border-radius: 12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow:  0 2px 4px rgba(0,0,0,0.9),  0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow:  0 3px 6px rgba(0,0,0,0.9),  0 0 12px rgba(0,0,0,0.8);">Gara 4</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap:  6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/jp.svg" alt="Giappone" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">Autopolis</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap:  6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding:  6px 10px; border-radius: 6px; border:  1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">2 – 8 NOV 2026</span>
-                                    </div>
-                                    <div>
-                                        <img src="images/tracks/autopolis.png" alt="Autopolis" class="circuit-icon" style="width: 100%; max-width: 160px; height:  45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/de.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border:  1px solid rgba(255,255,255,0.3); border-radius:  12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.8);">Gara 5</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/de.svg" alt="Germania" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow: 0 2px 4px rgba(0,0,0,0.9);">Nürburgring GP</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">16 – 22 NOV 2026</span>
-                                    </div>
-                                    <div>
-                                        <img src="images/tracks/nurburgring.svg" alt="Nürburgring GP" class="circuit-icon" style="width: 100%; max-width: 160px; height: 45px; object-fit: contain; display: block; margin:  8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="race-item" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('images/bandiere/flag-icons-main/flags/4x3/es.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; border: 2px solid rgba(245,255,60,0.55); border-radius: 12px;">
-                                <div style="text-align: center; padding: 14px 10px;">
-                                    <div style="margin-bottom: 6px;">
-                                        <div style="font-size: 0.7em; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; text-shadow:  0 2px 4px rgba(0,0,0,0.9),  0 0 8px rgba(0,0,0,0.7);">Gara</div>
-                                        <div style="font-size: 1.3em; font-weight: 700; color: var(--giallogtv); text-transform: uppercase; letter-spacing:  1px; text-shadow:  0 3px 6px rgba(0,0,0,0.9),  0 0 12px rgba(0,0,0,0.8);">Finale</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap:  6px; margin-bottom: 8px;">
-                                        <img src="images/bandiere/es.svg" alt="Spagna" class="flagtrack" />
-                                        <span style="font-size: 0.85em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">Barcelona GP</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; justify-content: center; gap:  6px; margin-bottom: 6px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; border:  1px solid rgba(255,255,255,0.4); backdrop-filter: blur(3px);">
-                                        <span style="font-size: 0.9em;">📅</span>
-                                        <span style="font-size: 0.8em; font-weight: 600; color: rgba(255,255,255,1); text-shadow:  0 2px 4px rgba(0,0,0,0.9);">30 NOV – 6 DIC 2026</span>
-                                    </div>
-                                    <div style="display: inline-block; margin-bottom: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--giallogtv); color: var(--giallogtv); font-size: 0.65em; font-weight:  700; text-transform: uppercase; letter-spacing:  1px; padding: 3px 10px; border-radius: 999px;">No chicane</div>
-                                    <div>
-                                        <img src="images/tracks/barcelona.svg" alt="Barcelona GP" class="circuit-icon" style="width: 100%; max-width: 160px; height:  45px; object-fit: contain; display: block; margin: 8px auto 0;" onerror="this.style.display='none'" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Calendario</h2>
+                        <span class="ui-section-meta">Union 2026</span>
                     </div>
-                </div>
+                    <div class="ui-btn-row">
+                        <a class="ui-btn" href="pdf/union/Calendario Union 2026.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Calendario annuale</a>
+                    </div>
+                </section>
             </div>
-
         </section>
 
         <section id="lobby" class="section">
-
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Piloti GTV · Lobby</div>
-                    <div class="calendar-subtitle">Specchietto riassuntivo</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div id="union-specchietto-body" class="union-specchietto-body loading-message">
-                            <div class="loading-spinner"></div>
-                            Caricamento specchietto in corso...
-                        </div>
+            <div class="ui-page">
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Lobby dei piloti GTV</h2>
+                        <span class="ui-section-meta">Specchietto riassuntivo</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="calendar-home">
-                <div class="calendar-header">
-                    <div class="calendar-title">Tutte le Lobby</div>
-                    <div class="calendar-subtitle">Schieramenti completi per giorno</div>
-                </div>
-                <div class="calendar-grid">
-                    <div class="calendar-content">
-                        <div id="union-last-update" class="union-last-update" hidden></div>
-                        <div id="union-lobby-body" class="union-lobby-body loading-message">
-                            <div class="loading-spinner"></div>
-                            Caricamento lobby in corso...
-                        </div>
+                    <div id="union-specchietto-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento specchietto…</div>
                     </div>
-                </div>
-            </div>
+                </section>
 
+                <section class="ui-section">
+                    <div class="ui-section-head">
+                        <h2 class="ui-section-title">Tutte le lobby</h2>
+                        <span class="ui-section-meta">Schieramenti completi per giorno</span>
+                    </div>
+                    <div id="union-lobby-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento lobby…</div>
+                    </div>
+                    <div id="union-last-update" class="ui-updated" hidden></div>
+                </section>
+            </div>
         </section>
 
+    </div>
+
+    <!-- Pannello di una lobby (risultati): dal basso su mobile, al centro su desktop -->
+    <div id="union-panel" class="ui-sheet" hidden>
+        <div class="ui-sheet-backdrop" data-close></div>
+        <div class="ui-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="union-panel-title">
+            <div class="ui-sheet-head">
+                <div>
+                    <div class="ui-section-title" id="union-panel-title"></div>
+                    <div class="ui-section-meta" id="union-panel-sub" style="margin-top: 4px"></div>
+                </div>
+                <button type="button" class="ui-icon-btn" data-close aria-label="Chiudi"><svg><use href="#i-close"/></svg></button>
+            </div>
+            <div class="ui-sheet-body" id="union-panel-body"></div>
+        </div>
     </div>
 
 </body>

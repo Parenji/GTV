@@ -626,8 +626,10 @@ async function loadAndCreateHtmlTable(
     return;
   }
 
-  // Pulisci il contenitore prima di iniziare
-  tbody.innerHTML = "";
+  // Piloti e admin (Home) tengono il segnaposto di caricamento finche'
+  // non arrivano i dati; le altre tabelle si puliscono subito.
+  const isHomeList = tbodyId === "piloti-body" || tbodyId === "admin-body";
+  if (!isHomeList) tbody.innerHTML = "";
 
   // Rimuovi la classe loading se presente
   const tableContainer = tbody.closest(".table-container");
@@ -664,6 +666,8 @@ async function loadAndCreateHtmlTable(
       tbody.innerHTML = `<tr><td colspan="100%">Nessun dato trovato.</td></tr>`;
       return;
     }
+
+    if (isHomeList) tbody.innerHTML = "";
 
     // La prima riga è l'intestazione
     const header = rows[0];
@@ -708,9 +712,7 @@ async function loadAndCreateHtmlTable(
       if (rowData.length === 0 || !rowData[indicesToUse[0]]) continue;
 
       if (tbodyId === "piloti-body") {
-        // Creazione card per piloti
-        const pilotCard = document.createElement("div");
-        pilotCard.className = "pilot-card";
+        // Card pilota (ui.css): numero, nome, nickname, periferica, JGTV
         const name = rowData[indicesToUse[0]] || "";
         const nickname = rowData[indicesToUse[1]] || "";
         const number = rowData[indicesToUse[2]] || "";
@@ -718,54 +720,34 @@ async function loadAndCreateHtmlTable(
         const isJgtv = info.toLowerCase().includes("jgtv");
         const periferica = rowData[indicesToUse[4]] || "";
 
-        // Determina l'icona della periferica
-        let perifericaIcon = "";
-        const perifericaLower = periferica.toLowerCase();
-
-        if (
-          perifericaLower.includes("volante") ||
-          perifericaLower.includes("wheel") ||
-          perifericaLower.includes("steering")
-        ) {
-          perifericaIcon =
-            '<img src="images/icons/volante.svg" alt="Volante" class="periferica-icon">';
-        } else if (
-          perifericaLower.includes("pad") ||
-          perifericaLower.includes("joystick") ||
-          perifericaLower.includes("controller")
-        ) {
-          perifericaIcon =
-            '<img src="images/icons/pad.svg" alt="Pad" class="periferica-icon">';
-        } else {
-          // Default a pad se non specificato
-          perifericaIcon =
-            '<img src="images/icons/social.svg" alt="Pad" class="periferica-icon">';
-        }
-
+        const pilotCard = document.createElement("button");
+        pilotCard.type = "button";
+        pilotCard.className = "ui-card ui-pilot";
         pilotCard.innerHTML = `
-          <div class="pilot-left">
-            <div class="pilot-name">${name}</div>
-            ${nickname ? `<div class="pilot-nickname">${nickname}</div>` : ""}
-            ${isJgtv ? '<div class="pilot-label">jgtv</div>' : ""}
+          <div class="ui-pilot-top">
+            <span class="ui-pilot-num">#${escapeHtml(number)}</span>
+            ${isJgtv ? '<span class="ui-badge">JGTV</span>' : ""}
           </div>
-          <div class="pilot-number">#${number}</div>
-          <div class="pilot-periferica">${perifericaIcon}</div>
+          ${perifericaIconHtml(periferica, "ui-pilot-brand")}
+          <div class="ui-pilot-name">${escapeHtml(name)}</div>
+          ${nickname ? `<div class="ui-pilot-sub">${escapeHtml(nickname)}</div>` : ""}
         `;
         // Salva la riga completa e l'header come dataset
         pilotCard.dataset.fullRow = JSON.stringify(rowData);
         pilotCard.dataset.header = JSON.stringify(header);
         tbody.appendChild(pilotCard);
       } else if (tbodyId === "admin-body") {
-        // Creazione card per admin
-        const adminCard = document.createElement("div");
-        adminCard.className = "admin-card";
+        // Ruolo e persone, una riga per ruolo
         const role = rowData[indicesToUse[0]] || "";
         const members = rowData[indicesToUse[1]] || "";
-        adminCard.innerHTML = `
-          <div class="admin-role">${role}</div>
-          <div class="admin-members">${members}</div>
+        const adminRow = document.createElement("div");
+        adminRow.className = "ui-row";
+        adminRow.style.setProperty("--ui-row-cols", "minmax(110px, 30%) 1fr");
+        adminRow.innerHTML = `
+          <span class="ui-muted" style="font-size: var(--ui-fs-xs); letter-spacing: 1px; text-transform: uppercase">${escapeHtml(role)}</span>
+          <span class="ui-strong">${escapeHtml(members)}</span>
         `;
-        tbody.appendChild(adminCard);
+        tbody.appendChild(adminRow);
       } else {
         // Creazione tradizionale per altre tabelle
         const tr = document.createElement("tr");
@@ -830,11 +812,10 @@ async function loadAndCreateHtmlTable(
 
     // Se stiamo popolando la tabella dei piloti, aggiungiamo gli handler di click
     if (tbodyId === "piloti-body") {
-      // Aggiungi classe/cursore e listener all'intera card di ogni pilota
-      const pilotCards = tbody.querySelectorAll(".pilot-card");
+      const conteggio = document.getElementById("piloti-count");
+      const pilotCards = tbody.querySelectorAll(".ui-pilot");
+      if (conteggio) conteggio.textContent = pilotCards.length + " piloti";
       pilotCards.forEach((card) => {
-        card.classList.add("pilota-link");
-        card.style.cursor = "pointer";
         // Evitiamo agganciare più volte lo stesso listener
         if (!card._pilotHandlerAttached) {
           card.addEventListener("click", () => {
@@ -857,12 +838,9 @@ async function loadAndCreateHtmlTable(
     // Calcola colspan in base al numero di colonne che si dovevano usare
     const colspan = columnIndices ? columnIndices.length : 1;
 
-    if (tbodyId === "piloti-body" || tbodyId === "admin-body") {
-      tbody.innerHTML = `
-        <div style="text-align: center; color: red; padding: 20px;">
-          ❌ Errore nel caricamento dei dati.
-        </div>
-      `;
+    if (isHomeList) {
+      tbody.innerHTML =
+        '<div class="ui-state ui-state--error">Errore nel caricamento dei dati.</div>';
     } else {
       tbody.innerHTML = `
         <tr>
@@ -2349,37 +2327,40 @@ function slugify(text) {
     .replace(/^-+|-+$/g, "");
 }
 
+// Icona della periferica (volante / pad) di un pilota
+function perifericaIconHtml(periferica, className) {
+  const p = String(periferica || "").toLowerCase();
+  let src = "images/icons/social.svg";
+  let alt = "Periferica";
+  if (p.includes("volante") || p.includes("wheel") || p.includes("steering")) {
+    src = "images/icons/volante.svg";
+    alt = "Volante";
+  } else if (p.includes("pad") || p.includes("joystick") || p.includes("controller")) {
+    src = "images/icons/pad.svg";
+    alt = "Pad";
+  }
+  return `<img src="${src}" alt="${alt}" title="${alt}" class="${className}">`;
+}
+
+// Scheda pilota (Home): pannello #pilot-modal di index.html (ui.css)
 function ensurePilotModalExists() {
-  let modal = document.getElementById("pilot-modal");
-  if (modal) return modal;
-
-  modal = document.createElement("div");
-  modal.id = "pilot-modal";
-  modal.className = "pilot-modal";
-  modal.innerHTML = `
-    <div class="pilot-modal-backdrop" id="pilot-modal-backdrop"></div>
-    <div class="pilot-modal-content" role="dialog" aria-modal="true">
-      <button class="pilot-modal-close" id="pilot-modal-close">×</button>
-      <div class="pilot-modal-body" id="pilot-modal-body"></div>
-    </div>
-  `;
-  document.body.appendChild(modal);
-
-  // Close handlers
-  modal
-    .querySelector("#pilot-modal-close")
-    .addEventListener("click", closePilotModal);
-  modal
-    .querySelector("#pilot-modal-backdrop")
-    .addEventListener("click", closePilotModal);
-
+  const modal = document.getElementById("pilot-modal");
+  if (modal && !modal.dataset.ready) {
+    modal.dataset.ready = "1";
+    modal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close]")) closePilotModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closePilotModal();
+    });
+  }
   return modal;
 }
 
 function openPilotModal(fullRow, headerArr) {
   if (!fullRow || fullRow.length === 0) return;
   const modal = ensurePilotModalExists();
-  const body = modal.querySelector("#pilot-modal-body");
+  if (!modal) return;
 
   const name = fullRow[0] || "";
   const nickname = fullRow[1] || "";
@@ -2387,31 +2368,8 @@ function openPilotModal(fullRow, headerArr) {
   const info = fullRow[3] || "";
   const periferica = fullRow[4] || "";
 
-  // Determina l'icona della periferica
-  let perifericaIcon = "";
-  const perifericaLower = periferica.toLowerCase();
-
-  if (
-    perifericaLower.includes("volante") ||
-    perifericaLower.includes("wheel") ||
-    perifericaLower.includes("steering")
-  ) {
-    perifericaIcon =
-      '<img src="images/icons/volante.svg" alt="Volante" class="periferica-icon-modal">';
-  } else if (
-    perifericaLower.includes("pad") ||
-    perifericaLower.includes("joystick") ||
-    perifericaLower.includes("controller")
-  ) {
-    perifericaIcon =
-      '<img src="images/icons/pad.svg" alt="Pad" class="periferica-icon-modal">';
-  } else {
-    // Default a pad se non specificato
-    perifericaIcon =
-      '<img src="images/icons/social.svg" alt="Pad" class="periferica-icon-modal">';
-  }
-
-  // Build championships list (groups of 4 starting at index 5)
+  // Campionati: gruppi di 4 colonne a partire dall'indice 5
+  // (partecipa, categoria, auto, marca)
   const items = [];
   for (let i = 5; i < fullRow.length; i += 4) {
     const participates = (fullRow[i] || "").toString().trim().toLowerCase();
@@ -2420,84 +2378,60 @@ function openPilotModal(fullRow, headerArr) {
         headerArr && headerArr[i]
           ? headerArr[i]
           : `Campionato ${Math.floor((i - 3) / 4) + 1}`;
-      const category = fullRow[i + 1] || "";
-      const carUsed = fullRow[i + 2] || "";
-      const brand = fullRow[i + 3] || "";
-      items.push({ champName, category, carUsed, brand });
+      items.push({
+        champName,
+        category: fullRow[i + 1] || "",
+        carUsed: fullRow[i + 2] || "",
+        brand: fullRow[i + 3] || "",
+      });
     }
   }
 
-  // Render HTML
-  let html = "";
-  html += `<div class="pilot-header"><div class="pilot-header-left"><div class="pilot-name">${escapeHtml(
-    name,
-  )}</div>${nickname ? `<div class="pilot-nickname-modal">${escapeHtml(nickname)}</div>` : ""}</div><div class="pilot-number">#${escapeHtml(number)}</div><div class="pilot-periferica-modal">${perifericaIcon}</div></div>`;
-  if (info) html += `<div class="pilot-info">${escapeHtml(info)}</div>`;
+  modal.querySelector("#pilot-modal-head").innerHTML = `
+    <div class="ui-pilot-top"><span class="ui-pilot-num">#${escapeHtml(number)}</span></div>
+    <div class="ui-pilot-name" id="pilot-modal-title" style="font-size: var(--ui-fs-lg)">${escapeHtml(name)}</div>
+    ${nickname ? `<div class="ui-pilot-sub">${escapeHtml(nickname)}</div>` : ""}
+  `;
 
-  html += `<h4 class="pilot-section-title">Attualmente impegnato in:</h4>`;
+  let html = `<div class="ui-kv" style="margin-top:0; align-items:center">
+    <div><dt>Periferica</dt><dd>${perifericaIconHtml(periferica, "ui-icon-img")}</dd></div>
+    ${info ? `<div><dt>Info</dt><dd>${escapeHtml(info)}</dd></div>` : ""}
+  </div>`;
+
+  html += '<div class="ui-subhead" style="margin-top: var(--ui-s5)">Attualmente impegnato in</div>';
   if (items.length === 0) {
-    html += `<div class="pilot-no-item">Nessun impegno registrato.</div>`;
+    html += '<div class="ui-state">Nessun impegno registrato.</div>';
   } else {
-    html += `<div class="pilot-champ-list">`;
     items.forEach((it) => {
       const champSlug = slugify(it.champName);
-      const champImgPng = `images/Campionati/${champSlug}.png`;
-      const champImgSvg = `images/Campionati/${champSlug}.svg`;
-
-      // Use same normalization logic as worldchampionship for car brands
       const brandSlug = it.brand.toLowerCase().replace(/[^a-z0-9]+/g, "");
-      const brandImgPng = `images/marchi-auto/${brandSlug}.png`;
-      const brandImgSvg = `images/marchi-auto/${brandSlug}.svg`;
-
-      function fixImg(el, fallback) {
-        // Evita loop infiniti
-        el.onerror = null;
-        // Tenta il secondo formato
-        el.src = fallback;
-        // Se fallisce anche il secondo, nascondi l'immagine
-        el.addEventListener(
-          "error",
-          () => {
-            el.style.display = "none";
-          },
-          { once: true },
-        );
-      }
-      html += `<div class="pilot-champ-item">
-<div class="pilot-champ-logo-left">
-<img src="${champImgSvg}" 
-     alt="${escapeHtml(it.champName)}" 
-     class="pilot-champ-logo" 
-     onerror="if(this.src.includes('.svg')){this.src='${champImgPng}';}else{this.style.display='none';}" />
-</div>
-                <div class="pilot-champ-center">
-                  <div class="pilot-champ-name">${escapeHtml(it.champName)}</div>
-                  <div class="pilot-champ-category">${escapeHtml(it.category)}</div>
-                  <div class="pilot-champ-car-name">${escapeHtml(it.carUsed)}</div>
-                </div>
-                <div class="pilot-champ-logo-right">
-<img src="${brandImgPng}" 
-     alt="${escapeHtml(it.brand)}" 
-     class="pilot-brand-logo" 
-     onerror="if(this.src.includes('.png')){this.src='${brandImgSvg}';}else{this.style.display='none';}" />           
-                </div>
-              </div>`;
+      html += `<div class="ui-link" style="cursor:default">
+        <span class="ui-link-media">
+          <img src="images/Campionati/${champSlug}.svg" alt=""
+               onerror="if(this.src.includes('.svg')){this.src='images/Campionati/${champSlug}.png';}else{this.style.display='none';}">
+        </span>
+        <span class="ui-link-body">
+          <span class="ui-link-title">${escapeHtml(it.champName)} ${it.category ? `<span class="ui-badge">${escapeHtml(it.category)}</span>` : ""}</span>
+          <span class="ui-link-sub" style="display:block">${escapeHtml(it.carUsed)}</span>
+        </span>
+        ${it.brand ? `<img class="ui-pilot-brand" src="images/marchi-auto/${brandSlug}.png" alt="${escapeHtml(it.brand)}"
+             onerror="if(this.src.includes('.png')){this.src='images/marchi-auto/${brandSlug}.svg';}else{this.style.display='none';}">` : ""}
+      </div>`;
     });
-    html += `</div>`;
   }
 
-  body.innerHTML = html;
-
-  // Show modal
-  modal.classList.add("open");
+  modal.querySelector("#pilot-modal-body").innerHTML = html;
+  modal.hidden = false;
   document.body.style.overflow = "hidden";
+  const chiudi = modal.querySelector(".ui-icon-btn");
+  if (chiudi) chiudi.focus();
 }
 
 function closePilotModal() {
   const modal = document.getElementById("pilot-modal");
   if (!modal) return;
-  modal.classList.remove("open");
-  document.body.style.overflow = "auto";
+  modal.hidden = true;
+  document.body.style.overflow = "";
 }
 
 function escapeHtml(unsafe) {
@@ -2713,7 +2647,7 @@ function sportPct(value) {
   if (value === null || value === undefined || value === "") return "—";
   const n = Number(value);
   if (Number.isNaN(n)) return String(value);
-  if (n === 0) return '<span class="sport-best">riferimento</span>';
+  if (n === 0) return '<span class="ui-muted" title="Riferimento: miglior tempo">rif.</span>';
   return (n > 0 ? "+" : "") + n.toFixed(3) + "%";
 }
 
@@ -2797,86 +2731,88 @@ function sportSeparaEventi(inCorso, archivio) {
 /* Riga di classifica: tempo + posizioni + distacchi */
 function sportEventTable(entries, partecipanti, messaggioVuoto) {
   if (!entries || entries.length === 0) {
-    return `<div class="sport-empty">${
+    return `<div class="ui-state">${
       messaggioVuoto || "Nessun pilota del team in classifica."
     }</div>`;
   }
-  let html = '<div class="table-container"><table class="sport-table">';
+  let html = '<div class="ui-table-wrap"><table class="ui-table">';
   html += "<thead><tr>";
   html += "<th title='Posizione tra i piloti del team'>#</th>";
-  html += "<th>Pilota GTV</th><th>Tempo</th>";
-  html += "<th title='Posizione nella classifica mondiale'>Pos. assoluta</th>";
-  html += "<th title='Distacco percentuale dal miglior tempo del team'>Dist. team %</th>";
-  html += "<th title='Distacco percentuale dal miglior tempo assoluto'>Dist. assoluto %</th>";
+  html += "<th>Pilota</th><th class='ui-num'>Tempo</th>";
+  html += "<th class='ui-num' title='Posizione nella classifica mondiale'>Rank</th>";
+  html += "<th class='ui-num ui-hide-sm' title='Distacco percentuale dal miglior tempo del team'>Dist. team</th>";
+  html += "<th class='ui-num' title='Distacco percentuale dal miglior tempo assoluto'>Dist.</th>";
   html += "</tr></thead><tbody>";
 
   entries.forEach((e, i) => {
     const posGtv = e.pos_gtv || i + 1;
-    const rowClass = posGtv === 1 ? ' class="sport-row-best"' : "";
     const posAbs = e.pos_assoluta ?? e.pos_abs;
     const posAbsLabel = posAbs
       ? "#" + Number(posAbs).toLocaleString("it-IT")
       : "—";
-    html += `<tr${rowClass}>`;
-    html += `<td>${sportNum(posGtv)}</td>`;
-    html += `<td class="sport-driver">${sportDriverLabel(e)}</td>`;
-    html += `<td class="sport-time">${sportEscape(e.tempo || e.time)}</td>`;
-    html += `<td>${posAbsLabel}</td>`;
-    html += `<td>${sportPct(e.distacco_gtv_pct)}</td>`;
-    html += `<td>${sportPct(e.distacco_assoluto_pct ?? e.distacco_abs_pct)}</td>`;
+    html += "<tr>";
+    html += `<td class="ui-pos">${sportNum(posGtv)}</td>`;
+    html += `<td class="ui-cell-name" title="${sportEscape(e.gt7name || e.psn)}">${sportDriverLabel(e)}</td>`;
+    html += `<td class="ui-num ui-strong">${sportEscape(e.tempo || e.time)}</td>`;
+    html += `<td class="ui-num">${posAbsLabel}</td>`;
+    html += `<td class="ui-num ui-muted ui-hide-sm">${sportPct(e.distacco_gtv_pct)}</td>`;
+    html += `<td class="ui-num ui-muted">${sportPct(e.distacco_assoluto_pct ?? e.distacco_abs_pct)}</td>`;
     html += "</tr>";
   });
 
   html += "</tbody></table></div>";
   if (partecipanti) {
-    html += `<div class="sport-note">Classifica mondiale su ${sportNum(partecipanti)} partecipanti.</div>`;
+    html += `<div class="ui-updated" style="margin-top: var(--ui-s2)">Classifica mondiale su ${sportNum(partecipanti)} partecipanti.</div>`;
   }
   return html;
 }
 
 function sportDriverLabel(e) {
-  const nome = sportEscape(e.gt7name || e.psn);
-  const badge =
-    e.squadra === "JGTV" ? ' <span class="sport-badge-jgtv">JGTV</span>' : "";
+  const nome = '<span class="ui-strong">' + sportEscape(e.gt7name || e.psn) + "</span>";
+  const badge = e.squadra === "JGTV" ? ' <span class="ui-badge">JGTV</span>' : "";
   return nome + badge;
 }
 
+/* Un evento: logo + nome, dettagli su una riga, poi la classifica GTV */
 function sportEventCard(evento) {
   if (!evento) return "";
   const nome = sportEscape(evento.nome || evento.titolo || "Evento");
+  // Dettagli con etichetta (Pista, Auto, Periodo, Leader...)
   const dettagli = [];
   if (evento.pista && !String(evento.nome || "").includes(evento.pista)) {
-    dettagli.push("🏁 " + sportEscape(evento.pista));
+    dettagli.push(["Pista", sportEscape(evento.pista)]);
   }
-  if (evento.auto) dettagli.push("🚗 " + sportEscape(evento.auto));
-  if (evento.impostazioni) dettagli.push("⚙️ " + sportEscape(evento.impostazioni));
+  if (evento.auto) dettagli.push(["Auto", sportEscape(evento.auto)]);
+  if (evento.impostazioni) dettagli.push(["Regole", sportEscape(evento.impostazioni)]);
   if (evento.inizio || evento.fine) {
-    const periodo = [evento.inizio, evento.fine].filter(Boolean).join(" → ");
-    dettagli.push("📅 " + periodo);
+    dettagli.push(["Periodo", [evento.inizio, evento.fine].filter(Boolean).join(" → ")]);
   }
   if (evento.miglior_tempo) {
     const chi = evento.leader ? " (" + sportEscape(evento.leader) + ")" : "";
-    dettagli.push("🥇 leader " + sportEscape(evento.miglior_tempo) + chi);
+    dettagli.push(["Leader", sportEscape(evento.miglior_tempo) + chi]);
   }
 
   const vuoto = evento.settimana
     ? "Nessun pilota del team ha corso questa gara."
     : "Nessun pilota del team ha girato qui questa settimana.";
 
-  let html = '<div class="sport-card">';
-  html += '<div class="sport-card-head">';
+  let html = '<div class="ui-event">';
+  html += '<div class="ui-event-head">';
   if (evento.logo) {
     html +=
       '<img src="' +
       sportEscape(evento.logo) +
-      '" alt="" class="sport-card-logo" loading="lazy"' +
+      '" alt="" loading="lazy"' +
       " onerror=\"this.style.display='none'\">";
   }
-  html += `<div class="sport-card-title">${nome}</div>`;
-  html += "</div>";
+  html += `<div><div class="ui-strong">${nome}</div>`;
   if (dettagli.length) {
-    html += `<div class="sport-card-meta">${dettagli.join(" · ")}</div>`;
+    html +=
+      '<dl class="ui-kv" style="margin-top: var(--ui-s1)">' +
+      dettagli.map((d) => `<div><dt>${d[0]}</dt><dd>${d[1]}</dd></div>`).join("") +
+      "</dl>";
   }
+  html += "</div></div>";
   html += sportEventTable(evento.classifica, evento.partecipanti, vuoto);
   html += "</div>";
   return html;
@@ -2904,17 +2840,17 @@ function renderSportSection(data) {
 
   if (!attivi.length && !passati.length && !inCorso.length && !precedenti.length) {
     body.innerHTML =
-      '<div class="sport-empty">Nessun dato Sport Mode disponibile al momento.</div>';
+      '<div class="ui-state">Nessun dato Sport Mode disponibile al momento.</div>';
     return;
   }
 
   let html = "";
   if (attivi.length) {
-    html += '<h3 class="sport-subtitle">Time trial in corso</h3>';
+    html += '<div class="ui-subhead">Time trial in corso</div>';
     html += attivi.map(sportEventCard).join("");
   }
   if (inCorso.length) {
-    html += '<h3 class="sport-subtitle">Gare settimanali in corso</h3>';
+    html += '<div class="ui-subhead">Gare settimanali in corso</div>';
     html += inCorso.map(sportEventCard).join("");
   }
 
@@ -2948,13 +2884,12 @@ function renderSportSection(data) {
   if (pannelli.length) {
     const scelto =
       pannelli.filter((p) => p.id === sportPannello)[0] || pannelli[0];
-    html += '<h3 class="sport-subtitle">Archivio</h3>';
-    html += '<div class="sport-filtri">';
+    html += '<div class="ui-subhead">Archivio</div>';
+    html += '<div class="ui-seg" role="group" aria-label="Archivio">';
     pannelli.forEach((p) => {
-      const cls = p.id === scelto.id ? " sport-filtro-attivo" : "";
       html +=
-        '<button type="button" class="sport-filtro' +
-        cls +
+        '<button type="button" class="ui-seg-btn" aria-pressed="' +
+        (p.id === scelto.id) +
         '" data-pannello="' +
         p.id +
         '">' +
@@ -2963,10 +2898,7 @@ function renderSportSection(data) {
     });
     html += "</div>";
     if (scelto.nota) {
-      html +=
-        '<div class="sport-note" style="text-align:left">' +
-        sportEscape(scelto.nota) +
-        "</div>";
+      html += '<p class="ui-text">' + sportEscape(scelto.nota) + "</p>";
     }
     html += scelto.eventi.map(sportEventCard).join("");
   }
@@ -3010,21 +2942,21 @@ function sportRankChart(grafici) {
   if (!fasce.length || !totale) return "";
   const massimo = Math.max(...fasce.map((f) => f.conteggio), 1);
 
-  let html = '<h3 class="sport-subtitle">Dove si piazzano i piloti del team</h3>';
+  let html = '<div class="ui-subhead">Dove si piazzano i piloti del team</div>';
   html +=
-    '<div class="sport-note" style="text-align:left">' +
+    '<p class="ui-text" style="margin-top:0">' +
     sportNum(totale) +
-    " eventi registrati, divisi per posizione nella classifica mondiale.</div>";
-  html += '<div class="sport-chart">';
+    " eventi registrati, divisi per posizione nella classifica mondiale.</p>";
+  html += '<div class="ui-bars">';
   fasce.forEach((f) => {
-    const pct = f.conteggio ? Math.max(Math.round((f.conteggio / massimo) * 100), 3) : 0;
-    html += '<div class="sport-bar-row">';
-    html += `<div class="sport-bar-label">${sportEscape(f.etichetta)}</div>`;
+    const pct = f.conteggio ? Math.max(Math.round((f.conteggio / massimo) * 100), 2) : 0;
+    html += '<div class="ui-bar-row">';
+    html += `<span>${sportEscape(f.etichetta)}</span>`;
     html +=
-      '<div class="sport-bar-track"><div class="sport-bar-fill" style="width:' +
+      '<span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:' +
       pct +
-      '%"></div></div>';
-    html += `<div class="sport-bar-value">${sportNum(f.conteggio)}</div>`;
+      '%"></span></span>';
+    html += `<span class="ui-num">${sportNum(f.conteggio)}</span>`;
     html += "</div>";
   });
   html += "</div>";
@@ -3060,7 +2992,7 @@ function renderSportStats(data) {
   const piloti = (dati && dati.piloti) || [];
   if (piloti.length === 0) {
     body.innerHTML =
-      '<div class="sport-empty">Nessuna statistica disponibile al momento.</div>';
+      '<div class="ui-state">Nessuna statistica disponibile al momento.</div>';
     return;
   }
 
@@ -3075,13 +3007,12 @@ function renderSportStats(data) {
 
   let html = sportRankChart(dati.grafici);
 
-  html += '<h3 class="sport-subtitle">Piloti del team</h3>';
-  html += '<div class="sport-filtri">';
+  html += '<div class="ui-subhead" style="margin-top: var(--ui-s6)">Piloti del team</div>';
+  html += '<div class="ui-seg" role="group" aria-label="Periodo">';
   SPORT_FINESTRE.forEach((f) => {
-    const attivo = f.id === sportFinestra ? " sport-filtro-attivo" : "";
     html +=
-      '<button type="button" class="sport-filtro' +
-      attivo +
+      '<button type="button" class="ui-seg-btn" aria-pressed="' +
+      (f.id === sportFinestra) +
       '" data-finestra="' +
       f.id +
       '">' +
@@ -3090,19 +3021,19 @@ function renderSportStats(data) {
   });
   html += "</div>";
   html +=
-    '<div class="sport-note" style="text-align:left">' +
+    '<p class="ui-text">' +
     sportNum(eventiPeriodo) +
     " eventi del team nel periodo" +
     (finestra.giorni ? "" : " (tutti quelli pubblicati dalla fonte)") +
-    ".</div>";
+    ".</p>";
 
-  html += '<div class="table-container"><table class="sport-table">';
+  html += '<div class="ui-table-wrap"><table class="ui-table">';
   html += "<thead><tr>";
-  html += "<th>#</th><th>Pilota</th><th>DR</th><th>SR</th>";
-  html += "<th title='Miglior posizione mondiale nel periodo'>Miglior rank</th>";
-  html += "<th title='Posizione mondiale media nel periodo'>Rank medio</th>";
-  html += "<th title='Eventi considerati nel periodo'>Eventi</th>";
-  html += "<th title=\"Data dell'ultimo evento registrato\">Ultimo evento</th>";
+  html += "<th>#</th><th>Pilota</th><th class='ui-hide-sm'>DR</th><th class='ui-hide-sm'>SR</th>";
+  html += "<th class='ui-num' title='Miglior posizione mondiale nel periodo'>Miglior</th>";
+  html += "<th class='ui-num ui-hide-sm' title='Posizione mondiale media nel periodo'>Medio</th>";
+  html += "<th class='ui-num' title='Eventi considerati nel periodo'>Eventi</th>";
+  html += "<th class='ui-num ui-hide-sm' title=\"Data dell'ultimo evento registrato\">Ultimo</th>";
   html += "</tr></thead><tbody>";
 
   const rank = (v) =>
@@ -3110,14 +3041,14 @@ function renderSportStats(data) {
 
   righe.forEach((p, i) => {
     html += "<tr>";
-    html += `<td>${i + 1}</td>`;
-    html += `<td class="sport-driver">${sportDriverLabel(p)}</td>`;
-    html += `<td>${sportEscape(p.dr)}</td>`;
-    html += `<td>${sportEscape(p.sr)}</td>`;
-    html += `<td>${rank(p._miglior)}</td>`;
-    html += `<td>${rank(p._medio)}</td>`;
-    html += `<td>${sportNum(p._eventi)}</td>`;
-    html += `<td>${sportData(p.ultimo_evento_data)}</td>`;
+    html += `<td class="ui-pos">${i + 1}</td>`;
+    html += `<td class="ui-cell-name" title="${sportEscape(p.gt7name || p.psn)}">${sportDriverLabel(p)}</td>`;
+    html += `<td class="ui-muted ui-hide-sm">${sportEscape(p.dr)}</td>`;
+    html += `<td class="ui-muted ui-hide-sm">${sportEscape(p.sr)}</td>`;
+    html += `<td class="ui-num">${rank(p._miglior)}</td>`;
+    html += `<td class="ui-num ui-hide-sm">${rank(p._medio)}</td>`;
+    html += `<td class="ui-num">${sportNum(p._eventi)}</td>`;
+    html += `<td class="ui-num ui-muted ui-hide-sm">${sportData(p.ultimo_evento_data)}</td>`;
     html += "</tr>";
   });
 
@@ -3176,12 +3107,12 @@ async function loadSportData() {
       const el = document.getElementById(id);
       if (!el) return;
       el.textContent = label;
-      el.classList.toggle("sport-updated-vecchi", vecchi && !!label);
+      el.style.color = vecchi && label ? "var(--ui-danger)" : "";
     });
   } catch (err) {
     console.error("Errore nel caricamento dei dati Sport:", err);
     const msg =
-      '<div class="sport-empty">Dati Sport Mode non disponibili al momento.</div>';
+      '<div class="ui-state ui-state--error">Dati Sport Mode non disponibili al momento.</div>';
     if (sportBody) sportBody.innerHTML = msg;
     if (statsBody) statsBody.innerHTML = msg;
   }
