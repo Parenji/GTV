@@ -9,6 +9,8 @@
 
 # Documentazione e configurazione di sviluppo
 *.md
+# Vetrina interna degli elementi grafici (ui.css)
+stile.html
 .github/
 
 # Materiale di ricerca e note (non serve a nessuna pagina)
@@ -18,6 +20,7 @@ sportscraping/diagnostica.txt
 # Cache e artefatti locali
 **/__pycache__/
 unionscraping/auto/.screenshots/
+unionscraping/classifiche/.gare/
 unionscraping/telecronaca/fogli/
 unionscraping/**/*.swift
 unionscraping/bot/bot.log

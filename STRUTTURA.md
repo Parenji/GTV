@@ -30,6 +30,7 @@ Sono file **generati**: si aggiornano da soli, non si modificano a mano.
 |---|---|---|
 | `unionscraping/data.json` | `unionscraping/scraper/scraper.py` (workflow *Union Scraper*) | `union.js` |
 | `unionscraping/auto.json` | `unionscraping/auto/auto_from_screenshots.py` | `union.js` |
+| `unionscraping/classifiche.json` | `unionscraping/classifiche/classifiche.py` (workflow *Union Classifiche*) | `union.js` |
 | `sportscraping/sport.json` | `sportscraping/gt7_sport.py` (workflow *GT7 Sport Data*) | `scripts.js` |
 
 ## 2. Strumenti per task correlate (non sono il sito)
@@ -46,6 +47,7 @@ Un progetto per cartella; `data.json` e `auto.json` restano in
 | Cartella | Cosa fa |
 |---|---|
 | `scraper/` | `scraper.py`: scarica lobby e piloti dal sito HUB Union → `data.json` |
+| `classifiche/` | `classifiche.py`: classifiche generali e risultati di gara dal portale classifiche Union → `classifiche.json` |
 | `auto/` | `auto_from_screenshots.py` + helper OCR `ocr.swift`: auto dalle classifiche ufficiali → `auto.json` |
 | `bot/` | `whatsapp_reminder.py` (promemoria dei giorni di gara), `gtv_bot.py` (pannello Telegram), `macos_bot_service.sh` |
 | `telecronaca/` | `telecronaca.py`: foglietto per la telecronaca di una lobby; `quali.json` è la memoria dell'ordine di qualifica (`--quali "..."`) |
@@ -61,6 +63,7 @@ le note sulle API di GT7 GridStats.
 |---|---|---|
 | `union-scrape.yml` | ogni 12 ore | `unionscraping/data.json` |
 | `gt7-sport.yml` | 4 volte al giorno: 05:00 e 17:00 UTC, più 07:15 UTC (rotazione degli eventi) e 08:20 UTC di controllo | `sportscraping/sport.json` |
+| `union-classifiche.yml` | ogni 6 ore (runner macOS, per l'OCR) | `unionscraping/classifiche.json` |
 | `union-race-message.yml` | la sera dei giorni di gara | messaggio Telegram |
 
 Tutti fanno push su `main`, e ogni push fa ripartire il deploy di Vercel.
