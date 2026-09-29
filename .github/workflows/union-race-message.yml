@@ -10,7 +10,7 @@ name: Union Race Message
 # allora invia (--auto). Il secondo cron, la mattina, e' una rete di
 # sicurezza se il primo giro non e' mai partito.
 #
-# Il registro unionscraping/.sent_state.json impedisce che lo stesso giorno
+# Il registro unionscraping/bot/.sent_state.json impedisce che lo stesso giorno
 # venga inviato due volte.
 on:
   schedule:
@@ -48,14 +48,14 @@ jobs:
           python-version: "3.12"
 
       - name: Aggiorna i dati Union
-        working-directory: unionscraping
+        working-directory: unionscraping/scraper
         # Se lo scraping fallisce (rete/Google), si prosegue con il
         # data.json gia' presente nel repo: il messaggio parte comunque.
         continue-on-error: true
         run: python3 scraper.py
 
       - name: Invia il messaggio del giorno di gara
-        working-directory: unionscraping
+        working-directory: unionscraping/bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -74,17 +74,17 @@ jobs:
         if: always()
         run: |
           cd "$GITHUB_WORKSPACE"
-          if [ ! -f unionscraping/.sent_state.json ]; then
+          if [ ! -f unionscraping/bot/.sent_state.json ]; then
             echo "Nessun registro di invio da salvare."
             exit 0
           fi
-          if git diff --quiet -- unionscraping/.sent_state.json; then
+          if git diff --quiet -- unionscraping/bot/.sent_state.json; then
             echo "Registro invariato: niente da committare."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add unionscraping/.sent_state.json
+          git add unionscraping/bot/.sent_state.json
           git commit -m "chore(bot): registra l'invio del messaggio di oggi"
           # lo scraper pusha ogni 12h: allineo prima di pushare
           for i in 1 2 3; do
@@ -102,6 +102,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: messaggi-union
-          path: unionscraping/whatsapp/*.txt
+          path: unionscraping/bot/messaggi/*.txt
           if-no-files-found: ignore
           retention-days: 14

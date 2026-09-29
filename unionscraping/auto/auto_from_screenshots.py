@@ -48,8 +48,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-ROOT_DIR = BASE_DIR.parent
-AUTO_JSON = BASE_DIR / "auto.json"
+UNION_DIR = BASE_DIR.parent  # auto.json sta qui: il sito lo legge da unionscraping/
+ROOT_DIR = UNION_DIR.parent
+AUTO_JSON = UNION_DIR / "auto.json"
 CONFIG_JS = ROOT_DIR / "config.js"
 
 # Cache locale (gitignorata): screenshot, testo OCR e binario dell'OCR.
@@ -58,7 +59,7 @@ OCR_SWIFT = BASE_DIR / "ocr.swift"
 OCR_BINARY = CACHE_DIR / "ocr"
 
 # Credenziali: prima le variabili d'ambiente, poi il file locale.
-ENV_FILES = [BASE_DIR / ".env.gtv", BASE_DIR / ".env"]
+ENV_FILES = [UNION_DIR / ".env.gtv", UNION_DIR / ".env"]
 ENV_USER = "GTV_SCREENSHOT_USER"
 ENV_PASSWORD = "GTV_SCREENSHOT_PASSWORD"
 

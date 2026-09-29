@@ -28,8 +28,8 @@ Sono file **generati**: si aggiornano da soli, non si modificano a mano.
 
 | File | Chi lo scrive | Chi lo legge |
 |---|---|---|
-| `unionscraping/data.json` | `unionscraping/scraper.py` (workflow *Union Scraper*) | `union.js` |
-| `unionscraping/auto.json` | `unionscraping/auto_from_screenshots.py` | `union.js` |
+| `unionscraping/data.json` | `unionscraping/scraper/scraper.py` (workflow *Union Scraper*) | `union.js` |
+| `unionscraping/auto.json` | `unionscraping/auto/auto_from_screenshots.py` | `union.js` |
 | `sportscraping/sport.json` | `sportscraping/gt7_sport.py` (workflow *GT7 Sport Data*) | `scripts.js` |
 
 ## 2. Strumenti per task correlate (non sono il sito)
@@ -39,19 +39,16 @@ dati qui sopra. Non vengono pubblicati.
 
 ### `unionscraping/` — campionato Union
 
-| File | Cosa fa |
-|---|---|
-| `scraper.py` | Scarica lobby e piloti dal sito HUB Union → `data.json` |
-| `auto_from_screenshots.py` | Legge le auto dalle classifiche ufficiali → `auto.json` |
-| `ocr.swift` | Helper OCR (framework Vision di macOS) usato dallo script sopra |
-| `telecronaca.py` | Genera il foglietto stampabile per la telecronaca di una lobby |
-| `gtv_bot.py` | Pannello di controllo su Telegram |
-| `whatsapp_reminder.py` | Genera i messaggi promemoria dei giorni di gara |
-| `macos_bot_service.sh` | Avvia il bot come servizio locale su macOS |
-| `README.md` | Istruzioni dei vari strumenti |
+Un progetto per cartella; `data.json` e `auto.json` restano in
+`unionscraping/` perché il sito li legge da lì. Dettagli in
+`unionscraping/README.md`.
 
-`unionscraping/quali.json` è la memoria dell'ordine di qualifica per lobby:
-lo scrive `telecronaca.py` quando usi `--quali "..."`.
+| Cartella | Cosa fa |
+|---|---|
+| `scraper/` | `scraper.py`: scarica lobby e piloti dal sito HUB Union → `data.json` |
+| `auto/` | `auto_from_screenshots.py` + helper OCR `ocr.swift`: auto dalle classifiche ufficiali → `auto.json` |
+| `bot/` | `whatsapp_reminder.py` (promemoria dei giorni di gara), `gtv_bot.py` (pannello Telegram), `macos_bot_service.sh` |
+| `telecronaca/` | `telecronaca.py`: foglietto per la telecronaca di una lobby; `quali.json` è la memoria dell'ordine di qualifica (`--quali "..."`) |
 
 ### `sportscraping/` — Sport Mode di GT7
 
@@ -72,11 +69,11 @@ Tutti fanno push su `main`, e ogni push fa ripartire il deploy di Vercel.
 
 - **Non scrivere file generati nella root**: finirebbero pubblicati sul sito.
   Usa una sottocartella dedicata e aggiungila a `.gitignore` e `.vercelignore`
-  (esempio: `unionscraping/telecronaca/`).
+  (esempio: `unionscraping/telecronaca/fogli/`).
 - **Gli script devono usare percorsi assoluti** basati su
   `Path(__file__).resolve().parent`, non nomi di file relativi alla cartella
   corrente: è così che era nato il `data.json` duplicato nella root.
 - **Niente credenziali nel repo**: vanno in `.env.gtv` o `.env.telegram`
   (entrambi ignorati da git).
-- **`unionscraping/*.py` non va escluso da `.vercelignore`**: `api/telegram.py`
+- **`unionscraping/bot/*.py` non va escluso da `.vercelignore`**: `api/telegram.py`
   li importa a runtime.

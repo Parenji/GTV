@@ -4,7 +4,7 @@
 # senza questo file anche script, documentazione e materiale di lavoro
 # sarebbero scaricabili da granturismotv.vercel.app.
 #
-# ATTENZIONE: non escludere i .py di unionscraping/ — api/telegram.py (la
+# ATTENZIONE: non escludere i .py di unionscraping/bot/ — api/telegram.py (la
 # funzione serverless del bot Telegram) li importa a runtime.
 
 # Documentazione e configurazione di sviluppo
@@ -17,8 +17,8 @@ sportscraping/diagnostica.txt
 
 # Cache e artefatti locali
 **/__pycache__/
-unionscraping/.screenshots/
-unionscraping/telecronaca/
-unionscraping/*.swift
-unionscraping/bot.log
-unionscraping/whatsapp/
+unionscraping/auto/.screenshots/
+unionscraping/telecronaca/fogli/
+unionscraping/**/*.swift
+unionscraping/bot/bot.log
+unionscraping/bot/messaggi/

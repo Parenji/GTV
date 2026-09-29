@@ -30,7 +30,7 @@ jobs:
           python-version: "3.12"
 
       - name: Esegui lo scraper
-        working-directory: unionscraping
+        working-directory: unionscraping/scraper
         run: python3 scraper.py
 
       - name: Commit e push delle modifiche

@@ -66,17 +66,18 @@ except Exception:  # pragma: no cover - fallback se la tzdata non e' disponibile
 # ---------------------------------------------------------------------------
 # Percorsi
 # ---------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent          # .../unionscraping
-REPO_DIR = BASE_DIR.parent                          # radice del repository
-DATA_JSON = BASE_DIR / "data.json"
+BASE_DIR = Path(__file__).resolve().parent          # .../unionscraping/bot
+UNION_DIR = BASE_DIR.parent                         # .../unionscraping
+REPO_DIR = UNION_DIR.parent                         # radice del repository
+DATA_JSON = UNION_DIR / "data.json"
 UNION_HTML = REPO_DIR / "union.html"
-OUT_DIR = BASE_DIR / "whatsapp"                     # file .txt generati
+OUT_DIR = BASE_DIR / "messaggi"                     # file .txt generati
 SENT_STATE = BASE_DIR / ".sent_state.json"          # registro degli invii fatti
 
 # File locali (git-ignorati) da cui leggere token e chat id quando si lancia
 # lo script a mano. Su GitHub Actions questi file non esistono: i valori
 # arrivano dai secrets del repository.
-ENV_FILES = (BASE_DIR / ".env.telegram", BASE_DIR / ".env")
+ENV_FILES = (UNION_DIR / ".env.telegram", UNION_DIR / ".env")
 
 
 def load_env_file():

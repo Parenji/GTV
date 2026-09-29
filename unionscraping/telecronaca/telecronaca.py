@@ -14,10 +14,10 @@ HTML stampabile (una pagina) con:
   * elenco completo dei team del campionato (nome per esteso)
 
 Uso:
-    python3 unionscraping/telecronaca.py A15
-    python3 unionscraping/telecronaca.py --list
-    python3 unionscraping/telecronaca.py A15 --gara 3      # forza la gara
-    python3 unionscraping/telecronaca.py A2 --out /tmp/a2.html
+    python3 unionscraping/telecronaca/telecronaca.py A15
+    python3 unionscraping/telecronaca/telecronaca.py --list
+    python3 unionscraping/telecronaca/telecronaca.py A15 --gara 3      # forza la gara
+    python3 unionscraping/telecronaca/telecronaca.py A2 --out /tmp/a2.html
 """
 from __future__ import annotations
 
@@ -30,11 +30,12 @@ from datetime import date, datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_JSON = BASE_DIR / "data.json"
+UNION_DIR = BASE_DIR.parent
+DATA_JSON = UNION_DIR / "data.json"
 # I foglietti generati finiscono in una cartella dedicata, ignorata da git e
 # da Vercel: prima finivano nella root del repo, che e' la cartella pubblicata
 # dal sito, quindi ogni foglietto diventava una pagina web raggiungibile.
-OUT_DIR = BASE_DIR / "telecronaca"
+OUT_DIR = BASE_DIR / "fogli"
 # Ordine delle qualifiche per lobby (griglia di partenza), ricordato tra un giro e l'altro.
 QUALI_JSON = BASE_DIR / "quali.json"
 
@@ -357,7 +358,7 @@ HTML = """<!DOCTYPE html>
 {team_list}
   </div>
 
-  <footer>Foglietto generato da unionscraping/telecronaca.py &middot; piloti da data.json ({aggiornato}) &middot; impostazioni dal PDF ufficiale "Impostazioni Evento Corrente" &middot; calendario dal sito HUB UNION</footer>
+  <footer>Foglietto generato da unionscraping/telecronaca/telecronaca.py &middot; piloti da data.json ({aggiornato}) &middot; impostazioni dal PDF ufficiale "Impostazioni Evento Corrente" &middot; calendario dal sito HUB UNION</footer>
 </body>
 </html>
 """
@@ -654,7 +655,7 @@ def main() -> int:
     ap.add_argument("--gara", type=int, help="forza il numero di gara (1-6) invece di rilevarlo dalla data")
     ap.add_argument("--quali", help='ordine delle qualifiche, es. --quali "nello, alerasato, basilio, gas89" (viene ricordato)')
     ap.add_argument("--no-quali", action="store_true", help="ignora la griglia ricordata e mostra l'ordine di iscrizione")
-    ap.add_argument("--out", help="file di uscita (default: unionscraping/telecronaca/telecronaca-<lobby>.html)")
+    ap.add_argument("--out", help="file di uscita (default: unionscraping/telecronaca/fogli/telecronaca-<lobby>.html)")
     args = ap.parse_args()
 
     if args.quali and args.lobby:

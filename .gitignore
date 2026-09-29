@@ -13,17 +13,17 @@ unionscraping/.env
 unionscraping/.env.*
 
 # Messaggi generati (rigenerabili con whatsapp_reminder.py)
-unionscraping/whatsapp/
+unionscraping/bot/messaggi/
 
 # Stato e log del bot Telegram
-unionscraping/.bot_state.json
-unionscraping/bot.log
-unionscraping/bot.log.*
+unionscraping/bot/.bot_state.json
+unionscraping/bot/bot.log
+unionscraping/bot/bot.log.*
 
 # Cache di auto_from_screenshots.py: screenshot scaricati, testo OCR e
 # binario dell'helper. Si rigenera da solo con lo script.
-unionscraping/.screenshots/
+unionscraping/auto/.screenshots/
 
 # Foglietti di telecronaca generati (rigenerabili con telecronaca.py)
-unionscraping/telecronaca/
+unionscraping/telecronaca/fogli/
 

@@ -40,8 +40,8 @@ unload_plist() {
 }
 
 install_service() {
-  if [ ! -f "$SCRIPT_DIR/.env.telegram" ]; then
-    echo "x Manca $SCRIPT_DIR/.env.telegram con TELEGRAM_BOT_TOKEN." >&2
+  if [ ! -f "$SCRIPT_DIR/../.env.telegram" ]; then
+    echo "x Manca $SCRIPT_DIR/../.env.telegram con TELEGRAM_BOT_TOKEN." >&2
     exit 2
   fi
 

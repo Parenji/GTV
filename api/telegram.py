@@ -46,10 +46,10 @@ DATA_MAX_AGE = 3600          # secondi: oltre questo, data.json viene riscaricat
 def _find_code_dir():
     here = Path(__file__).resolve()
     candidates = [
-        here.parent.parent / "unionscraping",   # /var/task/unionscraping
-        Path.cwd() / "unionscraping",
-        Path("/var/task/unionscraping"),
-        here.parent / "unionscraping",
+        here.parent.parent / "unionscraping" / "bot",   # /var/task/unionscraping/bot
+        Path.cwd() / "unionscraping" / "bot",
+        Path("/var/task/unionscraping/bot"),
+        here.parent / "unionscraping" / "bot",
     ]
     for c in candidates:
         if (c / "gtv_bot.py").exists():
