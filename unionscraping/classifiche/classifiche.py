@@ -193,7 +193,9 @@ def posizioni_dopo_ogni_gara(piloti: list) -> None:
     for p in piloti:
         p["storico_pos"] = []
     for n in range(NUM_GARE):
-        if all(p["gare"][n] is None for p in piloti):
+        # il portale mostra 0 (non vuoto) anche per le gare non ancora corse:
+        # una gara conta solo se qualcuno ha preso punti
+        if all(not p["gare"][n] for p in piloti):
             break
         parziali = sorted(
             piloti,
@@ -201,6 +203,12 @@ def posizioni_dopo_ogni_gara(piloti: list) -> None:
         )
         for posizione, p in enumerate(parziali, start=1):
             p["storico_pos"].append(posizione)
+    # Le posizioni intermedie sono ricostruite dalle colonne gara e possono
+    # scostarsi dal portale (bonus, penalita', spareggi): l'ultima e' sempre
+    # la classifica vera.
+    for p in piloti:
+        if p["storico_pos"] and p["pos"]:
+            p["storico_pos"][-1] = p["pos"]
 
 
 # ---------------------------------------------------------------------------

@@ -14,6 +14,8 @@ function initUnionPage() {
   loadUnionLobby();
   loadUnionStats();
   loadUnionClassifiche();
+  initUnionPanel();
+  initUnionPilotaLinks();
 }
 
 // -------------------------------------------------------------
@@ -152,10 +154,7 @@ function loadUnionPiloti() {
   // file con le auto usate in gara. Gli ultimi due sono opzionali: se
   // mancano, le matricole restano "—" e le auto restano quelle del CSV.
   Promise.all([
-    fetch(url).then(function (response) {
-      if (!response.ok) throw new Error("Errore HTTP " + response.status);
-      return response.text();
-    }),
+    fetchUnionCsvRows(),
     fetchUnionLobbyData().catch(function () {
       return null;
     }),
@@ -164,11 +163,10 @@ function loadUnionPiloti() {
     }),
   ])
     .then(function (results) {
-      var csvText = results[0];
+      var rows = results[0];
       var unionData = results[1];
       var autoData = results[2];
 
-      var rows = parseCsv(csvText);
       if (!rows || rows.length === 0) {
         container.innerHTML = unionState("Nessun dato.", "empty");
         return;
@@ -293,7 +291,8 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
       // In evidenza il nome GT7 (quello visto in gioco e nelle classifiche),
       // sotto sempre il PSN, anche quando coincide.
       return (
-        '<div class="ui-card ui-pilot">' +
+        '<div class="ui-card ui-pilot ui-card--link" data-pilota="' + escapeHtml(gt7 || psn) + '"' +
+        (gt7 && psn ? ' data-pilota-alt="' + escapeHtml(psn) + '"' : "") + ' tabindex="0" role="button">' +
         '<div class="ui-pilot-top"><span class="ui-pilot-num">#' + escapeHtml(numero) + "</span>" +
         unionCatBadge(cat) + "</div>" +
         (marchio ? brandLogoHtml(marchio) : "<span></span>") +
@@ -488,8 +487,7 @@ function renderUnionSpecchietto(container, data) {
   });
 
   var html =
-    '<p class="ui-text" style="margin-top:0">' + rows.length +
-    " piloti GTV iscritti. Tocca la lobby per vedere lo schieramento completo, l'host e la live.</p>";
+"";
 
   var categorie = [];
   rows.forEach(function (r) {
@@ -505,7 +503,7 @@ function renderUnionSpecchietto(container, data) {
         var giorno = UNION_DAY_LABEL[String(r.day || "").toUpperCase()] || r.day;
         return (
           "<tr>" +
-          '<td><span class="ui-strong">' + escapeHtml(r.pilot) + "</span></td>" +
+          '<td><span class="ui-strong">' + unionPilotaLink(r.pilot) + "</span></td>" +
           '<td><button type="button" class="ui-btn ui-btn--sm ui-btn--block" data-target="' + lobbyCardId(r.day, r.name) + '">' +
           escapeHtml(r.name) + "</button></td>" +
           "<td>" + escapeHtml(giorno) + "</td>" +
@@ -572,7 +570,7 @@ function unionLobbyCardHtml(lb) {
         '<li class="ui-row' + (isGtv ? " is-gtv" : "") + '">' +
         '<span class="ui-pos">' + escapeHtml(p.pos) + "</span>" +
         '<span class="ui-muted">' + escapeHtml(p.team) + "</span>" +
-        '<span class="ui-ellipsis' + (isGtv ? " ui-strong" : "") + '">' + escapeHtml(p.nome) + "</span>" +
+        '<span class="ui-ellipsis' + (isGtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) + "</span>" +
         "</li>"
       );
     })
@@ -643,22 +641,36 @@ function unionIsGtv(p) {
   return String((p && p.team) || "").trim().toUpperCase() === "GTV";
 }
 
+var _unionClsPromise = null;
+function fetchUnionClassifiche() {
+  if (!_unionClsPromise) {
+    _unionClsPromise = fetch(unionClassificheUrl())
+      .then(function (response) {
+        if (!response.ok) throw new Error("Errore HTTP " + response.status);
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.leghe) throw new Error("Dati non validi");
+        return data;
+      })
+      .catch(function (err) {
+        _unionClsPromise = null;
+        throw err;
+      });
+  }
+  return _unionClsPromise;
+}
+
 function loadUnionClassifiche() {
   var resBody = document.getElementById("union-res-body");
   var clsBody = document.getElementById("union-cls-body");
   if (!resBody && !clsBody) return;
 
-  fetch(unionClassificheUrl())
-    .then(function (response) {
-      if (!response.ok) throw new Error("Errore HTTP " + response.status);
-      return response.json();
-    })
+  fetchUnionClassifiche()
     .then(function (data) {
-      if (!data || !data.leghe) throw new Error("Dati non validi");
       unionCls.data = data;
       var pubblicate = (data.meta && data.meta.gare_pubblicate) || [];
       unionCls.gara = pubblicate.length ? pubblicate[pubblicate.length - 1] : null;
-      initUnionPanel();
       if (resBody) renderUnionRisultati();
       if (clsBody) renderUnionClassifiche();
     })
@@ -784,7 +796,6 @@ function renderUnionRisultati() {
     '<div class="ui-legend" style="margin-top: var(--ui-s5)">' +
     '<span><span class="ui-dot ui-dot--pole">P</span> pole position</span>' +
     '<span><span class="ui-dot ui-dot--fl"></span> giro più veloce in gara</span>' +
-    "<span>Tocca una scheda per la classifica della lobby</span>" +
     "</div>";
 }
 
@@ -828,12 +839,22 @@ function openUnionPanel(nomeLobby, origine) {
   var panel = document.getElementById("union-panel");
   if (!lb || !panel) return;
 
-  document.getElementById("union-panel-title").innerHTML =
-    "Lobby " + escapeHtml(nomeLobby) + " " + unionCatBadge(lb.lega);
-  document.getElementById("union-panel-sub").textContent =
-    "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1];
-  document.getElementById("union-panel-body").innerHTML = unionLobbyPanelHtml(lb);
+  showUnionSheet(
+    "Lobby " + escapeHtml(nomeLobby) + " " + unionCatBadge(lb.lega),
+    "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1],
+    unionLobbyPanelHtml(lb),
+    origine
+  );
+}
 
+// Apre il pannello con titolo, sottotitolo e contenuto dati
+function showUnionSheet(titoloHtml, sub, corpoHtml, origine) {
+  var panel = document.getElementById("union-panel");
+  document.getElementById("union-panel-title").innerHTML = titoloHtml;
+  document.getElementById("union-panel-sub").textContent = sub;
+  var body = document.getElementById("union-panel-body");
+  body.innerHTML = corpoHtml;
+  body.scrollTop = 0;
   _unionPanelOrigin = origine || null;
   panel.hidden = false;
   document.body.style.overflow = "hidden";
@@ -846,7 +867,7 @@ function closeUnionPanel() {
   if (!panel) return;
   panel.hidden = true;
   document.body.style.overflow = "";
-  if (_unionPanelOrigin) _unionPanelOrigin.focus();
+  if (_unionPanelOrigin && document.body.contains(_unionPanelOrigin)) _unionPanelOrigin.focus();
 }
 
 function unionLobbyPanelHtml(lb) {
@@ -874,7 +895,7 @@ function unionLobbyPanelHtml(lb) {
           '<tr class="' + (unionIsGtv(r) ? "is-gtv" : "") + '">' +
           '<td class="ui-pos">' + r.pos + "</td>" +
           '<td class="ui-muted">' + (r.q ? r.q : "—") + "</td>" +
-          '<td><span class="ui-strong">' + escapeHtml(r.nome) + "</span> " + unionDots(lb, r.nome) + "</td>" +
+          '<td><span class="ui-strong">' + unionPilotaLink(r.nome) + "</span> " + unionDots(lb, r.nome) + "</td>" +
           '<td class="ui-muted">' + escapeHtml(r.team || "") + "</td>" +
           '<td class="ui-muted ui-hide-sm">' + escapeHtml(r.auto || "") + "</td>" +
           '<td class="ui-num">' + escapeHtml(r.distacco || "") + "</td>" +
@@ -923,7 +944,7 @@ function unionQtoGChart(righe) {
       else pos = '<span class="ui-muted">0</span>';
       return (
         '<div class="ui-diverge-row' + (unionIsGtv(x.r) ? " is-gtv" : "") + '">' +
-        '<span class="ui-ellipsis">' + escapeHtml(x.r.nome) + "<small>P" + x.r.q + " → P" + x.r.pos + "</small></span>" +
+        '<span class="ui-ellipsis">' + unionPilotaLink(x.r.nome) + "<small>P" + x.r.q + " → P" + x.r.pos + "</small></span>" +
         '<span class="ui-diverge-neg">' + neg + "</span>" +
         '<span class="ui-diverge-pos">' + pos + "</span>" +
         "</div>"
@@ -973,6 +994,7 @@ function renderUnionClassifiche() {
   if (!body.dataset.ready) {
     body.dataset.ready = "1";
     body.addEventListener("click", function (e) {
+      if (e.target.closest("[data-pilota]")) return;
       var gap = e.target.closest("[data-gap]");
       if (gap) {
         var aperti = (unionCls.aperti[unionCls.lega] = unionCls.aperti[unionCls.lega] || {});
@@ -1023,7 +1045,7 @@ function unionClsRowHtml(p) {
     '<li class="ui-row' + (gtv ? " is-gtv" : "") + '" tabindex="0" aria-expanded="false">' +
     '<span class="ui-pos">' + (p.pos || "") + "</span>" +
     '<span class="ui-muted">' + escapeHtml(p.team || "") + "</span>" +
-    '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + escapeHtml(p.nome) + (gtv ? unionMovimento(p) : "") + "</span>" +
+    '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) + (gtv ? unionMovimento(p) : "") + "</span>" +
     '<span class="ui-num">' + (p.punti || 0) + "</span>" +
     '<span class="ui-row-more">' + gare + "</span>" +
     "</li>"
@@ -1092,4 +1114,549 @@ function setUnionClsUpdate(data) {
     "Dati dal portale classifiche Union, aggiornati il " +
     d.toLocaleString("it-IT", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
   el.hidden = false;
+}
+
+// =============================================================
+// SCHEDA PILOTA
+// Ogni nome di pilota con data-pilota apre, nel pannello, la scheda con
+// stats, ultimi risultati, lobby della prossima gara e grafici del suo
+// campionato. Mette insieme le stesse fonti del resto della pagina:
+// foglio piloti (CSV), lobby (data.json), classifiche (classifiche.json).
+// =============================================================
+
+// Nome cliccabile: ovunque compare un pilota si usa questo (o data-pilota).
+// `alt` e' il secondo nome noto (PSN) per ritrovarlo nelle altre fonti.
+function unionPilotaLink(nome, alt) {
+  if (!nome) return "";
+  return (
+    '<span class="ui-plink" role="link" tabindex="0" data-pilota="' + escapeHtml(nome) + '"' +
+    (alt ? ' data-pilota-alt="' + escapeHtml(alt) + '"' : "") + ">" +
+    escapeHtml(nome) + "</span>"
+  );
+}
+
+function initUnionPilotaLinks() {
+  if (document.body.dataset.pilotaReady) return;
+  document.body.dataset.pilotaReady = "1";
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-pilota]");
+    if (el) openUnionPilota(el.getAttribute("data-pilota"), el.getAttribute("data-pilota-alt"), el);
+  });
+  document.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-pilota][tabindex]")) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+}
+
+// Righe del foglio piloti, scaricate una sola volta
+var _unionCsvPromise = null;
+function fetchUnionCsvRows() {
+  if (!_unionCsvPromise) {
+    var url = window.GTV_CONFIG && window.GTV_CONFIG.googleSheets ? window.GTV_CONFIG.googleSheets.piloti : "";
+    _unionCsvPromise = (url ? fetch(url) : Promise.reject(new Error("Configurazione non trovata")))
+      .then(function (r) {
+        if (!r.ok) throw new Error("Errore HTTP " + r.status);
+        return r.text();
+      })
+      .then(parseCsv)
+      .catch(function (err) {
+        _unionCsvPromise = null;
+        throw err;
+      });
+  }
+  return _unionCsvPromise;
+}
+
+function openUnionPilota(nome, alt, origine) {
+  var panel = document.getElementById("union-panel");
+  if (!panel || !nome) return;
+
+  // Dal pannello di una lobby si passa alla scheda senza perdere il punto di ritorno
+  var origin = panel.hidden ? origine || null : _unionPanelOrigin;
+  showUnionSheet(escapeHtml(nome), "", unionState("Carico la scheda…", "loading"), origin);
+
+  var vuoto = function () { return null; };
+  Promise.all([
+    fetchUnionLobbyData().catch(vuoto),
+    fetchUnionClassifiche().catch(vuoto),
+    fetchUnionCsvRows().catch(vuoto),
+    fetchUnionAutoData().catch(vuoto),
+  ]).then(function (r) {
+    var p = unionPilotaProfilo([nome, alt], { lobby: r[0], cls: r[1], csv: r[2], auto: r[3] });
+    var titolo = escapeHtml(p.nome) + (p.lega ? " " + unionCatBadge(p.lega) : "");
+    var sub = [p.numero ? "#" + p.numero : "", p.team, p.psn && unionNorm(p.psn) !== unionNorm(p.nome) ? "PSN " + p.psn : ""]
+      .filter(Boolean)
+      .join(" · ");
+    document.getElementById("union-panel-title").innerHTML = titolo;
+    document.getElementById("union-panel-sub").textContent = sub;
+    var body = document.getElementById("union-panel-body");
+    body.innerHTML = unionPilotaHtml(p);
+    body.scrollTop = 0;
+  });
+}
+
+// Unisce tutte le informazioni note su un pilota (nome di gioco o PSN)
+function unionPilotaProfilo(nomi, ctx) {
+  var chiavi = nomi.filter(Boolean).map(unionNorm);
+  var uguale = function (n) { return chiavi.indexOf(unionNorm(n)) !== -1; };
+  var p = { nome: nomi[0], gareValide: [], pubblicate: [] };
+
+  // Foglio piloti: numero, categoria, auto, PSN
+  (ctx.csv || []).some(function (r) {
+    var iscritto = ["x", "✓", "1"].indexOf(String(r[5] || "").trim().toLowerCase()) !== -1;
+    if (!iscritto || !(uguale(r[1]) || uguale(r[0]))) return false;
+    p.numero = String(r[2] || "").trim();
+    p.psn = String(r[0] || "").trim();
+    p.nome = String(r[1] || "").trim() || p.nome;
+    p.catCsv = String(r[6] || "").trim();
+    p.auto = String(r[7] || "").trim();
+    p.marchio = String(r[8] || "").trim();
+    return true;
+  });
+  if (!p.auto) {
+    var rec = lookupUnionAuto(buildUnionAutoMap(ctx.auto), p.psn || nomi[1], p.nome);
+    if (rec) {
+      p.auto = rec.auto || "";
+      p.marchio = p.marchio || rec.marchio || "";
+    }
+  }
+
+  // Lobby della settimana (data.json)
+  ((ctx.lobby && ctx.lobby.lobbies) || []).some(function (lb) {
+    return lb.pilots.some(function (x) {
+      if (!uguale(x.nome)) return false;
+      p.lobby = lb;
+      p.nome = p.nome || x.nome;
+      p.team = p.team || x.team;
+      p.numero = p.numero || x.matricola;
+      return true;
+    });
+  });
+
+  // Classifica generale (classifiche.json)
+  var data = ctx.cls;
+  if (data && data.leghe) {
+    UNION_LEGHE.some(function (lega) {
+      var lista = (data.leghe[lega] && data.leghe[lega].piloti) || [];
+      var trovato = lista.filter(function (x) { return uguale(x.nome); })[0];
+      if (!trovato) return false;
+      p.lega = lega;
+      p.entry = trovato;
+      p.lista = lista;
+      p.nome = trovato.nome;
+      p.team = trovato.team || p.team;
+      return true;
+    });
+    p.pubblicate = (data.meta && data.meta.gare_pubblicate) || [];
+  }
+  p.lega = p.lega || (p.lobby && p.lobby.category) || p.catCsv || "";
+
+  // Risultati gara per gara
+  p.pubblicate.forEach(function (g) {
+    var gd = data.gare && data.gare[String(g)];
+    var res = p.lega ? unionTrovaRisultato(gd, p.lega, p.nome) : null;
+    var punti = p.entry && p.entry.gare ? p.entry.gare[g - 1] : null;
+    p.gareValide.push({ g: g, res: res, punti: punti === undefined ? null : punti });
+  });
+  return p;
+}
+
+function unionPilotaHtml(p) {
+  var html = unionPilotaInfoHtml(p);
+  var giocate = p.gareValide.filter(function (x) { return x.res; });
+
+  if (!p.pubblicate.length) {
+    html +=
+      '<p class="ui-text ui-muted">Statistiche e grafici dopo la prima gara.</p>';
+  } else if (!giocate.length && !(p.entry && p.entry.punti)) {
+    html += '<p class="ui-text ui-muted">Ancora nessun risultato.</p>';
+  } else {
+    html += unionPilotaStatsHtml(p, giocate);
+    html += unionPilotaUltimiHtml(p);
+    html += unionPilotaGraficiHtml(p, giocate);
+  }
+  html += unionPilotaLobbyHtml(p);
+  return html;
+}
+
+function unionPilotaInfoHtml(p) {
+  if (!p.marchio && !p.auto && !p.lobby) return "";
+  return (
+    '<div class="ui-pcar">' +
+    (p.marchio ? brandLogoHtml(p.marchio).replace('class="ui-pilot-brand"', 'class="ui-pcar-logo"') : "") +
+    (p.auto ? "<span>" + escapeHtml(p.auto) + "</span>" : "") +
+    (p.lobby ? '<span class="ui-badge ui-badge--accent ui-pcar-lobby">Lobby ' + escapeHtml(p.lobby.name) + "</span>" : "") +
+    "</div>"
+  );
+}
+
+function unionTile(num, label, nota) {
+  return (
+    '<div class="ui-ptile"><div class="ui-ptile-num">' + num + "</div>" +
+    '<div class="ui-ptile-label">' + label + (nota ? " <small>" + nota + "</small>" : "") + "</div></div>"
+  );
+}
+
+function unionMedia(v) {
+  return v.length ? v.reduce(function (a, b) { return a + b; }, 0) / v.length : null;
+}
+
+function unionSegno(n) {
+  return n > 0 ? "+" + n : n < 0 ? "−" + Math.abs(n) : "0";
+}
+
+function unionPilotaStatsHtml(p, giocate) {
+  var pos = giocate.map(function (x) { return x.res.riga.pos; });
+  var pole = giocate.filter(function (x) {
+    return x.res.lb.pole && unionNorm(x.res.lb.pole) === unionNorm(p.nome);
+  }).length;
+  var fl = giocate.filter(function (x) {
+    return x.res.lb.giro_veloce && unionNorm(x.res.lb.giro_veloce) === unionNorm(p.nome);
+  }).length;
+  var vittorie = pos.filter(function (n) { return n === 1; }).length;
+  var podi = pos.filter(function (n) { return n <= 3; }).length;
+  var media = unionMedia(pos);
+  var e = p.entry;
+
+  var t = "";
+  if (e && e.pos) t += unionTile("P" + e.pos, "Classifica");
+  if (e) t += unionTile(e.punti || 0, "Punti");
+  t += unionTile(giocate.length + "/" + p.pubblicate.length, "Gare");
+  if (pos.length) {
+    t += unionTile("P" + Math.min.apply(null, pos), "Miglior arrivo");
+    t += unionTile(media.toFixed(1).replace(".", ","), "Arrivo medio");
+    t += unionTile(podi, "Podi", vittorie ? vittorie + (vittorie === 1 ? " vittoria" : " vittorie") : "");
+  }
+  if (pole || fl) t += unionTile(pole + " · " + fl, "Pole · giri veloci");
+
+  return '<div class="ui-subhead">Statistiche</div><div class="ui-ptiles">' + t + "</div>";
+}
+
+function unionPilotaUltimiHtml(p) {
+  var righe = p.gareValide
+    .slice()
+    .reverse()
+    .map(function (x) {
+      var pista = UNION_PISTE[x.g - 1];
+      if (!x.res) {
+        return (
+          '<li class="ui-row"><span class="ui-pos">G' + x.g + '</span><span class="ui-ellipsis">' +
+          escapeHtml(pista) + '</span><span class="ui-muted">non classificato</span><span class="ui-num">—</span></li>'
+        );
+      }
+      var r = x.res.riga;
+      var q = r.q ? "Q" + r.q + " · " : "";
+      return (
+        '<li class="ui-row' + (r.pos <= 3 ? " is-gtv" : "") + '">' +
+        '<span class="ui-pos">G' + x.g + "</span>" +
+        '<span class="ui-ellipsis"><span class="ui-strong">P' + r.pos + "</span> " +
+        '<span class="ui-muted">' + q + escapeHtml(pista) + ", " + escapeHtml(x.res.lobby) + "</span> " +
+        unionDots(x.res.lb, p.nome) + "</span>" +
+        '<span class="ui-muted">' + escapeHtml(r.distacco || "") + "</span>" +
+        '<span class="ui-num">' + (x.punti === null ? "—" : x.punti + " pt") + "</span>" +
+        "</li>"
+      );
+    })
+    .join("");
+  return (
+    '<div class="ui-subhead">Ultimi risultati</div>' +
+    '<ol class="ui-list" style="--ui-row-cols: 32px 1fr auto 56px">' + righe + "</ol>"
+  );
+}
+
+// ---------- Grafici (SVG in linea, senza librerie) ----------
+
+// Grafico a linee su G1–G5. `serie`: [{valori, classe, etichette}]; l'ultima
+// e' quella del pilota. `invert`: il valore piu' basso sta in alto (posizioni).
+function unionLineChart(o) {
+  var W = 400, H = 190, pl = 30, pr = 18, pt = 18, pb = 26;
+  var n = UNION_NUM_GARE;
+  var hi = Math.max(o.max, o.min + 1);
+  var X = function (i) { return pl + (i * (W - pl - pr)) / (n - 1); };
+  var Y = function (v) {
+    var t = (v - o.min) / (hi - o.min);
+    return pt + (o.invert ? t : 1 - t) * (H - pt - pb);
+  };
+
+  var svg = '<svg class="ui-chart" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + escapeHtml(o.titolo) + '">';
+  o.ticks.forEach(function (v) {
+    svg +=
+      '<line class="ui-ch-grid" x1="' + pl + '" x2="' + (W - pr) + '" y1="' + Y(v) + '" y2="' + Y(v) + '"/>' +
+      '<text class="ui-ch-axis" x="' + (pl - 6) + '" y="' + (Y(v) + 4) + '" text-anchor="end">' + (o.fmtTick || String)(v) + "</text>";
+  });
+  for (var i = 0; i < n; i++) {
+    svg += '<text class="ui-ch-axis" x="' + X(i) + '" y="' + (H - 6) + '" text-anchor="middle">G' + (i + 1) + "</text>";
+  }
+  o.serie.forEach(function (s) {
+    var d = "";
+    var prev = false;
+    s.valori.forEach(function (v, i) {
+      if (v === null || v === undefined) { prev = false; return; }
+      d += (prev ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1);
+      prev = true;
+    });
+    svg += '<path class="ui-ch-line ' + s.classe + '" d="' + d + '"/>';
+    s.valori.forEach(function (v, i) {
+      if (v === null || v === undefined) return;
+      svg += '<circle class="ui-ch-dot ' + s.classe + '" cx="' + X(i).toFixed(1) + '" cy="' + Y(v).toFixed(1) + '" r="' + (s.etichette ? 4.5 : 2.5) + '"/>';
+      if (s.etichette) {
+        svg += '<text class="ui-ch-val" x="' + X(i).toFixed(1) + '" y="' + (Y(v) - 9).toFixed(1) + '" text-anchor="middle">' + (o.fmtVal || String)(v) + "</text>";
+      }
+    });
+  });
+  return svg + "</svg>";
+}
+
+function unionTicks(max, quanti) {
+  var passo = Math.max(1, Math.ceil(max / quanti));
+  var t = [];
+  for (var v = 0; v <= max; v += passo) t.push(v);
+  return t;
+}
+
+function unionChartBox(titolo, legenda, corpo) {
+  return (
+    '<div class="ui-chart-box"><div class="ui-chart-title">' + titolo + "</div>" +
+    (legenda ? '<div class="ui-legend">' + legenda + "</div>" : "") + corpo + "</div>"
+  );
+}
+
+function unionPilotaGraficiHtml(p, giocate) {
+  var out = "";
+  var n = UNION_NUM_GARE;
+  var perGara = function (fn) {
+    var v = [];
+    for (var i = 0; i < n; i++) v.push(null);
+    p.gareValide.forEach(function (x) { v[x.g - 1] = fn(x); });
+    return v;
+  };
+
+  // 1. Piazzamenti di gara
+  var arrivi = perGara(function (x) { return x.res ? x.res.riga.pos : null; });
+  if (arrivi.some(function (v) { return v !== null; })) {
+    var maxPos = Math.max.apply(null, arrivi.concat(
+      p.gareValide.map(function (x) { return x.res ? (x.res.lb.classifica || []).length : 0; })
+    ).filter(function (v) { return v !== null; }));
+    maxPos = Math.max(maxPos, 4);
+    var tickPos = [1, Math.round((1 + maxPos) / 2), maxPos].filter(function (v, i, a) { return a.indexOf(v) === i; });
+    out += unionChartBox(
+      "Piazzamenti di gara",
+      "",
+      unionLineChart({
+        titolo: "Piazzamenti di gara", serie: [{ valori: arrivi, classe: "is-main", etichette: true }],
+        invert: true, min: 1, max: maxPos, ticks: tickPos, fmtTick: function (v) { return "P" + v; },
+        fmtVal: function (v) { return "P" + v; },
+      })
+    );
+  }
+
+  // 2. Andamento in classifica
+  var storico = (p.entry && p.entry.storico_pos) || [];
+  if (storico.length && p.lista) {
+    var maxLega = p.lista.length;
+    var serie = [];
+    var ultimaGara = p.pubblicate.length ? Math.max.apply(null, p.pubblicate) : 0;
+    for (var i = 0; i < n; i++) serie.push(i < ultimaGara && storico[i] !== undefined ? storico[i] : null);
+    if (ultimaGara && p.entry.pos) serie[ultimaGara - 1] = p.entry.pos; // l'ultima e' la classifica vera
+    var tickCls = [1, Math.round(maxLega / 2), maxLega].filter(function (v, i, a) { return a.indexOf(v) === i; });
+    out += unionChartBox(
+      "Posizione in classifica",
+      "",
+      unionLineChart({
+        titolo: "Andamento in classifica", serie: [{ valori: serie, classe: "is-main", etichette: true }],
+        invert: true, min: 1, max: maxLega, ticks: tickCls, fmtTick: function (v) { return "P" + v; },
+        fmtVal: function (v) { return "P" + v; },
+      })
+    );
+  }
+
+  // 3. Punti progressivi contro leader e media della lega
+  if (p.entry && p.lista && p.pubblicate.length) {
+    var ultima = Math.max.apply(null, p.pubblicate);
+    var cumul = function (gare) {
+      var tot = 0;
+      var v = [];
+      for (var i = 0; i < n; i++) {
+        if (i >= ultima) { v.push(null); continue; }
+        tot += (gare && gare[i]) || 0;
+        v.push(tot);
+      }
+      return v;
+    };
+    var suoi = cumul(p.entry.gare);
+    var leader = p.lista.slice().sort(function (a, b) { return (b.punti || 0) - (a.punti || 0); })[0];
+    var vLeader = cumul(leader.gare);
+    var vMedia = suoi.map(function (_, i) {
+      if (i >= ultima) return null;
+      return unionMedia(p.lista.map(function (x) { return cumul(x.gare)[i]; }));
+    });
+    var maxPt = Math.max.apply(null, suoi.concat(vLeader).filter(function (v) { return v !== null; }).concat([1]));
+    var tickPt = unionTicks(maxPt, 4);
+    out += unionChartBox(
+      "Punti progressivi",
+      '<span><i style="background: var(--ui-accent)"></i>' + escapeHtml(p.nome) + "</span>" +
+        '<span><i style="background: var(--ui-text-2)"></i>leader' + (leader.nome === p.nome ? " (è lui)" : "") + "</span>" +
+        '<span><i style="background: var(--ui-down)"></i>media della lega</span>',
+      unionLineChart({
+        titolo: "Punti progressivi",
+        serie: [
+          { valori: vMedia, classe: "is-avg" },
+          { valori: vLeader, classe: "is-ref" },
+          { valori: suoi, classe: "is-main", etichette: true },
+        ],
+        invert: false, min: 0, max: tickPt[tickPt.length - 1], ticks: tickPt,
+        fmtVal: function (v) { return Math.round(v); },
+      })
+    );
+  }
+
+  // 4. Qualifica -> gara
+  var conQ = giocate.filter(function (x) { return x.res.riga.q; });
+  if (conQ.length) out += unionChartBox("Qualifica → gara", "", unionQtoGDumbbell(conQ));
+
+  // 5. Distribuzione degli arrivi
+  if (giocate.length > 1) out += unionChartBox("Come chiude le gare", "", unionArriviBar(giocate));
+
+  // 6. Avversari vicini in classifica
+  out += unionVicini(p);
+
+  return '<div class="ui-subhead" style="margin-top: var(--ui-s6)">Campionato</div>' + out;
+}
+
+// Una riga per gara: pallino vuoto = qualifica, pieno = arrivo
+function unionQtoGDumbbell(gare) {
+  var W = 400, rh = 30, pl = 30, pr = 18, pt = 10;
+  var maxPos = 4;
+  gare.forEach(function (x) { maxPos = Math.max(maxPos, x.res.riga.q, x.res.riga.pos); });
+  var X = function (v) { return pl + ((v - 1) * (W - pl - pr)) / (maxPos - 1); };
+  var H = pt + gare.length * rh + 22;
+  var svg = '<svg class="ui-chart" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Qualifica e gara">';
+  var passo = Math.max(1, Math.ceil((maxPos - 1) / 5));
+  for (var v = 1; v <= maxPos; v += passo) {
+    svg +=
+      '<line class="ui-ch-grid" x1="' + X(v) + '" x2="' + X(v) + '" y1="' + pt + '" y2="' + (H - 22) + '"/>' +
+      '<text class="ui-ch-axis" x="' + X(v) + '" y="' + (H - 6) + '" text-anchor="middle">P' + v + "</text>";
+  }
+  gare.forEach(function (x, i) {
+    var y = pt + i * rh + rh / 2;
+    var q = x.res.riga.q, g = x.res.riga.pos, d = q - g;
+    var cls = d > 0 ? "is-up" : d < 0 ? "is-down" : "is-same";
+    svg +=
+      '<text class="ui-ch-axis" x="0" y="' + (y + 4) + '">G' + x.g + "</text>" +
+      '<line class="ui-ch-link ' + cls + '" x1="' + X(q) + '" x2="' + X(g) + '" y1="' + y + '" y2="' + y + '"/>' +
+      '<circle class="ui-ch-hollow" cx="' + X(q) + '" cy="' + y + '" r="5"/>' +
+      '<circle class="ui-ch-fill ' + cls + '" cx="' + X(g) + '" cy="' + y + '" r="5"/>';
+  });
+  return (
+    '<div class="ui-legend"><span><span class="ui-ch-key is-hollow"></span>qualifica</span>' +
+    '<span><span class="ui-ch-key"></span>arrivo</span>' +
+    '<span><i style="background: var(--ui-accent)"></i>posizioni guadagnate</span>' +
+    '<span><i style="background: var(--ui-down)"></i>perse</span></div>' + svg + "</svg>"
+  );
+}
+
+function unionArriviBar(giocate) {
+  var pos = giocate.map(function (x) { return x.res.riga.pos; });
+  var fasce = [
+    ["Vittorie", pos.filter(function (n) { return n === 1; }).length, "is-1"],
+    ["Podi", pos.filter(function (n) { return n >= 2 && n <= 3; }).length, "is-2"],
+    ["Top 5", pos.filter(function (n) { return n >= 4 && n <= 5; }).length, "is-3"],
+    ["Top 10", pos.filter(function (n) { return n >= 6 && n <= 10; }).length, "is-4"],
+    ["Oltre", pos.filter(function (n) { return n > 10; }).length, "is-5"],
+  ].filter(function (f) { return f[1]; });
+  return (
+    '<div class="ui-seg-bar">' +
+    fasce.map(function (f) {
+      return '<span class="' + f[2] + '" style="flex:' + f[1] + '" title="' + f[0] + ": " + f[1] + '">' + f[1] + "</span>";
+    }).join("") +
+    '</div><div class="ui-legend" style="margin: var(--ui-s2) 0 0">' +
+    fasce.map(function (f) { return '<span><i class="ui-seg-' + f[2] + '"></i>' + f[0] + "</span>"; }).join("") +
+    "</div>"
+  );
+}
+
+// Piloti vicini in classifica, con il distacco in punti
+function unionVicini(p) {
+  if (!p.entry || !p.lista || !p.lista.some(function (x) { return x.punti; })) return "";
+  var lista = p.lista.slice().sort(function (a, b) { return (a.pos || 999) - (b.pos || 999); });
+  var i = lista.findIndex(function (x) { return x.nome === p.entry.nome; });
+  var righe = lista.slice(Math.max(0, i - 3), i + 4).map(function (x) {
+    var mio = x.nome === p.entry.nome;
+    var d = (x.punti || 0) - (p.entry.punti || 0);
+    return (
+      '<li class="ui-row' + (mio ? " is-gtv" : "") + '">' +
+      '<span class="ui-pos">' + x.pos + "</span>" +
+      '<span class="ui-muted">' + escapeHtml(x.team || "") + "</span>" +
+      '<span class="ui-ellipsis' + (mio ? " ui-strong" : "") + '">' + (mio ? escapeHtml(x.nome) : unionPilotaLink(x.nome)) + "</span>" +
+      '<span class="ui-num">' + (x.punti || 0) + ' <small class="ui-muted">' + (mio ? "" : unionSegno(d)) + "</small></span>" +
+      "</li>"
+    );
+  }).join("");
+  return unionChartBox(
+    "Nei dintorni in classifica",
+    "",
+    '<ol class="ui-list">' + righe + "</ol>"
+  );
+}
+
+// Lobby della prossima gara: giorno, ora, host, live e schieramento
+function unionPilotaLobbyHtml(p) {
+  var prox = unionProssimaGara();
+  var testa = '<div class="ui-subhead" style="margin-top: var(--ui-s6)">Prossima gara</div>';
+  var gara = prox
+    ? '<p class="ui-text" style="margin-top:0"><strong>' + escapeHtml(prox.round) + ", " + escapeHtml(prox.pista) +
+      '</strong> <span class="ui-muted">' + escapeHtml(prox.data) + "</span></p>"
+    : "";
+  var lb = p.lobby;
+  if (!lb) {
+    return testa + gara + '<p class="ui-text ui-muted">Lobby non ancora assegnata.</p>';
+  }
+  var giorno = UNION_DAY_LABEL[String(lb.day || "").toUpperCase()] || lb.day;
+  var host = lb.host
+    ? '<a href="https://profile.playstation.com/' + encodeURIComponent(lb.host) + '/add" target="_blank" rel="noopener">' + escapeHtml(lb.host) + "</a>"
+    : "—";
+  var live = lb.url
+    ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener">' + escapeHtml(lb.live || "Canale live") + "</a>"
+    : "—";
+  var lista = lb.pilots.map(function (x) {
+    var mio = unionNorm(x.nome) === unionNorm(p.nome);
+    var gtv = String(x.team || "").trim().toUpperCase() === "GTV";
+    return (
+      '<li class="ui-row' + (gtv ? " is-gtv" : "") + '">' +
+      '<span class="ui-pos">' + escapeHtml(x.pos) + "</span>" +
+      '<span class="ui-muted">' + escapeHtml(x.team) + "</span>" +
+      '<span class="ui-ellipsis' + (mio || gtv ? " ui-strong" : "") + '">' + (mio ? escapeHtml(x.nome) + " ◂" : unionPilotaLink(x.nome)) + "</span>" +
+      "</li>"
+    );
+  }).join("");
+  return (
+    testa + gara +
+    '<div class="ui-lobbyhead"><span class="ui-strong">Lobby ' + escapeHtml(lb.name) + "</span> " + unionCatBadge(lb.category) + "</div>" +
+    '<dl class="ui-kv" style="margin: var(--ui-s2) 0 var(--ui-s3)">' +
+    "<div><dt>Giorno</dt><dd>" + escapeHtml(giorno) + "</dd></div>" +
+    "<div><dt>Ora</dt><dd>" + escapeHtml(unionOra(lb.time)) + "</dd></div>" +
+    "<div><dt>Host</dt><dd>" + host + "</dd></div>" +
+    "<div><dt>Live</dt><dd>" + live + "</dd></div></dl>" +
+    '<ol class="ui-list" style="--ui-row-cols: 32px 64px 1fr">' + lista + "</ol>"
+  );
+}
+
+// Prossima gara secondo il calendario della pagina (settimana non ancora finita)
+function unionProssimaGara() {
+  var oggi = new Date();
+  oggi.setHours(0, 0, 0, 0);
+  var trovata = null;
+  Array.prototype.some.call(document.querySelectorAll("#union-calendario .ui-race"), function (card) {
+    var al = new Date(card.getAttribute("data-al") + "T23:59:59");
+    if (isNaN(al) || al < oggi) return false;
+    var testo = function (sel) {
+      var el = card.querySelector(sel);
+      return el ? el.textContent.replace(/\s+/g, " ").replace(/\b(Prossima|In corso)\b/, "").trim() : "";
+    };
+    trovata = { round: testo(".ui-race-round"), pista: testo(".ui-race-track"), data: testo(".ui-race-date") };
+    return true;
+  });
+  return trovata;
 }

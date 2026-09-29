@@ -307,6 +307,14 @@ p.ui-text {
   justify-content: center;
 }
 
+/* Mobile: sempre 2 colonne */
+@media (max-width: 640px) {
+  .ui-btn-row--grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Pulsante-link grande con logo (Home: campionati, social) */
 .ui-link {
   display: flex;
@@ -1488,4 +1496,200 @@ a.ui-card:focus-visible {
     vertical-align: bottom;
     letter-spacing: 0.3px;
   }
+}
+
+/* ------------------------------------------------------------
+   Scheda pilota: nomi cliccabili, numeri, grafici
+   ------------------------------------------------------------ */
+.ui-plink {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+
+.ui-plink:hover,
+.ui-plink:focus-visible {
+  color: var(--ui-accent);
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
+.ui-card--link {
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ui-card--link:hover,
+.ui-card--link:focus-visible {
+  border-color: rgba(var(--ui-accent-rgb), 0.55);
+  outline: none;
+}
+
+.ui-ptiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  gap: var(--ui-s4) var(--ui-s3);
+  margin-bottom: var(--ui-s5);
+}
+
+.ui-ptile-num {
+  font-family: var(--ui-font-display);
+  font-size: var(--ui-fs-lg);
+  line-height: 1.1;
+  color: var(--ui-text);
+}
+
+.ui-ptile-label {
+  margin-top: var(--ui-s1);
+  font-size: var(--ui-fs-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ui-text-3);
+}
+
+.ui-ptile-label small {
+  display: block;
+  margin-top: 2px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.ui-chart-box {
+  margin-top: var(--ui-s5);
+}
+
+.ui-chart-title {
+  margin-bottom: var(--ui-s2);
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-text-2);
+}
+
+.ui-lobbyhead {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-s2);
+}
+
+.ui-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ui-ch-grid {
+  stroke: var(--ui-line);
+  stroke-width: 1;
+}
+
+.ui-ch-axis {
+  fill: var(--ui-text-3);
+  font-family: var(--ui-font);
+  font-size: 11px;
+}
+
+.ui-ch-val {
+  fill: var(--ui-text);
+  font-family: var(--ui-font);
+  font-size: 11px;
+}
+
+.ui-ch-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ui-ch-line.is-main { stroke: var(--ui-accent); }
+.ui-ch-dot.is-main { fill: var(--ui-accent); }
+.ui-ch-line.is-ref { stroke: var(--ui-text-2); stroke-width: 1.5; }
+.ui-ch-dot.is-ref { fill: var(--ui-text-2); }
+.ui-ch-line.is-avg { stroke: var(--ui-down); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ui-ch-dot.is-avg { fill: var(--ui-down); }
+
+.ui-ch-link { stroke-width: 3; stroke-linecap: round; }
+.ui-ch-link.is-up { stroke: var(--ui-accent); }
+.ui-ch-link.is-down { stroke: var(--ui-down); }
+.ui-ch-link.is-same { stroke: var(--ui-text-3); }
+.ui-ch-fill.is-up { fill: var(--ui-accent); }
+.ui-ch-fill.is-down { fill: var(--ui-down); }
+.ui-ch-fill.is-same { fill: var(--ui-text-3); }
+.ui-ch-hollow { fill: var(--ui-bg); stroke: var(--ui-text-2); stroke-width: 2; }
+
+.ui-ch-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--ui-text-2);
+  vertical-align: -1px;
+}
+
+.ui-ch-key.is-hollow {
+  background: transparent;
+  border: 2px solid var(--ui-text-2);
+}
+
+.ui-seg-bar {
+  display: flex;
+  height: 30px;
+  border-radius: var(--ui-r-sm);
+  overflow: hidden;
+  gap: 2px;
+}
+
+.ui-seg-bar span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-accent-ink);
+}
+
+.ui-seg-bar .is-1, .ui-seg-is-1 { background: var(--ui-accent); }
+.ui-seg-bar .is-2, .ui-seg-is-2 { background: #c9d233; }
+.ui-seg-bar .is-3, .ui-seg-is-3 { background: #8f95a3; }
+.ui-seg-bar .is-4, .ui-seg-is-4 { background: #5d6270; color: var(--ui-text); }
+.ui-seg-bar .is-5, .ui-seg-is-5 { background: #3a3d47; color: var(--ui-text); }
+
+/* Link dentro i dati (host e live delle lobby): niente blu di default */
+.ui-kv a {
+  color: var(--ui-text);
+  text-decoration: underline;
+  text-decoration-color: var(--ui-line-strong);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.ui-kv a:hover,
+.ui-kv a:focus-visible {
+  color: var(--ui-accent);
+  text-decoration-color: var(--ui-accent);
+  outline: none;
+}
+
+/* Auto del pilota nella scheda: logo e nome sulla stessa riga */
+.ui-pcar {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-s3);
+  margin-bottom: var(--ui-s4);
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-text-2);
+}
+
+.ui-pcar-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ui-pcar-lobby {
+  margin-left: auto;
 }
