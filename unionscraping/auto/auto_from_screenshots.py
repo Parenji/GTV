@@ -300,6 +300,9 @@ def esegui_ocr(immagini: list) -> dict:
         if corrente is None or not riga.strip():
             continue
         parti = riga.split("\t")
+        if parti[0] == "#dim" and len(parti) == 3:
+            DIMENSIONI[corrente] = (int(parti[1]), int(parti[2]))
+            continue
         if len(parti) != 5:
             continue
         try:
@@ -308,6 +311,10 @@ def esegui_ocr(immagini: list) -> dict:
             continue
         risultato[corrente].append((x, y, w, h, parti[4]))
     return risultato
+
+
+# Dimensioni in pixel delle immagini passate dall'OCR: {percorso: (w, h)}
+DIMENSIONI = {}
 
 
 def percorso_cache(immagine: Path) -> Path:
@@ -354,14 +361,30 @@ def leggi_cache(cache: Path) -> list:
     return osservazioni
 
 
-def scrivi_cache(cache: Path, osservazioni: list) -> None:
-    cache.write_text(
-        "\n".join(
-            f"{x:.5f}\t{y:.5f}\t{w:.5f}\t{h:.5f}\t{t}"
-            for x, y, w, h, t in osservazioni
-        ),
-        encoding="utf-8",
-    )
+def scrivi_cache(cache: Path, osservazioni: list, dim=None) -> None:
+    """La prima riga "#dim" (larghezza, altezza) resta anche dopo che lo
+    screenshot e' stato eliminato: serve ad allinea_geometria."""
+    righe = [f"#dim\t{dim[0]}\t{dim[1]}"] if dim else []
+    righe += [f"{x:.5f}\t{y:.5f}\t{w:.5f}\t{h:.5f}\t{t}" for x, y, w, h, t in osservazioni]
+    cache.write_text("\n".join(righe), encoding="utf-8")
+
+
+def dimensioni(percorso: Path):
+    """(larghezza, altezza) in pixel: dalla cache OCR o dall'immagine."""
+    cache = percorso_cache(percorso)
+    if cache.exists():
+        prima = cache.read_text(encoding="utf-8").split("\n", 1)[0].split("\t")
+        if prima[0] == "#dim" and len(prima) == 3:
+            return int(prima[1]), int(prima[2])
+    if percorso.exists() and sys.platform == "darwin":
+        esito = subprocess.run(
+            ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(percorso)],
+            capture_output=True, text=True,
+        )
+        valori = re.findall(r"pixel(?:Width|Height):\s*(\d+)", esito.stdout)
+        if len(valori) == 2:
+            return int(valori[0]), int(valori[1])
+    return None
 
 
 def prepara_ocr(immagini: list, lotto: int = 12) -> None:
@@ -384,20 +407,46 @@ def prepara_ocr(immagini: list, lotto: int = 12) -> None:
         blocco = da_fare[inizio: inizio + lotto]
         risultati = esegui_ocr(blocco)
         for percorso in blocco:
-            scrivi_cache(percorso_cache(percorso), risultati.get(str(percorso), []))
+            scrivi_cache(
+                percorso_cache(percorso),
+                risultati.get(str(percorso), []),
+                DIMENSIONI.get(str(percorso)),
+            )
         print(f"     {min(inizio + lotto, len(da_fare))}/{len(da_fare)}")
 
 
 def osserva_immagine(percorso: Path) -> list:
-    """Osservazioni OCR di una immagine (dalla cache preparata da prepara_ocr)."""
+    """Osservazioni OCR di una immagine (dalla cache preparata da prepara_ocr),
+    riportate alla geometria di uno screenshot 16:9 standard."""
     cache = percorso_cache(percorso)
-    if cache_valida(percorso):
-        return leggi_cache(cache)
-    if not percorso.exists():
-        return []
-    osservazioni = esegui_ocr([percorso]).get(str(percorso), [])
-    scrivi_cache(cache, osservazioni)
-    return osservazioni
+    if not cache_valida(percorso):
+        if not percorso.exists():
+            return []
+        osservazioni = esegui_ocr([percorso]).get(str(percorso), [])
+        scrivi_cache(cache, osservazioni, DIMENSIONI.get(str(percorso)))
+    return allinea_geometria(leggi_cache(cache), dimensioni(percorso))
+
+
+def allinea_geometria(osservazioni: list, dim) -> list:
+    """Riporta le coordinate a quelle di uno screenshot 16:9.
+
+    Alcuni screenshot arrivano da schermi piu' larghi (telefono, 19.5:9): la
+    schermata di GT7 sta al centro con bande nere ai lati, e le colonne non
+    sono piu' dove le cerca leggi_riga. Dalle dimensioni dell'immagine si
+    ricava quanta parte della larghezza occupa la schermata 16:9 e da dove
+    comincia.
+    """
+    if not dim:
+        return osservazioni
+    larghezza, altezza = dim
+    quota = min(1.0, altezza * 16 / 9 / larghezza)
+    if quota > 0.99:
+        return osservazioni  # gia' 16:9 (o quasi)
+    inizio = (1 - quota) / 2
+    return [
+        ((x - inizio) / quota, y, w / quota, h, t)
+        for x, y, w, h, t in osservazioni
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -511,9 +560,14 @@ def leggi_riga(celle: list, avvisi: list, contesto: str):
 
 
 def tipo_classifica(osservazioni: list) -> str:
-    """'gara' se la tabella ha la colonna TEMPO, altrimenti 'quali'."""
+    """'gara' se la tabella ha la colonna TEMPO, altrimenti 'quali'.
+
+    Alcuni piloti hanno GT7 in inglese: la stessa tabella dice TIME/PENALTY.
+    """
     testi = normalizza(" ".join(t for *_, t in osservazioni))
-    return "gara" if "tempo" in testi and "penalita" in testi else "quali"
+    if ("tempo" in testi and "penalita" in testi) or ("time" in testi and "penalty" in testi):
+        return "gara"
+    return "quali"
 
 
 def lobby_da_intestazione(osservazioni: list):

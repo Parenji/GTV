@@ -6,6 +6,10 @@
 //
 //     minX <TAB> minY <TAB> width <TAB> height <TAB> testo
 //
+// preceduta, per ogni immagine, da una riga con le dimensioni in pixel:
+//
+//     #dim <TAB> larghezza <TAB> altezza
+//
 // Le coordinate sono normalizzate 0..1 e hanno l'origine in BASSO a sinistra
 // (convenzione di Vision): auto_from_screenshots.py le usa per raggruppare i
 // blocchi in righe di classifica.
@@ -50,6 +54,9 @@ for path in args.dropFirst() {
     }
 
     print("=== \(path)")
+    // Dimensioni in pixel: servono a riconoscere gli screenshot non 16:9
+    // (schermata di gioco al centro con bande ai lati).
+    print("#dim\t\(cgImage.width)\t\(cgImage.height)")
     let observations = (request.results ?? []) as! [VNRecognizedTextObservation]
     for observation in observations {
         guard let candidate = observation.topCandidates(1).first else { continue }

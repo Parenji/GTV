@@ -1,22 +1,14 @@
 {
   "meta": {
     "generated_at": "2026-09-23T19:15:00+00:00",
-    "updated_at": "2026-09-28T15:33:10+00:00",
+    "updated_at": "2026-09-29T00:37:59+00:00",
     "source": "UNION SCREENSHOT — screenshot ufficiali delle classifiche di gara",
     "app": "https://script.google.com/macros/s/AKfycbwHrAkGESRER3qYrGJVr3KfukzkNgFUzdEOX0w2dPuhEEjR_-YWbdPwIRZErctykXr3vg/exec",
     "gare_esaminate": [
       "GARA 1"
     ],
     "note": "Auto lette dalle classifiche ufficiali (qualifiche + gara) delle gare finora disputate. Sono elencati solo i piloti GTV che hanno gia' corso: le colonne Union_auto/Union_marchio del foglio Google restano la fonte primaria, questo file interviene solo come fallback quando sono vuote.",
-    "avvertenze": [
-      "A12_Q_1-8.png: archiviato in A12 ma la classifica dice A9 — uso A9",
-      "A12_Q_9-14.png: archiviato in A12 ma la classifica dice A9 — uso A9",
-      "A9_Q_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
-      "A9_Q_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
-      "A9_R_1-8.png: archiviato in A9 ma la classifica dice A7 — uso A7",
-      "A9_R_9-14.png: archiviato in A9 ma la classifica dice A7 — uso A7",
-      "screenshot identici (probabile copia): A18/A18_Q_9-14.png, A18/A18_R_9-14.png"
-    ]
+    "avvertenze": []
   },
   "piloti": {
     "Carlos_mania": {
@@ -40,7 +32,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Fra_salvo96": {
       "psn": "Fra_salvo96",
@@ -63,7 +55,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "GTS-codebreaker": {
       "psn": "GTS-codebreaker",
@@ -86,7 +78,7 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "GTV_legendafluo": {
       "psn": "GTV_legendafluo",
@@ -109,7 +101,7 @@
           "pos_gara": 11
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Giusdandri": {
       "psn": "Giusdandri",
@@ -119,20 +111,20 @@
       "marchio": "Lexus",
       "gara": "GARA 1",
       "lobby": "A12",
-      "pos_quali": null,
+      "pos_quali": 1,
       "pos_gara": 2,
-      "fonte": "A12_R_1-8.png",
+      "fonte": "A12_Q_1-8.png",
       "storico": [
         {
           "gara": "GARA 1",
           "lobby": "A12",
           "auto": "RC F GT500 '16",
           "marchio": "Lexus",
-          "pos_quali": null,
+          "pos_quali": 1,
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Grandisil_2": {
       "psn": "Grandisil_2",
@@ -154,7 +146,7 @@
           "pos_gara": null
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00",
+      "aggiornato_il": "2026-09-29T00:37:59+00:00",
       "pos_gara": null
     },
     "Hawk_MaveNich": {
@@ -178,7 +170,7 @@
           "pos_gara": 5
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "InuyashaGodYokai": {
       "psn": "InuyashaGodYokai",
@@ -201,7 +193,7 @@
           "pos_gara": 7
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Kiwi_caloroso123": {
       "psn": "Kiwi_caloroso123",
@@ -224,7 +216,7 @@
           "pos_gara": 7
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Mirco94-": {
       "psn": "Mirco94-",
@@ -247,7 +239,7 @@
           "pos_gara": 12
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Pulcy85": {
       "psn": "Pulcy85",
@@ -270,7 +262,7 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "SP_Samuele": {
       "psn": "SP_Samuele",
@@ -293,7 +285,7 @@
           "pos_gara": 9
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Sauzer27": {
       "psn": "Sauzer27",
@@ -316,7 +308,7 @@
           "pos_gara": 2
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Snake-asr88": {
       "psn": "Snake-asr88",
@@ -326,8 +318,8 @@
       "marchio": "Lexus",
       "gara": "GARA 1",
       "lobby": "A18",
-      "pos_quali": 11,
-      "pos_gara": null,
+      "pos_quali": 10,
+      "pos_gara": 11,
       "fonte": "A18_Q_9-14.png",
       "storico": [
         {
@@ -335,11 +327,11 @@
           "lobby": "A18",
           "auto": "RC F GT500 '16",
           "marchio": "Lexus",
-          "pos_quali": 11,
-          "pos_gara": null
+          "pos_quali": 10,
+          "pos_gara": 11
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Utile_ruspante": {
       "psn": "Utile_ruspante",
@@ -362,7 +354,7 @@
           "pos_gara": 4
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "Vale34_": {
       "psn": "Vale34_",
@@ -385,7 +377,7 @@
           "pos_gara": 4
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "marse9191": {
       "psn": "marse9191",
@@ -408,7 +400,7 @@
           "pos_gara": 9
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     },
     "titirolamadonn": {
       "psn": "titirolamadonn",
@@ -431,7 +423,7 @@
           "pos_gara": 8
         }
       ],
-      "aggiornato_il": "2026-09-28T15:33:10+00:00"
+      "aggiornato_il": "2026-09-29T00:37:59+00:00"
     }
   }
 }
