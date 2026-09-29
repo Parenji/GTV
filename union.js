@@ -14,6 +14,7 @@ function initUnionPage() {
   loadUnionLobby();
   loadUnionStats();
   loadUnionClassifiche();
+  loadUnionReportDG();
   initUnionPanel();
   initUnionPilotaLinks();
 }
@@ -1659,4 +1660,325 @@ function unionProssimaGara() {
     return true;
   });
   return trovata;
+}
+
+// =============================================================
+// REPORT DG: reclami e penalita' della Direzione Gara
+// Fonte: un foglio Google per gara (GTV_CONFIG.unionReportDG), le
+// risposte al modulo reclami con l'esito nella colonna PENALITA'.
+// Del foglio si usano solo richiedente, indagato, lega, lobby, note
+// ed esito: i voti dei singoli giudici e i video restano fuori.
+// In cima i reclami fatti e ricevuti dai GTV, sotto tutti gli altri.
+// =============================================================
+var unionDG = {
+  gara: null,
+  cache: {}, // gara -> Promise dei reclami
+};
+
+function unionDGUrls() {
+  return (window.GTV_CONFIG && window.GTV_CONFIG.unionReportDG) || {};
+}
+
+// CSV con campi tra virgolette (le note contengono virgole e a capo)
+function parseCsvQuoted(text) {
+  var rows = [];
+  var row = [];
+  var cell = "";
+  var inQuotes = false;
+  text = String(text || "").replace(/^﻿/, "");
+  for (var i = 0; i < text.length; i++) {
+    var c = text[i];
+    if (inQuotes) {
+      if (c === '"' && text[i + 1] === '"') {
+        cell += '"';
+        i++;
+      } else if (c === '"') {
+        inQuotes = false;
+      } else {
+        cell += c;
+      }
+    } else if (c === '"') {
+      inQuotes = true;
+    } else if (c === ",") {
+      row.push(cell);
+      cell = "";
+    } else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(cell);
+      rows.push(row);
+      row = [];
+      cell = "";
+    } else {
+      cell += c;
+    }
+  }
+  if (cell !== "" || row.length) {
+    row.push(cell);
+    rows.push(row);
+  }
+  return rows.filter(function (r) {
+    return r.some(function (x) { return x.trim() !== ""; });
+  });
+}
+
+// Esito dalla colonna PENALITA': numero = secondi, "RIFIUTATO, motivo" = respinto
+function unionDGEsito(testo) {
+  var t = String(testo || "").trim();
+  if (/^\d+$/.test(t)) {
+    var sec = parseInt(t, 10);
+    return sec > 0
+      ? { tipo: "pen", sec: sec, label: "+" + sec + " s" }
+      : { tipo: "zero", sec: 0, label: "Nessuna penalità" };
+  }
+  var m = t.match(/^(rifiutat|respint)[oa]?\s*[,:\-–]?\s*(.*)$/i);
+  if (m) {
+    var motivo = m[2].trim();
+    return { tipo: "respinto", sec: 0, label: "Respinto", motivo: motivo ? motivo.charAt(0).toUpperCase() + motivo.slice(1) : "" };
+  }
+  if (!t) return { tipo: "attesa", sec: 0, label: "In valutazione" };
+  return { tipo: "altro", sec: 0, label: t };
+}
+
+function fetchUnionReportDG(gara) {
+  if (!unionDG.cache[gara]) {
+    var url = unionDGUrls()[gara];
+    unionDG.cache[gara] = fetch(url)
+      .then(function (r) {
+        if (!r.ok) throw new Error("Errore HTTP " + r.status);
+        return r.text();
+      })
+      .then(function (text) {
+        var rows = parseCsvQuoted(text);
+        var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
+        function col(re) {
+          for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;
+          return -1;
+        }
+        var c = {
+          teamR: col(/^TAG TEAM RICHIEDENTE/),
+          nomeR: col(/^ID GT7 RICHIEDENTE/),
+          teamI: col(/^TAG TEAM INDAGATO/),
+          nomeI: col(/^ID GT7 INDAGATO/),
+          lega: col(/^RANK/),
+          lobby: col(/LOBBY/),
+          note: col(/^NOTE/),
+          esito: col(/^PENALIT/),
+        };
+        function v(r, k) {
+          return c[k] === -1 ? "" : String(r[c[k]] || "").trim();
+        }
+        return rows.map(function (r) {
+          return {
+            teamR: v(r, "teamR").toUpperCase(),
+            nomeR: v(r, "nomeR"),
+            teamI: v(r, "teamI").toUpperCase(),
+            nomeI: v(r, "nomeI"),
+            lega: v(r, "lega").toUpperCase().replace(/\s+/g, " "),
+            lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, ""),
+            note: v(r, "note"),
+            esito: unionDGEsito(v(r, "esito")),
+          };
+        }).filter(function (x) {
+          return x.nomeR || x.nomeI;
+        });
+      })
+      .catch(function (err) {
+        delete unionDG.cache[gara];
+        throw err;
+      });
+  }
+  return unionDG.cache[gara];
+}
+
+function loadUnionReportDG() {
+  var body = document.getElementById("union-dg-body");
+  var sel = document.getElementById("union-dg-gare");
+  if (!body) return;
+  var gare = Object.keys(unionDGUrls())
+    .map(Number)
+    .filter(function (g) { return g >= 1; })
+    .sort(function (a, b) { return a - b; });
+  unionDG.gara = gare.length ? gare[gare.length - 1] : null;
+
+  if (sel && !sel.dataset.ready) {
+    sel.dataset.ready = "1";
+    sel.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-gara]");
+      if (!b) return;
+      unionDG.gara = Number(b.getAttribute("data-gara"));
+      renderUnionReportDG();
+    });
+  }
+  renderUnionReportDG();
+}
+
+function renderUnionReportDG() {
+  var body = document.getElementById("union-dg-body");
+  var sel = document.getElementById("union-dg-gare");
+  var sottotitolo = document.getElementById("union-dg-subtitle");
+  var urls = unionDGUrls();
+  var gara = unionDG.gara;
+
+  if (sel) {
+    var bottoni = "";
+    for (var g = 1; g <= UNION_NUM_GARE; g++) {
+      var ok = !!urls[g];
+      bottoni +=
+        '<button type="button" class="ui-seg-btn"' +
+        (ok ? ' data-gara="' + g + '"' : " disabled") +
+        ' aria-pressed="' + (g === gara) + '"' +
+        ' title="' + escapeHtml(UNION_PISTE[g - 1] + (ok ? "" : " (report non ancora pubblicato)")) + '">G' + g + "</button>";
+    }
+    sel.innerHTML = bottoni;
+  }
+
+  if (!gara) {
+    if (sottotitolo) sottotitolo.textContent = "Direzione Gara";
+    body.innerHTML = unionState("Il report della Direzione Gara comparirà qui dopo la prima gara.", "empty");
+    return;
+  }
+
+  if (sottotitolo) sottotitolo.textContent = "Gara " + gara + ", " + UNION_PISTE[gara - 1];
+  body.innerHTML = unionState("Caricamento report…", "loading");
+
+  Promise.all([
+    fetchUnionReportDG(gara),
+    fetchUnionLobbyData().catch(function () { return null; }),
+  ])
+    .then(function (res) {
+      if (unionDG.gara !== gara) return; // nel frattempo e' stata scelta un'altra gara
+      body.innerHTML = unionReportDGHtml(res[0], res[1]);
+    })
+    .catch(function (err) {
+      console.error("Errore caricamento report DG:", err);
+      if (unionDG.gara === gara) body.innerHTML = unionState("Impossibile caricare il report della Direzione Gara.", "error");
+    });
+}
+
+// GTV: tag team GTV oppure nome presente tra i GTV schierati nelle lobby
+// (il tag nel modulo lo scrive a mano chi fa il reclamo)
+function unionDGGtvSet(lobbyData) {
+  var set = {};
+  ((lobbyData && lobbyData.lobbies) || []).forEach(function (lb) {
+    (lb.pilots || []).forEach(function (p) {
+      if (unionIsGtv(p)) set[unionNorm(p.nome)] = true;
+    });
+  });
+  return set;
+}
+
+function unionDGLobbyNum(lobby) {
+  var n = parseInt(String(lobby || "").replace(/\D/g, ""), 10);
+  return isNaN(n) ? 999 : n;
+}
+
+function unionDGEsitoHtml(e) {
+  var cls = "ui-dg-esito ui-dg-esito--" + e.tipo;
+  return '<span class="' + cls + '">' + escapeHtml(e.label) + "</span>";
+}
+
+function unionDGCardHtml(x, lato) {
+  var e = x.esito;
+  var dettaglio = e.tipo === "respinto" && e.motivo ? e.motivo : "";
+  return (
+    '<article class="ui-card ui-dg-card' + (e.tipo === "pen" ? " is-pen" : "") + '">' +
+    '<div class="ui-dg-card-top">' +
+    unionDGEsitoHtml(e) +
+    '<span class="ui-dg-where">' + unionCatBadge(x.lega) + '<span class="ui-badge">' + escapeHtml(x.lobby || "—") + "</span></span>" +
+    "</div>" +
+    '<div class="ui-dg-vs">' +
+    '<div><span class="ui-dg-role">' + (lato === "fatto" ? "Reclamo di" : "Richiedente") + "</span>" +
+    '<span class="' + (x.gtvR ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeR) + "</span>" +
+    '<span class="ui-dg-team">' + escapeHtml(x.teamR) + "</span></div>" +
+    '<div><span class="ui-dg-role">' + (lato === "fatto" ? "Contro" : "Indagato") + "</span>" +
+    '<span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + "</span>" +
+    '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span></div>" +
+    "</div>" +
+    (dettaglio ? '<p class="ui-dg-note"><span class="ui-muted">Motivo:</span> ' + escapeHtml(dettaglio) + "</p>" : "") +
+    (x.note ? '<p class="ui-dg-note">“' + escapeHtml(x.note) + "”</p>" : "") +
+    "</article>"
+  );
+}
+
+function unionReportDGHtml(reclami, lobbyData) {
+  if (!reclami.length) {
+    return unionState("Nessun reclamo presentato per questa gara.", "empty");
+  }
+  var gtvSet = unionDGGtvSet(lobbyData);
+  reclami.forEach(function (x) {
+    x.gtvR = x.teamR === "GTV" || !!gtvSet[unionNorm(x.nomeR)];
+    x.gtvI = x.teamI === "GTV" || !!gtvSet[unionNorm(x.nomeI)];
+  });
+  var ordine = function (a, b) {
+    return unionTierIndex(a.lega) - unionTierIndex(b.lega) || unionDGLobbyNum(a.lobby) - unionDGLobbyNum(b.lobby);
+  };
+  reclami.sort(ordine);
+
+  var fatti = reclami.filter(function (x) { return x.gtvR; });
+  var ricevuti = reclami.filter(function (x) { return x.gtvI; });
+  var penalita = reclami.filter(function (x) { return x.esito.tipo === "pen"; });
+  var respinti = reclami.filter(function (x) { return x.esito.tipo === "respinto"; });
+  var secondi = penalita.reduce(function (t, x) { return t + x.esito.sec; }, 0);
+
+  function gruppo(titolo, lista, lato, vuoto) {
+    return (
+      '<div class="ui-subhead">' + escapeHtml(titolo) + ' <span class="ui-muted">' + lista.length + "</span></div>" +
+      (lista.length
+        ? '<div class="ui-grid ui-dg-grid">' + lista.map(function (x) { return unionDGCardHtml(x, lato); }).join("") + "</div>"
+        : '<p class="ui-dg-empty">' + escapeHtml(vuoto) + "</p>")
+    );
+  }
+
+  var html =
+    '<div class="ui-dg-gtv">' +
+    gruppo("Reclami fatti dai GTV", fatti, "fatto", "Nessun reclamo presentato da piloti GTV.") +
+    gruppo("Reclami ricevuti dai GTV", ricevuti, "ricevuto", "Nessun pilota GTV sotto indagine. Pulito così.") +
+    "</div>";
+
+  html +=
+    '<div class="ui-dg-stats">' +
+    "<div><div class=\"ui-stat-num\">" + reclami.length + '</div><div class="ui-stat-label">Reclami</div></div>' +
+    "<div><div class=\"ui-stat-num\">" + penalita.length + '</div><div class="ui-stat-label">Penalità</div></div>' +
+    "<div><div class=\"ui-stat-num\">" + respinti.length + '</div><div class="ui-stat-label">Respinti</div></div>' +
+    "<div><div class=\"ui-stat-num\">" + secondi + '<small> s</small></div><div class="ui-stat-label">Secondi inflitti</div></div>' +
+    "</div>";
+
+  var perLega = UNION_LEGHE.concat(["ALTRO"]).map(function (lega) {
+    var lista = reclami.filter(function (x) {
+      return lega === "ALTRO" ? UNION_LEGHE.indexOf(x.lega) === -1 : x.lega === lega;
+    });
+    if (!lista.length) return "";
+    return (
+      '<div class="ui-subhead ' + unionCategoryColorClass(lega) + '">' + escapeHtml(lega === "ALTRO" ? "Altro" : lega) +
+      ' <span class="ui-muted">' + lista.length + "</span></div>" +
+      '<ol class="ui-dg-list">' +
+      '<li class="ui-dg-row ui-dg-row--head" aria-hidden="true"><span>Lobby</span>' +
+      '<span class="ui-dg-pair"><span>Richiedente</span><span></span><span>Indagato</span></span><span>Esito</span></li>' +
+      lista
+        .map(function (x) {
+          var gtv = x.gtvR || x.gtvI;
+          return (
+            '<li class="ui-dg-row' + (gtv ? " is-gtv" : "") + '">' +
+            '<span class="ui-dg-lobby">' + escapeHtml(x.lobby) + "</span>" +
+            '<span class="ui-dg-pair">' +
+            '<span class="ui-dg-p"><span class="' + (x.gtvR ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeR) + '</span> <span class="ui-dg-team">' + escapeHtml(x.teamR) + "</span></span>" +
+            '<span class="ui-dg-arrow" aria-label="contro">→</span>' +
+            '<span class="ui-dg-p"><span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + '</span> <span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span></span>" +
+            "</span>" +
+            '<span class="ui-dg-res"' + (x.esito.motivo ? ' title="' + escapeHtml(x.esito.motivo) + '"' : "") + ">" + unionDGEsitoHtml(x.esito) +
+            (x.esito.motivo ? '<small class="ui-dg-motivo">' + escapeHtml(x.esito.motivo) + "</small>" : "") + "</span>" +
+            "</li>"
+          );
+        })
+        .join("") +
+      "</ol>"
+    );
+  }).join("");
+
+  html +=
+    '<div class="ui-section-head ui-dg-all-head"><h3 class="ui-section-title">Tutti i reclami</h3>' +
+    '<span class="ui-section-meta">Penalità in secondi sul tempo di gara</span></div>' +
+    perLega;
+
+  return html;
 }

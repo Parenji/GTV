@@ -42,6 +42,13 @@ window.GTV_CONFIG = {
     },
   },
 
+  // Report della Direzione Gara Union: un foglio Google per gara (numero
+  // gara -> CSV). Si usa /export e non /gviz: gviz svuota le celle di testo
+  // ("RIFIUTATO, ...") in una colonna che e' quasi tutta numerica.
+  unionReportDG: {
+    1: "https://docs.google.com/spreadsheets/d/1jHjfXcU7LAV1HvL3pb036rLHzowpvo_ozl9W8q_rmwo/export?format=csv&gid=362234430",
+  },
+
   googleForms: {
     reclamiGara:
       "https://docs.google.com/forms/d/e/1FAIpQLSc00_jd9wPGGkOTi7ma1-BnalLIsC8SBo2yH65M9BdhoyiLqg/viewform",

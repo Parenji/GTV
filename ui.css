@@ -1693,3 +1693,223 @@ a.ui-card:focus-visible {
 .ui-pcar-lobby {
   margin-left: auto;
 }
+
+/* ------------------------------------------------------------
+   Report DG: reclami della Direzione Gara (union.html)
+   ------------------------------------------------------------ */
+.ui-dg-grid {
+  --ui-grid-min: 340px;
+}
+
+.ui-dg-card {
+  box-shadow: inset 3px 0 0 var(--ui-accent);
+}
+
+.ui-dg-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ui-s2);
+  flex-wrap: wrap;
+  margin-bottom: var(--ui-s3);
+}
+
+.ui-dg-where {
+  display: inline-flex;
+  gap: var(--ui-s1);
+}
+
+.ui-dg-esito {
+  font-family: var(--ui-font-bold);
+  font-size: var(--ui-fs-sm);
+  white-space: nowrap;
+}
+
+.ui-dg-card .ui-dg-esito {
+  font-family: var(--ui-font-display);
+  font-size: var(--ui-fs-lg);
+}
+
+.ui-dg-esito--pen {
+  color: var(--ui-danger);
+}
+
+.ui-dg-esito--respinto,
+.ui-dg-esito--zero,
+.ui-dg-esito--attesa {
+  color: var(--ui-text-3);
+}
+
+.ui-dg-vs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ui-s3);
+}
+
+.ui-dg-vs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ui-dg-role {
+  font-size: var(--ui-fs-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ui-text-3);
+}
+
+.ui-dg-name {
+  font-family: var(--ui-font-bold);
+  overflow-wrap: anywhere;
+}
+
+.ui-dg-name.is-gtv {
+  color: var(--ui-accent);
+}
+
+.ui-dg-team {
+  font-size: var(--ui-fs-xs);
+  color: var(--ui-text-3);
+}
+
+.ui-dg-note {
+  margin: var(--ui-s3) 0 0;
+  font-size: var(--ui-fs-sm);
+  line-height: 1.45;
+  color: var(--ui-text-2);
+}
+
+.ui-dg-empty {
+  margin: 0;
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-text-3);
+}
+
+.ui-dg-stats {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  gap: var(--ui-s6);
+  margin: var(--ui-s6) 0 0;
+}
+
+.ui-dg-stats small {
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-text-3);
+}
+
+.ui-dg-all-head {
+  margin-top: var(--ui-s6);
+}
+
+/* Elenco dei reclami: lobby | richiedente → indagato | esito */
+.ui-dg-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--ui-fs-sm);
+}
+
+.ui-dg-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--ui-s3);
+  padding: 10px var(--ui-s2);
+  border-bottom: 1px solid var(--ui-line);
+}
+
+.ui-dg-row--head {
+  padding-top: 0;
+  font-size: var(--ui-fs-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ui-text-3);
+  border-bottom-color: var(--ui-line-strong);
+}
+
+.ui-dg-row.is-gtv {
+  background: rgba(var(--ui-accent-rgb), 0.08);
+  box-shadow: inset 3px 0 0 var(--ui-accent);
+}
+
+.ui-dg-lobby {
+  color: var(--ui-text-3);
+}
+
+.ui-dg-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--ui-s2);
+  min-width: 0;
+}
+
+.ui-dg-p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ui-dg-arrow {
+  color: var(--ui-text-3);
+  text-align: center;
+}
+
+.ui-dg-res {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  max-width: 160px;
+}
+
+.ui-dg-motivo {
+  font-size: var(--ui-fs-xs);
+  color: var(--ui-text-3);
+}
+
+@media (max-width: 640px) {
+  .ui-dg-grid {
+    --ui-grid-min: 100%;
+  }
+
+  .ui-dg-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--ui-s2);
+  }
+
+  .ui-dg-stats .ui-stat-num {
+    font-size: var(--ui-fs-lg);
+  }
+
+  .ui-dg-stats .ui-stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .ui-dg-row {
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    gap: var(--ui-s2);
+    align-items: start;
+  }
+
+  .ui-dg-row--head {
+    display: none;
+  }
+
+  /* richiedente sopra, "→ indagato" sotto */
+  .ui-dg-pair {
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 2px var(--ui-s1);
+  }
+
+  .ui-dg-pair > .ui-dg-p:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .ui-dg-res {
+    max-width: 96px;
+  }
+}
