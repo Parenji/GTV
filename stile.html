@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTV · Elementi grafici</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  /* Solo per la vetrina */
+  body { margin: 0; background: var(--ui-bg); }
+  .vt-index { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: var(--ui-fs-xs); letter-spacing: 1px; text-transform: uppercase; }
+  .vt-index a { color: var(--ui-text-3); text-decoration: none; }
+  .vt-index a:hover { color: var(--ui-text); }
+  .vt-label { margin: var(--ui-s5) 0 var(--ui-s2); font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ui-text-3); }
+  .vt-code { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--ui-text-3); }
+  .vt-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: var(--ui-s2); }
+  .vt-swatch { font-size: var(--ui-fs-xs); color: var(--ui-text-2); }
+  .vt-swatch i { display: block; height: 44px; margin-bottom: 6px; border-radius: var(--ui-r-sm); border: 1px solid var(--ui-line); }
+  .vt-type > * { margin: 0 0 var(--ui-s3); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+</svg>
+
+<main class="ui-page">
+
+  <!-- ===================================================== -->
+  <div class="ui-hero">
+    <div class="ui-eyebrow">Libreria interna · ui.css</div>
+    <h1 class="ui-display">Elementi grafici GTV</h1>
+    <p class="ui-lead">Tutti i pezzi con cui si costruiscono Union e Home. Niente riquadri: titolo, filetto e contenuto sul nero; il giallo solo per evidenziare.</p>
+  </div>
+
+  <nav class="vt-index" aria-label="Indice">
+    <a href="#token">Token</a><a href="#testata">Testata</a><a href="#sezione">Sezione</a><a href="#pulsanti">Pulsanti</a>
+    <a href="#link">Link</a><a href="#sponsor">Sponsor</a><a href="#evento">Evento</a><a href="#selettori">Selettori</a><a href="#badge">Badge</a><a href="#risultati">Risultati</a>
+    <a href="#piloti">Piloti</a><a href="#tabella">Tabella</a><a href="#elenco">Elenco</a><a href="#gare">Gare</a>
+    <a href="#promemoria">Promemoria</a><a href="#accordion">Accordion</a><a href="#barre">Barre</a><a href="#ricerca">Ricerca</a>
+    <a href="#stati">Stati</a><a href="#pannello">Pannello</a>
+  </nav>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="token">
+    <div class="ui-section-head"><h2 class="ui-section-title">Token</h2><span class="ui-section-meta">colori · testo · categorie</span></div>
+    <div class="vt-swatches">
+      <div class="vt-swatch"><i style="background:var(--ui-bg)"></i>Fondo<br><span class="vt-code">--ui-bg</span></div>
+      <div class="vt-swatch"><i style="background:var(--ui-surface)"></i>Superficie<br><span class="vt-code">--ui-surface</span></div>
+      <div class="vt-swatch"><i style="background:var(--ui-surface-2)"></i>Superficie 2<br><span class="vt-code">--ui-surface-2</span></div>
+      <div class="vt-swatch"><i style="background:var(--ui-accent)"></i>Giallo GTV<br><span class="vt-code">--ui-accent</span></div>
+      <div class="vt-swatch"><i style="background:var(--ui-down)"></i>In calo<br><span class="vt-code">--ui-down</span></div>
+      <div class="vt-swatch"><i style="background:var(--ui-fl)"></i>Giro veloce<br><span class="vt-code">--ui-fl</span></div>
+    </div>
+    <div class="vt-label">Categorie Union · .ui-cat-*</div>
+    <div class="vt-swatches">
+      <div class="vt-swatch ui-cat-star"><i style="background:var(--cat)"></i>STAR</div>
+      <div class="vt-swatch ui-cat-elite"><i style="background:var(--cat)"></i>ELITE</div>
+      <div class="vt-swatch ui-cat-gold"><i style="background:var(--cat)"></i>PRO GOLD</div>
+      <div class="vt-swatch ui-cat-silver"><i style="background:var(--cat)"></i>PRO SILVER</div>
+      <div class="vt-swatch ui-cat-proama"><i style="background:var(--cat)"></i>PRO AMA</div>
+      <div class="vt-swatch ui-cat-ama"><i style="background:var(--cat)"></i>AMA</div>
+    </div>
+    <div class="vt-label">Testo</div>
+    <div class="vt-type">
+      <div class="ui-display">Display · F1 Bold</div>
+      <h2 class="ui-section-title">Titolo di sezione · F1 Bold</h2>
+      <p class="ui-lead" style="margin:0">Testo introduttivo, grigio chiaro, per spiegare una sezione in una o due frasi.</p>
+      <p class="ui-text">Testo corrente per regole e note, con i punti chiave in <strong>evidenza</strong>.</p>
+      <div class="ui-eyebrow">Etichetta · occhiello</div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="testata">
+    <div class="ui-section-head"><h2 class="ui-section-title">Testata di pagina</h2><span class="ui-section-meta">.ui-hero · .ui-stats</span></div>
+    <div class="ui-hero" style="padding-top:var(--ui-s4)">
+      <div class="ui-eyebrow">Round 2 · 2026</div>
+      <div class="ui-display">Lega Union</div>
+      <p class="ui-lead">La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.</p>
+      <div class="ui-btn-row ui-btn-row--center" style="margin:var(--ui-s5) 0">
+        <a class="ui-btn ui-btn--primary" href="#risultati">Risultati</a>
+        <a class="ui-btn" href="#elenco">Classifiche</a>
+        <a class="ui-btn" href="#gare">Lobby</a>
+      </div>
+      <div class="ui-stats">
+        <div><div class="ui-stat-num">472</div><div class="ui-stat-label">Piloti iscritti</div></div>
+        <div><div class="ui-stat-num">19</div><div class="ui-stat-label">Piloti GTV</div></div>
+        <div><div class="ui-stat-num">6</div><div class="ui-stat-label">Gare</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="sezione">
+    <div class="ui-section-head"><h2 class="ui-section-title">Risultati GTV</h2><span class="ui-section-meta">Gara 1 · Red Bull Ring</span></div>
+    <p class="ui-text">Ogni blocco comincia così: titolo a sinistra, un dato di contesto a destra (gara, round, aggiornamento), un filetto sotto. Dentro, i sottotitoli portano il colore della categoria.</p>
+    <div class="ui-subhead ui-cat-star">Star</div>
+    <div class="ui-subhead ui-cat-proama">Pro Ama</div>
+    <div class="ui-updated">Dati dal portale classifiche Union · aggiornati il 29/09, 02:40</div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="pulsanti">
+    <div class="ui-section-head"><h2 class="ui-section-title">Pulsanti</h2><span class="ui-section-meta">.ui-btn</span></div>
+    <div class="ui-btn-row">
+      <button class="ui-btn ui-btn--primary" type="button">Azione principale</button>
+      <button class="ui-btn" type="button">Secondaria</button>
+      <button class="ui-btn ui-btn--ghost" type="button">Mostra tutti i 77 piloti</button>
+    </div>
+    <div class="vt-label">Documenti (PDF)</div>
+    <div class="ui-btn-row">
+      <a class="ui-btn" href="pdf/union/Regolamento Generale Union 2026_V2-3.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Regolamento</a>
+      <a class="ui-btn" href="pdf/union/impostazioni lobby v.2.01_-1.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Opzioni stanza</a>
+      <a class="ui-btn" href="pdf/union/Calendario Union 2026.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Calendario annuale</a>
+    </div>
+    <div class="vt-label">Piccoli</div>
+    <div class="ui-btn-row">
+      <button class="ui-btn ui-btn--sm" type="button">Filtro</button>
+      <button class="ui-btn ui-btn--sm ui-btn--primary" type="button">Attivo</button>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="link">
+    <div class="ui-section-head"><h2 class="ui-section-title">Link con logo</h2><span class="ui-section-meta">Home · .ui-link</span></div>
+    <a class="ui-link" href="union.html">
+      <span class="ui-link-media"><img src="images/Campionati/union.png" alt=""></span>
+      <span class="ui-link-body"><span class="ui-link-title">Union Round 2 2026</span><span class="ui-link-sub" style="display:block">Lobby, risultati e classifiche</span></span>
+      <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="ui-link" href="worldchampionship.html">
+      <span class="ui-link-media"><img src="images/wc.png" alt=""></span>
+      <span class="ui-link-body"><span class="ui-link-title">World Championship</span><span class="ui-link-sub" style="display:block">Campionato interno · archivio</span></span>
+      <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="ui-link" href="https://www.twitch.tv/" target="_blank" rel="noopener">
+      <span class="ui-link-media"><img src="images/social/twitch.svg" alt=""></span>
+      <span class="ui-link-body"><span class="ui-link-title">Guarda su Twitch</span></span>
+      <svg class="ui-link-arrow" width="18" height="18"><use href="#i-external"/></svg>
+    </a>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="sponsor">
+    <div class="ui-section-head"><h2 class="ui-section-title">Sponsor e loghi</h2><span class="ui-section-meta">.ui-card--logo · .ui-logos</span></div>
+    <div class="ui-grid" style="--ui-grid-min:200px">
+      <a class="ui-card ui-card--logo" href="#sponsor"><img src="images/sponsor/lora.svg" alt="Lora Sport"><span class="ui-text">Codice <strong>GTVCORSE</strong> per il 20% di sconto</span></a>
+      <a class="ui-card ui-card--logo" href="#sponsor"><img src="images/sponsor/kustom.png" alt="Kustom Wrap"></a>
+    </div>
+    <div class="ui-logos">
+      <img src="images/Campionati/as.png" alt="All Star"><img src="images/Campionati/union.png" alt="Union"><img src="images/Campionati/federation.svg" alt="Federation">
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="evento">
+    <div class="ui-section-head"><h2 class="ui-section-title">Evento</h2><span class="ui-section-meta">Sport · .ui-event</span></div>
+    <div class="ui-event">
+      <div class="ui-event-head"><img src="images/tracks/watkins.svg" alt=""><div><div class="ui-strong">Watkins Glen · Long Course</div><div class="ui-updated" style="margin-top:2px">Porsche 963 '24 · 24 set → 8 ott · leader 1:08.137</div></div></div>
+      <div class="ui-table-wrap"><table class="ui-table">
+        <thead><tr><th>#</th><th>Pilota</th><th class="ui-num">Tempo</th><th class="ui-num">Rank</th><th class="ui-num">Dist.</th></tr></thead>
+        <tbody><tr><td class="ui-pos">1</td><td class="ui-cell-name"><span class="ui-strong">L. Parenti</span></td><td class="ui-num ui-strong">1:09.696</td><td class="ui-num">#1405</td><td class="ui-num ui-muted">+2.288%</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="selettori">
+    <div class="ui-section-head"><h2 class="ui-section-title">Selettori</h2><span class="ui-section-meta">.ui-seg · .ui-tabs</span></div>
+    <div class="vt-label">Gare · le non ancora pubblicate sono spente</div>
+    <div class="ui-seg" role="group" aria-label="Gara">
+      <button class="ui-seg-btn" type="button" aria-pressed="true">G1</button>
+      <button class="ui-seg-btn" type="button" aria-pressed="false">G2</button>
+      <button class="ui-seg-btn" type="button" disabled>G3</button>
+      <button class="ui-seg-btn" type="button" disabled>G4</button>
+      <button class="ui-seg-btn" type="button" disabled>G5</button>
+    </div>
+    <div class="vt-label">Filtri</div>
+    <div class="ui-seg" role="group" aria-label="Periodo">
+      <button class="ui-seg-btn" type="button" aria-pressed="true">All time</button>
+      <button class="ui-seg-btn" type="button" aria-pressed="false">Ultimo anno</button>
+      <button class="ui-seg-btn" type="button" aria-pressed="false">Ultimi 3 mesi</button>
+    </div>
+    <div class="vt-label">Leghe · tutte in vista, colore della categoria, n° di GTV</div>
+    <div class="ui-tabs" role="tablist" aria-label="Leghe">
+      <button class="ui-tab ui-cat-star" role="tab" aria-selected="true">STAR <span class="ui-tab-count">3</span></button>
+      <button class="ui-tab ui-cat-elite" role="tab" aria-selected="false">ELITE <span class="ui-tab-count">2</span></button>
+      <button class="ui-tab ui-cat-gold" role="tab" aria-selected="false">PRO GOLD <span class="ui-tab-count">6</span></button>
+      <button class="ui-tab ui-cat-silver" role="tab" aria-selected="false">PRO SILVER <span class="ui-tab-count">2</span></button>
+      <button class="ui-tab ui-cat-proama" role="tab" aria-selected="false">PRO AMA <span class="ui-tab-count">2</span></button>
+      <button class="ui-tab ui-cat-ama" role="tab" aria-selected="false">AMA <span class="ui-tab-count">4</span></button>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="badge">
+    <div class="ui-section-head"><h2 class="ui-section-title">Badge e segnalini</h2><span class="ui-section-meta">.ui-badge · .ui-dot · .ui-delta</span></div>
+    <div class="ui-btn-row" style="align-items:center">
+      <span class="ui-badge ui-badge--cat ui-cat-star">Star</span>
+      <span class="ui-badge ui-badge--cat ui-cat-elite">Elite</span>
+      <span class="ui-badge ui-badge--cat ui-cat-gold">Pro Gold</span>
+      <span class="ui-badge ui-badge--cat ui-cat-silver">Pro Silver</span>
+      <span class="ui-badge ui-badge--cat ui-cat-proama">Pro Ama</span>
+      <span class="ui-badge ui-badge--cat ui-cat-ama">Ama</span>
+    </div>
+    <div class="ui-btn-row" style="align-items:center; margin-top:var(--ui-s3)">
+      <span class="ui-badge">A22</span>
+      <span class="ui-badge">Lun · 21:00</span>
+      <span class="ui-badge ui-badge--accent">GTV</span>
+      <span class="ui-dot ui-dot--pole" title="Pole position">P</span><span class="ui-text">pole</span>
+      <span class="ui-dot ui-dot--fl" title="Giro più veloce"></span><span class="ui-text">giro veloce</span>
+      <span class="ui-delta ui-delta--up">▲6</span>
+      <span class="ui-delta ui-delta--down">▼9</span>
+      <span class="ui-delta ui-delta--same">=</span>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="risultati">
+    <div class="ui-section-head"><h2 class="ui-section-title">Risultati</h2><span class="ui-section-meta">.ui-card · risultato minimal</span></div>
+    <div class="ui-subhead ui-cat-elite">Elite</div>
+    <div class="ui-grid">
+      <button class="ui-card is-highlight" type="button" data-sheet>
+        <span class="ui-result-top"><span class="ui-result-name">Giusdandri</span><span class="ui-dots"><span class="ui-dot ui-dot--pole" title="Pole position">P</span></span></span>
+        <span class="ui-result-bottom"><span class="ui-result-pos">P2</span><span class="ui-result-lobby">A12</span></span>
+      </button>
+      <button class="ui-card" type="button" data-sheet>
+        <span class="ui-result-top"><span class="ui-result-name">Iceman</span></span>
+        <span class="ui-result-bottom"><span class="ui-result-pos">P11</span><span class="ui-result-lobby">A18</span></span>
+      </button>
+    </div>
+    <div class="ui-subhead ui-cat-gold">Pro Gold</div>
+    <div class="ui-grid">
+      <button class="ui-card" type="button" data-sheet>
+        <span class="ui-result-top"><span class="ui-result-name">Barda88</span></span>
+        <span class="ui-result-bottom"><span class="ui-result-pos">P4</span><span class="ui-result-lobby">A21</span></span>
+      </button>
+      <button class="ui-card" type="button" data-sheet>
+        <span class="ui-result-top"><span class="ui-result-name">GTV-Oriano06</span><span class="ui-dots"></span></span>
+        <span class="ui-result-bottom"><span class="ui-result-pos">P11</span><span class="ui-result-lobby">A3</span></span>
+      </button>
+      <div class="ui-card is-off">
+        <span class="ui-result-top"><span class="ui-result-name">Goose</span></span>
+        <span class="ui-result-bottom"><span class="ui-result-pos">—</span><span class="ui-result-lobby">non partito</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="piloti">
+    <div class="ui-section-head"><h2 class="ui-section-title">GTV iscritti</h2><span class="ui-section-meta">18 piloti · .ui-pilot</span></div>
+    <div class="ui-grid" style="--ui-grid-min:260px">
+      <div class="ui-card ui-pilot">
+        <div class="ui-pilot-top"><span class="ui-pilot-num">#666</span><span class="ui-badge ui-badge--cat ui-cat-star">Star</span></div>
+        <img class="ui-pilot-brand" src="images/marchi-auto/audi.svg" alt="Audi">
+        <div class="ui-pilot-name">Bowie knife99</div>
+        <div class="ui-pilot-sub">titirolamadonn</div>
+        <dl class="ui-kv"><div><dt>Matricola</dt><dd>27</dd></div><div><dt>Auto</dt><dd>RS 5 Turbo DTM '19</dd></div></dl>
+      </div>
+      <div class="ui-card ui-pilot">
+        <div class="ui-pilot-top"><span class="ui-pilot-num">#87</span><span class="ui-badge ui-badge--cat ui-cat-elite">Elite</span></div>
+        <img class="ui-pilot-brand" src="images/marchi-auto/lexus.svg" alt="Lexus">
+        <div class="ui-pilot-name">Giusdandri</div>
+        <div class="ui-pilot-sub">Giusdandri</div>
+        <dl class="ui-kv"><div><dt>Matricola</dt><dd>124</dd></div><div><dt>Auto</dt><dd>RC F GT500 '16</dd></div></dl>
+      </div>
+      <div class="ui-card ui-pilot">
+        <div class="ui-pilot-top"><span class="ui-pilot-num">#25</span><span class="ui-badge ui-badge--cat ui-cat-silver">Pro Silver</span></div>
+        <img class="ui-pilot-brand" src="images/marchi-auto/nissan.svg" alt="Nissan">
+        <div class="ui-pilot-name">Zabo</div>
+        <div class="ui-pilot-sub">SP_Samuele</div>
+        <dl class="ui-kv"><div><dt>Matricola</dt><dd>298</dd></div><div><dt>Auto</dt><dd>GT-R NISMO GT500 '16</dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="tabella">
+    <div class="ui-section-head"><h2 class="ui-section-title">Lobby A22 · Pro Silver</h2><span class="ui-section-meta">.ui-table</span></div>
+    <div class="ui-table-wrap">
+      <table class="ui-table">
+        <thead><tr><th>Pos</th><th>Q</th><th>Pilota</th><th>Team</th><th class="ui-hide-sm">Auto</th><th class="ui-num">Distacco</th></tr></thead>
+        <tbody>
+          <tr><td class="ui-pos">1</td><td class="ui-muted">4</td><td class="ui-strong">Pete</td><td class="ui-muted"></td><td class="ui-hide-sm ui-muted">RS 5 Turbo DTM '19</td><td class="ui-num">49:19.773</td></tr>
+          <tr><td class="ui-pos">2</td><td class="ui-muted">3</td><td class="ui-strong">Mimmogr</td><td class="ui-muted">SMI</td><td class="ui-hide-sm ui-muted">RS 5 Turbo DTM '19</td><td class="ui-num">+11.287</td></tr>
+          <tr><td class="ui-pos">3</td><td class="ui-muted">5</td><td class="ui-strong">Salvatore</td><td class="ui-muted">SCGT</td><td class="ui-hide-sm ui-muted">RC F GT500 '16</td><td class="ui-num">+20.601</td></tr>
+          <tr class="is-gtv"><td class="ui-pos">5</td><td class="ui-muted">11</td><td class="ui-strong">Sun|)own</td><td class="ui-muted">GTV</td><td class="ui-hide-sm ui-muted">RC F GT500 '16</td><td class="ui-num">+40.707</td></tr>
+          <tr><td class="ui-pos">7</td><td class="ui-muted">7</td><td class="ui-strong">ScarsFess <span class="ui-dot ui-dot--fl" title="Giro più veloce"></span></td><td class="ui-muted"></td><td class="ui-hide-sm ui-muted">RS 5 Turbo DTM '19</td><td class="ui-num">+44.404</td></tr>
+          <tr class="is-gtv"><td class="ui-pos">9</td><td class="ui-muted">10</td><td class="ui-strong">Zabo</td><td class="ui-muted">GTV</td><td class="ui-hide-sm ui-muted">GT-R NISMO GT500 '16</td><td class="ui-num">+52.841</td></tr>
+          <tr><td class="ui-pos">11</td><td class="ui-muted">1</td><td class="ui-strong">GabryRR <span class="ui-dot ui-dot--pole" title="Pole position">P</span></td><td class="ui-muted">TLM</td><td class="ui-hide-sm ui-muted">RS 5 Turbo DTM '19</td><td class="ui-num ui-muted">Non finito</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="elenco">
+    <div class="ui-section-head"><h2 class="ui-section-title">Classifica Pro Gold</h2><span class="ui-section-meta">82 piloti · .ui-list · .ui-row</span></div>
+    <ol class="ui-list">
+      <li class="ui-row ui-row--head"><span>Pos</span><span>Team</span><span>Pilota</span><span class="ui-num">Punti</span></li>
+      <li class="ui-row"><span class="ui-pos">1</span><span class="ui-muted">DCT</span><span class="ui-ellipsis">DCT_mercenario94</span><span>50</span></li>
+      <li class="ui-row"><span class="ui-pos">2</span><span class="ui-muted">DCT</span><span class="ui-ellipsis">Gjca-76</span><span>43</span></li>
+      <li class="ui-row"><span class="ui-pos">3</span><span class="ui-muted">FFM</span><span class="ui-ellipsis">FFM_M a z e sBin</span><span>37</span></li>
+      <li><button class="ui-row-gap" type="button">··· 38 piloti ···</button></li>
+      <li class="ui-row"><span class="ui-pos">42</span><span class="ui-muted">RCE</span><span class="ui-ellipsis">RCE_Leobustv</span><span>17</span></li>
+      <li class="ui-row"><span class="ui-pos">43</span><span class="ui-muted">SMI</span><span class="ui-ellipsis">SMI_DENI_BURIDA</span><span>17</span></li>
+      <li class="ui-row is-gtv is-open" aria-expanded="true" tabindex="0"><span class="ui-pos">44</span><span class="ui-muted">GTV</span><span class="ui-ellipsis ui-strong">Barda88 <span class="ui-delta ui-delta--up">▲8</span></span><span class="ui-num">16</span><span class="ui-row-more"><span><small>G1</small>6</span><span><small>G2</small>10</span><span><small>G3</small>—</span><span><small>G4</small>—</span><span><small>G5</small>—</span></span></li>
+      <li class="ui-row"><span class="ui-pos">45</span><span class="ui-muted">CBR</span><span class="ui-ellipsis">CBR_Simello</span><span>16</span></li>
+      <li class="ui-row"><span class="ui-pos">46</span><span class="ui-muted">MFC</span><span class="ui-ellipsis">MF_Marekiaro</span><span>16</span></li>
+      <li><button class="ui-row-gap" type="button">··· 36 piloti ···</button></li>
+    </ol>
+    <div class="ui-btn-row ui-btn-row--center" style="margin-top:var(--ui-s4)"><button class="ui-btn ui-btn--ghost" type="button">Mostra tutti gli 82 piloti</button></div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="gare">
+    <div class="ui-section-head"><h2 class="ui-section-title">Round 2</h2><span class="ui-section-meta">si corre a settimane alterne · .ui-race</span></div>
+    <div class="ui-grid">
+      <div class="ui-card ui-race">
+        <span class="ui-race-round">Gara 1</span>
+        <span class="ui-race-track"><img src="images/bandiere/at.svg" alt="">Red Bull Ring</span>
+        <span class="ui-race-date">21 – 27 set 2026</span>
+        <img class="ui-race-map" src="images/tracks/rbr.svg" alt="">
+      </div>
+      <div class="ui-card ui-race is-next">
+        <span class="ui-race-round">Gara 2 · prossima</span>
+        <span class="ui-race-track"><img src="images/bandiere/us.svg" alt="">Watkins Glen</span>
+        <span class="ui-race-date">5 – 11 ott 2026</span>
+        <img class="ui-race-map" src="images/tracks/watkins.svg" alt="">
+      </div>
+      <div class="ui-card ui-race">
+        <span class="ui-race-round">Finale</span>
+        <span class="ui-race-track"><img src="images/bandiere/es.svg" alt="">Barcelona GP</span>
+        <span class="ui-race-date">30 nov – 6 dic 2026</span>
+        <span><span class="ui-badge">No chicane</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="promemoria">
+    <div class="ui-section-head"><h2 class="ui-section-title">Scadenze da ricordare</h2><span class="ui-section-meta">.ui-note</span></div>
+    <div class="ui-note">
+      <svg><use href="#i-flag"/></svg>
+      <div><div class="ui-note-title">Spostamento lobby</div><p class="ui-text" style="margin:0">Richieste tramite il modulo su <strong>Discord</strong> entro le <strong>23:59</strong> del <strong>giovedì</strong> precedente la settimana di gara.</p></div>
+    </div>
+    <div class="ui-note">
+      <svg><use href="#i-users"/></svg>
+      <div><div class="ui-note-title">Amicizia all'Host</div><p class="ui-text" style="margin:0">La richiesta va inviata entro le <strong>12:00</strong> del giorno della gara.</p></div>
+    </div>
+    <div class="ui-note">
+      <svg><use href="#i-send"/></svg>
+      <div><div class="ui-note-title">Reclami alla Direzione Gara</div><p class="ui-text" style="margin:0">Tramite il proprio <strong>capo team</strong> entro le <strong>23:59</strong> del giorno successivo alla gara.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="accordion">
+    <div class="ui-section-head"><h2 class="ui-section-title">Tutte le lobby</h2><span class="ui-section-meta">.ui-acc</span></div>
+    <details class="ui-acc">
+      <summary><span class="ui-badge">Lun · 21:00</span><span class="ui-strong">Lobby A1</span><span class="ui-badge ui-badge--cat ui-cat-star">Star</span><span class="ui-muted" style="font-size:var(--ui-fs-xs)">1 GTV</span></summary>
+      <div class="ui-acc-body">
+        <ol class="ui-list" style="--ui-row-cols: 32px 56px 1fr">
+          <li class="ui-row is-gtv"><span class="ui-pos">1</span><span class="ui-muted">GTV</span><span class="ui-strong">InuyashaGodYokai</span></li>
+          <li class="ui-row"><span class="ui-pos">2</span><span class="ui-muted">RMT</span><span>RMT_87_TOMMY</span></li>
+          <li class="ui-row"><span class="ui-pos">3</span><span class="ui-muted">GTID</span><span>A.D'alba</span></li>
+        </ol>
+        <p class="ui-text">Host <strong>HellBoy8408</strong> · live su <strong>squadracorsegt</strong></p>
+      </div>
+    </details>
+    <details class="ui-acc">
+      <summary><span class="ui-badge">Lun · 21:00</span><span class="ui-strong">Lobby A3</span><span class="ui-badge ui-badge--cat ui-cat-gold">Pro Gold</span><span class="ui-muted" style="font-size:var(--ui-fs-xs)">1 GTV</span></summary>
+      <div class="ui-acc-body"><p class="ui-text">Schieramento completo della lobby.</p></div>
+    </details>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="barre">
+    <div class="ui-section-head"><h2 class="ui-section-title">Dove si piazzano i piloti del team</h2><span class="ui-section-meta">.ui-bars</span></div>
+    <div class="ui-bars">
+      <div class="ui-bar-row"><span>Top 100</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:2%"></span></span><span class="ui-num">23</span></div>
+      <div class="ui-bar-row"><span>101 – 500</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:9%"></span></span><span class="ui-num">97</span></div>
+      <div class="ui-bar-row"><span>501 – 1.000</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:7%"></span></span><span class="ui-num">76</span></div>
+      <div class="ui-bar-row"><span>1.001 – 5.000</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:27%"></span></span><span class="ui-num">282</span></div>
+      <div class="ui-bar-row"><span>5.001 – 20.000</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:67%"></span></span><span class="ui-num">688</span></div>
+      <div class="ui-bar-row"><span>oltre 20.000</span><span class="ui-bar-track"><span class="ui-bar ui-bar--accent" style="width:100%"></span></span><span class="ui-num">1033</span></div>
+    </div>
+
+    <div class="vt-label" style="margin-top:var(--ui-s6)">Qualifica → gara · .ui-diverge-row</div>
+    <div class="ui-legend"><span><i style="background:var(--ui-accent)"></i>posizioni guadagnate</span><span><i style="background:var(--ui-down)"></i>posizioni perse</span></div>
+    <div class="ui-diverge-row is-gtv"><span class="ui-ellipsis">Sun|)own<small>P11 → P5</small></span><span class="ui-diverge-neg"></span><span class="ui-diverge-pos"><span class="ui-bar" style="width:60%"></span>+6</span></div>
+    <div class="ui-diverge-row"><span class="ui-ellipsis">Pete<small>P4 → P1</small></span><span class="ui-diverge-neg"></span><span class="ui-diverge-pos"><span class="ui-bar" style="width:30%"></span>+3</span></div>
+    <div class="ui-diverge-row is-gtv"><span class="ui-ellipsis">Zabo<small>P10 → P9</small></span><span class="ui-diverge-neg"></span><span class="ui-diverge-pos"><span class="ui-bar" style="width:10%"></span>+1</span></div>
+    <div class="ui-diverge-row"><span class="ui-ellipsis">texport-52<small>P2 → P6</small></span><span class="ui-diverge-neg">−4<span class="ui-bar" style="width:40%"></span></span><span class="ui-diverge-pos"></span></div>
+    <div class="ui-diverge-row"><span class="ui-ellipsis">GabryRR<small>P1 → P11</small></span><span class="ui-diverge-neg">−10<span class="ui-bar" style="width:100%"></span></span><span class="ui-diverge-pos"></span></div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="ricerca">
+    <div class="ui-section-head"><h2 class="ui-section-title">Ricerca</h2><span class="ui-section-meta">.ui-search</span></div>
+    <label class="ui-search"><svg><use href="#i-search"/></svg><input type="search" placeholder="Cerca pilota…" aria-label="Cerca pilota"></label>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="stati">
+    <div class="ui-section-head"><h2 class="ui-section-title">Stati</h2><span class="ui-section-meta">.ui-state</span></div>
+    <div class="ui-grid" style="--ui-grid-min:220px">
+      <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento classifiche…</div>
+      <div class="ui-state">I risultati compariranno qui appena la Lega li pubblica sul portale Union.</div>
+      <div class="ui-state ui-state--error">Impossibile caricare le classifiche. Riprova tra poco.</div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <section class="ui-section" id="pannello">
+    <div class="ui-section-head"><h2 class="ui-section-title">Pannello</h2><span class="ui-section-meta">.ui-sheet · dal basso su mobile</span></div>
+    <button class="ui-btn" type="button" data-sheet>Apri una lobby</button>
+  </section>
+
+</main>
+
+<div class="ui-sheet" id="vt-sheet" hidden>
+  <div class="ui-sheet-backdrop" data-close></div>
+  <div class="ui-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="vt-sheet-title">
+    <div class="ui-sheet-head">
+      <div>
+        <div class="ui-section-title" id="vt-sheet-title">Lobby A12 <span class="ui-badge ui-badge--cat ui-cat-elite">Elite</span></div>
+        <div class="ui-section-meta" style="margin-top:4px">Gara 1 · Red Bull Ring</div>
+      </div>
+      <button class="ui-icon-btn" type="button" data-close aria-label="Chiudi"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="ui-sheet-body">
+      <table class="ui-table">
+        <thead><tr><th>Pos</th><th>Q</th><th>Pilota</th><th class="ui-num">Distacco</th></tr></thead>
+        <tbody>
+          <tr><td class="ui-pos">1</td><td class="ui-muted">3</td><td class="ui-strong">Seccoide87</td><td class="ui-num">49:06.755</td></tr>
+          <tr class="is-gtv"><td class="ui-pos">2</td><td class="ui-muted">1</td><td class="ui-strong">Giusdandri <span class="ui-dot ui-dot--pole">P</span></td><td class="ui-num">+04.923</td></tr>
+          <tr><td class="ui-pos">3</td><td class="ui-muted">8</td><td class="ui-strong">GTIDsacco72</td><td class="ui-num">+06.746</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Solo per la vetrina: selettori che si accendono e pannello apri/chiudi
+  document.querySelectorAll(".ui-seg").forEach(function (g) {
+    g.addEventListener("click", function (e) {
+      var b = e.target.closest(".ui-seg-btn:not(:disabled)");
+      if (!b) return;
+      g.querySelectorAll(".ui-seg-btn").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+    });
+  });
+  document.querySelectorAll(".ui-tabs").forEach(function (g) {
+    g.addEventListener("click", function (e) {
+      var b = e.target.closest(".ui-tab");
+      if (!b) return;
+      g.querySelectorAll(".ui-tab").forEach(function (x) { x.setAttribute("aria-selected", x === b); });
+    });
+  });
+  var sheet = document.getElementById("vt-sheet");
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("[data-sheet]")) { sheet.hidden = false; sheet.querySelector("[data-close].ui-icon-btn").focus(); }
+    if (e.target.closest("[data-close]")) sheet.hidden = true;
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") sheet.hidden = true; });
+</script>
+</body>
+</html>
