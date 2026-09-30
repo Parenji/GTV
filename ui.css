@@ -1392,6 +1392,153 @@ a.ui-card:focus-visible {
 }
 
 /* ------------------------------------------------------------
+   15b. Menu a scomparsa (hamburger + sidebar) nelle pagine ui-site
+   ------------------------------------------------------------ */
+.ui-site .hamburger-button {
+  top: var(--ui-s4);
+  left: var(--ui-s4);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(15, 15, 15, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ui-line-strong);
+  border-radius: var(--ui-r-md);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ui-site .hamburger-button:hover,
+.ui-site .hamburger-button:focus-visible {
+  border-color: var(--ui-accent);
+  outline: none;
+}
+
+.ui-site .hamburger-button .line {
+  width: 18px;
+  height: 2px;
+  margin: 0;
+  border-radius: 2px;
+  background: var(--ui-text);
+}
+
+.ui-site .hamburger-button .line:nth-child(2) {
+  width: 12px;
+  align-self: flex-start;
+  margin-left: 13px;
+  background: var(--ui-accent);
+}
+
+.ui-site:has(#sidebar.open) .hamburger-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ui-site #sidebar {
+  width: min(320px, 86vw);
+  background: var(--ui-surface);
+  border-right: 1px solid var(--ui-line);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.55);
+  font-family: var(--ui-font);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ui-site .close-button {
+  top: var(--ui-s4);
+  right: var(--ui-s4);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 0;
+  color: var(--ui-text-2);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-md);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ui-site .close-button::before,
+.ui-site .close-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  margin: -1px 0 0 -8px;
+  border-radius: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+.ui-site .close-button::after {
+  transform: rotate(-45deg);
+}
+
+.ui-site .close-button:hover {
+  color: var(--ui-text);
+  border-color: var(--ui-line-strong);
+}
+
+.ui-site .sidebar-content {
+  padding: 84px var(--ui-s4) var(--ui-s5);
+  gap: 2px;
+}
+
+.ui-site .sidebar-content a.menu-link {
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--ui-s3);
+  min-height: 48px;
+  padding: 0 var(--ui-s4);
+  border: 0;
+  border-left: 2px solid transparent;
+  border-radius: var(--ui-r-sm);
+  font-family: var(--ui-font-bold);
+  font-size: var(--ui-fs-sm);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ui-text-2);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.ui-site .sidebar-content a.menu-link:hover {
+  background: var(--ui-surface-2);
+  color: var(--ui-text);
+}
+
+.ui-site .sidebar-content a.menu-link.active {
+  background: rgba(var(--ui-accent-rgb), 0.08);
+  border-left-color: var(--ui-accent);
+  color: var(--ui-accent);
+  font-weight: normal;
+  box-shadow: none;
+}
+
+.ui-site .sidebar-content .menu-icon {
+  height: 26px;
+  margin: 0;
+}
+
+.ui-site .sidebar-content a.menu-link:focus-visible,
+.ui-site .close-button:focus-visible {
+  outline: 2px solid var(--ui-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .ui-site .hamburger-button .line {
+    width: 18px;
+    height: 2px;
+    margin: 0;
+  }
+}
+
+/* ------------------------------------------------------------
    16. Mobile
    ------------------------------------------------------------ */
 @media (max-width: 640px) {
@@ -1814,7 +1961,7 @@ a.ui-card:focus-visible {
 
 .ui-dg-row {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) auto;
+  grid-template-columns: 48px minmax(0, 1fr) 170px;
   align-items: center;
   gap: var(--ui-s3);
   padding: 10px var(--ui-s2);
@@ -1843,6 +1990,7 @@ a.ui-card:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
   align-items: baseline;
+  justify-items: start;
   gap: var(--ui-s2);
   min-width: 0;
 }
@@ -1862,12 +2010,83 @@ a.ui-card:focus-visible {
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
-  max-width: 160px;
 }
 
 .ui-dg-motivo {
   font-size: var(--ui-fs-xs);
   color: var(--ui-text-3);
+}
+
+/* "leggi tutto" delle note lunghe */
+.ui-dg-more {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ui-text);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ui-accent);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Segnalazioni degli host: il filetto a sinistra dice la sanzione */
+.ui-dg-host {
+  --dg-sanz: var(--ui-text-3);
+  box-shadow: inset 3px 0 0 var(--dg-sanz);
+}
+
+.ui-dg-host--squalifica {
+  --dg-sanz: var(--ui-danger);
+}
+
+.ui-dg-host--griglia {
+  --dg-sanz: #ff8a3d;
+}
+
+.ui-dg-host--pen {
+  --dg-sanz: var(--ui-danger);
+}
+
+.ui-dg-host .ui-dg-esito {
+  font-family: var(--ui-font-display);
+  font-size: var(--ui-fs-lg);
+  color: var(--dg-sanz);
+}
+
+.ui-dg-sanz {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ui-dg-sanz small {
+  font-size: var(--ui-fs-xs);
+  color: var(--ui-text-2);
+}
+
+.ui-dg-card-top .ui-dg-where {
+  align-self: flex-start;
+}
+
+.ui-dg-host-who {
+  overflow-wrap: anywhere;
+}
+
+.ui-dg-nulle {
+  margin-top: var(--ui-s4);
+  border-top: 1px solid var(--ui-line);
+}
+
+.ui-dg-nulle > summary {
+  min-height: 44px;
+  font-size: var(--ui-fs-sm);
+}
+
+.ui-dg-rownote {
+  display: block;
+  margin-top: 2px;
+  line-height: 1.4;
 }
 
 @media (max-width: 640px) {
@@ -1890,7 +2109,7 @@ a.ui-card:focus-visible {
   }
 
   .ui-dg-row {
-    grid-template-columns: 36px minmax(0, 1fr) auto;
+    grid-template-columns: 36px minmax(0, 1fr) 96px;
     gap: var(--ui-s2);
     align-items: start;
   }
@@ -1909,7 +2128,55 @@ a.ui-card:focus-visible {
     grid-column: 1 / -1;
   }
 
-  .ui-dg-res {
-    max-width: 96px;
+}
+
+/* ------------------------------------------------------------
+   17. Hero della home (fascia con l'auto, a tutta larghezza)
+   L'immagine e' 4:1: sfuma su tutti i lati verso lo sfondo
+   cosi' non ha bordi e sembra uscire dal fondo della pagina.
+   ------------------------------------------------------------ */
+.ui-hero-photo {
+  position: relative;
+  width: 100vw;
+  margin: calc(var(--ui-s4) * -0.5) 0 calc(var(--ui-s5) * -1) calc(50% - 50vw);
+  aspect-ratio: 4 / 1;
+  max-height: 340px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ui-hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: 62% 50%;
+  display: block;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 22%, #000 62%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 22%, #000 62%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (max-width: 640px) {
+  .ui-hero-photo {
+    aspect-ratio: 3 / 1;
+    margin-bottom: calc(var(--ui-s4) * -1);
+  }
+  .ui-hero-photo img {
+    object-position: 58% 50%;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 20%, #000 65%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 20%, #000 65%, transparent 100%);
   }
 }

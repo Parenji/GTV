@@ -42,11 +42,15 @@ window.GTV_CONFIG = {
     },
   },
 
-  // Report della Direzione Gara Union: un foglio Google per gara (numero
-  // gara -> CSV). Si usa /export e non /gviz: gviz svuota le celle di testo
-  // ("RIFIUTATO, ...") in una colonna che e' quasi tutta numerica.
+  // Report della Direzione Gara Union: per ogni gara due fogli Google (CSV),
+  // i reclami dei piloti e le segnalazioni degli host. Si usa /export e non
+  // /gviz: gviz svuota le celle di testo ("RIFIUTATO, ...") in una colonna
+  // che e' quasi tutta numerica.
   unionReportDG: {
-    1: "https://docs.google.com/spreadsheets/d/1jHjfXcU7LAV1HvL3pb036rLHzowpvo_ozl9W8q_rmwo/export?format=csv&gid=362234430",
+    1: {
+      reclami: "https://docs.google.com/spreadsheets/d/1jHjfXcU7LAV1HvL3pb036rLHzowpvo_ozl9W8q_rmwo/export?format=csv&gid=362234430",
+      host: "https://docs.google.com/spreadsheets/d/1Fu1ig6YEzFxJdeSitYcVSgPwUQvDVEe8pCknnJPVzOU/export?format=csv&gid=1180831618",
+    },
   },
 
   googleForms: {

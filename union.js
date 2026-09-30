@@ -1739,48 +1739,83 @@ function unionDGEsito(testo) {
   return { tipo: "altro", sec: 0, label: t };
 }
 
+// Esito delle segnalazioni degli host: sanzioni sulla gara successiva
+function unionDGHostEsito(testo, gara) {
+  var t = String(testo || "").trim();
+  var prossima = gara < UNION_NUM_GARE ? "Gara " + (gara + 1) + ", " + UNION_PISTE[gara] : "prossima gara";
+  var m;
+  if (!t) return { tipo: "attesa", peso: 3, label: "In valutazione" };
+  if (/null|annullat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Nulla" };
+  if (/squalific/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Salta " + prossima };
+  if ((m = t.match(/(\d+)\s*posizion/i))) {
+    return { tipo: "griglia", peso: 1, label: "−" + m[1] + " posizioni", sub: "In griglia a " + prossima };
+  }
+  if (/^\d+$/.test(t)) return { tipo: "pen", peso: 2, label: "+" + t + " s" };
+  return { tipo: "altro", peso: 2, label: t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() };
+}
+
+// Un foglio DG (reclami o host) -> righe con i soli campi pubblicati
+function fetchUnionDGSheet(url) {
+  return fetch(url)
+    .then(function (r) {
+      if (!r.ok) throw new Error("Errore HTTP " + r.status);
+      return r.text();
+    })
+    .then(function (text) {
+      var rows = parseCsvQuoted(text);
+      var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
+      function col(re) {
+        for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;
+        return -1;
+      }
+      var c = {
+        teamR: col(/^TAG TEAM RICHIEDENTE/),
+        nomeR: col(/^ID GT7 RICHIEDENTE/),
+        teamI: col(/^TAG TEAM INDAGATO/),
+        nomeI: col(/^ID GT7 INDAGATO/),
+        lega: col(/^RANK/),
+        lobby: col(/LOBBY/),
+        note: col(/^NOTE/),
+        esito: col(/^PENALIT/),
+      };
+      function v(r, k) {
+        return c[k] === -1 ? "" : String(r[c[k]] || "").trim();
+      }
+      return rows.map(function (r) {
+        return {
+          teamR: v(r, "teamR").toUpperCase(),
+          nomeR: v(r, "nomeR"),
+          teamI: v(r, "teamI").toUpperCase(),
+          nomeI: v(r, "nomeI"),
+          lega: v(r, "lega").toUpperCase().replace(/\s+/g, " "),
+          lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, ""),
+          note: v(r, "note"),
+          esitoRaw: v(r, "esito"),
+        };
+      }).filter(function (x) {
+        return x.nomeR || x.nomeI;
+      });
+    });
+}
+
+// Reclami e segnalazioni host di una gara. Le segnalazioni sono facoltative:
+// se il foglio manca o non si carica restano null e il blocco lo dice.
 function fetchUnionReportDG(gara) {
   if (!unionDG.cache[gara]) {
-    var url = unionDGUrls()[gara];
-    unionDG.cache[gara] = fetch(url)
-      .then(function (r) {
-        if (!r.ok) throw new Error("Errore HTTP " + r.status);
-        return r.text();
-      })
-      .then(function (text) {
-        var rows = parseCsvQuoted(text);
-        var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
-        function col(re) {
-          for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;
-          return -1;
-        }
-        var c = {
-          teamR: col(/^TAG TEAM RICHIEDENTE/),
-          nomeR: col(/^ID GT7 RICHIEDENTE/),
-          teamI: col(/^TAG TEAM INDAGATO/),
-          nomeI: col(/^ID GT7 INDAGATO/),
-          lega: col(/^RANK/),
-          lobby: col(/LOBBY/),
-          note: col(/^NOTE/),
-          esito: col(/^PENALIT/),
-        };
-        function v(r, k) {
-          return c[k] === -1 ? "" : String(r[c[k]] || "").trim();
-        }
-        return rows.map(function (r) {
-          return {
-            teamR: v(r, "teamR").toUpperCase(),
-            nomeR: v(r, "nomeR"),
-            teamI: v(r, "teamI").toUpperCase(),
-            nomeI: v(r, "nomeI"),
-            lega: v(r, "lega").toUpperCase().replace(/\s+/g, " "),
-            lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, ""),
-            note: v(r, "note"),
-            esito: unionDGEsito(v(r, "esito")),
-          };
-        }).filter(function (x) {
-          return x.nomeR || x.nomeI;
-        });
+    var urls = unionDGUrls()[gara] || {};
+    unionDG.cache[gara] = Promise.all([
+      fetchUnionDGSheet(urls.reclami),
+      urls.host
+        ? fetchUnionDGSheet(urls.host).catch(function (err) {
+            console.warn("Segnalazioni host non disponibili:", err);
+            return null;
+          })
+        : Promise.resolve(null),
+    ])
+      .then(function (res) {
+        res[0].forEach(function (x) { x.esito = unionDGEsito(x.esitoRaw); });
+        (res[1] || []).forEach(function (x) { x.esito = unionDGHostEsito(x.esitoRaw, gara); });
+        return { reclami: res[0], host: res[1] };
       })
       .catch(function (err) {
         delete unionDG.cache[gara];
@@ -1799,6 +1834,14 @@ function loadUnionReportDG() {
     .filter(function (g) { return g >= 1; })
     .sort(function (a, b) { return a - b; });
   unionDG.gara = gare.length ? gare[gare.length - 1] : null;
+
+  body.addEventListener("click", function (e) {
+    var btn = e.target.closest(".ui-dg-more");
+    if (!btn) return;
+    var p = btn.parentNode;
+    p.textContent = p.getAttribute("data-dg-full");
+    p.removeAttribute("data-dg-full");
+  });
 
   if (sel && !sel.dataset.ready) {
     sel.dataset.ready = "1";
@@ -1847,7 +1890,7 @@ function renderUnionReportDG() {
   ])
     .then(function (res) {
       if (unionDG.gara !== gara) return; // nel frattempo e' stata scelta un'altra gara
-      body.innerHTML = unionReportDGHtml(res[0], res[1]);
+      body.innerHTML = unionReportDGHtml(res[0].reclami, res[0].host, res[1]);
     })
     .catch(function (err) {
       console.error("Errore caricamento report DG:", err);
@@ -1895,17 +1938,14 @@ function unionDGCardHtml(x, lato) {
     '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span></div>" +
     "</div>" +
     (dettaglio ? '<p class="ui-dg-note"><span class="ui-muted">Motivo:</span> ' + escapeHtml(dettaglio) + "</p>" : "") +
-    (x.note ? '<p class="ui-dg-note">“' + escapeHtml(x.note) + "”</p>" : "") +
+    unionDGNoteHtml(x.note, true) +
     "</article>"
   );
 }
 
-function unionReportDGHtml(reclami, lobbyData) {
-  if (!reclami.length) {
-    return unionState("Nessun reclamo presentato per questa gara.", "empty");
-  }
+function unionReportDGHtml(reclami, host, lobbyData) {
   var gtvSet = unionDGGtvSet(lobbyData);
-  reclami.forEach(function (x) {
+  reclami.concat(host || []).forEach(function (x) {
     x.gtvR = x.teamR === "GTV" || !!gtvSet[unionNorm(x.nomeR)];
     x.gtvI = x.teamI === "GTV" || !!gtvSet[unionNorm(x.nomeI)];
   });
@@ -1932,8 +1972,20 @@ function unionReportDGHtml(reclami, lobbyData) {
   var html =
     '<div class="ui-dg-gtv">' +
     gruppo("Reclami fatti dai GTV", fatti, "fatto", "Nessun reclamo presentato da piloti GTV.") +
-    gruppo("Reclami ricevuti dai GTV", ricevuti, "ricevuto", "Nessun pilota GTV sotto indagine. Pulito così.") +
-    "</div>";
+    gruppo("Reclami ricevuti dai GTV", ricevuti, "ricevuto", "Nessun pilota GTV sotto indagine. Pulito così.");
+  if (host) {
+    var hostGtv = host.filter(function (x) { return x.gtvI; });
+    html +=
+      '<div class="ui-subhead">Segnalazioni degli host sui GTV <span class="ui-muted">' + hostGtv.length + "</span></div>" +
+      (hostGtv.length
+        ? '<div class="ui-grid ui-dg-grid">' + hostGtv.map(unionDGHostCardHtml).join("") + "</div>"
+        : '<p class="ui-dg-empty">Nessuna segnalazione degli host su piloti GTV.</p>');
+  }
+  html += "</div>";
+
+  if (!reclami.length) {
+    return html + unionState("Nessun reclamo presentato per questa gara.", "empty") + unionDGHostHtml(host);
+  }
 
   html +=
     '<div class="ui-dg-stats">' +
@@ -1980,5 +2032,89 @@ function unionReportDGHtml(reclami, lobbyData) {
     '<span class="ui-section-meta">Penalità in secondi sul tempo di gara</span></div>' +
     perLega;
 
+  return html + unionDGHostHtml(host);
+}
+
+// Note lunghe: le prime righe e "leggi tutto" (gestito in loadUnionReportDG)
+function unionDGNoteHtml(note, virgolette) {
+  if (!note) return "";
+  var q = virgolette ? ["“", "”"] : ["", ""];
+  var max = 170;
+  if (note.length <= max) return '<p class="ui-dg-note">' + q[0] + escapeHtml(note) + q[1] + "</p>";
+  var corta = note.slice(0, max).replace(/\s+\S*$/, "") + "…";
+  return (
+    '<p class="ui-dg-note" data-dg-full="' + escapeHtml(q[0] + note + q[1]) + '">' + q[0] + escapeHtml(corta) +
+    ' <button type="button" class="ui-dg-more">leggi tutto</button></p>'
+  );
+}
+
+// -------------------------------------------------------------
+// Segnalazioni degli host: condotta in lobby (secondo giro di
+// qualifica, sorpassi nel giro veloce, comportamento in chat...),
+// non incidenti di gara. Le sanzioni valgono sulla gara successiva.
+// -------------------------------------------------------------
+function unionDGHostCardHtml(x) {
+  var e = x.esito;
+  return (
+    '<article class="ui-card ui-dg-host ui-dg-host--' + e.tipo + '">' +
+    '<div class="ui-dg-card-top">' +
+    '<span class="ui-dg-sanz">' + unionDGEsitoHtml(e) + (e.sub ? "<small>" + escapeHtml(e.sub) + "</small>" : "") + "</span>" +
+    '<span class="ui-dg-where">' + unionCatBadge(x.lega) + '<span class="ui-badge">' + escapeHtml(x.lobby || "—") + "</span></span>" +
+    "</div>" +
+    '<div class="ui-dg-host-who">' +
+    '<span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + "</span> " +
+    '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span></div>" +
+    unionDGNoteHtml(x.note, false) +
+    "</article>"
+  );
+}
+
+function unionDGHostHtml(host) {
+  var head =
+    '<div class="ui-section-head ui-dg-all-head"><h3 class="ui-section-title">Segnalazioni degli host</h3>' +
+    '<span class="ui-section-meta">Condotta in lobby, non incidenti di gara</span></div>';
+  if (host === null) {
+    return unionDGUrls()[unionDG.gara] && unionDGUrls()[unionDG.gara].host
+      ? head + unionState("Impossibile caricare le segnalazioni degli host.", "error")
+      : "";
+  }
+  if (!host.length) return head + '<p class="ui-dg-empty">Nessuna segnalazione degli host per questa gara.</p>';
+
+  var valide = host
+    .filter(function (x) { return x.esito.tipo !== "nullo"; })
+    .sort(function (a, b) {
+      return a.esito.peso - b.esito.peso || unionTierIndex(a.lega) - unionTierIndex(b.lega) ||
+        unionDGLobbyNum(a.lobby) - unionDGLobbyNum(b.lobby);
+    });
+  var nulle = host.filter(function (x) { return x.esito.tipo === "nullo"; });
+
+  var html = head;
+  html += valide.length
+    ? '<div class="ui-grid ui-dg-grid">' + valide.map(unionDGHostCardHtml).join("") + "</div>"
+    : '<p class="ui-dg-empty">Nessuna sanzione dalle segnalazioni degli host.</p>';
+
+  if (nulle.length) {
+    html +=
+      '<details class="ui-acc ui-dg-nulle">' +
+      "<summary>" +
+      '<span class="ui-badge">' + nulle.length + "</span>" +
+      '<span class="ui-muted">' + (nulle.length === 1 ? "Segnalazione nulla" : "Segnalazioni nulle") + "</span>" +
+      "</summary>" +
+      '<div class="ui-acc-body"><ol class="ui-dg-list">' +
+      nulle
+        .map(function (x) {
+          return (
+            '<li class="ui-dg-row' + (x.gtvI ? " is-gtv" : "") + '">' +
+            '<span class="ui-dg-lobby">' + escapeHtml(x.lobby) + "</span>" +
+            '<span class="ui-dg-p"><span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + "</span> " +
+            '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span>" +
+            (x.note ? '<small class="ui-dg-motivo ui-dg-rownote">' + escapeHtml(x.note) + "</small>" : "") + "</span>" +
+            '<span class="ui-dg-res">' + unionDGEsitoHtml(x.esito) + "</span>" +
+            "</li>"
+          );
+        })
+        .join("") +
+      "</ol></div></details>";
+  }
   return html;
 }
