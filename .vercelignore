@@ -25,3 +25,6 @@ unionscraping/telecronaca/fogli/
 unionscraping/**/*.swift
 unionscraping/bot/bot.log
 unionscraping/bot/messaggi/
+
+# PDF non linkato da nessuna pagina
+pdf/WORLD 2.pdf

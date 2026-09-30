@@ -3,36 +3,64 @@
   "functions": {
     "api/telegram.py": {
       "includeFiles": "unionscraping/**",
+      "excludeFiles": "{images,pdf,font,favicon,sportscraping,.github,.vscode,.claude}/**,*.{html,js,css,md}",
       "maxDuration": 30
+    },
+    "api/gt7.py": {
+      "excludeFiles": "{images,pdf,font,favicon,sportscraping,.github,.vscode,.claude}/**,*.{html,js,css,md}"
     }
   },
   "headers": [
     {
       "source": "/sportscraping/sport.json",
       "headers": [
-        { "key": "CDN-Cache-Control", "value": "no-store" },
-        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
       ]
     },
     {
       "source": "/unionscraping/data.json",
       "headers": [
-        { "key": "CDN-Cache-Control", "value": "no-store" },
-        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
       ]
     },
     {
       "source": "/unionscraping/classifiche.json",
       "headers": [
-        { "key": "CDN-Cache-Control", "value": "no-store" },
-        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
       ]
     },
     {
       "source": "/unionscraping/auto.json",
       "headers": [
-        { "key": "CDN-Cache-Control", "value": "no-store" },
-        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
       ]
     }
   ]
