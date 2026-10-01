@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-30T21:19:44+00:00",
+    "updated_at": "2026-10-01T11:36:50+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -9,6 +9,22 @@
   },
   "time_trial": {
     "attivi": [
+      {
+        "nome": "Brands Hatch Grand Prix Circuit",
+        "pista": "Brands Hatch Grand Prix Circuit",
+        "logo": "images/tracks/brandshatch.png",
+        "auto": "Toyota GR Corolla MORIZO Edition '22",
+        "inizio": "01 Ott 2026",
+        "fine": "15 Ott 2026",
+        "scadenza": "15 Ott 2026",
+        "chiusura": "2026-10-15T06:59:59Z",
+        "miglior_tempo": "1:39.616",
+        "leader": "MetalGear9493",
+        "partecipanti": 8199,
+        "fonte_leader": "ufficiale",
+        "conclusa": false,
+        "classifica": []
+      },
       {
         "nome": "Michelin Raceway Road Atlanta",
         "pista": "Michelin Raceway Road Atlanta",
@@ -20,7 +36,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 122673,
+        "partecipanti": 125830,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +47,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 1697,
+            "pos_assoluta": 1730,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.288
@@ -43,7 +59,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 4742,
+            "pos_assoluta": 4854,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.733
@@ -55,7 +71,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 8248,
+            "pos_assoluta": 8452,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.097
@@ -67,7 +83,7 @@
             "squadra": "GTV",
             "tempo": "1:11.021",
             "tempo_ms": 71021,
-            "pos_assoluta": 17276,
+            "pos_assoluta": 18461,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.901,
             "distacco_assoluto_pct": 4.233
@@ -85,7 +101,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 89757,
+        "partecipanti": 92523,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -96,27 +112,29 @@
             "squadra": "GTV",
             "tempo": "1:38.851",
             "tempo_ms": 98851,
-            "pos_assoluta": 12377,
+            "pos_assoluta": 13613,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 5.314
           }
         ]
-      },
+      }
+    ],
+    "passati": [
       {
         "nome": "Dragon Trail - Seaside Reverse",
         "pista": "Dragon Trail - Seaside Reverse",
         "logo": "images/tracks/dragon.png",
-        "auto": "Lexus RC F '14",
+        "auto": "Lexus RC F",
         "inizio": "17 Set 2026",
         "fine": "01 Ott 2026",
         "scadenza": "01 Ott 2026",
         "chiusura": "2026-10-01T06:59:59Z",
-        "miglior_tempo": "1:52.427",
-        "leader": "SZ_yuhki02",
-        "partecipanti": 145443,
+        "miglior_tempo": "1:52.278",
+        "leader": "L-Shooter_RB26",
+        "partecipanti": 146773,
         "fonte_leader": "ufficiale",
-        "conclusa": false,
+        "conclusa": true,
         "classifica": [
           {
             "psn": "Yukimura9221",
@@ -125,10 +143,10 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 7310,
+            "pos_assoluta": 7441,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.908
+            "distacco_assoluto_pct": 3.044
           },
           {
             "psn": "marse9191",
@@ -137,10 +155,10 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 8217,
+            "pos_assoluta": 8364,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
-            "distacco_assoluto_pct": 2.973
+            "distacco_assoluto_pct": 3.109
           },
           {
             "psn": "Vale34_",
@@ -149,10 +167,10 @@
             "squadra": "GTV",
             "tempo": "1:56.176",
             "tempo_ms": 116176,
-            "pos_assoluta": 9992,
+            "pos_assoluta": 10117,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.415,
-            "distacco_assoluto_pct": 3.335
+            "distacco_assoluto_pct": 3.472
           },
           {
             "psn": "Abramo1991",
@@ -161,10 +179,10 @@
             "squadra": "GTV",
             "tempo": "1:57.931",
             "tempo_ms": 117931,
-            "pos_assoluta": 29381,
+            "pos_assoluta": 30834,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.932,
-            "distacco_assoluto_pct": 4.896
+            "distacco_assoluto_pct": 5.035
           },
           {
             "psn": "GTV_legendafluo",
@@ -173,15 +191,13 @@
             "squadra": "GTV",
             "tempo": "1:58.488",
             "tempo_ms": 118488,
-            "pos_assoluta": 36514,
+            "pos_assoluta": 38095,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.413,
-            "distacco_assoluto_pct": 5.391
+            "distacco_assoluto_pct": 5.531
           }
         ]
-      }
-    ],
-    "passati": [
+      },
       {
         "nome": "Willow Springs International Raceway: Big Willow",
         "pista": "Willow Springs International Raceway: Big Willow",
@@ -537,191 +553,6 @@
             "distacco_assoluto_pct": 9.301
           }
         ]
-      },
-      {
-        "nome": "Autopolis International Racing Course - Short Course",
-        "pista": "Autopolis International Racing Course - Short Course",
-        "logo": "images/tracks/autopolis.png",
-        "auto": "Caterham Seven Superlight R500",
-        "inizio": "20 Ago 2026",
-        "fine": "27 Ago 2026",
-        "scadenza": "27 Ago 2026",
-        "chiusura": "2026-08-27T06:59:59Z",
-        "miglior_tempo": "1:13.474",
-        "leader": "AT__1826",
-        "partecipanti": 149030,
-        "fonte_leader": "ufficiale",
-        "conclusa": true,
-        "classifica": [
-          {
-            "psn": "InuyashaGodYokai",
-            "gt7name": "InuyashaGodYokai",
-            "numero": "36",
-            "squadra": "GTV",
-            "tempo": "1:14.707",
-            "tempo_ms": 74707,
-            "pos_assoluta": 661,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.678
-          },
-          {
-            "psn": "titirolamadonn",
-            "gt7name": "Bowie knife99",
-            "numero": "666",
-            "squadra": "GTV",
-            "tempo": "1:14.828",
-            "tempo_ms": 74828,
-            "pos_assoluta": 977,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 0.162,
-            "distacco_assoluto_pct": 1.843
-          },
-          {
-            "psn": "marse9191",
-            "gt7name": "Brook24",
-            "numero": "24",
-            "squadra": "GTV",
-            "tempo": "1:15.111",
-            "tempo_ms": 75111,
-            "pos_assoluta": 2357,
-            "pos_gtv": 3,
-            "distacco_gtv_pct": 0.541,
-            "distacco_assoluto_pct": 2.228
-          },
-          {
-            "psn": "Vale34_",
-            "gt7name": "Vale34",
-            "numero": "34",
-            "squadra": "GTV",
-            "tempo": "1:15.137",
-            "tempo_ms": 75137,
-            "pos_assoluta": 2567,
-            "pos_gtv": 4,
-            "distacco_gtv_pct": 0.576,
-            "distacco_assoluto_pct": 2.263
-          },
-          {
-            "psn": "Utile_ruspante",
-            "gt7name": "Barda88",
-            "numero": "88",
-            "squadra": "GTV",
-            "tempo": "1:15.344",
-            "tempo_ms": 75344,
-            "pos_assoluta": 4954,
-            "pos_gtv": 5,
-            "distacco_gtv_pct": 0.853,
-            "distacco_assoluto_pct": 2.545
-          },
-          {
-            "psn": "GTV_legendafluo",
-            "gt7name": "GTV-Oriano06",
-            "numero": "6",
-            "squadra": "GTV",
-            "tempo": "1:15.419",
-            "tempo_ms": 75419,
-            "pos_assoluta": 6535,
-            "pos_gtv": 6,
-            "distacco_gtv_pct": 0.953,
-            "distacco_assoluto_pct": 2.647
-          },
-          {
-            "psn": "Carlos_mania",
-            "gt7name": "Sun|)own",
-            "numero": "54",
-            "squadra": "GTV",
-            "tempo": "1:15.581",
-            "tempo_ms": 75581,
-            "pos_assoluta": 11376,
-            "pos_gtv": 7,
-            "distacco_gtv_pct": 1.17,
-            "distacco_assoluto_pct": 2.868
-          },
-          {
-            "psn": "Hawk_MaveNich",
-            "gt7name": "Nicco.rs",
-            "numero": "18",
-            "squadra": "GTV",
-            "tempo": "1:15.658",
-            "tempo_ms": 75658,
-            "pos_assoluta": 14206,
-            "pos_gtv": 8,
-            "distacco_gtv_pct": 1.273,
-            "distacco_assoluto_pct": 2.972
-          },
-          {
-            "psn": "Yukimura9221",
-            "gt7name": "Yukimura",
-            "numero": "106",
-            "squadra": "GTV",
-            "tempo": "1:16.068",
-            "tempo_ms": 76068,
-            "pos_assoluta": 21983,
-            "pos_gtv": 9,
-            "distacco_gtv_pct": 1.822,
-            "distacco_assoluto_pct": 3.531
-          },
-          {
-            "psn": "Abramo1991",
-            "gt7name": "Maverick",
-            "numero": "14",
-            "squadra": "GTV",
-            "tempo": "1:16.432",
-            "tempo_ms": 76432,
-            "pos_assoluta": 31251,
-            "pos_gtv": 10,
-            "distacco_gtv_pct": 2.309,
-            "distacco_assoluto_pct": 4.026
-          },
-          {
-            "psn": "Kappaonegt",
-            "gt7name": "Kevin",
-            "numero": "26",
-            "squadra": "GTV",
-            "tempo": "1:16.466",
-            "tempo_ms": 76466,
-            "pos_assoluta": 32333,
-            "pos_gtv": 11,
-            "distacco_gtv_pct": 2.355,
-            "distacco_assoluto_pct": 4.072
-          },
-          {
-            "psn": "Grandisil_2",
-            "gt7name": "Scrocchio98",
-            "numero": "98",
-            "squadra": "GTV",
-            "tempo": "1:16.981",
-            "tempo_ms": 76981,
-            "pos_assoluta": 57485,
-            "pos_gtv": 12,
-            "distacco_gtv_pct": 3.044,
-            "distacco_assoluto_pct": 4.773
-          },
-          {
-            "psn": "Pulcy85",
-            "gt7name": "Drivergt1985",
-            "numero": "11",
-            "squadra": "GTV",
-            "tempo": "1:18.261",
-            "tempo_ms": 78261,
-            "pos_assoluta": 100298,
-            "pos_gtv": 13,
-            "distacco_gtv_pct": 4.757,
-            "distacco_assoluto_pct": 6.515
-          },
-          {
-            "psn": "GTS-codebreaker",
-            "gt7name": "GTSCode",
-            "numero": "56",
-            "squadra": "GTV",
-            "tempo": "1:19.247",
-            "tempo_ms": 79247,
-            "pos_assoluta": 123818,
-            "pos_gtv": 14,
-            "distacco_gtv_pct": 6.077,
-            "distacco_assoluto_pct": 7.857
-          }
-        ]
       }
     ]
   },
@@ -754,7 +585,7 @@
           "data": "28 Set 2026",
           "tempo": "1:59.722",
           "tempo_ms": 119722,
-          "pos_assoluta": 7670,
+          "pos_assoluta": 8224,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -768,7 +599,7 @@
           "data": "28 Set 2026",
           "tempo": "2:00.243",
           "tempo_ms": 120243,
-          "pos_assoluta": 10385,
+          "pos_assoluta": 11054,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.435,
           "distacco_assoluto_pct": null
@@ -834,7 +665,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.151",
           "tempo_ms": 103151,
-          "pos_assoluta": 17356,
+          "pos_assoluta": 18458,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -848,7 +679,7 @@
           "data": "21 Set 2026",
           "tempo": "1:43.461",
           "tempo_ms": 103461,
-          "pos_assoluta": 21083,
+          "pos_assoluta": 22567,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.301,
           "distacco_assoluto_pct": null
@@ -880,7 +711,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28335,
+      "rank_medio": 28351,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -889,7 +720,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 36514,
+          "rank": 38095,
           "tempo": "1:58.488",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -2996,7 +2827,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32900,
+      "rank_medio": 32912,
       "eventi_pubblicati": 121,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -3005,7 +2836,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 29381,
+          "rank": 30834,
           "tempo": "1:57.931",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -3869,7 +3700,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 1697,
+          "rank": 1730,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -5175,7 +5006,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19118,
+      "rank_medio": 19119,
       "eventi_pubblicati": 133,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -5184,7 +5015,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 8217,
+          "rank": 8364,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -6504,7 +6335,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20869,
+      "rank_medio": 20870,
       "eventi_pubblicati": 85,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6513,7 +6344,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 4742,
+          "rank": 4854,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -7889,7 +7720,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 20009,
+      "rank_medio": 20010,
       "eventi_pubblicati": 90,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -7898,7 +7729,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 9992,
+          "rank": 10117,
           "tempo": "1:56.176",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -11180,7 +11011,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12051,7 +11882,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 19815,
+      "rank_medio": 19848,
       "eventi_pubblicati": 109,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12060,21 +11891,21 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 17276,
+          "rank": 18461,
           "tempo": "1:11.021",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 12377,
+          "rank": 13613,
           "tempo": "1:38.851",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 17356,
+          "rank": 18458,
           "tempo": "1:43.151",
           "evento": "Sardegna - Road Track - A"
         },
@@ -12831,7 +12662,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19880,
+      "rank_medio": 19904,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12840,14 +12671,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 8248,
+          "rank": 8452,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 7670,
+          "rank": 8224,
           "tempo": "1:59.722",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -12861,7 +12692,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 21083,
+          "rank": 22567,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
@@ -13768,7 +13599,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49045,
+      "rank_medio": 49051,
       "eventi_pubblicati": 139,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13777,14 +13608,14 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 7310,
+          "rank": 7441,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 10385,
+          "rank": 11054,
           "tempo": "2:00.243",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
