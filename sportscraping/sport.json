@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-01T11:36:50+00:00",
+    "updated_at": "2026-10-01T14:27:23+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.616",
         "leader": "MetalGear9493",
-        "partecipanti": 8199,
+        "partecipanti": 13809,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -36,7 +36,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 125830,
+        "partecipanti": 126991,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -101,7 +101,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 92523,
+        "partecipanti": 93587,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -11011,7 +11011,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
