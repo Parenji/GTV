@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-01T02:34:10+00:00"
+    "generated_at": "2026-10-01T17:32:43+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -124,7 +124,7 @@
           "pos": 12,
           "matricola": "16",
           "team": "DCT",
-          "nome": "Sam-750",
+          "nome": "Sam-750 ( RITIRATO )",
           "auto": ""
         },
         {
@@ -277,9 +277,9 @@
         },
         {
           "pos": 4,
-          "matricola": "208",
-          "team": "GTID",
-          "nome": "GTID _pienobonus",
+          "matricola": "241",
+          "team": "RRT",
+          "nome": "Pazzatu",
           "auto": ""
         },
         {
@@ -347,9 +347,9 @@
         },
         {
           "pos": 14,
-          "matricola": "241",
-          "team": "RRT",
-          "nome": "Pazzatu",
+          "matricola": "224",
+          "team": "PBC",
+          "nome": "Parigi02",
           "auto": ""
         }
       ]
@@ -430,7 +430,7 @@
           "pos": 10,
           "matricola": "320",
           "team": "RMT",
-          "nome": "RMT-CAMI",
+          "nome": "RMT-CAMI (Ritirato)",
           "auto": ""
         },
         {
@@ -509,9 +509,9 @@
         },
         {
           "pos": 6,
-          "matricola": "45",
-          "team": "PRT",
-          "nome": "Phin",
+          "matricola": "78",
+          "team": "TLM",
+          "nome": "TonyRoto",
           "auto": ""
         },
         {
@@ -558,9 +558,9 @@
         },
         {
           "pos": 13,
-          "matricola": "78",
-          "team": "TLM",
-          "nome": "TonyRoto",
+          "matricola": "18",
+          "team": "EVO",
+          "nome": "EVO_lama85",
           "auto": ""
         }
       ]
@@ -860,6 +860,13 @@
           "matricola": "69",
           "team": "SMI",
           "nome": "SMI_Massi_TopGun",
+          "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "45",
+          "team": "PRT",
+          "nome": "Phin",
           "auto": ""
         }
       ]
@@ -1459,13 +1466,6 @@
           "team": "MFC",
           "nome": "castoshi",
           "auto": ""
-        },
-        {
-          "pos": 12,
-          "matricola": "158",
-          "team": "SCGT",
-          "nome": "SCGT-GIGIKOM75",
-          "auto": ""
         }
       ]
     },
@@ -1517,7 +1517,7 @@
           "pos": 6,
           "matricola": "284",
           "team": "DCT",
-          "nome": "Libix888",
+          "nome": "Libix888 (RITIRATO)",
           "auto": ""
         },
         {
@@ -1576,9 +1576,9 @@
       "time": "Ore 21:00",
       "name": "A16",
       "category": "PRO AMA",
-      "host": "DA DEFINIRE",
-      "live": "DA DEFINIRE",
-      "url": "",
+      "host": "Albixximo",
+      "live": "PRT- Albixximo",
+      "url": "http://www.youtube.com/@AlbixximoLive",
       "pilots": [
         {
           "pos": 1,
@@ -2364,9 +2364,9 @@
       "time": "Ore 21:00",
       "name": "A24",
       "category": "PRO GOLD",
-      "host": "TRT-Tommizio",
-      "live": "ARC- VintageAR",
-      "url": "https://youtube.com/@atlantisrepartocorse",
+      "host": "MNY-MirwoTangi",
+      "live": "OES- MNY-MirwoTangi",
+      "url": "https://youtube.com/@officialorionesports",
       "pilots": [
         {
           "pos": 1,
@@ -2684,9 +2684,9 @@
       "time": "Ore 22:20",
       "name": "A27",
       "category": "AMA",
-      "host": "DA DEFINIRE",
-      "live": "DA DEFINIRE",
-      "url": "",
+      "host": "MF_GioBar73",
+      "live": "MFC- MF_GioBar73",
+      "url": "https://youtube.com/@GioBar73",
       "pilots": [
         {
           "pos": 1,
@@ -2868,13 +2868,6 @@
           "auto": ""
         },
         {
-          "pos": 13,
-          "matricola": "224",
-          "team": "PBC",
-          "nome": "Parigi02",
-          "auto": ""
-        },
-        {
           "pos": 14,
           "matricola": "198",
           "team": "EVO",
@@ -2990,9 +2983,9 @@
       "time": "Ore 22:20",
       "name": "A30",
       "category": "ELITE",
-      "host": "DA DEFINIRE",
-      "live": "DA DEFINIRE",
-      "url": "",
+      "host": "MNY-MirwoTangi",
+      "live": "OES- MNY-MirwoTangi",
+      "url": "https://youtube.com/@officialorionesports",
       "pilots": [
         {
           "pos": 1,
@@ -3164,6 +3157,13 @@
           "matricola": "195",
           "team": "DCT",
           "nome": "TER-CAR-MELO74",
+          "auto": ""
+        },
+        {
+          "pos": 12,
+          "matricola": "208",
+          "team": "GTID",
+          "nome": "GTID _pienobonus",
           "auto": ""
         }
       ]
@@ -3397,9 +3397,9 @@
         },
         {
           "pos": 5,
-          "matricola": "18",
-          "team": "EVO",
-          "nome": "EVO_lama85",
+          "matricola": "58",
+          "team": "RMT",
+          "nome": "RMT FIERA 69",
           "auto": ""
         },
         {
@@ -3442,13 +3442,6 @@
           "matricola": "47",
           "team": "PRT",
           "nome": "PRT_Leox86",
-          "auto": ""
-        },
-        {
-          "pos": 12,
-          "matricola": "58",
-          "team": "RMT",
-          "nome": "RMT FIERA 69",
           "auto": ""
         }
       ]
@@ -3552,6 +3545,13 @@
           "team": "DCT",
           "nome": "DCT_Radik",
           "auto": ""
+        },
+        {
+          "pos": 14,
+          "matricola": "158",
+          "team": "SCGT",
+          "nome": "SCGT-GIGIKOM75",
+          "auto": ""
         }
       ]
     },
@@ -3560,9 +3560,9 @@
       "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
-      "host": "DA DEFINIRE",
-      "live": "DA DEFINIRE",
-      "url": "",
+      "host": "HellBoy8408",
+      "live": "SCGT_Giorgetto",
+      "url": "https://www.twitch.tv/squadracorsegt",
       "pilots": [
         {
           "pos": 1,
