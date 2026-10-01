@@ -1798,6 +1798,69 @@ function fetchUnionDGSheet(url) {
     });
 }
 
+// Ricorsi: ogni riga rimanda a un reclamo con il numero di riga del foglio
+// reclami (RIGA RELAMO, intestazione = riga 1). Se respinti la penalita'
+// raddoppia; PENALITA' FINALE e' quella definitiva.
+function fetchUnionDGRicorsi(url) {
+  return fetch(url)
+    .then(function (r) {
+      if (!r.ok) throw new Error("Errore HTTP " + r.status);
+      return r.text();
+    })
+    .then(function (text) {
+      var rows = parseCsvQuoted(text);
+      var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
+      function col(re) {
+        for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;
+        return -1;
+      }
+      var c = {
+        riga: col(/^RIGA/),
+        nome: col(/RICHIEDENTE RICORSO/),
+        valutazione: col(/^VALUTAZIONE/),
+        finale: col(/FINALE/),
+      };
+      function v(r, k) {
+        return c[k] === -1 ? "" : String(r[c[k]] || "").trim();
+      }
+      return rows.map(function (r) {
+        var val = v(r, "valutazione");
+        var finale = parseInt(v(r, "finale"), 10);
+        return {
+          riga: parseInt(v(r, "riga"), 10),
+          nome: v(r, "nome"),
+          valutazione: val,
+          finale: isNaN(finale) ? null : finale,
+          esito: /respint/i.test(val) ? "respinto" : /accolt/i.test(val) ? "accolto" : "attesa",
+        };
+      }).filter(function (x) { return x.nome || !isNaN(x.riga); });
+    });
+}
+
+// Aggancia i ricorsi ai reclami e aggiorna l'esito del reclamo con la penalita' finale
+function unionDGApplicaRicorsi(reclami, ricorsi) {
+  var trovati = [];
+  (ricorsi || []).forEach(function (rc) {
+    var x = reclami[rc.riga - 2]; // riga 2 del foglio = primo reclamo
+    if (!x || (rc.nome && unionNorm(rc.nome) !== unionNorm(x.nomeI))) {
+      x = reclami.filter(function (y) { return !y.ricorso && unionNorm(y.nomeI) === unionNorm(rc.nome); })[0];
+    }
+    if (!x) return;
+    var prima = x.esito;
+    rc.reclamo = x;
+    rc.prima = prima.tipo === "pen" ? prima.sec : null;
+    x.ricorso = rc;
+    if (prima.tipo === "pen" && rc.finale !== null && rc.finale !== prima.sec) {
+      x.esito = { tipo: "pen", sec: rc.finale, label: "+" + rc.finale + " s",
+        sub: rc.esito === "respinto" ? "Ricorso respinto" : "Ricorso accolto", sub2: "era +" + prima.sec + " s" };
+    } else if (rc.esito === "respinto") {
+      prima.sub = "Ricorso respinto";
+    }
+    trovati.push(rc);
+  });
+  return trovati;
+}
+
 // Reclami e segnalazioni host di una gara. Le segnalazioni sono facoltative:
 // se il foglio manca o non si carica restano null e il blocco lo dice.
 function fetchUnionReportDG(gara) {
@@ -1811,11 +1874,18 @@ function fetchUnionReportDG(gara) {
             return null;
           })
         : Promise.resolve(null),
+      urls.ricorsi
+        ? fetchUnionDGRicorsi(urls.ricorsi).catch(function (err) {
+            console.warn("Ricorsi non disponibili:", err);
+            return null;
+          })
+        : Promise.resolve(null),
     ])
       .then(function (res) {
         res[0].forEach(function (x) { x.esito = unionDGEsito(x.esitoRaw); });
         (res[1] || []).forEach(function (x) { x.esito = unionDGHostEsito(x.esitoRaw, gara); });
-        return { reclami: res[0], host: res[1] };
+        var ricorsi = unionDGApplicaRicorsi(res[0], res[2]);
+        return { reclami: res[0], host: res[1], ricorsi: ricorsi };
       })
       .catch(function (err) {
         delete unionDG.cache[gara];
@@ -1890,7 +1960,7 @@ function renderUnionReportDG() {
   ])
     .then(function (res) {
       if (unionDG.gara !== gara) return; // nel frattempo e' stata scelta un'altra gara
-      body.innerHTML = unionReportDGHtml(res[0].reclami, res[0].host, res[1]);
+      body.innerHTML = unionReportDGHtml(res[0].reclami, res[0].host, res[1], res[0].ricorsi);
     })
     .catch(function (err) {
       console.error("Errore caricamento report DG:", err);
@@ -1926,7 +1996,7 @@ function unionDGCardHtml(x, lato) {
   return (
     '<article class="ui-card ui-dg-card' + (e.tipo === "pen" ? " is-pen" : "") + '">' +
     '<div class="ui-dg-card-top">' +
-    unionDGEsitoHtml(e) +
+    '<span class="ui-dg-sanz">' + unionDGEsitoHtml(e) + (e.sub ? "<small>" + escapeHtml(e.sub + (e.sub2 ? " · " + e.sub2 : "")) + "</small>" : "") + "</span>" +
     '<span class="ui-dg-where">' + unionCatBadge(x.lega) + '<span class="ui-badge">' + escapeHtml(x.lobby || "—") + "</span></span>" +
     "</div>" +
     '<div class="ui-dg-vs">' +
@@ -1943,7 +2013,7 @@ function unionDGCardHtml(x, lato) {
   );
 }
 
-function unionReportDGHtml(reclami, host, lobbyData) {
+function unionReportDGHtml(reclami, host, lobbyData, ricorsi) {
   var gtvSet = unionDGGtvSet(lobbyData);
   reclami.concat(host || []).forEach(function (x) {
     x.gtvR = x.teamR === "GTV" || !!gtvSet[unionNorm(x.nomeR)];
@@ -1984,7 +2054,7 @@ function unionReportDGHtml(reclami, host, lobbyData) {
   html += "</div>";
 
   if (!reclami.length) {
-    return html + unionState("Nessun reclamo presentato per questa gara.", "empty") + unionDGHostHtml(host);
+    return html + unionState("Nessun reclamo presentato per questa gara.", "empty") + unionDGRicorsiHtml(ricorsi) + unionDGHostHtml(host);
   }
 
   html +=
@@ -2018,7 +2088,9 @@ function unionReportDGHtml(reclami, host, lobbyData) {
             '<span class="ui-dg-p"><span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + '</span> <span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span></span>" +
             "</span>" +
             '<span class="ui-dg-res"' + (x.esito.motivo ? ' title="' + escapeHtml(x.esito.motivo) + '"' : "") + ">" + unionDGEsitoHtml(x.esito) +
-            (x.esito.motivo ? '<small class="ui-dg-motivo">' + escapeHtml(x.esito.motivo) + "</small>" : "") + "</span>" +
+            (x.esito.motivo ? '<small class="ui-dg-motivo">' + escapeHtml(x.esito.motivo) + "</small>" : "") +
+            (x.esito.sub ? '<small class="ui-dg-motivo ui-dg-ricorso">' + escapeHtml(x.esito.sub) + "</small>" : "") +
+            (x.esito.sub2 ? '<small class="ui-dg-motivo">' + escapeHtml(x.esito.sub2) + "</small>" : "") + "</span>" +
             "</li>"
           );
         })
@@ -2032,7 +2104,43 @@ function unionReportDGHtml(reclami, host, lobbyData) {
     '<span class="ui-section-meta">Penalità in secondi sul tempo di gara</span></div>' +
     perLega;
 
-  return html + unionDGHostHtml(host);
+  return html + unionDGRicorsiHtml(ricorsi) + unionDGHostHtml(host);
+}
+
+// -------------------------------------------------------------
+// Ricorsi: la penalita' del reclamo prima e dopo, con la
+// motivazione della Direzione Gara
+// -------------------------------------------------------------
+function unionDGRicorsiHtml(ricorsi) {
+  if (!ricorsi || !ricorsi.length) return "";
+  var head =
+    '<div class="ui-section-head ui-dg-all-head"><h3 class="ui-section-title">Ricorsi</h3>' +
+    '<span class="ui-section-meta">Se il ricorso è respinto la penalità raddoppia</span></div>';
+  var carte = ricorsi.map(function (rc) {
+    var x = rc.reclamo;
+    var gtv = x.gtvI || x.gtvR;
+    var esito = rc.esito === "respinto" ? "Respinto" : rc.esito === "accolto" ? "Accolto" : "In valutazione";
+    var penalita =
+      rc.prima !== null && rc.finale !== null
+        ? '<span class="ui-dg-pen"><s>+' + rc.prima + " s</s> → <b>+" + rc.finale + " s</b></span>"
+        : "";
+    return (
+      '<article class="ui-card ui-dg-card ui-dg-ric ui-dg-ric--' + rc.esito + (gtv ? " is-gtv" : "") + '">' +
+      '<div class="ui-dg-card-top">' +
+      '<span class="ui-dg-sanz"><span class="ui-dg-esito ui-dg-esito--' + (rc.esito === "respinto" ? "pen" : "zero") + '">' + esito + "</span>" +
+      penalita + "</span>" +
+      '<span class="ui-dg-where">' + unionCatBadge(x.lega) + '<span class="ui-badge">' + escapeHtml(x.lobby || "—") + "</span></span>" +
+      "</div>" +
+      '<div class="ui-dg-host-who"><span class="ui-dg-role">Ricorso di</span> ' +
+      '<span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + "</span> " +
+      '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span>" +
+      '<span class="ui-dg-team"> · reclamo di </span>' +
+      '<span class="' + (x.gtvR ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeR) + "</span></div>" +
+      unionDGNoteHtml(rc.valutazione, false) +
+      "</article>"
+    );
+  }).join("");
+  return head + '<div class="ui-grid ui-dg-grid">' + carte + "</div>";
 }
 
 // Note lunghe: le prime righe e "leggi tutto" (gestito in loadUnionReportDG)

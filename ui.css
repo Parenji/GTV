@@ -2089,6 +2089,38 @@ a.ui-card:focus-visible {
   line-height: 1.4;
 }
 
+/* Ricorsi */
+.ui-dg-ric {
+  box-shadow: inset 3px 0 0 var(--ui-text-3);
+}
+
+.ui-dg-ric--respinto {
+  box-shadow: inset 3px 0 0 var(--ui-danger);
+}
+
+.ui-dg-ric.is-gtv {
+  box-shadow: inset 3px 0 0 var(--ui-accent);
+}
+
+.ui-dg-pen {
+  font-size: var(--ui-fs-sm);
+  color: var(--ui-text-2);
+}
+
+.ui-dg-pen s {
+  color: var(--ui-text-3);
+}
+
+.ui-dg-pen b {
+  font-family: var(--ui-font-bold);
+  font-weight: normal;
+  color: var(--ui-danger);
+}
+
+.ui-dg-ricorso {
+  color: var(--ui-text-2);
+}
+
 @media (max-width: 640px) {
   .ui-dg-grid {
     --ui-grid-min: 100%;
