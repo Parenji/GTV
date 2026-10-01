@@ -1934,19 +1934,6 @@ a.ui-card:focus-visible {
   color: var(--ui-text-3);
 }
 
-.ui-dg-stats {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-content: start;
-  gap: var(--ui-s6);
-  margin: var(--ui-s6) 0 0;
-}
-
-.ui-dg-stats small {
-  font-size: var(--ui-fs-sm);
-  color: var(--ui-text-3);
-}
-
 .ui-dg-all-head {
   margin-top: var(--ui-s6);
 }
@@ -2124,20 +2111,6 @@ a.ui-card:focus-visible {
 @media (max-width: 640px) {
   .ui-dg-grid {
     --ui-grid-min: 100%;
-  }
-
-  .ui-dg-stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--ui-s2);
-  }
-
-  .ui-dg-stats .ui-stat-num {
-    font-size: var(--ui-fs-lg);
-  }
-
-  .ui-dg-stats .ui-stat-label {
-    font-size: 0.6rem;
-    letter-spacing: 1px;
   }
 
   .ui-dg-row {

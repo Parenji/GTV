@@ -2013,8 +2013,28 @@ function unionDGCardHtml(x, lato) {
   );
 }
 
+// Il tag team nei moduli lo scrive a mano chi compila e a volte e' sbagliato
+// (es. il nome di un altro pilota). Se il pilota e' schierato in quella
+// lobby, il team vero e' quello dello schieramento.
+function unionDGCorreggiTeam(lista, lobbyData) {
+  var teamPerLobby = {};
+  ((lobbyData && lobbyData.lobbies) || []).forEach(function (lb) {
+    (lb.pilots || []).forEach(function (p) {
+      teamPerLobby[String(lb.name || "").toUpperCase().replace(/\s+/g, "") + "|" + unionNorm(p.nome)] =
+        String(p.team || "").trim().toUpperCase();
+    });
+  });
+  lista.forEach(function (x) {
+    var tr = teamPerLobby[x.lobby + "|" + unionNorm(x.nomeR)];
+    var ti = teamPerLobby[x.lobby + "|" + unionNorm(x.nomeI)];
+    if (tr) x.teamR = tr;
+    if (ti) x.teamI = ti;
+  });
+}
+
 function unionReportDGHtml(reclami, host, lobbyData, ricorsi) {
   var gtvSet = unionDGGtvSet(lobbyData);
+  unionDGCorreggiTeam(reclami.concat(host || []), lobbyData);
   reclami.concat(host || []).forEach(function (x) {
     x.gtvR = x.teamR === "GTV" || !!gtvSet[unionNorm(x.nomeR)];
     x.gtvI = x.teamI === "GTV" || !!gtvSet[unionNorm(x.nomeI)];
@@ -2026,9 +2046,6 @@ function unionReportDGHtml(reclami, host, lobbyData, ricorsi) {
 
   var fatti = reclami.filter(function (x) { return x.gtvR; });
   var ricevuti = reclami.filter(function (x) { return x.gtvI; });
-  var penalita = reclami.filter(function (x) { return x.esito.tipo === "pen"; });
-  var respinti = reclami.filter(function (x) { return x.esito.tipo === "respinto"; });
-  var secondi = penalita.reduce(function (t, x) { return t + x.esito.sec; }, 0);
 
   function gruppo(titolo, lista, lato, vuoto) {
     return (
@@ -2056,14 +2073,6 @@ function unionReportDGHtml(reclami, host, lobbyData, ricorsi) {
   if (!reclami.length) {
     return html + unionState("Nessun reclamo presentato per questa gara.", "empty") + unionDGRicorsiHtml(ricorsi) + unionDGHostHtml(host);
   }
-
-  html +=
-    '<div class="ui-dg-stats">' +
-    "<div><div class=\"ui-stat-num\">" + reclami.length + '</div><div class="ui-stat-label">Reclami</div></div>' +
-    "<div><div class=\"ui-stat-num\">" + penalita.length + '</div><div class="ui-stat-label">Penalità</div></div>' +
-    "<div><div class=\"ui-stat-num\">" + respinti.length + '</div><div class="ui-stat-label">Respinti</div></div>' +
-    "<div><div class=\"ui-stat-num\">" + secondi + '<small> s</small></div><div class="ui-stat-label">Secondi inflitti</div></div>' +
-    "</div>";
 
   var perLega = UNION_LEGHE.concat(["ALTRO"]).map(function (lega) {
     var lista = reclami.filter(function (x) {
