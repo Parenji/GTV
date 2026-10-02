@@ -1,59 +1,19 @@
 {
  "meta": {
-  "generated_at": "2026-09-29T00:16:31+00:00",
+  "generated_at": "2026-10-02T22:29:44+00:00",
   "source": "https://albixximo-union2026-r2.vercel.app/Classifiche/portal.html",
-  "gare_pubblicate": []
+  "gare_pubblicate": [
+   1
+  ]
  },
  "leghe": {
   "STAR": {
    "piloti": [
     {
      "pos": 1,
-     "team": "RMT",
-     "nome": "#GO1FREE!!!!",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 2,
-     "team": "GTID",
-     "nome": "A.D’alba",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 3,
-     "team": "MMS",
-     "nome": "A.Reitano",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
-     "team": "ARC",
-     "nome": "ARC-JonMazzo",
-     "punti": 0,
+     "team": "RSR",
+     "nome": "C.Zuccaro",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -65,23 +25,9 @@
     },
     {
      "pos": 5,
-     "team": "ARC",
-     "nome": "ARC-VintageAR",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 6,
-     "team": "BCSC",
-     "nome": "BAD_brucem84",
-     "punti": 0,
+     "team": "EVO",
+     "nome": "EVO_lama85",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -93,79 +39,9 @@
     },
     {
      "pos": 7,
-     "team": "BCSC",
-     "nome": "BCSC_IL MALEDETTO",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 8,
-     "team": "GTV",
-     "nome": "Bowie knife99",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 9,
-     "team": "TLM",
-     "nome": "Buitre83gt",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 10,
-     "team": "RSR",
-     "nome": "C.Zuccaro",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "CBR",
-     "nome": "CBR_GABRIEL",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
-     "team": "CBR",
-     "nome": "CBR_Ircaliffo91",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "Kanu",
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -177,9 +53,9 @@
     },
     {
      "pos": 13,
-     "team": "DCT",
-     "nome": "DCT-Ziototoooo",
-     "punti": 0,
+     "team": "SMI",
+     "nome": "SMI-Lellobello",
+     "punti": 23,
      "gare": [
       null,
       null,
@@ -191,65 +67,9 @@
     },
     {
      "pos": 14,
-     "team": "DCT",
-     "nome": "DRT-Nanix84",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "DCT",
-     "nome": "DRT-XaserTek",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "SMI",
-     "nome": "Drugo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "EVO",
-     "nome": "EVO_il_Cuuc",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "EVO",
-     "nome": "EVO_lama85",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "F.Tommasini",
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -262,92 +82,8 @@
     {
      "pos": 19,
      "team": "DCT",
-     "nome": "F.Narga",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 20,
-     "team": "CBR",
-     "nome": "F.Tommasini",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 21,
-     "team": "FFM",
-     "nome": "FFM_Nic_Cannone",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "SMI",
-     "nome": "FFM_Prinz17",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
-     "team": "PRT",
-     "nome": "FrRoGaMeR",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "ARC",
-     "nome": "G. Belletti",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 25,
-     "team": "PBC",
-     "nome": "G. Scardin",
-     "punti": 0,
+     "nome": "DCT-Ziototoooo",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -359,65 +95,9 @@
     },
     {
      "pos": 26,
-     "team": "PBC",
-     "nome": "G.Fanara",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
-     "team": "GTID",
-     "nome": "GTID_Mr PoP_Jr",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "GTRC",
-     "nome": "GTRC_Emilios98",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "GTRC",
-     "nome": "GTRC_FrenkMik93",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
-     "team": "GTRC",
-     "nome": "GTRC- TROTOTEK",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_Ircaliffo91",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -429,79 +109,9 @@
     },
     {
      "pos": 31,
-     "team": "GTRC",
-     "nome": "GTRC-MIKY",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 32,
-     "team": "CBR",
-     "nome": "I.Ventura",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "GTV",
-     "nome": "InuyashaGodYokai",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "DCT",
-     "nome": "Kanu",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "RMT",
-     "nome": "L. Silvestri",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
-     "team": "PRT",
-     "nome": "lee_boon",
-     "punti": 0,
+     "team": "GTID",
+     "nome": "A.D’alba",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -513,79 +123,9 @@
     },
     {
      "pos": 37,
-     "team": "PRT",
-     "nome": "Lusu_Hard_98",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 38,
-     "team": "PBC",
-     "nome": "M. Pennisi",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 39,
-     "team": "RSR",
-     "nome": "M.Caruso",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
-     "team": "PBC",
-     "nome": "manu08FL",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "MMS",
-     "nome": "mms_babide46",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "GTV",
-     "nome": "Nicco.rs",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-VintageAR",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -597,79 +137,9 @@
     },
     {
      "pos": 43,
-     "team": "BCSC",
-     "nome": "Pardus",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 44,
-     "team": "PBC",
-     "nome": "PBC_Giulio",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "PRT",
-     "nome": "Perdinci",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "PRT",
-     "nome": "Phin",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 47,
-     "team": "PRT",
-     "nome": "PRT_Danielex84",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 48,
-     "team": "PRT",
-     "nome": "PRT_Leox86",
-     "punti": 0,
+     "team": "MMS",
+     "nome": "A.Reitano",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -681,37 +151,9 @@
     },
     {
      "pos": 49,
-     "team": "PRT",
-     "nome": "PRT_MaxLukex",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 50,
-     "team": "PRT",
-     "nome": "Rareseed92",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 51,
-     "team": "RCE",
-     "nome": "RCE_DarkneSS",
-     "punti": 0,
+     "team": "RMT",
+     "nome": "#GO1FREE!!!!",
+     "punti": 9,
      "gare": [
       null,
       null,
@@ -723,37 +165,9 @@
     },
     {
      "pos": 52,
-     "team": "RCE",
-     "nome": "RCE_Freej",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 53,
-     "team": "RCE",
-     "nome": "RCE_Pinkuino97",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 54,
-     "team": "PBC",
-     "nome": "Richie",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "I.Ventura",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -765,79 +179,9 @@
     },
     {
      "pos": 55,
-     "team": "RMT",
-     "nome": "RMT FIERA 69",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "RMT",
-     "nome": "RMT_87_TOMMY",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 57,
-     "team": "RMT",
-     "nome": "RMT-Paperoski_#4",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 58,
-     "team": "RSR",
-     "nome": "RsR_Shura",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "TLM",
-     "nome": "RupeTheKing",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 60,
-     "team": "PRT",
-     "nome": "S.Mancabelli",
-     "punti": 0,
+     "team": "BCSC",
+     "nome": "BCSC_IL MALEDETTO",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -849,9 +193,9 @@
     },
     {
      "pos": 61,
-     "team": "DCT",
-     "nome": "Sam-750",
-     "punti": 0,
+     "team": "PBC",
+     "nome": "M. Pennisi",
+     "punti": 5,
      "gare": [
       null,
       null,
@@ -863,37 +207,9 @@
     },
     {
      "pos": 62,
-     "team": "RSR",
-     "nome": "SeaWolf",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 63,
-     "team": "PBC",
-     "nome": "SimoT_18",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "SMI",
-     "nome": "SMI_Massi_TopGun",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "DRT-Nanix84",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -905,9 +221,9 @@
     },
     {
      "pos": 65,
-     "team": "SMI",
-     "nome": "SMI_Minchippo",
-     "punti": 0,
+     "team": "EVO",
+     "nome": "EVO_il_Cuuc",
+     "punti": 3,
      "gare": [
       null,
       null,
@@ -919,23 +235,9 @@
     },
     {
      "pos": 66,
-     "team": "SMI",
-     "nome": "SMI_Mustangbleck",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "SMI",
-     "nome": "SMI_V3sP4",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-JonMazzo",
+     "punti": 2,
      "gare": [
       null,
       null,
@@ -947,9 +249,9 @@
     },
     {
      "pos": 68,
-     "team": "SMI",
-     "nome": "SMI_vicktor21",
-     "punti": 0,
+     "team": "PBC",
+     "nome": "PBC_Giulio",
+     "punti": 1,
      "gare": [
       null,
       null,
@@ -961,120 +263,8 @@
     },
     {
      "pos": 69,
-     "team": "SMI",
-     "nome": "SMI-Lellobello",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
-     "team": "SMI",
-     "nome": "SMI-Marcus_Pilot",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 71,
-     "team": "EVO",
-     "nome": "TER_Antonio78x",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "RRT",
-     "nome": "TER_Barba",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 73,
-     "team": "RCE",
-     "nome": "The iceman00",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
-     "team": "RMT",
-     "nome": "Tlm_Sile",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "TLM",
-     "nome": "TonyRoto",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "PRT",
-     "nome": "ValMar",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 77,
-     "team": "MFC",
-     "nome": "VRT Flexciccio",
+     "team": "BCSC",
+     "nome": "BAD_brucem84",
      "punti": 0,
      "gare": [
       null,
@@ -1106,8 +296,8 @@
     {
      "pos": 1,
      "team": "CBR",
-     "nome": "Al_Rizlas",
-     "punti": 0,
+     "nome": "M. Busato",
+     "punti": 32,
      "gare": [
       null,
       null,
@@ -1119,37 +309,9 @@
     },
     {
      "pos": 2,
-     "team": "MMS",
-     "nome": "Angelo_6896",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 3,
      "team": "ARC",
-     "nome": "ARC-Tommizio",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
-     "team": "ARC",
-     "nome": "ARC-Turino",
-     "punti": 0,
+     "nome": "ART-Lupo_Sauro-7",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -1161,23 +323,9 @@
     },
     {
      "pos": 5,
-     "team": "ARC",
-     "nome": "ART-Lupo_Sauro-7",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 6,
      "team": "RCE",
-     "nome": "Ayrton16",
-     "punti": 0,
+     "nome": "RCE_Seccoide87",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -1189,23 +337,9 @@
     },
     {
      "pos": 7,
-     "team": "BCSC",
-     "nome": "BAD_Ken Miles",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 8,
-     "team": "RCE",
-     "nome": "Biso_44",
-     "punti": 0,
+     "team": "GTV",
+     "nome": "Giusdandri",
+     "punti": 27,
      "gare": [
       null,
       null,
@@ -1217,51 +351,9 @@
     },
     {
      "pos": 9,
-     "team": "RSR",
-     "nome": "C.Leclecca",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 10,
-     "team": "BCSC",
-     "nome": "Cacino95",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "MFC",
-     "nome": "castoshi",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
      "team": "CBR",
-     "nome": "CBR_Giuliano.Vi",
-     "punti": 0,
+     "nome": "CBR_JOHNNY",
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -1273,79 +365,9 @@
     },
     {
      "pos": 13,
-     "team": "CBR",
-     "nome": "CBR_JOHNNY",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 14,
-     "team": "CBR",
-     "nome": "CBR_Samu12",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "BCSC",
-     "nome": "CSC_Cicciodi94",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "PBC",
-     "nome": "Danny Bonny",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "CBR",
-     "nome": "DavideRui",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "DCT",
-     "nome": "DCT_Fiume11",
-     "punti": 0,
+     "team": "MMS",
+     "nome": "Angelo_6896",
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -1357,79 +379,9 @@
     },
     {
      "pos": 19,
-     "team": "DCT",
-     "nome": "DCT_Radik",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 20,
-     "team": "CBR",
-     "nome": "E. Caizzone",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 21,
-     "team": "DCT",
-     "nome": "Er meyo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "PRT",
-     "nome": "Ermy",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
-     "team": "EVO",
-     "nome": "EVO_Bricca",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "EVO",
-     "nome": "EVO_pericoloso",
-     "punti": 0,
+     "team": "RSR",
+     "nome": "M.Mastantuono",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -1441,79 +393,9 @@
     },
     {
      "pos": 25,
-     "team": "EVO",
-     "nome": "EVO_Piccuz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 26,
-     "team": "PRT",
-     "nome": "Ferro77",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
-     "team": "FFM",
-     "nome": "FFM_Beppolo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "RCE",
-     "nome": "Flotta muscoso",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "PRT",
-     "nome": "G. Bozzo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
-     "team": "GTID",
-     "nome": "G.Altin",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "Er meyo",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -1525,9 +407,9 @@
     },
     {
      "pos": 31,
-     "team": "MFC",
-     "nome": "G.Mantineo",
-     "punti": 0,
+     "team": "GTID",
+     "nome": "GTID_Cornazzai73",
+     "punti": 15,
      "gare": [
       null,
       null,
@@ -1539,65 +421,9 @@
     },
     {
      "pos": 32,
-     "team": "SCGT",
-     "nome": "Gigikom75",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "RRT",
-     "nome": "GIO",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "GTV",
-     "nome": "Giusdandri",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "GTID",
-     "nome": "GTID_Cornazzai73",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
-     "team": "GTID",
-     "nome": "GTID_Gsadventure",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "Al_Rizlas",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -1609,9 +435,9 @@
     },
     {
      "pos": 37,
-     "team": "GTID",
-     "nome": "GTID_Tia10",
-     "punti": 0,
+     "team": "BCSC",
+     "nome": "ITA_SOLID_SNAKE",
+     "punti": 13,
      "gare": [
       null,
       null,
@@ -1623,65 +449,9 @@
     },
     {
      "pos": 38,
-     "team": "GTID",
-     "nome": "GTID_vaiper—ste",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 39,
-     "team": "GTID",
-     "nome": "GTIDsacco72",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
-     "team": "PRT",
-     "nome": "H7-25YT",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "GTV",
-     "nome": "Iceman",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "BCSC",
-     "nome": "ITA_SOLID_SNAKE",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_Giuliano.Vi",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -1693,79 +463,9 @@
     },
     {
      "pos": 43,
-     "team": "MMS",
-     "nome": "Jakarta69",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 44,
-     "team": "RMT",
-     "nome": "JOKERVR46",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "SMI",
-     "nome": "Lo Iacono D.",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "PRT",
-     "nome": "Luis_Mel",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 47,
-     "team": "CBR",
-     "nome": "M. Busato",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 48,
-     "team": "RSR",
-     "nome": "M.Mastantuono",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-AlexoPazz",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -1777,23 +477,9 @@
     },
     {
      "pos": 49,
-     "team": "GTID",
-     "nome": "M.PIRRELLO",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 50,
-     "team": "TLM",
-     "nome": "Mark126p",
-     "punti": 0,
+     "team": "RSR",
+     "nome": "C.Leclecca",
+     "punti": 9,
      "gare": [
       null,
       null,
@@ -1805,37 +491,9 @@
     },
     {
      "pos": 51,
-     "team": "RSR",
-     "nome": "Mat-bull11",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 52,
-     "team": "CBR",
-     "nome": "Ninonitros1",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 53,
-     "team": "PBC",
-     "nome": "PBC_Goivas",
-     "punti": 0,
+     "team": "BCSC",
+     "nome": "CSC_ciccio94",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -1847,9 +505,9 @@
     },
     {
      "pos": 54,
-     "team": "DCT",
-     "nome": "PeppeSR",
-     "punti": 0,
+     "team": "FFM",
+     "nome": "FFM_Beppolo",
+     "punti": 7,
      "gare": [
       null,
       null,
@@ -1861,37 +519,9 @@
     },
     {
      "pos": 55,
-     "team": "PRT",
-     "nome": "PRT_Fr0sT",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "SMI",
-     "nome": "R1-2007 (1966)",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 57,
-     "team": "RCE",
-     "nome": "Rce_ Patrick85",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-Turino",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -1903,23 +533,9 @@
     },
     {
      "pos": 58,
-     "team": "RCE",
-     "nome": "RCE_Hipp086",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "RCE",
-     "nome": "RCE_MVedovi59",
-     "punti": 0,
+     "team": "GTV",
+     "nome": "Iceman",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -1931,23 +547,9 @@
     },
     {
      "pos": 60,
-     "team": "RCE",
-     "nome": "RCE_Seccoide87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 61,
-     "team": "RMT",
-     "nome": "RMT_Deadpaul_87",
-     "punti": 0,
+     "team": "SMI",
+     "nome": "Lo Iacono D.",
+     "punti": 2,
      "gare": [
       null,
       null,
@@ -1959,9 +561,9 @@
     },
     {
      "pos": 62,
-     "team": "RMT",
-     "nome": "RMT_MWalter",
-     "punti": 0,
+     "team": "RCE",
+     "nome": "Biso_44",
+     "punti": 1,
      "gare": [
       null,
       null,
@@ -1974,189 +576,7 @@
     {
      "pos": 63,
      "team": "RMT",
-     "nome": "RMT-Axel K",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "PRT",
-     "nome": "Sandro 71",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 65,
-     "team": "SMI",
-     "nome": "SMI_#Gianni",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 66,
-     "team": "SMI",
-     "nome": "SMI_GREEN21",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "SMI",
-     "nome": "SMI_Maverick88",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 68,
-     "team": "SMI",
-     "nome": "SMI_Syd",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 69,
-     "team": "PRT",
-     "nome": "Sulimanov",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
-     "team": "EVO",
-     "nome": "TITT__ONE",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 71,
-     "team": "ARC",
-     "nome": "TRT-AlexoPazz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "CBR",
-     "nome": "U.Virivè",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 73,
-     "team": "SRT",
-     "nome": "V. Uva",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
-     "team": "PRT",
-     "nome": "VeGe",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "MFC",
-     "nome": "Vigio899",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "EVO",
-     "nome": "Wilpy235",
+     "nome": "RMT_MWalter",
      "punti": 0,
      "gare": [
       null,
@@ -2187,9 +607,9 @@
    "piloti": [
     {
      "pos": 1,
-     "team": "CBR",
-     "nome": "AgaresErkekjette",
-     "punti": 0,
+     "team": "SRT",
+     "nome": "Rikosmo94",
+     "punti": 32,
      "gare": [
       null,
       null,
@@ -2201,51 +621,9 @@
     },
     {
      "pos": 2,
-     "team": "OES",
-     "nome": "Alex",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 3,
-     "team": "GTV",
-     "nome": "Andre86",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
-     "team": "DCT",
-     "nome": "animasarda81",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 5,
-     "team": "BCSC",
-     "nome": "BAD_lupogrigio",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_BAFFOKILLER_",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -2257,9 +635,9 @@
     },
     {
      "pos": 6,
-     "team": "GTV",
-     "nome": "Barda88",
-     "punti": 0,
+     "team": "PRT",
+     "nome": "Masta",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -2271,79 +649,9 @@
     },
     {
      "pos": 7,
-     "team": "GTV",
-     "nome": "Brook24",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 8,
-     "team": "CBR",
-     "nome": "CBR_BAFFOKILLER_",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 9,
-     "team": "CBR",
-     "nome": "CBR_il_Coach",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 10,
      "team": "CBR",
      "nome": "CBR_Paolucci",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "CBR",
-     "nome": "CBR_Simello",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
-     "team": "DCT",
-     "nome": "Cpma",
-     "punti": 0,
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -2357,77 +665,7 @@
      "pos": 13,
      "team": "RRT",
      "nome": "Cristian",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 14,
-     "team": "SRT",
-     "nome": "Daiard95",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "DCT",
-     "nome": "DCT_mercenario94",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "PRT",
-     "nome": "Denni",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "SCGT",
-     "nome": "ENZO_72V",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "EVO",
-     "nome": "EVO_AleTDx",
-     "punti": 0,
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -2439,9 +677,9 @@
     },
     {
      "pos": 19,
-     "team": "EVO",
-     "nome": "EVO_Manu81",
-     "punti": 0,
+     "team": "SRT",
+     "nome": "Lok",
+     "punti": 19,
      "gare": [
       null,
       null,
@@ -2453,65 +691,9 @@
     },
     {
      "pos": 20,
-     "team": "EVO",
-     "nome": "EVO_piraz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 21,
-     "team": "EVO",
-     "nome": "EVO_Sbeucchia70",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "MMS",
-     "nome": "Faraone65",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
-     "team": "TLM",
-     "nome": "Febshy",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "FFM",
-     "nome": "FFM_M a z e sBin",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "animasarda81",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -2523,79 +705,9 @@
     },
     {
      "pos": 25,
-     "team": "FMC",
-     "nome": "Fmc_pipino1983",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 26,
-     "team": "MFC",
-     "nome": "GioBar73 @ PRT",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
      "team": "DCT",
-     "nome": "Gjca-76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "GTID",
-     "nome": "GTID_Ale #77",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "GTID",
-     "nome": "GTID_N3tZ666",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
-     "team": "GTID",
-     "nome": "GTID_pienobonus",
-     "punti": 0,
+     "nome": "ASC-Gjca76",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -2607,9 +719,9 @@
     },
     {
      "pos": 31,
-     "team": "GTRC",
-     "nome": "GTRC-AMALA-ETNA",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "CpMa_95",
+     "punti": 15,
      "gare": [
       null,
       null,
@@ -2621,65 +733,9 @@
     },
     {
      "pos": 32,
-     "team": "GTV",
-     "nome": "GTV-Oriano06",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "RCE",
-     "nome": "Herix87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "TLM",
-     "nome": "IoSonoBatman_",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "PRT",
-     "nome": "Jaiss84",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
-     "team": "PRT",
-     "nome": "JM_focuss_71",
-     "punti": 0,
+     "team": "OES",
+     "nome": "Alex",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -2691,9 +747,9 @@
     },
     {
      "pos": 37,
-     "team": "CBR",
-     "nome": "jr88",
-     "punti": 0,
+     "team": "FFM",
+     "nome": "S3mb4",
+     "punti": 13,
      "gare": [
       null,
       null,
@@ -2705,65 +761,9 @@
     },
     {
      "pos": 38,
-     "team": "ARC",
-     "nome": "KSI-Bambolone78",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 39,
-     "team": "SMI",
-     "nome": "Leo-80",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
-     "team": "SRT",
-     "nome": "Lok",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "SRT",
-     "nome": "M.Genovese",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "SCGT",
-     "nome": "M.Ruggieri",
-     "punti": 0,
+     "team": "GTV",
+     "nome": "Andre86",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -2775,79 +775,9 @@
     },
     {
      "pos": 43,
-     "team": "PRT",
-     "nome": "Masta",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 44,
-     "team": "DCT",
-     "nome": "MattiaLingua",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "MFC",
-     "nome": "MF_Marekiaro",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "MFC",
-     "nome": "MF_TORETTO",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 47,
-     "team": "MFC",
-     "nome": "MF_Walter784",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 48,
-     "team": "GTV",
-     "nome": "Mirco",
-     "punti": 0,
+     "team": "GTID",
+     "nome": "GTID_pienobonus",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -2859,9 +789,9 @@
     },
     {
      "pos": 49,
-     "team": "MMS",
-     "nome": "MMS_Peppezip",
-     "punti": 0,
+     "team": "SRT",
+     "nome": "Daiard95",
+     "punti": 9,
      "gare": [
       null,
       null,
@@ -2873,65 +803,9 @@
     },
     {
      "pos": 50,
-     "team": "PRT",
-     "nome": "montlorenzo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 51,
-     "team": "CBR",
-     "nome": "Natalino Vezzani",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 52,
-     "team": "CBR",
-     "nome": "P.Vicari",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 53,
-     "team": "PBC",
-     "nome": "Parigi02",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 54,
-     "team": "RRT",
-     "nome": "Pazzatu",
-     "punti": 0,
+     "team": "GTV",
+     "nome": "Brook24",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -2943,79 +817,9 @@
     },
     {
      "pos": 55,
-     "team": "RCE",
-     "nome": "RCE_Leobustv",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "RCE",
-     "nome": "RCE_pirati",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 57,
-     "team": "RCE",
-     "nome": "RCE-Manu2298",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 58,
-     "team": "EVO",
-     "nome": "Ric_hero1971",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "SRT",
-     "nome": "Rikosmo94",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 60,
-     "team": "RMT",
-     "nome": "RMT ste",
-     "punti": 0,
+     "team": "GTRC",
+     "nome": "AMALA-ETNA",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -3027,23 +831,9 @@
     },
     {
      "pos": 61,
-     "team": "RMT",
-     "nome": "RMT_misterful. IT",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 62,
-     "team": "RMT",
-     "nome": "RMT_PINOAWAY",
-     "punti": 0,
+     "team": "RRT",
+     "nome": "Pazzatu",
+     "punti": 5,
      "gare": [
       null,
       null,
@@ -3055,37 +845,9 @@
     },
     {
      "pos": 63,
-     "team": "RRT",
-     "nome": "RRT_iaakk1983",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "RSR",
-     "nome": "RsR_Brucomela53",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 65,
-     "team": "PBC",
-     "nome": "S.Lavigna",
-     "punti": 0,
+     "team": "EVO",
+     "nome": "EVO_Sbeucchia70",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -3097,65 +859,9 @@
     },
     {
      "pos": 66,
-     "team": "FFM",
-     "nome": "S3mb4",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "SMI",
-     "nome": "SAPHIR",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 68,
-     "team": "PRT",
-     "nome": "shark929292",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 69,
-     "team": "SMI",
-     "nome": "SMI Kami0067",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
-     "team": "SMI",
-     "nome": "SMI_DENI_BURIDA",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_Simello",
+     "punti": 2,
      "gare": [
       null,
       null,
@@ -3167,23 +873,9 @@
     },
     {
      "pos": 71,
-     "team": "SMI",
-     "nome": "SMI_Doc1975tor",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "SMI",
-     "nome": "SMI_KrA7oS",
-     "punti": 0,
+     "team": "TLM",
+     "nome": "Beppe",
+     "punti": 1,
      "gare": [
       null,
       null,
@@ -3195,134 +887,8 @@
     },
     {
      "pos": 73,
-     "team": "SMI",
-     "nome": "SMI_Shadakar71",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
-     "team": "RSR",
-     "nome": "Stewar7tano",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "MMS",
-     "nome": "Suka",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "EVO",
-     "nome": "Ter_effe355",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 77,
-     "team": "DCT",
-     "nome": "TER-CAR-MELO74",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 78,
-     "team": "TLM",
-     "nome": "Thanos_Manny",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 79,
-     "team": "FMC",
-     "nome": "Uburoi",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 80,
-     "team": "GTV",
-     "nome": "Vale34",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 81,
-     "team": "SMI",
-     "nome": "vanveremberg-87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 82,
-     "team": "PRT",
-     "nome": "Zak",
+     "team": "BCSC",
+     "nome": "BAD_lupogrigio",
      "punti": 0,
      "gare": [
       null,
@@ -3353,23 +919,9 @@
    "piloti": [
     {
      "pos": 1,
-     "team": "FMC",
-     "nome": "Agif89",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 2,
-     "team": "TLM",
-     "nome": "AngeloIaia",
-     "punti": 0,
+     "team": "RMT",
+     "nome": "RMT-AT83Andrea",
+     "punti": 32,
      "gare": [
       null,
       null,
@@ -3381,23 +933,9 @@
     },
     {
      "pos": 3,
-     "team": "DCT",
-     "nome": "aquila d'oro",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
-     "team": "BCSC",
-     "nome": "BCSC_Gravebuxero",
-     "punti": 0,
+     "team": "SRT",
+     "nome": "Dome98",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -3409,23 +947,9 @@
     },
     {
      "pos": 5,
-     "team": "PRT",
-     "nome": "blaze",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 6,
-     "team": "TLM",
-     "nome": "Blokkobubbles",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "aquila doro",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -3437,9 +961,9 @@
     },
     {
      "pos": 7,
-     "team": "CBR",
-     "nome": "CBR_Mava",
-     "punti": 0,
+     "team": "BCSC",
+     "nome": "TER_Axel79",
+     "punti": 27,
      "gare": [
       null,
       null,
@@ -3452,64 +976,8 @@
     {
      "pos": 8,
      "team": "CBR",
-     "nome": "CBR_Renegade21",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 9,
-     "team": "SMI",
-     "nome": "Ciccio_Vona-1994",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 10,
-     "team": "DCT",
-     "nome": "CiccioSta76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "CBR",
-     "nome": "Clesh555",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
-     "team": "SRT",
-     "nome": "Dome98",
-     "punti": 0,
+     "nome": "CBR_Mava",
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -3521,9 +989,9 @@
     },
     {
      "pos": 13,
-     "team": "MMS",
-     "nome": "DRT-ARBAXX76",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "GTR Gius73",
+     "punti": 23,
      "gare": [
       null,
       null,
@@ -3535,65 +1003,9 @@
     },
     {
      "pos": 14,
-     "team": "EVO",
-     "nome": "EVO_Willy#43",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "GTID",
-     "nome": "F.Amerio",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "EVO",
-     "nome": "Fanatec73",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "SMI",
-     "nome": "FMC_Roax1984",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "TLM",
-     "nome": "G.C.C.8",
-     "punti": 0,
+     "team": "MMS",
+     "nome": "DRT-Arbaxx76",
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -3605,79 +1017,9 @@
     },
     {
      "pos": 19,
-     "team": "GTID",
-     "nome": "GTID_Salma81",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 20,
-     "team": "GTID",
-     "nome": "GTID-Vinc3Clerc",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 21,
      "team": "DCT",
-     "nome": "GTR Gius73",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "GTRC",
-     "nome": "GTRC-Checco",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
-     "team": "GTRC",
-     "nome": "GTRC-MirkoZaffa",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "TLM",
-     "nome": "Hellios_778",
-     "punti": 0,
+     "nome": "Matteo.R 00",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -3689,79 +1031,9 @@
     },
     {
      "pos": 25,
-     "team": "TLM",
-     "nome": "Jack187",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 26,
-     "team": "TLM",
-     "nome": "Kratos88",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
-     "team": "ARC",
-     "nome": "KSI-firefoxgold",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "ARC",
-     "nome": "KSI-Texport",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "DCT",
-     "nome": "Libix888",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
      "team": "PRT",
-     "nome": "M_ApeX__",
-     "punti": 0,
+     "nome": "blaze",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -3774,78 +1046,8 @@
     {
      "pos": 31,
      "team": "CBR",
-     "nome": "M.Gatti",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 32,
-     "team": "SMI",
-     "nome": "Marco pugnaghi67",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "DCT",
-     "nome": "Matteo.R 00",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "SCGT",
-     "nome": "Mattia13491",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "TLM",
-     "nome": "Michael_Fox",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
-     "team": "TLM",
-     "nome": "Mikerine92",
-     "punti": 0,
+     "nome": "Clesh555",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -3857,23 +1059,9 @@
     },
     {
      "pos": 37,
-     "team": "TLM",
-     "nome": "MikiRua",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 38,
-     "team": "MMS",
-     "nome": "MMS_Gattonero70",
-     "punti": 0,
+     "team": "PBC",
+     "nome": "Poluz",
+     "punti": 13,
      "gare": [
       null,
       null,
@@ -3885,51 +1073,9 @@
     },
     {
      "pos": 39,
-     "team": "OES",
-     "nome": "MT-Boss95",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
-     "team": "PRT",
-     "nome": "N_Spec2",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "PBC",
-     "nome": "PBC_Pegaso",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "PBC",
-     "nome": "Pete",
-     "punti": 0,
+     "team": "SMI",
+     "nome": "Ciccio_Vona-1994",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -3941,65 +1087,9 @@
     },
     {
      "pos": 43,
-     "team": "OES",
-     "nome": "Pinpinella95",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 44,
-     "team": "PBC",
-     "nome": "Poluz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "PRT",
-     "nome": "PRT_neapolis100",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "PRT",
-     "nome": "Ptr.bso",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 47,
-     "team": "RCE",
-     "nome": "RCE_fabryct90",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_Renegade21",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -4011,9 +1101,9 @@
     },
     {
      "pos": 48,
-     "team": "RCE",
-     "nome": "RCE_mauris72",
-     "punti": 0,
+     "team": "RMT",
+     "nome": "TLM_GAMMA",
+     "punti": 9,
      "gare": [
       null,
       null,
@@ -4025,51 +1115,9 @@
     },
     {
      "pos": 49,
-     "team": "PRT",
-     "nome": "Rekkiaspeed",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 50,
-     "team": "RMT",
-     "nome": "RMT-AT83Andrea",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 51,
-     "team": "RMT",
-     "nome": "RMT-Atawolf",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 52,
-     "team": "RMT",
-     "nome": "RMT-CAMI",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "KSI-firefoxgold",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -4081,65 +1129,9 @@
     },
     {
      "pos": 53,
-     "team": "RMT",
-     "nome": "RMT-FABBIO696",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 54,
-     "team": "PBC",
-     "nome": "RRT SMEZZ-SIZZ",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 55,
-     "team": "RRT",
-     "nome": "RRT_SNERZZZ",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "MMS",
-     "nome": "Sard Lander",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 57,
-     "team": "RRT",
-     "nome": "ScarsFess",
-     "punti": 0,
+     "team": "EVO",
+     "nome": "EVO_Willy#43",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -4151,23 +1143,9 @@
     },
     {
      "pos": 58,
-     "team": "SCGT",
-     "nome": "SCGT_Salvatore",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "DCT",
-     "nome": "Shider-02",
-     "punti": 0,
+     "team": "EVO",
+     "nome": "Fanatec73",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -4179,9 +1157,9 @@
     },
     {
      "pos": 60,
-     "team": "DCT",
-     "nome": "Shudew",
-     "punti": 0,
+     "team": "TLM",
+     "nome": "TLM_BLOKKO",
+     "punti": 2,
      "gare": [
       null,
       null,
@@ -4193,246 +1171,8 @@
     },
     {
      "pos": 61,
-     "team": "CBR",
-     "nome": "Simoneval8",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 62,
-     "team": "CBR",
-     "nome": "Sintoh87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 63,
-     "team": "SMI",
-     "nome": "SMI Mimmogr",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "SMI",
-     "nome": "SMI Niki Lauda",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 65,
-     "team": "SMI",
-     "nome": "SMI_DeliciousBBQ",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 66,
-     "team": "SMI",
-     "nome": "SMI_Jackengi",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "SMI",
-     "nome": "SMI_k67AVE",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 68,
-     "team": "SMI",
-     "nome": "SMI_Maureddu77",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 69,
-     "team": "SMI",
-     "nome": "SMI_Maximuccio73",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
-     "team": "SMI",
-     "nome": "SMI_Stefano",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 71,
-     "team": "SMI",
-     "nome": "SMI_tiskitoski",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "PRT",
-     "nome": "Snorky-70",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 73,
-     "team": "GTV",
-     "nome": "Sun|)own",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
      "team": "BCSC",
-     "nome": "TER_Axel79",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "RMT",
-     "nome": "Tlm_Gamma",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "ARC",
-     "nome": "TRT-Awesalvo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 77,
-     "team": "GTRC",
-     "nome": "twinggy",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 78,
-     "team": "GTV",
-     "nome": "Zabo",
+     "nome": "BCSC_Gravebuxero",
      "punti": 0,
      "gare": [
       null,
@@ -4463,23 +1203,9 @@
    "piloti": [
     {
      "pos": 1,
-     "team": "OES",
-     "nome": "_st257",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 2,
-     "team": "ARC",
-     "nome": "ARC-Claudione83",
-     "punti": 0,
+     "team": "SMI",
+     "nome": "SMI_Gas89",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -4491,51 +1217,9 @@
     },
     {
      "pos": 3,
-     "team": "ARC",
-     "nome": "ARC-SalvinoKing",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
-     "team": "ARC",
-     "nome": "ARC-TheHammer44",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 5,
-     "team": "PRT",
-     "nome": "astrorock285",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 6,
-     "team": "PRT",
-     "nome": "Baba Voss",
-     "punti": 0,
+     "team": "FMC",
+     "nome": "Fmc_Fulminato199",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -4547,37 +1231,9 @@
     },
     {
      "pos": 7,
-     "team": "SCGT",
-     "nome": "Basilio1969",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 8,
-     "team": "CBR",
-     "nome": "CBR_CrisZ.9",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 9,
-     "team": "CBR",
-     "nome": "CBR_FELIX",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "KSI-AreS_GlaDiuS",
+     "punti": 27,
      "gare": [
       null,
       null,
@@ -4589,37 +1245,9 @@
     },
     {
      "pos": 10,
-     "team": "CBR",
-     "nome": "CBR_gattipaolo86",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "CBR",
-     "nome": "CBR_MBBerto",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
-     "team": "CBR",
-     "nome": "CBR_Sarade",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-Claudione83",
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -4631,9 +1259,9 @@
     },
     {
      "pos": 13,
-     "team": "DCT",
-     "nome": "Cipo",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-SalvinoKing",
+     "punti": 23,
      "gare": [
       null,
       null,
@@ -4645,65 +1273,9 @@
     },
     {
      "pos": 14,
-     "team": "GTID",
-     "nome": "Davide 1972 Ita",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "DCT",
-     "nome": "DCT_Pescepoldo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "SCGT",
-     "nome": "Djvituc",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "GTRC",
-     "nome": "DRT_CALIGOLA",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "DCT",
-     "nome": "erikspadino77",
-     "punti": 0,
+     "team": "OES",
+     "nome": "_st257",
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -4715,9 +1287,9 @@
     },
     {
      "pos": 19,
-     "team": "RRT",
-     "nome": "ErMau07",
-     "punti": 0,
+     "team": "FFM",
+     "nome": "R.Napoletano",
+     "punti": 19,
      "gare": [
       null,
       null,
@@ -4729,65 +1301,9 @@
     },
     {
      "pos": 20,
-     "team": "RMT",
-     "nome": "Fabrifox99",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 21,
-     "team": "PRT",
-     "nome": "fedemastro",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "SMI",
-     "nome": "Flippo-Trippo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
-     "team": "FMC",
-     "nome": "Fmc_blackbeard8007",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "FMC",
-     "nome": "Fmc_Fulminato199",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-TheHammer44",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -4799,9 +1315,9 @@
     },
     {
      "pos": 25,
-     "team": "GTID",
-     "nome": "GiamP_29",
-     "punti": 0,
+     "team": "SRT",
+     "nome": "SRT KAIDO",
+     "punti": 17,
      "gare": [
       null,
       null,
@@ -4814,64 +1330,8 @@
     {
      "pos": 26,
      "team": "PRT",
-     "nome": "Giannivir64",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
-     "team": "GTID",
-     "nome": "GTID_Berti62",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "GTID",
-     "nome": "GTID_D3LZ719",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "GTID",
-     "nome": "GTID-D3sTr0X",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
-     "team": "GTRC",
-     "nome": "GTRC_AleRasato",
-     "punti": 0,
+     "nome": "astrorock285",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -4883,9 +1343,9 @@
     },
     {
      "pos": 31,
-     "team": "GTRC",
-     "nome": "GTRC-Kelone74",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "K",
+     "punti": 15,
      "gare": [
       null,
       null,
@@ -4897,65 +1357,9 @@
     },
     {
      "pos": 32,
-     "team": "GTRC",
-     "nome": "GTRC-Squinzi76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "SMI",
-     "nome": "HULK1959",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "GTID",
-     "nome": "Ice_Fire",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "SRT",
-     "nome": "Il Giuda22",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
      "team": "DCT",
-     "nome": "Iuppino",
-     "punti": 0,
+     "nome": "Cipo",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -4968,8 +1372,8 @@
     {
      "pos": 37,
      "team": "RRT",
-     "nome": "J-Fly",
-     "punti": 0,
+     "nome": "ErMau07",
+     "punti": 13,
      "gare": [
       null,
       null,
@@ -4981,65 +1385,9 @@
     },
     {
      "pos": 38,
-     "team": "MMS",
-     "nome": "JackVenom",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 39,
-     "team": "TLM",
-     "nome": "Jonny_Rotten",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
      "team": "CBR",
-     "nome": "K",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "DCT",
-     "nome": "Kevin-giusepp",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "ARC",
-     "nome": "KSI-AreS_GlaDiuS",
-     "punti": 0,
+     "nome": "CBR_gattipaolo86",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -5051,9 +1399,9 @@
     },
     {
      "pos": 43,
-     "team": "SRT",
-     "nome": "landre",
-     "punti": 0,
+     "team": "DCT",
+     "nome": "ASC-LupO",
+     "punti": 11,
      "gare": [
       null,
       null,
@@ -5065,65 +1413,9 @@
     },
     {
      "pos": 44,
-     "team": "RMT",
-     "nome": "LID_Nelloz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "PRT",
-     "nome": "Luni55",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "MFC",
-     "nome": "MF_Maxlaqualunque",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 47,
-     "team": "RMT",
-     "nome": "Micius",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 48,
-     "team": "MMS",
-     "nome": "Mms_dpgurney78",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "CBR_FELIX",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -5135,65 +1427,9 @@
     },
     {
      "pos": 49,
-     "team": "MMS",
-     "nome": "MMS-DOCTORWEB",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 50,
-     "team": "PRT",
-     "nome": "muffo007",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 51,
-     "team": "PBC",
-     "nome": "OmgTommie",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 52,
-     "team": "PRT",
-     "nome": "PRT_roncoa73",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 53,
-     "team": "PRT",
-     "nome": "PRT-Timmycicc",
-     "punti": 0,
+     "team": "GTRC",
+     "nome": "GTRC-Kelone74",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -5205,9 +1441,9 @@
     },
     {
      "pos": 54,
-     "team": "FFM",
-     "nome": "R.Napoletano",
-     "punti": 0,
+     "team": "GTRC",
+     "nome": "GTRC-Squinzi76",
+     "punti": 7,
      "gare": [
       null,
       null,
@@ -5219,23 +1455,9 @@
     },
     {
      "pos": 55,
-     "team": "TLM",
-     "nome": "Rikas78",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "RMT",
-     "nome": "RMT Mario84",
-     "punti": 0,
+     "team": "MFC",
+     "nome": "MFMaxlaqualunque",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -5247,37 +1469,9 @@
     },
     {
      "pos": 57,
-     "team": "RMT",
-     "nome": "RMT_Morphix-_-",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 58,
-     "team": "MMS",
-     "nome": "Saetta Assidua",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "GTV",
-     "nome": "Sauzer",
-     "punti": 0,
+     "team": "FMC",
+     "nome": "FMC-BLACKBEARD",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -5289,274 +1483,8 @@
     },
     {
      "pos": 60,
-     "team": "GTV",
-     "nome": "Scrocchio98",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 61,
-     "team": "SCGT",
-     "nome": "simothesniper23",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 62,
-     "team": "SMI",
-     "nome": "SMI_Bibieffe",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 63,
-     "team": "SMI",
-     "nome": "SMI_Desmo77",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "SMI",
-     "nome": "SMI_Gas89",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 65,
-     "team": "SMI",
-     "nome": "SMI_NuvolaRossa",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 66,
-     "team": "SMI",
-     "nome": "snoop",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "SRT",
-     "nome": "SRT KAIDO",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 68,
-     "team": "SRT",
-     "nome": "SRT_Rinthedream",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 69,
-     "team": "SCGT",
-     "nome": "Sukku-29",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
      "team": "PRT",
-     "nome": "tcarlisi",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 71,
-     "team": "EVO",
-     "nome": "TER_minetor",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "PRT",
-     "nome": "The-Knipex",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 73,
-     "team": "GTRC",
-     "nome": "TodayTek",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
-     "team": "ARC",
-     "nome": "TRT-Bingo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "PRT",
-     "nome": "verdi76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "PRT",
-     "nome": "wwp76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 77,
-     "team": "GTID",
-     "nome": "Xelavr6",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 78,
-     "team": "SRT",
-     "nome": "Zagaracing",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 79,
-     "team": "SMI",
-     "nome": "zarsantez",
+     "nome": "Baba Voss",
      "punti": 0,
      "gare": [
       null,
@@ -5588,8 +1516,8 @@
     {
      "pos": 1,
      "team": "PRT",
-     "nome": "(edo56)",
-     "punti": 0,
+     "nome": "S. Di Giovanni",
+     "punti": 32,
      "gare": [
       null,
       null,
@@ -5601,37 +1529,9 @@
     },
     {
      "pos": 2,
-     "team": "MMS",
-     "nome": "A.Papotto",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 3,
-     "team": "CBR",
-     "nome": "Alex Lilla",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 4,
      "team": "ARC",
-     "nome": "ARC-Ultras68",
-     "punti": 0,
+     "nome": "ARC-Arbr82",
+     "punti": 31,
      "gare": [
       null,
       null,
@@ -5643,23 +1543,9 @@
     },
     {
      "pos": 5,
-     "team": "ARC",
-     "nome": "ARC-VecchioBimbo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 6,
-     "team": "ARC",
-     "nome": "ARGAMERR",
-     "punti": 0,
+     "team": "CBR",
+     "nome": "Alex Lilla",
+     "punti": 30,
      "gare": [
       null,
       null,
@@ -5671,9 +1557,9 @@
     },
     {
      "pos": 7,
-     "team": "TLM",
-     "nome": "BabyKiller",
-     "punti": 0,
+     "team": "RCE",
+     "nome": "RCE_Dingo77",
+     "punti": 27,
      "gare": [
       null,
       null,
@@ -5685,65 +1571,9 @@
     },
     {
      "pos": 8,
-     "team": "RRT",
-     "nome": "Bambasten 90",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 9,
-     "team": "RMT",
-     "nome": "barso91",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 10,
-     "team": "BCSC",
-     "nome": "BCSC_L_uboldese",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 11,
-     "team": "MMS",
-     "nome": "Bolker",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 12,
-     "team": "PRT",
-     "nome": "conradveron59",
-     "punti": 0,
+     "team": "SCGT",
+     "nome": "Gass95",
+     "punti": 26,
      "gare": [
       null,
       null,
@@ -5755,79 +1585,9 @@
     },
     {
      "pos": 13,
-     "team": "SCGT",
-     "nome": "Domydero",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 14,
-     "team": "GTV",
-     "nome": "Drivergt1985",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 15,
-     "team": "DCT",
-     "nome": "DRT-Marras83",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 16,
-     "team": "RRT",
-     "nome": "Fabrix88",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 17,
-     "team": "FFM",
-     "nome": "FFM_FilippoFm89",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 18,
-     "team": "RRT",
-     "nome": "Fla60",
-     "punti": 0,
+     "team": "PRT",
+     "nome": "Luca R72",
+     "punti": 22,
      "gare": [
       null,
       null,
@@ -5839,23 +1599,9 @@
     },
     {
      "pos": 19,
-     "team": "FMC",
-     "nome": "Fmc_Marcosanta",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 20,
-     "team": "FMC",
-     "nome": "FMC_Samu4Seven",
-     "punti": 0,
+     "team": "RRT",
+     "nome": "Pierpynolo76",
+     "punti": 19,
      "gare": [
       null,
       null,
@@ -5867,51 +1613,9 @@
     },
     {
      "pos": 21,
-     "team": "GTV",
-     "nome": "Frasalvo96",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 22,
-     "team": "FMC",
-     "nome": "Fratta_motor_clb",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 23,
      "team": "SCGT",
-     "nome": "gas_95_",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 24,
-     "team": "TLM",
-     "nome": "Gheige",
-     "punti": 0,
+     "nome": "Domydero",
+     "punti": 18,
      "gare": [
       null,
       null,
@@ -5923,79 +1627,9 @@
     },
     {
      "pos": 25,
-     "team": "ARC",
-     "nome": "giggggetto87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 26,
-     "team": "GTV",
-     "nome": "Goose",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 27,
-     "team": "GTRC",
-     "nome": "GTRC_Ganciocielo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 28,
-     "team": "GTV",
-     "nome": "GTSCode",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 29,
-     "team": "SRT",
-     "nome": "habanero",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 30,
-     "team": "FFM",
-     "nome": "Imperatore128",
-     "punti": 0,
+     "team": "PRT",
+     "nome": "(edo56)",
+     "punti": 16,
      "gare": [
       null,
       null,
@@ -6007,9 +1641,9 @@
     },
     {
      "pos": 31,
-     "team": "SRT",
-     "nome": "keje80",
-     "punti": 0,
+     "team": "SMI",
+     "nome": "SMI_Cristian16",
+     "punti": 15,
      "gare": [
       null,
       null,
@@ -6021,65 +1655,9 @@
     },
     {
      "pos": 32,
-     "team": "SRT",
-     "nome": "kiank87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 33,
-     "team": "ARC",
-     "nome": "KSI-MarinaioPazz",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 34,
-     "team": "PRT",
-     "nome": "Luca R72",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 35,
-     "team": "SCGT",
-     "nome": "Maciaddu",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 36,
-     "team": "TLM",
-     "nome": "mancinelli2002",
-     "punti": 0,
+     "team": "FMC",
+     "nome": "FMC_Samu4Seven",
+     "punti": 14,
      "gare": [
       null,
       null,
@@ -6091,9 +1669,9 @@
     },
     {
      "pos": 37,
-     "team": "PRT",
-     "nome": "Margotone",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "KSI-MarinaioPazz",
+     "punti": 13,
      "gare": [
       null,
       null,
@@ -6105,65 +1683,9 @@
     },
     {
      "pos": 38,
-     "team": "SCGT",
-     "nome": "mcogons83",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 39,
-     "team": "RRT",
-     "nome": "Pierpynolo76",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 40,
-     "team": "DCT",
-     "nome": "Praetorian_001",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 41,
-     "team": "ARC",
-     "nome": "Razor",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 42,
-     "team": "RCE",
-     "nome": "RCE_Dingo77",
-     "punti": 0,
+     "team": "MMS",
+     "nome": "A.Papotto",
+     "punti": 12,
      "gare": [
       null,
       null,
@@ -6175,9 +1697,9 @@
     },
     {
      "pos": 43,
-     "team": "RCE",
-     "nome": "RCE-warrior",
-     "punti": 0,
+     "team": "TLM",
+     "nome": "TLM_Talsigiano",
+     "punti": 11,
      "gare": [
       null,
       null,
@@ -6190,36 +1712,8 @@
     {
      "pos": 44,
      "team": "RMT",
-     "nome": "RMT Moody33",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 45,
-     "team": "RMT",
-     "nome": "RMT-Alzoal_7.6",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 46,
-     "team": "RMT",
-     "nome": "RMT-Ghigno 4",
-     "punti": 0,
+     "nome": "barso91",
+     "punti": 10,
      "gare": [
       null,
       null,
@@ -6231,51 +1725,9 @@
     },
     {
      "pos": 47,
-     "team": "RMT",
-     "nome": "RMT-Marck_84",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 48,
-     "team": "RMT",
-     "nome": "RMTSuperSic",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 49,
-     "team": "RRT",
-     "nome": "RRT_Andovè",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 50,
-     "team": "RRT",
-     "nome": "RRT_Muso_2692_gt",
-     "punti": 0,
+     "team": "FMC",
+     "nome": "Fmc_Marcosanta",
+     "punti": 8,
      "gare": [
       null,
       null,
@@ -6287,37 +1739,9 @@
     },
     {
      "pos": 51,
-     "team": "PRT",
-     "nome": "S. Di Giovanni",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 52,
-     "team": "RMT",
-     "nome": "SCGT-amofede01",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 53,
-     "team": "SCGT",
-     "nome": "Sim7one",
-     "punti": 0,
+     "team": "RRT",
+     "nome": "Fabrix88",
+     "punti": 6,
      "gare": [
       null,
       null,
@@ -6329,9 +1753,9 @@
     },
     {
      "pos": 54,
-     "team": "PRT",
-     "nome": "Simoppr",
-     "punti": 0,
+     "team": "ARC",
+     "nome": "ARC-Ultras68",
+     "punti": 4,
      "gare": [
       null,
       null,
@@ -6343,316 +1767,8 @@
     },
     {
      "pos": 55,
-     "team": "SCGT",
-     "nome": "skils137",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 56,
-     "team": "SMI",
-     "nome": "Smi_Cremix14",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 57,
-     "team": "SMI",
-     "nome": "SMI_Cristian16",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 58,
-     "team": "SMI",
-     "nome": "SMI_dragulillo",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 59,
-     "team": "OES",
-     "nome": "SMI_Fabry_colo86",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 60,
-     "team": "SMI",
-     "nome": "SMI_Kaiser",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 61,
-     "team": "SMI",
-     "nome": "SMI_Missidenis54",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 62,
-     "team": "SMI",
-     "nome": "SMI_RomeLu",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 63,
-     "team": "SMI",
-     "nome": "SMI_Thomas1927",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 64,
-     "team": "SMI",
-     "nome": "SMI-Mandrake",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 65,
-     "team": "SMI",
-     "nome": "SMI-Slimer",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 66,
-     "team": "PRT",
-     "nome": "Step87",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 67,
-     "team": "TLM",
-     "nome": "Talsigiano",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 68,
-     "team": "EVO",
-     "nome": "TER_Brazorf",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 69,
-     "team": "EVO",
-     "nome": "TER_K3R0",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 70,
-     "team": "DCT",
-     "nome": "TER_R.Leta",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 71,
-     "team": "PRT",
-     "nome": "theblakcorsair1",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 72,
-     "team": "MMS",
-     "nome": "Travis199ita",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 73,
      "team": "ARC",
-     "nome": "TRT-Arbr82",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 74,
-     "team": "SRT",
-     "nome": "TSR_LK№³",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 75,
-     "team": "OES",
-     "nome": "vicconegt69",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 76,
-     "team": "SRT",
-     "nome": "Yanuzzo_44",
-     "punti": 0,
-     "gare": [
-      null,
-      null,
-      null,
-      null,
-      null
-     ],
-     "storico_pos": []
-    },
-    {
-     "pos": 77,
-     "team": "PRT",
-     "nome": "Zio_zero7",
+     "nome": "ARC-VecchioBimbo",
      "punti": 0,
      "gare": [
       null,
@@ -6680,5 +1796,1645 @@
    }
   }
  },
- "gare": {}
+ "gare": {
+  "1": {
+   "lobby": {
+    "A1": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A1.png",
+     "classifica": [
+      {
+       "pos": 5,
+       "nome": "Danielex_Otto4",
+       "team": "",
+       "grezzo": [
+        "Danielex_Otto4",
+        "RS 5 Turbo DTM '19",
+        "1:18.702",
+        "+26.912",
+        "1:19.902",
+        "16"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Sam-750",
+       "team": "",
+       "grezzo": [
+        "Sam-750"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "RMT FIERA 69",
+       "team": "",
+       "grezzo": [
+        "RMT FIERA 69",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A5": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A5.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "TLM_Tonyroto",
+       "team": "",
+       "grezzo": [
+        "TLM_Tonyroto",
+        "RS 5 Turbo DTM '19",
+        "1:18.203",
+        "+1:07.654",
+        "1:19.917",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "FFM_Prinz17",
+       "team": "",
+       "grezzo": [
+        "FFM_Prinz17",
+        "RS 5 Turbo DTM '19",
+        "1:18.315",
+        "DOPPIATO",
+        "1:18.382",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "EVO_il_Cuuc",
+       "team": "EVO",
+       "grezzo": [
+        "EVO_il_Cuuc",
+        "RS 5 Turbo DTM '19",
+        "1:30.399",
+        "DOPPIATO",
+        "BEST LAP",
+        "1:18.341",
+        "*"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "PBC_Giulio",
+       "team": "PBC",
+       "grezzo": [
+        "PBC_Giulio",
+        "RS 5 Turbo DTM \"19",
+        "1:18.868",
+        "DOPPIATO",
+        "1:20.502",
+        "1"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A10": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A10.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "M. Pennisi",
+       "team": "PBC",
+       "grezzo": [
+        "M. Pennisi",
+        "RS 5 Turbo DTM '19",
+        "NO TIME",
+        "+33.852",
+        "BEST LAP",
+        "1:18.014",
+        "5",
+        "*"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "GTRC- TROTOTEK",
+       "team": "",
+       "grezzo": [
+        "GTRC- TROTOTEK",
+        "RC F GT500'16",
+        "1:19.595",
+        "+1:06.856",
+        "1:19.138"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A17": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A17.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "TLM_Proietti",
+       "team": "",
+       "grezzo": [
+        "TLM_Proietti",
+        "RS 5 Turbo DTM '19",
+        "1:18.597",
+        "+1:16.956",
+        "1:19.093",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "BAD_brucem84",
+       "team": "BCSC",
+       "grezzo": [
+        "BAD_brucem84"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "DRT-XaserTek",
+       "team": "",
+       "grezzo": [
+        "DRT-XaserTek",
+        "---"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "SimoT_18",
+       "team": "",
+       "grezzo": [
+        "SimoT_18",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A29": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A29.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "GTRC_F._Ciuffo",
+       "team": "",
+       "grezzo": [
+        "GTRC_F._Ciuffo",
+        "NSX CONCEPT-GT \"16",
+        "1:19.143",
+        "+48.374",
+        "1:20.554",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "DRT-Nanix84",
+       "team": "DCT",
+       "grezzo": [
+        "DRT-Nanix84",
+        "RS 5 Turbo DTM '19",
+        "1:18.299",
+        "+49.775",
+        "1:19.780",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "ARC-JonMazzo",
+       "team": "ARC",
+       "grezzo": [
+        "ARC-JonMazzo",
+        "RC F GT500 '16",
+        "1:19.105",
+        "+53.530",
+        "1:20.348",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "GTID_Mr PoP_jr",
+       "team": "",
+       "grezzo": [
+        "GTID_Mr PoP_jr",
+        "0"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A34": {
+     "lega": "STAR",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A34.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "Pardus",
+       "team": "",
+       "grezzo": [
+        "Pardus"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A2": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A2.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "ARC-Turino",
+       "team": "ARC",
+       "grezzo": [
+        "ARC-Turino",
+        "RS 5 Turbo DTM '19",
+        "1:18.790",
+        "+1:02.359",
+        "1:19.521"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Wilpy",
+       "team": "",
+       "grezzo": [
+        "Wilpy",
+        "RC F GT500 '16",
+        "1:19.509",
+        "+1:09.285",
+        "1:19.344",
+        "(4)"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "U.Virivè",
+       "team": "",
+       "grezzo": [
+        "U.Virivè",
+        "GT-R NISMO GT500 '16",
+        "1:19.681",
+        "DOPPIATO",
+        "1:20.968",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "Biso_44",
+       "team": "RCE",
+       "grezzo": [
+        "Biso_44",
+        "RC F GT500 '16",
+        "1:22.995",
+        "DOPPIATO",
+        "1:19.508",
+        "1"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A8": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A8.png",
+     "classifica": [
+      {
+       "pos": 4,
+       "nome": "RMT-Axel K",
+       "team": "",
+       "grezzo": [
+        "RMT-Axel K",
+        "RS 5 Turbo DTM '19",
+        "1:19.528",
+        "+28.537",
+        "1:20.719",
+        "18"
+       ]
+      },
+      {
+       "pos": 8,
+       "nome": "ARC-AlexoPazz",
+       "team": "ARC",
+       "grezzo": [
+        "ARC-AlexoPazz",
+        "RS 5 Turbo DTM '19",
+        "1:21.497",
+        "DOPPIATO",
+        "1:20.129",
+        "10"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Sulimanov",
+       "team": "",
+       "grezzo": [
+        "Sulimanov",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A12": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A12.png",
+     "classifica": [],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A18": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A18.png",
+     "classifica": [
+      {
+       "pos": 6,
+       "nome": "SMI_GREEN21",
+       "team": "",
+       "grezzo": [
+        "SMI_GREEN21",
+        "RS 5 Turbo DTM '19",
+        "1:19.220",
+        "+32.553",
+        "1:20.639",
+        "(14"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "Ayrton16",
+       "team": "",
+       "grezzo": [
+        "Ayrton16",
+        "RS 5 Turbo DTM '19",
+        "1:18.738",
+        "+1:19.418",
+        "1:21.245",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Iceman",
+       "team": "GTV",
+       "grezzo": [
+        "Iceman",
+        "RC F GT500 '16",
+        "1:19.307",
+        "1Lap",
+        "1:22.007",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Lo lacono D.",
+       "team": "",
+       "grezzo": [
+        "Lo lacono D.",
+        "GT-R NISMO GT500 '16",
+        "1:19.226",
+        "1Lap",
+        "1:20.450",
+        "2"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "DeadPaul",
+       "team": "",
+       "grezzo": [
+        "DeadPaul",
+        "0"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A30": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A30.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "FFM_Beppolo",
+       "team": "FFM",
+       "grezzo": [
+        "FFM_Beppolo",
+        "RS 5 Turbo DTM \"19",
+        "1:19.286",
+        "DOPPIATO",
+        "BEST LAP",
+        "1:19.590",
+        "7",
+        "*"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Cacino95",
+       "team": "",
+       "grezzo": [
+        "Cacino95"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "GTID_GSadventure",
+       "team": "",
+       "grezzo": [
+        "GTID_GSadventure"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A35": {
+     "lega": "ELITE",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A35.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "Sandro 71",
+       "team": "",
+       "grezzo": [
+        "Sandro 71",
+        "RS 5 Turbo DTM '19",
+        "1:20.364",
+        "+38.217",
+        "1:20.705",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "SCGT-GIGIKOM75",
+       "team": "",
+       "grezzo": [
+        "SCGT-GIGIKOM75",
+        "GT-R NISMO GT500 '16",
+        "1:22.611",
+        "1:21.602"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "JOKERVR46",
+       "team": "",
+       "grezzo": [
+        "JOKERVR46"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "G.Mantineo",
+       "team": "",
+       "grezzo": [
+        "G.Mantineo"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "DCT_Radik",
+       "team": "",
+       "grezzo": [
+        "DCT_Radik"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A3": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A3.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "GTV-Oriano06",
+       "team": "",
+       "grezzo": [
+        "GTV-Oriano06",
+        "GT-R NISMO GT500 '16",
+        "1:19.171",
+        "+1:14.058",
+        "1:19.270",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Pazzatu",
+       "team": "RRT",
+       "grezzo": [
+        "Pazzatu",
+        "RS 5 Turbo DTM '19",
+        "NO TIME",
+        "+1:27.747",
+        "01:10.000",
+        "BEST LAP",
+        "1:18.826",
+        "5",
+        "*"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "PRT-Jaiss84",
+       "team": "",
+       "grezzo": [
+        "PRT-Jaiss84",
+        "RC F GT500 '16",
+        "1:21.619",
+        "+1:33.902",
+        "1:21.643",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "RMT_misterful. IT",
+       "team": "",
+       "grezzo": [
+        "RMT_misterful. IT",
+        "GT-R NISMO GT500 '16",
+        "1:19.375",
+        "+1:39.652",
+        "00:05.000",
+        "1:19.327",
+        "(1"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "KSI-Bambolone78",
+       "team": "",
+       "grezzo": [
+        "KSI-Bambolone78"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A14": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A14.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "AMALA-ETNA",
+       "team": "GTRC",
+       "grezzo": [
+        "AMALA-ETNA",
+        "RS 5 Turbo DTM '19",
+        "NO TIME",
+        "+1:12.235",
+        "1:21.167",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "TER-CAR-MELO74",
+       "team": "",
+       "grezzo": [
+        "TER-CAR-MELO74",
+        "RS 5 Turbo DTM '19",
+        "1:19.477",
+        "+1:21.676",
+        "BEST LAP",
+        "1:19.121"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Suka",
+       "team": "",
+       "grezzo": [
+        "Suka",
+        "RC F GT500 '16",
+        "1:19.818",
+        "DOPPIATO",
+        "1:20.736",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "BAD_lupogrigio",
+       "team": "BCSC",
+       "grezzo": [
+        "BAD_lupogrigio"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "AgaresErkekjette",
+       "team": "",
+       "grezzo": [
+        "AgaresErkekjette"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A21": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A21.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "GioBar73 @PRT",
+       "team": "",
+       "grezzo": [
+        "GioBar73 @PRT",
+        "RS 5 Turbo DTM '19",
+        "1:19.635",
+        "DOPPIATO",
+        "1:20.739",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "FFM_M a z e sBin",
+       "team": "",
+       "grezzo": [
+        "FFM_M a z e sBin",
+        "RC F GT500 '16",
+        "1:42.249",
+        "DOPPIATO",
+        "1:21.467",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "CBR_Simello",
+       "team": "CBR",
+       "grezzo": [
+        "CBR_Simello",
+        "GT-R NISMO GT500 '16",
+        "NO TIME",
+        "DOPPIATO",
+        "1:21.681",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "vanveremberg-87",
+       "team": "",
+       "grezzo": [
+        "vanveremberg-87",
+        "RS 5 Turbo DTM '19",
+        "1:20.957",
+        "1:20.842"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "EVO_Manu81",
+       "team": "",
+       "grezzo": [
+        "EVO_Manu81",
+        "RS 5 Turbo DTM '19",
+        "NO TIME"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A24": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A24.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "RsR brucomela 53",
+       "team": "",
+       "grezzo": [
+        "RsR brucomela 53",
+        "RS 5 Turbo DTM \"19",
+        "1:18.850",
+        "+55.193",
+        "1:20.123",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "EVO_Sbeucchia70",
+       "team": "EVO",
+       "grezzo": [
+        "EVO_Sbeucchia70",
+        "RC F GT500 '16",
+        "1:19.957",
+        "+1:06.566",
+        "1:19.966",
+        "4)"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "TLM Febshy",
+       "team": "",
+       "grezzo": [
+        "TLM Febshy",
+        "RS 5 Turbo DTM '19",
+        "1:20.596",
+        "DOPPIATO",
+        "1:23.053"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "Stewar7tano",
+       "team": "",
+       "grezzo": [
+        "Stewar7tano"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "M.Ruggieri",
+       "team": "",
+       "grezzo": [
+        "M.Ruggieri",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A28": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A28.png",
+     "classifica": [
+      {
+       "pos": 12,
+       "nome": "Mirco",
+       "team": "",
+       "grezzo": [
+        "Mirco",
+        "RC F GT500 '16",
+        "1:20.675",
+        "+1:09.806",
+        "1:20.348",
+        "2"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "Веppе",
+       "team": "",
+       "grezzo": [
+        "Веppе",
+        "RC F GT500 '16",
+        "1:18.797",
+        "+2:06.884",
+        "1:19.801",
+        "1"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "MF_TORETTOR",
+       "team": "",
+       "grezzo": [
+        "MF_TORETTOR",
+        "GT-R NISMO GT500 '16",
+        "1:20.451",
+        "NC",
+        "1:21.332"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A31": {
+     "lega": "PRO GOLD",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A31.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "Kami0067",
+       "team": "",
+       "grezzo": [
+        "Kami0067",
+        "RS 5 Turbo DTM '19",
+        "1:20.075",
+        "DOPPIATO",
+        "1:19.699",
+        "6)"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "RMT ste",
+       "team": "",
+       "grezzo": [
+        "RMT ste"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A4": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A4.png",
+     "classifica": [
+      {
+       "pos": 4,
+       "nome": "Matteo.R 00",
+       "team": "DCT",
+       "grezzo": [
+        "Matteo.R 00",
+        "RS 5 Turbo DTM \"19",
+        "1:19.907",
+        "+42.517",
+        "1:21.047",
+        "18"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "RCE_mauris72",
+       "team": "",
+       "grezzo": [
+        "RCE_mauris72",
+        "RC F GT500 '16",
+        "1:19.406",
+        "+58.716",
+        "1:21.310",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "SMI Niki Lauda",
+       "team": "",
+       "grezzo": [
+        "SMI Niki Lauda",
+        "RC F GT500 '16",
+        "1:20.208",
+        "+1:07.142",
+        "1:21.172",
+        "(4)"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "TLM_BLOKKO",
+       "team": "TLM",
+       "grezzo": [
+        "TLM-BLOKKO",
+        "RC F GT500'16",
+        "1:21.393",
+        "+1:10.677",
+        "1:21.024"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "RMT-CAMI",
+       "team": "",
+       "grezzo": [
+        "RMT-CAMI"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A9": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A9.png",
+     "classifica": [
+      {
+       "pos": 4,
+       "nome": "SMI_Jackengi",
+       "team": "",
+       "grezzo": [
+        "SMI_Jackengi",
+        "RC F GT500 '16",
+        "1:20.072",
+        "+28.744",
+        "1:20.696",
+        "18"
+       ]
+      },
+      {
+       "pos": 5,
+       "nome": "SMI_Stefano",
+       "team": "",
+       "grezzo": [
+        "SMI_Stefano",
+        "RS 5 Turbo DTM '19",
+        "1:19.885",
+        "+37.095",
+        "1:20.222",
+        "16"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "MMS_Gattonero70",
+       "team": "",
+       "grezzo": [
+        "MMS_Gattonero70",
+        "GT-R NISMO GT500 '16",
+        "1:21.161",
+        "DOPPIATO",
+        "1:21.886",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "F.Amerio",
+       "team": "",
+       "grezzo": [
+        "F.Amerio",
+        "RS 5 Turbo DTM \"19",
+        "1:19.313",
+        "1:20.356"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Libix888",
+       "team": "",
+       "grezzo": [
+        "Libix888",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A13": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A13.png",
+     "classifica": [
+      {
+       "pos": 6,
+       "nome": "SMI_Roax1984",
+       "team": "",
+       "grezzo": [
+        "SMI_Roax1984",
+        "RS 5 Turbo DTM '19",
+        "1:19.763",
+        "+29.058",
+        "1:20.143",
+        "14"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "BCSC_Gravebuxero",
+       "team": "BCSC",
+       "grezzo": [
+        "BCSC_Gravebuxero"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Jack187",
+       "team": "",
+       "grezzo": [
+        "Jack187",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A22": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A22.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "SMI_Maureddu77",
+       "team": "",
+       "grezzo": [
+        "SMI_Maureddu77",
+        "RS 5 Turbo DTM \"19",
+        "1:20.734",
+        "DOPPIATO",
+        "1:19.974",
+        "6"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "G.C.C.8",
+       "team": "",
+       "grezzo": [
+        "G.C.C.8"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A25": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A25.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "EVO_Willy#43",
+       "team": "EVO",
+       "grezzo": [
+        "EVO_Willy#43",
+        "RC F GT500 '16",
+        "1:19.153",
+        "bOPDTATO",
+        "00:15.000",
+        "1:21.542",
+        "6"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "TRT-Awesalvo",
+       "team": "",
+       "grezzo": [
+        "TRT-Awesalvo",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A36": {
+     "lega": "PRO SILVER",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A36.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "Ptr.bso",
+       "team": "",
+       "grezzo": [
+        "Ptr.bso",
+        "RC F GT500 '16",
+        "1:20.914",
+        "+1:15.238",
+        "1:21.437",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Fanatec73",
+       "team": "EVO",
+       "grezzo": [
+        "Fanatec73",
+        "RS 5 Turbo DTM '19",
+        "1:21.004",
+        "DOPPIATO",
+        "1:21.791",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "CiccioSta76",
+       "team": "",
+       "grezzo": [
+        "CiccioSta76",
+        "RC F GT500 '16",
+        "1:29.343",
+        "BOX",
+        "1:20.730"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "Agif89",
+       "team": "",
+       "grezzo": [
+        "Agif89"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A6": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A6.png",
+     "classifica": [
+      {
+       "pos": 6,
+       "nome": "Cipo",
+       "team": "DCT",
+       "grezzo": [
+        "Cipo",
+        "GT-R NISMO GT500 '16",
+        "1:21.212",
+        "+43.954",
+        "1:21.334",
+        "14"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A15": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A15.png",
+     "classifica": [
+      {
+       "pos": 8,
+       "nome": "SMI Desmo77",
+       "team": "",
+       "grezzo": [
+        "SMI Desmo77",
+        "RS 5 Turbo DTM '19",
+        "1:19.738",
+        "+47.484",
+        "1:20.723",
+        "10"
+       ]
+      },
+      {
+       "pos": 9,
+       "nome": "PRT_roncoa73",
+       "team": "",
+       "grezzo": [
+        "PRT_roncoa73",
+        "RS 5 Turbo DTM '19",
+        "1:21.663",
+        "+58.842",
+        "1:21.692",
+        "8"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "SRT_Rinthedream",
+       "team": "",
+       "grezzo": [
+        "SRT_Rinthedream",
+        "RS 5 Turbo DTM '19",
+        "1:20.007",
+        "OPPTATO",
+        "1:20.510",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "FMC-BLACKBEARD",
+       "team": "FMC",
+       "grezzo": [
+        "FMC-BLACKBEARD",
+        "RC F GT500 '16",
+        "1:20.691",
+        "DOPPIATO",
+        "1:21.262",
+        "4"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A16": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A16.png",
+     "classifica": [
+      {
+       "pos": 8,
+       "nome": "SMI_Bibieffe",
+       "team": "",
+       "grezzo": [
+        "SMI_Bibieffe",
+        "RC F GT500 '16",
+        "1:22.066",
+        "+1:08.942",
+        "1:21.882",
+        "10"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "Ice_Fire",
+       "team": "",
+       "grezzo": [
+        "Ice_Fire",
+        "RS 5 Turbo DTM '19",
+        "1:20.800"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Riccio_Antonio",
+       "team": "",
+       "grezzo": [
+        "Riccio_Antonio",
+        "RC F GT500 '16",
+        "NO TIME",
+        "DOPPIATO",
+        "1:23.443",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "CBR_MBBerto",
+       "team": "",
+       "grezzo": [
+        "CBR_MBBerto"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A20": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A20.png",
+     "classifica": [
+      {
+       "pos": 10,
+       "nome": "K",
+       "team": "CBR",
+       "grezzo": [
+        "The-Knipex"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Saetta Assidua",
+       "team": "",
+       "grezzo": [
+        "Saetta Assidua"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Giannivir64",
+       "team": "",
+       "grezzo": [
+        "Giannivir64"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A26": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A26.png",
+     "classifica": [
+      {
+       "pos": 4,
+       "nome": "snoop",
+       "team": "",
+       "grezzo": [
+        "snoop",
+        "RS 5 Turbo DTM '19",
+        "1:19.905",
+        "+39.768",
+        "1:21.059",
+        "18"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Mms_dpgurney78",
+       "team": "",
+       "grezzo": [
+        "Mms_dpgurney78",
+        "GT-R NISMO GT500 '16",
+        "1:21.227",
+        "DOPPIATO",
+        "1:21.700",
+        "4"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "wwp76",
+       "team": "",
+       "grezzo": [
+        "wwp76",
+        "---"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "TER_minetor",
+       "team": "",
+       "grezzo": [
+        "TER_minetor"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "0mgTommie",
+       "team": "",
+       "grezzo": [
+        "0mgTommie"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A32": {
+     "lega": "PRO AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A32.png",
+     "classifica": [
+      {
+       "pos": 5,
+       "nome": "Luni55",
+       "team": "",
+       "grezzo": [
+        "Luni55",
+        "RS 5 Turbo DTM '19",
+        "1:19.383",
+        "+30.673",
+        "1:20.954",
+        "16"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "K",
+       "team": "CBR",
+       "grezzo": [
+        "Kevin-giusepp"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "Scrocchio98",
+       "team": "",
+       "grezzo": [
+        "Scrocchio98"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A7": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A7.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "ARC-Ultras68",
+       "team": "ARC",
+       "grezzo": [
+        "ARC-Ultras68",
+        "RS 5 Turbo DTM \"19",
+        "1:23.052",
+        "DOPPIATO",
+        "1:23.381",
+        "(4)"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "SCGT-amofede01",
+       "team": "",
+       "grezzo": [
+        "SCGT-amofede01",
+        "---",
+        "(0)"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "SMI_RomeLu",
+       "team": "",
+       "grezzo": [
+        "SMI_RomeLu",
+        "---"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A11": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A11.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "TSR_LKNº3",
+       "team": "",
+       "grezzo": [
+        "TSR_LKNº3",
+        "---"
+       ]
+      },
+      {
+       "pos": 13,
+       "nome": "BabyKiller",
+       "team": "",
+       "grezzo": [
+        "BabyKiller"
+       ]
+      },
+      {
+       "pos": 14,
+       "nome": "Razor",
+       "team": "",
+       "grezzo": [
+        "Razor"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A19": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A19.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "SMI_Kaiser",
+       "team": "",
+       "grezzo": [
+        "SMI_Kaiser"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "FMC_Fratta18",
+       "team": "",
+       "grezzo": [
+        "FMC_Fratta18",
+        "RC F GT500 '16",
+        "1:23.402",
+        "NC"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A23": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A23.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "RMT Moody33",
+       "team": "",
+       "grezzo": [
+        "RMT Moody33"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A27": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A27.png",
+     "classifica": [
+      {
+       "pos": 11,
+       "nome": "ARC-VecchioBimbo",
+       "team": "ARC",
+       "grezzo": [
+        "ARC-VecchioBimbo",
+        "0)"
+       ]
+      },
+      {
+       "pos": 12,
+       "nome": "Kiank87",
+       "team": "",
+       "grezzo": [
+        "Kiank87",
+        "RS 5 Turbo DTM '19",
+        "NO TIME",
+        "NC"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    },
+    "A33": {
+     "lega": "AMA",
+     "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A33.png",
+     "classifica": [
+      {
+       "pos": 6,
+       "nome": "GTRC_Ganciocielo",
+       "team": "",
+       "grezzo": [
+        "GTRC_Ganciocielo",
+        "RC F GT500 '16",
+        "1:23.002",
+        "+44.090",
+        "1:22.112",
+        "(14"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "CSC_L_uboldese",
+       "team": "",
+       "grezzo": [
+        "CSC_L_uboldese",
+        "RC F GT500 '16",
+        "1:20.455",
+        "BOX",
+        "1:20.591"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "Gheige",
+       "team": "",
+       "grezzo": [
+        "Gheige"
+       ]
+      }
+     ],
+     "provvedimenti": [],
+     "pole": null,
+     "giro_veloce": null
+    }
+   }
+  }
+ }
 }
