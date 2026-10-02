@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-02T13:51:06+00:00",
+    "updated_at": "2026-10-02T14:47:32+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,10 +20,23 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.526",
         "leader": "MetalGear9493",
-        "partecipanti": 41198,
+        "partecipanti": 42333,
         "fonte_leader": "ufficiale",
         "conclusa": false,
-        "classifica": []
+        "classifica": [
+          {
+            "psn": "Abramo1991",
+            "gt7name": "Maverick",
+            "numero": "14",
+            "squadra": "GTV",
+            "tempo": "1:42.558",
+            "tempo_ms": 102558,
+            "pos_assoluta": 4470,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 3.046
+          }
+        ]
       },
       {
         "nome": "Michelin Raceway Road Atlanta",
@@ -36,7 +49,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 134560,
+        "partecipanti": 134962,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 1845,
+            "pos_assoluta": 1849,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.288
@@ -59,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 5240,
+            "pos_assoluta": 5253,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.733
@@ -71,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 9197,
+            "pos_assoluta": 9227,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.097
@@ -113,7 +126,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 100090,
+        "partecipanti": 100458,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -597,7 +610,7 @@
           "data": "28 Set 2026",
           "tempo": "1:59.722",
           "tempo_ms": 119722,
-          "pos_assoluta": 9734,
+          "pos_assoluta": 9814,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -611,7 +624,7 @@
           "data": "28 Set 2026",
           "tempo": "2:00.243",
           "tempo_ms": 120243,
-          "pos_assoluta": 12831,
+          "pos_assoluta": 12886,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.435,
           "distacco_assoluto_pct": null
@@ -625,7 +638,7 @@
           "data": "28 Set 2026",
           "tempo": "2:01.413",
           "tempo_ms": 121413,
-          "pos_assoluta": 20492,
+          "pos_assoluta": 20529,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.412,
           "distacco_assoluto_pct": null
@@ -2852,13 +2865,20 @@
       "categoria": "",
       "dr": "B",
       "sr": "S",
-      "miglior_rank": 4810,
-      "rank_medio": 32912,
-      "eventi_pubblicati": 121,
-      "ultimo_evento_data": "2026-10-01",
-      "ultimo_evento": "Dragon Trail - Seaside Reverse",
+      "miglior_rank": 4470,
+      "rank_medio": 32679,
+      "eventi_pubblicati": 122,
+      "ultimo_evento_data": "2026-10-15",
+      "ultimo_evento": "Brands Hatch Grand Prix Circuit",
       "ultima_gara": "Brands Hatch Grand Prix Circuit",
       "eventi": [
+        {
+          "data": "2026-10-15",
+          "tipo": "time_trial",
+          "rank": 4470,
+          "tempo": "1:42.558",
+          "evento": "Brands Hatch Grand Prix Circuit"
+        },
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
@@ -3726,7 +3746,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 1845,
+          "rank": 1849,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6361,7 +6381,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20870,
+      "rank_medio": 20871,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6370,14 +6390,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 5240,
+          "rank": 5253,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 20492,
+          "rank": 20529,
           "tempo": "2:01.413",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -12702,7 +12722,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19927,
+      "rank_medio": 19929,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12711,14 +12731,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 9197,
+          "rank": 9227,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 9734,
+          "rank": 9814,
           "tempo": "1:59.722",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -13655,7 +13675,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 12831,
+          "rank": 12886,
           "tempo": "2:00.243",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -16581,7 +16601,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 280
+        "conteggio": 281
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16592,6 +16612,6 @@
         "conteggio": 1036
       }
     ],
-    "eventi_totali": 2204
+    "eventi_totali": 2205
   }
 }
