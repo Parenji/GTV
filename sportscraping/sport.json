@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-02T11:05:26+00:00",
+    "updated_at": "2026-10-02T13:51:06+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.526",
         "leader": "MetalGear9493",
-        "partecipanti": 38436,
+        "partecipanti": 41198,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -36,7 +36,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.137",
         "leader": "Vitality_Kaj",
-        "partecipanti": 133668,
+        "partecipanti": 134560,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +47,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 1833,
+            "pos_assoluta": 1845,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.288
@@ -59,7 +59,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 5200,
+            "pos_assoluta": 5240,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.733
@@ -71,7 +71,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 9120,
+            "pos_assoluta": 9197,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.097
@@ -113,7 +113,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 99291,
+        "partecipanti": 100090,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -597,7 +597,7 @@
           "data": "28 Set 2026",
           "tempo": "1:59.722",
           "tempo_ms": 119722,
-          "pos_assoluta": 9567,
+          "pos_assoluta": 9734,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -611,7 +611,7 @@
           "data": "28 Set 2026",
           "tempo": "2:00.243",
           "tempo_ms": 120243,
-          "pos_assoluta": 12717,
+          "pos_assoluta": 12831,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.435,
           "distacco_assoluto_pct": null
@@ -625,7 +625,7 @@
           "data": "28 Set 2026",
           "tempo": "2:01.413",
           "tempo_ms": 121413,
-          "pos_assoluta": 20405,
+          "pos_assoluta": 20492,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.412,
           "distacco_assoluto_pct": null
@@ -3726,7 +3726,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 1833,
+          "rank": 1845,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6361,7 +6361,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20869,
+      "rank_medio": 20870,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6370,14 +6370,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 5200,
+          "rank": 5240,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 20405,
+          "rank": 20492,
           "tempo": "2:01.413",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -11051,7 +11051,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12702,7 +12702,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19925,
+      "rank_medio": 19927,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12711,14 +12711,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 9120,
+          "rank": 9197,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 9567,
+          "rank": 9734,
           "tempo": "1:59.722",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -13639,7 +13639,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49063,
+      "rank_medio": 49064,
       "eventi_pubblicati": 139,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13655,7 +13655,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 12717,
+          "rank": 12831,
           "tempo": "2:00.243",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
