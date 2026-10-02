@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-02T02:40:01+00:00"
+    "generated_at": "2026-10-02T16:51:49+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -125,13 +125,6 @@
           "matricola": "16",
           "team": "DCT",
           "nome": "Sam-750 ( RITIRATO )",
-          "auto": ""
-        },
-        {
-          "pos": 13,
-          "matricola": "23",
-          "team": "GTRC",
-          "nome": "GTRC_Emilios98",
           "auto": ""
         }
       ]
@@ -657,6 +650,13 @@
           "team": "GTID",
           "nome": "Ice_Fire",
           "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "397",
+          "team": "MMS",
+          "nome": "Mms_dpgurney78",
+          "auto": ""
         }
       ]
     },
@@ -694,7 +694,7 @@
           "pos": 4,
           "matricola": "476",
           "team": "MMS",
-          "nome": "Travis199ita",
+          "nome": "Travis199ita (RITIRATO)",
           "auto": ""
         },
         {
@@ -767,7 +767,7 @@
       "time": "Ore 21:00",
       "name": "A10",
       "category": "STAR",
-      "host": "Pardus—89",
+      "host": "BAD_brucem84",
       "live": "BCSC- Pardus—89",
       "url": "https://youtube.com/@badcerbero23",
       "pilots": [
@@ -1080,7 +1080,7 @@
       "time": "Ore 22:20",
       "name": "A13",
       "category": "PRO SILVER",
-      "host": "Pardus—89",
+      "host": "BAD_brucem84",
       "live": "BCSC- Pardus—89",
       "url": "https://youtube.com/@badcerbero23",
       "pilots": [
@@ -2588,9 +2588,9 @@
         },
         {
           "pos": 2,
-          "matricola": "397",
-          "team": "MMS",
-          "nome": "Mms_dpgurney78",
+          "matricola": "439",
+          "team": "TLM",
+          "nome": "Rikas78",
           "auto": ""
         },
         {
@@ -2668,13 +2668,6 @@
           "matricola": "401",
           "team": "PBC",
           "nome": "OmgTommie",
-          "auto": ""
-        },
-        {
-          "pos": 14,
-          "matricola": "439",
-          "team": "TLM",
-          "nome": "Rikas78",
           "auto": ""
         }
       ]
@@ -2770,6 +2763,13 @@
           "matricola": "495",
           "team": "RMT",
           "nome": "RMT-Ghigno 4",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "464",
+          "team": "FFM",
+          "nome": "FFM_FilippoFm89",
           "auto": ""
         }
       ]
@@ -3281,9 +3281,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "464",
-          "team": "FFM",
-          "nome": "FFM_FilippoFm89",
+          "matricola": "502",
+          "team": "RRT",
+          "nome": "Fla60",
           "auto": ""
         },
         {
@@ -3347,13 +3347,6 @@
           "matricola": "453",
           "team": "ARC",
           "nome": "TRT-Arbr82",
-          "auto": ""
-        },
-        {
-          "pos": 11,
-          "matricola": "502",
-          "team": "RRT",
-          "nome": "Fla60",
           "auto": ""
         }
       ]
