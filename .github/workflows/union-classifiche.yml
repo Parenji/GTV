@@ -5,9 +5,9 @@ name: Union Classifiche
 # Classifiche di union.html).
 #
 # Gira su macOS perche' le classifiche di gara del portale sono immagini e
-# l'OCR usa il framework Vision di macOS. Qualifica, auto e distacchi (dagli
-# screenshot, solo sul Mac di casa) restano quelli gia' presenti nel file:
-# lo script non li cancella mai.
+# l'OCR usa il framework Vision di macOS. Le immagini gia' lette (stesso ETag)
+# si riusano dal file, e i punti gara per gara si conservano da un'esecuzione
+# all'altra.
 on:
   schedule:
     # ogni 6 ore: il portale si aggiorna dopo le serate di gara

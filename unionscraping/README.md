@@ -24,15 +24,18 @@ Sono file generati: non si modificano a mano.
 
 ### Da dove arrivano risultati e classifiche
 
-La fonte e' il portale della Lega. Le classifiche generali sono tabelle
-dentro la pagina e si leggono direttamente; i risultati di ogni lobby sono
-immagini (`/Gare/G<n>/<LEGA>/<LOBBY>.png`) lette con l'OCR di macOS, piu' i
-provvedimenti della direzione gara (`<LOBBY>-dg.json`). Gli screenshot di
-`auto/` servono solo ad aggiungere qualifica, auto, distacco e giro veloce.
+La fonte e' solo il portale della Lega. Le classifiche generali sono tabelle
+dentro la pagina e si leggono direttamente (anche i pari merito, che hanno la
+Pos vuota; le celle gara sono piazzamenti con stelle di pole e giro veloce, non
+punti: i punti gara per gara si ricavano dalle differenze tra un'esecuzione e
+l'altra). I risultati di ogni lobby sono immagini 4K
+(`/Gare/G<n>/<LEGA>/<LOBBY>.png`) con la classifica definitiva completa
+(pilota, auto, qualifica, tempo, giro, punti), lette con l'OCR di macOS riga
+per riga e colonna per colonna. Un'immagine invariata (stesso ETag) non si
+rilegge. `--rileggi` forza la rilettura.
 
-La lettura delle immagini del portale e' un'impalcatura: il formato non si
-conosce finche' la Lega non pubblica la prima gara, e `leggi_immagine_gara()`
-andra' tarata su quel PNG.
+I provvedimenti della direzione gara non si leggono dal portale (non li mostra):
+stanno nella sezione Report DG, dal foglio dei reclami.
 
 ## Credenziali locali
 

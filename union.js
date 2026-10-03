@@ -615,7 +615,7 @@ function openUnionLobby(id) {
 // =============================================================
 // RISULTATI E CLASSIFICHE (unionscraping/classifiche.json)
 // Dati dal Portale Classifiche Union (classifiche/classifiche.py);
-// qualifica, auto e distacchi arrivano dagli screenshot ufficiali.
+// la classifica di ogni lobby e' letta (OCR) dalle immagini del portale.
 // =============================================================
 var UNION_PISTE = ["Red Bull Ring", "Watkins Glen", "Suzuka Circuit", "Autopolis", "Nürburgring GP"];
 var UNION_NUM_GARE = 5;
@@ -640,6 +640,17 @@ function unionNorm(s) {
 
 function unionIsGtv(p) {
   return String((p && p.team) || "").trim().toUpperCase() === "GTV";
+}
+
+// Stati al posto del piazzamento (A assente, NC, BOX, DSQ): etichetta e sigla
+var UNION_STATI = { AG: "assente", AI: "assente", NC: "non classificato", BOX: "ai box", DSQ: "squalificato" };
+
+function unionStato(stato) {
+  return UNION_STATI[stato] || "";
+}
+
+function unionStatoSigla(stato) {
+  return stato === "AG" || stato === "AI" ? "A" : stato;
 }
 
 var _unionClsPromise = null;
@@ -700,7 +711,8 @@ function unionTrovaRisultato(garaData, lega, nome) {
     var lb = garaData.lobby[nomeLobby];
     if (trovato || lb.lega !== lega) return;
     (lb.classifica || []).forEach(function (riga) {
-      if (!trovato && unionNorm(riga.nome) === chiave) {
+      // chi e' assente / NC / ai box / squalificato non ha un risultato
+      if (!trovato && unionNorm(riga.nome) === chiave && !riga.stato) {
         trovato = { lobby: nomeLobby, lb: lb, riga: riga };
       }
     });
@@ -770,7 +782,9 @@ function renderUnionRisultati() {
             '<div class="ui-card is-off">' +
             '<span class="ui-result-top"><span class="ui-result-name">' + escapeHtml(x.p.nome) + "</span></span>" +
             '<span class="ui-result-bottom"><span class="ui-result-pos">—</span>' +
-            '<span class="ui-result-lobby">non classificato</span></span>' +
+            '<span class="ui-result-lobby">' +
+            (unionStato(((x.p.esiti || [])[unionCls.gara - 1] || {}).stato) || "non classificato") +
+            "</span></span>" +
             "</div>"
           );
         }
@@ -893,8 +907,9 @@ function unionLobbyPanelHtml(lb) {
     righe
       .map(function (r) {
         return (
-          '<tr class="' + (unionIsGtv(r) ? "is-gtv" : "") + '">' +
-          '<td class="ui-pos">' + r.pos + "</td>" +
+          '<tr class="' + (unionIsGtv(r) ? "is-gtv" : "") + (r.stato ? " is-off" : "") + '">' +
+          '<td class="ui-pos"' + (r.stato ? ' title="' + escapeHtml(unionStato(r.stato)) + '"' : "") + ">" +
+          (r.stato ? unionStatoSigla(r.stato) : r.pos) + "</td>" +
           '<td class="ui-muted">' + (r.q ? r.q : "—") + "</td>" +
           '<td><span class="ui-strong">' + unionPilotaLink(r.nome) + "</span> " + unionDots(lb, r.nome) + "</td>" +
           '<td class="ui-muted">' + escapeHtml(r.team || "") + "</td>" +
@@ -906,17 +921,7 @@ function unionLobbyPanelHtml(lb) {
       .join("") +
     "</tbody></table></div>";
 
-  var provv = (lb.provvedimenti || []).length
-    ? '<p class="ui-text"><strong>Provvedimenti della direzione gara:</strong> ' +
-      lb.provvedimenti
-        .map(function (p) {
-          return escapeHtml(p.nome) + " (" + escapeHtml(p.sanzione) + ")";
-        })
-        .join(", ") +
-      "</p>"
-    : "";
-
-  return tabella + unionQtoGChart(righe) + provv;
+  return tabella + unionQtoGChart(righe);
 }
 
 // Barre divergenti: posizioni guadagnate (giallo) o perse (blu) dalla
@@ -1029,18 +1034,33 @@ function renderUnionClassifiche() {
 function unionMovimento(p) {
   var s = p.storico_pos || [];
   if (s.length < 2) return "";
+  if (s[s.length - 2] === null || s[s.length - 1] === null) return "";
   var d = s[s.length - 2] - s[s.length - 1];
   if (d > 0) return ' <span class="ui-delta ui-delta--up" title="Guadagnate ' + d + ' posizioni">▲' + d + "</span>";
   if (d < 0) return ' <span class="ui-delta ui-delta--down" title="Perse ' + -d + ' posizioni">▼' + -d + "</span>";
   return ' <span class="ui-delta ui-delta--same" title="Stessa posizione">=</span>';
 }
 
+// Cella gara di una riga della classifica: piazzamento, segnalini e punti
+function unionEsitoHtml(p, i, corsa) {
+  var e = p.esiti && p.esiti[i];
+  var punti = p.gare && p.gare[i];
+  if (!corsa || !e) return "—";
+  if (e.stato) return '<span title="' + escapeHtml(unionStato(e.stato)) + '">' + unionStatoSigla(e.stato) + "</span>";
+  return (
+    e.pos + "°" +
+    (e.pole ? ' <span class="ui-dot ui-dot--pole" title="Pole position">P</span>' : "") +
+    (e.fl ? ' <span class="ui-dot ui-dot--fl" title="Giro veloce"></span>' : "") +
+    (punti === null || punti === undefined ? "" : ' <small class="ui-pts">' + punti + " pt</small>")
+  );
+}
+
 function unionClsRowHtml(p) {
   var gtv = unionIsGtv(p);
   var gare = "";
+  var pubblicate = (unionCls.data.meta && unionCls.data.meta.gare_pubblicate) || [];
   for (var i = 0; i < UNION_NUM_GARE; i++) {
-    var v = p.gare && p.gare[i];
-    gare += "<span><small>G" + (i + 1) + "</small>" + (v === null || v === undefined ? "—" : v) + "</span>";
+    gare += "<span><small>G" + (i + 1) + "</small>" + unionEsitoHtml(p, i, pubblicate.indexOf(i + 1) !== -1) + "</span>";
   }
   return (
     '<li class="ui-row' + (gtv ? " is-gtv" : "") + '" tabindex="0" aria-expanded="false">' +
@@ -1066,7 +1086,7 @@ function unionClassificaLegaHtml(lega) {
   var aperti = unionCls.aperti[lega] || {};
 
   // Finestra: podio + ogni GTV con due piloti sopra e due sotto
-  var visibile = piloti.map(function (p, i) { return tutti || i < 3; });
+  var visibile = piloti.map(function (p) { return tutti || (p.pos || 999) <= 3; });
   piloti.forEach(function (p, i) {
     if (!unionIsGtv(p)) return;
     for (var k = Math.max(0, i - 2); k <= Math.min(piloti.length - 1, i + 2); k++) visibile[k] = true;

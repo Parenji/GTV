@@ -739,6 +739,15 @@ p.ui-text {
   color: var(--ui-text-3);
 }
 
+.ui-row-more .ui-pts {
+  display: inline;
+  font-size: var(--ui-fs-xs);
+}
+
+.ui-table tr.is-off td {
+  color: var(--ui-text-3);
+}
+
 /* Tratto compresso "··· 12 piloti ···" */
 .ui-row-gap {
   display: block;
@@ -1207,7 +1216,7 @@ a.ui-card:focus-visible {
 /* Barre divergenti (qualifica → gara) */
 .ui-diverge-row {
   display: grid;
-  grid-template-columns: minmax(100px, 30%) 1fr 1fr;
+  grid-template-columns: minmax(130px, 40%) 1fr 1fr;
   align-items: center;
   min-height: 34px;
   font-size: var(--ui-fs-sm);
