@@ -614,8 +614,9 @@ function openUnionLobby(id) {
 }
 
 // -------------------------------------------------------------
-// LIVE: dove seguire i piloti GTV (canale della loro lobby). Dati: lobby di
-// data.json (live, url) e foglio piloti (PSN per aprire la scheda pilota).
+// LIVE: dove seguire i piloti GTV (canale della loro lobby) e le lobby
+// in cui un GTV e' host. Dati: lobby di data.json (host, live, url) e
+// foglio piloti (per riconoscere gli host GTV dal PSN).
 // -------------------------------------------------------------
 function unionPiattaforma(url) {
   var u = String(url || "").toLowerCase();
@@ -653,13 +654,12 @@ function unionLiveBtn(lb) {
   var url = /^https?:\/\//i.test(lb.url) ? lb.url : "https://" + lb.url;
   return (
     '<a class="ui-btn ui-btn--sm ui-btn--block" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
-    "&#9654; " + unionPiattaforma(url) + "</a>" +
-    (lb.live ? '<small class="ui-muted" style="display:block;margin-top:2px">' + escapeHtml(lb.live) + "</small>" : "")
+    "&#9654; " + unionPiattaforma(url) + "</a>"
   );
 }
 
 function renderUnionLive(container, data, csvRows) {
-  // PSN dei piloti GTV dal foglio (colonna 3 = team), per la scheda pilota
+  // PSN e nome GT7 dei piloti GTV dal foglio (colonna 3 = team)
   var gtvCsv = {};
   csvRows.forEach(function (r) {
     if (String(r[3] || "").trim().toUpperCase() !== "GTV") return;
@@ -669,7 +669,8 @@ function renderUnionLive(container, data, csvRows) {
     });
   });
 
-  var corrono = []; // un link per ogni pilota GTV
+  var corrono = []; // GTV che corrono: un link per ogni pilota
+  var host = []; // lobby con un GTV in regia
   data.lobbies.forEach(function (lb) {
     var gtv = (lb.pilots || []).filter(function (p) {
       return String(p.team || "").trim().toUpperCase() === "GTV";
@@ -677,19 +678,25 @@ function renderUnionLive(container, data, csvRows) {
     gtv.forEach(function (p) {
       corrono.push({ lb: lb, nome: p.nome, alt: (gtvCsv[unionNorm(p.nome)] || {}).psn });
     });
+    var h = gtvCsv[unionNorm(lb.host)];
+    if (h) host.push({ lb: lb, nome: h.gt7 || h.psn, alt: h.gt7 ? h.psn : "", corre: gtv.length });
   });
 
-  if (!corrono.length) {
+  if (!corrono.length && !host.length) {
     container.innerHTML = unionState("Nessun pilota GTV nelle lobby.", "empty");
     return;
   }
 
-  // Un'unica lista per giorno, come nelle lobby
-  var voci = corrono.slice().sort(function (a, b) {
+  // Un'unica lista per giorno (come nelle lobby): chi corre e chi fa l'host
+  var voci = corrono
+    .map(function (x) { return { lb: x.lb, nome: x.nome, alt: x.alt, host: false }; })
+    .concat(host.map(function (x) { return { lb: x.lb, nome: x.nome, alt: x.alt, host: true }; }));
+  voci.sort(function (a, b) {
     return (
       unionDayIndex(a.lb.day) - unionDayIndex(b.lb.day) ||
       unionOra(a.lb.time).localeCompare(unionOra(b.lb.time)) ||
       String(a.lb.name).localeCompare(String(b.lb.name), undefined, { numeric: true }) ||
+      Number(b.host) - Number(a.host) ||
       String(a.nome).localeCompare(String(b.nome))
     );
   });
@@ -699,7 +706,8 @@ function renderUnionLive(container, data, csvRows) {
     var lb = x.lb;
     return (
       "<tr>" +
-      '<td><span class="ui-strong">' + unionPilotaLink(x.nome, x.alt) + "</span></td>" +
+      '<td><span class="ui-strong">' + unionPilotaLink(x.nome, x.alt) + "</span>" +
+      (x.host ? ' <span class="ui-badge ui-badge--accent">Host</span>' : "") + "</td>" +
       "<td>" + escapeHtml(lb.name) + " " + unionCatBadge(lb.category) +
       '<small class="ui-muted" style="display:block">' + escapeHtml(unionOra(lb.time)) + "</small></td>" +
       '<td class="ui-live-cell">' + unionLiveBtn(lb) + "</td>" +
@@ -707,7 +715,10 @@ function renderUnionLive(container, data, csvRows) {
     );
   };
 
-  var html = '<p class="ui-text ui-muted" style="margin-top:0">Il link porta al canale che trasmette la lobby del pilota.</p>';
+  var html = host.length
+    ? '<p class="ui-text ui-muted" style="margin-top:0">Il link porta al canale che trasmette la lobby. ' +
+      '<span class="ui-badge ui-badge--accent">Host</span> indica un pilota GTV in regia.</p>'
+    : '<p class="ui-text ui-muted" style="margin-top:0">Il link porta al canale che trasmette la lobby del pilota.</p>';
 
   UNION_LOBBY_DAYS.forEach(function (d) {
     var righe = voci.filter(function (x) {
@@ -723,7 +734,7 @@ function renderUnionLive(container, data, csvRows) {
   });
 
   var meta = document.getElementById("union-live-meta");
-  if (meta) meta.textContent = corrono.length + " piloti GTV";
+  if (meta) meta.textContent = corrono.length + " piloti GTV" + (host.length ? ", " + host.length + " host" : "");
   container.innerHTML = html;
 }
 
