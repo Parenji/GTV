@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initUnionPage() {
   markUnionCalendario();
+  markUnionLiveHome();
   loadUnionPiloti();
   loadUnionLobby();
   loadUnionLive();
@@ -85,6 +86,30 @@ function markUnionCalendario() {
     }
     segnata = true;
   });
+}
+
+// E' giorno di gara se oggi cade in una settimana di gara del calendario
+// (data-dal / data-al) ed e' un giorno in cui si corre (lunedi-venerdi).
+function unionGiornoDiGara(oggi) {
+  var giorno = oggi.getDay();
+  if (giorno === 0 || giorno === 6) return false;
+  var inizio = new Date(oggi.getFullYear(), oggi.getMonth(), oggi.getDate());
+  var fine = new Date(oggi.getFullYear(), oggi.getMonth(), oggi.getDate(), 23, 59, 59);
+  return Array.prototype.some.call(document.querySelectorAll("#union-calendario .ui-race"), function (card) {
+    var dal = new Date(card.getAttribute("data-dal") + "T00:00:00");
+    var al = new Date(card.getAttribute("data-al") + "T23:59:59");
+    return !isNaN(dal) && !isNaN(al) && dal <= fine && al >= inizio;
+  });
+}
+
+// Il pulsante Live in home c'e' solo nei giorni di gara; negli altri giorni
+// il pulsante in evidenza torna a essere Lobby.
+function markUnionLiveHome() {
+  var live = document.getElementById("union-home-live");
+  var lobby = document.getElementById("union-home-lobby");
+  if (!live || !unionGiornoDiGara(new Date())) return;
+  live.style.display = "";
+  if (lobby) lobby.classList.remove("ui-btn--primary");
 }
 
 // -------------------------------------------------------------

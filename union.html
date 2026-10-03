@@ -105,8 +105,9 @@
                     <h1 class="ui-display">Lega Union</h1>
                     <p class="ui-lead">La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.</p>
                     <div class="ui-btn-row ui-btn-row--center ui-btn-row--grid2" style="margin: var(--ui-s5) 0 var(--ui-s6)">
-                        <a href="#live" class="ui-btn ui-btn--primary" style="grid-column: 1 / -1">Live: dove seguire i GTV</a>
-                        <a href="#lobby" class="ui-btn">Lobby</a>
+                        <!-- Live: compare solo nei giorni di gara (union.js, markUnionLiveHome) -->
+                        <a href="#live" id="union-home-live" class="ui-btn ui-btn--primary" style="grid-column: 1 / -1; display: none">Live: dove seguire i GTV</a>
+                        <a href="#lobby" id="union-home-lobby" class="ui-btn ui-btn--primary">Lobby</a>
                         <a href="#risultati" class="ui-btn">Risultati</a>
                         <a href="#classifiche" class="ui-btn">Classifiche</a>
                         <a href="#calendario" class="ui-btn">Calendario</a>
