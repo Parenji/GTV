@@ -626,6 +626,20 @@ p.ui-text {
   text-align: right;
 }
 
+/* Tabella Live: nomi di pilota e canale vanno a capo invece di essere tagliati */
+.ui-table--live td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.ui-table--live .ui-lobby-col {
+  width: 120px;
+}
+
+.ui-table--live .ui-live-col {
+  width: 108px;
+}
+
 .ui-table .ui-muted,
 .ui-muted {
   color: var(--ui-text-3);

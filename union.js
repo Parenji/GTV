@@ -12,6 +12,7 @@ function initUnionPage() {
   markUnionCalendario();
   loadUnionPiloti();
   loadUnionLobby();
+  loadUnionLive();
   loadUnionStats();
   loadUnionClassifiche();
   loadUnionReportDG();
@@ -610,6 +611,132 @@ function openUnionLobby(id) {
   if (!el) return false;
   el.open = true;
   return true;
+}
+
+// -------------------------------------------------------------
+// LIVE: dove seguire i piloti GTV (canale della loro lobby) e le lobby
+// in cui un GTV e' host. Dati: lobby di data.json (host, live, url) e
+// foglio piloti (per riconoscere gli host GTV dal PSN).
+// -------------------------------------------------------------
+function unionPiattaforma(url) {
+  var u = String(url || "").toLowerCase();
+  if (u.indexOf("twitch.tv") !== -1) return "Twitch";
+  if (u.indexOf("youtube.com") !== -1 || u.indexOf("youtu.be") !== -1) return "YouTube";
+  return "Live";
+}
+
+// Giorno di oggi nella forma dei dati ("LUNEDI"...), "" nel fine settimana
+function unionOggi() {
+  return UNION_LOBBY_DAYS[(new Date().getDay() + 6) % 7] || "";
+}
+
+function loadUnionLive() {
+  var body = document.getElementById("union-live-body");
+  if (!body) return;
+  Promise.all([
+    fetchUnionLobbyData(),
+    fetchUnionCsvRows().catch(function () {
+      return [];
+    }),
+  ])
+    .then(function (r) {
+      if (!r[0] || !r[0].lobbies) throw new Error("Dati non validi");
+      renderUnionLive(body, r[0], r[1] || []);
+    })
+    .catch(function (err) {
+      console.error("Errore caricamento live:", err);
+      body.innerHTML = unionState("Impossibile caricare i link live.", "error");
+    });
+}
+
+function unionLiveBtn(lb) {
+  if (!lb.url) return '<span class="ui-muted">—</span>';
+  var url = /^https?:\/\//i.test(lb.url) ? lb.url : "https://" + lb.url;
+  return (
+    '<a class="ui-btn ui-btn--sm ui-btn--block" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
+    "&#9654; " + unionPiattaforma(url) + "</a>" +
+    (lb.live ? '<small class="ui-muted" style="display:block;margin-top:2px">' + escapeHtml(lb.live) + "</small>" : "")
+  );
+}
+
+function renderUnionLive(container, data, csvRows) {
+  // PSN e nome GT7 dei piloti GTV dal foglio (colonna 3 = team)
+  var gtvCsv = {};
+  csvRows.forEach(function (r) {
+    if (String(r[3] || "").trim().toUpperCase() !== "GTV") return;
+    var info = { psn: String(r[0] || "").trim(), gt7: String(r[1] || "").trim() };
+    [info.psn, info.gt7].forEach(function (n) {
+      if (unionNorm(n)) gtvCsv[unionNorm(n)] = info;
+    });
+  });
+
+  var corrono = []; // GTV che corrono: un link per ogni pilota
+  var host = []; // lobby con un GTV in regia
+  data.lobbies.forEach(function (lb) {
+    var gtv = (lb.pilots || []).filter(function (p) {
+      return String(p.team || "").trim().toUpperCase() === "GTV";
+    });
+    gtv.forEach(function (p) {
+      corrono.push({ lb: lb, nome: p.nome, alt: (gtvCsv[unionNorm(p.nome)] || {}).psn });
+    });
+    var h = gtvCsv[unionNorm(lb.host)];
+    if (h) host.push({ lb: lb, nome: h.gt7 || h.psn, alt: h.gt7 ? h.psn : "", corre: gtv.length });
+  });
+
+  if (!corrono.length && !host.length) {
+    container.innerHTML = unionState("Nessun pilota GTV nelle lobby.", "empty");
+    return;
+  }
+
+  // Un'unica lista per giorno (come nelle lobby): chi corre e chi fa l'host
+  var voci = corrono
+    .map(function (x) { return { lb: x.lb, nome: x.nome, alt: x.alt, host: false }; })
+    .concat(host.map(function (x) { return { lb: x.lb, nome: x.nome, alt: x.alt, host: true }; }));
+  voci.sort(function (a, b) {
+    return (
+      unionDayIndex(a.lb.day) - unionDayIndex(b.lb.day) ||
+      unionOra(a.lb.time).localeCompare(unionOra(b.lb.time)) ||
+      String(a.lb.name).localeCompare(String(b.lb.name), undefined, { numeric: true }) ||
+      Number(b.host) - Number(a.host) ||
+      String(a.nome).localeCompare(String(b.nome))
+    );
+  });
+
+  var oggi = unionOggi();
+  var riga = function (x) {
+    var lb = x.lb;
+    return (
+      "<tr>" +
+      '<td><span class="ui-strong">' + unionPilotaLink(x.nome, x.alt) + "</span>" +
+      (x.host ? ' <span class="ui-badge ui-badge--accent">Host</span>' : "") + "</td>" +
+      "<td>" + escapeHtml(lb.name) + " " + unionCatBadge(lb.category) +
+      '<small class="ui-muted" style="display:block">' + escapeHtml(unionOra(lb.time)) + "</small></td>" +
+      '<td class="ui-live-cell">' + unionLiveBtn(lb) + "</td>" +
+      "</tr>"
+    );
+  };
+
+  var html = host.length
+    ? '<p class="ui-text ui-muted" style="margin-top:0">Il link porta al canale che trasmette la lobby. ' +
+      '<span class="ui-badge ui-badge--accent">Host</span> indica un pilota GTV in regia.</p>'
+    : '<p class="ui-text ui-muted" style="margin-top:0">Il link porta al canale che trasmette la lobby del pilota.</p>';
+
+  UNION_LOBBY_DAYS.forEach(function (d) {
+    var righe = voci.filter(function (x) {
+      return String(x.lb.day || "").toUpperCase() === d;
+    });
+    if (!righe.length) return;
+    html +=
+      '<div class="ui-subhead">' + escapeHtml(UNION_DAY_LABEL[d] || d) +
+      (d === oggi ? ' <span class="ui-badge ui-badge--accent">Oggi</span>' : "") + "</div>" +
+      '<div class="ui-table-wrap"><table class="ui-table ui-table--fixed ui-table--live">' +
+      '<thead><tr><th>Pilota</th><th class="ui-lobby-col">Lobby</th><th class="ui-live-col">Live</th></tr></thead>' +
+      "<tbody>" + righe.map(riga).join("") + "</tbody></table></div>";
+  });
+
+  var meta = document.getElementById("union-live-meta");
+  if (meta) meta.textContent = corrono.length + " piloti GTV" + (host.length ? ", " + host.length + " host" : "");
+  container.innerHTML = html;
 }
 
 // =============================================================
