@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-10-02T22:29:44+00:00",
+  "generated_at": "2026-10-03T11:57:38+00:00",
   "source": "https://albixximo-union2026-r2.vercel.app/Classifiche/portal.html",
   "gare_pubblicate": [
    1
@@ -2175,19 +2175,6 @@
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A18.png",
      "classifica": [
       {
-       "pos": 6,
-       "nome": "SMI_GREEN21",
-       "team": "",
-       "grezzo": [
-        "SMI_GREEN21",
-        "RS 5 Turbo DTM '19",
-        "1:19.220",
-        "+32.553",
-        "1:20.639",
-        "(14"
-       ]
-      },
-      {
        "pos": 10,
        "nome": "Ayrton16",
        "team": "",
@@ -2232,6 +2219,9 @@
        "team": "",
        "grezzo": [
         "DeadPaul",
+        "RS 5 Turbo DTM '19",
+        "1:18.449",
+        "NC",
         "0"
        ]
       }
@@ -3289,12 +3279,37 @@
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A11.png",
      "classifica": [
       {
-       "pos": 11,
-       "nome": "TSR_LKNº3",
+       "pos": 4,
+       "nome": "Pierpynolo76",
+       "team": "RRT",
+       "grezzo": [
+        "Pierpynolo76",
+        "RS 5 Turbo DTM \"19",
+        "1:21.477",
+        "+21.011",
+        "1:21.063",
+        "18"
+       ]
+      },
+      {
+       "pos": 10,
+       "nome": "Imperatore128",
        "team": "",
        "grezzo": [
-        "TSR_LKNº3",
-        "---"
+        "Imperatore128",
+        "RC F GT500'16",
+        "1:24.025",
+        "DOPPIATO",
+        "1:24.537",
+        "6"
+       ]
+      },
+      {
+       "pos": 11,
+       "nome": "TSR LKN93",
+       "team": "",
+       "grezzo": [
+        "TSR LKN93"
        ]
       },
       {
