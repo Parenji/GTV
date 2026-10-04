@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-04T14:08:56+00:00",
+    "updated_at": "2026-10-04T19:56:41+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.425",
         "leader": "MetalGear9493",
-        "partecipanti": 77177,
+        "partecipanti": 81455,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 7857,
+            "pos_assoluta": 8268,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.151
@@ -59,9 +59,9 @@
         "fine": "08 Ott 2026",
         "scadenza": "08 Ott 2026",
         "chiusura": "2026-10-08T06:59:59Z",
-        "miglior_tempo": "1:08.137",
-        "leader": "Vitality_Kaj",
-        "partecipanti": 152186,
+        "miglior_tempo": "1:08.135",
+        "leader": "NRG_Simon74",
+        "partecipanti": 154886,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,10 +72,10 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2093,
+            "pos_assoluta": 2121,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.288
+            "distacco_assoluto_pct": 2.291
           },
           {
             "psn": "Kappaonegt",
@@ -84,10 +84,10 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 5934,
+            "pos_assoluta": 6045,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
-            "distacco_assoluto_pct": 2.733
+            "distacco_assoluto_pct": 2.736
           },
           {
             "psn": "Utile_ruspante",
@@ -99,7 +99,7 @@
             "pos_assoluta": 10280,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
-            "distacco_assoluto_pct": 3.097
+            "distacco_assoluto_pct": 3.1
           },
           {
             "psn": "Giusdandri",
@@ -111,7 +111,7 @@
             "pos_assoluta": 22237,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.901,
-            "distacco_assoluto_pct": 4.233
+            "distacco_assoluto_pct": 4.236
           },
           {
             "psn": "GTV_legendafluo",
@@ -123,7 +123,7 @@
             "pos_assoluta": 26100,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.102,
-            "distacco_assoluto_pct": 4.438
+            "distacco_assoluto_pct": 4.441
           },
           {
             "psn": "GTS-codebreaker",
@@ -135,7 +135,7 @@
             "pos_assoluta": 49662,
             "pos_gtv": 6,
             "distacco_gtv_pct": 3.253,
-            "distacco_assoluto_pct": 5.615
+            "distacco_assoluto_pct": 5.618
           }
         ]
       },
@@ -150,7 +150,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 115602,
+        "partecipanti": 118032,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -687,7 +687,7 @@
           "data": "28 Set 2026",
           "tempo": "1:35.656",
           "tempo_ms": 95656,
-          "pos_assoluta": 9158,
+          "pos_assoluta": 9411,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -701,7 +701,7 @@
           "data": "28 Set 2026",
           "tempo": "1:38.736",
           "tempo_ms": 98736,
-          "pos_assoluta": 29841,
+          "pos_assoluta": 29980,
           "pos_gtv": 2,
           "distacco_gtv_pct": 3.22,
           "distacco_assoluto_pct": null
@@ -2933,7 +2933,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32684,
+      "rank_medio": 32688,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -2942,7 +2942,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 7857,
+          "rank": 8268,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -2956,7 +2956,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 29841,
+          "rank": 29980,
           "tempo": "1:38.736",
           "evento": "Red Bull Ring"
         },
@@ -3811,7 +3811,7 @@
       "dr": "A+",
       "sr": "S",
       "miglior_rank": 37,
-      "rank_medio": 7442,
+      "rank_medio": 7443,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -3820,7 +3820,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2093,
+          "rank": 2121,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6455,7 +6455,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20939,
+      "rank_medio": 20940,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6464,7 +6464,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 5934,
+          "rank": 6045,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -12796,7 +12796,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19849,
+      "rank_medio": 19852,
       "eventi_pubblicati": 96,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12819,7 +12819,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 9158,
+          "rank": 9411,
           "tempo": "1:35.656",
           "evento": "Red Bull Ring"
         },
