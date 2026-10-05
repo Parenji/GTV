@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-04T19:56:41+00:00",
+    "updated_at": "2026-10-05T12:19:25+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "15 Ott 2026",
         "scadenza": "15 Ott 2026",
         "chiusura": "2026-10-15T06:59:59Z",
-        "miglior_tempo": "1:39.425",
-        "leader": "MetalGear9493",
-        "partecipanti": 81455,
+        "miglior_tempo": "1:39.394",
+        "leader": "SZ_yuhki02",
+        "partecipanti": 86218,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,10 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 8268,
+            "pos_assoluta": 8743,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 3.151
+            "distacco_assoluto_pct": 3.183
           },
           {
             "psn": "GTV_legendafluo",
@@ -43,10 +43,10 @@
             "squadra": "GTV",
             "tempo": "1:43.323",
             "tempo_ms": 103323,
-            "pos_assoluta": 10778,
+            "pos_assoluta": 12628,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.746,
-            "distacco_assoluto_pct": 3.921
+            "distacco_assoluto_pct": 3.953
           }
         ]
       },
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.135",
         "leader": "NRG_Simon74",
-        "partecipanti": 154886,
+        "partecipanti": 158000,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2121,
+            "pos_assoluta": 2163,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.291
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6045,
+            "pos_assoluta": 6181,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.736
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:10.247",
             "tempo_ms": 70247,
-            "pos_assoluta": 10280,
+            "pos_assoluta": 10907,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.791,
             "distacco_assoluto_pct": 3.1
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:11.021",
             "tempo_ms": 71021,
-            "pos_assoluta": 22237,
+            "pos_assoluta": 23449,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.901,
             "distacco_assoluto_pct": 4.236
@@ -120,7 +120,7 @@
             "squadra": "GTV",
             "tempo": "1:11.161",
             "tempo_ms": 71161,
-            "pos_assoluta": 26100,
+            "pos_assoluta": 27539,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.102,
             "distacco_assoluto_pct": 4.441
@@ -132,7 +132,7 @@
             "squadra": "GTV",
             "tempo": "1:11.963",
             "tempo_ms": 71963,
-            "pos_assoluta": 49662,
+            "pos_assoluta": 52380,
             "pos_gtv": 6,
             "distacco_gtv_pct": 3.253,
             "distacco_assoluto_pct": 5.618
@@ -150,7 +150,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 118032,
+        "partecipanti": 120888,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -161,7 +161,7 @@
             "squadra": "GTV",
             "tempo": "1:38.851",
             "tempo_ms": 98851,
-            "pos_assoluta": 17511,
+            "pos_assoluta": 18948,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 5.314
@@ -607,12 +607,42 @@
   },
   "gare_settimanali": [
     {
+      "nome": "Race A · Nürburgring GP",
+      "pista": "Nürburgring GP",
+      "logo": "images/tracks/nurburgring.png",
+      "impostazioni": "4 giri · Road · Sport H · Carburante x1 · Gomme x1 · auto più usata: Nissan Skyline GT-R V･spec II Nür (R34) '02",
+      "inizio": "05 Ott 2026",
+      "fine": "11 Ott 2026",
+      "settimana": "05 Ott 2026",
+      "classifica": []
+    },
+    {
+      "nome": "Race B · Kyoto Driving Park - Yamagiwa",
+      "pista": "Kyoto Driving Park - Yamagiwa",
+      "logo": "images/tracks/kyoto.png",
+      "impostazioni": "5 giri · Gr.4 · Racing H · Carburante x1 · Gomme x1 · auto più usata: Hyundai ELANTRA N TC '24",
+      "inizio": "05 Ott 2026",
+      "fine": "11 Ott 2026",
+      "settimana": "05 Ott 2026",
+      "classifica": []
+    },
+    {
+      "nome": "Race C · Daytona Road Course",
+      "pista": "Daytona Road Course",
+      "logo": "images/tracks/daytona.png",
+      "impostazioni": "11 giri · Gr.3 · Racing H S · Carburante x2 · Gomme x5 · auto più usata: Jaguar F-type Gr.3",
+      "inizio": "05 Ott 2026",
+      "fine": "11 Ott 2026",
+      "settimana": "05 Ott 2026",
+      "classifica": []
+    }
+  ],
+  "gare_precedenti": [
+    {
       "nome": "Race A · Tokyo Expressway - East Clockwise",
       "pista": "Tokyo Expressway - East Clockwise",
       "logo": "images/tracks/tokyo.png",
-      "impostazioni": "4 giri · Road · Racing H · Carburante x0 · Gomme x0 · auto più usata: Nissan GT-R NISMO (R32) '90",
-      "inizio": "28 Set 2026",
-      "fine": "04 Ott 2026",
+      "impostazioni": "Road",
       "settimana": "28 Set 2026",
       "classifica": []
     },
@@ -620,9 +650,7 @@
       "nome": "Race B · Autodrome Lago Maggiore - Full Course Reverse",
       "pista": "Autodrome Lago Maggiore - Full Course Reverse",
       "logo": "images/tracks/lagom.png",
-      "impostazioni": "4 giri · Gr.3 · Racing M · Carburante x1 · Gomme x1 · auto più usata: BMW M6 GT3 Sprint Model '16",
-      "inizio": "28 Set 2026",
-      "fine": "04 Ott 2026",
+      "impostazioni": "Gr.3",
       "settimana": "28 Set 2026",
       "classifica": [
         {
@@ -634,7 +662,7 @@
           "data": "28 Set 2026",
           "tempo": "1:59.722",
           "tempo_ms": 119722,
-          "pos_assoluta": 11940,
+          "pos_assoluta": 13272,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -648,7 +676,7 @@
           "data": "28 Set 2026",
           "tempo": "2:00.243",
           "tempo_ms": 120243,
-          "pos_assoluta": 15964,
+          "pos_assoluta": 17686,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.435,
           "distacco_assoluto_pct": null
@@ -662,7 +690,7 @@
           "data": "28 Set 2026",
           "tempo": "2:01.413",
           "tempo_ms": 121413,
-          "pos_assoluta": 25690,
+          "pos_assoluta": 28348,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.412,
           "distacco_assoluto_pct": null
@@ -673,9 +701,7 @@
       "nome": "Race C · Red Bull Ring",
       "pista": "Red Bull Ring",
       "logo": "images/tracks/rbr.png",
-      "impostazioni": "12 giri · Gr.4 · Racing M S · Carburante x2 · Gomme x5 · auto più usata: Hyundai ELANTRA N TC '24",
-      "inizio": "28 Set 2026",
-      "fine": "04 Ott 2026",
+      "impostazioni": null,
       "settimana": "28 Set 2026",
       "classifica": [
         {
@@ -687,7 +713,7 @@
           "data": "28 Set 2026",
           "tempo": "1:35.656",
           "tempo_ms": 95656,
-          "pos_assoluta": 9411,
+          "pos_assoluta": 9610,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -701,93 +727,9 @@
           "data": "28 Set 2026",
           "tempo": "1:38.736",
           "tempo_ms": 98736,
-          "pos_assoluta": 29980,
+          "pos_assoluta": 32381,
           "pos_gtv": 2,
           "distacco_gtv_pct": 3.22,
-          "distacco_assoluto_pct": null
-        }
-      ]
-    }
-  ],
-  "gare_precedenti": [
-    {
-      "nome": "Race A · WeatherTech Raceway Laguna Seca",
-      "pista": "WeatherTech Raceway Laguna Seca",
-      "logo": "images/tracks/lagunaseca.png",
-      "impostazioni": "Road",
-      "settimana": "21 Set 2026",
-      "classifica": []
-    },
-    {
-      "nome": "Race B · Fuji International Speedway",
-      "pista": "Fuji International Speedway",
-      "logo": "images/tracks/fuji.png",
-      "impostazioni": "Gr.4",
-      "settimana": "21 Set 2026",
-      "classifica": [
-        {
-          "psn": "Mirco94-",
-          "gt7name": "Mirco",
-          "numero": "94",
-          "squadra": "JGTV",
-          "auto": "GT by Citroën Gr.4",
-          "data": "21 Set 2026",
-          "tempo": "1:48.906",
-          "tempo_ms": 108906,
-          "pos_assoluta": 3868,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
-          "distacco_assoluto_pct": null
-        }
-      ]
-    },
-    {
-      "nome": "Race C · Sardegna - Road Track - A",
-      "pista": "Sardegna - Road Track - A",
-      "logo": "images/tracks/sardegna.png",
-      "impostazioni": "Gr.3",
-      "settimana": "21 Set 2026",
-      "classifica": [
-        {
-          "psn": "Giusdandri",
-          "gt7name": "Giusdandri",
-          "numero": "87",
-          "squadra": "GTV",
-          "auto": "Toyota Supra GT500 '97",
-          "data": "21 Set 2026",
-          "tempo": "1:43.151",
-          "tempo_ms": 103151,
-          "pos_assoluta": 18458,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Utile_ruspante",
-          "gt7name": "Barda88",
-          "numero": "88",
-          "squadra": "GTV",
-          "auto": "Hyundai Genesis Gr.3",
-          "data": "21 Set 2026",
-          "tempo": "1:43.461",
-          "tempo_ms": 103461,
-          "pos_assoluta": 22567,
-          "pos_gtv": 2,
-          "distacco_gtv_pct": 0.301,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Fra_salvo96",
-          "gt7name": "Frasalvo96",
-          "numero": "9",
-          "squadra": "JGTV",
-          "auto": "Porsche 911 GT3 R (992) '22",
-          "data": "21 Set 2026",
-          "tempo": "1:45.247",
-          "tempo_ms": 105247,
-          "pos_assoluta": 40531,
-          "pos_gtv": 3,
-          "distacco_gtv_pct": 2.032,
           "distacco_assoluto_pct": null
         }
       ]
@@ -803,7 +745,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28160,
+      "rank_medio": 28192,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -812,14 +754,14 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 10778,
+          "rank": 12628,
           "tempo": "1:43.323",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 26100,
+          "rank": 27539,
           "tempo": "1:11.161",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -2933,7 +2875,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32688,
+      "rank_medio": 32712,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -2942,7 +2884,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 8268,
+          "rank": 8743,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -2956,7 +2898,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 29980,
+          "rank": 32381,
           "tempo": "1:38.736",
           "evento": "Red Bull Ring"
         },
@@ -3820,7 +3762,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2121,
+          "rank": 2163,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6455,7 +6397,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20940,
+      "rank_medio": 20973,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6464,14 +6406,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6045,
+          "rank": 6181,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 25690,
+          "rank": 28348,
           "tempo": "2:01.413",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
@@ -10285,7 +10227,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2299,
-      "rank_medio": 49779,
+      "rank_medio": 49802,
       "eventi_pubblicati": 120,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -10294,7 +10236,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 49662,
+          "rank": 52380,
           "tempo": "1:11.963",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -11145,7 +11087,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12016,7 +11958,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 19918,
+      "rank_medio": 19942,
       "eventi_pubblicati": 109,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12025,14 +11967,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 22237,
+          "rank": 23449,
           "tempo": "1:11.021",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 17511,
+          "rank": 18948,
           "tempo": "1:38.851",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
@@ -12796,7 +12738,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19852,
+      "rank_medio": 19875,
       "eventi_pubblicati": 96,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12805,21 +12747,21 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 10280,
+          "rank": 10907,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 11940,
+          "rank": 13272,
           "tempo": "1:59.722",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 9411,
+          "rank": 9610,
           "tempo": "1:35.656",
           "evento": "Red Bull Ring"
         },
@@ -12952,16 +12894,16 @@
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 34636,
-          "tempo": "1:55.525",
-          "evento": "Trial Mountain Circuit"
+          "rank": 20784,
+          "tempo": "1:35.873",
+          "evento": "Circuit de Barcelona-Catalunya GP Layout"
         },
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 20784,
-          "tempo": "1:35.873",
-          "evento": "Circuit de Barcelona-Catalunya GP Layout"
+          "rank": 34636,
+          "tempo": "1:55.525",
+          "evento": "Trial Mountain Circuit"
         },
         {
           "data": "2026-07-19",
@@ -13740,7 +13682,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 49086,
+      "rank_medio": 49098,
       "eventi_pubblicati": 139,
       "ultimo_evento_data": "2026-10-01",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
@@ -13756,7 +13698,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 15964,
+          "rank": 17686,
           "tempo": "2:00.243",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
