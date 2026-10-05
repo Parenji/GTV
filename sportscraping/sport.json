@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-05T15:59:20+00:00",
+    "updated_at": "2026-10-05T17:12:18+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 87992,
+        "partecipanti": 88717,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 8901,
+            "pos_assoluta": 8963,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.183
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.135",
         "leader": "NRG_Simon74",
-        "partecipanti": 159118,
+        "partecipanti": 159632,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2182,
+            "pos_assoluta": 2186,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.291
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6229,
+            "pos_assoluta": 6254,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.736
@@ -150,7 +150,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 121957,
+        "partecipanti": 122413,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -634,7 +634,22 @@
       "inizio": "05 Ott 2026",
       "fine": "11 Ott 2026",
       "settimana": "05 Ott 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Utile_ruspante",
+          "gt7name": "Barda88",
+          "numero": "88",
+          "squadra": "GTV",
+          "auto": "Jaguar F-type Gr.3",
+          "data": "05 Ott 2026",
+          "tempo": "1:47.323",
+          "tempo_ms": 107323,
+          "pos_assoluta": 4884,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     }
   ],
   "gare_precedenti": [
@@ -2884,7 +2899,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 8901,
+          "rank": 8963,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -3762,7 +3777,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2182,
+          "rank": 2186,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6397,7 +6412,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20973,
+      "rank_medio": 20974,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6406,7 +6421,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6229,
+          "rank": 6254,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -12738,11 +12753,11 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19875,
-      "eventi_pubblicati": 96,
+      "rank_medio": 19720,
+      "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
-      "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
+      "ultima_gara": "Daytona Road Course",
       "eventi": [
         {
           "data": "2026-10-08",
@@ -12750,6 +12765,13 @@
           "rank": 10907,
           "tempo": "1:10.247",
           "evento": "Michelin Raceway Road Atlanta"
+        },
+        {
+          "data": "2026-10-05",
+          "tipo": "gara",
+          "rank": 4884,
+          "tempo": "1:47.323",
+          "evento": "Daytona Road Course"
         },
         {
           "data": "2026-09-28",
@@ -12803,16 +12825,16 @@
         {
           "data": "2026-08-31",
           "tipo": "gara",
-          "rank": 8037,
-          "tempo": "1:46.662",
-          "evento": "Watkins Glen Long Course"
+          "rank": 1348,
+          "tempo": "3:31.238",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2026-08-31",
           "tipo": "gara",
-          "rank": 1348,
-          "tempo": "3:31.238",
-          "evento": "24 Heures du Mans race track"
+          "rank": 8037,
+          "tempo": "1:46.662",
+          "evento": "Watkins Glen Long Course"
         },
         {
           "data": "2026-08-27",
@@ -16624,7 +16646,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 280
+        "conteggio": 281
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16635,6 +16657,6 @@
         "conteggio": 1039
       }
     ],
-    "eventi_totali": 2209
+    "eventi_totali": 2210
   }
 }
