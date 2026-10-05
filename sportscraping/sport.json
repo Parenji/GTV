@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-05T12:19:25+00:00",
+    "updated_at": "2026-10-05T15:59:20+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 86218,
+        "partecipanti": 87992,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 8743,
+            "pos_assoluta": 8901,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.183
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.135",
         "leader": "NRG_Simon74",
-        "partecipanti": 158000,
+        "partecipanti": 159118,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2163,
+            "pos_assoluta": 2182,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.291
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6181,
+            "pos_assoluta": 6229,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.736
@@ -150,7 +150,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 120888,
+        "partecipanti": 121957,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -2875,7 +2875,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32712,
+      "rank_medio": 32713,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -2884,7 +2884,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 8743,
+          "rank": 8901,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -3762,7 +3762,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2163,
+          "rank": 2182,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6406,7 +6406,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6181,
+          "rank": 6229,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -11087,7 +11087,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
