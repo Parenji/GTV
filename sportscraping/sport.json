@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-06T14:10:51+00:00",
+    "updated_at": "2026-10-06T15:16:36+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 95012,
+        "partecipanti": 95480,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 9517,
+            "pos_assoluta": 9557,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.183
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.112",
         "leader": "SFE_Giuse",
-        "partecipanti": 164492,
+        "partecipanti": 164803,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2234,
+            "pos_assoluta": 2235,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.326
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6475,
+            "pos_assoluta": 6485,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.77
@@ -150,7 +150,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 126958,
+        "partecipanti": 127292,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -644,7 +644,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:47.323",
           "tempo_ms": 107323,
-          "pos_assoluta": 10268,
+          "pos_assoluta": 10474,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -2899,7 +2899,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 9517,
+          "rank": 9557,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -3777,7 +3777,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2234,
+          "rank": 2235,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -6421,7 +6421,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6475,
+          "rank": 6485,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -12753,7 +12753,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19781,
+      "rank_medio": 19783,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12769,7 +12769,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 10268,
+          "rank": 10474,
           "tempo": "1:47.323",
           "evento": "Daytona Road Course"
         },
