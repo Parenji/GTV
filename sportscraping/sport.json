@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-07T11:46:47+00:00",
+    "updated_at": "2026-10-07T14:29:38+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 101198,
+        "partecipanti": 102118,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:08.112",
         "leader": "SFE_Giuse",
-        "partecipanti": 169575,
+        "partecipanti": 170253,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2291,
+            "pos_assoluta": 2300,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.326
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6743,
+            "pos_assoluta": 6784,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.435,
             "distacco_assoluto_pct": 2.77
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:10.010",
             "tempo_ms": 70010,
-            "pos_assoluta": 7001,
+            "pos_assoluta": 7042,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.451,
             "distacco_assoluto_pct": 2.787
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:10.091",
             "tempo_ms": 70091,
-            "pos_assoluta": 9064,
+            "pos_assoluta": 9134,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.567,
             "distacco_assoluto_pct": 2.906
@@ -174,7 +174,7 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 131975,
+        "partecipanti": 132651,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -185,7 +185,7 @@
             "squadra": "GTV",
             "tempo": "1:36.437",
             "tempo_ms": 96437,
-            "pos_assoluta": 2207,
+            "pos_assoluta": 2225,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.742
@@ -197,7 +197,7 @@
             "squadra": "GTV",
             "tempo": "1:36.878",
             "tempo_ms": 96878,
-            "pos_assoluta": 4519,
+            "pos_assoluta": 4563,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.457,
             "distacco_assoluto_pct": 3.212
@@ -692,7 +692,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:46.236",
           "tempo_ms": 106236,
-          "pos_assoluta": 5562,
+          "pos_assoluta": 5698,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -3825,7 +3825,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2291,
+          "rank": 2300,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -4694,7 +4694,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 100,
-      "rank_medio": 12738,
+      "rank_medio": 12739,
       "eventi_pubblicati": 62,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -4703,14 +4703,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 7001,
+          "rank": 7042,
           "tempo": "1:10.010",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2207,
+          "rank": 2225,
           "tempo": "1:36.437",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
@@ -6474,7 +6474,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20979,
+      "rank_medio": 20980,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6483,7 +6483,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6743,
+          "rank": 6784,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -11164,7 +11164,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12815,7 +12815,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19737,
+      "rank_medio": 19739,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12831,7 +12831,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 5562,
+          "rank": 5698,
           "tempo": "1:46.236",
           "evento": "Daytona Road Course"
         },
@@ -14756,7 +14756,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 119,
-      "rank_medio": 5628,
+      "rank_medio": 5629,
       "eventi_pubblicati": 88,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Circuit de Sainte-Croix - B Reverse",
@@ -14765,14 +14765,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 4519,
+          "rank": 4563,
           "tempo": "1:36.878",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 9064,
+          "rank": 9134,
           "tempo": "1:10.091",
           "evento": "Michelin Raceway Road Atlanta"
         },
