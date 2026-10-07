@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-07T15:36:51+00:00",
+    "updated_at": "2026-10-07T21:49:34+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 102554,
+        "partecipanti": 105195,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -59,12 +59,24 @@
         "fine": "08 Ott 2026",
         "scadenza": "08 Ott 2026",
         "chiusura": "2026-10-08T06:59:59Z",
-        "miglior_tempo": "1:08.112",
-        "leader": "SFE_Giuse",
-        "partecipanti": 170568,
+        "miglior_tempo": "1:08.094",
+        "leader": "NRG_Simon74",
+        "partecipanti": 172888,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
+          {
+            "psn": "titirolamadonn",
+            "gt7name": "Bowie knife99",
+            "numero": "666",
+            "squadra": "GTV",
+            "tempo": "1:09.677",
+            "tempo_ms": 69677,
+            "pos_assoluta": 2192,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 2.325
+          },
           {
             "psn": "Parenji",
             "gt7name": "L. Parenti",
@@ -72,10 +84,10 @@
             "squadra": "GTV",
             "tempo": "1:09.696",
             "tempo_ms": 69696,
-            "pos_assoluta": 2303,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.326
+            "pos_assoluta": 2332,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 0.027,
+            "distacco_assoluto_pct": 2.353
           },
           {
             "psn": "Kappaonegt",
@@ -84,10 +96,10 @@
             "squadra": "GTV",
             "tempo": "1:09.999",
             "tempo_ms": 69999,
-            "pos_assoluta": 6805,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 0.435,
-            "distacco_assoluto_pct": 2.77
+            "pos_assoluta": 6983,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 0.462,
+            "distacco_assoluto_pct": 2.798
           },
           {
             "psn": "Hawk_MaveNich",
@@ -96,22 +108,10 @@
             "squadra": "GTV",
             "tempo": "1:10.010",
             "tempo_ms": 70010,
-            "pos_assoluta": 7065,
-            "pos_gtv": 3,
-            "distacco_gtv_pct": 0.451,
-            "distacco_assoluto_pct": 2.787
-          },
-          {
-            "psn": "titirolamadonn",
-            "gt7name": "Bowie knife99",
-            "numero": "666",
-            "squadra": "GTV",
-            "tempo": "1:10.091",
-            "tempo_ms": 70091,
-            "pos_assoluta": 9161,
+            "pos_assoluta": 7250,
             "pos_gtv": 4,
-            "distacco_gtv_pct": 0.567,
-            "distacco_assoluto_pct": 2.906
+            "distacco_gtv_pct": 0.478,
+            "distacco_assoluto_pct": 2.814
           },
           {
             "psn": "Utile_ruspante",
@@ -122,8 +122,8 @@
             "tempo_ms": 70247,
             "pos_assoluta": 11914,
             "pos_gtv": 5,
-            "distacco_gtv_pct": 0.791,
-            "distacco_assoluto_pct": 3.135
+            "distacco_gtv_pct": 0.818,
+            "distacco_assoluto_pct": 3.162
           },
           {
             "psn": "Giusdandri",
@@ -134,8 +134,8 @@
             "tempo_ms": 71021,
             "pos_assoluta": 25395,
             "pos_gtv": 6,
-            "distacco_gtv_pct": 1.901,
-            "distacco_assoluto_pct": 4.271
+            "distacco_gtv_pct": 1.929,
+            "distacco_assoluto_pct": 4.298
           },
           {
             "psn": "GTV_legendafluo",
@@ -146,8 +146,8 @@
             "tempo_ms": 71161,
             "pos_assoluta": 29870,
             "pos_gtv": 7,
-            "distacco_gtv_pct": 2.102,
-            "distacco_assoluto_pct": 4.476
+            "distacco_gtv_pct": 2.13,
+            "distacco_assoluto_pct": 4.504
           },
           {
             "psn": "GTS-codebreaker",
@@ -158,8 +158,8 @@
             "tempo_ms": 71963,
             "pos_assoluta": 56885,
             "pos_gtv": 8,
-            "distacco_gtv_pct": 3.253,
-            "distacco_assoluto_pct": 5.654
+            "distacco_gtv_pct": 3.281,
+            "distacco_assoluto_pct": 5.682
           }
         ]
       },
@@ -174,10 +174,22 @@
         "chiusura": "2026-10-08T06:59:59Z",
         "miglior_tempo": "1:33.863",
         "leader": "VitaIity_Kylian",
-        "partecipanti": 132978,
+        "partecipanti": 135201,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
+          {
+            "psn": "titirolamadonn",
+            "gt7name": "Bowie knife99",
+            "numero": "666",
+            "squadra": "GTV",
+            "tempo": "1:36.279",
+            "tempo_ms": 96279,
+            "pos_assoluta": 1459,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 2.574
+          },
           {
             "psn": "Hawk_MaveNich",
             "gt7name": "Nicco.rs",
@@ -185,22 +197,22 @@
             "squadra": "GTV",
             "tempo": "1:36.437",
             "tempo_ms": 96437,
-            "pos_assoluta": 2234,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
+            "pos_assoluta": 2294,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 0.164,
             "distacco_assoluto_pct": 2.742
           },
           {
-            "psn": "titirolamadonn",
-            "gt7name": "Bowie knife99",
-            "numero": "666",
+            "psn": "Vale34_",
+            "gt7name": "Vale34",
+            "numero": "34",
             "squadra": "GTV",
-            "tempo": "1:36.878",
-            "tempo_ms": 96878,
-            "pos_assoluta": 4589,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 0.457,
-            "distacco_assoluto_pct": 3.212
+            "tempo": "1:36.925",
+            "tempo_ms": 96925,
+            "pos_assoluta": 4831,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 0.671,
+            "distacco_assoluto_pct": 3.262
           },
           {
             "psn": "Giusdandri",
@@ -210,8 +222,8 @@
             "tempo": "1:38.851",
             "tempo_ms": 98851,
             "pos_assoluta": 21472,
-            "pos_gtv": 3,
-            "distacco_gtv_pct": 2.503,
+            "pos_gtv": 4,
+            "distacco_gtv_pct": 2.671,
             "distacco_assoluto_pct": 5.314
           }
         ]
@@ -692,7 +704,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:46.236",
           "tempo_ms": 106236,
-          "pos_assoluta": 5801,
+          "pos_assoluta": 6333,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -3825,7 +3837,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2303,
+          "rank": 2332,
           "tempo": "1:09.696",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -4694,7 +4706,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 100,
-      "rank_medio": 12740,
+      "rank_medio": 12743,
       "eventi_pubblicati": 62,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -4703,14 +4715,14 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 7065,
+          "rank": 7250,
           "tempo": "1:10.010",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 2234,
+          "rank": 2294,
           "tempo": "1:36.437",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
@@ -6474,7 +6486,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20980,
+      "rank_medio": 20982,
       "eventi_pubblicati": 86,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -6483,7 +6495,7 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 6805,
+          "rank": 6983,
           "tempo": "1:09.999",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -7866,12 +7878,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 20010,
-      "eventi_pubblicati": 90,
-      "ultimo_evento_data": "2026-10-01",
-      "ultimo_evento": "Dragon Trail - Seaside Reverse",
+      "rank_medio": 19843,
+      "eventi_pubblicati": 91,
+      "ultimo_evento_data": "2026-10-08",
+      "ultimo_evento": "Circuit de Sainte-Croix - B Reverse",
       "ultima_gara": "Mount Panorama Motor Racing Circuit",
       "eventi": [
+        {
+          "data": "2026-10-08",
+          "tipo": "time_trial",
+          "rank": 4831,
+          "tempo": "1:36.925",
+          "evento": "Circuit de Sainte-Croix - B Reverse"
+        },
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
@@ -12815,7 +12834,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19740,
+      "rank_medio": 19745,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12831,7 +12850,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 5801,
+          "rank": 6333,
           "tempo": "1:46.236",
           "evento": "Daytona Road Course"
         },
@@ -14756,7 +14775,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 119,
-      "rank_medio": 5630,
+      "rank_medio": 5515,
       "eventi_pubblicati": 88,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Circuit de Sainte-Croix - B Reverse",
@@ -14765,15 +14784,15 @@
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 4589,
-          "tempo": "1:36.878",
+          "rank": 1459,
+          "tempo": "1:36.279",
           "evento": "Circuit de Sainte-Croix - B Reverse"
         },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
-          "rank": 9161,
-          "tempo": "1:10.091",
+          "rank": 2192,
+          "tempo": "1:09.677",
           "evento": "Michelin Raceway Road Atlanta"
         },
         {
@@ -16722,17 +16741,17 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 282
+        "conteggio": 284
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 696
+        "conteggio": 695
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1040
       }
     ],
-    "eventi_totali": 2214
+    "eventi_totali": 2215
   }
 }
