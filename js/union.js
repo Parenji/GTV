@@ -349,7 +349,6 @@ function unionNomeOrdinamento(riga) {
   return (gt7 || psn).toLowerCase();
 }
 
-// Logo marca con ripiego PNG -> SVG (come worldchampionship)
 // Nomi del marchio che non coincidono con il file in images/marchi-auto/
 var UNION_LOGHI_ALIAS = { alfaromeo: "alfa", mercedes: "mercedesamg", volkswagen: "vw" };
 
