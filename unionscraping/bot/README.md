@@ -1,6 +1,6 @@
 # Promemoria gare UNION → WhatsApp / Telegram
 
-Tre pezzi che condividono gli stessi dati (`data.json` + `union.html`):
+Tre pezzi che condividono gli stessi dati (`dati/union/lobby.json` + `dati/union/calendario.json`):
 
 | | cosa fa |
 |---|---|
@@ -16,8 +16,8 @@ della richiesta di amicizia all'Host **entro le 12:00**.
 ## Come funziona
 
 ```
-union.html  ──►  calendario Round 2 (pista + settimane di gara)
-data.json   ──►  lobby + piloti (generato da ../scraper/scraper.py dai fogli Union)
+dati/union/calendario.json ──►  calendario (pista + settimane di gara, scritto a mano)
+dati/union/lobby.json      ──►  lobby + piloti (generato da ../scraper/scraper.py)
                           │
               ┌───────────┴────────────┐
               ▼                        ▼
@@ -27,7 +27,8 @@ data.json   ──►  lobby + piloti (generato da ../scraper/scraper.py dai fog
 ```
 
 - I giorni di gara sono **lunedì–venerdì** delle settimane indicate in
-  `union.html` (sabato e domenica non si corre).
+  `dati/union/calendario.json` (sabato e domenica non si corre). Un
+  calendario vuoto o illeggibile e' un errore: il workflow diventa rosso.
 - Vengono elencate solo le lobby con almeno un pilota con `team == "GTV"`.
 - Nei giorni non di gara non viene generato né inviato nulla.
 
@@ -127,8 +128,8 @@ curl https://granturismotv.vercel.app/api/telegram
 (`webhook_secret()` in `gtv_bot.py`). Le chiamate senza header valido
 ricevono `401`, quindi nessun estraneo può far parlare il bot.
 
-Se per qualche motivo `unionscraping/bot/` non finisse nel bundle della funzione,
-`api/telegram.py` scarica `union.html` e `data.json` dal repo pubblico
+Se per qualche motivo i dati non finissero nel bundle della funzione,
+`api/telegram.py` scarica `calendario.json` e `lobby.json` dal repo pubblico
 (`includeFiles` in `vercel.json` è la strada normale, il download è la rete di
 sicurezza).
 
@@ -212,8 +213,10 @@ Il workflow `.github/workflows/union-race-message.yml` invia il messaggio a
   sicurezza** se il primo giro non è mai partito;
 - `unionscraping/bot/.sent_state.json` registra i giorni già inviati: **lo stesso
   giorno non parte mai due volte**;
-- aggiorna prima `data.json` con `scraper/scraper.py` (se lo scraping fallisce usa
-  quello già nel repo);
+- aggiorna prima `dati/union/lobby.json` con `scraper/scraper.py` (se lo scraping
+  fallisce usa quello già nel repo);
+- anche l'invio manuale (`--date ... --force`) viene registrato, e se il push del
+  registro fallisce il run diventa rosso;
 - nei giorni non di gara esce subito, senza aspettare e senza inviare;
 - si può lanciare a mano da **Actions → Union Race Message → Run workflow**
   (con una data esplicita per un invio immediato);

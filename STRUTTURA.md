@@ -1,82 +1,76 @@
 # Struttura della cartella
 
-Promemoria di cosa serve al sito e cosa no. **Vercel pubblica tutto quello che
-sta nella root**: ogni file qui dentro è raggiungibile su
-`granturismotv.vercel.app`. Il confine tra "sito" e "lavoro interno" è quindi
-anche un confine di pubblicazione, ed è gestito da `.vercelignore`.
+Promemoria di cosa serve al sito e cosa no. Vercel pubblica tutto quello che
+sta nel repo e non è escluso da `.vercelignore`: il confine tra "sito" e
+"lavoro interno" è anche un confine di pubblicazione.
 
-## 1. Serve al sito
-
-Le pagine e i loro asset. Se tocchi qualcosa qui, tocchi il sito.
+## 1. Il sito
 
 | Percorso | A cosa serve |
 |---|---|
-| `index.html` | Home, con le sezioni Sport e Sport Stats |
-| `union.html` | Campionato Union (piloti, lobby, calendario) |
-| `gtec.html` | GTEC |
-| `worldchampionship.html` | World Championship |
-| `styles.css`, `scripts.js` | Stile e logica condivisi |
-| `union.js`, `gtec.js` | Logica delle singole pagine |
-| `config.js` | URL dei fogli Google e degli altri dati |
+| `index.html` | Home: piloti, Sport, Sport Stats, admin, campionati, palmares |
+| `union.html` | Campionato Union: lobby, live, risultati, classifiche, Report DG, calendario |
+| `styles.css`, `ui.css` | Stile: `styles.css` è la base ereditata (header, menu), `ui.css` i componenti `ui-*` (vetrina: `stile.html`, non pubblicata) |
+| `js/comune.js` | Codice comune: menu, navigazione a sezioni, `escapeHtml`, `urlSicuro`, `parseCsv`, fetch |
+| `js/home.js`, `js/sport.js` | Logica della home (piloti, admin, scheda pilota, palmares) e delle sezioni Sport |
+| `js/union.js` | Logica di `union.html` |
+| `config.js` | URL dei fogli Google, percorsi dei dati, fogli del Report DG |
+| `dati/` | Dati letti dal sito (vedi sotto) |
 | `favicon/`, `font/`, `images/`, `pdf/` | Asset statici |
-| `api/telegram.py` | Funzione serverless del bot Telegram (Vercel) |
-| `requirements.txt`, `vercel.json` | Configurazione del deploy |
+| `api/telegram.py` | Funzione Vercel: webhook del bot Telegram |
+| `api/gt7.py` | Funzione Vercel: proxy verso l'API ufficiale GT7 (che risponde 403 ai server di GitHub), usato da `gt7_sport.py` |
+| `vercel.json`, `requirements.txt` | Configurazione del deploy (header no-cache su `dati/`, redirect delle pagine archiviate) |
 
-### Dati che il sito carica a runtime
+Ogni pagina carica `config.js`, `js/comune.js` e poi solo i suoi script.
 
-Sono file **generati**: si aggiornano da soli, non si modificano a mano.
+### Dati (`dati/`)
 
 | File | Chi lo scrive | Chi lo legge |
 |---|---|---|
-| `unionscraping/data.json` | `unionscraping/scraper/scraper.py` (workflow *Union Scraper*) | `union.js` |
-| `unionscraping/auto.json` | `unionscraping/auto/auto_from_screenshots.py` | `union.js` |
-| `unionscraping/classifiche.json` | `unionscraping/classifiche/classifiche.py` (workflow *Union Classifiche*) | `union.js` |
-| `sportscraping/sport.json` | `sportscraping/gt7_sport.py` (workflow *GT7 Sport Data*) | `scripts.js` |
+| `dati/union/calendario.json` | **a mano** | `js/union.js`, bot, `classifiche.py` |
+| `dati/union/lobby.json` | `unionscraping/scraper/scraper.py` (workflow *Union Scraper*) | `js/union.js`, bot |
+| `dati/union/classifiche.json` | `unionscraping/classifiche/classifiche.py` (workflow *Union Classifiche*) | `js/union.js` |
+| `dati/sport.json` | `sportscraping/gt7_sport.py` (workflow *GT7 Sport Data*) | `js/sport.js` |
+| `dati/palmares.json` | **a mano** (campionati conclusi) | `js/home.js` |
 
-## 2. Strumenti per task correlate (non sono il sito)
+I file generati si riscrivono solo se il contenuto cambia, in modo atomico, e
+solo dopo controlli di sanità: se una fonte risponde male il file vecchio
+resta e il workflow diventa rosso.
 
-Stanno nel repo perché ci girano i workflow o perché servono a rigenerare i
-dati qui sopra. Non vengono pubblicati.
+## 2. Strumenti (non pubblicati)
 
-### `unionscraping/` — campionato Union
-
-Un progetto per cartella; `data.json` e `auto.json` restano in
-`unionscraping/` perché il sito li legge da lì. Dettagli in
-`unionscraping/README.md`.
-
-| Cartella | Cosa fa |
+| Cartella | Cosa contiene |
 |---|---|
-| `scraper/` | `scraper.py`: scarica lobby e piloti dal sito HUB Union → `data.json` |
-| `classifiche/` | `classifiche.py`: classifiche generali e risultati di gara dal portale classifiche Union → `classifiche.json` |
-| `auto/` | `auto_from_screenshots.py` + helper OCR `ocr.swift`: auto dalle classifiche ufficiali → `auto.json` |
-| `bot/` | `whatsapp_reminder.py` (promemoria dei giorni di gara), `gtv_bot.py` (pannello Telegram), `macos_bot_service.sh` |
-| `telecronaca/` | `telecronaca.py`: foglietto per la telecronaca di una lobby; `quali.json` è la memoria dell'ordine di qualifica (`--quali "..."`) |
+| `unionscraping/` | Scraper Union, classifiche, bot e modulo `comune/`. Dettagli in `unionscraping/README.md` |
+| `sportscraping/` | `gt7_sport.py` (dati Sport Mode), `diagnostica.py` (controllo delle fonti, solo in locale), note in `ricerca/` |
+| `.github/workflows/` | Le automazioni (sotto) |
+| `.github/actions/commit-push/` | Passo comune dei workflow: commit solo se cambia, rebase e push con 3 tentativi, rosso se fallisce |
 
-### `sportscraping/` — Sport Mode di GT7
+Restano raggiungibili sul sito solo i `.py` di `unionscraping/bot/` e
+`unionscraping/comune/`, perché `api/telegram.py` li importa: non contengono
+segreti.
 
-`gt7_sport.py` raccoglie i dati Sport Mode → `sport.json`; `ricerca/` contiene
-le note sulle API di GT7 GridStats.
+### Workflow
 
-### `.github/workflows/` — automazioni
-
-| Workflow | Quando | Cosa aggiorna |
+| Workflow | Quando (UTC) | Cosa aggiorna |
 |---|---|---|
-| `union-scrape.yml` | ogni 12 ore | `unionscraping/data.json` |
-| `gt7-sport.yml` | 4 volte al giorno: 05:00 e 17:00 UTC, più 07:15 UTC (rotazione degli eventi) e 08:20 UTC di controllo | `sportscraping/sport.json` |
-| `union-classifiche.yml` | ogni 6 ore (runner macOS, per l'OCR) | `unionscraping/classifiche.json` |
-| `union-race-message.yml` | la sera dei giorni di gara | messaggio Telegram |
+| `union-scrape.yml` | 00:17 e 12:17 | `dati/union/lobby.json` |
+| `union-classifiche.yml` | ogni 6 ore (:41) | `dati/union/classifiche.json`; macOS solo se c'è un'immagine nuova da leggere |
+| `gt7-sport.yml` | 05:04 (completo), 07:11, 08:23, 17:07 | `dati/sport.json` |
+| `union-race-message.yml` | 20:00 (aspetta la mezzanotte italiana) e 05:00 | messaggio Telegram, `unionscraping/bot/.sent_state.json` |
 
-Tutti fanno push su `main`, e ogni push fa ripartire il deploy di Vercel.
+Minuti non tondi apposta: alle ore piene GitHub accumula ritardi di ore.
+Ogni push su `main` fa ripartire il deploy di Vercel.
 
 ## 3. Regole pratiche
 
-- **Non scrivere file generati nella root**: finirebbero pubblicati sul sito.
-  Usa una sottocartella dedicata e aggiungila a `.gitignore` e `.vercelignore`
-  (esempio: `unionscraping/telecronaca/fogli/`).
-- **Gli script devono usare percorsi assoluti** basati su
-  `Path(__file__).resolve().parent`, non nomi di file relativi alla cartella
-  corrente: è così che era nato il `data.json` duplicato nella root.
-- **Niente credenziali nel repo**: vanno in `.env.gtv` o `.env.telegram`
-  (entrambi ignorati da git).
-- **`unionscraping/bot/*.py` non va escluso da `.vercelignore`**: `api/telegram.py`
-  li importa a runtime.
+- **I dati del sito vanno in `dati/`**: ha già gli header no-cache.
+- **Il materiale personale non va nel repo**: `_locale/` e
+  `unionscraping/telecronaca/` sono ignorati da git.
+- **Gli script usano percorsi assoluti** basati su
+  `Path(__file__).resolve().parent`.
+- **Niente credenziali nel repo**: vanno in `unionscraping/.env.telegram`
+  (ignorato) o nei secrets di GitHub e Vercel.
+- **Nuova gara Union**: si aggiorna `dati/union/calendario.json`; per il
+  Report DG si aggiunge la voce in `config.js` → `unionReportDG`.
+- **Nuovo titolo**: si aggiunge una voce in cima a `dati/palmares.json`.

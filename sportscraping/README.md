@@ -1,7 +1,7 @@
 # Sport Mode GT7 — dati per le sezioni "Sport" e "Sport Stats"
 
 `gt7_sport.py` raccoglie i risultati dei piloti GTV nella **Sport Mode di
-Gran Turismo 7** e produce `sport.json`, che `index.html` legge per disegnare
+Gran Turismo 7** e produce `dati/sport.json`, che `index.html` legge per disegnare
 le due sezioni omonime.
 
 ## Cosa contiene `sport.json`
@@ -16,7 +16,6 @@ le due sezioni omonime.
 | `piloti` | statistiche per pilota: DR, SR, miglior piazzamento mondiale, piazzamento medio, data dell'ultimo evento e l'elenco datato degli eventi (`eventi`) |
 | | nel sito la tabella "Piloti del team" si filtra su **ALL TIME / Ultimo anno / Ultimi 3 mesi**: il filtro ricalcola rank e conteggi lato browser usando `eventi`, senza riscaricare nulla |
 | `grafici.fasce_rank` | quanti eventi del team sono finiti in ciascuna fascia di classifica (per il grafico) |
-| `storico` | archivio degli ultimi eventi per pilota (non più mostrato nel sito) |
 
 Le squadre sono due: **GTV** (22 piloti) e **JGTV** (4 piloti). Nel sito i
 piloti JGTV hanno un'etichetta accanto al nome.
@@ -90,35 +89,33 @@ e Road Atlanta) mostravano lo stesso identico leader.
 
 ### Perché il file dati non passa dalla cache (26/09/2026)
 
-Il sito chiede `sportscraping/sport.json?v=<timestamp>` per non ricevere una
+Il sito chiede `dati/sport.json?v=<timestamp>` per non ricevere una
 copia vecchia, ma **la cache dell'edge di Vercel usa il percorso e ignora la
 query string**: il `?v=` ferma la cache del browser, non quella del CDN. Il
 25/09/2026 la pagina è rimasta per ore sul file del giorno prima pur essendo
 il deploy aggiornato.
 
-Per questo in `vercel.json` i file generati (`sportscraping/sport.json`,
-`unionscraping/data.json`, `unionscraping/auto.json`) hanno
+Per questo in `vercel.json` tutti i file in `dati/` hanno
 `CDN-Cache-Control: no-store` (l'edge va sempre all'origine) e
 `Cache-Control: no-cache, must-revalidate` (il browser rivalida), e il fetch di
 `sport.json` usa `cache: "no-store"`.
 
 > Regola pratica: **un file che viene rigenerato non deve mai dipendere dalla
-> cache dell'edge**. Se un giorno si aggiunge un altro JSON generato, va
-> aggiunto anche lì.
+> cache dell'edge**. Per questo i JSON generati stanno tutti in `dati/`, che ha
+> un'unica regola in `vercel.json`.
 
 ### Diagnostica
 
-`python3 diagnostica.py` (o il workflow *Diagnostica fonti Sport*, anche
-manuale) controlla DNS, rete e le due fonti e scrive il referto in
-`sportscraping/diagnostica.txt`: è il modo per sapere se un buco nei dati
-dipende dalla fonte ufficiale o da altro. I log dei workflow non sono
-leggibili dal repo (servono permessi di amministratore), il referto sì.
+`python3 diagnostica.py` controlla DNS, rete e le due fonti: è il modo per
+sapere se un buco nei dati dipende dalla fonte ufficiale o da altro. Il
+workflow dedicato e il referto committato sono stati tolti il 2026-10-08: lo
+stesso esito si legge in ogni giro in `meta.fonte_ufficiale` di `sport.json`.
 
 ## Uso
 
 ```bash
 cd sportscraping
-python3 gt7_sport.py             # aggiorna sport.json (≈60 s per 26 piloti)
+python3 gt7_sport.py             # aggiorna dati/sport.json (≈60 s per 26 piloti)
 python3 gt7_sport.py --limit 4   # prova su 4 piloti
 python3 gt7_sport.py --verbose   # mostra anche DR/SR e quanti eventi per pilota
 ```
@@ -130,10 +127,13 @@ perché il reset del gioco è a UTC fisso e non si sposta con l'ora legale):
 
 | Cron | Cosa fa |
 |---|---|
-| `0 5 * * *` | giro **completo**: scarica tutto lo storico dei piloti (prima della rotazione) |
-| `15 7 * * *` | giro **della rotazione**: il gioco chiude gli eventi alle 06:59:59Z e ne apre di nuovi alle 07:00:00Z, quindi qui l'evento chiuso va in archivio e i nuovi entrano in pagina |
-| `20 8 * * *` | **controllo post-rotazione**: recupera i nomi dei circuiti se gt-gridstats era ancora indietro |
-| `0 17 * * *` | giro **leggero** di fine giornata |
+| `4 5 * * *` | giro **completo**: scarica tutto lo storico dei piloti (prima della rotazione) |
+| `11 7 * * *` | giro **della rotazione**: il gioco chiude gli eventi alle 06:59:59Z e ne apre di nuovi alle 07:00:00Z, quindi qui l'evento chiuso va in archivio e i nuovi entrano in pagina |
+| `23 8 * * *` | **controllo post-rotazione**: recupera i nomi dei circuiti se gt-gridstats era ancora indietro |
+| `7 17 * * *` | giro **leggero** di fine giornata |
+
+I minuti non sono tondi apposta: alle ore piene GitHub accumula ritardi di
+ore (a settembre 2026 i giri partivano 3-7 ore dopo l'orario).
 
 Lo script esegue e — se `sport.json` è cambiato — lo committa: il push fa
 ripartire il deploy di Vercel e le sezioni del sito si aggiornano da sole.
@@ -166,6 +166,11 @@ Lo script legge quanti profili aveva il file precedente e, se in un giro ne
 legge meno del 60%, **non sovrascrive** `sport.json` (esce con errore). Così
 una giornata di rete instabile non può svuotare le sezioni del sito: al
 massimo restano i dati del giro prima.
+
+Sotto quella soglia, chi non si scarica in un giro tiene la scheda del giro
+prima (DR, SR, storico): un profilo che non risponde non perde lo storico
+profondo raccolto dai giri completi. La scrittura e' atomica (file
+temporaneo + rename), quindi un run interrotto non lascia un json troncato.
 
 ## Note e limiti (onesti)
 
@@ -350,7 +355,7 @@ nulla a mano, in due momenti che si completano a vicenda:
 1. **nello scraper** (`build()`): le time trial chiuse non finiscono piu' in
    `time_trial.attivi`, e le gare settimanali cambiano con la rotazione del
    lunedi' (`gare_settimanali` → `gare_precedenti`);
-2. **nel browser** (`sportSeparaEventi()` in `scripts.js`): `sport.json` si
+2. **nel browser** (`sportSeparaEventi()` in `js/sport.js`): `sport.json` si
    aggiorna poche volte al giorno, quindi il renderer ricontrolla le date a ogni
    caricamento della pagina e sposta subito in archivio quello che risulta
    scaduto, anche se il file lo elenca ancora fra gli "in corso".
@@ -391,8 +396,8 @@ pagina non aggiunge eventi nuovi) e ricostruisce lo storico reale: da ~20 a
 
 Scaricare tutto sono ~13 richieste per pilota (~340 per giro). Percio':
 
-- il giro delle **05:00 UTC** usa `--full` e scarica tutte le pagine;
-- quelli delle **07:15, 08:20 e 17:00 UTC** leggono solo la prima pagina;
+- il giro delle **05:04 UTC** usa `--full` e scarica tutte le pagine;
+- quelli delle **07:11, 08:23 e 17:07 UTC** leggono solo la prima pagina;
 - i dati nuovi vengono **uniti** a quelli gia' salvati, quindi il giro
   leggero non fa mai sparire lo storico profondo.
 
