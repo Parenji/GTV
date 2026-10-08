@@ -1,0 +1,43 @@
+name: Commit e push dei dati
+description: >
+  Committa i percorsi indicati solo se sono cambiati e fa push su main.
+  Gli altri workflow pushano spesso: prima di pushare si riallinea
+  (pull --rebase), fino a 3 tentativi. Se il push non riesce il job
+  diventa rosso: un aggiornamento perso deve vedersi.
+
+inputs:
+  percorsi:
+    description: Percorsi da committare, separati da spazi
+    required: true
+  messaggio:
+    description: Messaggio del commit
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        PERCORSI: ${{ inputs.percorsi }}
+        MESSAGGIO: ${{ inputs.messaggio }}
+      run: |
+        cd "$GITHUB_WORKSPACE"
+        # shellcheck disable=SC2086  (i percorsi sono separati da spazi apposta)
+        git add -A -- $PERCORSI
+        if git diff --cached --quiet; then
+          echo "Nessuna modifica: niente commit."
+          exit 0
+        fi
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git commit -m "$MESSAGGIO"
+        for i in 1 2 3; do
+          if git pull --rebase --autostash origin main && git push; then
+            echo "Push riuscito."
+            exit 0
+          fi
+          git rebase --abort 2>/dev/null || true
+          sleep $((i * 5))
+        done
+        echo "::error::Push non riuscito dopo 3 tentativi."
+        exit 1

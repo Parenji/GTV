@@ -4,47 +4,53 @@ name: Union Classifiche
 # Union e aggiorna dati/union/classifiche.json (sezioni Risultati e
 # Classifiche di union.html).
 #
-# Gira su macOS perche' le classifiche di gara del portale sono immagini e
-# l'OCR usa il framework Vision di macOS. Le immagini gia' lette (stesso ETag)
-# si riusano dal file, e i punti gara per gara si conservano da un'esecuzione
-# all'altra.
+# I risultati di gara sono immagini e l'OCR usa il framework Vision di
+# macOS. Le immagini gia' lette stanno in unionscraping/classifiche/
+# cache.json (per ETag), quindi un runner macOS serve solo quando il
+# portale pubblica un'immagine nuova: il primo job controlla su Linux e il
+# secondo parte su macOS solo se serve.
 on:
   schedule:
-    # ogni 6 ore: il portale si aggiorna dopo le serate di gara
-    - cron: "30 */6 * * *"
+    - cron: "41 */6 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-jobs:
-  classifiche:
-    runs-on: macos-latest
+concurrency:
+  group: union-classifiche
+  cancel-in-progress: false
 
+jobs:
+  controlla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      serve_ocr: ${{ steps.controllo.outputs.serve_ocr }}
     steps:
-      - name: Checkout del repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: controllo
+        name: Ci sono immagini nuove da leggere?
+        run: python3 unionscraping/classifiche/classifiche.py --controlla
+
+  aggiorna:
+    needs: controlla
+    runs-on: ${{ needs.controlla.outputs.serve_ocr == 'true' && 'macos-latest' || 'ubuntu-latest' }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Aggiorna classifiche e risultati
-        working-directory: unionscraping/classifiche
-        run: python3 classifiche.py
+        run: python3 unionscraping/classifiche/classifiche.py
 
-      - name: Commit e push delle modifiche
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dati/union/classifiche.json
-          if git diff --cached --quiet; then
-            echo "Nessuna novita' sul portale: niente commit."
-            exit 0
-          fi
-          git commit -m "chore(unionscraping): aggiornamento classifiche Union"
-          # gli altri workflow pushano spesso: si allinea prima di pushare
-          for i in 1 2 3; do
-            if git pull --rebase origin main && git push; then
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "::error::Push delle classifiche non riuscito."
-          exit 1
+      - name: Commit e push
+        uses: ./.github/actions/commit-push
+        with:
+          percorsi: dati/union/classifiche.json unionscraping/classifiche/cache.json
+          messaggio: "chore(unionscraping): aggiornamento classifiche Union"

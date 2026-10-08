@@ -4,9 +4,10 @@
 # escluso qui. Al sito servono solo le pagine, gli asset, config.js, dati/
 # e api/. Gli strumenti (scraping, bot, note) restano fuori.
 #
-# ATTENZIONE: i .py di unionscraping/bot/ devono restare: api/telegram.py
-# (la funzione serverless del bot Telegram) li importa a runtime. Sono
-# raggiungibili anche come file statici, ma non contengono segreti.
+# ATTENZIONE: i .py di unionscraping/bot/ e unionscraping/comune/ devono
+# restare: api/telegram.py (la funzione serverless del bot Telegram) li
+# importa a runtime. Sono raggiungibili anche come file statici, ma non
+# contengono segreti.
 
 # Documentazione, configurazione di sviluppo, materiale locale
 *.md
@@ -22,8 +23,11 @@ _locale/
 sportscraping/
 unionscraping/*
 !unionscraping/bot/
+!unionscraping/comune/
 unionscraping/bot/*
+unionscraping/comune/*
 !unionscraping/bot/*.py
+!unionscraping/comune/*.py
 
 # PDF non linkato da nessuna pagina
 pdf/WORLD 2.pdf

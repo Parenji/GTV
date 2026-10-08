@@ -1,4 +1,4 @@
-// ocr.swift — OCR locale per auto_from_screenshots.py
+// ocr.swift — OCR locale per gli strumenti di unionscraping (comune/ocr.py)
 //
 // Usa il framework Vision di macOS (nessuna dipendenza da installare, nessun
 // servizio esterno): legge una o piu' immagini e stampa una riga TSV per ogni
@@ -11,7 +11,7 @@
 //     #dim <TAB> larghezza <TAB> altezza
 //
 // Le coordinate sono normalizzate 0..1 e hanno l'origine in BASSO a sinistra
-// (convenzione di Vision): auto_from_screenshots.py le usa per raggruppare i
+// (convenzione di Vision): comune/ocr.py le passa a chi raggruppa i
 // blocchi in righe di classifica.
 //
 // Compilazione (automatica, la fa lo script Python al primo utilizzo):

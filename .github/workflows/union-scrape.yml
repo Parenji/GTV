@@ -1,47 +1,40 @@
 name: Union Scraper
 
-# Esegue automaticamente lo scraper delle lobby Union ogni 12 ore
-# sui server di GitHub (cloud) → funziona anche a computer spento.
-# Dopo lo scrape fa push di dati/union/lobby.json sul branch main,
-# e il push sul repo innesca il redeploy automatico di Vercel,
-# così il sito live si aggiorna da solo.
+# Aggiorna dati/union/lobby.json (lobby e piloti della settimana) dai fogli
+# Google del sito HUB Union, due volte al giorno sui server di GitHub.
+# Il file si riscrive solo se i fogli sono cambiati davvero: niente commit
+# (e niente deploy) per il solo orario. Se i fogli rispondono con dati
+# sospetti lo scraper si ferma e il run diventa rosso.
 on:
   schedule:
-    # '0 */12 * * *'  → alle 00:00 e 12:00 UTC ogni giorno
-    - cron: "0 */12 * * *"
-  # Permette di lanciarlo anche manualmente dalla UI di GitHub
+    # minuti "storti": alle ore piene GitHub accumula ritardi di ore
+    - cron: "17 0,12 * * *"
   workflow_dispatch:
 
-# Il token GITHUB_TOKEN deve poter fare push del commit
 permissions:
   contents: write
+
+concurrency:
+  group: union-scrape
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout del repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Esegui lo scraper
-        working-directory: unionscraping/scraper
-        run: python3 scraper.py
+        run: python3 unionscraping/scraper/scraper.py
 
-      - name: Commit e push delle modifiche
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dati/union/lobby.json
-          if git diff --cached --quiet; then
-            echo "Nessuna modifica ai dati: niente commit."
-            exit 0
-          fi
-          git commit -m "chore(unionscraping): aggiornamento automatico dati Union"
-          # Il push innesca il redeploy automatico su Vercel (deploy a ogni push)
-          git push
+      - name: Commit e push
+        uses: ./.github/actions/commit-push
+        with:
+          percorsi: dati/union/lobby.json
+          messaggio: "chore(unionscraping): aggiornamento automatico dati Union"

@@ -941,9 +941,7 @@ def profilo_completo(psn, full=False, max_eventi=10, max_daily=6, verbose=False)
 # Piloti GTV (dal foglio pubblico del team)
 # ---------------------------------------------------------------------------
 def carica_piloti_gtv():
-    req = urllib.request.Request(PILOTI_URL, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=40) as resp:
-        raw = resp.read().decode("utf-8-sig")
+    raw = fetch(PILOTI_URL).lstrip("\ufeff")
     righe = list(csv.reader(io.StringIO(raw)))
     piloti = []
     for r in righe[1:]:
@@ -985,12 +983,13 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
     #    quando un evento passa in archivio gt-gridstats non lo copre piu' e,
     #    se l'API ufficiale e' giu', senza questa cache il distacco assoluto
     #    sparirebbe dalle card appena archiviate.
-    storico_precedente, leader_precedenti = {}, {}
+    storico_precedente, leader_precedenti, schede_precedenti = {}, {}, {}
     try:
         if OUT_JSON.exists():
             salvato = json.loads(OUT_JSON.read_text(encoding="utf-8"))
             for voce in salvato.get("piloti", []):
                 storico_precedente[voce.get("psn")] = voce.get("eventi", [])
+                schede_precedenti[voce.get("psn")] = voce
             for e in salvato.get("time_trial", {}).get("attivi", []):
                 if e.get("miglior_tempo"):
                     leader_precedenti[(e.get("nome"), e.get("fine"))] = {
@@ -999,7 +998,7 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
                         "partecipanti": e.get("partecipanti"),
                     }
     except Exception:
-        storico_precedente, leader_precedenti = {}, {}
+        storico_precedente, leader_precedenti, schede_precedenti = {}, {}, {}
 
     # Eventi di gt-gridstats (pista/auto) indicizzati per data di inizio e per
     # pista. Piu' time trial possono partire lo stesso giorno, quindi per la
@@ -1295,6 +1294,13 @@ def build(piloti, profili, esplora, ufficiali, board_info, gare_attive=None,
     for p in piloti:
         prof = profili.get(p["psn"])
         if not prof:
+            # Profilo non scaricato in questo giro: si tiene la scheda del
+            # giro prima, altrimenti il suo storico profondo andrebbe perso.
+            vecchia = schede_precedenti.get(p["psn"])
+            if vecchia:
+                statistiche.append(vecchia)
+                rank_del_team.extend(e["rank"] for e in vecchia.get("eventi", [])
+                                     if isinstance(e.get("rank"), int))
             continue
         eventi, gare = prof["eventi"], prof["gare"]
         ultima_data = max([d for d in
@@ -1425,15 +1431,15 @@ def valida(dati):
                 f"lento del miglior tempo del team ({_ms_a_tempo(min(tempi))}) "
                 f"— probabile evento mescolato con un altro")
 
-        # 4. coerenza fra tempo e posizione mondiale (avviso, non bloccante)
+        # 4. coerenza fra tempo e posizione mondiale (avviso, non bloccante:
+        #    si stampa nel log ma il file si scrive lo stesso)
         ordinati = sorted([v for v in voci if v.get("tempo_ms") and v.get("pos_assoluta")],
                           key=lambda v: v["tempo_ms"])
         for a, b in zip(ordinati, ordinati[1:]):
             if a["pos_assoluta"] > b["pos_assoluta"] * 3:
-                problemi.append(
-                    f"[{tipo}] {nome}: {a['gt7name']} ha tempo migliore ma "
-                    f"posizione molto peggiore di {b['gt7name']} "
-                    f"(#{a['pos_assoluta']} contro #{b['pos_assoluta']})")
+                print(f"  ! avviso [{tipo}] {nome}: {a['gt7name']} ha tempo migliore ma "
+                      f"posizione molto peggiore di {b['gt7name']} "
+                      f"(#{a['pos_assoluta']} contro #{b['pos_assoluta']})", file=sys.stderr)
 
     return problemi
 
@@ -1574,7 +1580,10 @@ def main():
         print("   (il sito mantiene i dati precedenti)", file=sys.stderr)
         return 1
 
-    OUT_JSON.write_text(json.dumps(dati, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Scrittura atomica: un run interrotto a meta' non lascia un json troncato
+    temporaneo = OUT_JSON.with_name(f".{OUT_JSON.name}.tmp")
+    temporaneo.write_text(json.dumps(dati, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(temporaneo, OUT_JSON)
     tt = dati["time_trial"]
     print(f"\nOK -> {OUT_JSON}")
     print(f"   time trial in corso: {len(tt['attivi'])}")

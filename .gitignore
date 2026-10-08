@@ -20,12 +20,9 @@ unionscraping/bot/.bot_state.json
 unionscraping/bot/bot.log
 unionscraping/bot/bot.log.*
 
-# Cache di auto_from_screenshots.py: screenshot scaricati, testo OCR e
-# binario dell'helper. Si rigenera da solo con lo script.
-unionscraping/auto/.screenshots/
+# Binario compilato dell'helper OCR (si rigenera da solo)
+unionscraping/comune/.ocr/
 
-# Cache di classifiche.py: immagini delle classifiche di gara del portale
-unionscraping/classifiche/.gare/
 
 # Foglietti di telecronaca generati (rigenerabili con telecronaca.py)
 unionscraping/telecronaca/fogli/

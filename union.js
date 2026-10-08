@@ -277,22 +277,22 @@ function loadUnionPiloti() {
     return;
   }
 
-  // Carica in parallelo il CSV piloti, il data.json dello scraper e il
-  // file con le auto usate in gara. Gli ultimi due sono opzionali: se
-  // mancano, le matricole restano "—" e le auto restano quelle del CSV.
+  // Carica in parallelo il CSV piloti, le lobby e le classifiche. Gli
+  // ultimi due sono opzionali: se mancano, le matricole restano "—" e le
+  // auto restano quelle del CSV.
   Promise.all([
     fetchUnionCsvRows(),
     fetchUnionLobbyData().catch(function () {
       return null;
     }),
-    fetchUnionAutoData().catch(function () {
+    fetchUnionClassifiche().catch(function () {
       return null;
     }),
   ])
     .then(function (results) {
       var rows = results[0];
       var unionData = results[1];
-      var autoData = results[2];
+      var clsData = results[2];
 
       if (!rows || rows.length === 0) {
         container.innerHTML = unionState("Nessun dato.", "empty");
@@ -304,7 +304,7 @@ function loadUnionPiloti() {
         return participa === "x" || participa === "✓" || participa === "1";
       });
 
-      renderUnionPilotiCards(container, unionRows, unionData, autoData);
+      renderUnionPilotiCards(container, unionRows, unionData, clsData);
     })
     .catch(function (error) {
       console.error("Errore caricamento piloti Union:", error);
@@ -391,7 +391,7 @@ function brandLogoHtml(brand) {
   );
 }
 
-function renderUnionPilotiCards(container, rows, unionData, autoData) {
+function renderUnionPilotiCards(container, rows, unionData, clsData) {
   // Per categoria, poi per il nome mostrato in evidenza (GT7, o PSN)
   rows.sort(function (a, b) {
     var tierDiff = unionTierIndex(a[6]) - unionTierIndex(b[6]);
@@ -400,7 +400,7 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
   });
 
   var matricolaMap = buildUnionMatricolaMap(unionData);
-  var autoMap = buildUnionAutoMap(autoData);
+  var autoMap = buildUnionAutoMap(unionData, clsData);
 
   var cards = rows
     .map(function (r) {
@@ -408,8 +408,8 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
       var psn = String(r[0] || "").trim();
       var gt7 = String(r[1] || "").trim();
       var cat = String(r[6] || "").trim();
-      // Auto e marchio: prima il foglio Google, altrimenti il ripiego
-      // con le auto lette dalle classifiche ufficiali delle gare.
+      // Auto e marchio: prima il foglio Google, altrimenti l'auto della
+      // lobby di questa settimana o dell'ultima gara in classifica.
       var autoRec = lookupUnionAuto(autoMap, psn, gt7);
       var auto = r[7] || (autoRec ? autoRec.auto : "") || "—";
       var marchio = r[8] || (autoRec ? autoRec.marchio : "") || "";
@@ -478,55 +478,59 @@ function fetchUnionLobbyData() {
 }
 
 // -------------------------------------------------------------
-// AUTO USATE IN GARA (unionscraping/auto.json)
+// AUTO USATE IN GARA
 // Le colonne Union_auto / Union_marchio del foglio Google restano la
-// fonte primaria: questo file interviene solo se sono vuote.
+// fonte primaria; se sono vuote si usa l'auto della lobby della
+// settimana (lobby.json) o quella dell'ultima gara (classifiche.json).
 // -------------------------------------------------------------
-function unionAutoDataUrl() {
-  return window.GTV_CONFIG && window.GTV_CONFIG.unionAutoData
-    ? window.GTV_CONFIG.unionAutoData
-    : "unionscraping/auto.json";
-}
+var UNION_MARCHI = [
+  [/GT-R|NISMO|Nissan/i, "Nissan"],
+  [/NSX|Honda/i, "Honda"],
+  [/RC F|Lexus/i, "Lexus"],
+  [/Supra|GR86|Toyota/i, "Toyota"],
+  [/RS ?5|Audi/i, "Audi"],
+];
 
-var _unionAutoDataPromise = null;
-function fetchUnionAutoData() {
-  if (!_unionAutoDataPromise) {
-    _unionAutoDataPromise = fetch(unionAutoDataUrl())
-      .then(function (response) {
-        if (!response.ok) throw new Error("Errore HTTP " + response.status);
-        return response.json();
-      })
-      .catch(function (err) {
-        _unionAutoDataPromise = null; // consente un nuovo tentativo
-        throw err;
-      });
+function unionMarchioDaAuto(auto) {
+  for (var i = 0; i < UNION_MARCHI.length; i++) {
+    if (UNION_MARCHI[i][0].test(auto)) return UNION_MARCHI[i][1];
   }
-  return _unionAutoDataPromise;
+  return "";
 }
 
-// Mappa PSN/GT7 (normalizzati) -> record auto. Ogni pilota è indicizzato
-// sia con la chiave dell'oggetto sia con i campi psn e gt7, così la
-// corrispondenza con il CSV regge anche se una delle due grafie cambia.
-function buildUnionAutoMap(autoData) {
+// Mappa nome pilota (normalizzato) -> {auto, marchio}
+function buildUnionAutoMap(lobbyData, clsData) {
   var map = {};
-  if (!autoData || !autoData.piloti) return map;
-  Object.keys(autoData.piloti).forEach(function (key) {
-    var rec = autoData.piloti[key] || {};
-    [key, rec.psn, rec.gt7].forEach(function (alias) {
-      var k = String(alias || "").trim().toLowerCase();
-      if (k && map[k] === undefined) map[k] = rec;
+  var aggiungi = function (nome, auto) {
+    auto = String(auto || "").trim();
+    var k = unionNorm(nome);
+    if (!k || !auto || /^ASSENTE$/i.test(auto) || map[k]) return;
+    map[k] = { auto: auto, marchio: unionMarchioDaAuto(auto) };
+  };
+  ((lobbyData && lobbyData.lobbies) || []).forEach(function (lb) {
+    (lb.pilots || []).forEach(function (p) {
+      aggiungi(p.nome, p.auto);
     });
   });
+  var gare = (clsData && clsData.gare) || {};
+  Object.keys(gare)
+    .sort(function (a, b) {
+      return b - a;
+    })
+    .forEach(function (n) {
+      var lobby = gare[n].lobby || {};
+      Object.keys(lobby).forEach(function (id) {
+        (lobby[id].classifica || []).forEach(function (r) {
+          aggiungi(r.nome, r.auto);
+        });
+      });
+    });
   return map;
 }
 
 // Cerca il record auto di un pilota: prima per PSN, poi per GT7.
 function lookupUnionAuto(map, psn, gt7) {
-  var k = String(psn || "").trim().toLowerCase();
-  if (k && map[k]) return map[k];
-  k = String(gt7 || "").trim().toLowerCase();
-  if (k && map[k]) return map[k];
-  return null;
+  return map[unionNorm(gt7)] || map[unionNorm(psn)] || null;
 }
 
 function loadUnionLobby() {
@@ -551,8 +555,9 @@ function loadUnionLobby() {
     });
 }
 
-// "Ultimo aggiornamento automatico": meta.generated_at (UTC) di data.json
-// mostrato in data/ora locali del visitatore.
+// Data dell'ultima modifica delle lobby: meta.generated_at (UTC) di
+// lobby.json, in data/ora locali del visitatore. Lo scraper riscrive il file
+// solo quando i fogli cambiano davvero.
 function setUnionLastUpdate(data) {
   var el = document.getElementById("union-last-update");
   if (!el) return;
@@ -561,7 +566,7 @@ function setUnionLastUpdate(data) {
   var d = new Date(iso);
   if (isNaN(d.getTime())) return;
   el.textContent =
-    "Ultimo aggiornamento automatico: " +
+    "Lobby aggiornate il " +
     d.toLocaleString("it-IT", {
       day: "2-digit",
       month: "2-digit",
@@ -1448,9 +1453,8 @@ function openUnionPilota(nome, alt, origine) {
     fetchUnionLobbyData().catch(vuoto),
     fetchUnionClassifiche().catch(vuoto),
     fetchUnionCsvRows().catch(vuoto),
-    fetchUnionAutoData().catch(vuoto),
   ]).then(function (r) {
-    var p = unionPilotaProfilo([nome, alt], { lobby: r[0], cls: r[1], csv: r[2], auto: r[3] });
+    var p = unionPilotaProfilo([nome, alt], { lobby: r[0], cls: r[1], csv: r[2] });
     var titolo = escapeHtml(p.nome) + (p.lega ? " " + unionCatBadge(p.lega) : "");
     var sub = [p.numero ? "#" + p.numero : "", p.team, p.psn && unionNorm(p.psn) !== unionNorm(p.nome) ? "PSN " + p.psn : ""]
       .filter(Boolean)
@@ -1482,7 +1486,7 @@ function unionPilotaProfilo(nomi, ctx) {
     return true;
   });
   if (!p.auto) {
-    var rec = lookupUnionAuto(buildUnionAutoMap(ctx.auto), p.psn || nomi[1], p.nome);
+    var rec = lookupUnionAuto(buildUnionAutoMap(ctx.lobby, ctx.cls), p.psn || nomi[1], p.nome);
     if (rec) {
       p.auto = rec.auto || "";
       p.marchio = p.marchio || rec.marchio || "";

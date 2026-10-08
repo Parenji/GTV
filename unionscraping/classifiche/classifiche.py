@@ -24,40 +24,50 @@ Com'e' fatto il portale (verificato il 2026-10-03, dopo la Gara 1):
 Una gara compare nei risultati solo quando il portale ne ha pubblicato le
 immagini. Scrive dati/union/classifiche.json, letto da union.js.
 
+Niente stato tra un'esecuzione e l'altra: a ogni giro tutto si ricostruisce
+dal portale. I punti gara per gara vengono dalla colonna Punti delle
+immagini; la differenza con il totale ufficiale (bonus, penalita') va
+sull'ultima gara corsa, cosi' la somma torna sempre. La posizione dopo ogni
+gara (`storico_pos`) e' la classifica dei punti cumulati, e per l'ultima
+gara quella ufficiale. Un giro saltato o un file azzerato non perdono nulla.
+
+Le immagini gia' lette stanno in cache.json (accanto allo script, committato
+ma non pubblicato), indicizzate per ETag: un'immagine invariata non si
+rilegge. Su Linux l'OCR non c'e': se serve leggere un'immagine nuova lo
+script si ferma senza scrivere (`--controlla` dice prima se serve un Mac).
+
 Uso:
     python3 classifiche.py              # aggiorna classifiche.json
     python3 classifiche.py --dry-run    # mostra cosa ha trovato, non scrive
-    python3 classifiche.py --no-ocr     # solo classifiche generali (ovunque)
+    python3 classifiche.py --controlla  # serve l'OCR? (per il workflow)
     python3 classifiche.py --rileggi    # rilegge anche le immagini invariate
 """
 
 from __future__ import annotations
 
 import argparse
-import difflib
 import html
 import json
+import os
 import re
 import sys
-import urllib.error
+import tempfile
 import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 UNION_DIR = BASE_DIR.parent
-OUT_JSON = UNION_DIR.parent / "dati" / "union" / "classifiche.json"
-DATA_JSON = UNION_DIR.parent / "dati" / "union" / "lobby.json"
-AUTO_DIR = UNION_DIR / "auto"
+REPO_DIR = UNION_DIR.parent
+OUT_JSON = REPO_DIR / "dati" / "union" / "classifiche.json"
+CACHE_JSON = BASE_DIR / "cache.json"
 
-# Cache locale (gitignorata) delle immagini delle classifiche di gara e del
-# loro testo OCR.
-CACHE_DIR = BASE_DIR / ".gare"
+sys.path.insert(0, str(UNION_DIR))
+from comune import calendario, json_io, nomi, ocr, rete  # noqa: E402
 
 PORTALE = "https://albixximo-union2026-r2.vercel.app"
 PORTALE_PAGINA = f"{PORTALE}/Classifiche/portal.html"
-NUM_GARE = 5
+NUM_GARE = len(calendario.gare_di_campionato())
 LEGHE = ["STAR", "ELITE", "PRO GOLD", "PRO SILVER", "PRO AMA", "AMA"]
 
 
@@ -65,25 +75,11 @@ def adesso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-def scarica(url: str, binario: bool = False, timeout: int = 60):
-    """GET; ritorna None se la risorsa non esiste (404)."""
-    richiesta = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(richiesta, timeout=timeout) as risposta:
-            corpo = risposta.read()
-    except urllib.error.HTTPError as errore:
-        if errore.code == 404:
-            return None
-        raise
-    return corpo if binario else corpo.decode("utf-8")
-
-
 def url_gara(gara: int, lega: str, nome: str) -> str:
     return f"{PORTALE}/Gare/G{gara}/{urllib.parse.quote(lega)}/{nome}"
 
 
-def normalizza(testo: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", (testo or "").lower())
+normalizza = nomi.normalizza
 
 
 # ---------------------------------------------------------------------------
@@ -201,31 +197,63 @@ def classifica_lega(pagina: str):
     return piloti, int(corse.group(1)) if corse else 0
 
 
-def aggiorna_storico(lega: str, piloti: list, corse: int, precedenti: dict) -> None:
-    """Punti gara per gara (`gare`) e posizione dopo ogni gara (`storico_pos`).
+def punti_gara(piloti: list, corse: int, gare: dict, lega: str) -> None:
+    """Punti di ogni gara (`gare`) dalle immagini del portale.
 
-    Il portale mostra solo la classifica di adesso. Quello che era gia' stato
-    letto nelle esecuzioni precedenti si conserva; per la gara piu' recente i
-    punti sono la differenza tra il totale di adesso e quello prima, cosi'
-    la somma torna sempre con la classifica ufficiale (bonus, penalita').
+    Chi ha un esito senza riga nell'immagine (assente, NC) fa 0. La
+    differenza tra la somma e il totale ufficiale va sull'ultima gara corsa,
+    o sull'unica gara rimasta senza punti: bonus e penalita' finiscono li'.
     """
+    righe = {}
+    for n, dati_gara in gare.items():
+        for lb in dati_gara["lobby"].values():
+            if lb["lega"] != lega:
+                continue
+            for r in lb["classifica"]:
+                if r.get("punti") is not None:
+                    righe[(int(n), normalizza(r["nome"]))] = r["punti"]
     for p in piloti:
-        prima = precedenti.get((lega, normalizza(p["nome"]))) or {}
-        gare = list(prima.get("gare") or [None] * NUM_GARE)
-        gare += [None] * (NUM_GARE - len(gare))
-        storico = list(prima.get("storico_pos") or [])
+        chiave = normalizza(p["nome"])
+        valori = [None] * NUM_GARE
+        for n in range(1, corse + 1):
+            punti = righe.get((n, chiave))
+            if punti is None and p["esiti"][n - 1] and "stato" in p["esiti"][n - 1]:
+                punti = 0
+            valori[n - 1] = punti
         if corse:
-            noti = gare[: corse - 1]
-            if all(v is not None for v in noti):
-                gare[corse - 1] = p["punti"] - sum(noti)
-            elif corse == 1:
-                gare[0] = p["punti"]
-            storico = (storico + [None] * corse)[:corse]
-            storico[corse - 1] = p["pos"]
-        # le gare non ancora corse non hanno punti
-        for n in range(corse, NUM_GARE):
-            gare[n] = None
-        p["gare"], p["storico_pos"] = gare[:NUM_GARE], storico
+            mancanti = [i for i in range(corse) if valori[i] is None]
+            noti = sum(v for v in valori[:corse] if v is not None)
+            if not mancanti:
+                valori[corse - 1] += p["punti"] - noti
+            elif len(mancanti) == 1:
+                valori[mancanti[0]] = p["punti"] - noti
+        p["gare"] = valori
+
+
+def storico_posizioni(piloti: list, corse: int) -> None:
+    """Posizione in classifica dopo ogni gara (`storico_pos`).
+
+    Per le gare passate: classifica dei punti cumulati, pari merito alla pari
+    (1, 1, 3...). Per l'ultima gara: la posizione ufficiale del portale.
+    """
+    cumulati = []
+    for p in piloti:
+        somma, serie = 0, []
+        for v in p["gare"][:corse]:
+            somma = None if somma is None or v is None else somma + v
+            serie.append(somma)
+        cumulati.append(serie)
+    for i, p in enumerate(piloti):
+        storico = []
+        for n in range(corse):
+            mio = cumulati[i][n]
+            if n == corse - 1:
+                storico.append(p["pos"])
+            elif mio is None:
+                storico.append(None)
+            else:
+                storico.append(1 + sum(1 for c in cumulati if c[n] is not None and c[n] > mio))
+        p["storico_pos"] = storico
 
 
 # ---------------------------------------------------------------------------
@@ -249,24 +277,13 @@ GAP_RIGA = 0.020
 TEMPO_GIRO = re.compile(r"\d:\d{2}\.\d{3}")
 
 
-def ocr_disponibile() -> bool:
-    return sys.platform == "darwin" and (AUTO_DIR / "ocr.swift").exists()
-
-
-def modulo_auto():
-    """Riusa l'OCR (Vision di macOS) di auto/auto_from_screenshots.py."""
-    sys.path.insert(0, str(AUTO_DIR))
-    import auto_from_screenshots as auto  # noqa: E402
-    return auto
-
-
-def leggi_immagine_gara(percorso: Path, auto) -> list:
+def leggi_immagine_gara(percorso: Path) -> list:
     """Righe della classifica di una lobby, dall'alto in basso.
 
     Ogni riga: {pos, nome, auto, q_tempo, distacco, giro, punti}; i campi che
     il portale lascia vuoti ("---", "NO TIME", "-") sono None.
     """
-    osservazioni = auto.osserva_immagine(percorso)
+    osservazioni = ocr.osserva(percorso)
     intestazione = next((y + h / 2 for _x, y, _w, h, t in osservazioni if t.strip() == "Pilota"), 0.668)
     corpo = sorted(
         (y + h / 2, x, t.strip()) for x, y, _w, h, t in osservazioni
@@ -328,7 +345,7 @@ def abbina_pilota(nome: str, pos: int, punti, gara: int, candidati: list, usati:
         if id(c) in usati:
             continue
         nome_c = normalizza(c["nome"])
-        simile = 1.0 if nome_c == chiave else difflib.SequenceMatcher(None, nome_c, chiave).ratio()
+        simile = nomi.somiglianza(nome_c, chiave)
         esito = (c.get("esiti") or [None] * NUM_GARE)[gara - 1] or {}
         stessa_pos = esito.get("pos") == pos or ("stato" in esito and not punti)
         if simile < 0.95 and not (simile >= 0.78 and stessa_pos):
@@ -339,84 +356,59 @@ def abbina_pilota(nome: str, pos: int, punti, gara: int, candidati: list, usati:
     return migliore
 
 
-def info_immagine(url: str):
-    """Impronta dell'immagine (ETag) senza scaricarla, o None se non esiste."""
-    richiesta = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(richiesta, timeout=60) as risposta:
-            return (
-                risposta.headers.get("ETag")
-                or f"{risposta.headers.get('Content-Length')}-{risposta.headers.get('Last-Modified')}"
-            )
-    except urllib.error.HTTPError as errore:
-        if errore.code == 404:
-            return None
-        raise
+class ServeOcr(Exception):
+    """Un'immagine nuova va letta, ma qui l'OCR non c'e' (non e' un Mac)."""
 
 
-def risultati_lobby(gara: int, lega: str, lobby: str, piloti_lega: list, auto, prima: dict | None):
-    """Classifica di una lobby, o None se il portale non l'ha pubblicata."""
+def risultati_lobby(gara: int, lega: str, lobby: str, piloti_lega: list, usa_ocr: bool, cache: dict, rileggi: bool):
+    """Classifica di una lobby, o None se il portale non l'ha pubblicata.
+
+    `cache` ({"G1/STAR/A1": {...}}) viene aggiornata con quello che si legge.
+    """
     url = url_gara(gara, lega, f"{lobby}.png")
-    impronta = info_immagine(url)
+    impronta = rete.impronta(url)
     if impronta is None:
         return None
-    if prima and prima.get("impronta") == impronta and prima.get("classifica"):
+    chiave = f"G{gara}/{lega}/{lobby}"
+    prima = cache.get(chiave)
+    if prima and prima.get("impronta") == impronta and prima.get("classifica") and not rileggi:
         return prima  # immagine invariata: si riusa quello gia' letto
+    if not usa_ocr:
+        raise ServeOcr(chiave)
 
-    classifica = []
-    if auto:
-        immagine = scarica(url, binario=True)
-        cartella = CACHE_DIR / f"G{gara}" / lega
-        cartella.mkdir(parents=True, exist_ok=True)
-        percorso = cartella / f"{lobby}.png"
-        percorso.write_bytes(immagine)
-        righe = leggi_immagine_gara(percorso, auto)
-        percorso.unlink(missing_ok=True)  # resta solo il testo OCR
+    with tempfile.TemporaryDirectory() as cartella:
+        percorso = Path(cartella) / f"{lobby}.png"
+        percorso.write_bytes(rete.scarica(url, binario=True))
+        righe = leggi_immagine_gara(percorso)
 
-        usati = set()
-        for riga in righe:
-            pilota = abbina_pilota(riga["nome"], riga["pos"], riga["punti"], gara, piloti_lega, usati)
-            if pilota:
-                usati.add(id(pilota))
-            riga["nome"] = pilota["nome"] if pilota else riga["nome"]
-            riga["team"] = pilota["team"] if pilota else ""
-            stato = ((pilota or {}).get("esiti") or [None] * NUM_GARE)[gara - 1] or {}
-            if "stato" in stato:
-                riga["stato"] = stato["stato"]  # AG/AI assente, NC, BOX, DSQ
-        quali = sorted((secondi(r["q_tempo"]), r["pos"]) for r in righe if r["q_tempo"])
-        for q, (_t, pos) in enumerate(quali, start=1):
-            righe[pos - 1]["q"] = q
-        for r in righe:
-            r.pop("q_tempo")
-            r.setdefault("q", None)
-        classifica = righe
-    elif prima and prima.get("classifica"):
-        return prima  # niente OCR (non e' un Mac): si tiene quello di prima
+    usati = set()
+    for riga in righe:
+        pilota = abbina_pilota(riga["nome"], riga["pos"], riga["punti"], gara, piloti_lega, usati)
+        if pilota:
+            usati.add(id(pilota))
+        riga["nome"] = pilota["nome"] if pilota else riga["nome"]
+        riga["team"] = pilota["team"] if pilota else ""
+        stato = ((pilota or {}).get("esiti") or [None] * NUM_GARE)[gara - 1] or {}
+        if "stato" in stato:
+            riga["stato"] = stato["stato"]  # AG/AI assente, NC, BOX, DSQ
+    quali = sorted((secondi(r["q_tempo"]), r["pos"]) for r in righe if r["q_tempo"])
+    for q, (_t, pos) in enumerate(quali, start=1):
+        righe[pos - 1]["q"] = q
+    for r in righe:
+        r.pop("q_tempo")
+        r.setdefault("q", None)
 
-    con_giro = [r for r in classifica if r["giro"]]
-    pole = next((r for r in classifica if r["q"] == 1), None)
-    return {
+    con_giro = [r for r in righe if r["giro"]]
+    pole = next((r for r in righe if r["q"] == 1), None)
+    cache[chiave] = {
         "lega": lega,
         "immagine": url,
         "impronta": impronta,
-        "classifica": classifica,
+        "classifica": righe,
         "pole": pole["nome"] if pole else None,
         "giro_veloce": min(con_giro, key=lambda r: secondi(r["giro"]))["nome"] if con_giro else None,
     }
-
-
-def punti_da_gare(piloti: list, gara: int, lobby_gara: dict, lega: str) -> None:
-    """Dove la gara non ha ancora i punti (pilota nuovo nel file), li prende
-    dalla colonna Punti dell'immagine."""
-    for lb in lobby_gara.values():
-        if lb["lega"] != lega:
-            continue
-        for riga in lb["classifica"]:
-            if riga["punti"] is None:
-                continue
-            for p in piloti:
-                if p["nome"] == riga["nome"] and p["gare"][gara - 1] is None:
-                    p["gare"][gara - 1] = riga["punti"]
+    return cache[chiave]
 
 
 def verifica(leghe: dict, gare: dict) -> None:
@@ -432,37 +424,55 @@ def verifica(leghe: dict, gare: dict) -> None:
                   + (f"  ! nomi non abbinati: {', '.join(senza)}" if senza else ""))
 
 
-def senza_meta(dati: dict) -> str:
-    """Contenuto confrontabile: senza la data di generazione."""
-    copia = dict(dati)
-    copia["meta"] = {k: v for k, v in (dati.get("meta") or {}).items() if k != "generated_at"}
-    return json.dumps(copia, sort_keys=True, ensure_ascii=False)
+def carica_cache() -> dict:
+    """Immagini gia' lette. La prima volta si riparte da classifiche.json."""
+    cache = json_io.leggi(CACHE_JSON)
+    if cache is not None:
+        return cache
+    cache = {}
+    for n, dati_gara in ((json_io.leggi(OUT_JSON, {}) or {}).get("gare") or {}).items():
+        for lobby, lb in dati_gara.get("lobby", {}).items():
+            if lb.get("impronta"):
+                cache[f"G{n}/{lb['lega']}/{lobby}"] = lb
+    return cache
+
+
+def scrivi_output_github(chiave: str, valore: str) -> None:
+    uscita = os.environ.get("GITHUB_OUTPUT")
+    if uscita:
+        with open(uscita, "a", encoding="utf-8") as f:
+            f.write(f"{chiave}={valore}\n")
+
+
+def controlla_dati(leghe: dict, precedente: dict) -> list:
+    """Problemi che impediscono di scrivere (lista vuota = tutto ok)."""
+    problemi = []
+    for lega in LEGHE:
+        if not leghe[lega]["piloti"]:
+            problemi.append(f"{lega}: classifica vuota")
+        prima = ((precedente.get("leghe") or {}).get(lega) or {}).get("gare_corse") or 0
+        if leghe[lega]["gare_corse"] < prima:
+            problemi.append(f"{lega}: gare corse scese da {prima} a {leghe[lega]['gare_corse']}")
+    return problemi
 
 
 # ---------------------------------------------------------------------------
 def main() -> int:
     parser = argparse.ArgumentParser(description="Classifiche e risultati dal portale Union.")
     parser.add_argument("--dry-run", action="store_true", help="non scrive classifiche.json")
-    parser.add_argument("--no-ocr", action="store_true", help="salta la lettura delle immagini di gara")
+    parser.add_argument("--controlla", action="store_true",
+                        help="dice solo se ci sono immagini nuove da leggere con l'OCR (serve_ocr=true|false)")
     parser.add_argument("--rileggi", action="store_true", help="rilegge tutte le immagini, anche se invariate")
+    parser.add_argument("--forza", action="store_true", help="scrive anche se i controlli di sanita' falliscono")
     args = parser.parse_args()
 
-    precedente = {}
-    if OUT_JSON.exists():
-        try:
-            precedente = json.loads(OUT_JSON.read_text(encoding="utf-8"))
-        except ValueError:
-            print("! classifiche.json illeggibile: verra' riscritto da zero")
-    prima_piloti = {
-        (lega, normalizza(p["nome"])): p
-        for lega, d in (precedente.get("leghe") or {}).items() for p in d.get("piloti", [])
-    }
+    precedente = json_io.leggi(OUT_JSON, {}) or {}
+    cache = carica_cache()
 
     print(f"· leggo il portale {PORTALE_PAGINA}")
-    sorgente = scarica(PORTALE_PAGINA)
-    pagine = variabile_json(sorgente, "pages") or {}
-    movimenti = variabile_json(sorgente, "movementSummaryByLeague") or {}
-    lobby = lobby_per_lega(sorgente)
+    sorgente = rete.scarica(PORTALE_PAGINA)
+    pagine = variabile_json(sorgente or "", "pages") or {}
+    lobby = lobby_per_lega(sorgente or "")
     if not pagine:
         print("x Nel portale non trovo le classifiche (`pages`): e' cambiato il formato?")
         return 1
@@ -470,40 +480,43 @@ def main() -> int:
     leghe = {}
     for lega in LEGHE:
         piloti, corse = classifica_lega(pagine.get(lega, ""))
-        aggiorna_storico(lega, piloti, corse, prima_piloti)
-        leghe[lega] = {"gare_corse": corse, "piloti": piloti, "lobby": lobby.get(lega, []), "movimenti": movimenti.get(lega, {})}
-        gtv = sum(1 for p in piloti if p["team"].upper() == "GTV")
+        leghe[lega] = {"gare_corse": corse, "piloti": piloti}
+        gtv = sum(1 for p in piloti if nomi.e_gtv(p["team"]))
         print(f"  {lega:<10} {len(piloti):3d} piloti, {gtv} GTV, dopo la gara {corse}, lobby {', '.join(lobby.get(lega, []))}")
 
-    usa_ocr = not args.no_ocr and ocr_disponibile()
-    if not args.no_ocr and not usa_ocr:
-        print("! OCR non disponibile (serve macOS): risultati di gara senza classifica")
-    auto = modulo_auto() if usa_ocr else None
-
+    usa_ocr = ocr.disponibile() and not args.controlla
     gare = {}
-    for gara in range(1, NUM_GARE + 1):
-        lobby_gara = {}
-        prima_gara = ((precedente.get("gare") or {}).get(str(gara)) or {}).get("lobby", {})
-        for lega in LEGHE:
-            for nome_lobby in lobby.get(lega, []):
-                dati = risultati_lobby(
-                    gara, lega, nome_lobby, leghe[lega]["piloti"], auto,
-                    None if args.rileggi else prima_gara.get(nome_lobby),
-                )
-                if dati is not None:
-                    lobby_gara[nome_lobby] = dati
-        if lobby_gara:
-            gare[str(gara)] = {"lobby": lobby_gara}
-            print(f"  Gara {gara}: {len(lobby_gara)} lobby pubblicate")
+    try:
+        for gara in range(1, NUM_GARE + 1):
+            lobby_gara = {}
             for lega in LEGHE:
-                punti_da_gare(leghe[lega]["piloti"], gara, lobby_gara, lega)
-        else:
-            print(f"  Gara {gara}: non ancora pubblicata")
+                for nome_lobby in lobby.get(lega, []):
+                    dati = risultati_lobby(gara, lega, nome_lobby, leghe[lega]["piloti"], usa_ocr, cache, args.rileggi)
+                    if dati is not None:
+                        lobby_gara[nome_lobby] = {k: v for k, v in dati.items() if k != "impronta"}
+            if lobby_gara:
+                gare[str(gara)] = {"lobby": lobby_gara}
+                print(f"  Gara {gara}: {len(lobby_gara)} lobby pubblicate")
+            else:
+                print(f"  Gara {gara}: non ancora pubblicata")
+    except ServeOcr as nuova:
+        print(f"! immagine nuova da leggere ({nuova}): serve l'OCR di macOS")
+        scrivi_output_github("serve_ocr", "true")
+        return 0 if args.controlla else 3
+    if args.controlla:
+        print("· nessuna immagine nuova: basta Linux")
+        scrivi_output_github("serve_ocr", "false")
+        return 0
+
+    for lega in LEGHE:
+        corse = leghe[lega]["gare_corse"]
+        punti_gara(leghe[lega]["piloti"], corse, gare, lega)
+        storico_posizioni(leghe[lega]["piloti"], corse)
     verifica(leghe, gare)
 
     dati = {
         "meta": {
-            "generated_at": adesso(),
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "source": PORTALE_PAGINA,
             "gare_pubblicate": sorted(int(g) for g in gare),
         },
@@ -513,11 +526,17 @@ def main() -> int:
     if args.dry_run:
         print("\n(dry-run: classifiche.json NON e' stato scritto)")
         return 0
-    if senza_meta(dati) == senza_meta(precedente):
+    problemi = controlla_dati(leghe, precedente)
+    if problemi and not args.forza:
+        print("\nx Dati sospetti, classifiche.json NON aggiornato (--forza per scrivere comunque):")
+        for p in problemi:
+            print(f"  - {p}")
+        return 1
+    json_io.scrivi_se_cambiato(CACHE_JSON, cache)
+    if json_io.scrivi_se_cambiato(OUT_JSON, dati):
+        print(f"\nOK → {OUT_JSON.relative_to(REPO_DIR)}")
+    else:
         print("\nNessuna novita' sul portale: classifiche.json invariato")
-        return 0
-    OUT_JSON.write_text(json.dumps(dati, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"\nOK → {OUT_JSON.relative_to(UNION_DIR.parent)}")
     return 0
 
 

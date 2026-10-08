@@ -11,24 +11,27 @@ on:
   schedule:
     # Ogni voce e' separata apposta: il passo qui sotto distingue il giro
     # completo da quello leggero confrontando github.event.schedule con
-    # "0 5 * * *". Con una sola voce "0 5,17 * * *" quel confronto non
-    # scattava mai e il giro completo non partiva.
+    # "4 5 * * *". Con una sola voce per piu' orari quel confronto non
+    # scatterebbe mai e il giro completo non partirebbe.
     #
-    # Giro completo: 05:00 UTC (prima della rotazione, scarica tutto lo storico)
-    - cron: "0 5 * * *"
+    # Minuti "storti" apposta: alle ore piene GitHub accumula ritardi di ore
+    # (osservati 3-7 h nel settembre 2026).
+    #
+    # Giro completo: 05:04 UTC (prima della rotazione, scarica tutto lo storico)
+    - cron: "4 5 * * *"
     # Rotazione degli eventi: le time trial chiudono alle 06:59:59 UTC e i
     # nuovi eventi partono alle 07:00:00 UTC. Questo e' il giro che archivia
     # quello chiuso e mette in pagina i nuovi, pochi minuti dopo il gioco.
-    - cron: "15 7 * * *"
+    - cron: "11 7 * * *"
     # Controllo post-rotazione: gt-gridstats (l'unica fonte dei nomi dei
     # circuiti) si sincronizza con i server del gioco a intervalli, quindi se
-    # al giro delle 07:15 mancava ancora un nome questo lo recupera.
-    - cron: "20 8 * * *"
-    # Giro leggero di fine giornata: 17:00 UTC
-    - cron: "0 17 * * *"
+    # al giro delle 07:11 mancava ancora un nome questo lo recupera.
+    - cron: "23 8 * * *"
+    # Giro leggero di fine giornata
+    - cron: "7 17 * * *"
   workflow_dispatch:
     # Lanciandolo a mano si puo' chiedere il giro completo (tutto lo storico),
-    # che altrimenti gira solo alle 05:00 UTC.
+    # che altrimenti gira solo alle 05:04 UTC.
     inputs:
       completo:
         description: "Scarica tutto lo storico dei piloti (piu' lento, ~10 min)"
@@ -72,12 +75,12 @@ jobs:
         # precedenti, quindi non si rompe niente: ma si vede.
         #
         # Lo storico dei piloti e' paginato (10 eventi per pagina). Il giro
-        # delle 05:00 scarica TUTTE le pagine (circa 10 minuti), gli altri
-        # (07:15 rotazione, 08:20 controllo, 17:00 sera) solo la prima: lo
+        # delle 05:04 scarica TUTTE le pagine (circa 10 minuti), gli altri
+        # (07:11 rotazione, 08:23 controllo, 17:07 sera) solo la prima: lo
         # storico profondo resta perche' i dati nuovi vengono uniti a quelli
         # gia' salvati.
         run: |
-          if [ "${{ github.event.schedule }}" = "0 5 * * *" ] || [ "${{ inputs.completo }}" = "true" ]; then
+          if [ "${{ github.event.schedule }}" = "4 5 * * *" ] || [ "${{ inputs.completo }}" = "true" ]; then
             echo "Giro completo: scarico tutto lo storico"
             python3 gt7_sport.py --full
           else
@@ -85,24 +88,8 @@ jobs:
             python3 gt7_sport.py
           fi
 
-      - name: Commit e push dei dati aggiornati
-        if: always()
-        run: |
-          cd "$GITHUB_WORKSPACE"
-          if git diff --quiet -- dati/sport.json; then
-            echo "Nessuna modifica ai dati Sport: niente commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dati/sport.json
-          git commit -m "chore(sport): aggiornamento dati Sport Mode GT7"
-          for i in 1 2 3; do
-            if git pull --rebase --autostash origin main && git push; then
-              echo "Dati Sport aggiornati."
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "::warning::Push dei dati Sport non riuscito."
-          exit 0
+      - name: Commit e push
+        uses: ./.github/actions/commit-push
+        with:
+          percorsi: dati/sport.json
+          messaggio: "chore(sport): aggiornamento dati Sport Mode GT7"

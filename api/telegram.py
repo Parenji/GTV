@@ -18,10 +18,11 @@ Variabili d'ambiente da impostare su Vercel:
   TELEGRAM_ALLOWED_CHAT_IDS chat_id autorizzati, separati da virgola
                             (in alternativa va bene anche TELEGRAM_CHAT_ID)
 
-Una GET sullo stesso URL risponde con lo stato della funzione (diagnostica,
-nessun segreto esposto).
+Una GET sullo stesso URL risponde {"ok": true} se la funzione e' pronta
+(codice del bot trovato e token configurato), senza altri dettagli.
 """
 
+import hmac
 import json
 import os
 import sys
@@ -151,17 +152,9 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        """Diagnostica: nessun segreto, solo cosa e' configurato."""
-        import gtv_bot
-
+        """Diagnostica minima: solo se la funzione e' pronta, niente dettagli."""
         token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-        self._reply(200, {
-            "ok": True,
-            "servizio": "GTV Control Panel webhook",
-            "code_dir_trovata": bool(CODE_DIR),
-            "token_configurato": bool(token),
-            "chat_autorizzate": len(allowed_chat_ids()),
-        })
+        self._reply(200, {"ok": bool(CODE_DIR) and bool(token)})
 
     def do_POST(self):
         import gtv_bot
@@ -180,7 +173,8 @@ class handler(BaseHTTPRequestHandler):
             return self._reply(200, {"ok": False, "error": "token mancante"})
 
         # Solo Telegram conosce questo header: senza, la richiesta e' di un estraneo
-        if self.headers.get("X-Telegram-Bot-Api-Secret-Token", "") != gtv_bot.webhook_secret(token):
+        ricevuto = self.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+        if not hmac.compare_digest(ricevuto, gtv_bot.webhook_secret(token)):
             _log(f"richiesta non autorizzata da {self.client_address[0]}", "WARN")
             return self._reply(401, {"ok": False, "error": "secret non valido"})
 

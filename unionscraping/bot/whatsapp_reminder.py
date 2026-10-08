@@ -50,9 +50,6 @@ import subprocess
 import sys
 import tempfile
 import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -69,8 +66,13 @@ except Exception:  # pragma: no cover - fallback se la tzdata non e' disponibile
 BASE_DIR = Path(__file__).resolve().parent          # .../unionscraping/bot
 UNION_DIR = BASE_DIR.parent                         # .../unionscraping
 REPO_DIR = UNION_DIR.parent                         # radice del repository
+
+sys.path.insert(0, str(UNION_DIR))
+from comune import env as comune_env  # noqa: E402
+from comune import nomi  # noqa: E402
+from comune import telegram as tg  # noqa: E402
+from comune.calendario import CALENDARIO_JSON  # noqa: E402
 DATA_JSON = REPO_DIR / "dati" / "union" / "lobby.json"
-CALENDARIO_JSON = REPO_DIR / "dati" / "union" / "calendario.json"
 OUT_DIR = BASE_DIR / "messaggi"                     # file .txt generati
 SENT_STATE = BASE_DIR / ".sent_state.json"          # registro degli invii fatti
 
@@ -86,18 +88,7 @@ def load_env_file():
     Le variabili d'ambiente gia' impostate hanno sempre la precedenza, cosi'
     su GitHub Actions (secrets) il file locale viene semplicemente ignorato.
     """
-    for path in ENV_FILES:
-        if not path.exists():
-            continue
-        for raw in path.read_text(encoding="utf-8").splitlines():
-            line = raw.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            key, _, value = line.partition("=")
-            key = key.strip()
-            value = value.strip().strip('"').strip("'")
-            if key and key not in os.environ:
-                os.environ[key] = value
+    comune_env.carica(*ENV_FILES)
 
 
 # ---------------------------------------------------------------------------
@@ -197,7 +188,7 @@ def gtv_lobbies_for_day(data, day_name):
             continue
         pilots = [
             p for p in lb.get("pilots", [])
-            if str(p.get("team", "")).strip().upper() == "GTV"
+            if nomi.e_gtv(p.get("team"))
         ]
         if not pilots:
             continue
@@ -309,19 +300,10 @@ def copy_to_clipboard(text):
 # Invio Telegram
 # ---------------------------------------------------------------------------
 def telegram_api(token, method, params=None):
-    url = f"https://api.telegram.org/bot{token}/{method}"
-    data = urllib.parse.urlencode(params or {}).encode("utf-8")
-    req = urllib.request.Request(url, data=data)
+    """Chiamata alla Bot API nel formato della risposta Telegram ({ok, ...})."""
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        # L'API Telegram risponde 4xx con un JSON che spiega l'errore
-        try:
-            return json.loads(e.read().decode("utf-8"))
-        except Exception:
-            return {"ok": False, "description": f"HTTP {e.code}: {e.reason}"}
-    except Exception as e:  # errori di rete/timeout
+        return {"ok": True, "result": tg.chiama(token, method, params)}
+    except tg.TelegramError as e:
         return {"ok": False, "description": str(e)}
 
 

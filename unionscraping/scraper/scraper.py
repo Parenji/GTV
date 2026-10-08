@@ -4,18 +4,20 @@
 HUB UNION scraper
 =================
 Scarica i dati del sito https://sites.google.com/view/hubunion/home
-(Campionato Union 2026 - Round 2) dai fogli Google pubblicati e genera:
-  - data.json   : dataset strutturato (lobby + piloti)
+(Campionato Union 2026 - Round 2) dai fogli Google pubblicati e genera
+dati/union/lobby.json: le lobby della settimana (giorno, ora, host, live,
+piloti) e i totali di iscritti, lobby e team.
+
+Prima di scrivere controlla che i fogli abbiano risposto con dati sensati:
+se il foglio non e' piu' pubblicato o cambia formato, il file vecchio resta
+com'e' e lo script esce con errore (il workflow diventa rosso). Se cambia
+solo l'orario di generazione il file non viene riscritto.
 
 Nessuna dipendenza esterna: usa solo la libreria standard.
 """
 
-import csv
-import io
-import json
 import re
 import sys
-import urllib.request
 from collections import Counter, OrderedDict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +27,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 UNION_DIR = BASE_DIR.parent
 REPO_DIR = UNION_DIR.parent
+OUT_JSON = REPO_DIR / "dati" / "union" / "lobby.json"
+
+sys.path.insert(0, str(UNION_DIR))
+from comune import json_io, rete  # noqa: E402
+
+# Sotto queste soglie i fogli hanno risposto male: meglio non scrivere
+MIN_LOBBY = 10
+MIN_PILOTI = 100
+CALO_MASSIMO = 0.5  # rispetto al file precedente
 
 # ---------------------------------------------------------------------------
 # Configurazione: fogli pubblicati estratti dalle pagine Google Sites
@@ -61,10 +72,7 @@ POS_RE = re.compile(r"^\d+$")
 # ---------------------------------------------------------------------------
 def fetch_csv(url: str) -> list:
     """Scarica un CSV pubblicato e lo converte in lista di righe."""
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        raw = resp.read().decode("utf-8-sig")
-    return list(csv.reader(io.StringIO(raw)))
+    return rete.scarica_csv(url)
 
 
 # ---------------------------------------------------------------------------
@@ -183,17 +191,26 @@ def parse_piloti() -> list:
 # Statistiche
 # ---------------------------------------------------------------------------
 def build_stats(lobbies, pilots):
-    teams = Counter(p["team"] for p in pilots)
-    cats = Counter(p["categoria"] for p in pilots)
-    groups = Counter(p["lobby_group"] for p in pilots)
     return {
         "total_pilots": len(pilots),
         "total_lobbies": len(lobbies),
-        "total_teams": len(teams),
-        "categories": dict(cats),
-        "lobby_groups": dict(groups),
-        "pilots_per_day": dict(Counter(lb["day"] for lb in lobbies)),
+        "total_teams": len(Counter(p["team"] for p in pilots)),
+        "lobbies_per_day": dict(Counter(lb["day"] for lb in lobbies)),
     }
+
+
+def controlla(lobbies, pilots):
+    """Problemi che impediscono di scrivere il file (lista vuota = tutto ok)."""
+    problemi = []
+    if len(lobbies) < MIN_LOBBY:
+        problemi.append(f"solo {len(lobbies)} lobby (minimo {MIN_LOBBY})")
+    if len(pilots) < MIN_PILOTI:
+        problemi.append(f"solo {len(pilots)} piloti iscritti (minimo {MIN_PILOTI})")
+    prima = json_io.leggi(OUT_JSON, {}) or {}
+    lobby_prima = len(prima.get("lobbies") or [])
+    if lobby_prima and len(lobbies) < lobby_prima * CALO_MASSIMO:
+        problemi.append(f"le lobby sono scese da {lobby_prima} a {len(lobbies)}")
+    return problemi
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -209,25 +226,29 @@ def main():
         print(f"    {lb['day']:10s} {lb['name']:4s} {lb['category']:10s} "
               f"{lb['time']:8s} host={lb['host'] or '-':20s} piloti={len(lb['pilots'])}")
 
-    stats = build_stats(lobbies, pilots)
+    problemi = controlla(lobbies, pilots)
+    if problemi:
+        print("\nx Dati sospetti, " + OUT_JSON.name + " NON aggiornato:", file=sys.stderr)
+        for p in problemi:
+            print(f"  - {p}", file=sys.stderr)
+        return 1
+
     data = {
         "meta": {
             "source": SITE,
             "title": "HUB UNION - Campionato Union 2026 Round 2",
-            # Momento (UTC) in cui lo scraper ha generato i dati:
-            # coincide con l'ultimo aggiornamento automatico.
+            # Momento (UTC) dell'ultima generazione con dati cambiati
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         },
-        "stats": stats,
+        "stats": build_stats(lobbies, pilots),
         "lobbies": lobbies,
-        "pilots": pilots,
     }
 
-    out_json = REPO_DIR / "dati" / "union" / "lobby.json"
-    with open(out_json, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-    print(f"\nOK → {out_json.name} ({len(pilots)} piloti, {len(lobbies)} lobby)")
+    if json_io.scrivi_se_cambiato(OUT_JSON, data, indent=2):
+        print(f"\nOK → {OUT_JSON.relative_to(REPO_DIR)} ({len(pilots)} piloti, {len(lobbies)} lobby)")
+    else:
+        print("\nNessuna novita' nei fogli: file invariato")
+    return 0
 
 
 if __name__ == "__main__":

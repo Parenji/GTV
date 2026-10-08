@@ -34,10 +34,6 @@ import signal
 import sys
 import time
 import traceback
-import urllib.error
-import urllib.parse
-import urllib.request
-import uuid
 from datetime import date, datetime
 from pathlib import Path
 
@@ -89,28 +85,7 @@ def log(msg, level="INFO"):
 # ---------------------------------------------------------------------------
 # Livello Telegram (Bot API via urllib, zero dipendenze)
 # ---------------------------------------------------------------------------
-def _multipart(params, files):
-    """Costruisce un body multipart/form-data per l'upload di file."""
-    boundary = "----gtv" + uuid.uuid4().hex
-    body = bytearray()
-    for key, value in (params or {}).items():
-        body += (
-            f'--{boundary}\r\nContent-Disposition: form-data; name="{key}"\r\n\r\n'
-            f"{value}\r\n"
-        ).encode("utf-8")
-    for key, path in (files or {}).items():
-        path = Path(path)
-        body += (
-            f'--{boundary}\r\nContent-Disposition: form-data; name="{key}"; '
-            f'filename="{path.name}"\r\nContent-Type: text/plain; charset=utf-8\r\n\r\n'
-        ).encode("utf-8")
-        body += path.read_bytes() + b"\r\n"
-    body += f"--{boundary}--\r\n".encode("utf-8")
-    return bytes(body), f"multipart/form-data; boundary={boundary}"
-
-
-class TelegramError(Exception):
-    pass
+TelegramError = wr.tg.TelegramError
 
 
 class Telegram:
@@ -118,29 +93,7 @@ class Telegram:
         self.token = token
 
     def call(self, method, params=None, files=None, timeout=API_TIMEOUT):
-        url = f"https://api.telegram.org/bot{self.token}/{method}"
-        if files:
-            body, content_type = _multipart(params, files)
-            req = urllib.request.Request(
-                url, data=body, headers={"Content-Type": content_type}
-            )
-        else:
-            data = urllib.parse.urlencode(params or {}).encode("utf-8")
-            req = urllib.request.Request(url, data=data)
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                payload = json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            try:
-                payload = json.loads(e.read().decode("utf-8"))
-            except Exception:
-                raise TelegramError(f"HTTP {e.code}: {e.reason}") from e
-        except Exception as e:  # timeout, DNS, rete assente...
-            raise TelegramError(str(e)) from e
-
-        if not payload.get("ok"):
-            raise TelegramError(payload.get("description", "errore sconosciuto"))
-        return payload.get("result")
+        return wr.tg.chiama(self.token, method, params, files, timeout)
 
 
 # ---------------------------------------------------------------------------

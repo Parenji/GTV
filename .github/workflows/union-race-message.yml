@@ -48,11 +48,11 @@ jobs:
           python-version: "3.12"
 
       - name: Aggiorna i dati Union
-        working-directory: unionscraping/scraper
         # Se lo scraping fallisce (rete/Google), si prosegue con il
-        # data.json gia' presente nel repo: il messaggio parte comunque.
+        # lobby.json gia' presente nel repo: il messaggio parte comunque.
+        # Il calendario invece e' obbligatorio: senza, il passo dopo fallisce.
         continue-on-error: true
-        run: python3 scraper.py
+        run: python3 unionscraping/scraper/scraper.py
 
       - name: Invia il messaggio del giorno di gara
         working-directory: unionscraping/bot
@@ -71,31 +71,13 @@ jobs:
           fi
 
       - name: Registra l'invio nel repo
+        # Senza il registro committato, il giro della mattina rimanderebbe
+        # lo stesso messaggio: se il push fallisce il run deve diventare rosso.
         if: always()
-        run: |
-          cd "$GITHUB_WORKSPACE"
-          if [ ! -f unionscraping/bot/.sent_state.json ]; then
-            echo "Nessun registro di invio da salvare."
-            exit 0
-          fi
-          if git diff --quiet -- unionscraping/bot/.sent_state.json; then
-            echo "Registro invariato: niente da committare."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add unionscraping/bot/.sent_state.json
-          git commit -m "chore(bot): registra l'invio del messaggio di oggi"
-          # lo scraper pusha ogni 12h: allineo prima di pushare
-          for i in 1 2 3; do
-            if git pull --rebase --autostash origin main && git push; then
-              echo "Registro salvato."
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "::warning::Non sono riuscito a salvare il registro degli invii."
-          exit 0
+        uses: ./.github/actions/commit-push
+        with:
+          percorsi: unionscraping/bot/.sent_state.json
+          messaggio: "chore(bot): registra l'invio del messaggio di oggi"
 
       - name: Salva i messaggi generati come artifact
         if: always()
