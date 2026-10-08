@@ -10,7 +10,7 @@ della richiesta di amicizia all'Host entro le 12:00.
 
 Fonti dati (nessuna duplicazione, nessuna dipendenza esterna):
   - unionscraping/data.json  -> lobby e piloti (generato da scraper.py)
-  - union.html               -> calendario Round 2 (pista + settimane di gara)
+  - dati/union/calendario.json -> calendario (pista + settimane di gara)
 
 Comandi utili:
   python3 whatsapp_reminder.py --list                # tutti i giorni di gara a calendario
@@ -70,7 +70,7 @@ BASE_DIR = Path(__file__).resolve().parent          # .../unionscraping/bot
 UNION_DIR = BASE_DIR.parent                         # .../unionscraping
 REPO_DIR = UNION_DIR.parent                         # radice del repository
 DATA_JSON = UNION_DIR / "data.json"
-UNION_HTML = REPO_DIR / "union.html"
+CALENDARIO_JSON = REPO_DIR / "dati" / "union" / "calendario.json"
 OUT_DIR = BASE_DIR / "messaggi"                     # file .txt generati
 SENT_STATE = BASE_DIR / ".sent_state.json"          # registro degli invii fatti
 
@@ -113,10 +113,6 @@ DAY_NAMES_FULL = {
     "GIOVEDI": "Giovedì",
     "VENERDI": "Venerdì",
 }
-MONTHS_ABBR = {
-    "GEN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAG": 5, "GIU": 6,
-    "LUG": 7, "AGO": 8, "SET": 9, "OTT": 10, "NOV": 11, "DIC": 12,
-}
 MONTHS_FULL = {
     1: "GENNAIO", 2: "FEBBRAIO", 3: "MARZO", 4: "APRILE", 5: "MAGGIO",
     6: "GIUGNO", 7: "LUGLIO", 8: "AGOSTO", 9: "SETTEMBRE", 10: "OTTOBRE",
@@ -129,71 +125,35 @@ SEP = "━━━━━━━━━━━━━━━━━━━━"
 
 
 # ---------------------------------------------------------------------------
-# Calendario: legge i round direttamente da union.html
+# Calendario: dati/union/calendario.json (unica fonte, la legge anche il sito)
 # ---------------------------------------------------------------------------
-def parse_calendar(html_text):
-    """Estrae i round dal calendario di union.html.
+def load_calendar(path=None):
+    """Legge il calendario Union.
 
-    Restituisce una lista di dict:
-      {label, track, iso, start, end}
-    dove start/end sono datetime.date. Il parsing si basa sulle card
-    `.race-item` gia' presenti nella pagina (unica fonte di verita').
+    Restituisce (rounds, badge): rounds e' una lista di dict
+      {index, label, track, iso, start, end}
+    con start/end datetime.date; badge e' l'etichetta "ROUND 2 - 2026".
+    Un calendario vuoto o illeggibile e' un errore: senza calendario il
+    promemoria non partirebbe mai, e deve accorgersene qualcuno.
     """
-    # Ignora il contenuto commentato (es. vecchie sezioni disattivate)
-    html_text = re.sub(r"<!--.*?-->", "", html_text, flags=re.DOTALL)
-
-    start_block = html_text.find('class="calendar-title">Round 2')
-    end_block = html_text.find('<section id="lobby"')
-    if start_block != -1 and end_block != -1:
-        html_text = html_text[start_block:end_block]
-
+    path = Path(path or CALENDARIO_JSON)
+    cal = json.loads(path.read_text(encoding="utf-8"))
     rounds = []
-    for chunk in html_text.split('<div class="race-item"')[1:]:
-        # Etichetta della gara ("Gara 1", "Gara 2", ... oppure "Finale")
-        m_label = re.search(
-            r"font-size:\s*1\.3em;[^>]*>\s*([^<]+?)\s*<", chunk
-        )
-        label = m_label.group(1).strip() if m_label else "Gara"
-
-        # Nome pista (span subito dopo la bandierina)
-        m_track = re.search(
-            r'class="flagtrack"[^>]*>\s*<span[^>]*>([^<]+)</span>', chunk
-        )
-        track = m_track.group(1).strip() if m_track else ""
-
-        # Codice paese dalla bandiera di sfondo (es. .../4x3/at.svg -> at)
-        m_flag = re.search(r"/4x3/([a-z]{2})\.svg", chunk)
-        iso = m_flag.group(1).lower() if m_flag else ""
-
-        # Intervallo date, in due formati possibili:
-        #   "21 - 27 SET 2026"        (stesso mese)
-        #   "30 NOV - 6 DIC 2026"     (mese diverso, es. Finale)
-        m_dates = re.search(
-            r">\s*(\d{1,2})\s*(?:([A-Za-z]{3}))?\s*[\u2013\u2014-]\s*"
-            r"(\d{1,2})\s+([A-Za-z]{3})\s+(\d{4})\s*<",
-            chunk,
-        )
-        if not m_dates:
-            continue
-        d1, mon1, d2, mon2, year = m_dates.groups()
-        month1 = MONTHS_ABBR.get((mon1 or mon2).upper())
-        month2 = MONTHS_ABBR.get(mon2.upper())
-        if not month1 or not month2:
-            continue
-        start = date(int(year), month1, int(d1))
-        end = date(int(year), month2, int(d2))
-
+    for g in cal.get("gare", []):
         rounds.append(
             {
-                "index": len(rounds) + 1,   # 1-based, come "Gara 1"
-                "label": label,
-                "track": track,
-                "iso": iso,
-                "start": start,
-                "end": end,
+                "index": int(g["n"]),
+                "label": str(g.get("nome") or f"Gara {g['n']}"),
+                "track": str(g.get("pista", "")),
+                "iso": str(g.get("bandiera", "")).lower(),
+                "start": date.fromisoformat(g["dal"]),
+                "end": date.fromisoformat(g["al"]),
             }
         )
-    return rounds
+    if not rounds:
+        raise ValueError(f"Calendario senza gare: {path}")
+    badge = f"{cal.get('round', '').upper()} - {cal.get('stagione', '')}".strip(" -")
+    return rounds, badge
 
 
 def race_days(rounds):
@@ -266,12 +226,6 @@ def italian_full_date(dt):
         f"{DAY_NAMES_FULL.get(DAY_NAMES[dt.weekday()], DAY_NAMES[dt.weekday()])} "
         f"{dt.day} {MONTHS_FULL[dt.month]} {dt.year}"
     )
-
-
-def round_badge_label(html_text):
-    """Legge il badge in hero (es. 'ROUND 2 - 2026') da union.html."""
-    m = re.search(r'union-hero-badge">([^<]+)<', html_text)
-    return m.group(1).strip() if m else "ROUND 2 - 2026"
 
 
 def build_message(round_info, dt, day_name, lobbies, badge):
@@ -416,14 +370,7 @@ def pick_round(rounds, days_map, round_no=None):
     if not rounds:
         return None
     if round_no:
-        for rd in rounds:
-            m = re.search(r"(\d+)", rd["label"])
-            if m and int(m.group(1)) == round_no:
-                return rd
-        # Fallback posizionale: la "Finale" non ha un numero nel nome
-        if 1 <= round_no <= len(rounds):
-            return rounds[round_no - 1]
-        return None
+        return next((rd for rd in rounds if rd["index"] == round_no), None)
     today = italian_today()
     upcoming = [rd for rd in sorted(rounds, key=lambda r: r["start"])
                 if rd["end"] >= today]
@@ -637,14 +584,12 @@ def main():
     if not DATA_JSON.exists():
         print(f"x File dati non trovato: {DATA_JSON}", file=sys.stderr)
         return 2
-    if not UNION_HTML.exists():
-        print(f"x Calendario non trovato: {UNION_HTML}", file=sys.stderr)
+    try:
+        rounds, badge = load_calendar()
+    except (OSError, ValueError, KeyError) as e:
+        print(f"x Calendario illeggibile: {e}", file=sys.stderr)
         return 2
-
-    html_text = UNION_HTML.read_text(encoding="utf-8")
-    rounds = parse_calendar(html_text)
     days_map = race_days(rounds)
-    badge = round_badge_label(html_text)
     data = load_unions_data()
 
     # --list: panoramica dei giorni di gara, senza generare nulla
@@ -711,6 +656,9 @@ def main():
             res = telegram_send(token, chat_id, text)
             if res.get("ok"):
                 sent += 1
+                # registrato anche l'invio manuale: senza, il giro --auto
+                # successivo rimanderebbe lo stesso giorno
+                mark_sent(dt)
                 print("-> inviato su Telegram OK")
             else:
                 print(f"x Errore Telegram: {res}", file=sys.stderr)

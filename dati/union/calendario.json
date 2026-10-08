@@ -1,0 +1,15 @@
+{
+  "_nota": "Calendario Union: unica fonte per union.html, bot Telegram e promemoria. Si modifica a mano. tipo = gara (conta in classifica) | finale. bandiera = codice in images/bandiere/<codice>.svg; mappa = file in images/tracks/.",
+  "campionato": "Union E-Sport",
+  "stagione": 2026,
+  "round": "Round 2",
+  "nota": "Si corre a settimane alterne",
+  "gare": [
+    {"n": 1, "nome": "Gara 1", "tipo": "gara", "pista": "Red Bull Ring", "bandiera": "at", "mappa": "rbr.svg", "dal": "2026-09-21", "al": "2026-09-27"},
+    {"n": 2, "nome": "Gara 2", "tipo": "gara", "pista": "Watkins Glen", "bandiera": "us", "mappa": "watkins.svg", "dal": "2026-10-05", "al": "2026-10-11"},
+    {"n": 3, "nome": "Gara 3", "tipo": "gara", "pista": "Suzuka Circuit", "bandiera": "jp", "mappa": "suzuka.png", "dal": "2026-10-19", "al": "2026-10-25"},
+    {"n": 4, "nome": "Gara 4", "tipo": "gara", "pista": "Autopolis", "bandiera": "jp", "mappa": "autopolis.png", "dal": "2026-11-02", "al": "2026-11-08"},
+    {"n": 5, "nome": "Gara 5", "tipo": "gara", "pista": "Nürburgring GP", "bandiera": "de", "mappa": "nurburgring.svg", "dal": "2026-11-16", "al": "2026-11-22"},
+    {"n": 6, "nome": "Finale", "tipo": "finale", "pista": "Barcelona GP", "bandiera": "es", "mappa": "barcelona.svg", "dal": "2026-11-30", "al": "2026-12-06", "badge": ["No chicane"]}
+  ]
+}

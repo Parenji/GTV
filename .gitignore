@@ -30,3 +30,6 @@ unionscraping/classifiche/.gare/
 # Foglietti di telecronaca generati (rigenerabili con telecronaca.py)
 unionscraping/telecronaca/fogli/
 
+
+# Materiale di lavoro locale (mai nel repo né sul sito)
+_locale/

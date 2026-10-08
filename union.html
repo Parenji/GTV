@@ -101,7 +101,7 @@
             <div class="ui-page">
 
                 <div class="ui-hero">
-                    <div class="ui-eyebrow">Stagione 2026, Round 2</div>
+                    <div class="ui-eyebrow" id="union-round-eyebrow">Stagione 2026</div>
                     <h1 class="ui-display">Lega Union</h1>
                     <p class="ui-lead">La casa dei GTV in Union: regolamenti, lobby e tutte le info sempre a portata di mano.</p>
                     <div class="ui-btn-row ui-btn-row--center ui-btn-row--grid2" style="margin: var(--ui-s5) 0 var(--ui-s6)">
@@ -167,7 +167,7 @@
                 <section class="ui-section">
                     <div class="ui-section-head">
                         <h2 class="ui-section-title">GTV iscritti</h2>
-                        <span class="ui-section-meta" id="union-piloti-count">Round 2</span>
+                        <span class="ui-section-meta" id="union-piloti-count" data-union-round></span>
                     </div>
                     <div id="union-piloti-body">
                         <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento piloti…</div>
@@ -184,7 +184,7 @@
                 <section class="ui-section">
                     <div class="ui-section-head">
                         <h2 class="ui-section-title">Risultati GTV</h2>
-                        <span class="ui-section-meta" id="union-res-subtitle">Round 2</span>
+                        <span class="ui-section-meta" id="union-res-subtitle" data-union-round></span>
                     </div>
                     <div id="union-res-gare" class="ui-seg" role="group" aria-label="Scegli la gara" style="margin-bottom: var(--ui-s4)"></div>
                     <div id="union-res-body">
@@ -244,48 +244,12 @@
             <div class="ui-page">
                 <section class="ui-section">
                     <div class="ui-section-head">
-                        <h2 class="ui-section-title">Round 2</h2>
-                        <span class="ui-section-meta">Si corre a settimane alterne</span>
+                        <h2 class="ui-section-title" data-union-round>Calendario</h2>
+                        <span class="ui-section-meta" id="union-cal-nota"></span>
                     </div>
-                    <!-- data-dal / data-al: settimana di gara, per segnare quella in corso o la prossima -->
+                    <!-- Card generate da union.js leggendo dati/union/calendario.json -->
                     <div class="ui-grid" id="union-calendario">
-                        <div class="ui-card ui-race" data-dal="2026-09-21" data-al="2026-09-27">
-                            <span class="ui-race-round">Gara 1</span>
-                            <span class="ui-race-track"><img src="images/bandiere/at.svg" alt="">Red Bull Ring</span>
-                            <span class="ui-race-date">21 – 27 set 2026</span>
-                            <img class="ui-race-map" src="images/tracks/rbr.svg" alt="" onerror="this.style.display='none'">
-                        </div>
-                        <div class="ui-card ui-race" data-dal="2026-10-05" data-al="2026-10-11">
-                            <span class="ui-race-round">Gara 2</span>
-                            <span class="ui-race-track"><img src="images/bandiere/us.svg" alt="">Watkins Glen</span>
-                            <span class="ui-race-date">5 – 11 ott 2026</span>
-                            <img class="ui-race-map" src="images/tracks/watkins.svg" alt="" onerror="this.style.display='none'">
-                        </div>
-                        <div class="ui-card ui-race" data-dal="2026-10-19" data-al="2026-10-25">
-                            <span class="ui-race-round">Gara 3</span>
-                            <span class="ui-race-track"><img src="images/bandiere/jp.svg" alt="">Suzuka Circuit</span>
-                            <span class="ui-race-date">19 – 25 ott 2026</span>
-                            <img class="ui-race-map" src="images/tracks/suzuka.png" alt="" onerror="this.style.display='none'">
-                        </div>
-                        <div class="ui-card ui-race" data-dal="2026-11-02" data-al="2026-11-08">
-                            <span class="ui-race-round">Gara 4</span>
-                            <span class="ui-race-track"><img src="images/bandiere/jp.svg" alt="">Autopolis</span>
-                            <span class="ui-race-date">2 – 8 nov 2026</span>
-                            <img class="ui-race-map" src="images/tracks/autopolis.png" alt="" onerror="this.style.display='none'">
-                        </div>
-                        <div class="ui-card ui-race" data-dal="2026-11-16" data-al="2026-11-22">
-                            <span class="ui-race-round">Gara 5</span>
-                            <span class="ui-race-track"><img src="images/bandiere/de.svg" alt="">Nürburgring GP</span>
-                            <span class="ui-race-date">16 – 22 nov 2026</span>
-                            <img class="ui-race-map" src="images/tracks/nurburgring.svg" alt="" onerror="this.style.display='none'">
-                        </div>
-                        <div class="ui-card ui-race" data-dal="2026-11-30" data-al="2026-12-06">
-                            <span class="ui-race-round">Finale</span>
-                            <span class="ui-race-track"><img src="images/bandiere/es.svg" alt="">Barcelona GP</span>
-                            <span class="ui-race-date">30 nov – 6 dic 2026</span>
-                            <span><span class="ui-badge">No chicane</span></span>
-                            <img class="ui-race-map" src="images/tracks/barcelona.svg" alt="" onerror="this.style.display='none'">
-                        </div>
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento calendario…</div>
                     </div>
                 </section>
 
@@ -306,7 +270,7 @@
                 <section class="ui-section">
                     <div class="ui-section-head">
                         <h2 class="ui-section-title">Live dei piloti GTV</h2>
-                        <span class="ui-section-meta" id="union-live-meta">Round 2</span>
+                        <span class="ui-section-meta" id="union-live-meta" data-union-round></span>
                     </div>
                     <div id="union-live-body">
                         <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento live…</div>

@@ -66,9 +66,19 @@ BOT_COMMANDS = [
 # ---------------------------------------------------------------------------
 # Logging minimale (stdout + file, utile per launchd)
 # ---------------------------------------------------------------------------
+def _stdout_va_nel_log():
+    """Sotto launchd lo stdout e' gia' bot.log: scriverci due volte duplica le righe."""
+    try:
+        return os.path.samestat(os.fstat(sys.stdout.fileno()), os.stat(LOG_FILE))
+    except (OSError, ValueError, AttributeError):
+        return False
+
+
 def log(msg, level="INFO"):
     line = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} [{level}] {msg}"
     print(line, flush=True)
+    if _stdout_va_nel_log():
+        return
     try:
         with open(LOG_FILE, "a", encoding="utf-8") as f:
             f.write(line + "\n")
@@ -219,10 +229,8 @@ class GtvBot:
     # -- dati -------------------------------------------------------------
     def race_context(self):
         """Rilegge calendario e dati a ogni richiesta: sempre aggiornati."""
-        html_text = wr.UNION_HTML.read_text(encoding="utf-8")
-        rounds = wr.parse_calendar(html_text)
+        rounds, badge = wr.load_calendar()
         days_map = wr.race_days(rounds)
-        badge = wr.round_badge_label(html_text)
         data = wr.load_unions_data()
         return rounds, days_map, badge, data
 
@@ -260,6 +268,9 @@ class GtvBot:
     def build_union_menu(self):
         rounds, days_map, badge, _ = self.race_context()
         rd = self.next_round(rounds)
+        if rd is None:
+            return "Calendario Union vuoto: nessuna gara da mostrare.", kb(
+                [[btn("⬅️ Menu principale", "m:main")]])
         today = wr.italian_today()
         is_race_day = today in days_map
         rows = []

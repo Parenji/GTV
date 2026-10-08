@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/telegram.py": {
-      "includeFiles": "unionscraping/**",
+      "includeFiles": "{unionscraping,dati}/**",
       "excludeFiles": "{images,pdf,font,favicon,sportscraping,.github,.vscode,.claude}/**,*.{html,js,css,md}",
       "maxDuration": 30
     },

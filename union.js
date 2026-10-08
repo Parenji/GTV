@@ -9,6 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initUnionPage() {
+  // Il calendario serve a quasi tutto il resto (piste, numero di gare,
+  // giorni di gara): prima lui, poi le sezioni. Se non arriva la pagina
+  // funziona lo stesso, senza nomi delle piste.
+  fetchUnionCalendario()
+    .then(renderUnionCalendario, function () {
+      renderUnionCalendario(null);
+    })
+    .then(initUnionSezioni);
+}
+
+function initUnionSezioni() {
   markUnionCalendario();
   markUnionLiveHome();
   loadUnionPiloti();
@@ -63,9 +74,94 @@ function unionState(testo, tipo) {
 }
 
 // -------------------------------------------------------------
-// CALENDARIO: segna la settimana di gara in corso o la prossima
-// (le date stanno negli attributi data-dal / data-al delle card)
+// CALENDARIO: dati/union/calendario.json (unica fonte: lo leggono
+// anche il bot Telegram e i promemoria di gara)
 // -------------------------------------------------------------
+var UNION_CAL = null;
+var UNION_PISTE = []; // pista per gara di campionato (indice = gara - 1)
+var UNION_NUM_GARE = 0; // gare che contano in classifica (Finale esclusa)
+
+function unionCalendarioUrl() {
+  return window.GTV_CONFIG && window.GTV_CONFIG.unionCalendario
+    ? window.GTV_CONFIG.unionCalendario
+    : "dati/union/calendario.json";
+}
+
+function fetchUnionCalendario() {
+  return fetch(unionCalendarioUrl()).then(function (response) {
+    if (!response.ok) throw new Error("Errore HTTP " + response.status);
+    return response.json();
+  });
+}
+
+function unionPista(gara) {
+  return UNION_PISTE[gara - 1] || "";
+}
+
+var UNION_MESI_BREVI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
+
+// "21 – 27 set 2026" oppure "30 nov – 6 dic 2026"
+function unionPeriodo(dal, al) {
+  var a = String(dal || "").split("-").map(Number);
+  var b = String(al || "").split("-").map(Number);
+  if (a.length !== 3 || b.length !== 3) return "";
+  var meseA = UNION_MESI_BREVI[a[1] - 1];
+  var meseB = UNION_MESI_BREVI[b[1] - 1];
+  var inizio = a[1] === b[1] ? String(a[2]) : a[2] + " " + meseA;
+  return inizio + " – " + b[2] + " " + meseB + " " + b[0];
+}
+
+function unionRaceCardHtml(g) {
+  var bandiera = g.bandiera
+    ? '<img src="images/bandiere/' + encodeURIComponent(g.bandiera) + '.svg" alt="">'
+    : "";
+  var badge = (g.badge || [])
+    .map(function (b) {
+      return '<span class="ui-badge">' + escapeHtml(b) + "</span>";
+    })
+    .join(" ");
+  var mappa = g.mappa
+    ? '<img class="ui-race-map" src="images/tracks/' + encodeURIComponent(g.mappa) +
+      '" alt="" onerror="this.style.display=\'none\'">'
+    : "";
+  return (
+    '<div class="ui-card ui-race" data-dal="' + escapeHtml(g.dal) + '" data-al="' + escapeHtml(g.al) + '">' +
+    '<span class="ui-race-round">' + escapeHtml(g.nome) + "</span>" +
+    '<span class="ui-race-track">' + bandiera + escapeHtml(g.pista) + "</span>" +
+    '<span class="ui-race-date">' + escapeHtml(unionPeriodo(g.dal, g.al)) + "</span>" +
+    (badge ? "<span>" + badge + "</span>" : "") +
+    mappa +
+    "</div>"
+  );
+}
+
+function renderUnionCalendario(cal) {
+  var griglia = document.getElementById("union-calendario");
+  var gare = (cal && cal.gare) || [];
+  UNION_CAL = cal;
+  UNION_PISTE = [];
+  gare.forEach(function (g) {
+    if (g.tipo !== "finale") UNION_PISTE[g.n - 1] = g.pista;
+  });
+  UNION_NUM_GARE = UNION_PISTE.length;
+
+  var round = (cal && cal.round) || "";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-union-round]"), function (el) {
+    el.textContent = round;
+  });
+  var eyebrow = document.getElementById("union-round-eyebrow");
+  if (eyebrow && cal) eyebrow.textContent = "Stagione " + cal.stagione + (round ? ", " + round : "");
+  var nota = document.getElementById("union-cal-nota");
+  if (nota && cal && cal.nota) nota.textContent = cal.nota;
+
+  if (!griglia) return;
+  griglia.innerHTML = gare.length
+    ? gare.map(unionRaceCardHtml).join("")
+    : unionState("Calendario non disponibile al momento.", "error");
+}
+
+// Segna la settimana di gara in corso o la prossima
+// (le date stanno negli attributi data-dal / data-al delle card)
 function markUnionCalendario() {
   var cards = document.querySelectorAll("#union-calendario .ui-race");
   if (!cards.length) return;
@@ -768,8 +864,6 @@ function renderUnionLive(container, data, csvRows) {
 // Dati dal Portale Classifiche Union (classifiche/classifiche.py);
 // la classifica di ogni lobby e' letta (OCR) dalle immagini del portale.
 // =============================================================
-var UNION_PISTE = ["Red Bull Ring", "Watkins Glen", "Suzuka Circuit", "Autopolis", "Nürburgring GP"];
-var UNION_NUM_GARE = 5;
 
 var unionCls = {
   data: null,
@@ -897,13 +991,13 @@ function renderUnionRisultati() {
         '<button type="button" class="ui-seg-btn"' +
         (ok ? ' data-gara="' + g + '"' : " disabled") +
         ' aria-pressed="' + (g === unionCls.gara) + '"' +
-        ' title="' + escapeHtml(UNION_PISTE[g - 1] + (ok ? "" : " (non ancora pubblicata)")) + '">G' + g + "</button>";
+        ' title="' + escapeHtml(unionPista(g) + (ok ? "" : " (non ancora pubblicata)")) + '">G' + g + "</button>";
     }
     selettore.innerHTML = bottoni;
   }
 
   if (!unionCls.gara) {
-    if (sottotitolo) sottotitolo.textContent = "Round 2";
+    if (sottotitolo) sottotitolo.textContent = (UNION_CAL && UNION_CAL.round) || "";
     body.innerHTML = unionState(
       "I risultati compariranno qui appena la Lega pubblica le classifiche di gara sul portale Union.",
       "empty"
@@ -911,7 +1005,7 @@ function renderUnionRisultati() {
     return;
   }
 
-  if (sottotitolo) sottotitolo.textContent = "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1];
+  if (sottotitolo) sottotitolo.textContent = "Gara " + unionCls.gara + ", " + unionPista(unionCls.gara);
   var garaData = unionGaraData(unionCls.gara);
   var html = "";
 
@@ -1007,7 +1101,7 @@ function openUnionPanel(nomeLobby, origine) {
 
   showUnionSheet(
     "Lobby " + escapeHtml(nomeLobby) + " " + unionCatBadge(lb.lega),
-    "Gara " + unionCls.gara + ", " + UNION_PISTE[unionCls.gara - 1],
+    "Gara " + unionCls.gara + ", " + unionPista(unionCls.gara),
     unionLobbyPanelHtml(lb),
     origine
   );
@@ -1231,7 +1325,7 @@ function unionClassificaLegaHtml(lega) {
   if (!piloti.length) return unionState("Classifica non disponibile.", "empty");
 
   var nota = piloti.every(function (p) { return !p.punti; })
-    ? '<p class="ui-text ui-muted" style="margin-top:0">Il Round 2 non è ancora iniziato: tutti a 0 punti, in ordine alfabetico.</p>'
+    ? '<p class="ui-text ui-muted" style="margin-top:0">Il ' + escapeHtml((UNION_CAL && UNION_CAL.round) || "campionato") + ' non è ancora iniziato: tutti a 0 punti, in ordine alfabetico.</p>'
     : "";
   var tutti = !!unionCls.tutti[lega];
   var aperti = unionCls.aperti[lega] || {};
@@ -1511,7 +1605,7 @@ function unionPilotaUltimiHtml(p) {
     .slice()
     .reverse()
     .map(function (x) {
-      var pista = UNION_PISTE[x.g - 1];
+      var pista = unionPista(x.g);
       if (!x.res) {
         return (
           '<li class="ui-row"><span class="ui-pos">G' + x.g + '</span><span class="ui-ellipsis">' +
@@ -1913,7 +2007,7 @@ function unionDGEsito(testo) {
 // Esito delle segnalazioni degli host: sanzioni sulla gara successiva
 function unionDGHostEsito(testo, gara) {
   var t = String(testo || "").trim();
-  var prossima = gara < UNION_NUM_GARE ? "Gara " + (gara + 1) + ", " + UNION_PISTE[gara] : "prossima gara";
+  var prossima = gara < UNION_NUM_GARE ? "Gara " + (gara + 1) + ", " + unionPista(gara + 1) : "prossima gara";
   var m;
   if (!t) return { tipo: "attesa", peso: 3, label: "In valutazione" };
   if (/null|annullat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Nulla" };
@@ -2111,7 +2205,7 @@ function renderUnionReportDG() {
         '<button type="button" class="ui-seg-btn"' +
         (ok ? ' data-gara="' + g + '"' : " disabled") +
         ' aria-pressed="' + (g === gara) + '"' +
-        ' title="' + escapeHtml(UNION_PISTE[g - 1] + (ok ? "" : " (report non ancora pubblicato)")) + '">G' + g + "</button>";
+        ' title="' + escapeHtml(unionPista(g) + (ok ? "" : " (report non ancora pubblicato)")) + '">G' + g + "</button>";
     }
     sel.innerHTML = bottoni;
   }
@@ -2122,7 +2216,7 @@ function renderUnionReportDG() {
     return;
   }
 
-  if (sottotitolo) sottotitolo.textContent = "Gara " + gara + ", " + UNION_PISTE[gara - 1];
+  if (sottotitolo) sottotitolo.textContent = "Gara " + gara + ", " + unionPista(gara);
   body.innerHTML = unionState("Caricamento report…", "loading");
 
   Promise.all([
