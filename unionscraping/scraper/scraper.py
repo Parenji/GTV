@@ -20,12 +20,11 @@ from collections import Counter, OrderedDict
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Percorsi assoluti: data.json finisce sempre in unionscraping/ (la cartella
-# sopra lo script), da qualunque directory venga lanciato. Con un percorso
-# relativo, lanciarlo dalla root del repo creava un data.json duplicato e
-# orfano (il sito legge solo unionscraping/data.json).
+# Percorsi assoluti, da qualunque directory venga lanciato: l'output va
+# sempre in dati/union/lobby.json, che e' il file letto dal sito.
 BASE_DIR = Path(__file__).resolve().parent
 UNION_DIR = BASE_DIR.parent
+REPO_DIR = UNION_DIR.parent
 
 # ---------------------------------------------------------------------------
 # Configurazione: fogli pubblicati estratti dalle pagine Google Sites
@@ -224,7 +223,7 @@ def main():
         "pilots": pilots,
     }
 
-    out_json = UNION_DIR / "data.json"
+    out_json = REPO_DIR / "dati" / "union" / "lobby.json"
     with open(out_json, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 

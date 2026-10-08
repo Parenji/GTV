@@ -82,9 +82,13 @@ var UNION_PISTE = []; // pista per gara di campionato (indice = gara - 1)
 var UNION_NUM_GARE = 0; // gare che contano in classifica (Finale esclusa)
 
 function unionCalendarioUrl() {
-  return window.GTV_CONFIG && window.GTV_CONFIG.unionCalendario
-    ? window.GTV_CONFIG.unionCalendario
-    : "dati/union/calendario.json";
+  return unionDatoUrl("unionCalendario", "dati/union/calendario.json");
+}
+
+// Percorsi dei dati generati: GTV_CONFIG.dati in config.js
+function unionDatoUrl(chiave, predefinito) {
+  var dati = window.GTV_CONFIG && window.GTV_CONFIG.dati;
+  return (dati && dati[chiave]) || predefinito;
 }
 
 function fetchUnionCalendario() {
@@ -256,7 +260,7 @@ function loadUnionStats() {
 // -------------------------------------------------------------
 // PILOTI ISCRITTI (dati dal CSV piloti di index.html)
 // Colonna F (indice 5) = partecipazione Union
-// La matricola viene presa da unionscraping/data.json (il nome in
+// La matricola viene presa da dati/union/lobby.json (il nome in
 // lobby corrisponde al PSN r[0] del CSV, con ripiego sul GT7 r[1]).
 // -------------------------------------------------------------
 function loadUnionPiloti() {
@@ -437,7 +441,7 @@ function renderUnionPilotiCards(container, rows, unionData, autoData) {
 }
 
 // -------------------------------------------------------------
-// LOBBY - dati estratti da unionscraping/data.json
+// LOBBY - dati estratti da dati/union/lobby.json
 // 1) Specchietto riassuntivo dei piloti GTV con link alla lobby
 // 2) Tutte le lobby (schieramenti completi) raggruppate per giorno
 // -------------------------------------------------------------
@@ -452,9 +456,7 @@ var UNION_DAY_LABEL = {
 
 // URL dei dati estratti dallo scraper
 function unionLobbyDataUrl() {
-  return window.GTV_CONFIG && window.GTV_CONFIG.unionLobbyData
-    ? window.GTV_CONFIG.unionLobbyData
-    : "unionscraping/data.json";
+  return unionDatoUrl("unionLobby", "dati/union/lobby.json");
 }
 
 // Fetch condiviso e memoizzato: data.json viene scaricato una sola volta
@@ -860,7 +862,7 @@ function renderUnionLive(container, data, csvRows) {
 }
 
 // =============================================================
-// RISULTATI E CLASSIFICHE (unionscraping/classifiche.json)
+// RISULTATI E CLASSIFICHE (dati/union/classifiche.json)
 // Dati dal Portale Classifiche Union (classifiche/classifiche.py);
 // la classifica di ogni lobby e' letta (OCR) dalle immagini del portale.
 // =============================================================
@@ -874,9 +876,7 @@ var unionCls = {
 };
 
 function unionClassificheUrl() {
-  return window.GTV_CONFIG && window.GTV_CONFIG.unionClassificheData
-    ? window.GTV_CONFIG.unionClassificheData
-    : "unionscraping/classifiche.json";
+  return unionDatoUrl("unionClassifiche", "dati/union/classifiche.json");
 }
 
 function unionNorm(s) {

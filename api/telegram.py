@@ -37,7 +37,7 @@ RAW_BASE = os.environ.get(
     "GTV_RAW_BASE", "https://raw.githubusercontent.com/Parenji/GTV/main"
 )
 CACHE_DIR = Path(tempfile.gettempdir()) / "gtv_sorgenti"
-DATA_MAX_AGE = 3600          # secondi: oltre questo, data.json viene riscaricato
+DATA_MAX_AGE = 3600          # secondi: oltre questo, i dati vengono riscaricati
 
 
 # ---------------------------------------------------------------------------
@@ -67,7 +67,7 @@ def _log(msg, level="INFO"):
 
 
 # ---------------------------------------------------------------------------
-# Sorgenti (calendario + data.json): dal bundle se ci sono, altrimenti da GitHub
+# Sorgenti (calendario + lobby.json): dal bundle se ci sono, altrimenti da GitHub
 # ---------------------------------------------------------------------------
 def _download(url, dest):
     req = urllib.request.Request(url, headers={"User-Agent": "gtv-webhook"})
@@ -78,7 +78,7 @@ def _download(url, dest):
 
 
 def ensure_sources(wr):
-    """Garantisce che calendario.json e data.json siano leggibili.
+    """Garantisce che calendario.json e lobby.json siano leggibili.
 
     Con `includeFiles` nel vercel.json i file sono gia' nel bundle; se per
     qualsiasi motivo non ci sono, li scarichiamo dal repo pubblico.
@@ -86,7 +86,7 @@ def ensure_sources(wr):
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     sources = (
         ("CALENDARIO_JSON", "dati/union/calendario.json", "calendario.json", DATA_MAX_AGE),
-        ("DATA_JSON", "unionscraping/data.json", "data.json", DATA_MAX_AGE),
+        ("DATA_JSON", "dati/union/lobby.json", "lobby.json", DATA_MAX_AGE),
     )
     for attr, url_path, name, max_age in sources:
         local = getattr(wr, attr)

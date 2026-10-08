@@ -3,7 +3,7 @@
 """
 Sport Mode GT7 — raccolta dati per i piloti GTV
 ===============================================
-Costruisce `sportscraping/sport.json`, il file che alimenta le sezioni
+Costruisce `dati/sport.json`, il file che alimenta le sezioni
 "Sport" e "Sport Stats" di index.html.
 
 Fonti (pubbliche, nessuna autenticazione):
@@ -52,7 +52,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-OUT_JSON = BASE_DIR / "sport.json"
+OUT_JSON = BASE_DIR.parent / "dati" / "sport.json"
 
 USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36")

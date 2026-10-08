@@ -33,3 +33,6 @@ unionscraping/telecronaca/fogli/
 
 # Materiale di lavoro locale (mai nel repo né sul sito)
 _locale/
+
+# Telecronaca: strumento personale, solo sul computer di chi commenta
+unionscraping/telecronaca/

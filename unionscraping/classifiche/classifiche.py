@@ -22,7 +22,7 @@ Com'e' fatto il portale (verificato il 2026-10-03, dopo la Gara 1):
     e stanno gia' nel foglio del Report DG.)
 
 Una gara compare nei risultati solo quando il portale ne ha pubblicato le
-immagini. Scrive unionscraping/classifiche.json, letto da union.js.
+immagini. Scrive dati/union/classifiche.json, letto da union.js.
 
 Uso:
     python3 classifiche.py              # aggiorna classifiche.json
@@ -47,8 +47,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 UNION_DIR = BASE_DIR.parent
-OUT_JSON = UNION_DIR / "classifiche.json"
-DATA_JSON = UNION_DIR / "data.json"
+OUT_JSON = UNION_DIR.parent / "dati" / "union" / "classifiche.json"
+DATA_JSON = UNION_DIR.parent / "dati" / "union" / "lobby.json"
 AUTO_DIR = UNION_DIR / "auto"
 
 # Cache locale (gitignorata) delle immagini delle classifiche di gara e del

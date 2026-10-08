@@ -1,4 +1,12 @@
 window.GTV_CONFIG = {
+  // Dati generati dagli scraper (GitHub Actions) e calendario: tutto in dati/
+  dati: {
+    unionCalendario: "dati/union/calendario.json",
+    unionLobby: "dati/union/lobby.json",
+    unionClassifiche: "dati/union/classifiche.json",
+    sport: "dati/sport.json",
+  },
+
   googleSheets: {
     piloti:
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv",

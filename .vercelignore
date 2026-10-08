@@ -1,30 +1,29 @@
-# File che NON devono finire sul sito pubblico.
+# Cosa NON va sul sito pubblico.
 #
-# Il sito è statico: Vercel pubblica tutto quello che sta nella root, quindi
-# senza questo file anche script, documentazione e materiale di lavoro
-# sarebbero scaricabili da granturismotv.vercel.app.
+# Il sito è statico: Vercel pubblica tutto quello che sta nel repo e non è
+# escluso qui. Al sito servono solo le pagine, gli asset, config.js, dati/
+# e api/. Gli strumenti (scraping, bot, note) restano fuori.
 #
-# ATTENZIONE: non escludere i .py di unionscraping/bot/ — api/telegram.py (la
-# funzione serverless del bot Telegram) li importa a runtime.
+# ATTENZIONE: i .py di unionscraping/bot/ devono restare: api/telegram.py
+# (la funzione serverless del bot Telegram) li importa a runtime. Sono
+# raggiungibili anche come file statici, ma non contengono segreti.
 
-# Documentazione e configurazione di sviluppo
+# Documentazione, configurazione di sviluppo, materiale locale
 *.md
-# Vetrina interna degli elementi grafici (ui.css)
 stile.html
 .github/
-
-# Materiale di ricerca e note (non serve a nessuna pagina)
-sportscraping/ricerca/
-sportscraping/diagnostica.txt
-
-# Cache e artefatti locali
+.vscode/
+.claude/
+_locale/
+**/.DS_Store
 **/__pycache__/
-unionscraping/auto/.screenshots/
-unionscraping/classifiche/.gare/
-unionscraping/telecronaca/fogli/
-unionscraping/**/*.swift
-unionscraping/bot/bot.log
-unionscraping/bot/messaggi/
+
+# Strumenti
+sportscraping/
+unionscraping/*
+!unionscraping/bot/
+unionscraping/bot/*
+!unionscraping/bot/*.py
 
 # PDF non linkato da nessuna pagina
 pdf/WORLD 2.pdf

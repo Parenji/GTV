@@ -2618,7 +2618,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ==========================================================================
    SPORT MODE · GRAN TURISMO 7
    --------------------------------------------------------------------------
-   Legge sportscraping/sport.json (rigenerato ogni 12 ore dal workflow
+   Legge dati/sport.json (rigenerato 4 volte al giorno dal workflow
    gt7-sport.yml) e disegna due sezioni di index.html:
      #sport       -> time trial in corso + gare settimanali, con tempo,
                      posizione tra i GTV, posizione assoluta e distacchi %
@@ -2626,7 +2626,8 @@ document.addEventListener("DOMContentLoaded", () => {
    Il renderer e' difensivo: qualunque campo mancante diventa "—".
    ========================================================================== */
 
-const SPORT_DATA_URL = "sportscraping/sport.json";
+const SPORT_DATA_URL =
+  (window.GTV_CONFIG && window.GTV_CONFIG.dati && window.GTV_CONFIG.dati.sport) || "dati/sport.json";
 
 function sportEscape(value) {
   if (value === null || value === undefined || value === "") return "—";

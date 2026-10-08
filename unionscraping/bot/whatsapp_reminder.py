@@ -9,7 +9,7 @@ nella bacheca del team GTV: riepilogo dei piloti GTV che corrono quella sera
 della richiesta di amicizia all'Host entro le 12:00.
 
 Fonti dati (nessuna duplicazione, nessuna dipendenza esterna):
-  - unionscraping/data.json  -> lobby e piloti (generato da scraper.py)
+  - dati/union/lobby.json      -> lobby e piloti (generato da scraper.py)
   - dati/union/calendario.json -> calendario (pista + settimane di gara)
 
 Comandi utili:
@@ -69,7 +69,7 @@ except Exception:  # pragma: no cover - fallback se la tzdata non e' disponibile
 BASE_DIR = Path(__file__).resolve().parent          # .../unionscraping/bot
 UNION_DIR = BASE_DIR.parent                         # .../unionscraping
 REPO_DIR = UNION_DIR.parent                         # radice del repository
-DATA_JSON = UNION_DIR / "data.json"
+DATA_JSON = REPO_DIR / "dati" / "union" / "lobby.json"
 CALENDARIO_JSON = REPO_DIR / "dati" / "union" / "calendario.json"
 OUT_DIR = BASE_DIR / "messaggi"                     # file .txt generati
 SENT_STATE = BASE_DIR / ".sent_state.json"          # registro degli invii fatti

@@ -1,7 +1,7 @@
 name: Union Classifiche
 
 # Legge classifiche generali e risultati di gara dal Portale Classifiche
-# Union e aggiorna unionscraping/classifiche.json (sezioni Risultati e
+# Union e aggiorna dati/union/classifiche.json (sezioni Risultati e
 # Classifiche di union.html).
 #
 # Gira su macOS perche' le classifiche di gara del portale sono immagini e
@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add unionscraping/classifiche.json
+          git add dati/union/classifiche.json
           if git diff --cached --quiet; then
             echo "Nessuna novita' sul portale: niente commit."
             exit 0

@@ -1,6 +1,6 @@
 name: GT7 Sport Data
 
-# Aggiorna sportscraping/sport.json con i dati Sport Mode dei piloti GTV:
+# Aggiorna dati/sport.json con i dati Sport Mode dei piloti GTV:
 # time trial in corso (rank mondiale + tempo) e gare settimanali, piu' lo
 # storico per le sezioni "Sport" e "Sport Stats" di index.html.
 #
@@ -89,13 +89,13 @@ jobs:
         if: always()
         run: |
           cd "$GITHUB_WORKSPACE"
-          if git diff --quiet -- sportscraping/sport.json; then
+          if git diff --quiet -- dati/sport.json; then
             echo "Nessuna modifica ai dati Sport: niente commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sportscraping/sport.json
+          git add dati/sport.json
           git commit -m "chore(sport): aggiornamento dati Sport Mode GT7"
           for i in 1 2 3; do
             if git pull --rebase --autostash origin main && git push; then

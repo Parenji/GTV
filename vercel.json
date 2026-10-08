@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/telegram.py": {
-      "includeFiles": "{unionscraping,dati}/**",
+      "includeFiles": "{unionscraping/bot,dati/union}/**",
       "excludeFiles": "{images,pdf,font,favicon,sportscraping,.github,.vscode,.claude}/**,*.{html,js,css,md}",
       "maxDuration": 30
     },
@@ -12,46 +12,7 @@
   },
   "headers": [
     {
-      "source": "/sportscraping/sport.json",
-      "headers": [
-        {
-          "key": "CDN-Cache-Control",
-          "value": "no-store"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/unionscraping/data.json",
-      "headers": [
-        {
-          "key": "CDN-Cache-Control",
-          "value": "no-store"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/unionscraping/classifiche.json",
-      "headers": [
-        {
-          "key": "CDN-Cache-Control",
-          "value": "no-store"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/unionscraping/auto.json",
+      "source": "/dati/(.*)",
       "headers": [
         {
           "key": "CDN-Cache-Control",
