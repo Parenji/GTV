@@ -2,6 +2,7 @@
 // GTV UNION - logica dedicata a union.html
 // Piloti iscritti, lobby, risultati e classifiche.
 // Il markup usa gli elementi di ui.css (vetrina: stile.html).
+// Richiede js/comune.js (escapeHtml, urlSicuro, parseCsv, datoUrl).
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -82,14 +83,9 @@ var UNION_PISTE = []; // pista per gara di campionato (indice = gara - 1)
 var UNION_NUM_GARE = 0; // gare che contano in classifica (Finale esclusa)
 
 function unionCalendarioUrl() {
-  return unionDatoUrl("unionCalendario", "dati/union/calendario.json");
+  return datoUrl("unionCalendario", "dati/union/calendario.json");
 }
 
-// Percorsi dei dati generati: GTV_CONFIG.dati in config.js
-function unionDatoUrl(chiave, predefinito) {
-  var dati = window.GTV_CONFIG && window.GTV_CONFIG.dati;
-  return (dati && dati[chiave]) || predefinito;
-}
 
 function fetchUnionCalendario() {
   return fetch(unionCalendarioUrl()).then(function (response) {
@@ -340,31 +336,6 @@ function lookupUnionMatricola(map, psn, gt7) {
   return "—";
 }
 
-// Parser CSV semplice (il CSV di Google non ha campi tra virgolette usati qui)
-function parseCsv(csvText) {
-  var text = (csvText || "").replace(/^﻿/, "");
-  var lines = text.split("\n");
-  var rows = [];
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
-    if (line.indexOf("\r") !== -1) {
-      line = line.slice(0, line.length - 1);
-    }
-    var cells = line.split(",");
-    var hasContent = false;
-    for (var k = 0; k < cells.length; k++) {
-      if (cells[k].trim() !== "") {
-        hasContent = true;
-        break;
-      }
-    }
-    if (hasContent) {
-      rows.push(cells);
-    }
-  }
-  return rows;
-}
-
 function unionTierIndex(cat) {
   var c = String(cat || "").trim().toUpperCase();
   var i = UNION_LEGHE.indexOf(c);
@@ -379,15 +350,20 @@ function unionNomeOrdinamento(riga) {
 }
 
 // Logo marca con ripiego PNG -> SVG (come worldchampionship)
+// Nomi del marchio che non coincidono con il file in images/marchi-auto/
+var UNION_LOGHI_ALIAS = { alfaromeo: "alfa", mercedes: "mercedesamg", volkswagen: "vw" };
+
+// Logo del marchio: quasi tutti sono .svg, il .png e' il ripiego
 function brandLogoHtml(brand) {
   var b = String(brand || "").trim();
   if (!b) return "";
   var slug = b.toLowerCase().replace(/[^a-z0-9]+/g, "");
-  var png = "images/marchi-auto/" + slug + ".png";
+  slug = UNION_LOGHI_ALIAS[slug] || slug;
   var svg = "images/marchi-auto/" + slug + ".svg";
+  var png = "images/marchi-auto/" + slug + ".png";
   return (
-    '<img src="' + png + '" alt="' + escapeHtml(b) + '" class="ui-pilot-brand"' +
-    " onerror=\"if(this.src.indexOf('.png') !== -1){this.src='" + svg + "';}else{this.style.display='none';}\">"
+    '<img src="' + svg + '" alt="' + escapeHtml(b) + '" class="ui-pilot-brand"' +
+    " onerror=\"if(this.src.indexOf('.svg') !== -1){this.src='" + png + "';}else{this.style.display='none';}\">"
   );
 }
 
@@ -456,7 +432,7 @@ var UNION_DAY_LABEL = {
 
 // URL dei dati estratti dallo scraper
 function unionLobbyDataUrl() {
-  return unionDatoUrl("unionLobby", "dati/union/lobby.json");
+  return datoUrl("unionLobby", "dati/union/lobby.json");
 }
 
 // Fetch condiviso e memoizzato: data.json viene scaricato una sola volta
@@ -710,8 +686,8 @@ function unionLobbyCardHtml(lb) {
     ? '<a href="https://profile.playstation.com/' + encodeURIComponent(lb.host) +
       '/add" target="_blank" rel="noopener">' + escapeHtml(lb.host) + "</a>"
     : "—";
-  var live = lb.url
-    ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener">' +
+  var live = urlSicuro(lb.url)
+    ? '<a href="' + escapeHtml(urlSicuro(lb.url)) + '" target="_blank" rel="noopener">' +
       escapeHtml(lb.live || "Canale live") + "</a>"
     : "—";
 
@@ -778,8 +754,8 @@ function loadUnionLive() {
 }
 
 function unionLiveBtn(lb) {
-  if (!lb.url) return '<span class="ui-muted">—</span>';
-  var url = /^https?:\/\//i.test(lb.url) ? lb.url : "https://" + lb.url;
+  var url = urlSicuro(lb.url);
+  if (!url) return '<span class="ui-muted">—</span>';
   return (
     '<a class="ui-btn ui-btn--sm ui-btn--block" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
     "&#9654; " + unionPiattaforma(url) + "</a>"
@@ -881,7 +857,7 @@ var unionCls = {
 };
 
 function unionClassificheUrl() {
-  return unionDatoUrl("unionClassifiche", "dati/union/classifiche.json");
+  return datoUrl("unionClassifiche", "dati/union/classifiche.json");
 }
 
 function unionNorm(s) {
@@ -1143,8 +1119,8 @@ function unionLobbyPanelHtml(lb) {
   if (!righe.length) {
     return (
       '<div class="ui-state">Classifica non ancora leggibile.' +
-      (lb.immagine
-        ? ' <a class="ui-btn ui-btn--sm" href="' + escapeHtml(lb.immagine) + '" target="_blank" rel="noopener">Apri la classifica ufficiale</a>'
+      (urlSicuro(lb.immagine)
+        ? ' <a class="ui-btn ui-btn--sm" href="' + escapeHtml(urlSicuro(lb.immagine)) + '" target="_blank" rel="noopener">Apri la classifica ufficiale</a>'
         : "") +
       "</div>"
     );
@@ -1887,8 +1863,8 @@ function unionPilotaLobbyHtml(p) {
   var host = lb.host
     ? '<a href="https://profile.playstation.com/' + encodeURIComponent(lb.host) + '/add" target="_blank" rel="noopener">' + escapeHtml(lb.host) + "</a>"
     : "—";
-  var live = lb.url
-    ? '<a href="' + escapeHtml(lb.url) + '" target="_blank" rel="noopener">' + escapeHtml(lb.live || "Canale live") + "</a>"
+  var live = urlSicuro(lb.url)
+    ? '<a href="' + escapeHtml(urlSicuro(lb.url)) + '" target="_blank" rel="noopener">' + escapeHtml(lb.live || "Canale live") + "</a>"
     : "—";
   var lista = lb.pilots.map(function (x) {
     var mio = unionNorm(x.nome) === unionNorm(p.nome);
@@ -1948,48 +1924,6 @@ function unionDGUrls() {
   return (window.GTV_CONFIG && window.GTV_CONFIG.unionReportDG) || {};
 }
 
-// CSV con campi tra virgolette (le note contengono virgole e a capo)
-function parseCsvQuoted(text) {
-  var rows = [];
-  var row = [];
-  var cell = "";
-  var inQuotes = false;
-  text = String(text || "").replace(/^﻿/, "");
-  for (var i = 0; i < text.length; i++) {
-    var c = text[i];
-    if (inQuotes) {
-      if (c === '"' && text[i + 1] === '"') {
-        cell += '"';
-        i++;
-      } else if (c === '"') {
-        inQuotes = false;
-      } else {
-        cell += c;
-      }
-    } else if (c === '"') {
-      inQuotes = true;
-    } else if (c === ",") {
-      row.push(cell);
-      cell = "";
-    } else if (c === "\n" || c === "\r") {
-      if (c === "\r" && text[i + 1] === "\n") i++;
-      row.push(cell);
-      rows.push(row);
-      row = [];
-      cell = "";
-    } else {
-      cell += c;
-    }
-  }
-  if (cell !== "" || row.length) {
-    row.push(cell);
-    rows.push(row);
-  }
-  return rows.filter(function (r) {
-    return r.some(function (x) { return x.trim() !== ""; });
-  });
-}
-
 // Esito dalla colonna PENALITA': numero = secondi, "RIFIUTATO, motivo" = respinto
 function unionDGEsito(testo) {
   var t = String(testo || "").trim();
@@ -2031,7 +1965,7 @@ function fetchUnionDGSheet(url) {
       return r.text();
     })
     .then(function (text) {
-      var rows = parseCsvQuoted(text);
+      var rows = parseCsv(text);
       var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
       function col(re) {
         for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;
@@ -2077,7 +2011,7 @@ function fetchUnionDGRicorsi(url) {
       return r.text();
     })
     .then(function (text) {
-      var rows = parseCsvQuoted(text);
+      var rows = parseCsv(text);
       var head = (rows.shift() || []).map(function (h) { return h.trim().toUpperCase(); });
       function col(re) {
         for (var i = 0; i < head.length; i++) if (re.test(head[i])) return i;

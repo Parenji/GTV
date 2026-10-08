@@ -24,5 +24,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/gtec.html",
+      "destination": "/#palmares",
+      "permanent": true
+    },
+    {
+      "source": "/worldchampionship.html",
+      "destination": "/#palmares",
+      "permanent": true
+    }
   ]
 }

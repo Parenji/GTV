@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+<html lang="it">
 
 <head>
     <meta charset="UTF-8" />
@@ -16,25 +16,25 @@
     <meta name="apple-mobile-web-app-title" content="GTV" />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-
     <!-- Colore della barra dell'interfaccia mobile -->
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="background-color" content="#FFFFFF">
+    <meta name="theme-color" content="#0f0f0f">
 
+    <script src="config.js" defer></script>
+    <script src="js/comune.js" defer></script>
+    <script src="js/union.js" defer></script>
 </head>
 
 <body id="union" class="ui-site">
 
     <header>
-        <button id="menu-toggle" class="hamburger-button">
+        <button id="menu-toggle" class="hamburger-button" aria-label="Apri il menu" aria-expanded="false" aria-controls="sidebar">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </button>
 
         <div id="sidebar">
-            <button id="close-menu" class="close-button">X</button>
+            <button id="close-menu" class="close-button" aria-label="Chiudi il menu">X</button>
 
             <nav class="sidebar-content" id="sidebar-content">
                 <a href="#home" class="menu-link">
@@ -322,8 +322,5 @@
     </div>
 
 </body>
-<script src="config.js" defer></script>
-<script src="scripts.js" defer></script>
-<script src="union.js" defer></script>
 
 </html>

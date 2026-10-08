@@ -1,0 +1,485 @@
+{
+ "_nota": "Campionati conclusi, mostrati nella sezione Palmares di index.html. Si modifica a mano: per un nuovo titolo aggiungi una voce in cima a campionati. interno = campionato tra soli GTV (nessun pilota evidenziato). gtv = pilota del team in un campionato aperto.",
+ "campionati": [
+  {
+   "id": "wc-2026",
+   "nome": "World Championship",
+   "stagione": "2026",
+   "sottotitolo": "Campionato interno",
+   "logo": "images/wc.png",
+   "regolamento": "pdf/WORLD.pdf",
+   "interno": true,
+   "classifica": [
+    {
+     "pilota": "Hawk_mavenich",
+     "team": "Badboys",
+     "punti": 189,
+     "pos": 1
+    },
+    {
+     "pilota": "SP_Samuele",
+     "team": "Pasa_racing",
+     "punti": 147.5,
+     "pos": 2
+    },
+    {
+     "pilota": "Abramo1991",
+     "team": "Lentiviolenti",
+     "punti": 138.5,
+     "pos": 3
+    },
+    {
+     "pilota": "Parenji",
+     "team": "Rebellion",
+     "punti": 137,
+     "pos": 4
+    },
+    {
+     "pilota": "GTV_Legendafluo",
+     "team": "Badboys",
+     "punti": 131,
+     "pos": 5
+    },
+    {
+     "pilota": "Carlos_mania",
+     "team": "Lentiviolenti",
+     "punti": 131,
+     "pos": 5
+    },
+    {
+     "pilota": "Titirolamadonn",
+     "team": "Rebellion",
+     "punti": 122,
+     "pos": 7
+    },
+    {
+     "pilota": "Snake-asr88",
+     "team": "Gliscappatidicasa",
+     "punti": 112,
+     "pos": 8
+    },
+    {
+     "pilota": "Vale34_",
+     "team": "Esagerati",
+     "punti": 94.5,
+     "squadra": "JGTV",
+     "pos": 9
+    },
+    {
+     "pilota": "Utile_ruspante",
+     "team": "Pasa_racing",
+     "punti": 90.5,
+     "pos": 10
+    },
+    {
+     "pilota": "marse9191",
+     "team": "Gliscappatidicasa",
+     "punti": 75.5,
+     "pos": 11
+    },
+    {
+     "pilota": "Grandisil_2",
+     "team": "Swiffer",
+     "punti": 73,
+     "pos": 12
+    },
+    {
+     "pilota": "Danilgri_99",
+     "team": "Apex",
+     "punti": 66.5,
+     "squadra": "JGTV",
+     "pos": 13
+    },
+    {
+     "pilota": "Yukimura9221",
+     "team": "Tekkadan",
+     "punti": 64.5,
+     "squadra": "JGTV",
+     "pos": 14
+    },
+    {
+     "pilota": "Mirco94-",
+     "team": "Alfacorse",
+     "punti": 61,
+     "squadra": "JGTV",
+     "pos": 15
+    },
+    {
+     "pilota": "Kiwi_caloroso123",
+     "team": "Drifter",
+     "punti": 61,
+     "pos": 15
+    },
+    {
+     "pilota": "Giusdandri",
+     "team": "Drifter",
+     "punti": 58,
+     "pos": 17
+    },
+    {
+     "pilota": "GTS-codebreaker",
+     "team": "Tekkadan",
+     "punti": 56.5,
+     "pos": 18
+    },
+    {
+     "pilota": "Scalmanuto",
+     "team": "Esagerati",
+     "punti": 47,
+     "squadra": "JGTV",
+     "pos": 19
+    },
+    {
+     "pilota": "Fil_GTracing",
+     "team": "Grom",
+     "punti": 44,
+     "pos": 20
+    },
+    {
+     "pilota": "GTV_christian",
+     "team": "Swatclub",
+     "punti": 41,
+     "pos": 21
+    },
+    {
+     "pilota": "Sauzer27",
+     "team": "Frauzer",
+     "punti": 41,
+     "squadra": "JGTV",
+     "pos": 21
+    },
+    {
+     "pilota": "EdoardoXx46",
+     "team": "Apex",
+     "punti": 40,
+     "squadra": "JGTV",
+     "pos": 23
+    },
+    {
+     "pilota": "Fra_salvo96",
+     "team": "Frauzer",
+     "punti": 31,
+     "squadra": "JGTV",
+     "pos": 24
+    },
+    {
+     "pilota": "Gamer_sneaX10",
+     "team": "Swiffer",
+     "punti": 30,
+     "squadra": "JGTV",
+     "pos": 25
+    },
+    {
+     "pilota": "Alesimo82",
+     "team": "Swatclub",
+     "punti": 8,
+     "pos": 26
+    },
+    {
+     "pilota": "FABRIKKET86",
+     "team": "Alfacorse",
+     "punti": 0,
+     "squadra": "JGTV",
+     "pos": 27
+    },
+    {
+     "pilota": "Kappaonegt",
+     "team": "Grom",
+     "punti": 0,
+     "pos": 27
+    }
+   ]
+  },
+  {
+   "id": "gtec-2025",
+   "nome": "GTEC",
+   "stagione": "2025",
+   "sottotitolo": "Season 3",
+   "logo": "images/Campionati/gtec.png",
+   "regolamento": "pdf/GTEC SEASON 3 REGOLAMENTO V4.pdf",
+   "classifica": [
+    {
+     "pilota": "Hawk_Mavenich",
+     "punti": 626,
+     "gtv": true,
+     "pos": 1
+    },
+    {
+     "pilota": "Parenji",
+     "punti": 616,
+     "gtv": true,
+     "pos": 2
+    },
+    {
+     "pilota": "GDT_Pietruccio",
+     "punti": 543,
+     "pos": 3
+    },
+    {
+     "pilota": "Snakeasr-88",
+     "punti": 511,
+     "gtv": true,
+     "pos": 4
+    },
+    {
+     "pilota": "titirolamadonn",
+     "punti": 481,
+     "gtv": true,
+     "pos": 5
+    },
+    {
+     "pilota": "KappaoneGT",
+     "punti": 474,
+     "gtv": true,
+     "pos": 6
+    },
+    {
+     "pilota": "Utile_ruspante",
+     "punti": 474,
+     "gtv": true,
+     "pos": 6
+    },
+    {
+     "pilota": "Carlos_mania",
+     "punti": 461,
+     "gtv": true,
+     "pos": 8
+    },
+    {
+     "pilota": "Abramo1991",
+     "punti": 460,
+     "gtv": true,
+     "pos": 9
+    },
+    {
+     "pilota": "Jeeeko_",
+     "punti": 444,
+     "pos": 10
+    },
+    {
+     "pilota": "UnLeaSh_DuKe_CdB",
+     "punti": 432,
+     "pos": 11
+    },
+    {
+     "pilota": "Heisenberg_19_",
+     "punti": 431,
+     "pos": 12
+    },
+    {
+     "pilota": "GTRC_SeaWolf",
+     "punti": 429,
+     "pos": 13
+    },
+    {
+     "pilota": "TheVeryNinja08",
+     "punti": 425,
+     "pos": 14
+    },
+    {
+     "pilota": "GTS-codebreaker",
+     "punti": 379,
+     "gtv": true,
+     "pos": 15
+    },
+    {
+     "pilota": "cavelante99",
+     "punti": 368,
+     "pos": 16
+    },
+    {
+     "pilota": "cole_04_",
+     "punti": 359,
+     "pos": 17
+    },
+    {
+     "pilota": "GI-GI__22",
+     "punti": 325,
+     "pos": 18
+    },
+    {
+     "pilota": "Andrea_12x",
+     "punti": 322,
+     "pos": 19
+    },
+    {
+     "pilota": "Kiwi_caloroso123",
+     "punti": 311,
+     "gtv": true,
+     "pos": 20
+    },
+    {
+     "pilota": "legendafluo",
+     "punti": 300,
+     "gtv": true,
+     "pos": 21
+    },
+    {
+     "pilota": "Girowarrior1990",
+     "punti": 286,
+     "pos": 22
+    },
+    {
+     "pilota": "DarkLion94",
+     "punti": 285,
+     "pos": 23
+    },
+    {
+     "pilota": "marse9191",
+     "punti": 261,
+     "gtv": true,
+     "pos": 24
+    },
+    {
+     "pilota": "Ascellamagna08",
+     "punti": 259,
+     "pos": 25
+    },
+    {
+     "pilota": "Niki-p-29",
+     "punti": 256,
+     "pos": 26
+    },
+    {
+     "pilota": "ZeroDriveSkill",
+     "punti": 250,
+     "pos": 27
+    },
+    {
+     "pilota": "Alesimo82",
+     "punti": 245,
+     "gtv": true,
+     "pos": 28
+    },
+    {
+     "pilota": "pasocri",
+     "punti": 230,
+     "pos": 29
+    },
+    {
+     "pilota": "Jeco_YT",
+     "punti": 225,
+     "pos": 30
+    },
+    {
+     "pilota": "Gentilego_Prod",
+     "punti": 216,
+     "pos": 31
+    },
+    {
+     "pilota": "todaytek",
+     "punti": 192,
+     "pos": 32
+    },
+    {
+     "pilota": "Paper_Family",
+     "punti": 176,
+     "pos": 33
+    },
+    {
+     "pilota": "Ser_sercrt87",
+     "punti": 161,
+     "pos": 34
+    },
+    {
+     "pilota": "Inkiostrik267",
+     "punti": 159,
+     "pos": 35
+    },
+    {
+     "pilota": "Robi-985",
+     "punti": 146,
+     "pos": 36
+    },
+    {
+     "pilota": "Hyp3r_Cociuffo",
+     "punti": 141,
+     "pos": 37
+    },
+    {
+     "pilota": "Frenetic_09",
+     "punti": 138,
+     "pos": 38
+    },
+    {
+     "pilota": "rotax_mojo",
+     "punti": 138,
+     "pos": 38
+    },
+    {
+     "pilota": "Fil_GTracing",
+     "punti": 130,
+     "gtv": true,
+     "pos": 40
+    },
+    {
+     "pilota": "vitogas76",
+     "punti": 130,
+     "pos": 40
+    },
+    {
+     "pilota": "mostro_aperto985",
+     "punti": 102,
+     "pos": 42
+    },
+    {
+     "pilota": "antonowski98",
+     "punti": 80,
+     "pos": 43
+    },
+    {
+     "pilota": "Pulcy85",
+     "punti": 80,
+     "gtv": true,
+     "pos": 43
+    },
+    {
+     "pilota": "Eliciua",
+     "punti": 60,
+     "pos": 45
+    },
+    {
+     "pilota": "Giusdandri",
+     "punti": 34,
+     "gtv": true,
+     "pos": 46
+    },
+    {
+     "pilota": "TMTL_dedptak",
+     "punti": 28,
+     "pos": 47
+    },
+    {
+     "pilota": "Michi-19on",
+     "punti": 27,
+     "pos": 48
+    },
+    {
+     "pilota": "Kevin_Metrizvani",
+     "punti": 22,
+     "pos": 49
+    },
+    {
+     "pilota": "Majd_200933",
+     "punti": 18,
+     "pos": 50
+    },
+    {
+     "pilota": "Zazzoman",
+     "punti": 10,
+     "pos": 51
+    },
+    {
+     "pilota": "iSi_NIZZO",
+     "punti": 0,
+     "pos": 52
+    },
+    {
+     "pilota": "ghaiet",
+     "punti": 0,
+     "pos": 52
+    }
+   ]
+  }
+ ]
+}

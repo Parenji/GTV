@@ -1,5 +1,5 @@
-<DOCTYPE html> <!-- ci deve essere-->
-    <html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+<!DOCTYPE html>
+    <html lang="it">
 
     <head>
         <meta charset="UTF-8" />
@@ -16,15 +16,14 @@
         <meta name="apple-mobile-web-app-title" content="GTV" />
         <link rel="manifest" href="favicon/site.webmanifest" />
 
-        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-
-
         <!-- Colore della barra dell'interfaccia mobile -->
-        <meta name="theme-color" content="#FFFFFF">
-        <meta name="background-color" content="#FFFFFF">
+        <meta name="theme-color" content="#0f0f0f">
 
+        <script src="config.js" defer></script>
+        <script src="js/comune.js" defer></script>
+        <script src="js/home.js" defer></script>
+        <script src="js/sport.js" defer></script>
     </head>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  a che serve questo?-->
 
     <body class="ui-site">
         <!-- container dove contiene logo per tornare al menù principale-->
@@ -34,7 +33,7 @@
                     <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
                     <div class="sottotitolo">GTV Corse</div>
                 </a>
-                <button id="menu-toggle" class="hamburger-button">
+                <button id="menu-toggle" class="hamburger-button" aria-label="Apri il menu" aria-expanded="false" aria-controls="sidebar">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
@@ -44,7 +43,7 @@
 
                 <!--menu ad hamburger-->
                 <div id="sidebar">
-                    <button id="close-menu" class="close-button">X</button>
+                    <button id="close-menu" class="close-button" aria-label="Chiudi il menu">X</button>
                     <nav class="sidebar-content" id="sidebar-content">
                         <a href="#home" class="menu-link">
                             <!-- Home -->
@@ -87,6 +86,7 @@
         <svg width="0" height="0" style="position:absolute" aria-hidden="true">
             <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
             <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+            <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
             <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
             <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></symbol>
         </svg>
@@ -216,16 +216,11 @@
                             <span class="ui-link-body"><span class="ui-link-title">Union</span><span class="ui-link-sub" style="display:block">Lega Union E-Sport, Round 2 2026</span></span>
                             <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
-                        <a class="ui-link" href="worldchampionship.html">
-                            <span class="ui-link-media"><img src="images/wc.png" alt=""></span>
-                            <span class="ui-link-body"><span class="ui-link-title">World Championship</span><span class="ui-link-sub" style="display:block">Campionato interno</span></span>
+                        <a class="ui-link" href="#palmares">
+                            <span class="ui-link-media"><img src="images/icons/coppa.svg" alt=""></span>
+                            <span class="ui-link-body"><span class="ui-link-title">Palmares</span><span class="ui-link-sub" style="display:block">World Championship 2026, GTEC 2025</span></span>
                             <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
                         </a>
-                        <!-- <a class="ui-link" href="gtec.html">
-                            <span class="ui-link-media"><img src="images/Campionati/gtec.png" alt=""></span>
-                            <span class="ui-link-body"><span class="ui-link-title">GTEC</span></span>
-                            <svg class="ui-link-arrow" width="18" height="18"><use href="#i-arrow"/></svg>
-                        </a> -->
                     </section>
                 </div>
             </section>
@@ -233,9 +228,12 @@
             <section id="palmares" class="section">
                 <div class="ui-page">
                     <section class="ui-section">
-                        <div class="ui-section-head"><h2 class="ui-section-title">Palmares del team</h2></div>
-                        <div class="ui-state">Sezione in preparazione.</div>
+                        <div class="ui-section-head"><h2 class="ui-section-title">Palmares del team</h2><span class="ui-section-meta">Campionati conclusi</span></div>
                     </section>
+                    <!-- Schede generate da js/home.js leggendo dati/palmares.json -->
+                    <div id="palmares-body">
+                        <div class="ui-state"><span class="ui-spinner" aria-hidden="true"></span>Caricamento palmares…</div>
+                    </div>
                 </div>
             </section>
 
@@ -254,7 +252,5 @@
         </div>
 
     </body>
-    <script src="config.js" defer></script>
-    <script src="scripts.js" defer></script>
 
     </html>
