@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-10-03T12:47:11+00:00",
+  "generated_at": "2026-10-08T14:00:01+00:00",
   "source": "https://albixximo-union2026-r2.vercel.app/Classifiche/portal.html",
   "gare_pubblicate": [
    1
@@ -1979,21 +1979,7 @@
       69
      ]
     }
-   ],
-   "lobby": [
-    "A1",
-    "A5",
-    "A10",
-    "A17",
-    "A29",
-    "A34"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   },
   "ELITE": {
    "gare_corse": 1,
@@ -3965,21 +3951,7 @@
       63
      ]
     }
-   ],
-   "lobby": [
-    "A2",
-    "A8",
-    "A12",
-    "A18",
-    "A30",
-    "A35"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   },
   "PRO GOLD": {
    "gare_corse": 1,
@@ -6081,21 +6053,7 @@
       73
      ]
     }
-   ],
-   "lobby": [
-    "A3",
-    "A14",
-    "A21",
-    "A24",
-    "A28",
-    "A31"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   },
   "PRO SILVER": {
    "gare_corse": 1,
@@ -8094,21 +8052,7 @@
       61
      ]
     }
-   ],
-   "lobby": [
-    "A4",
-    "A9",
-    "A13",
-    "A22",
-    "A25",
-    "A36"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   },
   "PRO AMA": {
    "gare_corse": 1,
@@ -10106,21 +10050,7 @@
       60
      ]
     }
-   ],
-   "lobby": [
-    "A6",
-    "A15",
-    "A16",
-    "A20",
-    "A26",
-    "A32"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   },
   "AMA": {
    "gare_corse": 1,
@@ -12016,21 +11946,7 @@
       56
      ]
     }
-   ],
-   "lobby": [
-    "A7",
-    "A11",
-    "A19",
-    "A23",
-    "A27",
-    "A33"
-   ],
-   "movimenti": {
-    "promotedIn": [],
-    "relegatedFrom": [],
-    "promotedFrom": [],
-    "relegatedIn": []
-   }
+   ]
   }
  },
  "gare": {
@@ -12039,7 +11955,6 @@
     "A1": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A1.png",
-     "impronta": "\"3e09b65ee904570e4af2ee3afe0c1dac\"",
      "classifica": [
       {
        "pos": 1,
@@ -12180,7 +12095,6 @@
     "A5": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A5.png",
-     "impronta": "\"7d194fd5f206203accc364f698278e94\"",
      "classifica": [
       {
        "pos": 1,
@@ -12319,7 +12233,6 @@
     "A10": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A10.png",
-     "impronta": "\"a61ace2c47bed04f68dcd8c5a7fed8b3\"",
      "classifica": [
       {
        "pos": 1,
@@ -12459,7 +12372,6 @@
     "A17": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A17.png",
-     "impronta": "\"04cc07e03d8dbe234855e8ee618143a4\"",
      "classifica": [
       {
        "pos": 1,
@@ -12601,7 +12513,6 @@
     "A29": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A29.png",
-     "impronta": "\"d73e24237951b9b39de5ccfda6869045\"",
      "classifica": [
       {
        "pos": 1,
@@ -12741,7 +12652,6 @@
     "A34": {
      "lega": "STAR",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/STAR/A34.png",
-     "impronta": "\"dac359bec18ef3490b22690502e58734\"",
      "classifica": [
       {
        "pos": 1,
@@ -12861,7 +12771,6 @@
     "A2": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A2.png",
-     "impronta": "\"83edcdebd193c8da321a4b60970a7b60\"",
      "classifica": [
       {
        "pos": 1,
@@ -13010,7 +12919,6 @@
     "A8": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A8.png",
-     "impronta": "\"6467f14af00eb0aa1b8f5d05d0806d8e\"",
      "classifica": [
       {
        "pos": 1,
@@ -13132,7 +13040,6 @@
     "A12": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A12.png",
-     "impronta": "\"638e3d2e359c0b15b11b8a664beeb512\"",
      "classifica": [
       {
        "pos": 1,
@@ -13242,7 +13149,6 @@
     "A18": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A18.png",
-     "impronta": "\"6c936501f14b6a13c3bcbbc85221f4e3\"",
      "classifica": [
       {
        "pos": 1,
@@ -13393,7 +13299,6 @@
     "A30": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A30.png",
-     "impronta": "\"496f5a16dd979f94e4325d3bbda8aa61\"",
      "classifica": [
       {
        "pos": 1,
@@ -13535,7 +13440,6 @@
     "A35": {
      "lega": "ELITE",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/ELITE/A35.png",
-     "impronta": "\"83876fcb483a85b0078a0f8ea6a65974\"",
      "classifica": [
       {
        "pos": 1,
@@ -13688,7 +13592,6 @@
     "A3": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A3.png",
-     "impronta": "\"202c5fba03e27baa9dbe77c42577395f\"",
      "classifica": [
       {
        "pos": 1,
@@ -13838,7 +13741,6 @@
     "A14": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A14.png",
-     "impronta": "\"6569a914ed68b41d659f6275c2543493\"",
      "classifica": [
       {
        "pos": 1,
@@ -13989,7 +13891,6 @@
     "A21": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A21.png",
-     "impronta": "\"ebfc0e5c51ff3149da954edbd7203e30\"",
      "classifica": [
       {
        "pos": 1,
@@ -14140,7 +14041,6 @@
     "A24": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A24.png",
-     "impronta": "\"f123f507d34b0d6b7df1be8c67c44917\"",
      "classifica": [
       {
        "pos": 1,
@@ -14291,7 +14191,6 @@
     "A28": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A28.png",
-     "impronta": "\"17effc44b64b206817b1395bb5ac7ba6\"",
      "classifica": [
       {
        "pos": 1,
@@ -14441,7 +14340,6 @@
     "A31": {
      "lega": "PRO GOLD",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20GOLD/A31.png",
-     "impronta": "\"27f17b51b38743b056ff0b0522b59f94\"",
      "classifica": [
       {
        "pos": 1,
@@ -14561,7 +14459,6 @@
     "A4": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A4.png",
-     "impronta": "\"97da2ef23481936f903b2a63eb9c6ecb\"",
      "classifica": [
       {
        "pos": 1,
@@ -14712,7 +14609,6 @@
     "A9": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A9.png",
-     "impronta": "\"e55f1f91defdfabf0483c871ee313117\"",
      "classifica": [
       {
        "pos": 1,
@@ -14854,7 +14750,6 @@
     "A13": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A13.png",
-     "impronta": "\"92c7dae0fe4fcc98fe0001bf490e33ba\"",
      "classifica": [
       {
        "pos": 1,
@@ -14988,7 +14883,6 @@
     "A22": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A22.png",
-     "impronta": "\"af4b8a4ddd232749a5e5bce2623ebcca\"",
      "classifica": [
       {
        "pos": 1,
@@ -15119,7 +15013,6 @@
     "A25": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A25.png",
-     "impronta": "\"676226eec6b6623293461d1b2fab8ecf\"",
      "classifica": [
       {
        "pos": 1,
@@ -15261,7 +15154,6 @@
     "A36": {
      "lega": "PRO SILVER",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20SILVER/A36.png",
-     "impronta": "\"67bcb46e1e4de5cff4d60298ccfcd047\"",
      "classifica": [
       {
        "pos": 1,
@@ -15402,7 +15294,6 @@
     "A6": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A6.png",
-     "impronta": "\"1e6b3e1d105df05314cdf664eb2c1b74\"",
      "classifica": [
       {
        "pos": 1,
@@ -15534,7 +15425,6 @@
     "A15": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A15.png",
-     "impronta": "\"d725c1b7f2cd7edf6766692f2f1ce6f7\"",
      "classifica": [
       {
        "pos": 1,
@@ -15675,7 +15565,6 @@
     "A16": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A16.png",
-     "impronta": "\"cd47e167359b254156aa0a2c800178ae\"",
      "classifica": [
       {
        "pos": 1,
@@ -15817,7 +15706,6 @@
     "A20": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A20.png",
-     "impronta": "\"309195331fee466203c61e4f83c43198\"",
      "classifica": [
       {
        "pos": 1,
@@ -15950,7 +15838,6 @@
     "A26": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A26.png",
-     "impronta": "\"c0b937e6a9e81fa0f8b34ce1ac065622\"",
      "classifica": [
       {
        "pos": 1,
@@ -16102,7 +15989,6 @@
     "A32": {
      "lega": "PRO AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/PRO%20AMA/A32.png",
-     "impronta": "\"deb7ef03b3b74e30fe7c015bbae96e00\"",
      "classifica": [
       {
        "pos": 1,
@@ -16244,7 +16130,6 @@
     "A7": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A7.png",
-     "impronta": "\"e6cd8004b646e6ae2701e67721f38189\"",
      "classifica": [
       {
        "pos": 1,
@@ -16385,7 +16270,6 @@
     "A11": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A11.png",
-     "impronta": "\"c3f6e14c7d2bfb422497aa7c29e1b02c\"",
      "classifica": [
       {
        "pos": 1,
@@ -16537,7 +16421,6 @@
     "A19": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A19.png",
-     "impronta": "\"43e1d01d27c5b272bb2d9fa0f319e083\"",
      "classifica": [
       {
        "pos": 1,
@@ -16670,7 +16553,6 @@
     "A23": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A23.png",
-     "impronta": "\"a7d7ffcfdb3c9d894aac79117dc14f00\"",
      "classifica": [
       {
        "pos": 1,
@@ -16793,7 +16675,6 @@
     "A27": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A27.png",
-     "impronta": "\"912bd8e6e021530e89361bf0b298223f\"",
      "classifica": [
       {
        "pos": 1,
@@ -16924,7 +16805,6 @@
     "A33": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G1/AMA/A33.png",
-     "impronta": "\"1cb06835b5ff6ff77f5e83bc5c37e3d2\"",
      "classifica": [
       {
        "pos": 1,
