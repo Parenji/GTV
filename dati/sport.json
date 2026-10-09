@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-09T14:20:58+00:00",
+    "updated_at": "2026-10-09T15:21:43+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.548",
         "leader": "MetalGear9493",
-        "partecipanti": 46802,
+        "partecipanti": 48179,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -36,7 +36,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 121487,
+        "partecipanti": 122055,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +47,7 @@
             "squadra": "GTV",
             "tempo": "1:42.208",
             "tempo_ms": 102208,
-            "pos_assoluta": 8417,
+            "pos_assoluta": 8461,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.831
@@ -566,7 +566,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:46.236",
           "tempo_ms": 106236,
-          "pos_assoluta": 7875,
+          "pos_assoluta": 7927,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -12719,7 +12719,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 7875,
+          "rank": 7927,
           "tempo": "1:46.236",
           "evento": "Daytona Road Course"
         },
@@ -13663,7 +13663,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 8417,
+          "rank": 8461,
           "tempo": "1:42.208",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
