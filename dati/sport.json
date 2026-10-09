@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-08T22:02:28+00:00",
+    "updated_at": "2026-10-09T11:52:25+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "22 Ott 2026",
         "scadenza": "22 Ott 2026",
         "chiusura": "2026-10-22T06:59:59Z",
-        "miglior_tempo": "1:45.716",
+        "miglior_tempo": "1:45.548",
         "leader": "MetalGear9493",
-        "partecipanti": 33595,
+        "partecipanti": 44106,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -36,7 +36,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.394",
         "leader": "SZ_yuhki02",
-        "partecipanti": 116538,
+        "partecipanti": 120375,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +47,7 @@
             "squadra": "GTV",
             "tempo": "1:42.208",
             "tempo_ms": 102208,
-            "pos_assoluta": 8080,
+            "pos_assoluta": 8347,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.831
@@ -59,7 +59,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 10476,
+            "pos_assoluta": 11547,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.342,
             "distacco_assoluto_pct": 3.183
@@ -71,7 +71,7 @@
             "squadra": "GTV",
             "tempo": "1:42.795",
             "tempo_ms": 102795,
-            "pos_assoluta": 11668,
+            "pos_assoluta": 12877,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.574,
             "distacco_assoluto_pct": 3.422
@@ -566,7 +566,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:46.236",
           "tempo_ms": 106236,
-          "pos_assoluta": 7399,
+          "pos_assoluta": 7769,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -682,7 +682,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28217,
+      "rank_medio": 28229,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -691,7 +691,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 11668,
+          "rank": 12877,
           "tempo": "1:42.795",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -2812,7 +2812,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32726,
+      "rank_medio": 32734,
       "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -2821,7 +2821,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 10476,
+          "rank": 11547,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -11052,7 +11052,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12703,7 +12703,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19763,
+      "rank_medio": 19767,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12719,7 +12719,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 7399,
+          "rank": 7769,
           "tempo": "1:46.236",
           "evento": "Daytona Road Course"
         },
@@ -13654,7 +13654,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 48757,
+      "rank_medio": 48759,
       "eventi_pubblicati": 142,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -13663,7 +13663,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 8080,
+          "rank": 8347,
           "tempo": "1:42.208",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
