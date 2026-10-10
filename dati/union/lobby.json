@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-10T05:59:35+00:00"
+    "generated_at": "2026-10-10T17:22:26+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -452,7 +452,7 @@
           "pos": 4,
           "matricola": "32",
           "team": "MMS",
-          "nome": "A.Reitano",
+          "nome": "A.Reitano ( Ritirato )",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1660,9 +1660,9 @@
         },
         {
           "pos": 3,
-          "matricola": "13",
-          "team": "DCT",
-          "nome": "DRT-XaserTek",
+          "matricola": "40",
+          "team": "PBC",
+          "nome": "SimoT_18",
           "auto": "ASSENTE"
         },
         {
@@ -1727,13 +1727,6 @@
           "team": "PRT",
           "nome": "PRT_Perdinci",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 13,
-          "matricola": "40",
-          "team": "PBC",
-          "nome": "SimoT_18",
-          "auto": "ASSENTE"
         }
       ]
     },
@@ -2507,10 +2500,10 @@
         },
         {
           "pos": 8,
-          "matricola": "413",
-          "team": "PRT",
-          "nome": "wwp76",
-          "auto": "ASSENTE"
+          "matricola": "437",
+          "team": "SRT",
+          "nome": "Zagaracing",
+          "auto": "GT-R NISMO GT500 '16"
         },
         {
           "pos": 9,
@@ -2531,20 +2524,6 @@
           "matricola": "377",
           "team": "EVO",
           "nome": "TER_MINATOR",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 12,
-          "matricola": "437",
-          "team": "SRT",
-          "nome": "Zagaracing",
-          "auto": "GT-R NISMO GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "401",
-          "team": "PBC",
-          "nome": "OmgTommie",
           "auto": "ASSENTE"
         }
       ]
@@ -2880,10 +2859,10 @@
         },
         {
           "pos": 3,
-          "matricola": "95",
-          "team": "BCSC",
-          "nome": "Cacino95",
-          "auto": "ASSENTE"
+          "matricola": "145",
+          "team": "RCE",
+          "nome": "RCE_Patrick85",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 4,
@@ -2940,13 +2919,6 @@
           "team": "DCT",
           "nome": "DCT_Fiume11",
           "auto": "NSX CONCEPT-GT '16"
-        },
-        {
-          "pos": 12,
-          "matricola": "145",
-          "team": "RCE",
-          "nome": "RCE_Patrick85",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
