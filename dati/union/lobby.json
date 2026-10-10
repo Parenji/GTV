@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-09T18:24:01+00:00"
+    "generated_at": "2026-10-10T05:59:35+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -22,9 +22,9 @@
       "time": "Ore 21:00",
       "name": "A1",
       "category": "STAR",
-      "host": "HellBoy8408",
-      "live": "SCGT_Giorgetto",
-      "url": "https://www.twitch.tv/squadracorsegt",
+      "host": "CBR_Mava",
+      "live": "CBR- Live_cobraracing",
+      "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
         {
           "pos": 1,
@@ -42,9 +42,9 @@
         },
         {
           "pos": 3,
-          "matricola": "44",
+          "matricola": "41",
           "team": "PRT",
-          "nome": "PRT_Perdinci",
+          "nome": "FrRoGaMeR",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -110,9 +110,9 @@
       "time": "Ore 21:00",
       "name": "A2",
       "category": "ELITE",
-      "host": "MirkoDC10",
-      "live": "DCT- MirkoDC10",
-      "url": "https://www.twitch.tv/dclab_channel_1",
+      "host": "HellBoy8408",
+      "live": "SCGT_Giorgetto",
+      "url": "https://www.twitch.tv/squadracorsegt",
       "pilots": [
         {
           "pos": 1,
@@ -219,9 +219,9 @@
       "time": "Ore 21:00",
       "name": "A3",
       "category": "PRO GOLD",
-      "host": "thelostgamer3000",
-      "live": "EVO- thelostgamer3000",
-      "url": "https://www.youtube.com/@team-evolution-racing",
+      "host": "MirkoDC10",
+      "live": "DCT- MirkoDC10",
+      "url": "https://www.twitch.tv/dclab_channel_1",
       "pilots": [
         {
           "pos": 1,
@@ -309,9 +309,9 @@
         },
         {
           "pos": 13,
-          "matricola": "197",
+          "matricola": "201",
           "team": "EVO",
-          "nome": "EVO_Manu81",
+          "nome": "TER_Effe355",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -328,9 +328,9 @@
       "time": "Ore 21:00",
       "name": "A4",
       "category": "PRO SILVER",
-      "host": "CBR_Mava",
-      "live": "CBR- Live_cobraracing",
-      "url": "https://twitch.tv/live_cobraracingtwitch",
+      "host": "thelostgamer3000",
+      "live": "EVO- thelostgamer3000",
+      "url": "https://www.youtube.com/@team-evolution-racing",
       "pilots": [
         {
           "pos": 1,
@@ -390,10 +390,10 @@
         },
         {
           "pos": 9,
-          "matricola": "348",
-          "team": "TLM",
-          "nome": "MikiRua (RITIRATO)",
-          "auto": "ASSENTE"
+          "matricola": "331",
+          "team": "SMI",
+          "nome": "SMI Niki Lauda",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 10,
@@ -415,13 +415,6 @@
           "team": "MMS",
           "nome": "DRT-Arbaxx76",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "331",
-          "team": "SMI",
-          "nome": "SMI Niki Lauda",
-          "auto": "RC F GT500 '16"
         }
       ]
     },
@@ -430,9 +423,9 @@
       "time": "Ore 22:20",
       "name": "A5",
       "category": "STAR",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "MirkoDC10",
+      "live": "DCT- MirkoDC10",
+      "url": "https://www.twitch.tv/dclab_channel_1",
       "pilots": [
         {
           "pos": 1,
@@ -492,10 +485,10 @@
         },
         {
           "pos": 9,
-          "matricola": "52",
+          "matricola": "53",
           "team": "RCE",
-          "nome": "RCE_DarkneSS",
-          "auto": "ASSENTE"
+          "nome": "RCE_Freej",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 10,
@@ -532,9 +525,9 @@
       "time": "Ore 22:20",
       "name": "A6",
       "category": "PRO AMA",
-      "host": "Leobustv_18",
-      "live": "RCE- Leobustv_18",
-      "url": "https://www.youtube.com/@RCE_Official",
+      "host": "MF_GioBar73",
+      "live": "MFC- MFCorse-46",
+      "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
           "pos": 1,
@@ -615,10 +608,10 @@
         },
         {
           "pos": 12,
-          "matricola": "386",
-          "team": "GTID",
-          "nome": "Ice_Fire",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "360",
+          "team": "ARC",
+          "nome": "KSI-AreS_GlaDiuS",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 13,
@@ -634,9 +627,9 @@
       "time": "Ore 22:20",
       "name": "A7",
       "category": "AMA",
-      "host": "MirkoDC10",
-      "live": "DCT- MirkoDC10",
-      "url": "https://www.twitch.tv/dclab_channel_1",
+      "host": "Leobustv_18",
+      "live": "RCE- Leobustv_18",
+      "url": "https://www.youtube.com/@RCE_Official",
       "pilots": [
         {
           "pos": 1,
@@ -721,6 +714,20 @@
           "team": "SCGT",
           "nome": "domydero",
           "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 13,
+          "matricola": "485",
+          "team": "PRT",
+          "nome": "(edo56)",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_muso_2692_gt",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -729,9 +736,9 @@
       "time": "Ore 21:00",
       "name": "A10",
       "category": "STAR",
-      "host": "BAD_brucem84",
-      "live": "BCSC- Pardus—89",
-      "url": "https://youtube.com/@badcerbero23",
+      "host": "Live_cobraracing",
+      "live": "CBR- Live_cobraracing",
+      "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
         {
           "pos": 1,
@@ -784,10 +791,10 @@
         },
         {
           "pos": 8,
-          "matricola": "53",
+          "matricola": "52",
           "team": "RCE",
-          "nome": "RCE_Freej",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "RCE_DarkneSS",
+          "auto": "ASSENTE"
         },
         {
           "pos": 9,
@@ -838,9 +845,9 @@
       "time": "Ore 21:00",
       "name": "A11",
       "category": "AMA",
-      "host": "VintageAR",
-      "live": "ARC- VintageAR",
-      "url": "https://youtube.com/@atlantisrepartocorse",
+      "host": "BAD_brucem84",
+      "live": "BCSC- Pardus—89",
+      "url": "https://youtube.com/@badcerbero23",
       "pilots": [
         {
           "pos": 1,
@@ -921,10 +928,24 @@
         },
         {
           "pos": 12,
-          "matricola": "517",
-          "team": "SMI",
-          "nome": "SMI-Slimer ( RITIRATO )",
-          "auto": "GT-R NISMO GT500 '16"
+          "matricola": "452",
+          "team": "ARC",
+          "nome": "ARC-MarinaioPazz",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "484",
+          "team": "PRT",
+          "nome": "Luca R72",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "496",
+          "team": "RMT",
+          "nome": "RMT Moody33",
+          "auto": "ASSENTE"
         }
       ]
     },
@@ -933,9 +954,9 @@
       "time": "Ore 22:20",
       "name": "A12",
       "category": "ELITE",
-      "host": "GTV_legendafluo",
-      "live": "GTV- GTV_legendafluo",
-      "url": "https://www.twitch.tv/legendafluo6/",
+      "host": "VintageAR",
+      "live": "ARC- VintageAR",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -1028,9 +1049,9 @@
       "time": "Ore 22:20",
       "name": "A13",
       "category": "PRO SILVER",
-      "host": "BAD_brucem84",
-      "live": "BCSC- Pardus—89",
-      "url": "https://youtube.com/@badcerbero23",
+      "host": "GTV_legendafluo",
+      "live": "GTV- GTV_legendafluo",
+      "url": "https://www.twitch.tv/legendafluo6/",
       "pilots": [
         {
           "pos": 1,
@@ -1123,9 +1144,9 @@
       "time": "Ore 22:20",
       "name": "A14",
       "category": "PRO GOLD",
-      "host": "bmario1962",
-      "live": "RMT- bmario1962",
-      "url": "https://www.twitch.tv/racing_monster_team_",
+      "host": "BAD_brucem84",
+      "live": "BCSC- Pardus—89",
+      "url": "https://youtube.com/@badcerbero23",
       "pilots": [
         {
           "pos": 1,
@@ -1199,9 +1220,9 @@
         },
         {
           "pos": 11,
-          "matricola": "191",
+          "matricola": "195",
           "team": "DCT",
-          "nome": "CpMa_95",
+          "nome": "TER-CAR-MELO74",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1232,9 +1253,9 @@
       "time": "Ore 22:20",
       "name": "A15",
       "category": "PRO AMA",
-      "host": "VintageAR",
-      "live": "ARC- VintageAR",
-      "url": "https://youtube.com/@atlantisrepartocorse",
+      "host": "bmario1962",
+      "live": "RMT- bmario1962",
+      "url": "https://www.twitch.tv/racing_monster_team_",
       "pilots": [
         {
           "pos": 1,
@@ -1334,9 +1355,9 @@
       "time": "Ore 21:00",
       "name": "A8",
       "category": "ELITE",
-      "host": "GTRC-SorcioSecco",
-      "live": "GTRC- GTRC-SorcioSecco",
-      "url": "https://youtube.com/@gtrctube2564",
+      "host": "VintageAR",
+      "live": "ARC- TRT-Tommizio",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -1422,9 +1443,9 @@
       "time": "Ore 21:00",
       "name": "A9",
       "category": "PRO SILVER",
-      "host": "Live_cobraracing",
-      "live": "CBR- Live_cobraracing",
-      "url": "https://twitch.tv/live_cobraracingtwitch",
+      "host": "GTRC-SorcioSecco",
+      "live": "GTRC- GTRC-SorcioSecco",
+      "url": "https://youtube.com/@gtrctube2564",
       "pilots": [
         {
           "pos": 1,
@@ -1477,10 +1498,10 @@
         },
         {
           "pos": 8,
-          "matricola": "301",
+          "matricola": "300",
           "team": "MMS",
-          "nome": "Sard Lander",
-          "auto": "RC F GT500 '16"
+          "nome": "MMS_Gattonero70",
+          "auto": "GT-R NISMO GT500 '16"
         },
         {
           "pos": 9,
@@ -1517,9 +1538,9 @@
       "time": "Ore 21:00",
       "name": "A16",
       "category": "PRO AMA",
-      "host": "Albixximo",
-      "live": "PRT- Albixximo",
-      "url": "http://www.youtube.com/@AlbixximoLive",
+      "host": "Spake_Mosconi",
+      "live": "TLM- Spake_Mosconi",
+      "url": "https://youtube.com/@BoxGTV",
       "pilots": [
         {
           "pos": 1,
@@ -1544,10 +1565,10 @@
         },
         {
           "pos": 4,
-          "matricola": "360",
-          "team": "ARC",
-          "nome": "KSI-AreS_GlaDiuS",
-          "auto": "RC F GT500 '16"
+          "matricola": "386",
+          "team": "GTID",
+          "nome": "Ice_Fire",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 5,
@@ -1619,9 +1640,9 @@
       "time": "Ore 21:00",
       "name": "A17",
       "category": "STAR",
-      "host": "slaydei2_",
-      "live": "PBC- Goivas80",
-      "url": "https://youtube.com/@performancebearcrew4660",
+      "host": "Albixximo",
+      "live": "PRT- Albixximo",
+      "url": "http://www.youtube.com/@AlbixximoLive",
       "pilots": [
         {
           "pos": 1,
@@ -1702,9 +1723,9 @@
         },
         {
           "pos": 12,
-          "matricola": "41",
+          "matricola": "44",
           "team": "PRT",
-          "nome": "FrRoGaMeR",
+          "nome": "PRT_Perdinci",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1721,9 +1742,9 @@
       "time": "Ore 21:00",
       "name": "A18",
       "category": "ELITE",
-      "host": "RsR_Seawolf",
-      "live": "RSR- RsR_Seawolf",
-      "url": "https://twitch.tv/rushsimracers",
+      "host": "slaydei2_",
+      "live": "PBC- Goivas80",
+      "url": "https://youtube.com/@performancebearcrew4660",
       "pilots": [
         {
           "pos": 1,
@@ -1809,9 +1830,9 @@
       "time": "Ore 21:00",
       "name": "A19",
       "category": "AMA",
-      "host": "Spake_Mosconi",
-      "live": "TLM- Spake_Mosconi",
-      "url": "https://youtube.com/@BoxGTV",
+      "host": "RsR_Seawolf",
+      "live": "RSR- RsR_Seawolf",
+      "url": "https://twitch.tv/rushsimracers",
       "pilots": [
         {
           "pos": 1,
@@ -1878,10 +1899,10 @@
         },
         {
           "pos": 10,
-          "matricola": "516",
+          "matricola": "514",
           "team": "SMI",
-          "nome": "SMI_Kaiser (RITIRATO)",
-          "auto": "ASSENTE"
+          "nome": "SMI-Mandrake",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 11,
@@ -1896,6 +1917,20 @@
           "team": "RMT",
           "nome": "RMT-Alzoal_7.6",
           "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 13,
+          "matricola": "463",
+          "team": "EVO",
+          "nome": "TER_Brazorf",
+          "auto": "ASSENTE"
+        },
+        {
+          "pos": 14,
+          "matricola": "507",
+          "team": "SCGT",
+          "nome": "Gass95",
+          "auto": "RC F GT500 '16"
         }
       ]
     },
@@ -1904,9 +1939,9 @@
       "time": "Ore 22:20",
       "name": "A20",
       "category": "PRO AMA",
-      "host": "Babide46",
-      "live": "MMS- babide46",
-      "url": "https://www.twitch.tv/mms_channel",
+      "host": "xSamueLx",
+      "live": "PRT- xSamueLx",
+      "url": "https://www.twitch.tv/xsamuelx_channel",
       "pilots": [
         {
           "pos": 1,
@@ -1999,9 +2034,9 @@
       "time": "Ore 22:20",
       "name": "A21",
       "category": "PRO GOLD",
-      "host": "FFM_HOST",
-      "live": "FFM- FFM_HOST",
-      "url": "https://m.twitch.tv/ffmvirtualmotorsport",
+      "host": "Babide46",
+      "live": "MMS- babide46",
+      "url": "https://www.twitch.tv/mms_channel",
       "pilots": [
         {
           "pos": 1,
@@ -2019,9 +2054,9 @@
         },
         {
           "pos": 3,
-          "matricola": "201",
+          "matricola": "197",
           "team": "EVO",
-          "nome": "TER_Effe355",
+          "nome": "EVO_Manu81",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2108,9 +2143,9 @@
       "time": "Ore 22:20",
       "name": "A22",
       "category": "PRO SILVER",
-      "host": "xSamueLx",
-      "live": "PRT- xSamueLx",
-      "url": "https://www.twitch.tv/xsamuelx_channel",
+      "host": "FFM_HOST",
+      "live": "FFM- FFM_HOST",
+      "url": "https://m.twitch.tv/ffmvirtualmotorsport",
       "pilots": [
         {
           "pos": 1,
@@ -2203,97 +2238,19 @@
       "time": "Ore 21:00",
       "name": "A23",
       "category": "AMA",
-      "host": "Lok-1973",
-      "live": "SRT- Lok-1973",
-      "url": "https://www.twitch.tv/lok1973",
-      "pilots": [
-        {
-          "pos": 1,
-          "matricola": "485",
-          "team": "PRT",
-          "nome": "(edo56)",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 2,
-          "matricola": "500",
-          "team": "RRT",
-          "nome": "RRT_muso_2692_gt",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 3,
-          "matricola": "452",
-          "team": "ARC",
-          "nome": "ARC-MarinaioPazz",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "484",
-          "team": "PRT",
-          "nome": "Luca R72",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "496",
-          "team": "RMT",
-          "nome": "RMT Moody33",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 6,
-          "matricola": "514",
-          "team": "SMI",
-          "nome": "SMI-Mandrake",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 7,
-          "matricola": "463",
-          "team": "EVO",
-          "nome": "TER_Brazorf",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 8,
-          "matricola": "507",
-          "team": "SCGT",
-          "nome": "Gass95",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 9,
-          "matricola": "479",
-          "team": "PRT",
-          "nome": "conradveron59",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 10,
-          "matricola": "525",
-          "team": "TLM",
-          "nome": "TLM_Gian",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 11,
-          "matricola": "460",
-          "team": "DCT",
-          "nome": "DCT_R.Leta",
-          "auto": "RS 5 Turbo DTM '19"
-        }
-      ]
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
     },
     {
       "day": "GIOVEDI",
       "time": "Ore 21:00",
       "name": "A24",
       "category": "PRO GOLD",
-      "host": "MNY-MirwoTangi",
-      "live": "OES- MNY-MirwoTangi",
-      "url": "https://youtube.com/@officialorionesports",
+      "host": "Samu4sevenGT",
+      "live": "FMC- Samu4sevenGT",
+      "url": "https://youtube.com/@samu4seven",
       "pilots": [
         {
           "pos": 1,
@@ -2400,9 +2357,9 @@
       "time": "Ore 21:00",
       "name": "A25",
       "category": "PRO SILVER",
-      "host": "GTIDsacco72",
-      "live": "GTID- Cornazzai73",
-      "url": "https://www.twitch.tv/gtid_team",
+      "host": "Lok-1973",
+      "live": "SRT- Lok-1973",
+      "url": "https://www.twitch.tv/lok1973",
       "pilots": [
         {
           "pos": 1,
@@ -2483,13 +2440,6 @@
         },
         {
           "pos": 12,
-          "matricola": "302",
-          "team": "OES",
-          "nome": "MT-Boss95 (RITIRATO)",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 13,
           "matricola": "310",
           "team": "PRT",
           "nome": "N_Spec",
@@ -2502,9 +2452,9 @@
       "time": "Ore 21:00",
       "name": "A26",
       "category": "PRO AMA",
-      "host": "Samu4sevenGT",
-      "live": "FMC- Samu4sevenGT",
-      "url": "https://youtube.com/@samu4seven",
+      "host": "GTIDsacco72",
+      "live": "GTID- Cornazzai73",
+      "url": "https://www.twitch.tv/gtid_team",
       "pilots": [
         {
           "pos": 1,
@@ -2604,9 +2554,9 @@
       "time": "Ore 22:20",
       "name": "A27",
       "category": "AMA",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "MNY-MirwoTangi",
+      "live": "OES- MNY-MirwoTangi",
+      "url": "https://youtube.com/@officialorionesports",
       "pilots": [
         {
           "pos": 1,
@@ -2706,9 +2656,9 @@
       "time": "Ore 22:20",
       "name": "A28",
       "category": "PRO GOLD",
-      "host": "GTIDsacco72",
-      "live": "GTID- Cornazzai73",
-      "url": "https://www.twitch.tv/gtid_team",
+      "host": "MF_maxlaqualunqe",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@max_71_mf",
       "pilots": [
         {
           "pos": 1,
@@ -2795,10 +2745,10 @@
           "auto": "GT-R NISMO GT500 '16"
         },
         {
-          "pos": 14,
-          "matricola": "198",
+          "pos": 13,
+          "matricola": "200",
           "team": "EVO",
-          "nome": "EVO_Piraz",
+          "nome": "Ric_hero1971",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2808,9 +2758,9 @@
       "time": "Ore 22:20",
       "name": "A29",
       "category": "STAR",
-      "host": "Lok-1973",
-      "live": "SRT- Lok-1973",
-      "url": "https://www.twitch.tv/lok1973",
+      "host": "GTIDsacco72",
+      "live": "GTID- Cornazzai73",
+      "url": "https://www.twitch.tv/gtid_team",
       "pilots": [
         {
           "pos": 1,
@@ -2910,9 +2860,9 @@
       "time": "Ore 22:20",
       "name": "A30",
       "category": "ELITE",
-      "host": "MNY-MirwoTangi",
-      "live": "OES- MNY-MirwoTangi",
-      "url": "https://youtube.com/@officialorionesports",
+      "host": "Lok-1973",
+      "live": "SRT- Lok-1973",
+      "url": "https://www.twitch.tv/lok1973",
       "pilots": [
         {
           "pos": 1,
@@ -3005,15 +2955,15 @@
       "time": "Ore 21:00",
       "name": "A31",
       "category": "PRO GOLD",
-      "host": "AndreaJonniFly",
-      "live": "RRT- AndreaJonniFly",
-      "url": "https://www.twitch.tv/gamesmotortv",
+      "host": "Tiskitoski",
+      "live": "SMI- lupo_verde_3",
+      "url": "https://twitch.tv/shoganai_motorsportitalia",
       "pilots": [
         {
           "pos": 1,
-          "matricola": "200",
+          "matricola": "198",
           "team": "EVO",
-          "nome": "Ric_hero1971",
+          "nome": "EVO_Piraz",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3081,9 +3031,9 @@
         },
         {
           "pos": 11,
-          "matricola": "195",
+          "matricola": "191",
           "team": "DCT",
-          "nome": "TER-CAR-MELO74",
+          "nome": "CpMa_95",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3100,9 +3050,9 @@
       "time": "Ore 21:00",
       "name": "A32",
       "category": "PRO AMA",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "AndreaJonniFly",
+      "live": "RRT- AndreaJonniFly",
+      "url": "https://www.twitch.tv/gamesmotortv",
       "pilots": [
         {
           "pos": 1,
@@ -3143,7 +3093,7 @@
           "pos": 6,
           "matricola": "376",
           "team": "DCT",
-          "nome": "Kevin-giusepp",
+          "nome": "ASC-Vanio2022",
           "auto": "ASSENTE"
         },
         {
@@ -3202,9 +3152,9 @@
       "time": "Ore 21:00",
       "name": "A33",
       "category": "AMA",
-      "host": "Tiskitoski",
-      "live": "SMI- Tiskitoski",
-      "url": "https://twitch.tv/shoganai_motorsportitalia",
+      "host": "MF_GioBar73",
+      "live": "MFC- MFCorse-46",
+      "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
           "pos": 1,
@@ -3275,6 +3225,27 @@
           "team": "ARC",
           "nome": "ARC-Arbr82",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "525",
+          "team": "TLM",
+          "nome": "TLM_Gian",
+          "auto": "ASSENTE"
+        },
+        {
+          "pos": 12,
+          "matricola": "460",
+          "team": "DCT",
+          "nome": "DCT_R.Leta",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "479",
+          "team": "PRT",
+          "nome": "conradveron59",
+          "auto": "ASSENTE"
         }
       ]
     },
@@ -3283,9 +3254,9 @@
       "time": "Ore 22:20",
       "name": "A34",
       "category": "STAR",
-      "host": "Muso_2692_gt",
-      "live": "RRT- AndreaJonniFly",
-      "url": "https://www.twitch.tv/gamesmotortv",
+      "host": "HellBoy8408",
+      "live": "SCGT_Giorgetto",
+      "url": "https://www.twitch.tv/squadracorsegt",
       "pilots": [
         {
           "pos": 1,
@@ -3371,9 +3342,9 @@
       "time": "Ore 22:20",
       "name": "A35",
       "category": "ELITE",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "Muso_2692_gt",
+      "live": "RRT- AndreaJonniFly",
+      "url": "https://www.twitch.tv/gamesmotortv",
       "pilots": [
         {
           "pos": 1,
@@ -3480,9 +3451,9 @@
       "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
-      "host": "HellBoy8408",
-      "live": "SCGT_Giorgetto",
-      "url": "https://www.twitch.tv/squadracorsegt",
+      "host": "MF_GioBar73",
+      "live": "MFC- MFCorse-46",
+      "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
           "pos": 1,
@@ -3556,10 +3527,10 @@
         },
         {
           "pos": 11,
-          "matricola": "300",
+          "matricola": "301",
           "team": "MMS",
-          "nome": "MMS_Gattonero70",
-          "auto": "GT-R NISMO GT500 '16"
+          "nome": "Sard Lander",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 12,
