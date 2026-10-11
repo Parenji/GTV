@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-11T14:58:09+00:00",
+    "updated_at": "2026-10-11T20:57:40+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.462",
         "leader": "MetalGear9493",
-        "partecipanti": 82003,
+        "partecipanti": 86022,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 3133,
+            "pos_assoluta": 3283,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.598
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 141060,
+        "partecipanti": 143997,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3292,
+            "pos_assoluta": 3396,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -613,9 +613,9 @@
           "squadra": "GTV",
           "auto": "Jaguar F-type Gr.3",
           "data": "05 Ott 2026",
-          "tempo": "1:46.236",
-          "tempo_ms": 106236,
-          "pos_assoluta": 9458,
+          "tempo": "1:46.180",
+          "tempo_ms": 106180,
+          "pos_assoluta": 9098,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -7796,7 +7796,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19372,
+      "rank_medio": 19375,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7805,14 +7805,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 3133,
+          "rank": 3283,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3292,
+          "rank": 3396,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -12780,7 +12780,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19787,
+      "rank_medio": 19783,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12796,8 +12796,8 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 9458,
-          "tempo": "1:46.236",
+          "rank": 9098,
+          "tempo": "1:46.180",
           "evento": "Daytona Road Course"
         },
         {
