@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-10T20:34:19+00:00",
+    "updated_at": "2026-10-11T11:27:00+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "22 Ott 2026",
         "scadenza": "22 Ott 2026",
         "chiusura": "2026-10-22T06:59:59Z",
-        "miglior_tempo": "1:45.548",
+        "miglior_tempo": "1:45.464",
         "leader": "MetalGear9493",
-        "partecipanti": 72449,
+        "partecipanti": 79783,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,22 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 2787,
+            "pos_assoluta": 3046,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.514
+            "distacco_assoluto_pct": 2.596
+          },
+          {
+            "psn": "Abramo1991",
+            "gt7name": "Maverick",
+            "numero": "14",
+            "squadra": "GTV",
+            "tempo": "1:49.460",
+            "tempo_ms": 109460,
+            "pos_assoluta": 9974,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 1.163,
+            "distacco_assoluto_pct": 3.789
           }
         ]
       },
@@ -47,9 +59,9 @@
         "fine": "15 Ott 2026",
         "scadenza": "15 Ott 2026",
         "chiusura": "2026-10-15T06:59:59Z",
-        "miglior_tempo": "1:39.210",
+        "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 134722,
+        "partecipanti": 139546,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,10 +72,10 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3125,
+            "pos_assoluta": 3254,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.434
+            "distacco_assoluto_pct": 2.512
           },
           {
             "psn": "Yukimura9221",
@@ -72,10 +84,10 @@
             "squadra": "GTV",
             "tempo": "1:42.208",
             "tempo_ms": 102208,
-            "pos_assoluta": 9619,
+            "pos_assoluta": 9977,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.574,
-            "distacco_assoluto_pct": 3.022
+            "distacco_assoluto_pct": 3.1
           },
           {
             "psn": "Abramo1991",
@@ -84,10 +96,10 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 12386,
+            "pos_assoluta": 13264,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.918,
-            "distacco_assoluto_pct": 3.375
+            "distacco_assoluto_pct": 3.453
           },
           {
             "psn": "GTV_legendafluo",
@@ -96,10 +108,10 @@
             "squadra": "GTV",
             "tempo": "1:42.795",
             "tempo_ms": 102795,
-            "pos_assoluta": 13830,
+            "pos_assoluta": 14811,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.151,
-            "distacco_assoluto_pct": 3.614
+            "distacco_assoluto_pct": 3.692
           }
         ]
       }
@@ -329,7 +341,7 @@
             "squadra": "GTV",
             "tempo": "1:55.696",
             "tempo_ms": 115696,
-            "pos_assoluta": 7441,
+            "pos_assoluta": 7460,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.044
@@ -341,7 +353,7 @@
             "squadra": "GTV",
             "tempo": "1:55.769",
             "tempo_ms": 115769,
-            "pos_assoluta": 8364,
+            "pos_assoluta": 8382,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.063,
             "distacco_assoluto_pct": 3.109
@@ -353,7 +365,7 @@
             "squadra": "GTV",
             "tempo": "1:56.176",
             "tempo_ms": 116176,
-            "pos_assoluta": 10117,
+            "pos_assoluta": 10230,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.415,
             "distacco_assoluto_pct": 3.472
@@ -365,7 +377,7 @@
             "squadra": "GTV",
             "tempo": "1:57.931",
             "tempo_ms": 117931,
-            "pos_assoluta": 30834,
+            "pos_assoluta": 31141,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.932,
             "distacco_assoluto_pct": 5.035
@@ -377,7 +389,7 @@
             "squadra": "GTV",
             "tempo": "1:58.488",
             "tempo_ms": 118488,
-            "pos_assoluta": 38095,
+            "pos_assoluta": 38393,
             "pos_gtv": 5,
             "distacco_gtv_pct": 2.413,
             "distacco_assoluto_pct": 5.531
@@ -430,10 +442,22 @@
             "squadra": "GTV",
             "tempo": "1:22.382",
             "tempo_ms": 82382,
-            "pos_assoluta": 32516,
+            "pos_assoluta": 32801,
             "pos_gtv": 3,
             "distacco_gtv_pct": 1.544,
             "distacco_assoluto_pct": 2.921
+          },
+          {
+            "psn": "GTS-codebreaker",
+            "gt7name": "GTSCode",
+            "numero": "56",
+            "squadra": "GTV",
+            "tempo": "1:24.729",
+            "tempo_ms": 84729,
+            "pos_assoluta": 120261,
+            "pos_gtv": 4,
+            "distacco_gtv_pct": 4.437,
+            "distacco_assoluto_pct": 5.853
           }
         ]
       },
@@ -591,7 +615,7 @@
           "data": "05 Ott 2026",
           "tempo": "1:46.236",
           "tempo_ms": 106236,
-          "pos_assoluta": 9005,
+          "pos_assoluta": 9366,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -707,7 +731,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28238,
+      "rank_medio": 28250,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -716,7 +740,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 13830,
+          "rank": 14811,
           "tempo": "1:42.795",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -730,7 +754,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 38095,
+          "rank": 38393,
           "tempo": "1:58.488",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -2837,23 +2861,30 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32741,
-      "eventi_pubblicati": 123,
-      "ultimo_evento_data": "2026-10-15",
-      "ultimo_evento": "Brands Hatch Grand Prix Circuit",
+      "rank_medio": 32567,
+      "eventi_pubblicati": 124,
+      "ultimo_evento_data": "2026-10-22",
+      "ultimo_evento": "Dragon Trail - Gardens",
       "ultima_gara": "Red Bull Ring",
       "eventi": [
         {
+          "data": "2026-10-22",
+          "tipo": "time_trial",
+          "rank": 9974,
+          "tempo": "1:49.460",
+          "evento": "Dragon Trail - Gardens"
+        },
+        {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 12386,
+          "rank": 13264,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 30834,
+          "rank": 31141,
           "tempo": "1:57.931",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -5053,7 +5084,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 8364,
+          "rank": 8382,
           "tempo": "1:55.769",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -7765,7 +7796,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19366,
+      "rank_medio": 19371,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7774,14 +7805,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 2787,
+          "rank": 3046,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3125,
+          "rank": 3254,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -7802,7 +7833,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 10117,
+          "rank": 10230,
           "tempo": "1:56.176",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -10231,8 +10262,8 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2299,
-      "rank_medio": 49859,
-      "eventi_pubblicati": 120,
+      "rank_medio": 50441,
+      "eventi_pubblicati": 121,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Autopolis International Racing Course",
@@ -10243,6 +10274,13 @@
           "rank": 59240,
           "tempo": "1:11.963",
           "evento": "Michelin Raceway Road Atlanta"
+        },
+        {
+          "data": "2026-09-24",
+          "tipo": "time_trial",
+          "rank": 120261,
+          "tempo": "1:24.729",
+          "evento": "Willow Springs International Raceway: Big Willow"
         },
         {
           "data": "2026-09-17",
@@ -11091,7 +11129,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12742,7 +12780,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19779,
+      "rank_medio": 19786,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12758,7 +12796,7 @@
         {
           "data": "2026-10-05",
           "tipo": "gara",
-          "rank": 9005,
+          "rank": 9366,
           "tempo": "1:46.236",
           "evento": "Daytona Road Course"
         },
@@ -12779,7 +12817,7 @@
         {
           "data": "2026-09-24",
           "tipo": "time_trial",
-          "rank": 32516,
+          "rank": 32801,
           "tempo": "1:22.382",
           "evento": "Willow Springs International Raceway: Big Willow"
         },
@@ -13693,7 +13731,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 48768,
+      "rank_medio": 48771,
       "eventi_pubblicati": 142,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -13702,7 +13740,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 9619,
+          "rank": 9977,
           "tempo": "1:42.208",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -13716,7 +13754,7 @@
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
-          "rank": 7441,
+          "rank": 7460,
           "tempo": "1:55.696",
           "evento": "Dragon Trail - Seaside Reverse"
         },
@@ -16674,13 +16712,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 697
+        "conteggio": 698
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 1042
+        "conteggio": 1043
       }
     ],
-    "eventi_totali": 2221
+    "eventi_totali": 2223
   }
 }
