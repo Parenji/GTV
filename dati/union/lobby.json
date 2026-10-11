@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-10T17:22:26+00:00"
+    "generated_at": "2026-10-11T17:42:36+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -1037,10 +1037,10 @@
         },
         {
           "pos": 12,
-          "matricola": "92",
-          "team": "ARC",
-          "nome": "ARC-Tommizio",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "127",
+          "team": "MFC",
+          "nome": "G.Mantineo",
+          "auto": "ASSENTE"
         }
       ]
     },
@@ -1368,10 +1368,10 @@
         },
         {
           "pos": 2,
-          "matricola": "144",
+          "matricola": "147",
           "team": "RCE",
-          "nome": "Flotta muscoso",
-          "auto": "ASSENTE"
+          "nome": "RCE_MVedovi59",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 3,
@@ -1660,10 +1660,10 @@
         },
         {
           "pos": 3,
-          "matricola": "40",
+          "matricola": "39",
           "team": "PBC",
-          "nome": "SimoT_18",
-          "auto": "ASSENTE"
+          "nome": "Richie",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 4,
@@ -1735,7 +1735,7 @@
       "time": "Ore 21:00",
       "name": "A18",
       "category": "ELITE",
-      "host": "slaydei2_",
+      "host": "Goivas80",
       "live": "PBC- Goivas80",
       "url": "https://youtube.com/@performancebearcrew4660",
       "pilots": [
@@ -3274,10 +3274,10 @@
         },
         {
           "pos": 7,
-          "matricola": "39",
+          "matricola": "40",
           "team": "PBC",
-          "nome": "Richie",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "SimoT_18",
+          "auto": "ASSENTE"
         },
         {
           "pos": 8,
@@ -3369,10 +3369,10 @@
         },
         {
           "pos": 8,
-          "matricola": "147",
+          "matricola": "144",
           "team": "RCE",
-          "nome": "RCE_MVedovi59",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "Flotta muscoso",
+          "auto": "ASSENTE"
         },
         {
           "pos": 9,
@@ -3397,10 +3397,10 @@
         },
         {
           "pos": 12,
-          "matricola": "127",
-          "team": "MFC",
-          "nome": "G.Mantineo",
-          "auto": "ASSENTE"
+          "matricola": "92",
+          "team": "ARC",
+          "nome": "ARC-Tommizio",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 13,
