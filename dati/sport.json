@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-12T18:01:00+00:00",
+    "updated_at": "2026-10-12T23:37:10+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.443",
         "leader": "MetalGear9493",
-        "partecipanti": 93701,
+        "partecipanti": 96356,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 3591,
+            "pos_assoluta": 3734,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.617
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 149658,
+        "partecipanti": 151751,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3580,
+            "pos_assoluta": 3649,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -597,17 +597,31 @@
       "settimana": "12 Ott 2026",
       "classifica": [
         {
+          "psn": "Sauzer27",
+          "gt7name": "Sauzer",
+          "numero": "17",
+          "squadra": "JGTV",
+          "auto": "Hyundai Genesis Gr.3",
+          "data": "12 Ott 2026",
+          "tempo": "2:20.056",
+          "tempo_ms": 140056,
+          "pos_assoluta": 3988,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
           "psn": "Fra_salvo96",
           "gt7name": "Frasalvo96",
           "numero": "9",
           "squadra": "JGTV",
           "auto": "Porsche 911 GT3 R (992) '22",
           "data": "12 Ott 2026",
-          "tempo": "2:21.823",
-          "tempo_ms": 141823,
-          "pos_assoluta": 7713,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
+          "tempo": "2:21.055",
+          "tempo_ms": 141055,
+          "pos_assoluta": 7918,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 0.713,
           "distacco_assoluto_pct": null
         }
       ]
@@ -7739,7 +7753,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19380,
+      "rank_medio": 19383,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7748,14 +7762,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 3591,
+          "rank": 3734,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3580,
+          "rank": 3649,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -15317,8 +15331,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 7713,
-      "rank_medio": 31624,
+      "miglior_rank": 7918,
+      "rank_medio": 31637,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15327,8 +15341,8 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 7713,
-          "tempo": "2:21.823",
+          "rank": 7918,
+          "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
         {
@@ -15446,13 +15460,20 @@
       "categoria": "PRO AMA",
       "dr": "C",
       "sr": "S",
-      "miglior_rank": 6003,
-      "rank_medio": 31845,
-      "eventi_pubblicati": 34,
-      "ultimo_evento_data": "2026-05-11",
+      "miglior_rank": 3988,
+      "rank_medio": 31049,
+      "eventi_pubblicati": 35,
+      "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
-      "ultima_gara": "WeatherTech Raceway Laguna Seca",
+      "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-10-12",
+          "tipo": "gara",
+          "rank": 3988,
+          "tempo": "2:20.056",
+          "evento": "Circuit de Spa-Francorchamps"
+        },
         {
           "data": "2026-05-11",
           "tipo": "gara",
@@ -16658,7 +16679,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 286
+        "conteggio": 287
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16669,6 +16690,6 @@
         "conteggio": 1043
       }
     ],
-    "eventi_totali": 2224
+    "eventi_totali": 2225
   }
 }
