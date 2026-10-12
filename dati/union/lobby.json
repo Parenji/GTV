@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-11T17:42:36+00:00"
+    "generated_at": "2026-10-12T21:18:32+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -22,7 +22,7 @@
       "time": "Ore 21:00",
       "name": "A1",
       "category": "STAR",
-      "host": "CBR_Mava",
+      "host": "Live_cobraracing",
       "live": "CBR- Live_cobraracing",
       "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
@@ -181,7 +181,7 @@
           "pos": 10,
           "matricola": "93",
           "team": "ARC",
-          "nome": "ARC-Turino",
+          "nome": "ARC-Turino (Ritirato)",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -200,10 +200,10 @@
         },
         {
           "pos": 13,
-          "matricola": "152",
+          "matricola": "151",
           "team": "RMT",
-          "nome": "RMT_MWalter",
-          "auto": "RC F GT500 '16"
+          "nome": "DeadPaul",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 14,
@@ -328,9 +328,9 @@
       "time": "Ore 21:00",
       "name": "A4",
       "category": "PRO SILVER",
-      "host": "thelostgamer3000",
-      "live": "EVO- thelostgamer3000",
-      "url": "https://www.youtube.com/@team-evolution-racing",
+      "host": "MF_maxlaqualunqe",
+      "live": "MFC- MF_maxlaqualunque",
+      "url": "https://youtube.com/@max_71_mf",
       "pilots": [
         {
           "pos": 1,
@@ -525,9 +525,9 @@
       "time": "Ore 22:20",
       "name": "A6",
       "category": "PRO AMA",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "Live_cobraracing",
+      "live": "CBR- Live_cobraracing",
+      "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
         {
           "pos": 1,
@@ -736,9 +736,9 @@
       "time": "Ore 21:00",
       "name": "A10",
       "category": "STAR",
-      "host": "Live_cobraracing",
-      "live": "CBR- Live_cobraracing",
-      "url": "https://twitch.tv/live_cobraracingtwitch",
+      "host": "thelostgamer3000",
+      "live": "EVO- A_Cardinale",
+      "url": "https://www.youtube.com/@team-evolution-racing",
       "pilots": [
         {
           "pos": 1,
@@ -1811,10 +1811,10 @@
         },
         {
           "pos": 11,
-          "matricola": "151",
+          "matricola": "152",
           "team": "RMT",
-          "nome": "DeadPaul",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "RMT_MWalter",
+          "auto": "RC F GT500 '16"
         }
       ]
     },
