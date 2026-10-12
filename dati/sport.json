@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-12T16:42:19+00:00",
+    "updated_at": "2026-10-12T18:01:00+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.443",
         "leader": "MetalGear9493",
-        "partecipanti": 92933,
+        "partecipanti": 93701,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 3566,
+            "pos_assoluta": 3591,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.617
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 149076,
+        "partecipanti": 149658,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3564,
+            "pos_assoluta": 3580,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -595,7 +595,22 @@
       "inizio": "12 Ott 2026",
       "fine": "18 Ott 2026",
       "settimana": "12 Ott 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Fra_salvo96",
+          "gt7name": "Frasalvo96",
+          "numero": "9",
+          "squadra": "JGTV",
+          "auto": "Porsche 911 GT3 R (992) '22",
+          "data": "12 Ott 2026",
+          "tempo": "2:21.823",
+          "tempo_ms": 141823,
+          "pos_assoluta": 7713,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     },
     {
       "nome": "Race C · Sardegna - Road Track - B",
@@ -7733,14 +7748,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 3566,
+          "rank": 3591,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3564,
+          "rank": 3580,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -15302,13 +15317,20 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 14470,
-      "rank_medio": 33218,
-      "eventi_pubblicati": 15,
-      "ultimo_evento_data": "2026-09-21",
+      "miglior_rank": 7713,
+      "rank_medio": 31624,
+      "eventi_pubblicati": 16,
+      "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
-      "ultima_gara": "Sardegna - Road Track - A",
+      "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-10-12",
+          "tipo": "gara",
+          "rank": 7713,
+          "tempo": "2:21.823",
+          "evento": "Circuit de Spa-Francorchamps"
+        },
         {
           "data": "2026-09-21",
           "tipo": "gara",
@@ -16640,13 +16662,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 698
+        "conteggio": 699
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1043
       }
     ],
-    "eventi_totali": 2223
+    "eventi_totali": 2224
   }
 }
