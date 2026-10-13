@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-12T23:37:10+00:00",
+    "updated_at": "2026-10-13T12:41:06+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "22 Ott 2026",
         "scadenza": "22 Ott 2026",
         "chiusura": "2026-10-22T06:59:59Z",
-        "miglior_tempo": "1:45.443",
+        "miglior_tempo": "1:45.415",
         "leader": "MetalGear9493",
-        "partecipanti": 96356,
+        "partecipanti": 99018,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,10 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 3734,
+            "pos_assoluta": 3851,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.617
+            "distacco_assoluto_pct": 2.644
           },
           {
             "psn": "Abramo1991",
@@ -43,10 +43,10 @@
             "squadra": "GTV",
             "tempo": "1:49.460",
             "tempo_ms": 109460,
-            "pos_assoluta": 10981,
+            "pos_assoluta": 12201,
             "pos_gtv": 2,
             "distacco_gtv_pct": 1.163,
-            "distacco_assoluto_pct": 3.81
+            "distacco_assoluto_pct": 3.837
           }
         ]
       },
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 151751,
+        "partecipanti": 153866,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3649,
+            "pos_assoluta": 3721,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:42.208",
             "tempo_ms": 102208,
-            "pos_assoluta": 10751,
+            "pos_assoluta": 11636,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.574,
             "distacco_assoluto_pct": 3.1
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 14195,
+            "pos_assoluta": 15032,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.918,
             "distacco_assoluto_pct": 3.453
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:42.795",
             "tempo_ms": 102795,
-            "pos_assoluta": 15866,
+            "pos_assoluta": 16801,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.151,
             "distacco_assoluto_pct": 3.692
@@ -605,7 +605,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:20.056",
           "tempo_ms": 140056,
-          "pos_assoluta": 3988,
+          "pos_assoluta": 4974,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -619,7 +619,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:21.055",
           "tempo_ms": 141055,
-          "pos_assoluta": 7918,
+          "pos_assoluta": 9921,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.713,
           "distacco_assoluto_pct": null
@@ -688,7 +688,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28260,
+      "rank_medio": 28269,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -697,7 +697,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 15866,
+          "rank": 16801,
           "tempo": "1:42.795",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -2818,7 +2818,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32583,
+      "rank_medio": 32599,
       "eventi_pubblicati": 124,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -2827,14 +2827,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 10981,
+          "rank": 12201,
           "tempo": "1:49.460",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 14195,
+          "rank": 15032,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -7753,7 +7753,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19383,
+      "rank_medio": 19385,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7762,14 +7762,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 3734,
+          "rank": 3851,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3649,
+          "rank": 3721,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -11086,7 +11086,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -13688,7 +13688,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 48776,
+      "rank_medio": 48783,
       "eventi_pubblicati": 142,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -13697,7 +13697,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 10751,
+          "rank": 11636,
           "tempo": "1:42.208",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -15331,8 +15331,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 7918,
-      "rank_medio": 31637,
+      "miglior_rank": 9921,
+      "rank_medio": 31762,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15341,7 +15341,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 7918,
+          "rank": 9921,
           "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -15460,8 +15460,8 @@
       "categoria": "PRO AMA",
       "dr": "C",
       "sr": "S",
-      "miglior_rank": 3988,
-      "rank_medio": 31049,
+      "miglior_rank": 4974,
+      "rank_medio": 31077,
       "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
@@ -15470,7 +15470,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 3988,
+          "rank": 4974,
           "tempo": "2:20.056",
           "evento": "Circuit de Spa-Francorchamps"
         },
