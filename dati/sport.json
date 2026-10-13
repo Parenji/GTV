@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-13T12:41:06+00:00",
+    "updated_at": "2026-10-13T14:59:31+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.415",
         "leader": "MetalGear9493",
-        "partecipanti": 99018,
+        "partecipanti": 99779,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 3851,
+            "pos_assoluta": 3890,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.644
@@ -61,7 +61,7 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 153866,
+        "partecipanti": 154557,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3721,
+            "pos_assoluta": 3746,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -605,7 +605,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:20.056",
           "tempo_ms": 140056,
-          "pos_assoluta": 4974,
+          "pos_assoluta": 5240,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -619,7 +619,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:21.055",
           "tempo_ms": 141055,
-          "pos_assoluta": 9921,
+          "pos_assoluta": 10370,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.713,
           "distacco_assoluto_pct": null
@@ -7762,14 +7762,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 3851,
+          "rank": 3890,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3721,
+          "rank": 3746,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -11086,7 +11086,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -15331,8 +15331,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 9921,
-      "rank_medio": 31762,
+      "miglior_rank": 10370,
+      "rank_medio": 31790,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15341,7 +15341,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 9921,
+          "rank": 10370,
           "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -15460,8 +15460,8 @@
       "categoria": "PRO AMA",
       "dr": "C",
       "sr": "S",
-      "miglior_rank": 4974,
-      "rank_medio": 31077,
+      "miglior_rank": 5240,
+      "rank_medio": 31085,
       "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
@@ -15470,7 +15470,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 4974,
+          "rank": 5240,
           "tempo": "2:20.056",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -16679,11 +16679,11 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 287
+        "conteggio": 286
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 699
+        "conteggio": 700
       },
       {
         "etichetta": "oltre 20.000",
