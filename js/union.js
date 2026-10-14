@@ -1938,6 +1938,10 @@ function unionDGEsito(testo) {
     return { tipo: "respinto", sec: 0, label: "Respinto", motivo: motivo ? motivo.charAt(0).toUpperCase() + motivo.slice(1) : "" };
   }
   if (!t) return { tipo: "attesa", sec: 0, label: "In valutazione" };
+  // Dalla Gara 2 solo il motivo ("INFONDATO", "QUALITA' VIDEO BASSA")
+  if (/infondat|qualit/i.test(t)) {
+    return { tipo: "respinto", sec: 0, label: "Respinto", motivo: t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() };
+  }
   return { tipo: "altro", sec: 0, label: t };
 }
 
@@ -1948,7 +1952,10 @@ function unionDGHostEsito(testo, gara) {
   var m;
   if (!t) return { tipo: "attesa", peso: 3, label: "In valutazione" };
   if (/null|annullat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Nulla" };
-  if (/squalific/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Salta " + prossima };
+  if (/gi[aà]\s*valutat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Già valutata" };
+  if (/squalific.*(prossima|dalla\s*pr)/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Salta " + prossima };
+  if (/squalific/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Dalla Gara " + gara };
+  if (/salta\s*qualific/i.test(t)) return { tipo: "griglia", peso: 1, label: "Salta la qualifica", sub: "In " + prossima };
   if ((m = t.match(/(\d+)\s*posizion/i))) {
     return { tipo: "griglia", peso: 1, label: "−" + m[1] + " posizioni", sub: "In griglia a " + prossima };
   }
@@ -1974,7 +1981,7 @@ function fetchUnionDGSheet(url) {
         teamR: col(/^TAG TEAM RICHIEDENTE/),
         nomeR: col(/^ID GT7 RICHIEDENTE/),
         teamI: col(/^TAG TEAM INDAGATO/),
-        nomeI: col(/^ID GT7 INDAGATO/),
+        nomeI: col(/^ID GT7? INDAGAT/), // Gara 2: "ID GT INDAGAT0"
         lega: col(/^RANK/),
         lobby: col(/LOBBY/),
         note: col(/^NOTE/),
@@ -1990,7 +1997,7 @@ function fetchUnionDGSheet(url) {
           teamI: v(r, "teamI").toUpperCase(),
           nomeI: v(r, "nomeI"),
           lega: v(r, "lega").toUpperCase().replace(/\s+/g, " "),
-          lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, ""),
+          lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, "").replace(/^([A-Z]+)0+(?=\d)/, "$1"), // A05 -> A5
           note: v(r, "note"),
           esitoRaw: v(r, "esito"),
         };
