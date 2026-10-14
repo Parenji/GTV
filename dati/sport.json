@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-14T10:08:12+00:00",
+    "updated_at": "2026-10-14T12:51:27+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.415",
         "leader": "MetalGear9493",
-        "partecipanti": 104789,
+        "partecipanti": 105476,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 4113,
+            "pos_assoluta": 4153,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.644
@@ -61,8 +61,8 @@
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 157158,
-        "fonte_leader": "gt-gridstats",
+        "partecipanti": 159771,
+        "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
           {
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 3921,
+            "pos_assoluta": 3945,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -605,7 +605,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:20.056",
           "tempo_ms": 140056,
-          "pos_assoluta": 6865,
+          "pos_assoluta": 7061,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -619,7 +619,7 @@
           "data": "12 Ott 2026",
           "tempo": "2:21.055",
           "tempo_ms": 141055,
-          "pos_assoluta": 13117,
+          "pos_assoluta": 13336,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.713,
           "distacco_assoluto_pct": null
@@ -7753,7 +7753,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19389,
+      "rank_medio": 19390,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7762,14 +7762,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 4113,
+          "rank": 4153,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 3921,
+          "rank": 3945,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -11086,7 +11086,7 @@
       "rank_medio": 34520,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -15331,8 +15331,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 13117,
-      "rank_medio": 31962,
+      "miglior_rank": 13336,
+      "rank_medio": 31975,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15341,7 +15341,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 13117,
+          "rank": 13336,
           "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -15461,7 +15461,7 @@
       "dr": "C",
       "sr": "S",
       "miglior_rank": 6003,
-      "rank_medio": 31131,
+      "rank_medio": 31137,
       "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
@@ -15470,7 +15470,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 6865,
+          "rank": 7061,
           "tempo": "2:20.056",
           "evento": "Circuit de Spa-Francorchamps"
         },
