@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-15T13:30:05+00:00",
+    "updated_at": "2026-10-15T20:19:35+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,12 +18,25 @@
         "fine": "29 Ott 2026",
         "scadenza": "29 Ott 2026",
         "chiusura": "2026-10-29T06:59:59Z",
-        "miglior_tempo": "1:17.309",
-        "leader": "MetalGear9493",
-        "partecipanti": 9258,
+        "miglior_tempo": "1:17.220",
+        "leader": "Calster_25",
+        "partecipanti": 21679,
         "fonte_leader": "ufficiale",
         "conclusa": false,
-        "classifica": []
+        "classifica": [
+          {
+            "psn": "Yukimura9221",
+            "gt7name": "Yukimura",
+            "numero": "106",
+            "squadra": "GTV",
+            "tempo": "1:22.263",
+            "tempo_ms": 82263,
+            "pos_assoluta": 8054,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 6.531
+          }
+        ]
       },
       {
         "nome": "Dragon Trail - Gardens",
@@ -36,7 +49,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.415",
         "leader": "MetalGear9493",
-        "partecipanti": 111922,
+        "partecipanti": 114807,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 4439,
+            "pos_assoluta": 4547,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.644
@@ -500,6 +513,20 @@
       "settimana": "12 Ott 2026",
       "classifica": [
         {
+          "psn": "Yukimura9221",
+          "gt7name": "Yukimura",
+          "numero": "106",
+          "squadra": "GTV",
+          "auto": "Mercedes-AMG GT3 '20",
+          "data": "12 Ott 2026",
+          "tempo": "2:19.838",
+          "tempo_ms": 139838,
+          "pos_assoluta": 7487,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
           "psn": "Sauzer27",
           "gt7name": "Sauzer",
           "numero": "17",
@@ -508,23 +535,23 @@
           "data": "12 Ott 2026",
           "tempo": "2:20.056",
           "tempo_ms": 140056,
-          "pos_assoluta": 8566,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
+          "pos_assoluta": 9118,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 0.156,
           "distacco_assoluto_pct": null
         },
         {
-          "psn": "Yukimura9221",
-          "gt7name": "Yukimura",
-          "numero": "106",
+          "psn": "marse9191",
+          "gt7name": "Brook24",
+          "numero": "24",
           "squadra": "GTV",
-          "auto": "Ferrari 296 GT3 '23",
+          "auto": "BMW M6 GT3 Endurance Model '16",
           "data": "12 Ott 2026",
-          "tempo": "2:20.434",
-          "tempo_ms": 140434,
-          "pos_assoluta": 11258,
-          "pos_gtv": 2,
-          "distacco_gtv_pct": 0.27,
+          "tempo": "2:20.660",
+          "tempo_ms": 140660,
+          "pos_assoluta": 13805,
+          "pos_gtv": 3,
+          "distacco_gtv_pct": 0.588,
           "distacco_assoluto_pct": null
         },
         {
@@ -536,9 +563,9 @@
           "data": "12 Ott 2026",
           "tempo": "2:21.055",
           "tempo_ms": 141055,
-          "pos_assoluta": 16413,
-          "pos_gtv": 3,
-          "distacco_gtv_pct": 0.713,
+          "pos_assoluta": 17282,
+          "pos_gtv": 4,
+          "distacco_gtv_pct": 0.87,
           "distacco_assoluto_pct": null
         }
       ]
@@ -4963,12 +4990,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19119,
-      "eventi_pubblicati": 133,
-      "ultimo_evento_data": "2026-10-01",
+      "rank_medio": 19079,
+      "eventi_pubblicati": 134,
+      "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Dragon Trail - Seaside Reverse",
-      "ultima_gara": "Watkins Glen Long Course",
+      "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-10-12",
+          "tipo": "gara",
+          "rank": 13805,
+          "tempo": "2:20.660",
+          "evento": "Circuit de Spa-Francorchamps"
+        },
         {
           "data": "2026-10-01",
           "tipo": "time_trial",
@@ -7684,7 +7718,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19395,
+      "rank_medio": 19397,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7693,7 +7727,7 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 4439,
+          "rank": 4547,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
@@ -13675,12 +13709,19 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 48357,
-      "eventi_pubblicati": 144,
-      "ultimo_evento_data": "2026-10-15",
-      "ultimo_evento": "Brands Hatch Grand Prix Circuit",
+      "rank_medio": 48053,
+      "eventi_pubblicati": 145,
+      "ultimo_evento_data": "2026-10-29",
+      "ultimo_evento": "Sportsland SUGO",
       "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-10-29",
+          "tipo": "time_trial",
+          "rank": 8054,
+          "tempo": "1:22.263",
+          "evento": "Sportsland SUGO"
+        },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
@@ -13691,8 +13732,8 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 11258,
-          "tempo": "2:20.434",
+          "rank": 7487,
+          "tempo": "2:19.838",
           "evento": "Circuit de Spa-Francorchamps"
         },
         {
@@ -15340,7 +15381,7 @@
       "dr": "?",
       "sr": "N/A",
       "miglior_rank": 14470,
-      "rank_medio": 32168,
+      "rank_medio": 32222,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15349,7 +15390,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 16413,
+          "rank": 17282,
           "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -15469,7 +15510,7 @@
       "dr": "C",
       "sr": "S",
       "miglior_rank": 6003,
-      "rank_medio": 31180,
+      "rank_medio": 31195,
       "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
@@ -15478,7 +15519,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 8566,
+          "rank": 9118,
           "tempo": "2:20.056",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -16691,13 +16732,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 705
+        "conteggio": 707
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1047
       }
     ],
-    "eventi_totali": 2238
+    "eventi_totali": 2240
   }
 }
