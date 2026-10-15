@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-14T05:00:39+00:00"
+    "generated_at": "2026-10-15T04:48:56+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -28,10 +28,10 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "28",
-          "team": "GTV",
-          "nome": "InuyashaGodYokai",
-          "auto": "RC F GT500 '16"
+          "matricola": "23",
+          "team": "GTRC",
+          "nome": "GTRC_Emilios98",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 2,
@@ -95,13 +95,6 @@
           "team": "RCE",
           "nome": "RCE_Pinkuino97",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 11,
-          "matricola": "23",
-          "team": "GTRC",
-          "nome": "GTRC_Emilios98",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -517,6 +510,13 @@
           "team": "EVO",
           "nome": "EVO_lama85",
           "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "31",
+          "team": "MFC",
+          "nome": "VRT Flexciccio",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -721,13 +721,6 @@
           "team": "PRT",
           "nome": "(edo56)",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 14,
-          "matricola": "500",
-          "team": "RRT",
-          "nome": "RRT_muso_2692_gt",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -1727,6 +1720,13 @@
           "team": "PRT",
           "nome": "PRT_Perdinci",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "55",
+          "team": "RCE",
+          "nome": "The Iceman00",
+          "auto": "RC F GT500 '16"
         }
       ]
     },
@@ -2338,10 +2338,10 @@
         },
         {
           "pos": 14,
-          "matricola": "203",
-          "team": "FFM",
-          "nome": "S3mb4",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "233",
+          "team": "UNION",
+          "nome": "posto per promozione",
+          "auto": ""
         }
       ]
     },
@@ -2627,6 +2627,13 @@
           "team": "FFM",
           "nome": "FFM_FilippoFm89",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_muso_2692_gt",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -2785,10 +2792,10 @@
         },
         {
           "pos": 7,
-          "matricola": "55",
-          "team": "RCE",
-          "nome": "The Iceman00",
-          "auto": "RC F GT500 '16"
+          "matricola": "51",
+          "team": "PRT",
+          "nome": "ValMar",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 8,
@@ -2823,13 +2830,6 @@
           "matricola": "66",
           "team": "RSR",
           "nome": "SeaWolf",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 13,
-          "matricola": "51",
-          "team": "PRT",
-          "nome": "ValMar",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2919,6 +2919,13 @@
           "team": "DCT",
           "nome": "DCT_Fiume11",
           "auto": "NSX CONCEPT-GT '16"
+        },
+        {
+          "pos": 12,
+          "matricola": "149",
+          "team": "UNION",
+          "nome": "posto per promozione",
+          "auto": ""
         }
       ]
     },
@@ -3013,6 +3020,13 @@
           "matricola": "208",
           "team": "GTID",
           "nome": "GTID _pienobonus",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "203",
+          "team": "FFM",
+          "nome": "S3mb4",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -3306,6 +3320,13 @@
           "team": "PRT",
           "nome": "PRT_Leox86",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "28",
+          "team": "GTV",
+          "nome": "InuyashaGodYokai",
+          "auto": "RC F GT500 '16"
         }
       ]
     },
