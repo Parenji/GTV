@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-14T20:43:20+00:00",
+    "updated_at": "2026-10-15T09:49:15+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -9,6 +9,22 @@
   },
   "time_trial": {
     "attivi": [
+      {
+        "nome": "Sportsland SUGO",
+        "pista": "Sportsland SUGO",
+        "logo": null,
+        "auto": "Xiaomi Vision Gran Turismo",
+        "inizio": "15 Ott 2026",
+        "fine": "29 Ott 2026",
+        "scadenza": "29 Ott 2026",
+        "chiusura": "2026-10-29T06:59:59Z",
+        "miglior_tempo": "1:17.916",
+        "leader": "MetalGear9493",
+        "partecipanti": 3294,
+        "fonte_leader": "ufficiale",
+        "conclusa": false,
+        "classifica": []
+      },
       {
         "nome": "Dragon Trail - Gardens",
         "pista": "Dragon Trail - Gardens",
@@ -20,7 +36,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.415",
         "leader": "MetalGear9493",
-        "partecipanti": 108606,
+        "partecipanti": 110787,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +47,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 4313,
+            "pos_assoluta": 4401,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.644
@@ -43,27 +59,29 @@
             "squadra": "GTV",
             "tempo": "1:49.460",
             "tempo_ms": 109460,
-            "pos_assoluta": 13168,
+            "pos_assoluta": 14012,
             "pos_gtv": 2,
             "distacco_gtv_pct": 1.163,
             "distacco_assoluto_pct": 3.837
           }
         ]
-      },
+      }
+    ],
+    "passati": [
       {
         "nome": "Brands Hatch Grand Prix Circuit",
         "pista": "Brands Hatch Grand Prix Circuit",
         "logo": "images/tracks/brandshatch.png",
-        "auto": "Toyota GR Corolla MORIZO Edition '22",
+        "auto": "Toyota GR Corolla MORIZO Edition",
         "inizio": "01 Ott 2026",
         "fine": "15 Ott 2026",
         "scadenza": "15 Ott 2026",
         "chiusura": "2026-10-15T06:59:59Z",
         "miglior_tempo": "1:39.135",
         "leader": "SFE_Damian",
-        "partecipanti": 162708,
+        "partecipanti": 164602,
         "fonte_leader": "ufficiale",
-        "conclusa": false,
+        "conclusa": true,
         "classifica": [
           {
             "psn": "Vale34_",
@@ -72,7 +90,7 @@
             "squadra": "GTV",
             "tempo": "1:41.625",
             "tempo_ms": 101625,
-            "pos_assoluta": 4060,
+            "pos_assoluta": 4157,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.512
@@ -84,7 +102,7 @@
             "squadra": "GTV",
             "tempo": "1:42.208",
             "tempo_ms": 102208,
-            "pos_assoluta": 12405,
+            "pos_assoluta": 13310,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.574,
             "distacco_assoluto_pct": 3.1
@@ -96,7 +114,7 @@
             "squadra": "GTV",
             "tempo": "1:42.558",
             "tempo_ms": 102558,
-            "pos_assoluta": 15774,
+            "pos_assoluta": 16617,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.918,
             "distacco_assoluto_pct": 3.453
@@ -108,15 +126,13 @@
             "squadra": "GTV",
             "tempo": "1:42.795",
             "tempo_ms": 102795,
-            "pos_assoluta": 17614,
+            "pos_assoluta": 18519,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.151,
             "distacco_assoluto_pct": 3.692
           }
         ]
-      }
-    ],
-    "passati": [
+      },
       {
         "nome": "Michelin Raceway Road Atlanta",
         "pista": "Michelin Raceway Road Atlanta",
@@ -460,119 +476,6 @@
             "distacco_assoluto_pct": 5.853
           }
         ]
-      },
-      {
-        "nome": "Suzuka Circuit",
-        "pista": "Suzuka Circuit",
-        "logo": "images/tracks/suzuka.png",
-        "auto": "Hyundai Genesis Gr.3",
-        "inizio": "03 Set 2026",
-        "fine": "17 Set 2026",
-        "scadenza": "17 Set 2026",
-        "chiusura": "2026-09-17T06:59:59Z",
-        "miglior_tempo": "1:58.416",
-        "leader": "HeAvN_-",
-        "partecipanti": 182336,
-        "fonte_leader": "ufficiale",
-        "conclusa": true,
-        "classifica": [
-          {
-            "psn": "GTV_legendafluo",
-            "gt7name": "GTV-Oriano06",
-            "numero": "6",
-            "squadra": "GTV",
-            "tempo": "2:00.913",
-            "tempo_ms": 120913,
-            "pos_assoluta": 3251,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.109
-          },
-          {
-            "psn": "Vale34_",
-            "gt7name": "Vale34",
-            "numero": "34",
-            "squadra": "GTV",
-            "tempo": "2:01.019",
-            "tempo_ms": 121019,
-            "pos_assoluta": 3881,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 0.088,
-            "distacco_assoluto_pct": 2.198
-          },
-          {
-            "psn": "Giusdandri",
-            "gt7name": "Giusdandri",
-            "numero": "87",
-            "squadra": "GTV",
-            "tempo": "2:01.156",
-            "tempo_ms": 121156,
-            "pos_assoluta": 4815,
-            "pos_gtv": 3,
-            "distacco_gtv_pct": 0.201,
-            "distacco_assoluto_pct": 2.314
-          },
-          {
-            "psn": "Yukimura9221",
-            "gt7name": "Yukimura",
-            "numero": "106",
-            "squadra": "GTV",
-            "tempo": "2:01.175",
-            "tempo_ms": 121175,
-            "pos_assoluta": 4986,
-            "pos_gtv": 4,
-            "distacco_gtv_pct": 0.217,
-            "distacco_assoluto_pct": 2.33
-          },
-          {
-            "psn": "Utile_ruspante",
-            "gt7name": "Barda88",
-            "numero": "88",
-            "squadra": "GTV",
-            "tempo": "2:01.628",
-            "tempo_ms": 121628,
-            "pos_assoluta": 10836,
-            "pos_gtv": 5,
-            "distacco_gtv_pct": 0.591,
-            "distacco_assoluto_pct": 2.712
-          },
-          {
-            "psn": "Abramo1991",
-            "gt7name": "Maverick",
-            "numero": "14",
-            "squadra": "GTV",
-            "tempo": "2:02.078",
-            "tempo_ms": 122078,
-            "pos_assoluta": 21311,
-            "pos_gtv": 6,
-            "distacco_gtv_pct": 0.964,
-            "distacco_assoluto_pct": 3.092
-          },
-          {
-            "psn": "marse9191",
-            "gt7name": "Brook24",
-            "numero": "24",
-            "squadra": "GTV",
-            "tempo": "2:02.098",
-            "tempo_ms": 122098,
-            "pos_assoluta": 21497,
-            "pos_gtv": 7,
-            "distacco_gtv_pct": 0.98,
-            "distacco_assoluto_pct": 3.109
-          },
-          {
-            "psn": "GTS-codebreaker",
-            "gt7name": "GTSCode",
-            "numero": "56",
-            "squadra": "GTV",
-            "tempo": "2:03.332",
-            "tempo_ms": 123332,
-            "pos_assoluta": 42081,
-            "pos_gtv": 8,
-            "distacco_gtv_pct": 2.001,
-            "distacco_assoluto_pct": 4.151
-          }
-        ]
       }
     ]
   },
@@ -605,9 +508,23 @@
           "data": "12 Ott 2026",
           "tempo": "2:20.056",
           "tempo_ms": 140056,
-          "pos_assoluta": 7866,
+          "pos_assoluta": 8336,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
+          "psn": "Yukimura9221",
+          "gt7name": "Yukimura",
+          "numero": "106",
+          "squadra": "GTV",
+          "auto": "Ferrari 296 GT3 '23",
+          "data": "12 Ott 2026",
+          "tempo": "2:20.434",
+          "tempo_ms": 140434,
+          "pos_assoluta": 11021,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 0.27,
           "distacco_assoluto_pct": null
         },
         {
@@ -619,8 +536,8 @@
           "data": "12 Ott 2026",
           "tempo": "2:21.055",
           "tempo_ms": 141055,
-          "pos_assoluta": 14124,
-          "pos_gtv": 2,
+          "pos_assoluta": 16238,
+          "pos_gtv": 3,
           "distacco_gtv_pct": 0.713,
           "distacco_assoluto_pct": null
         }
@@ -688,7 +605,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28277,
+      "rank_medio": 28286,
       "eventi_pubblicati": 104,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
@@ -697,7 +614,7 @@
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 17614,
+          "rank": 18519,
           "tempo": "1:42.795",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -2150,8 +2067,8 @@
       "dr": "C",
       "sr": "A",
       "miglior_rank": 5983,
-      "rank_medio": 47649,
-      "eventi_pubblicati": 93,
+      "rank_medio": 47378,
+      "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-08-27",
       "ultimo_evento": "Autopolis International Racing Course - Short Course",
       "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
@@ -2245,7 +2162,7 @@
           "tipo": "gara",
           "rank": 22176,
           "tempo": "3:35.987",
-          "evento": "24 Heures du Mans race track"
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-06-22",
@@ -2253,6 +2170,13 @@
           "rank": 57471,
           "tempo": "2:09.649",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
+        },
+        {
+          "data": "2026-06-22",
+          "tipo": "gara",
+          "rank": 22176,
+          "tempo": "3:35.987",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2026-06-15",
@@ -2818,7 +2742,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32613,
+      "rank_medio": 32627,
       "eventi_pubblicati": 124,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -2827,14 +2751,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 13168,
+          "rank": 14012,
           "tempo": "1:49.460",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 15774,
+          "rank": 16617,
           "tempo": "1:42.558",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -4581,8 +4505,8 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 100,
-      "rank_medio": 12746,
-      "eventi_pubblicati": 62,
+      "rank_medio": 12680,
+      "eventi_pubblicati": 63,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Mount Panorama Motor Racing Circuit",
@@ -4824,6 +4748,13 @@
           "rank": 3522,
           "tempo": "2:19.631",
           "evento": "Circuit de Spa-Francorchamps"
+        },
+        {
+          "data": "2025-01-13",
+          "tipo": "gara",
+          "rank": 8591,
+          "tempo": "3:15.130",
+          "evento": "24 Heures du Mans Racing Circuit No Chicane"
         },
         {
           "data": "2025-01-13",
@@ -7753,7 +7684,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19393,
+      "rank_medio": 19395,
       "eventi_pubblicati": 94,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -7762,14 +7693,14 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 4313,
+          "rank": 4401,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 4060,
+          "rank": 4157,
           "tempo": "1:41.625",
           "evento": "Brands Hatch Grand Prix Circuit"
         },
@@ -10219,8 +10150,8 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2299,
-      "rank_medio": 50441,
-      "eventi_pubblicati": 121,
+      "rank_medio": 49836,
+      "eventi_pubblicati": 123,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Autopolis International Racing Course",
@@ -10993,7 +10924,7 @@
           "tipo": "gara",
           "rank": 13625,
           "tempo": "3:28.077",
-          "evento": "24 Heures du Mans race track"
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2023-07-17",
@@ -11001,6 +10932,13 @@
           "rank": 35561,
           "tempo": "1:42.950",
           "evento": "Dragon Trail - Seaside Reverse"
+        },
+        {
+          "data": "2023-07-17",
+          "tipo": "gara",
+          "rank": 13625,
+          "tempo": "3:28.077",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2023-07-10",
@@ -11049,6 +10987,13 @@
           "tipo": "gara",
           "rank": 12841,
           "tempo": "3:45.728",
+          "evento": "24 Heures du Mans Racing Circuit"
+        },
+        {
+          "data": "2023-04-24",
+          "tipo": "gara",
+          "rank": 12841,
+          "tempo": "3:45.728",
           "evento": "24 Heures du Mans race track"
         },
         {
@@ -11083,10 +11028,10 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 317,
-      "rank_medio": 34520,
-      "eventi_pubblicati": 104,
+      "rank_medio": 34301,
+      "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "ultimo_evento": "Circuit de Spa-Francorchamps",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -11151,6 +11096,13 @@
           "rank": 3118,
           "tempo": "2:16.322",
           "evento": "Mount Panorama Motor Racing Circuit"
+        },
+        {
+          "data": "2026-06-22",
+          "tipo": "gara",
+          "rank": 10589,
+          "tempo": "3:32.294",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-06-22",
@@ -11529,6 +11481,13 @@
           "rank": 4243,
           "tempo": "0:49.872",
           "evento": "Brands Hatch Indy Circuit"
+        },
+        {
+          "data": "2025-03-24",
+          "tipo": "gara",
+          "rank": 35178,
+          "tempo": "3:48.814",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2025-03-24",
@@ -11957,8 +11916,8 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 2345,
-      "rank_medio": 20005,
-      "eventi_pubblicati": 109,
+      "rank_medio": 19845,
+      "eventi_pubblicati": 110,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Sardegna - Road Track - A",
@@ -12017,7 +11976,7 @@
           "tipo": "gara",
           "rank": 2345,
           "tempo": "3:32.219",
-          "evento": "24 Heures du Mans race track"
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-08-31",
@@ -12025,6 +11984,13 @@
           "rank": 7163,
           "tempo": "1:46.573",
           "evento": "Watkins Glen Long Course"
+        },
+        {
+          "data": "2026-08-31",
+          "tipo": "gara",
+          "rank": 2345,
+          "tempo": "3:32.219",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2026-08-20",
@@ -12737,8 +12703,8 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19784,
-      "eventi_pubblicati": 97,
+      "rank_medio": 19412,
+      "eventi_pubblicati": 99,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Daytona Road Course",
@@ -12811,7 +12777,7 @@
           "tipo": "gara",
           "rank": 1348,
           "tempo": "3:31.238",
-          "evento": "24 Heures du Mans race track"
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-08-31",
@@ -12819,6 +12785,13 @@
           "rank": 8037,
           "tempo": "1:46.662",
           "evento": "Watkins Glen Long Course"
+        },
+        {
+          "data": "2026-08-31",
+          "tipo": "gara",
+          "rank": 1348,
+          "tempo": "3:31.238",
+          "evento": "24 Heures du Mans race track"
         },
         {
           "data": "2026-08-27",
@@ -12945,6 +12918,13 @@
           "rank": 2292,
           "tempo": "3:26.230",
           "evento": "24 Heures du Mans race track"
+        },
+        {
+          "data": "2026-06-22",
+          "tipo": "gara",
+          "rank": 1441,
+          "tempo": "3:28.034",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-06-22",
@@ -13433,11 +13413,11 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4947,
-      "rank_medio": 32802,
-      "eventi_pubblicati": 34,
+      "rank_medio": 32603,
+      "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-08-27",
       "ultimo_evento": "Autopolis International Racing Course - Short Course",
-      "ultima_gara": "24 Heures du Mans race track",
+      "ultima_gara": "24 Heures du Mans Racing Circuit",
       "eventi": [
         {
           "data": "2026-08-27",
@@ -13452,6 +13432,13 @@
           "rank": 38315,
           "tempo": "2:19.229",
           "evento": "Circuit de Spa-Francorchamps"
+        },
+        {
+          "data": "2026-06-22",
+          "tipo": "gara",
+          "rank": 25839,
+          "tempo": "3:37.197",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-06-22",
@@ -13688,18 +13675,25 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 48788,
-      "eventi_pubblicati": 142,
+      "rank_medio": 48355,
+      "eventi_pubblicati": 144,
       "ultimo_evento_data": "2026-10-15",
       "ultimo_evento": "Brands Hatch Grand Prix Circuit",
-      "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
+      "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
         {
           "data": "2026-10-15",
           "tipo": "time_trial",
-          "rank": 12405,
+          "rank": 13310,
           "tempo": "1:42.208",
           "evento": "Brands Hatch Grand Prix Circuit"
+        },
+        {
+          "data": "2026-10-12",
+          "tipo": "gara",
+          "rank": 11021,
+          "tempo": "2:20.434",
+          "evento": "Circuit de Spa-Francorchamps"
         },
         {
           "data": "2026-10-08",
@@ -13840,6 +13834,13 @@
           "rank": 40801,
           "tempo": "3:31.183",
           "evento": "24 Heures du Mans race track"
+        },
+        {
+          "data": "2026-06-22",
+          "tipo": "gara",
+          "rank": 23307,
+          "tempo": "3:36.350",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-06-22",
@@ -14138,16 +14139,16 @@
         {
           "data": "2025-12-15",
           "tipo": "gara",
-          "rank": 16684,
-          "tempo": "0:48.220",
-          "evento": "Daytona Tri-Oval"
+          "rank": 27369,
+          "tempo": "1:43.390",
+          "evento": "Sardegna - Road Track - A"
         },
         {
           "data": "2025-12-15",
           "tipo": "gara",
-          "rank": 27369,
-          "tempo": "1:43.390",
-          "evento": "Sardegna - Road Track - A"
+          "rank": 16684,
+          "tempo": "0:48.220",
+          "evento": "Daytona Tri-Oval"
         },
         {
           "data": "2025-12-11",
@@ -14236,6 +14237,13 @@
         {
           "data": "2025-11-03",
           "tipo": "gara",
+          "rank": 4609,
+          "tempo": "2:21.890",
+          "evento": "Suzuka Circuit"
+        },
+        {
+          "data": "2025-11-03",
+          "tipo": "gara",
           "rank": 23465,
           "tempo": "1:40.527",
           "evento": "Red Bull Ring"
@@ -14246,13 +14254,6 @@
           "rank": 50609,
           "tempo": "1:21.260",
           "evento": "Michelin Raceway Road Atlanta"
-        },
-        {
-          "data": "2025-11-03",
-          "tipo": "gara",
-          "rank": 4609,
-          "tempo": "2:21.890",
-          "evento": "Suzuka Circuit"
         },
         {
           "data": "2025-10-27",
@@ -14278,16 +14279,16 @@
         {
           "data": "2025-10-13",
           "tipo": "gara",
-          "rank": 5106,
-          "tempo": "1:20.156",
-          "evento": "Autopolis International Racing Course - Short Course"
+          "rank": 17855,
+          "tempo": "2:09.952",
+          "evento": "Autodrome Lago Maggiore - Full Course"
         },
         {
           "data": "2025-10-13",
           "tipo": "gara",
-          "rank": 17855,
-          "tempo": "2:09.952",
-          "evento": "Autodrome Lago Maggiore - Full Course"
+          "rank": 5106,
+          "tempo": "1:20.156",
+          "evento": "Autopolis International Racing Course - Short Course"
         },
         {
           "data": "2025-10-06",
@@ -14306,16 +14307,16 @@
         {
           "data": "2025-09-29",
           "tipo": "gara",
-          "rank": 8184,
-          "tempo": "0:59.515",
-          "evento": "Blue Moon Bay Speedway - Infield B"
+          "rank": 39990,
+          "tempo": "1:41.904",
+          "evento": "Dragon Trail - Seaside"
         },
         {
           "data": "2025-09-29",
           "tipo": "gara",
-          "rank": 39990,
-          "tempo": "1:41.904",
-          "evento": "Dragon Trail - Seaside"
+          "rank": 8184,
+          "tempo": "0:59.515",
+          "evento": "Blue Moon Bay Speedway - Infield B"
         },
         {
           "data": "2025-09-28",
@@ -14341,16 +14342,16 @@
         {
           "data": "2025-09-22",
           "tipo": "gara",
-          "rank": 9116,
-          "tempo": "1:30.744",
-          "evento": "Tokyo Expressway - Central Clockwise"
+          "rank": 31193,
+          "tempo": "1:43.958",
+          "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
         {
           "data": "2025-09-22",
           "tipo": "gara",
-          "rank": 31193,
-          "tempo": "1:43.958",
-          "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
+          "rank": 9116,
+          "tempo": "1:30.744",
+          "evento": "Tokyo Expressway - Central Clockwise"
         },
         {
           "data": "2025-09-18",
@@ -14376,16 +14377,16 @@
         {
           "data": "2025-09-08",
           "tipo": "gara",
-          "rank": 11695,
-          "tempo": "1:54.911",
-          "evento": "Trial Mountain Circuit Reverse"
+          "rank": 3374,
+          "tempo": "1:14.594",
+          "evento": "High Speed Ring"
         },
         {
           "data": "2025-09-08",
           "tipo": "gara",
-          "rank": 3374,
-          "tempo": "1:14.594",
-          "evento": "High Speed Ring"
+          "rank": 11695,
+          "tempo": "1:54.911",
+          "evento": "Trial Mountain Circuit Reverse"
         },
         {
           "data": "2025-09-01",
@@ -14699,8 +14700,8 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 119,
-      "rank_medio": 5515,
-      "eventi_pubblicati": 88,
+      "rank_medio": 5492,
+      "eventi_pubblicati": 89,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Circuit de Sainte-Croix - B Reverse",
       "ultima_gara": "Fuji International Speedway",
@@ -15235,7 +15236,7 @@
           "tipo": "gara",
           "rank": 3443,
           "tempo": "3:12.919",
-          "evento": "24 Heures du Mans race track, no chicane"
+          "evento": "24 Heures du Mans Racing Circuit No Chicane"
         },
         {
           "data": "2025-01-13",
@@ -15250,6 +15251,13 @@
           "rank": 1920,
           "tempo": "1:46.036",
           "evento": "Michelin Raceway Road Atlanta"
+        },
+        {
+          "data": "2025-01-13",
+          "tipo": "gara",
+          "rank": 3443,
+          "tempo": "3:12.919",
+          "evento": "24 Heures du Mans race track, no chicane"
         },
         {
           "data": "2025-01-09",
@@ -15331,8 +15339,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 14124,
-      "rank_medio": 32025,
+      "miglior_rank": 14470,
+      "rank_medio": 32157,
       "eventi_pubblicati": 16,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": null,
@@ -15341,7 +15349,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 14124,
+          "rank": 16238,
           "tempo": "2:21.055",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -15461,7 +15469,7 @@
       "dr": "C",
       "sr": "S",
       "miglior_rank": 6003,
-      "rank_medio": 31160,
+      "rank_medio": 31173,
       "eventi_pubblicati": 35,
       "ultimo_evento_data": "2026-10-12",
       "ultimo_evento": "Circuit de Spa-Francorchamps",
@@ -15470,7 +15478,7 @@
         {
           "data": "2026-10-12",
           "tipo": "gara",
-          "rank": 7866,
+          "rank": 8336,
           "tempo": "2:20.056",
           "evento": "Circuit de Spa-Francorchamps"
         },
@@ -16679,17 +16687,17 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 286
+        "conteggio": 290
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 700
+        "conteggio": 705
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 1043
+        "conteggio": 1047
       }
     ],
-    "eventi_totali": 2225
+    "eventi_totali": 2238
   }
 }
