@@ -5004,5 +5004,4931 @@
   ],
   "pole": "ARC-Arbr82",
   "giro_veloce": "RRT_BAMBASTEN"
+ },
+ "G2/STAR/A1": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A1.png",
+  "impronta": "\"256c8e627b59d32690f68b3113c070e8\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "S.Mancabelli",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:12.990",
+    "giro": "1:31.822",
+    "punti": 30,
+    "team": "PRT",
+    "q": 3
+   },
+   {
+    "pos": 2,
+    "nome": "GTRC_Emilios98",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+07.458",
+    "giro": "1:32.085",
+    "punti": 27,
+    "team": "GTRC",
+    "q": 1
+   },
+   {
+    "pos": 3,
+    "nome": "InuyashaGodYokai",
+    "auto": "RC F GT500 '16",
+    "distacco": "+14.437",
+    "giro": "1:31.312",
+    "punti": 22,
+    "team": "GTV",
+    "q": 4
+   },
+   {
+    "pos": 4,
+    "nome": "Danielex_Otto4",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+21.946",
+    "giro": "1:31.613",
+    "punti": 18,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "PRT_Perdinci",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+34.331",
+    "giro": "1:32.157",
+    "punti": 16,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 6,
+    "nome": "SMI-Lellobello",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+46.121",
+    "giro": "1:33.757",
+    "punti": 14,
+    "team": "SMI",
+    "q": 2
+   },
+   {
+    "pos": 7,
+    "nome": "RCE_Pinkuino97",
+    "auto": "RC F GT500 '16",
+    "distacco": "+58.036",
+    "giro": "1:30.963",
+    "punti": 13,
+    "team": "RCE",
+    "q": null
+   },
+   {
+    "pos": 8,
+    "nome": "F.Narga",
+    "auto": "RC F GT500 '16",
+    "distacco": "+59.354",
+    "giro": "1:32.276",
+    "punti": 10,
+    "team": "DCT",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "RMT_87_TOMMY",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:12.540",
+    "giro": "1:31.058",
+    "punti": 8,
+    "team": "RMT",
+    "q": null
+   },
+   {
+    "pos": 10,
+    "nome": "BCSC_IL MALEDETTO",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "BCSC",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "M.Caruso",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RSR",
+    "stato": "DSQ",
+    "q": null
+   }
+  ],
+  "pole": "GTRC_Emilios98",
+  "giro_veloce": "RCE_Pinkuino97"
+ },
+ "G2/STAR/A5": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A5.png",
+  "impronta": "\"61b5cedfe2691dc5b4ae97187ccf1224\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "ARC-VintageAR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:48.552",
+    "giro": "1:31.505",
+    "punti": 30,
+    "team": "ARC",
+    "q": 9
+   },
+   {
+    "pos": 2,
+    "nome": "EVO_lama85",
+    "auto": "RC F GT500 '16",
+    "distacco": "+00.162",
+    "giro": "1:31.260",
+    "punti": 26,
+    "team": "EVO",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "EVO_il_Cuuc",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+03.225",
+    "giro": "1:31.381",
+    "punti": 22,
+    "team": "EVO",
+    "q": 6
+   },
+   {
+    "pos": 4,
+    "nome": "GTRC- TROTOTEK",
+    "auto": "RC F GT500 '16",
+    "distacco": "+07.741",
+    "giro": "1:32.568",
+    "punti": 18,
+    "team": "GTRC",
+    "q": 10
+   },
+   {
+    "pos": 5,
+    "nome": "G. Belletti",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+19.640",
+    "giro": "1:31.168",
+    "punti": 16,
+    "team": "ARC",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "CBR_Ircaliffo91",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+20.999",
+    "giro": "1:30.677",
+    "punti": null,
+    "team": "CBR",
+    "q": 3
+   },
+   {
+    "pos": 7,
+    "nome": "FFM_Prinz17",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+23.942",
+    "giro": "1:31.210",
+    "punti": 12,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "TLM_Tonyroto",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+31.925",
+    "giro": "1:31.881",
+    "punti": 10,
+    "team": "TML",
+    "q": 8
+   },
+   {
+    "pos": 9,
+    "nome": "GTRC-MIKY",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+40.322",
+    "giro": "1:30.597",
+    "punti": 10,
+    "team": "GTRC",
+    "q": 1
+   },
+   {
+    "pos": 10,
+    "nome": "SMI_V3sP4",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:36.022",
+    "punti": null,
+    "team": "SMI",
+    "stato": "NC",
+    "q": 7
+   },
+   {
+    "pos": 11,
+    "nome": "PBC_Giulio",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:34.252",
+    "punti": null,
+    "team": "PBC",
+    "stato": "NC",
+    "q": 11
+   },
+   {
+    "pos": 12,
+    "nome": "A.Reitano",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "MMS",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "RCE_DarkneSS",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RCE",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "GTRC-MIKY",
+  "giro_veloce": "GTRC-MIKY"
+ },
+ "G2/STAR/A10": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A10.png",
+  "impronta": "\"7d363d4b50e63bc279d5dabec089f86a\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "M. Pennisi",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:37.329",
+    "giro": "1:30.835",
+    "punti": 30,
+    "team": "PBC",
+    "q": 3
+   },
+   {
+    "pos": 2,
+    "nome": "A.D’alba",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+03.923",
+    "giro": "1:30.392",
+    "punti": 27,
+    "team": "GTID",
+    "q": 12
+   },
+   {
+    "pos": 3,
+    "nome": "PRT_Lusu_ Hard_98",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+11.472",
+    "giro": "1:31.705",
+    "punti": 23,
+    "team": "PRT",
+    "q": 1
+   },
+   {
+    "pos": 4,
+    "nome": "L. Silvestri",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+13.179",
+    "giro": "1:30.987",
+    "punti": 18,
+    "team": "RMT",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "Phin",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+13.199",
+    "giro": "1:32.627",
+    "punti": null,
+    "team": "PRT",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_Massi_TopGun",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+13.391",
+    "giro": "1:32.209",
+    "punti": null,
+    "team": "SMI",
+    "q": 7
+   },
+   {
+    "pos": 7,
+    "nome": "DCT-Ziototoooo",
+    "auto": "RC F GT500 '16",
+    "distacco": "+25.010",
+    "giro": "1:31.115",
+    "punti": 12,
+    "team": "DCT",
+    "q": 2
+   },
+   {
+    "pos": 8,
+    "nome": "RCE_Freej",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+29.677",
+    "giro": "1:30.978",
+    "punti": 10,
+    "team": "RCE",
+    "q": 6
+   },
+   {
+    "pos": 9,
+    "nome": "SMI_Mustangbleck",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+33.817",
+    "giro": "1:31.681",
+    "punti": 8,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 10,
+    "nome": "I.Ventura",
+    "auto": "RC F GT500 '16",
+    "distacco": "+33.947",
+    "giro": "1:30.730",
+    "punti": 6,
+    "team": "CBR",
+    "q": 11
+   },
+   {
+    "pos": 11,
+    "nome": "nic_cannone",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+35.482",
+    "giro": "1:34.029",
+    "punti": 4,
+    "team": "FFM",
+    "q": 10
+   },
+   {
+    "pos": 12,
+    "nome": "PRT_MaxLukex",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:34.109",
+    "punti": null,
+    "team": "PRT",
+    "stato": "NC",
+    "q": 9
+   },
+   {
+    "pos": 13,
+    "nome": "CBR_GABRIEL",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "CBR",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 14,
+    "nome": "Tlm_Sile",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "PRT_Lusu_ Hard_98",
+  "giro_veloce": "A.D’alba"
+ },
+ "G2/STAR/A17": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A17.png",
+  "impronta": "\"bd9eb7626dba9623334624a1ab7af627\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "C.Zuccaro",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:23.371",
+    "giro": "1:31.263",
+    "punti": 31,
+    "team": "RSR",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "FrRoGaMeR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+03.662",
+    "giro": "1:31.715",
+    "punti": 26,
+    "team": "PRT",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "Drugo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.259",
+    "giro": "1:31.137",
+    "punti": 22,
+    "team": "SMI",
+    "q": 3
+   },
+   {
+    "pos": 4,
+    "nome": "TER_Antonio78x",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+26.866",
+    "giro": "1:32.016",
+    "punti": 18,
+    "team": "EVO",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "Nicco.rs",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+29.795",
+    "giro": "1:31.455",
+    "punti": 16,
+    "team": "GTV",
+    "q": 6
+   },
+   {
+    "pos": 6,
+    "nome": "TER_Barba",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+30.165",
+    "giro": "1:31.600",
+    "punti": 14,
+    "team": "RRT",
+    "q": 5
+   },
+   {
+    "pos": 7,
+    "nome": "Rareseed92",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+42.699",
+    "giro": "1:31.441",
+    "punti": 12,
+    "team": "PRT",
+    "q": 10
+   },
+   {
+    "pos": 8,
+    "nome": "#GO1FREE!!!!",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+55.694",
+    "giro": "1:32.345",
+    "punti": 10,
+    "team": "RMT",
+    "q": 12
+   },
+   {
+    "pos": 9,
+    "nome": "BAD_brucem84",
+    "auto": "RC F GT500 '16",
+    "distacco": "+59.983",
+    "giro": "1:31.535",
+    "punti": 8,
+    "team": "BCSC",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "TLM_Proietti",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:06.439",
+    "giro": "1:31.053",
+    "punti": 7,
+    "team": "TML",
+    "q": 11
+   },
+   {
+    "pos": 11,
+    "nome": "SimoT_18",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": "1:35.748",
+    "punti": null,
+    "team": "PBC",
+    "stato": "NC",
+    "q": 7
+   },
+   {
+    "pos": 12,
+    "nome": "SMI_vicktor21",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:34.012",
+    "punti": null,
+    "team": "SMI",
+    "stato": "NC",
+    "q": 4
+   },
+   {
+    "pos": 13,
+    "nome": "DRT-XaserTek",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "DCT",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "C.Zuccaro",
+  "giro_veloce": "TLM_Proietti"
+ },
+ "G2/STAR/A29": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A29.png",
+  "impronta": "\"ccb3a98b6ef8996d5023f48221847bf8\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "ValMar",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:26.858",
+    "giro": "1:31.465",
+    "punti": 31,
+    "team": "PRT",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "SMI-Marcus_Pilot",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+02.748",
+    "giro": "1:31.685",
+    "punti": 26,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 3,
+    "nome": "DRT-Nanix84",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+05.707",
+    "giro": "1:31.203",
+    "punti": 22,
+    "team": "DCT",
+    "q": 12
+   },
+   {
+    "pos": 4,
+    "nome": "mms_babide46",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+06.273",
+    "giro": "1:31.223",
+    "punti": 18,
+    "team": "MMS",
+    "q": 3
+   },
+   {
+    "pos": 5,
+    "nome": "F.Tommasini",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+14.858",
+    "giro": "1:31.619",
+    "punti": 16,
+    "team": "CBR",
+    "q": 2
+   },
+   {
+    "pos": 6,
+    "nome": "VRT Flexciccio",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+19.621",
+    "giro": "1:31.478",
+    "punti": 14,
+    "team": "MFC",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "manu08FL",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.005",
+    "giro": "1:31.192",
+    "punti": 12,
+    "team": "PBC",
+    "q": 7
+   },
+   {
+    "pos": 8,
+    "nome": "RMT-Paperoski_#4",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.039",
+    "giro": "1:31.614",
+    "punti": 10,
+    "team": "RMT",
+    "q": 9
+   },
+   {
+    "pos": 9,
+    "nome": "ARC-JonMazzo",
+    "auto": "RC F GT500'16",
+    "distacco": "+33.296",
+    "giro": "1:31.078",
+    "punti": null,
+    "team": "ARC",
+    "q": 8
+   },
+   {
+    "pos": 10,
+    "nome": "SeaWolf",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:00.804",
+    "giro": "1:30.637",
+    "punti": 7,
+    "team": "RSR",
+    "q": 10
+   },
+   {
+    "pos": 11,
+    "nome": "The iceman00",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.912",
+    "punti": 4,
+    "team": "RCE",
+    "q": 11
+   },
+   {
+    "pos": 12,
+    "nome": "G. Scardin",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.780",
+    "punti": null,
+    "team": "PBC",
+    "stato": "NC",
+    "q": 4
+   },
+   {
+    "pos": 13,
+    "nome": "GTRC_F._Ciuffo",
+    "auto": "NSX CONCEPT-GT '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTRC",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "ValMar",
+  "giro_veloce": "SeaWolf"
+ },
+ "G2/STAR/A34": {
+  "lega": "STAR",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/STAR/A34.png",
+  "impronta": "\"e208477444589894ae218d283e1a07b2\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "PRT_Lee Boon",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:21.926",
+    "giro": "1:32.158",
+    "punti": 30,
+    "team": "PRT",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "SMI_Minchippo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+15.941",
+    "giro": "1:32.564",
+    "punti": 27,
+    "team": "SMI",
+    "q": 1
+   },
+   {
+    "pos": 3,
+    "nome": "PRT_Leox86",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+18.149",
+    "giro": "1:31.591",
+    "punti": 22,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 4,
+    "nome": "Kanu",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+18.595",
+    "giro": "1:32.391",
+    "punti": 18,
+    "team": "DCT",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "G.Fanara",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+18.734",
+    "giro": "1:32.179",
+    "punti": 16,
+    "team": "PBC",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "RMT FIERA 69",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+24.102",
+    "giro": "1:31.849",
+    "punti": 14,
+    "team": "RMT",
+    "q": 8
+   },
+   {
+    "pos": 7,
+    "nome": "Bowie knife99",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+36.881",
+    "giro": "1:31.228",
+    "punti": 13,
+    "team": "GTV",
+    "q": 9
+   },
+   {
+    "pos": 8,
+    "nome": "Richie",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+40.400",
+    "giro": "1:31.431",
+    "punti": 10,
+    "team": "PBC",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "RsR_Shura",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+44.011",
+    "giro": null,
+    "punti": 8,
+    "team": "RSR",
+    "q": 3
+   },
+   {
+    "pos": 10,
+    "nome": "GTID_Mr PoP_Jr",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTID",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "Pardus",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "BCSC",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "SMI_Minchippo",
+  "giro_veloce": "Bowie knife99"
+ },
+ "G2/ELITE/A2": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A2.png",
+  "impronta": "\"6e89b6ab0bcd4e97e1ef9d796ffa729b\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "GTID_Gsadventure",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:48.047",
+    "giro": "1:31.607",
+    "punti": 31,
+    "team": "GTID",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "TLM_mark126p",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.091",
+    "giro": "1:32.409",
+    "punti": 26,
+    "team": "TLM",
+    "q": 10
+   },
+   {
+    "pos": 3,
+    "nome": "CBR_Giuliano.Vi",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.593",
+    "giro": "1:32.486",
+    "punti": 22,
+    "team": "CBR",
+    "q": 5
+   },
+   {
+    "pos": 4,
+    "nome": "Ferro77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.665",
+    "giro": "1:32.300",
+    "punti": 18,
+    "team": "PRT",
+    "q": 3
+   },
+   {
+    "pos": 5,
+    "nome": "TITT__ONE",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+20.956",
+    "giro": "1:32.181",
+    "punti": 16,
+    "team": "EVO",
+    "q": null
+   },
+   {
+    "pos": 6,
+    "nome": "RMT_MWalter",
+    "auto": "RC F GT500 '16",
+    "distacco": "+35.704",
+    "giro": "1:32.470",
+    "punti": 14,
+    "team": "RMT",
+    "q": 8
+   },
+   {
+    "pos": 7,
+    "nome": "Biso_44",
+    "auto": "RC F GT500 '16",
+    "distacco": "+39.217",
+    "giro": "1:30.963",
+    "punti": 13,
+    "team": "RCE",
+    "q": 13
+   },
+   {
+    "pos": 8,
+    "nome": "EVO_pericoloso",
+    "auto": "RC F GT500 '16",
+    "distacco": "+40.100",
+    "giro": "1:32.130",
+    "punti": 10,
+    "team": "EVO",
+    "q": 4
+   },
+   {
+    "pos": 9,
+    "nome": "PRT_Fr0sT",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:00.217",
+    "giro": "1:31.538",
+    "punti": 8,
+    "team": "PRT",
+    "q": 12
+   },
+   {
+    "pos": 10,
+    "nome": "U.Virivè",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:06.705",
+    "giro": "1:32.730",
+    "punti": null,
+    "team": "CBR",
+    "q": 9
+   },
+   {
+    "pos": 11,
+    "nome": "ARC-Turino",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:11.213",
+    "giro": "1:32.341",
+    "punti": null,
+    "team": "ARC",
+    "q": 6
+   },
+   {
+    "pos": 12,
+    "nome": "Angelo_6896",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:33.670",
+    "punti": 2,
+    "team": "MMS",
+    "q": 11
+   },
+   {
+    "pos": 13,
+    "nome": "Wilpy",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": "1:34.810",
+    "punti": null,
+    "team": "EVO",
+    "stato": "NC",
+    "q": 7
+   },
+   {
+    "pos": 14,
+    "nome": "Mat-bull11",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.785",
+    "punti": null,
+    "team": "RSR",
+    "stato": "NC",
+    "q": 2
+   }
+  ],
+  "pole": "GTID_Gsadventure",
+  "giro_veloce": "Biso_44"
+ },
+ "G2/ELITE/A8": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A8.png",
+  "impronta": "\"7deef478463069b1799668abef769a62\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Sulimanov",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:53.303",
+    "giro": "1:32.310",
+    "punti": 30,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 2,
+    "nome": "V. Uva",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+03.583",
+    "giro": "1:31.445",
+    "punti": 27,
+    "team": "SRT",
+    "q": 1
+   },
+   {
+    "pos": 3,
+    "nome": "BAD_Ken Miles",
+    "auto": "RC F GT500 '16",
+    "distacco": "+04.002",
+    "giro": "1:31.913",
+    "punti": 22,
+    "team": "BCSC",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "GTID_Viper--Ste",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+07.995",
+    "giro": "1:31.190",
+    "punti": 19,
+    "team": "GTID",
+    "q": 3
+   },
+   {
+    "pos": 5,
+    "nome": "castoshi",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.708",
+    "giro": "1:32.149",
+    "punti": 16,
+    "team": "MFC",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "Ninonitros1",
+    "auto": "RC F GT500 '16",
+    "distacco": "+28.321",
+    "giro": "1:32.081",
+    "punti": 14,
+    "team": "CBR",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "RMT-Axel K",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+28.851",
+    "giro": "1:31.666",
+    "punti": 12,
+    "team": "RMT",
+    "q": 9
+   },
+   {
+    "pos": 8,
+    "nome": "ARC-AlexoPazz",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+33.046",
+    "giro": "1:33.865",
+    "punti": 10,
+    "team": "ARC",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "ITA_SOLID_SNAKE",
+    "auto": "RC F GT500 '16",
+    "distacco": "+57.837",
+    "giro": "1:31.991",
+    "punti": 8,
+    "team": "BCSC",
+    "q": 8
+   },
+   {
+    "pos": 10,
+    "nome": "EVO_Piccuz",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "EVO",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "Flotta muscoso",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RCE",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "V. Uva",
+  "giro_veloce": "GTID_Viper--Ste"
+ },
+ "G2/ELITE/A12": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A12.png",
+  "impronta": "\"0047b46f164272e444c485c35ce576cc\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "GTIDsacco72",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:47.569",
+    "giro": "1:31.476",
+    "punti": 30,
+    "team": "GTID",
+    "q": 3
+   },
+   {
+    "pos": 2,
+    "nome": "RCE_Seccoide87",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.175",
+    "giro": "1:31.290",
+    "punti": 26,
+    "team": "RCE",
+    "q": 4
+   },
+   {
+    "pos": 3,
+    "nome": "EVO_Bricca",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+09.452",
+    "giro": "1:31.394",
+    "punti": 23,
+    "team": "EVO",
+    "q": 1
+   },
+   {
+    "pos": 4,
+    "nome": "C.Leclecca",
+    "auto": "RC F GT500 '16",
+    "distacco": "+11.943",
+    "giro": "1:31.158",
+    "punti": 19,
+    "team": "RSR",
+    "q": 2
+   },
+   {
+    "pos": 5,
+    "nome": "Giusdandri",
+    "auto": "RC F GT500 '16",
+    "distacco": "+13.386",
+    "giro": "1:31.525",
+    "punti": 16,
+    "team": "GTV",
+    "q": 8
+   },
+   {
+    "pos": 6,
+    "nome": "G. Bozzo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+30.008",
+    "giro": "1:32.202",
+    "punti": 14,
+    "team": "PRT",
+    "q": 10
+   },
+   {
+    "pos": 7,
+    "nome": "Er meyo",
+    "auto": "RC F GT500 '16",
+    "distacco": "+43.725",
+    "giro": "1:31.929",
+    "punti": 12,
+    "team": "DCT",
+    "q": 7
+   },
+   {
+    "pos": 8,
+    "nome": "Al_Rizlas",
+    "auto": "RC F GT500 '16",
+    "distacco": "+51.994",
+    "giro": "1:31.660",
+    "punti": 10,
+    "team": "CBR",
+    "q": 9
+   },
+   {
+    "pos": 9,
+    "nome": "Mms_Jakarta",
+    "auto": "RC F GT500 '16",
+    "distacco": "+57.322",
+    "giro": "1:32.093",
+    "punti": 8,
+    "team": "MMS",
+    "q": 5
+   },
+   {
+    "pos": 10,
+    "nome": "RCE_Hippo86",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:24.395",
+    "giro": "1:31.505",
+    "punti": 6,
+    "team": "RCE",
+    "q": 6
+   },
+   {
+    "pos": 11,
+    "nome": "E. Caizzone",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "CBR",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "ARC-Tommizio",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "EVO_Bricca",
+  "giro_veloce": "C.Leclecca"
+ },
+ "G2/ELITE/A18": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A18.png",
+  "impronta": "\"0524614629f67c437cbbf7c41e377d7b\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Ayrton16",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:50.603",
+    "giro": "1:31.671",
+    "punti": 31,
+    "team": "RCE",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "GIO",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.294",
+    "giro": "1:32.279",
+    "punti": 26,
+    "team": "RRT",
+    "q": 5
+   },
+   {
+    "pos": 3,
+    "nome": "M. Busato",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+09.838",
+    "giro": "1:31.617",
+    "punti": 23,
+    "team": "CBR",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "VeGe",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.730",
+    "giro": "1:32.332",
+    "punti": 18,
+    "team": "PRT",
+    "q": 4
+   },
+   {
+    "pos": 5,
+    "nome": "Iceman",
+    "auto": "RC F GT500'16",
+    "distacco": "+24.366",
+    "giro": "1:32.103",
+    "punti": null,
+    "team": "GTV",
+    "q": 3
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_GREEN21",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+26.647",
+    "giro": "1:32.455",
+    "punti": null,
+    "team": "SMI",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "GTID_Tia10",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+28.120",
+    "giro": "1:32.053",
+    "punti": 12,
+    "team": "GTID",
+    "q": 7
+   },
+   {
+    "pos": 8,
+    "nome": "PeppeSR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+32.570",
+    "giro": "1:32.035",
+    "punti": 10,
+    "team": "DCT",
+    "q": 8
+   },
+   {
+    "pos": 9,
+    "nome": "CSC_ciccio94",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPTATO",
+    "giro": "1:34.174",
+    "punti": 8,
+    "team": "BCSC",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "GTID_Cornazzai73",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTID",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "DeadPaul",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "Ayrton16",
+  "giro_veloce": "M. Busato"
+ },
+ "G2/ELITE/A30": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A30.png",
+  "impronta": "\"302c701de0e7ede08b06100785800e91\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "M.PIRRELLO",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:00.285",
+    "giro": "1:32.459",
+    "punti": 31,
+    "team": "GTID",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "SMI_Syd",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+02.562",
+    "giro": "1:32.758",
+    "punti": 26,
+    "team": "SMI",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "Rce_ Patrick85",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+13.039",
+    "giro": "1:32.678",
+    "punti": 22,
+    "team": "RCE",
+    "q": 10
+   },
+   {
+    "pos": 4,
+    "nome": "R1-2007 (1966)",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.563",
+    "giro": "1:31.600",
+    "punti": 18,
+    "team": "SMI",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "Danny Bonny",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+20.152",
+    "giro": "1:32.255",
+    "punti": 16,
+    "team": "PBC",
+    "q": 7
+   },
+   {
+    "pos": 6,
+    "nome": "CBR_Samu12",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+24.064",
+    "giro": "1:32.410",
+    "punti": 14,
+    "team": "CBR",
+    "q": 9
+   },
+   {
+    "pos": 7,
+    "nome": "Vigio899",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+35.079",
+    "giro": "1:33.897",
+    "punti": 12,
+    "team": "MFC",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "FFM_Beppolo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+53.816",
+    "giro": "1:31.484",
+    "punti": 10,
+    "team": "FFM",
+    "q": 4
+   },
+   {
+    "pos": 9,
+    "nome": "Luis_Mel",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+57.908",
+    "giro": "1:33.105",
+    "punti": null,
+    "team": "PRT",
+    "q": 8
+   },
+   {
+    "pos": 10,
+    "nome": "ART-Lupo_Sauro-7",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:00.743",
+    "giro": "1:30.997",
+    "punti": 7,
+    "team": "ARC",
+    "q": 2
+   },
+   {
+    "pos": 11,
+    "nome": "Cacino95",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "BCSC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "DCT_Fiume11",
+    "auto": "NSX CONCEPT-GT '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "DCT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "M.PIRRELLO",
+  "giro_veloce": "ART-Lupo_Sauro-7"
+ },
+ "G2/ELITE/A35": {
+  "lega": "ELITE",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A35.png",
+  "impronta": "\"5e87e0939439fd8bc018bfcf9b454325\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "H7-25YT",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:25.263",
+    "giro": "1:31.012",
+    "punti": 32,
+    "team": "PRT",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "Ermy",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+23.928",
+    "giro": "1:32.461",
+    "punti": 26,
+    "team": "PRT",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "SMI_#Gianni",
+    "auto": "RC F GT500 '16",
+    "distacco": "+30.396",
+    "giro": "1:31.606",
+    "punti": 22,
+    "team": "SMI",
+    "q": 9
+   },
+   {
+    "pos": 4,
+    "nome": "CBR_JOHNNY",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+36.451",
+    "giro": "1:31.383",
+    "punti": 18,
+    "team": "CBR",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "RCE_MVedovi59",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+37.490",
+    "giro": "1:32.693",
+    "punti": 16,
+    "team": "RCE",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "PBC_Goivas",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+41.353",
+    "giro": "1:31.817",
+    "punti": 14,
+    "team": "PBC",
+    "q": 8
+   },
+   {
+    "pos": 7,
+    "nome": "G.Altin",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+43.540",
+    "giro": "1:31.922",
+    "punti": 12,
+    "team": "GTID",
+    "q": 3
+   },
+   {
+    "pos": 8,
+    "nome": "Sandro 71",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+58.049",
+    "giro": "1:32.414",
+    "punti": 10,
+    "team": "PRT",
+    "q": 11
+   },
+   {
+    "pos": 9,
+    "nome": "DCT_Radik",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.800",
+    "punti": null,
+    "team": "DCT",
+    "q": 10
+   },
+   {
+    "pos": 10,
+    "nome": "M.Mastantuono",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.240",
+    "punti": 6,
+    "team": "RSR",
+    "q": 7
+   },
+   {
+    "pos": 11,
+    "nome": "SCGT-GIGIKOM75",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:32.215",
+    "punti": 4,
+    "team": "SCGT",
+    "q": 12
+   },
+   {
+    "pos": 12,
+    "nome": "DavideRui",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:35.504",
+    "punti": null,
+    "team": "CBR",
+    "stato": "NC",
+    "q": 5
+   },
+   {
+    "pos": 13,
+    "nome": "JOKERVR46",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 14,
+    "nome": "G.Mantineo",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "MFC",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "H7-25YT",
+  "giro_veloce": "H7-25YT"
+ },
+ "G2/PRO GOLD/A3": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A3.png",
+  "impronta": "\"8fa770ab8435aa4f82254e36a2fef1bb\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Denni",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:16.298",
+    "giro": "1:32.561",
+    "punti": 30,
+    "team": "PRT",
+    "q": 4
+   },
+   {
+    "pos": 2,
+    "nome": "Natalino Vezzani",
+    "auto": "RC F GT500 '16",
+    "distacco": "+11.841",
+    "giro": "1:31.906",
+    "punti": 26,
+    "team": "CBR",
+    "q": 5
+   },
+   {
+    "pos": 3,
+    "nome": "CBR_il_Coach",
+    "auto": "RC F GT500 '16",
+    "distacco": "+14.006",
+    "giro": "1:32.755",
+    "punti": 23,
+    "team": "CBR",
+    "q": 1
+   },
+   {
+    "pos": 4,
+    "nome": "animasarda81",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+15.253",
+    "giro": "1:32.784",
+    "punti": 18,
+    "team": "DCT",
+    "q": 10
+   },
+   {
+    "pos": 5,
+    "nome": "RCE-Manu2298",
+    "auto": "RC F GT500 '16",
+    "distacco": "+18.851",
+    "giro": "1:32.421",
+    "punti": 16,
+    "team": "RCE",
+    "q": 2
+   },
+   {
+    "pos": 6,
+    "nome": "Parigi02",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+21.416",
+    "giro": "1:33.768",
+    "punti": 14,
+    "team": "PBC",
+    "q": 11
+   },
+   {
+    "pos": 7,
+    "nome": "FMC_PIPINO1983",
+    "auto": "RC F GT500 '16",
+    "distacco": "+49.594",
+    "giro": "1:32.248",
+    "punti": 12,
+    "team": "FMC",
+    "q": 8
+   },
+   {
+    "pos": 8,
+    "nome": "PRT-Jaiss84",
+    "auto": "RC F GT500 '16",
+    "distacco": "+58.651",
+    "giro": "1:35.183",
+    "punti": 10,
+    "team": "PRT",
+    "q": 12
+   },
+   {
+    "pos": 9,
+    "nome": "Pazzatu",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+59.961",
+    "giro": "1:32.299",
+    "punti": 8,
+    "team": "RRT",
+    "q": 3
+   },
+   {
+    "pos": 10,
+    "nome": "RMT_misterful. IT",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:37.316",
+    "giro": "1:31.877",
+    "punti": 6,
+    "team": "RMT",
+    "q": 6
+   },
+   {
+    "pos": 11,
+    "nome": "montlorenzo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.814",
+    "punti": 5,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 12,
+    "nome": "EVO_Manu81",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:43.216",
+    "punti": null,
+    "team": "EVO",
+    "stato": "NC",
+    "q": 7
+   },
+   {
+    "pos": 13,
+    "nome": "GTV-Oriano06",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTV",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 14,
+    "nome": "KSI-Bambolone78",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "CBR_il_Coach",
+  "giro_veloce": "montlorenzo"
+ },
+ "G2/PRO GOLD/A14": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A14.png",
+  "impronta": "\"321240eb0c4580a3a2bd498404bc0813\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "TLM_Mannino",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:50.626",
+    "giro": "1:32.921",
+    "punti": 31,
+    "team": "TLM",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "CpMa_95",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+06.958",
+    "giro": "1:32.561",
+    "punti": 26,
+    "team": "DCT",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "RCE_pirati",
+    "auto": "RC F GT500 '16",
+    "distacco": "+20.254",
+    "giro": "1:33.280",
+    "punti": 22,
+    "team": "RCE",
+    "q": 6
+   },
+   {
+    "pos": 4,
+    "nome": "DCT_mercenario94",
+    "auto": "RC F GT500 '16",
+    "distacco": "+21.686",
+    "giro": "1:32.436",
+    "punti": 18,
+    "team": "DCT",
+    "q": 5
+   },
+   {
+    "pos": 5,
+    "nome": "Suka",
+    "auto": "RC F GT500 '16",
+    "distacco": "+23.380",
+    "giro": "1:31.487",
+    "punti": 16,
+    "team": "MMS",
+    "q": 2
+   },
+   {
+    "pos": 6,
+    "nome": "RMT_PINOWAY",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+24.493",
+    "giro": "1:31.392",
+    "punti": 15,
+    "team": "RMT",
+    "q": 10
+   },
+   {
+    "pos": 7,
+    "nome": "Vale34",
+    "auto": "RC F GT500 '16",
+    "distacco": "+25.817",
+    "giro": "1:31.687",
+    "punti": 12,
+    "team": "GTV",
+    "q": 4
+   },
+   {
+    "pos": 8,
+    "nome": "Uburoi",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+26.600",
+    "giro": "1:32.191",
+    "punti": 10,
+    "team": "FMC",
+    "q": null
+   },
+   {
+    "pos": 9,
+    "nome": "shark929292",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+32.356",
+    "giro": "1:32.685",
+    "punti": 8,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "AMALA-ETNA",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+40.514",
+    "giro": "1:32.727",
+    "punti": 6,
+    "team": "GTRC",
+    "q": 7
+   },
+   {
+    "pos": 11,
+    "nome": "MMS_Peppezip",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:26.339",
+    "giro": "1:32.303",
+    "punti": 4,
+    "team": "MMS",
+    "q": 8
+   },
+   {
+    "pos": 12,
+    "nome": "EVO_AleTDx",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "EVO",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "BAD_lupogrigio",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "BCSC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 14,
+    "nome": "AgaresErkekjette",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "CBR",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "TLM_Mannino",
+  "giro_veloce": "RMT_PINOWAY"
+ },
+ "G2/PRO GOLD/A21": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A21.png",
+  "impronta": "\"55808e9d0dd8c2a3d39e75a7a0d2befd\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "GTID_Ale #77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:14.834",
+    "giro": "1:34.359",
+    "punti": 30,
+    "team": "GTID",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "Alex",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+05.850",
+    "giro": "1:32.644",
+    "punti": 26,
+    "team": "OES",
+    "q": 4
+   },
+   {
+    "pos": 3,
+    "nome": "vanveremberg-87",
+    "auto": "RC F GT500 '16",
+    "distacco": "+05.977",
+    "giro": "1:32.174",
+    "punti": 22,
+    "team": "SMI",
+    "q": 12
+   },
+   {
+    "pos": 4,
+    "nome": "GTID_N3tZ666",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+06.219",
+    "giro": "1:32.732",
+    "punti": 18,
+    "team": "GTID",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "Faraone65",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+10.819",
+    "giro": "1:33.087",
+    "punti": null,
+    "team": "MMS",
+    "q": 7
+   },
+   {
+    "pos": 6,
+    "nome": "MattiaLingua",
+    "auto": "RC F GT500 '16",
+    "distacco": "+14.688",
+    "giro": "1:32.243",
+    "punti": null,
+    "team": "DCT",
+    "q": 5
+   },
+   {
+    "pos": 7,
+    "nome": "GioBar73 @ PRT",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+16.430",
+    "giro": "1:32.309",
+    "punti": 12,
+    "team": "MFC",
+    "q": 3
+   },
+   {
+    "pos": 8,
+    "nome": "RRT_iaakk1983",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+29.555",
+    "giro": "1:32.406",
+    "punti": 10,
+    "team": "RRT",
+    "q": 13
+   },
+   {
+    "pos": 9,
+    "nome": "CBR_Simello",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+29.566",
+    "giro": "1:32.391",
+    "punti": 8,
+    "team": "CBR",
+    "q": 11
+   },
+   {
+    "pos": 10,
+    "nome": "Mirco",
+    "auto": "RC F GT500 '16",
+    "distacco": "+36.464",
+    "giro": "1:33.671",
+    "punti": 6,
+    "team": "GTV",
+    "q": 9
+   },
+   {
+    "pos": 11,
+    "nome": "TER_Effe355",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:25.746",
+    "giro": "1:31.536",
+    "punti": 5,
+    "team": "EVO",
+    "q": 10
+   },
+   {
+    "pos": 12,
+    "nome": "CBR_Paolucci",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:36.428",
+    "punti": null,
+    "team": "CBR",
+    "stato": "NC",
+    "q": 6
+   },
+   {
+    "pos": 13,
+    "nome": "Rikosmo94",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.757",
+    "punti": null,
+    "team": "SRT",
+    "stato": "NC",
+    "q": 1
+   },
+   {
+    "pos": 14,
+    "nome": "SMI_DENI_BURIDA",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SMI",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "Rikosmo94",
+  "giro_veloce": "TER_Effe355"
+ },
+ "G2/PRO GOLD/A24": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A24.png",
+  "impronta": "\"33584c8371831b48cac24cabdd7369c5\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "CBR_Baffokiller_",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:35.638",
+    "giro": "1:31.581",
+    "punti": 30,
+    "team": "",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "M.Genovese",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+07.127",
+    "giro": "1:32.312",
+    "punti": 26,
+    "team": "SRT",
+    "q": 10
+   },
+   {
+    "pos": 3,
+    "nome": "Stewar7tano",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+12.056",
+    "giro": "1:31.961",
+    "punti": 23,
+    "team": "RSR",
+    "q": 1
+   },
+   {
+    "pos": 4,
+    "nome": "S3mb4",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+15.997",
+    "giro": "1:31.529",
+    "punti": 18,
+    "team": "FFM",
+    "q": 7
+   },
+   {
+    "pos": 5,
+    "nome": "RsR brucomela 53",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.737",
+    "giro": "1:32.077",
+    "punti": 16,
+    "team": "RSR",
+    "q": 8
+   },
+   {
+    "pos": 6,
+    "nome": "jr88",
+    "auto": "RC F GT500 '16",
+    "distacco": "+49.416",
+    "giro": "1:32.333",
+    "punti": 14,
+    "team": "CBR",
+    "q": 11
+   },
+   {
+    "pos": 7,
+    "nome": "SMI_Doc1975tor",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:03.854",
+    "giro": "1:32.811",
+    "punti": 12,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "EVO_Sbeucchia70",
+    "auto": "RC F GT500'16",
+    "distacco": "+1:07.615",
+    "giro": "1:32.495",
+    "punti": 10,
+    "team": "EVO",
+    "q": 12
+   },
+   {
+    "pos": 9,
+    "nome": "M.Ruggieri",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:08.341",
+    "giro": "1:33.483",
+    "punti": 8,
+    "team": "SCGT",
+    "q": 14
+   },
+   {
+    "pos": 10,
+    "nome": "TLM Febshy",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:08.867",
+    "giro": "1:32.660",
+    "punti": 6,
+    "team": "TLM",
+    "q": 4
+   },
+   {
+    "pos": 11,
+    "nome": "SMI_Shadakar71",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:14.430",
+    "giro": "1:33.374",
+    "punti": 4,
+    "team": "SMI",
+    "q": 13
+   },
+   {
+    "pos": 12,
+    "nome": "FFM_M a z e sBin",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:15.112",
+    "giro": "1:30.983",
+    "punti": 3,
+    "team": "FFM",
+    "q": 3
+   },
+   {
+    "pos": 13,
+    "nome": "ASC-Gjca76",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.932",
+    "punti": 1,
+    "team": "DCT",
+    "q": 6
+   },
+   {
+    "pos": 14,
+    "nome": "Leo-80",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.299",
+    "punti": null,
+    "team": "SMI",
+    "q": 9
+   }
+  ],
+  "pole": "Stewar7tano",
+  "giro_veloce": "FFM_M a z e sBin"
+ },
+ "G2/PRO GOLD/A28": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A28.png",
+  "impronta": "\"8bf73c9971508f6a24b903089af9f648\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "RCE_Leobustv",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:11.908",
+    "giro": "1:32.866",
+    "punti": 30,
+    "team": "RCE",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "EVO_piraz",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+00.744",
+    "giro": "1:33.070",
+    "punti": 26,
+    "team": "EVO",
+    "q": 5
+   },
+   {
+    "pos": 3,
+    "nome": "Focuss",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+09.685",
+    "giro": "1:33.411",
+    "punti": 22,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 4,
+    "nome": "Bеppе",
+    "auto": "RC F GT500 '16",
+    "distacco": "+15.796",
+    "giro": "1:32.821",
+    "punti": 18,
+    "team": "",
+    "q": 3
+   },
+   {
+    "pos": 5,
+    "nome": "SAPHIR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+16.557",
+    "giro": "1:32.375",
+    "punti": 16,
+    "team": "SMI",
+    "q": null
+   },
+   {
+    "pos": 6,
+    "nome": "Cristian",
+    "auto": "RC F GT500 '16",
+    "distacco": "+20.567",
+    "giro": "1:32.521",
+    "punti": 15,
+    "team": "RRT",
+    "q": 1
+   },
+   {
+    "pos": 7,
+    "nome": "MF_Walter784",
+    "auto": "RC F GT500 '16",
+    "distacco": "+22.129",
+    "giro": "1:32.762",
+    "punti": 12,
+    "team": "MFC",
+    "q": 8
+   },
+   {
+    "pos": 8,
+    "nome": "Barda88",
+    "auto": "RC F GT500 '16",
+    "distacco": "+31.864",
+    "giro": "1:31.957",
+    "punti": 11,
+    "team": "GTV",
+    "q": 4
+   },
+   {
+    "pos": 9,
+    "nome": "MF_TORETTO",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": "1:37.202",
+    "punti": null,
+    "team": "MFC",
+    "stato": "NC",
+    "q": 7
+   },
+   {
+    "pos": 10,
+    "nome": "MF_Marekiaro",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "MFC",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "Daiard95",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": 0,
+    "team": "SRT",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "SMI_KrA7oS",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SMI",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "Andre86",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTV",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "Cristian",
+  "giro_veloce": "Barda88"
+ },
+ "G2/PRO GOLD/A31": {
+  "lega": "PRO GOLD",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20GOLD/A31.png",
+  "impronta": "\"9f1bbb1a7b4257fb1ca20e604faaac26\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Zak",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:09.161",
+    "giro": "1:32.447",
+    "punti": 30,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 2,
+    "nome": "P.Vicari",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+00.589",
+    "giro": "1:32.257",
+    "punti": 26,
+    "team": "CBR",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "Lok",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+24.883",
+    "giro": "1:31.955",
+    "punti": 23,
+    "team": "SRT",
+    "q": 4
+   },
+   {
+    "pos": 4,
+    "nome": "GTID_pienobonus",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+25.284",
+    "giro": "1:32.765",
+    "punti": 18,
+    "team": "GTID",
+    "q": 9
+   },
+   {
+    "pos": 5,
+    "nome": "ENZO_72V",
+    "auto": "RC F GT500 '16",
+    "distacco": "+30.170",
+    "giro": "1:33.049",
+    "punti": 16,
+    "team": "SCGT",
+    "q": null
+   },
+   {
+    "pos": 6,
+    "nome": "TER-CAR-MELO74",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+34.092",
+    "giro": "1:33.724",
+    "punti": 14,
+    "team": "DCT",
+    "q": 8
+   },
+   {
+    "pos": 7,
+    "nome": "Brook24",
+    "auto": "RC F GT500 '16",
+    "distacco": "+42.935",
+    "giro": "1:33.535",
+    "punti": 12,
+    "team": "GTV",
+    "q": 3
+   },
+   {
+    "pos": 8,
+    "nome": "S.Lavigna",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+45.867",
+    "giro": "1:32.077",
+    "punti": 10,
+    "team": "PBC",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "Kami0067",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+56.998",
+    "giro": "1:34.289",
+    "punti": 8,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 10,
+    "nome": "Masta",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:32.619",
+    "punti": 7,
+    "team": "PRT",
+    "q": 1
+   },
+   {
+    "pos": 11,
+    "nome": "Ric_hero1971",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "EVO",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "RMT ste",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "Masta",
+  "giro_veloce": "Lok"
+ },
+ "G2/PRO SILVER/A4": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A4.png",
+  "impronta": "\"34991bcf2ac9750eface746f35542a85\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "DCT_aquiladoro",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:46.905",
+    "giro": "1:30.910",
+    "punti": 32,
+    "team": "",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "TER_Axel79",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+41.836",
+    "giro": "1:32.272",
+    "punti": 26,
+    "team": "BCSC",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "Matteo.R 00",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+42.348",
+    "giro": "1:33.345",
+    "punti": 22,
+    "team": "DCT",
+    "q": 9
+   },
+   {
+    "pos": 4,
+    "nome": "TLM_BLOKKO",
+    "auto": "RC F GT500 '16",
+    "distacco": "+57.492",
+    "giro": "1:32.384",
+    "punti": 18,
+    "team": "TLM",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "Ciccio_Vona-1994",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+59.471",
+    "giro": "1:33.407",
+    "punti": 16,
+    "team": "SMI",
+    "q": null
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_tiskitoski",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:03.337",
+    "giro": "1:32.755",
+    "punti": 14,
+    "team": "SMI",
+    "q": 11
+   },
+   {
+    "pos": 7,
+    "nome": "TLM_GAMMA",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:07.086",
+    "giro": "1:32.949",
+    "punti": 12,
+    "team": "RMT",
+    "q": 7
+   },
+   {
+    "pos": 8,
+    "nome": "RCE_mauris72",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:09.600",
+    "giro": "1:32.453",
+    "punti": 10,
+    "team": "RCE",
+    "q": 3
+   },
+   {
+    "pos": 9,
+    "nome": "SMI Niki Lauda",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:16.966",
+    "giro": "1:33.387",
+    "punti": 8,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 10,
+    "nome": "GTRC-MirkoZaffa",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:21.293",
+    "giro": "1:32.869",
+    "punti": 6,
+    "team": "GTRC",
+    "q": 10
+   },
+   {
+    "pos": 11,
+    "nome": "DRT-Arbaxx76",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:30.113",
+    "giro": "1:33.016",
+    "punti": 4,
+    "team": "MMS",
+    "q": 4
+   },
+   {
+    "pos": 12,
+    "nome": "CBR_Renegade21",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:31.593",
+    "punti": 2,
+    "team": "CBR",
+    "q": 6
+   },
+   {
+    "pos": 13,
+    "nome": "MikiRua",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "TLM",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "DCT_aquiladoro",
+  "giro_veloce": "DCT_aquiladoro"
+ },
+ "G2/PRO SILVER/A9": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A9.png",
+  "impronta": "\"520ea3024cc78d37254f182379884fdf\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "RMT-AT83Andrea",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:42.442",
+    "giro": "1:31.011",
+    "punti": 32,
+    "team": "",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "GTRC-Checco",
+    "auto": "RC F GT500 '16",
+    "distacco": "+10.558",
+    "giro": "1:31.588",
+    "punti": 26,
+    "team": "GTRC",
+    "q": 5
+   },
+   {
+    "pos": 3,
+    "nome": "Clesh555",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+16.398",
+    "giro": "1:31.894",
+    "punti": 22,
+    "team": "CBR",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "M_ApeX__",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+19.124",
+    "giro": "1:32.001",
+    "punti": 18,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "TLM_IL_DUCA_VASH",
+    "auto": "RC F GT500 '16",
+    "distacco": "+19.344",
+    "giro": "1:32.118",
+    "punti": 16,
+    "team": "TML",
+    "q": 3
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_Jackengi",
+    "auto": "RC F GT500 '16",
+    "distacco": "+26.253",
+    "giro": "1:32.878",
+    "punti": 14,
+    "team": "SMI",
+    "q": 11
+   },
+   {
+    "pos": 7,
+    "nome": "Scgt-mattia",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+26.397",
+    "giro": "1:32.208",
+    "punti": 12,
+    "team": "SCGT",
+    "q": 12
+   },
+   {
+    "pos": 8,
+    "nome": "SMI_Stefano",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+31.233",
+    "giro": "1:32.337",
+    "punti": 10,
+    "team": "SMI",
+    "q": 9
+   },
+   {
+    "pos": 9,
+    "nome": "KSI-firefoxgold",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+34.791",
+    "giro": "1:31.854",
+    "punti": null,
+    "team": "ARC",
+    "q": 10
+   },
+   {
+    "pos": 10,
+    "nome": "TLM_MichaeFox12",
+    "auto": "RC F GT500'16",
+    "distacco": "+55.637",
+    "giro": "1:31.494",
+    "punti": 6,
+    "team": "TLM",
+    "q": 4
+   },
+   {
+    "pos": 11,
+    "nome": "Sard Lander",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:13.424",
+    "giro": "1:32.479",
+    "punti": 4,
+    "team": "MMS",
+    "q": 8
+   },
+   {
+    "pos": 12,
+    "nome": "F.Amerio",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:39.322",
+    "punti": null,
+    "team": "GTID",
+    "stato": "NC",
+    "q": 7
+   }
+  ],
+  "pole": "RMT-AT83Andrea",
+  "giro_veloce": "RMT-AT83Andrea"
+ },
+ "G2/PRO SILVER/A13": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A13.png",
+  "impronta": "\"945250cce5a3692ecfcc74a6796edf57\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Pinpinella95",
+    "auto": "RC F GT500 '16",
+    "distacco": "49:52.602",
+    "giro": "1:31.645",
+    "punti": 32,
+    "team": "OES",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "TLM_Jet-morello",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+02.026",
+    "giro": "1:32.252",
+    "punti": 26,
+    "team": "TLM",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "Sintoh87",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+06.084",
+    "giro": "1:32.950",
+    "punti": 22,
+    "team": "CBR",
+    "q": 8
+   },
+   {
+    "pos": 4,
+    "nome": "Marco pugnaghi67",
+    "auto": "RC F GT500 '16",
+    "distacco": "+14.698",
+    "giro": "1:31.973",
+    "punti": 18,
+    "team": "SMI",
+    "q": 2
+   },
+   {
+    "pos": 5,
+    "nome": "TLM_Jack187",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:07.685",
+    "giro": "1:32.633",
+    "punti": 16,
+    "team": "TML",
+    "q": 4
+   },
+   {
+    "pos": 6,
+    "nome": "RMT_FABBIO 969",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:15.484",
+    "giro": "1:34.121",
+    "punti": 14,
+    "team": "RMT",
+    "q": 7
+   },
+   {
+    "pos": 7,
+    "nome": "SMI_Roax1984",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:17.909",
+    "giro": "1:31.754",
+    "punti": 12,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "RRT_SNERZZZ",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:21.641",
+    "giro": "1:33.020",
+    "punti": 10,
+    "team": "RRT",
+    "q": 6
+   },
+   {
+    "pos": 9,
+    "nome": "Poluz",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:29.568",
+    "giro": "1:33.266",
+    "punti": null,
+    "team": "PBC",
+    "q": 10
+   },
+   {
+    "pos": 10,
+    "nome": "TLM_MikeRine92",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "TML",
+    "stato": "NC",
+    "q": 9
+   },
+   {
+    "pos": 11,
+    "nome": "BCSC_Gravebuxero",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "BCSC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "RCE_fabryct90",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": 0,
+    "team": "RCE",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "Pinpinella95",
+  "giro_veloce": "Pinpinella95"
+ },
+ "G2/PRO SILVER/A22": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A22.png",
+  "impronta": "\"deb133e071b2b18fe225fce9f2a2af9c\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "M.Gatti",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:21.098",
+    "giro": "1:33.417",
+    "punti": 30,
+    "team": "CBR",
+    "q": 4
+   },
+   {
+    "pos": 2,
+    "nome": "KSI-texport-52",
+    "auto": "RC F GT500 '16",
+    "distacco": "+15.107",
+    "giro": "1:32.831",
+    "punti": 26,
+    "team": "ARC",
+    "q": 6
+   },
+   {
+    "pos": 3,
+    "nome": "Sun|)own",
+    "auto": "RC F GT500 '16",
+    "distacco": "+17.001",
+    "giro": "1:32.306",
+    "punti": 22,
+    "team": "GTV",
+    "q": 5
+   },
+   {
+    "pos": 4,
+    "nome": "Pete",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+18.627",
+    "giro": "1:31.653",
+    "punti": 19,
+    "team": "PBC",
+    "q": 1
+   },
+   {
+    "pos": 5,
+    "nome": "Zabo",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+24.597",
+    "giro": "1:31.584",
+    "punti": 17,
+    "team": "GTV",
+    "q": 2
+   },
+   {
+    "pos": 6,
+    "nome": "SCGT_Salvatore",
+    "auto": "RC F GT500 '16",
+    "distacco": "+29.782",
+    "giro": "1:32.220",
+    "punti": null,
+    "team": "SCGT",
+    "q": 3
+   },
+   {
+    "pos": 7,
+    "nome": "TLM_G.Cocon",
+    "auto": "RC F GT500 '16",
+    "distacco": "+38.653",
+    "giro": "1:33.489",
+    "punti": 12,
+    "team": "TML",
+    "q": 10
+   },
+   {
+    "pos": 8,
+    "nome": "ScarsFess",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+58.740",
+    "giro": "1:32.317",
+    "punti": 10,
+    "team": "RRT",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "SMI_Maureddu77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.774",
+    "punti": null,
+    "team": "SMI",
+    "stato": "BOX",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "Rekkiaspeed",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:36.945",
+    "punti": null,
+    "team": "PRT",
+    "stato": "NC",
+    "q": 8
+   },
+   {
+    "pos": 11,
+    "nome": "TLM_GabryRR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "TML",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "SMI Mimmogr",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SMI",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "Pete",
+  "giro_veloce": "Zabo"
+ },
+ "G2/PRO SILVER/A25": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A25.png",
+  "impronta": "\"c4300826c436d59b70006e85e44e2c38\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "GTID-Vinc3Clerc",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:12.162",
+    "giro": "1:33.237",
+    "punti": 31,
+    "team": "GTID",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "SMI_Maximuccio73",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+07.917",
+    "giro": "1:32.537",
+    "punti": 26,
+    "team": "SMI",
+    "q": 4
+   },
+   {
+    "pos": 3,
+    "nome": "Dome98",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+11.440",
+    "giro": "1:32.205",
+    "punti": 22,
+    "team": "SRT",
+    "q": 9
+   },
+   {
+    "pos": 4,
+    "nome": "N-spec",
+    "auto": "RC F GT500 '16",
+    "distacco": "+34.953",
+    "giro": "1:32.458",
+    "punti": 18,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 5,
+    "nome": "Snorky-70",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+53.033",
+    "giro": "1:33.852",
+    "punti": 16,
+    "team": "PRT",
+    "q": 10
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_DeliciousBBQ",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+58.329",
+    "giro": "1:31.826",
+    "punti": 15,
+    "team": "SMI",
+    "q": 3
+   },
+   {
+    "pos": 7,
+    "nome": "PRT_neapolis100",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:04.075",
+    "giro": "1:34.517",
+    "punti": 12,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 8,
+    "nome": "DCT_Shider_02",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:30.341",
+    "giro": "1:33.611",
+    "punti": 10,
+    "team": "DCT",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "ARC Awesalvo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:36.855",
+    "giro": "1:32.521",
+    "punti": 8,
+    "team": "ARC",
+    "q": 2
+   },
+   {
+    "pos": 10,
+    "nome": "EVO_Willy#43",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": "1:34.064",
+    "punti": null,
+    "team": "EVO",
+    "stato": "BOX",
+    "q": 8
+   },
+   {
+    "pos": 11,
+    "nome": "Shudew",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "DCT",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "GTR Gius73",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "DCT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "GTID-Vinc3Clerc",
+  "giro_veloce": "SMI_DeliciousBBQ"
+ },
+ "G2/PRO SILVER/A36": {
+  "lega": "PRO SILVER",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20SILVER/A36.png",
+  "impronta": "\"b13453004957ec28534c3c1ea9fbc1f8\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "CBR_Mava",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:59.955",
+    "giro": "1:31.759",
+    "punti": 31,
+    "team": "",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "SimoneVal8",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+00.113",
+    "giro": "1:32.420",
+    "punti": 27,
+    "team": "",
+    "q": 1
+   },
+   {
+    "pos": 3,
+    "nome": "SMI_k67AVE",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+30.463",
+    "giro": "1:32.707",
+    "punti": 22,
+    "team": "SMI",
+    "q": 8
+   },
+   {
+    "pos": 4,
+    "nome": "Agif89",
+    "auto": "RC F GT500 '16",
+    "distacco": "+33.075",
+    "giro": "1:32.103",
+    "punti": 18,
+    "team": "FMC",
+    "q": 3
+   },
+   {
+    "pos": 5,
+    "nome": "PBC_Pegaso",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+36.435",
+    "giro": "1:33.896",
+    "punti": null,
+    "team": "PBC",
+    "q": 10
+   },
+   {
+    "pos": 6,
+    "nome": "blaze",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+43.990",
+    "giro": "1:32.838",
+    "punti": null,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 7,
+    "nome": "RMT_AthaWolf",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+52.150",
+    "giro": "1:32.005",
+    "punti": null,
+    "team": "RMT",
+    "q": 13
+   },
+   {
+    "pos": 8,
+    "nome": "MMS_Gattonero70",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:10.607",
+    "giro": "1:31.810",
+    "punti": 10,
+    "team": "MMS",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "Ptr.bso",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:13.235",
+    "giro": "1:34.333",
+    "punti": 8,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "RRT SMEZZ-SIZZ",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:17.925",
+    "giro": "1:33.334",
+    "punti": 6,
+    "team": "PBC",
+    "q": 11
+   },
+   {
+    "pos": 11,
+    "nome": "GTID_Salma81",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:33.041",
+    "punti": 4,
+    "team": "GTID",
+    "q": 4
+   },
+   {
+    "pos": 12,
+    "nome": "Fanatec73",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.336",
+    "punti": null,
+    "team": "EVO",
+    "q": 12
+   },
+   {
+    "pos": 13,
+    "nome": "CiccioSta76",
+    "auto": "RC F GT500'16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.234",
+    "punti": 1,
+    "team": "DCT",
+    "q": 6
+   }
+  ],
+  "pole": "SimoneVal8",
+  "giro_veloce": "CBR_Mava"
+ },
+ "G2/PRO AMA/A6": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A6.png",
+  "impronta": "\"86d651dae65e38150150000585f11143\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Ice_Fire",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:06.489",
+    "giro": "1:32.295",
+    "punti": 30,
+    "team": "GTID",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "zarsantez",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.732",
+    "giro": "1:31.960",
+    "punti": 28,
+    "team": "SMI",
+    "q": 1
+   },
+   {
+    "pos": 3,
+    "nome": "Fabrifox99",
+    "auto": "NSX CONCEPT-GT '16",
+    "distacco": "+29.227",
+    "giro": "1:32.677",
+    "punti": 22,
+    "team": "RMT",
+    "q": 4
+   },
+   {
+    "pos": 4,
+    "nome": "R.Napoletano",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+33.657",
+    "giro": "1:32.785",
+    "punti": 18,
+    "team": "FFM",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "CBR_CrisZ.9",
+    "auto": "RC F GT500 '16",
+    "distacco": "+49.120",
+    "giro": "1:32.737",
+    "punti": 16,
+    "team": "CBR",
+    "q": 3
+   },
+   {
+    "pos": 6,
+    "nome": "astrorock285",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+59.033",
+    "giro": "1:34.292",
+    "punti": 14,
+    "team": "PRT",
+    "q": 10
+   },
+   {
+    "pos": 7,
+    "nome": "Cipo",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+59.190",
+    "giro": "1:33.456",
+    "punti": 12,
+    "team": "DCT",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "MMS-DOCTORWEB",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:16.303",
+    "giro": "1:34.389",
+    "punti": 10,
+    "team": "MMS",
+    "q": 9
+   },
+   {
+    "pos": 9,
+    "nome": "Mms_dpgurney78",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:27.753",
+    "giro": "1:32.239",
+    "punti": null,
+    "team": "MMS",
+    "q": 7
+   },
+   {
+    "pos": 10,
+    "nome": "JackVenom",
+    "auto": "RC F GT500'16",
+    "distacco": "+1:29.038",
+    "giro": "1:34.655",
+    "punti": 6,
+    "team": "MMS",
+    "q": 6
+   },
+   {
+    "pos": 11,
+    "nome": "PRT-Timmycicc",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:34.316",
+    "punti": null,
+    "team": "PRT",
+    "stato": "NC",
+    "q": 11
+   },
+   {
+    "pos": 12,
+    "nome": "GTID_D3LZ719",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "GTID",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "SCGT-SimoSniper",
+    "auto": "RC F GT500'16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SCGT",
+    "stato": "DSQ",
+    "q": null
+   }
+  ],
+  "pole": "zarsantez",
+  "giro_veloce": "zarsantez"
+ },
+ "G2/PRO AMA/A15": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A15.png",
+  "impronta": "\"d97b916345e135db94d7140b086424a6\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "SMI_Gas89",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "49:57.828",
+    "giro": "1:31.960",
+    "punti": 31,
+    "team": "",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "LID_Nelloz",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+00.640",
+    "giro": "1:31.321",
+    "punti": 26,
+    "team": "RMT",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "SCGT Basilio",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+01.168",
+    "giro": "1:31.265",
+    "punti": 23,
+    "team": "SCGT",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "Baba Voss",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+25.632",
+    "giro": "1:33.083",
+    "punti": 18,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 5,
+    "nome": "ARC-TheHammer44",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+31.196",
+    "giro": "1:31.885",
+    "punti": null,
+    "team": "ARC",
+    "q": 7
+   },
+   {
+    "pos": 6,
+    "nome": "Il Giuda22",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+32.481",
+    "giro": "1:32.240",
+    "punti": null,
+    "team": "SRT",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "CBR_gattipaolo86",
+    "auto": "RC F GT500'16",
+    "distacco": "+52.934",
+    "giro": "1:32.046",
+    "punti": 12,
+    "team": "CBR",
+    "q": 4
+   },
+   {
+    "pos": 8,
+    "nome": "PRT_roncoa73",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:05.048",
+    "giro": "1:32.829",
+    "punti": 10,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 9,
+    "nome": "muffo007",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:07.594",
+    "giro": "1:33.196",
+    "punti": 8,
+    "team": "PRT",
+    "q": 11
+   },
+   {
+    "pos": 10,
+    "nome": "GTRC_AleRasato",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:10.470",
+    "giro": "1:32.610",
+    "punti": 6,
+    "team": "GTRC",
+    "q": 8
+   },
+   {
+    "pos": 11,
+    "nome": "SMI_Desmo77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:33.223",
+    "punti": 4,
+    "team": "SMI",
+    "q": 10
+   },
+   {
+    "pos": 12,
+    "nome": "FMC-BLACKBEARD",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "FMC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "SRT_Rinthedream",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SRT",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "SMI_Gas89",
+  "giro_veloce": "SCGT Basilio"
+ },
+ "G2/PRO AMA/A16": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A16.png",
+  "impronta": "\"4ae43c0a2255ca9ebe3e4f64f3cf479a\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Micius",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:24.036",
+    "giro": "1:32.210",
+    "punti": 31,
+    "team": "RMT",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "Fmc_Fulminato199",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+04.342",
+    "giro": "1:32.993",
+    "punti": 26,
+    "team": "FMC",
+    "q": 6
+   },
+   {
+    "pos": 3,
+    "nome": "landre",
+    "auto": "RC F GT500 '16",
+    "distacco": "+23.109",
+    "giro": "1:33.726",
+    "punti": 22,
+    "team": "SRT",
+    "q": 3
+   },
+   {
+    "pos": 4,
+    "nome": "SCGT-DjVituc",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+36.894",
+    "giro": "1:32.408",
+    "punti": 18,
+    "team": "SCGT",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "ARC-SalvinoKing",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+40.488",
+    "giro": "1:32.392",
+    "punti": 17,
+    "team": "ARC",
+    "q": 1
+   },
+   {
+    "pos": 6,
+    "nome": "SMI_Bibieffe",
+    "auto": "RC F GT500 '16",
+    "distacco": "+43.145",
+    "giro": "1:33.416",
+    "punti": 14,
+    "team": "SMI",
+    "q": 7
+   },
+   {
+    "pos": 7,
+    "nome": "Spadino 77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+46.938",
+    "giro": "1:33.083",
+    "punti": 12,
+    "team": "DCT",
+    "q": 4
+   },
+   {
+    "pos": 8,
+    "nome": "HULK1959",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:51.907",
+    "giro": "1:33.459",
+    "punti": 10,
+    "team": "SMI",
+    "q": 10
+   },
+   {
+    "pos": 9,
+    "nome": "tcarlisi",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.330",
+    "punti": 8,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 10,
+    "nome": "Riccio_Antonio",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": "1:46.249",
+    "punti": null,
+    "team": "GTRC",
+    "stato": "NC",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "CBR_MBBerto",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": 0,
+    "team": "CBR",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "KSI-AreS_GlaDiuS",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "NC",
+    "q": 5
+   },
+   {
+    "pos": 13,
+    "nome": "Mastro",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "PRT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "ARC-SalvinoKing",
+  "giro_veloce": "Micius"
+ },
+ "G2/PRO AMA/A20": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A20.png",
+  "impronta": "\"b6e4b0d78177fcdc732c112b7a2e0ea4\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Saetta Assidua",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:08.979",
+    "giro": "1:32.532",
+    "punti": 30,
+    "team": "MMS",
+    "q": 3
+   },
+   {
+    "pos": 2,
+    "nome": "GiamP_29",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+30.533",
+    "giro": "1:33.790",
+    "punti": 26,
+    "team": "GTID",
+    "q": 4
+   },
+   {
+    "pos": 3,
+    "nome": "Giannivir64",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+33.407",
+    "giro": "1:32.931",
+    "punti": 22,
+    "team": "PRT",
+    "q": 5
+   },
+   {
+    "pos": 4,
+    "nome": "The-Knipex",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+43.281",
+    "giro": "1:34.498",
+    "punti": 18,
+    "team": "PRT",
+    "q": 8
+   },
+   {
+    "pos": 5,
+    "nome": "CBR_Sarade",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+48.282",
+    "giro": "1:33.382",
+    "punti": 16,
+    "team": "CBR",
+    "q": 10
+   },
+   {
+    "pos": 6,
+    "nome": "J-Fly",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+48.877",
+    "giro": "1:33.473",
+    "punti": null,
+    "team": "RRT",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "RMT Mario84",
+    "auto": "NSX CONCEPT-GT '16",
+    "distacco": "+54.798",
+    "giro": "1:32.315",
+    "punti": 13,
+    "team": "RMT",
+    "q": 1
+   },
+   {
+    "pos": 8,
+    "nome": "Sauzer",
+    "auto": "RC F GT500 '16",
+    "distacco": "+55.915",
+    "giro": "1:32.397",
+    "punti": 10,
+    "team": "GTV",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "GTID_Berti62",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:12.239",
+    "giro": "1:33.911",
+    "punti": 8,
+    "team": "GTID",
+    "q": 11
+   },
+   {
+    "pos": 10,
+    "nome": "ASC-LupO",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:15.784",
+    "giro": "1:33.211",
+    "punti": 6,
+    "team": "DCT",
+    "q": 9
+   },
+   {
+    "pos": 11,
+    "nome": "SRT KAIDO",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:17.187",
+    "giro": "1:32.006",
+    "punti": 5,
+    "team": "SRT",
+    "q": 2
+   },
+   {
+    "pos": 12,
+    "nome": "DCT_Pescepoldo",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.035",
+    "punti": 2,
+    "team": "DCT",
+    "q": 12
+   }
+  ],
+  "pole": "RMT Mario84",
+  "giro_veloce": "SRT KAIDO"
+ },
+ "G2/PRO AMA/A26": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A26.png",
+  "impronta": "\"13bf90c97a208cc9cc1871d00235a222\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "TER_MINATOR",
+    "auto": "RC F GT500 '16",
+    "distacco": "50:33.491",
+    "giro": "1:33.655",
+    "punti": 31,
+    "team": "EVO",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "TLM_RiKaS",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+20.423",
+    "giro": "1:34.007",
+    "punti": 26,
+    "team": "TML",
+    "q": 9
+   },
+   {
+    "pos": 3,
+    "nome": "Davide 1972 Ita",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+21.047",
+    "giro": "1:34.472",
+    "punti": 22,
+    "team": "GTID",
+    "q": 11
+   },
+   {
+    "pos": 4,
+    "nome": "ErMau07",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+21.754",
+    "giro": "1:32.595",
+    "punti": 19,
+    "team": "RRT",
+    "q": 7
+   },
+   {
+    "pos": 5,
+    "nome": "GTID-D3sTr0X",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+29.135",
+    "giro": "1:33.906",
+    "punti": 16,
+    "team": "GTID",
+    "q": 8
+   },
+   {
+    "pos": 6,
+    "nome": "Flippo-Trippo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+36.482",
+    "giro": "1:33.899",
+    "punti": 14,
+    "team": "SMI",
+    "q": 6
+   },
+   {
+    "pos": 7,
+    "nome": "Zagaracing",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+43.894",
+    "giro": "1:34.144",
+    "punti": 12,
+    "team": "SRT",
+    "q": 4
+   },
+   {
+    "pos": 8,
+    "nome": "GTRC-Kelone74",
+    "auto": "RC F GT500 '16",
+    "distacco": "+57.785",
+    "giro": "1:33.919",
+    "punti": 10,
+    "team": "GTRC",
+    "q": 5
+   },
+   {
+    "pos": 9,
+    "nome": "MFMaxlaqualunque",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+59.781",
+    "giro": "1:34.408",
+    "punti": 8,
+    "team": "MFC",
+    "q": 10
+   },
+   {
+    "pos": 10,
+    "nome": "CBR_FELIX",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:33.691",
+    "giro": "1:33.759",
+    "punti": 6,
+    "team": "CBR",
+    "q": 3
+   },
+   {
+    "pos": 11,
+    "nome": "snoop",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:32.904",
+    "punti": null,
+    "team": "SMI",
+    "stato": "NC",
+    "q": 2
+   },
+   {
+    "pos": 12,
+    "nome": "wwp76",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "PRT",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "OmgTommie",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "PBC",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "TER_MINATOR",
+  "giro_veloce": "ErMau07"
+ },
+ "G2/PRO AMA/A32": {
+  "lega": "PRO AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/PRO%20AMA/A32.png",
+  "impronta": "\"9d36ad669d5dd5818bf2c9e38e46f5fd\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "RMT_Morpihx-_-",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.621",
+    "giro": "1:31.910",
+    "punti": 27,
+    "team": "RMT",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "Luni55",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+16.233",
+    "giro": "1:33.840",
+    "punti": 22,
+    "team": "PRT",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "Xelavr6",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+20.932",
+    "giro": "1:33.965",
+    "punti": 18,
+    "team": "GTID",
+    "q": 6
+   },
+   {
+    "pos": 4,
+    "nome": "ASC-Vanio2022",
+    "auto": "RC F GT500 '16",
+    "distacco": "+29.999",
+    "giro": "1:33.321",
+    "punti": 16,
+    "team": "DCT",
+    "q": 4
+   },
+   {
+    "pos": 5,
+    "nome": "SMI_NuvolaRossa",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+42.365",
+    "giro": "1:33.525",
+    "punti": 14,
+    "team": "SMI",
+    "q": 9
+   },
+   {
+    "pos": 6,
+    "nome": "_st257",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+42.383",
+    "giro": "1:32.535",
+    "punti": 12,
+    "team": "OES",
+    "q": 7
+   },
+   {
+    "pos": 7,
+    "nome": "TER_Sukku",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:10.492",
+    "giro": "1:33.682",
+    "punti": 10,
+    "team": "TER",
+    "q": 5
+   },
+   {
+    "pos": 8,
+    "nome": "GTRC-Squinzi76",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.949",
+    "punti": 8,
+    "team": "GTRC",
+    "q": 8
+   },
+   {
+    "pos": 9,
+    "nome": "verdi76",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:37.222",
+    "punti": null,
+    "team": "PRT",
+    "stato": "NC",
+    "q": 10
+   },
+   {
+    "pos": 10,
+    "nome": "Scrocchio98",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": "1:41.984",
+    "punti": 0,
+    "team": "GTV",
+    "stato": "NC",
+    "q": 2
+   },
+   {
+    "pos": 11,
+    "nome": "TRT-Bingo",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "ARC-Claudione83",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "RMT_Morpihx-_-",
+  "giro_veloce": "RMT_Morpihx-_-"
+ },
+ "G2/AMA/A7": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A7.png",
+  "impronta": "\"c0d5a411412bf4092d9b3a105b64660d\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "S. Di Giovanni",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:30.025",
+    "giro": "1:32.762",
+    "punti": 32,
+    "team": "",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "Frasalvo96",
+    "auto": "RC F GT500 '16",
+    "distacco": "+13.443",
+    "giro": "1:32.916",
+    "punti": 26,
+    "team": "GTV",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "Step87",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.828",
+    "giro": "1:34.508",
+    "punti": 22,
+    "team": "PRT",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "habanero",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+24.850",
+    "giro": "1:33.889",
+    "punti": 18,
+    "team": "SRT",
+    "q": 4
+   },
+   {
+    "pos": 5,
+    "nome": "Domydero",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+37.849",
+    "giro": "1:33.608",
+    "punti": 16,
+    "team": "SCGT",
+    "q": 5
+   },
+   {
+    "pos": 6,
+    "nome": "Fabrix88",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:06.412",
+    "giro": "1:33.369",
+    "punti": 14,
+    "team": "RRT",
+    "q": 9
+   },
+   {
+    "pos": 7,
+    "nome": "SMI_RomeLu",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:14.301",
+    "giro": "1:33.846",
+    "punti": 12,
+    "team": "SMI",
+    "q": 6
+   },
+   {
+    "pos": 8,
+    "nome": "FMC_Samu4Seven",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:23.093",
+    "giro": "1:33.387",
+    "punti": 10,
+    "team": "FMC",
+    "q": 8
+   },
+   {
+    "pos": 9,
+    "nome": "Matte#83",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:35.793",
+    "punti": null,
+    "team": "SCGT",
+    "q": 7
+   },
+   {
+    "pos": 10,
+    "nome": "SCGT-amofede01",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "A.Papotto",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "MMS",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "ARC-Ultras68",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AI",
+    "q": null
+   }
+  ],
+  "pole": "S. Di Giovanni",
+  "giro_veloce": "S. Di Giovanni"
+ },
+ "G2/AMA/A11": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A11.png",
+  "impronta": "\"3f92de1b9f35409eed3b641f2613fe44\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "RCE-warrior",
+    "auto": "RC F GT500 '16",
+    "distacco": "50:27.520",
+    "giro": "1:32.629",
+    "punti": 31,
+    "team": "RCE",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "Bolker",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+08.957",
+    "giro": "1:31.556",
+    "punti": 27,
+    "team": "MMS",
+    "q": null
+   },
+   {
+    "pos": 3,
+    "nome": "GTSCode",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+17.359",
+    "giro": "1:32.513",
+    "punti": 22,
+    "team": "GTV",
+    "q": 5
+   },
+   {
+    "pos": 4,
+    "nome": "SMI_Fabry_colo86",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:15.871",
+    "giro": "1:32.440",
+    "punti": 18,
+    "team": "OES",
+    "q": 2
+   },
+   {
+    "pos": 5,
+    "nome": "Zio_zero7",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:46.077",
+    "giro": "1:34.600",
+    "punti": null,
+    "team": "PRT",
+    "q": 6
+   },
+   {
+    "pos": 6,
+    "nome": "GTRC_Ganciocielo",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.562",
+    "punti": 14,
+    "team": "GTRC",
+    "q": 3
+   },
+   {
+    "pos": 7,
+    "nome": "Imperatore128",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPTATO",
+    "giro": "1:36.828",
+    "punti": 12,
+    "team": "FFM",
+    "q": 7
+   },
+   {
+    "pos": 8,
+    "nome": "TSR_LK№³",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:44.291",
+    "punti": null,
+    "team": "SRT",
+    "stato": "NC",
+    "q": 4
+   },
+   {
+    "pos": 9,
+    "nome": "BabyKiller",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "TLM",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 10,
+    "nome": "Razor",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 11,
+    "nome": "SMI-Slimer",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SMI",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "giggggetto87",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "ARC",
+    "stato": "DSQ",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "Pierpynolo76",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RRT",
+    "stato": "DSQ",
+    "q": null
+   }
+  ],
+  "pole": "RCE-warrior",
+  "giro_veloce": "Bolker"
+ },
+ "G2/AMA/A19": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A19.png",
+  "impronta": "\"340b2993b6eeb10071916005ffebdc01\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "TLM_Talsigiano",
+    "auto": "RC F GT500 '16",
+    "distacco": "50:53.982",
+    "giro": "1:32.900",
+    "punti": 30,
+    "team": "TLM",
+    "q": 2
+   },
+   {
+    "pos": 2,
+    "nome": "RCE_Dingo77",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+05.531",
+    "giro": "1:34.047",
+    "punti": 26,
+    "team": "RCE",
+    "q": 8
+   },
+   {
+    "pos": 3,
+    "nome": "RMT-Alzoal_7.6",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+12.607",
+    "giro": "1:33.381",
+    "punti": 23,
+    "team": "RMT",
+    "q": 1
+   },
+   {
+    "pos": 4,
+    "nome": "SMI_Missidenis54",
+    "auto": "RC F GT500 '16",
+    "distacco": "+19.404",
+    "giro": "1:34.647",
+    "punti": 18,
+    "team": "SMI",
+    "q": 6
+   },
+   {
+    "pos": 5,
+    "nome": "Margotone",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+30.325",
+    "giro": "1:33.817",
+    "punti": 16,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 6,
+    "nome": "Alex Lilla",
+    "auto": "RC F GT500 '16",
+    "distacco": "+45.022",
+    "giro": "1:32.517",
+    "punti": 15,
+    "team": "CBR",
+    "q": 4
+   },
+   {
+    "pos": 7,
+    "nome": "RRT_Andovè",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+46.736",
+    "giro": "1:32.965",
+    "punti": 12,
+    "team": "RRT",
+    "q": null
+   },
+   {
+    "pos": 8,
+    "nome": "ARC-ARGAMERR",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:13.226",
+    "giro": "1:34.059",
+    "punti": 10,
+    "team": "ARC",
+    "q": 7
+   },
+   {
+    "pos": 9,
+    "nome": "Praetorian_001",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": "+1:22.769",
+    "giro": "1:34.062",
+    "punti": 8,
+    "team": "DCT",
+    "q": 5
+   },
+   {
+    "pos": 10,
+    "nome": "Yanuzzo_44",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:25.111",
+    "giro": "1:34.275",
+    "punti": 6,
+    "team": "SRT",
+    "q": 3
+   },
+   {
+    "pos": 11,
+    "nome": "SMI_Kaiser",
+    "auto": "GT-R NISMO GT500 '16",
+    "distacco": null,
+    "giro": "1:37.183",
+    "punti": null,
+    "team": "SMI",
+    "stato": "NC",
+    "q": 10
+   },
+   {
+    "pos": 12,
+    "nome": "FMC_Fratta18",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": "1:37.179",
+    "punti": null,
+    "team": "FMC",
+    "stato": "NC",
+    "q": null
+   }
+  ],
+  "pole": "RMT-Alzoal_7.6",
+  "giro_veloce": "Alex Lilla"
+ },
+ "G2/AMA/A23": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A23.png",
+  "impronta": "\"90530a8762f7c5366240caaa2d426a47\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "TER_Brazorf",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:42.715",
+    "giro": "1:33.132",
+    "punti": 30,
+    "team": "",
+    "q": null
+   },
+   {
+    "pos": 2,
+    "nome": "RRT_Muso_2692_gt",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+05.178",
+    "giro": "1:33.549",
+    "punti": 26,
+    "team": "RRT",
+    "q": 2
+   },
+   {
+    "pos": 3,
+    "nome": "DCT_R.Leta",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+07.396",
+    "giro": "1:33.667",
+    "punti": 22,
+    "team": "DCT",
+    "q": 3
+   },
+   {
+    "pos": 4,
+    "nome": "Luca R72",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+12.532",
+    "giro": "1:33.300",
+    "punti": 18,
+    "team": "PRT",
+    "q": 7
+   },
+   {
+    "pos": 5,
+    "nome": "ARC-MarinaioPazz",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+16.906",
+    "giro": "1:33.059",
+    "punti": 17,
+    "team": "ARC",
+    "q": 1
+   },
+   {
+    "pos": 6,
+    "nome": "Gass95",
+    "auto": "RC F GT500 '16",
+    "distacco": "+33.006",
+    "giro": "1:32.772",
+    "punti": 15,
+    "team": "SCGT",
+    "q": 4
+   },
+   {
+    "pos": 7,
+    "nome": "TLM_Gian",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+39.080",
+    "giro": "1:35.648",
+    "punti": 12,
+    "team": "TML",
+    "q": 6
+   },
+   {
+    "pos": 8,
+    "nome": "SMI-Mandrake",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:13.404",
+    "giro": "1:34.167",
+    "punti": 10,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 9,
+    "nome": "(edo56)",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:20.912",
+    "giro": "1:34.700",
+    "punti": 8,
+    "team": "PRT",
+    "q": 8
+   },
+   {
+    "pos": 10,
+    "nome": "conradveron59",
+    "auto": "RC F GT500'16",
+    "distacco": "DOPPIATO",
+    "giro": "1:36.719",
+    "punti": 6,
+    "team": "PRT",
+    "q": 9
+   },
+   {
+    "pos": 11,
+    "nome": "RMT Moody33",
+    "auto": null,
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "ARC-MarinaioPazz",
+  "giro_veloce": "Gass95"
+ },
+ "G2/AMA/A27": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A27.png",
+  "impronta": "\"3b6198ccd28bb826382a8040102b31c8\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "Simoppr",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:25.206",
+    "giro": "1:32.634",
+    "punti": 32,
+    "team": "PRT",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "S.Buccheri",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+13.454",
+    "giro": "1:32.759",
+    "punti": 26,
+    "team": "SCGT",
+    "q": 3
+   },
+   {
+    "pos": 3,
+    "nome": "SMI_Cristian16",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+18.885",
+    "giro": "1:33.062",
+    "punti": 22,
+    "team": "SMI",
+    "q": 2
+   },
+   {
+    "pos": 4,
+    "nome": "Kiank87",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+40.803",
+    "giro": "1:34.107",
+    "punti": 18,
+    "team": "SRT",
+    "q": 4
+   },
+   {
+    "pos": 5,
+    "nome": "ARC-VecchioBimbo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+58.629",
+    "giro": "1:33.775",
+    "punti": 16,
+    "team": "ARC",
+    "q": 8
+   },
+   {
+    "pos": 6,
+    "nome": "MARRAS83",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:01.248",
+    "giro": "1:33.467",
+    "punti": 14,
+    "team": "DCT",
+    "q": 5
+   },
+   {
+    "pos": 7,
+    "nome": "Smi_Cremix14",
+    "auto": "RC F GT500 '16",
+    "distacco": "+1:01.771",
+    "giro": "1:33.602",
+    "punti": 12,
+    "team": "SMI",
+    "q": 9
+   },
+   {
+    "pos": 8,
+    "nome": "SMI_dragulillo",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:29.999",
+    "giro": "1:34.404",
+    "punti": 10,
+    "team": "SMI",
+    "q": 10
+   },
+   {
+    "pos": 9,
+    "nome": "Michele",
+    "auto": "RC F GT500 '16",
+    "distacco": "DOPPIATO",
+    "giro": "1:34.814",
+    "punti": null,
+    "team": "SRT",
+    "q": 6
+   },
+   {
+    "pos": 10,
+    "nome": "FFM_FilippoFm89",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "DOPPIATO",
+    "giro": "1:36.494",
+    "punti": 6,
+    "team": "FFM",
+    "q": 7
+   },
+   {
+    "pos": 11,
+    "nome": "barso91",
+    "auto": "NSX CONCEPT-GT '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 12,
+    "nome": "Fmc_Marcosanta",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "FMC",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 13,
+    "nome": "RMT-Ghigno 4",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RMT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "Simoppr",
+  "giro_veloce": "Simoppr"
+ },
+ "G2/AMA/A33": {
+  "lega": "AMA",
+  "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/AMA/A33.png",
+  "impronta": "\"5790f1898af4579f46327b45473b309d\"",
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "RMT Super Sic",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "50:33.818",
+    "giro": "1:32.742",
+    "punti": 32,
+    "team": "RMT",
+    "q": 1
+   },
+   {
+    "pos": 2,
+    "nome": "RRT_BAMBASTEN",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+31.817",
+    "giro": "1:33.123",
+    "punti": 26,
+    "team": "RRT",
+    "q": 6
+   },
+   {
+    "pos": 3,
+    "nome": "CSC_L_uboldese",
+    "auto": "RC F GT500 '16",
+    "distacco": "+39.712",
+    "giro": "1:33.069",
+    "punti": 22,
+    "team": "BCSC",
+    "q": 4
+   },
+   {
+    "pos": 4,
+    "nome": "GTV Drivergt1985",
+    "auto": "RC F GT500 '16",
+    "distacco": "+43.448",
+    "giro": "1:34.129",
+    "punti": 18,
+    "team": "GTV",
+    "q": 7
+   },
+   {
+    "pos": 5,
+    "nome": "SMI_Thomas1927",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+53.452",
+    "giro": "1:34.620",
+    "punti": 16,
+    "team": "SMI",
+    "q": 5
+   },
+   {
+    "pos": 6,
+    "nome": "RMT_Scoop 66",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+1:08.495",
+    "giro": "1:34.586",
+    "punti": 14,
+    "team": "TML",
+    "q": 3
+   },
+   {
+    "pos": 7,
+    "nome": "ARC-Arbr82",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": "1:33.840",
+    "punti": null,
+    "team": "ARC",
+    "stato": "NC",
+    "q": 2
+   },
+   {
+    "pos": 8,
+    "nome": "Fla60",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "RRT",
+    "stato": "AG",
+    "q": null
+   },
+   {
+    "pos": 9,
+    "nome": "Maciaddu",
+    "auto": "RC F GT500 '16",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "SCGT",
+    "stato": "AI",
+    "q": null
+   },
+   {
+    "pos": 10,
+    "nome": "Theblackcorsair",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "PRT",
+    "stato": "AG",
+    "q": null
+   }
+  ],
+  "pole": "RMT Super Sic",
+  "giro_veloce": "RMT Super Sic"
  }
 }
