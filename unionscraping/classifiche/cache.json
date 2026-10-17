@@ -6352,7 +6352,7 @@
  "G2/ELITE/A30": {
   "lega": "ELITE",
   "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G2/ELITE/A30.png",
-  "impronta": "\"302c701de0e7ede08b06100785800e91\"",
+  "impronta": "\"2edaa7c56461d864cd2ac5d640adab4a\"",
   "classifica": [
    {
     "pos": 1,
@@ -6366,43 +6366,43 @@
    },
    {
     "pos": 2,
-    "nome": "SMI_Syd",
-    "auto": "RS 5 Turbo DTM '19",
-    "distacco": "+02.562",
-    "giro": "1:32.758",
-    "punti": 26,
-    "team": "SMI",
-    "q": 3
-   },
-   {
-    "pos": 3,
     "nome": "Rce_ Patrick85",
     "auto": "RS 5 Turbo DTM '19",
     "distacco": "+13.039",
     "giro": "1:32.678",
-    "punti": 22,
+    "punti": 26,
     "team": "RCE",
     "q": 10
    },
    {
-    "pos": 4,
+    "pos": 3,
     "nome": "R1-2007 (1966)",
     "auto": "RS 5 Turbo DTM '19",
     "distacco": "+17.563",
     "giro": "1:31.600",
-    "punti": 18,
+    "punti": 22,
     "team": "SMI",
     "q": 6
    },
    {
-    "pos": 5,
+    "pos": 4,
     "nome": "Danny Bonny",
     "auto": "GT-R NISMO GT500 '16",
     "distacco": "+20.152",
     "giro": "1:32.255",
-    "punti": 16,
+    "punti": 18,
     "team": "PBC",
     "q": 7
+   },
+   {
+    "pos": 5,
+    "nome": "SMI_Syd",
+    "auto": "RS 5 Turbo DTM '19",
+    "distacco": "+22.562",
+    "giro": "1:32.758",
+    "punti": 16,
+    "team": "SMI",
+    "q": 3
    },
    {
     "pos": 6,
@@ -6440,7 +6440,7 @@
     "auto": "RS 5 Turbo DTM '19",
     "distacco": "+57.908",
     "giro": "1:33.105",
-    "punti": null,
+    "punti": 8,
     "team": "PRT",
     "q": 8
    },
