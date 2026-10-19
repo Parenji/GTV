@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-17T15:41:13+00:00"
+    "generated_at": "2026-10-19T18:45:02+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -2750,9 +2750,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "31",
-          "team": "MFC",
-          "nome": "VRT Flexciccio",
+          "matricola": "66",
+          "team": "RSR",
+          "nome": "SeaWolf",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2823,13 +2823,6 @@
           "matricola": "75",
           "team": "SMI",
           "nome": "SMI-Marcus_Pilot",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 12,
-          "matricola": "66",
-          "team": "RSR",
-          "nome": "SeaWolf",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -3274,10 +3267,10 @@
         },
         {
           "pos": 5,
-          "matricola": "58",
-          "team": "RMT",
-          "nome": "RMT FIERA 69",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "28",
+          "team": "GTV",
+          "nome": "InuyashaGodYokai",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 6,
@@ -3320,13 +3313,6 @@
           "team": "PRT",
           "nome": "PRT_Leox86",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 12,
-          "matricola": "28",
-          "team": "GTV",
-          "nome": "InuyashaGodYokai",
-          "auto": "RC F GT500 '16"
         }
       ]
     },
