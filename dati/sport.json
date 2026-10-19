@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-19T10:45:36+00:00",
+    "updated_at": "2026-10-19T14:38:24+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-29T06:59:59Z",
         "miglior_tempo": "1:16.835",
         "leader": "AT__1826",
-        "partecipanti": 79440,
+        "partecipanti": 81294,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 2609,
+            "pos_assoluta": 2712,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.947
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 3102,
+            "pos_assoluta": 3213,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.174,
             "distacco_assoluto_pct": 3.126
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 4634,
+            "pos_assoluta": 4769,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.724,
             "distacco_assoluto_pct": 3.692
@@ -97,7 +97,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.368",
         "leader": "AMS__Andrew",
-        "partecipanti": 141876,
+        "partecipanti": 143060,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 5457,
+            "pos_assoluta": 5511,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.69
@@ -559,7 +559,22 @@
       "inizio": "19 Ott 2026",
       "fine": "25 Ott 2026",
       "settimana": "19 Ott 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Yukimura9221",
+          "gt7name": "Yukimura",
+          "numero": "106",
+          "squadra": "GTV",
+          "auto": "MAZDA RX-VISION GT3 EVO '26",
+          "data": "19 Ott 2026",
+          "tempo": "1:35.271",
+          "tempo_ms": 95271,
+          "pos_assoluta": 1960,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     },
     {
       "nome": "Race C · Suzuka Circuit",
@@ -4966,7 +4981,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19011,
+      "rank_medio": 19012,
       "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -4975,7 +4990,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 4634,
+          "rank": 4769,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -7708,7 +7723,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19229,
+      "rank_medio": 19231,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -7717,14 +7732,14 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 2609,
+          "rank": 2712,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 5457,
+          "rank": 5511,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
@@ -11062,7 +11077,7 @@
       "rank_medio": 34301,
       "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12734,7 +12749,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19249,
+      "rank_medio": 19250,
       "eventi_pubblicati": 100,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -12743,7 +12758,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 3102,
+          "rank": 3213,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13712,12 +13727,12 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2627,
-      "rank_medio": 48220,
-      "eventi_pubblicati": 145,
+      "miglior_rank": 1960,
+      "rank_medio": 47903,
+      "eventi_pubblicati": 146,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
-      "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
+      "ultima_gara": "Autódromo de Interlagos",
       "eventi": [
         {
           "data": "2026-10-29",
@@ -13725,6 +13740,13 @@
           "rank": 28865,
           "tempo": "1:22.263",
           "evento": "Sportsland SUGO"
+        },
+        {
+          "data": "2026-10-19",
+          "tipo": "gara",
+          "rank": 1960,
+          "tempo": "1:35.271",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2026-10-15",
@@ -16739,7 +16761,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 292
+        "conteggio": 293
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -16750,6 +16772,6 @@
         "conteggio": 1050
       }
     ],
-    "eventi_totali": 2245
+    "eventi_totali": 2246
   }
 }
