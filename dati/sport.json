@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-19T15:42:15+00:00",
+    "updated_at": "2026-10-19T21:29:20+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-29T06:59:59Z",
         "miglior_tempo": "1:16.835",
         "leader": "AT__1826",
-        "partecipanti": 81940,
+        "partecipanti": 85316,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 2735,
+            "pos_assoluta": 2872,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.947
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 3239,
+            "pos_assoluta": 3387,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.174,
             "distacco_assoluto_pct": 3.126
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 4810,
+            "pos_assoluta": 5017,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.724,
             "distacco_assoluto_pct": 3.692
@@ -97,7 +97,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.368",
         "leader": "AMS__Andrew",
-        "partecipanti": 143498,
+        "partecipanti": 145877,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 5538,
+            "pos_assoluta": 5649,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.69
@@ -555,7 +555,7 @@
       "nome": "Race B · Autódromo de Interlagos",
       "pista": "Autódromo de Interlagos",
       "logo": "images/tracks/interlagos.png",
-      "impostazioni": "Gr.3 · Racing H · Carburante x1 · Gomme x1 · auto più usata: Volkswagen Beetle Gr.3",
+      "impostazioni": "Gr.3 · Racing H · Carburante x1 · Gomme x1 · auto più usata: Toyota GR Supra Racing Concept '18",
       "inizio": "19 Ott 2026",
       "fine": "25 Ott 2026",
       "settimana": "19 Ott 2026",
@@ -569,7 +569,7 @@
           "data": "19 Ott 2026",
           "tempo": "1:35.271",
           "tempo_ms": 95271,
-          "pos_assoluta": 2273,
+          "pos_assoluta": 3995,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -584,7 +584,22 @@
       "inizio": "19 Ott 2026",
       "fine": "25 Ott 2026",
       "settimana": "19 Ott 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Carlos_mania",
+          "gt7name": "Sun|)own",
+          "numero": "54",
+          "squadra": "GTV",
+          "auto": "Lexus RC F GT500 '16",
+          "data": "19 Ott 2026",
+          "tempo": "1:48.658",
+          "tempo_ms": 108658,
+          "pos_assoluta": 4245,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     }
   ],
   "gare_precedenti": [
@@ -2760,8 +2775,8 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32656,
-      "eventi_pubblicati": 124,
+      "rank_medio": 32458,
+      "eventi_pubblicati": 125,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
       "ultima_gara": "Red Bull Ring",
@@ -2800,6 +2815,13 @@
           "rank": 21311,
           "tempo": "2:02.078",
           "evento": "Suzuka Circuit"
+        },
+        {
+          "data": "2026-09-14",
+          "tipo": "gara",
+          "rank": 7905,
+          "tempo": "1:51.538",
+          "evento": "Autodromo Nazionale Monza"
         },
         {
           "data": "2026-09-14",
@@ -4981,7 +5003,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19012,
+      "rank_medio": 19014,
       "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -4990,7 +5012,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 4810,
+          "rank": 5017,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -6324,8 +6346,8 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20832,
-      "eventi_pubblicati": 87,
+      "rank_medio": 20677,
+      "eventi_pubblicati": 88,
       "ultimo_evento_data": "2026-10-08",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
       "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
@@ -6354,6 +6376,13 @@
         {
           "data": "2026-09-14",
           "tipo": "gara",
+          "rank": 7126,
+          "tempo": "1:51.454",
+          "evento": "Autodromo Nazionale Monza"
+        },
+        {
+          "data": "2026-09-14",
+          "tipo": "gara",
           "rank": 1324,
           "tempo": "1:38.681",
           "evento": "Deep Forest Raceway"
@@ -6368,16 +6397,16 @@
         {
           "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 816,
-          "tempo": "1:28.246",
-          "evento": "Michelin Raceway Road Atlanta"
+          "rank": 3278,
+          "tempo": "2:15.975",
+          "evento": "Mount Panorama Motor Racing Circuit"
         },
         {
           "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 3278,
-          "tempo": "2:15.975",
-          "evento": "Mount Panorama Motor Racing Circuit"
+          "rank": 816,
+          "tempo": "1:28.246",
+          "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2026-08-31",
@@ -6410,16 +6439,16 @@
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 33968,
-          "tempo": "1:05.124",
-          "evento": "Tsukuba Circuit"
+          "rank": 33249,
+          "tempo": "1:55.395",
+          "evento": "Trial Mountain Circuit"
         },
         {
           "data": "2026-07-27",
           "tipo": "gara",
-          "rank": 33249,
-          "tempo": "1:55.395",
-          "evento": "Trial Mountain Circuit"
+          "rank": 33968,
+          "tempo": "1:05.124",
+          "evento": "Tsukuba Circuit"
         },
         {
           "data": "2026-06-10",
@@ -7723,7 +7752,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19232,
+      "rank_medio": 19234,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -7732,14 +7761,14 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 2735,
+          "rank": 2872,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 5538,
+          "rank": 5649,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
@@ -9318,12 +9347,19 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45535,
-      "eventi_pubblicati": 123,
-      "ultimo_evento_data": "2026-09-10",
+      "rank_medio": 45202,
+      "eventi_pubblicati": 124,
+      "ultimo_evento_data": "2026-10-19",
       "ultimo_evento": "WeatherTech Raceway Laguna Seca",
-      "ultima_gara": "Autodrome Lago Maggiore - Full Course Reverse",
+      "ultima_gara": "Suzuka Circuit",
       "eventi": [
+        {
+          "data": "2026-10-19",
+          "tipo": "gara",
+          "rank": 4245,
+          "tempo": "1:48.658",
+          "evento": "Suzuka Circuit"
+        },
         {
           "data": "2026-09-10",
           "tipo": "time_trial",
@@ -12749,7 +12785,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19251,
+      "rank_medio": 19252,
       "eventi_pubblicati": 100,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -12758,7 +12794,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 3239,
+          "rank": 3387,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13727,9 +13763,9 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2273,
-      "rank_medio": 47905,
-      "eventi_pubblicati": 146,
+      "miglior_rank": 2627,
+      "rank_medio": 47658,
+      "eventi_pubblicati": 147,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
       "ultima_gara": "Autódromo de Interlagos",
@@ -13744,7 +13780,7 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 2273,
+          "rank": 3995,
           "tempo": "1:35.271",
           "evento": "Autódromo de Interlagos"
         },
@@ -13789,6 +13825,13 @@
           "rank": 4986,
           "tempo": "2:01.175",
           "evento": "Suzuka Circuit"
+        },
+        {
+          "data": "2026-09-14",
+          "tipo": "gara",
+          "rank": 9852,
+          "tempo": "1:51.727",
+          "evento": "Autodromo Nazionale Monza"
         },
         {
           "data": "2026-09-10",
@@ -15798,8 +15841,8 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26607,
-      "eventi_pubblicati": 134,
+      "rank_medio": 26480,
+      "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
       "ultima_gara": "Fuji International Speedway",
@@ -15817,6 +15860,13 @@
           "rank": 3868,
           "tempo": "1:48.906",
           "evento": "Fuji International Speedway"
+        },
+        {
+          "data": "2026-09-14",
+          "tipo": "gara",
+          "rank": 9495,
+          "tempo": "1:51.692",
+          "evento": "Autodromo Nazionale Monza"
         },
         {
           "data": "2026-09-07",
@@ -16765,13 +16815,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 707
+        "conteggio": 712
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1050
       }
     ],
-    "eventi_totali": 2246
+    "eventi_totali": 2251
   }
 }
