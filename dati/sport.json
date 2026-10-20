@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-19T21:29:20+00:00",
+    "updated_at": "2026-10-20T12:42:05+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-29T06:59:59Z",
         "miglior_tempo": "1:16.835",
         "leader": "AT__1826",
-        "partecipanti": 85316,
+        "partecipanti": 89114,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 2872,
+            "pos_assoluta": 3038,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.947
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 3387,
+            "pos_assoluta": 3585,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.174,
             "distacco_assoluto_pct": 3.126
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 5017,
+            "pos_assoluta": 5275,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.724,
             "distacco_assoluto_pct": 3.692
@@ -67,7 +67,7 @@
             "squadra": "JGTV",
             "tempo": "1:21.905",
             "tempo_ms": 81905,
-            "pos_assoluta": 24453,
+            "pos_assoluta": 27696,
             "pos_gtv": 4,
             "distacco_gtv_pct": 3.547,
             "distacco_assoluto_pct": 6.599
@@ -79,7 +79,7 @@
             "squadra": "GTV",
             "tempo": "1:22.263",
             "tempo_ms": 82263,
-            "pos_assoluta": 28865,
+            "pos_assoluta": 32701,
             "pos_gtv": 5,
             "distacco_gtv_pct": 4.0,
             "distacco_assoluto_pct": 7.064
@@ -97,7 +97,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.368",
         "leader": "AMS__Andrew",
-        "partecipanti": 145877,
+        "partecipanti": 148707,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 5649,
+            "pos_assoluta": 5781,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.69
@@ -120,7 +120,7 @@
             "squadra": "GTV",
             "tempo": "1:49.460",
             "tempo_ms": 109460,
-            "pos_assoluta": 17594,
+            "pos_assoluta": 18439,
             "pos_gtv": 2,
             "distacco_gtv_pct": 1.163,
             "distacco_assoluto_pct": 3.884
@@ -569,9 +569,23 @@
           "data": "19 Ott 2026",
           "tempo": "1:35.271",
           "tempo_ms": 95271,
-          "pos_assoluta": 3995,
+          "pos_assoluta": 5746,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        },
+        {
+          "psn": "Carlos_mania",
+          "gt7name": "Sun|)own",
+          "numero": "54",
+          "squadra": "GTV",
+          "auto": "Lamborghini Huracán GT3 '15",
+          "data": "19 Ott 2026",
+          "tempo": "1:37.202",
+          "tempo_ms": 97202,
+          "pos_assoluta": 19537,
+          "pos_gtv": 2,
+          "distacco_gtv_pct": 2.027,
           "distacco_assoluto_pct": null
         }
       ]
@@ -594,7 +608,7 @@
           "data": "19 Ott 2026",
           "tempo": "1:48.658",
           "tempo_ms": 108658,
-          "pos_assoluta": 4245,
+          "pos_assoluta": 5766,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -2775,7 +2789,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32458,
+      "rank_medio": 32464,
       "eventi_pubblicati": 125,
       "ultimo_evento_data": "2026-10-22",
       "ultimo_evento": "Dragon Trail - Gardens",
@@ -2784,7 +2798,7 @@
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 17594,
+          "rank": 18439,
           "tempo": "1:49.460",
           "evento": "Dragon Trail - Gardens"
         },
@@ -5003,7 +5017,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19014,
+      "rank_medio": 19016,
       "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -5012,7 +5026,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 5017,
+          "rank": 5275,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -7752,7 +7766,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19234,
+      "rank_medio": 19237,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -7761,14 +7775,14 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 2872,
+          "rank": 3038,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 5649,
+          "rank": 5781,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
@@ -9347,16 +9361,23 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45202,
-      "eventi_pubblicati": 124,
+      "rank_medio": 45009,
+      "eventi_pubblicati": 125,
       "ultimo_evento_data": "2026-10-19",
       "ultimo_evento": "WeatherTech Raceway Laguna Seca",
-      "ultima_gara": "Suzuka Circuit",
+      "ultima_gara": "Autódromo de Interlagos",
       "eventi": [
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 4245,
+          "rank": 19537,
+          "tempo": "1:37.202",
+          "evento": "Autódromo de Interlagos"
+        },
+        {
+          "data": "2026-10-19",
+          "tipo": "gara",
+          "rank": 5766,
           "tempo": "1:48.658",
           "evento": "Suzuka Circuit"
         },
@@ -12785,7 +12806,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19252,
+      "rank_medio": 19254,
       "eventi_pubblicati": 100,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -12794,7 +12815,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 3387,
+          "rank": 3585,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13764,7 +13785,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47658,
+      "rank_medio": 47696,
       "eventi_pubblicati": 147,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -13773,14 +13794,14 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 28865,
+          "rank": 32701,
           "tempo": "1:22.263",
           "evento": "Sportsland SUGO"
         },
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 3995,
+          "rank": 5746,
           "tempo": "1:35.271",
           "evento": "Autódromo de Interlagos"
         },
@@ -15841,7 +15862,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26480,
+      "rank_medio": 26504,
       "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -15850,7 +15871,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 24453,
+          "rank": 27696,
           "tempo": "1:21.905",
           "evento": "Sportsland SUGO"
         },
@@ -16811,17 +16832,17 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 293
+        "conteggio": 291
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 712
+        "conteggio": 715
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1050
       }
     ],
-    "eventi_totali": 2251
+    "eventi_totali": 2252
   }
 }
