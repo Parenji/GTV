@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-21T10:02:29+00:00",
+    "updated_at": "2026-10-21T12:54:17+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-10-29T06:59:59Z",
         "miglior_tempo": "1:16.835",
         "leader": "AT__1826",
-        "partecipanti": 95902,
+        "partecipanti": 96807,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 3344,
+            "pos_assoluta": 3378,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.947
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 3928,
+            "pos_assoluta": 3969,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.174,
             "distacco_assoluto_pct": 3.126
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 5718,
+            "pos_assoluta": 5780,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.724,
             "distacco_assoluto_pct": 3.692
@@ -97,7 +97,7 @@
         "chiusura": "2026-10-22T06:59:59Z",
         "miglior_tempo": "1:45.297",
         "leader": "L-Shooter_RB26",
-        "partecipanti": 154295,
+        "partecipanti": 155021,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:48.202",
             "tempo_ms": 108202,
-            "pos_assoluta": 6136,
+            "pos_assoluta": 6198,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.759
@@ -569,7 +569,7 @@
           "data": "19 Ott 2026",
           "tempo": "1:35.271",
           "tempo_ms": 95271,
-          "pos_assoluta": 7954,
+          "pos_assoluta": 8204,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -583,7 +583,7 @@
           "data": "19 Ott 2026",
           "tempo": "1:37.202",
           "tempo_ms": 97202,
-          "pos_assoluta": 25383,
+          "pos_assoluta": 25549,
           "pos_gtv": 2,
           "distacco_gtv_pct": 2.027,
           "distacco_assoluto_pct": null
@@ -606,9 +606,9 @@
           "squadra": "JGTV",
           "auto": "Lexus RC F GT500 '16",
           "data": "19 Ott 2026",
-          "tempo": "1:48.632",
-          "tempo_ms": 108632,
-          "pos_assoluta": 7642,
+          "tempo": "1:48.467",
+          "tempo_ms": 108467,
+          "pos_assoluta": 7069,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -622,9 +622,9 @@
           "data": "19 Ott 2026",
           "tempo": "1:48.658",
           "tempo_ms": 108658,
-          "pos_assoluta": 7753,
+          "pos_assoluta": 7948,
           "pos_gtv": 2,
-          "distacco_gtv_pct": 0.024,
+          "distacco_gtv_pct": 0.176,
           "distacco_assoluto_pct": null
         }
       ]
@@ -5031,7 +5031,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 19019,
+      "rank_medio": 19020,
       "eventi_pubblicati": 135,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -5040,7 +5040,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 5718,
+          "rank": 5780,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -7780,7 +7780,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 19244,
+      "rank_medio": 19245,
       "eventi_pubblicati": 95,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -7789,14 +7789,14 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 3344,
+          "rank": 3378,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
         {
           "data": "2026-10-22",
           "tipo": "time_trial",
-          "rank": 6136,
+          "rank": 6198,
           "tempo": "1:48.202",
           "evento": "Dragon Trail - Gardens"
         },
@@ -9375,7 +9375,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45071,
+      "rank_medio": 45074,
       "eventi_pubblicati": 125,
       "ultimo_evento_data": "2026-10-19",
       "ultimo_evento": "WeatherTech Raceway Laguna Seca",
@@ -9384,14 +9384,14 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 25383,
+          "rank": 25549,
           "tempo": "1:37.202",
           "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 7753,
+          "rank": 7948,
           "tempo": "1:48.658",
           "evento": "Suzuka Circuit"
         },
@@ -11148,7 +11148,7 @@
       "rank_medio": 34301,
       "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -12820,7 +12820,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19257,
+      "rank_medio": 19258,
       "eventi_pubblicati": 100,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -12829,7 +12829,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 3928,
+          "rank": 3969,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13799,7 +13799,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47732,
+      "rank_medio": 47734,
       "eventi_pubblicati": 147,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -13815,7 +13815,7 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 7954,
+          "rank": 8204,
           "tempo": "1:35.271",
           "evento": "Autódromo de Interlagos"
         },
@@ -15484,8 +15484,8 @@
       "categoria": "AMA",
       "dr": "?",
       "sr": "N/A",
-      "miglior_rank": 7642,
-      "rank_medio": 31152,
+      "miglior_rank": 7069,
+      "rank_medio": 31118,
       "eventi_pubblicati": 17,
       "ultimo_evento_data": "2026-10-19",
       "ultimo_evento": null,
@@ -15494,8 +15494,8 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 7642,
-          "tempo": "1:48.632",
+          "rank": 7069,
+          "tempo": "1:48.467",
           "evento": "Suzuka Circuit"
         },
         {
