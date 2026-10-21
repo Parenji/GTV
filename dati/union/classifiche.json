@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-10-20T12:07:46+00:00",
+  "generated_at": "2026-10-21T12:22:35+00:00",
   "source": "https://albixximo-union2026-r2.vercel.app/Classifiche/portal.html",
   "gare_pubblicate": [
    1,
@@ -325,7 +325,7 @@
       null
      ],
      "storico_pos": [
-      37,
+      36,
       11
      ]
     },
@@ -354,7 +354,7 @@
       null
      ],
      "storico_pos": [
-      31,
+      30,
       12
      ]
     },
@@ -416,7 +416,7 @@
      ],
      "pari": true,
      "storico_pos": [
-      31,
+      30,
       12
      ]
     },
@@ -559,7 +559,7 @@
       null
      ],
      "storico_pos": [
-      31,
+      30,
       19
      ]
     },
@@ -617,7 +617,7 @@
       null
      ],
      "storico_pos": [
-      60,
+      59,
       21
      ]
     },
@@ -645,36 +645,7 @@
       null
      ],
      "storico_pos": [
-      26,
-      22
-     ]
-    },
-    {
-     "pos": 22,
-     "team": "ARC",
-     "nome": "G. Belletti",
-     "punti": 34,
-     "gare": [
-      18,
-      16,
-      null,
-      null,
-      null
-     ],
-     "esiti": [
-      {
-       "pos": 4
-      },
-      {
-       "pos": 5
-      },
-      null,
-      null,
-      null
-     ],
-     "pari": true,
-     "storico_pos": [
-      19,
+      25,
       22
      ]
     },
@@ -703,7 +674,7 @@
      ],
      "pari": true,
      "storico_pos": [
-      37,
+      36,
       22
      ]
     },
@@ -737,7 +708,7 @@
      ]
     },
     {
-     "pos": 26,
+     "pos": 25,
      "team": "RSR",
      "nome": "SeaWolf",
      "punti": 33,
@@ -762,11 +733,11 @@
      ],
      "storico_pos": [
       7,
-      26
+      25
      ]
     },
     {
-     "pos": 27,
+     "pos": 26,
      "team": "PBC",
      "nome": "G.Fanara",
      "punti": 32,
@@ -789,12 +760,12 @@
       null
      ],
      "storico_pos": [
-      26,
-      27
+      25,
+      26
      ]
     },
     {
-     "pos": 27,
+     "pos": 26,
      "team": "RMT",
      "nome": "L. Silvestri",
      "punti": 32,
@@ -818,12 +789,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      31,
-      27
+      30,
+      26
      ]
     },
     {
-     "pos": 27,
+     "pos": 26,
      "team": "GTV",
      "nome": "Nicco.rs",
      "punti": 32,
@@ -847,12 +818,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      26,
-      27
+      25,
+      26
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "CBR",
      "nome": "CBR_Ircaliffo91",
      "punti": 30,
@@ -875,12 +846,12 @@
       null
      ],
      "storico_pos": [
-      26,
-      30
+      25,
+      29
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "DCT",
      "nome": "DCT-Ziototoooo",
      "punti": 30,
@@ -905,11 +876,11 @@
      "pari": true,
      "storico_pos": [
       19,
-      30
+      29
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "MMS",
      "nome": "mms_babide46",
      "punti": 30,
@@ -933,12 +904,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      37,
-      30
+      36,
+      29
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "FFM",
      "nome": "nic_cannone",
      "punti": 30,
@@ -963,11 +934,11 @@
      "pari": true,
      "storico_pos": [
       7,
-      30
+      29
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "SMI",
      "nome": "SMI_Mustangbleck",
      "punti": 30,
@@ -992,11 +963,11 @@
      "pari": true,
      "storico_pos": [
       14,
-      30
+      29
      ]
     },
     {
-     "pos": 30,
+     "pos": 29,
      "team": "EVO",
      "nome": "TER_Antonio78x",
      "punti": 30,
@@ -1020,12 +991,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      37,
-      30
+      36,
+      29
      ]
     },
     {
-     "pos": 36,
+     "pos": 35,
      "team": "PRT",
      "nome": "PRT_Leox86",
      "punti": 28,
@@ -1048,12 +1019,12 @@
       null
      ],
      "storico_pos": [
-      54,
-      36
+      53,
+      35
      ]
     },
     {
-     "pos": 36,
+     "pos": 35,
      "team": "MFC",
      "nome": "VRT Flexciccio",
      "punti": 28,
@@ -1077,12 +1048,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      31,
-      36
+      30,
+      35
      ]
     },
     {
-     "pos": 38,
+     "pos": 37,
      "team": "DCT",
      "nome": "DRT-Nanix84",
      "punti": 26,
@@ -1105,12 +1076,12 @@
       null
      ],
      "storico_pos": [
-      61,
-      38
+      60,
+      37
      ]
     },
     {
-     "pos": 38,
+     "pos": 37,
      "team": "SMI",
      "nome": "SMI_Massi_TopGun",
      "punti": 26,
@@ -1134,12 +1105,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      37,
-      38
+      36,
+      37
      ]
     },
     {
-     "pos": 40,
+     "pos": 39,
      "team": "EVO",
      "nome": "EVO_il_Cuuc",
      "punti": 25,
@@ -1163,12 +1134,12 @@
       null
      ],
      "storico_pos": [
-      64,
-      40
+      63,
+      39
      ]
     },
     {
-     "pos": 41,
+     "pos": 40,
      "team": "PRT",
      "nome": "Phin",
      "punti": 24,
@@ -1191,12 +1162,12 @@
       null
      ],
      "storico_pos": [
-      51,
-      41
+      50,
+      40
      ]
     },
     {
-     "pos": 41,
+     "pos": 40,
      "team": "PBC",
      "nome": "Richie",
      "punti": 24,
@@ -1220,12 +1191,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      31,
-      41
+      30,
+      40
      ]
     },
     {
-     "pos": 41,
+     "pos": 40,
      "team": "RRT",
      "nome": "TER_Barba",
      "punti": 24,
@@ -1249,12 +1220,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      43,
-      41
+      42,
+      40
      ]
     },
     {
-     "pos": 44,
+     "pos": 43,
      "team": "GTV",
      "nome": "Bowie knife99",
      "punti": 23,
@@ -1278,12 +1249,12 @@
       null
      ],
      "storico_pos": [
-      43,
-      44
+      42,
+      43
      ]
     },
     {
-     "pos": 44,
+     "pos": 43,
      "team": "RCE",
      "nome": "RCE_Pinkuino97",
      "punti": 23,
@@ -1308,12 +1279,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      43,
-      44
+      42,
+      43
      ]
     },
     {
-     "pos": 46,
+     "pos": 45,
      "team": "SMI",
      "nome": "SMI_V3sP4",
      "punti": 22,
@@ -1337,11 +1308,11 @@
      ],
      "storico_pos": [
       14,
-      46
+      45
      ]
     },
     {
-     "pos": 47,
+     "pos": 46,
      "team": "PBC",
      "nome": "manu08FL",
      "punti": 21,
@@ -1365,12 +1336,12 @@
       null
      ],
      "storico_pos": [
-      48,
-      47
+      47,
+      46
      ]
     },
     {
-     "pos": 48,
+     "pos": 47,
      "team": "GTRC",
      "nome": "GTRC- TROTOTEK",
      "punti": 20,
@@ -1393,12 +1364,12 @@
       null
      ],
      "storico_pos": [
-      65,
-      48
+      64,
+      47
      ]
     },
     {
-     "pos": 48,
+     "pos": 47,
      "team": "RMT",
      "nome": "RMT-Paperoski_#4",
      "punti": 20,
@@ -1422,12 +1393,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      43,
-      48
+      42,
+      47
      ]
     },
     {
-     "pos": 48,
+     "pos": 47,
      "team": "RSR",
      "nome": "RsR_Shura",
      "punti": 20,
@@ -1451,12 +1422,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      37,
-      48
+      36,
+      47
      ]
     },
     {
-     "pos": 51,
+     "pos": 50,
      "team": "RMT",
      "nome": "#GO1FREE!!!!",
      "punti": 19,
@@ -1480,12 +1451,12 @@
       null
      ],
      "storico_pos": [
-      48,
-      51
+      47,
+      50
      ]
     },
     {
-     "pos": 52,
+     "pos": 51,
      "team": "PBC",
      "nome": "G. Scardin",
      "punti": 18,
@@ -1511,11 +1482,11 @@
      ],
      "storico_pos": [
       19,
-      52
+      51
      ]
     },
     {
-     "pos": 52,
+     "pos": 51,
      "team": "SMI",
      "nome": "SMI_vicktor21",
      "punti": 18,
@@ -1540,11 +1511,11 @@
      "pari": true,
      "storico_pos": [
       19,
-      52
+      51
      ]
     },
     {
-     "pos": 54,
+     "pos": 53,
      "team": "SMI",
      "nome": "FFM_Prinz17",
      "punti": 16,
@@ -1567,12 +1538,12 @@
       null
      ],
      "storico_pos": [
-      61,
-      54
+      60,
+      53
      ]
     },
     {
-     "pos": 54,
+     "pos": 53,
      "team": "RMT",
      "nome": "Tlm_Sile",
      "punti": 16,
@@ -1596,12 +1567,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      26,
-      54
+      25,
+      53
      ]
     },
     {
-     "pos": 54,
+     "pos": 53,
      "team": "TML",
      "nome": "TLM_Tonyroto",
      "punti": 16,
@@ -1625,12 +1596,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      54,
-      54
+      53,
+      53
      ]
     },
     {
-     "pos": 57,
+     "pos": 56,
      "team": "DCT",
      "nome": "F.Narga",
      "punti": 14,
@@ -1653,12 +1624,12 @@
       null
      ],
      "storico_pos": [
-      61,
-      57
+      60,
+      56
      ]
     },
     {
-     "pos": 57,
+     "pos": 56,
      "team": "CBR",
      "nome": "I.Ventura",
      "punti": 14,
@@ -1682,12 +1653,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      51,
-      57
+      50,
+      56
      ]
     },
     {
-     "pos": 57,
+     "pos": 56,
      "team": "RMT",
      "nome": "RMT FIERA 69",
      "punti": 14,
@@ -1711,12 +1682,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      68,
-      57
+      67,
+      56
      ]
     },
     {
-     "pos": 60,
+     "pos": 59,
      "team": "TML",
      "nome": "TLM_Proietti",
      "punti": 13,
@@ -1740,12 +1711,12 @@
       null
      ],
      "storico_pos": [
-      54,
-      60
+      53,
+      59
      ]
     },
     {
-     "pos": 61,
+     "pos": 60,
      "team": "RCE",
      "nome": "The iceman00",
      "punti": 12,
@@ -1768,12 +1739,12 @@
       null
      ],
      "storico_pos": [
-      51,
-      61
+      50,
+      60
      ]
     },
     {
-     "pos": 62,
+     "pos": 61,
      "team": "ARC",
      "nome": "ARC-JonMazzo",
      "punti": 10,
@@ -1796,12 +1767,12 @@
       null
      ],
      "storico_pos": [
-      65,
-      62
+      64,
+      61
      ]
     },
     {
-     "pos": 62,
+     "pos": 61,
      "team": "CBR",
      "nome": "CBR_GABRIEL",
      "punti": 10,
@@ -1825,12 +1796,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      43,
-      62
+      42,
+      61
      ]
     },
     {
-     "pos": 64,
+     "pos": 63,
      "team": "RSR",
      "nome": "M.Caruso",
      "punti": 9,
@@ -1854,12 +1825,12 @@
       null
      ],
      "storico_pos": [
-      48,
-      64
+      47,
+      63
      ]
     },
     {
-     "pos": 65,
+     "pos": 64,
      "team": "BCSC",
      "nome": "BAD_brucem84",
      "punti": 8,
@@ -1882,12 +1853,12 @@
       null
      ],
      "storico_pos": [
-      68,
-      65
+      67,
+      64
      ]
     },
     {
-     "pos": 66,
+     "pos": 65,
      "team": "BCSC",
      "nome": "BCSC_IL MALEDETTO",
      "punti": 6,
@@ -1910,12 +1881,12 @@
       null
      ],
      "storico_pos": [
-      54,
-      66
+      53,
+      65
      ]
     },
     {
-     "pos": 66,
+     "pos": 65,
      "team": "GTRC",
      "nome": "GTRC_F._Ciuffo",
      "punti": 6,
@@ -1939,12 +1910,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      54,
-      66
+      53,
+      65
      ]
     },
     {
-     "pos": 66,
+     "pos": 65,
      "team": "PRT",
      "nome": "PRT_MaxLukex",
      "punti": 6,
@@ -1968,12 +1939,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      54,
-      66
+      53,
+      65
      ]
     },
     {
-     "pos": 69,
+     "pos": 68,
      "team": "PBC",
      "nome": "PBC_Giulio",
      "punti": 1,
@@ -1996,12 +1967,12 @@
       null
      ],
      "storico_pos": [
-      67,
-      69
+      66,
+      68
      ]
     },
     {
-     "pos": 70,
+     "pos": 69,
      "team": "PBC",
      "nome": "SimoT_18",
      "punti": 0,
@@ -2024,12 +1995,12 @@
       null
      ],
      "storico_pos": [
-      68,
-      70
+      67,
+      69
      ]
     },
     {
-     "pos": 70,
+     "pos": 69,
      "team": "GTID",
      "nome": "GTID_Mr PoP_Jr",
      "punti": 0,
@@ -2053,12 +2024,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      68,
-      70
+      67,
+      69
      ]
     },
     {
-     "pos": 70,
+     "pos": 69,
      "team": "BCSC",
      "nome": "Pardus",
      "punti": 0,
@@ -2082,12 +2053,12 @@
      ],
      "pari": true,
      "storico_pos": [
-      68,
-      70
+      67,
+      69
      ]
     },
     {
-     "pos": 70,
+     "pos": 69,
      "team": "RCE",
      "nome": "RCE_DarkneSS",
      "punti": 0,
@@ -2111,8 +2082,8 @@
      ],
      "pari": true,
      "storico_pos": [
-      68,
-      70
+      67,
+      69
      ]
     }
    ]
