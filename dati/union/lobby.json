@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-21T17:18:31+00:00"
+    "generated_at": "2026-10-22T04:57:58+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -2750,9 +2750,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "66",
-          "team": "RSR",
-          "nome": "SeaWolf",
+          "matricola": "31",
+          "team": "MFC",
+          "nome": "VRT Flexciccio",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2823,6 +2823,13 @@
           "matricola": "75",
           "team": "SMI",
           "nome": "SMI-Marcus_Pilot",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "66",
+          "team": "RSR",
+          "nome": "SeaWolf",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
