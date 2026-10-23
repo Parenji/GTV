@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-22T04:57:58+00:00"
+    "generated_at": "2026-10-23T04:59:23+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -429,9 +429,9 @@
         },
         {
           "pos": 2,
-          "matricola": "31",
-          "team": "MFC",
-          "nome": "VRT Flexciccio",
+          "matricola": "1",
+          "team": "ARC",
+          "nome": "G. Belletti ( Ritirato )",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -496,13 +496,6 @@
           "team": "GTRC",
           "nome": "GTRC- TROTOTEK",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 12,
-          "matricola": "1",
-          "team": "ARC",
-          "nome": "G. Belletti ( Ritirato )",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -2594,6 +2587,13 @@
           "auto": "RS 5 Turbo DTM '19"
         },
         {
+          "pos": 9,
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_muso_2692_gt",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
           "pos": 10,
           "matricola": "515",
           "team": "SMI",
@@ -2619,13 +2619,6 @@
           "matricola": "464",
           "team": "FFM",
           "nome": "FFM_FilippoFm89",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 14,
-          "matricola": "500",
-          "team": "RRT",
-          "nome": "RRT_muso_2692_gt",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
