@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-24T04:44:36+00:00"
+    "generated_at": "2026-10-24T16:02:05+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -729,9 +729,9 @@
       "time": "Ore 21:00",
       "name": "A10",
       "category": "STAR",
-      "host": "thelostgamer3000",
-      "live": "EVO- A_Cardinale",
-      "url": "https://www.youtube.com/@team-evolution-racing",
+      "host": "VintageAR",
+      "live": "ARC- VintageAR",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -838,9 +838,9 @@
       "time": "Ore 21:00",
       "name": "A11",
       "category": "AMA",
-      "host": "BAD_brucem84",
-      "live": "BCSC- Pardus—89",
-      "url": "https://youtube.com/@badcerbero23",
+      "host": "thelostgamer3000",
+      "live": "EVO- A_Cardinale",
+      "url": "https://www.youtube.com/@team-evolution-racing",
       "pilots": [
         {
           "pos": 1,
@@ -940,9 +940,9 @@
       "time": "Ore 22:20",
       "name": "A12",
       "category": "ELITE",
-      "host": "VintageAR",
-      "live": "ARC- VintageAR",
-      "url": "https://youtube.com/@atlantisrepartocorse",
+      "host": "bmario1962",
+      "live": "RMT- bmario1962",
+      "url": "https://www.twitch.tv/racing_monster_team_",
       "pilots": [
         {
           "pos": 1,
@@ -1035,9 +1035,9 @@
       "time": "Ore 22:20",
       "name": "A13",
       "category": "PRO SILVER",
-      "host": "GTV_legendafluo",
-      "live": "GTV- GTV_legendafluo",
-      "url": "https://www.twitch.tv/legendafluo6/",
+      "host": "VintageAR",
+      "live": "ARC- VintageAR",
+      "url": "https://youtube.com/@atlantisrepartocorse",
       "pilots": [
         {
           "pos": 1,
@@ -1144,9 +1144,9 @@
       "time": "Ore 22:20",
       "name": "A14",
       "category": "PRO GOLD",
-      "host": "BAD_brucem84",
-      "live": "BCSC- Pardus—89",
-      "url": "https://youtube.com/@badcerbero23",
+      "host": "GTV_legendafluo",
+      "live": "GTV- GTV_legendafluo",
+      "url": "https://www.twitch.tv/legendafluo6/",
       "pilots": [
         {
           "pos": 1,
@@ -1253,9 +1253,9 @@
       "time": "Ore 22:20",
       "name": "A15",
       "category": "PRO AMA",
-      "host": "bmario1962",
-      "live": "RMT- bmario1962",
-      "url": "https://www.twitch.tv/racing_monster_team_",
+      "host": "BAD_brucem84",
+      "live": "BCSC- Pardus—89",
+      "url": "https://youtube.com/@badcerbero23",
       "pilots": [
         {
           "pos": 1,
@@ -1341,9 +1341,9 @@
       "time": "Ore 21:00",
       "name": "A8",
       "category": "ELITE",
-      "host": "VintageAR",
-      "live": "ARC- TRT-Tommizio",
-      "url": "https://youtube.com/@atlantisrepartocorse",
+      "host": "BAD_brucem84",
+      "live": "BCSC- Pardus—89",
+      "url": "https://youtube.com/@badcerbero23",
       "pilots": [
         {
           "pos": 1,
