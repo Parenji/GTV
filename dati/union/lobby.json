@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-24T16:02:05+00:00"
+    "generated_at": "2026-10-25T16:30:07+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -56,9 +56,9 @@
         },
         {
           "pos": 5,
-          "matricola": "64",
+          "matricola": "65",
           "team": "RSR",
-          "nome": "M.Caruso",
+          "nome": "RsR_Shura",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -172,9 +172,9 @@
         },
         {
           "pos": 9,
-          "matricola": "99",
+          "matricola": "93",
           "team": "CBR",
-          "nome": "CBR_Giuliano.Vi",
+          "nome": "CBR_Baffokiller_",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1446,9 +1446,9 @@
       "time": "Ore 21:00",
       "name": "A16",
       "category": "PRO AMA",
-      "host": "Spake_Mosconi",
-      "live": "TLM- Spake_Mosconi",
-      "url": "https://youtube.com/@BoxGTV",
+      "host": "RsR_Seawolf",
+      "live": "RSR- RsR_Seawolf",
+      "url": "https://twitch.tv/rushsimracers",
       "pilots": [
         {
           "pos": 1,
@@ -1548,9 +1548,9 @@
       "time": "Ore 21:00",
       "name": "A17",
       "category": "STAR",
-      "host": "Albixximo",
-      "live": "PRT- Albixximo",
-      "url": "http://www.youtube.com/@AlbixximoLive",
+      "host": "Spake_Mosconi",
+      "live": "TLM- Spake_Mosconi",
+      "url": "https://youtube.com/@BoxGTV",
       "pilots": [
         {
           "pos": 1,
@@ -1657,9 +1657,9 @@
       "time": "Ore 21:00",
       "name": "A18",
       "category": "ELITE",
-      "host": "Goivas80",
-      "live": "PBC- Goivas80",
-      "url": "https://youtube.com/@performancebearcrew4660",
+      "host": "Albixximo",
+      "live": "PRT- xSamueLx",
+      "url": "https://www.twitch.tv/xsamuelx_channel",
       "pilots": [
         {
           "pos": 1,
@@ -1698,9 +1698,9 @@
         },
         {
           "pos": 6,
-          "matricola": "93",
+          "matricola": "99",
           "team": "CBR",
-          "nome": "CBR_Baffokiller_",
+          "nome": "CBR_Giuliano.Vi",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1752,9 +1752,9 @@
       "time": "Ore 21:00",
       "name": "A19",
       "category": "AMA",
-      "host": "RsR_Seawolf",
-      "live": "RSR- RsR_Seawolf",
-      "url": "https://twitch.tv/rushsimracers",
+      "host": "Goivas80",
+      "live": "PBC- Goivas80",
+      "url": "https://youtube.com/@performancebearcrew4660",
       "pilots": [
         {
           "pos": 1,
@@ -1854,9 +1854,9 @@
       "time": "Ore 22:20",
       "name": "A20",
       "category": "PRO AMA",
-      "host": "xSamueLx",
-      "live": "PRT- xSamueLx",
-      "url": "https://www.twitch.tv/xsamuelx_channel",
+      "host": "FFM_HOST",
+      "live": "FFM- FFM_HOST",
+      "url": "https://m.twitch.tv/ffmvirtualmotorsport",
       "pilots": [
         {
           "pos": 1,
@@ -1949,9 +1949,9 @@
       "time": "Ore 22:20",
       "name": "A21",
       "category": "PRO GOLD",
-      "host": "Babide46",
-      "live": "MMS- babide46",
-      "url": "https://www.twitch.tv/mms_channel",
+      "host": "xSamueLx",
+      "live": "PRT- xSamueLx",
+      "url": "https://www.twitch.tv/xsamuelx_channel",
       "pilots": [
         {
           "pos": 1,
@@ -2058,9 +2058,9 @@
       "time": "Ore 22:20",
       "name": "A22",
       "category": "PRO SILVER",
-      "host": "FFM_HOST",
-      "live": "FFM- FFM_HOST",
-      "url": "https://m.twitch.tv/ffmvirtualmotorsport",
+      "host": "Babide46",
+      "live": "MMS- babide46",
+      "url": "https://www.twitch.tv/mms_channel",
       "pilots": [
         {
           "pos": 1,
@@ -2177,9 +2177,9 @@
       "time": "Ore 21:00",
       "name": "A24",
       "category": "PRO GOLD",
-      "host": "Samu4sevenGT",
-      "live": "FMC- Samu4sevenGT",
-      "url": "https://youtube.com/@samu4seven",
+      "host": "GTIDsacco72",
+      "live": "GTID- Cornazzai73",
+      "url": "https://www.twitch.tv/gtid_team",
       "pilots": [
         {
           "pos": 1,
@@ -2286,9 +2286,9 @@
       "time": "Ore 21:00",
       "name": "A25",
       "category": "PRO SILVER",
-      "host": "Lok-1973",
-      "live": "SRT- Lok-1973",
-      "url": "https://www.twitch.tv/lok1973",
+      "host": "Samu4sevenGT",
+      "live": "FMC- Samu4sevenGT",
+      "url": "https://youtube.com/@samu4seven",
       "pilots": [
         {
           "pos": 1,
@@ -2395,9 +2395,9 @@
       "time": "Ore 21:00",
       "name": "A26",
       "category": "PRO AMA",
-      "host": "GTIDsacco72",
-      "live": "GTID- Cornazzai73",
-      "url": "https://www.twitch.tv/gtid_team",
+      "host": "Lok-1973",
+      "live": "SRT- Lok-1973",
+      "url": "https://www.twitch.tv/lok1973",
       "pilots": [
         {
           "pos": 1,
@@ -2877,9 +2877,9 @@
       "time": "Ore 21:00",
       "name": "A31",
       "category": "PRO GOLD",
-      "host": "Tiskitoski",
-      "live": "SMI- lupo_verde_3",
-      "url": "https://twitch.tv/shoganai_motorsportitalia",
+      "host": "MF_GioBar73",
+      "live": "MFC- MFCorse-46",
+      "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
           "pos": 1,
@@ -2890,10 +2890,10 @@
         },
         {
           "pos": 2,
-          "matricola": "237",
-          "team": "RMT",
-          "nome": "RMT ste",
-          "auto": "ASSENTE"
+          "matricola": "203",
+          "team": "FFM",
+          "nome": "S3mb4",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 3,
@@ -2964,13 +2964,6 @@
           "team": "GTID",
           "nome": "GTID _pienobonus",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 13,
-          "matricola": "203",
-          "team": "FFM",
-          "nome": "S3mb4",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -2979,9 +2972,9 @@
       "time": "Ore 21:00",
       "name": "A32",
       "category": "PRO AMA",
-      "host": "AndreaJonniFly",
-      "live": "RRT- AndreaJonniFly",
-      "url": "https://www.twitch.tv/gamesmotortv",
+      "host": "Tiskitoski",
+      "live": "SMI- lupo_verde_3",
+      "url": "https://twitch.tv/shoganai_motorsportitalia",
       "pilots": [
         {
           "pos": 1,
@@ -3081,9 +3074,9 @@
       "time": "Ore 21:00",
       "name": "A33",
       "category": "AMA",
-      "host": "MF_maxlaqualunqe",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "AndreaJonniFly",
+      "live": "RRT- AndreaJonniFly",
+      "url": "https://www.twitch.tv/gamesmotortv",
       "pilots": [
         {
           "pos": 1,
@@ -3190,9 +3183,9 @@
       "time": "Ore 22:20",
       "name": "A34",
       "category": "STAR",
-      "host": "RsR_Seawolf",
-      "live": "RSR- RsR_Seawolf",
-      "url": "https://twitch.tv/rushsimracers",
+      "host": "MF_GioBar73",
+      "live": "MFC- MFCorse-46",
+      "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
           "pos": 1,
@@ -3231,9 +3224,9 @@
         },
         {
           "pos": 6,
-          "matricola": "65",
+          "matricola": "64",
           "team": "RSR",
-          "nome": "RsR_Shura",
+          "nome": "M.Caruso",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3271,9 +3264,9 @@
       "time": "Ore 22:20",
       "name": "A35",
       "category": "ELITE",
-      "host": "Muso_2692_gt",
-      "live": "RRT- AndreaJonniFly",
-      "url": "https://www.twitch.tv/gamesmotortv",
+      "host": "RsR_Seawolf",
+      "live": "RSR- RsR_Seawolf",
+      "url": "https://twitch.tv/rushsimracers",
       "pilots": [
         {
           "pos": 1,
@@ -3373,9 +3366,9 @@
       "time": "Ore 22:20",
       "name": "A36",
       "category": "PRO SILVER",
-      "host": "MF_maxlaqualunqe",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
+      "host": "Muso_2692_gt",
+      "live": "RRT- AndreaJonniFly",
+      "url": "https://www.twitch.tv/gamesmotortv",
       "pilots": [
         {
           "pos": 1,
