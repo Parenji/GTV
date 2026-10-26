@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-26T15:16:04+00:00",
+    "updated_at": "2026-10-26T21:38:10+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "05 Nov 2026",
         "scadenza": "05 Nov 2026",
         "chiusura": "2026-11-05T06:59:59Z",
-        "miglior_tempo": "1:50.117",
+        "miglior_tempo": "1:50.099",
         "leader": "ran251087",
-        "partecipanti": 102627,
+        "partecipanti": 106763,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,10 @@
             "squadra": "GTV",
             "tempo": "1:51.439",
             "tempo_ms": 111439,
-            "pos_assoluta": 1454,
+            "pos_assoluta": 1502,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.201
+            "distacco_assoluto_pct": 1.217
           },
           {
             "psn": "Yukimura9221",
@@ -43,10 +43,10 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 4025,
+            "pos_assoluta": 4158,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.445,
-            "distacco_assoluto_pct": 1.651
+            "distacco_assoluto_pct": 1.668
           },
           {
             "psn": "Abramo1991",
@@ -58,7 +58,7 @@
             "pos_assoluta": 33901,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.222,
-            "distacco_assoluto_pct": 3.449
+            "distacco_assoluto_pct": 3.466
           },
           {
             "psn": "Carlos_mania",
@@ -70,7 +70,7 @@
             "pos_assoluta": 38542,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.495,
-            "distacco_assoluto_pct": 3.725
+            "distacco_assoluto_pct": 3.742
           }
         ]
       },
@@ -85,7 +85,7 @@
         "chiusura": "2026-10-29T06:59:59Z",
         "miglior_tempo": "1:16.684",
         "leader": "AMS__Andrew",
-        "partecipanti": 137839,
+        "partecipanti": 140241,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:18.760",
             "tempo_ms": 78760,
-            "pos_assoluta": 1818,
+            "pos_assoluta": 1880,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.707
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 4954,
+            "pos_assoluta": 5051,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.43,
             "distacco_assoluto_pct": 3.149
@@ -120,7 +120,7 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 5644,
+            "pos_assoluta": 5744,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.606,
             "distacco_assoluto_pct": 3.329
@@ -132,7 +132,7 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 8052,
+            "pos_assoluta": 8186,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.158,
             "distacco_assoluto_pct": 3.897
@@ -2261,21 +2261,21 @@
         {
           "data": "2026-08-17",
           "tipo": "gara",
-          "rank": 27687,
+          "rank": 27689,
           "tempo": "1:58.932",
           "evento": "Yas Marina Circuit"
         },
         {
           "data": "2026-08-17",
           "tipo": "gara",
-          "rank": 23090,
+          "rank": 23091,
           "tempo": "2:16.790",
           "evento": "Autodrome Lago Maggiore - Full Course Reverse"
         },
         {
           "data": "2026-08-10",
           "tipo": "gara",
-          "rank": 22107,
+          "rank": 22108,
           "tempo": "1:40.794",
           "evento": "Fuji International Speedway"
         },
@@ -3812,7 +3812,7 @@
       "dr": "A+",
       "sr": "S",
       "miglior_rank": 37,
-      "rank_medio": 7399,
+      "rank_medio": 7400,
       "eventi_pubblicati": 124,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -3821,7 +3821,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 1818,
+          "rank": 1880,
           "tempo": "1:18.760",
           "evento": "Sportsland SUGO"
         },
@@ -5164,7 +5164,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 8052,
+          "rank": 8186,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -6535,7 +6535,7 @@
         {
           "data": "2026-09-14",
           "tipo": "gara",
-          "rank": 1324,
+          "rank": 1342,
           "tempo": "1:38.681",
           "evento": "Deep Forest Raceway"
         },
@@ -7904,7 +7904,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18928,
+      "rank_medio": 18929,
       "eventi_pubblicati": 97,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -7913,14 +7913,14 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1454,
+          "rank": 1502,
           "tempo": "1:51.439",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 4954,
+          "rank": 5051,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
@@ -10470,7 +10470,7 @@
         {
           "data": "2026-08-17",
           "tipo": "gara",
-          "rank": 22091,
+          "rank": 22092,
           "tempo": "1:57.286",
           "evento": "Yas Marina Circuit"
         },
@@ -12972,7 +12972,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 19107,
+      "rank_medio": 19108,
       "eventi_pubblicati": 101,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -12981,7 +12981,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 5644,
+          "rank": 5744,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13030,7 +13030,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 22567,
+          "rank": 22568,
           "tempo": "1:43.461",
           "evento": "Sardegna - Road Track - A"
         },
@@ -13958,7 +13958,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47359,
+      "rank_medio": 47360,
       "eventi_pubblicati": 149,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -13967,7 +13967,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 4025,
+          "rank": 4158,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -14086,7 +14086,7 @@
         {
           "data": "2026-08-10",
           "tipo": "gara",
-          "rank": 3771,
+          "rank": 3772,
           "tempo": "1:39.445",
           "evento": "Fuji International Speedway"
         },
@@ -15658,7 +15658,7 @@
       "dr": "?",
       "sr": "N/A",
       "miglior_rank": 8554,
-      "rank_medio": 31205,
+      "rank_medio": 31405,
       "eventi_pubblicati": 17,
       "ultimo_evento_data": "2026-10-19",
       "ultimo_evento": null,
@@ -15681,7 +15681,7 @@
         {
           "data": "2026-09-21",
           "tipo": "gara",
-          "rank": 40531,
+          "rank": 43918,
           "tempo": "1:45.247",
           "evento": "Sardegna - Road Track - A"
         },
@@ -16128,7 +16128,7 @@
         {
           "data": "2026-08-10",
           "tipo": "gara",
-          "rank": 26409,
+          "rank": 26412,
           "tempo": "1:41.024",
           "evento": "Fuji International Speedway"
         },
@@ -17047,11 +17047,11 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 297
+        "conteggio": 296
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 717
+        "conteggio": 718
       },
       {
         "etichetta": "oltre 20.000",
