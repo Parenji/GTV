@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-25T16:30:07+00:00"
+    "generated_at": "2026-10-26T04:55:38+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -22,88 +22,10 @@
       "time": "Ore 21:00",
       "name": "A1",
       "category": "STAR",
-      "host": "MF_GioBar73",
-      "live": "MFC- MFCorse-46",
-      "url": "https://youtube.com/@mfcorse-46",
-      "pilots": [
-        {
-          "pos": 1,
-          "matricola": "23",
-          "team": "GTRC",
-          "nome": "GTRC_Emilios98",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 2,
-          "matricola": "59",
-          "team": "RMT",
-          "nome": "RMT_87_TOMMY",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 3,
-          "matricola": "41",
-          "team": "PRT",
-          "nome": "FrRoGaMeR",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "50",
-          "team": "PRT",
-          "nome": "S.Mancabelli",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "65",
-          "team": "RSR",
-          "nome": "RsR_Shura",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 6,
-          "matricola": "5",
-          "team": "BCSC",
-          "nome": "BCSC_IL MALEDETTO",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 7,
-          "matricola": "46",
-          "team": "PRT",
-          "nome": "Danielex_Otto4",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 8,
-          "matricola": "74",
-          "team": "SMI",
-          "nome": "SMI-Lellobello",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 9,
-          "matricola": "14",
-          "team": "DCT",
-          "nome": "F.Narga",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 10,
-          "matricola": "54",
-          "team": "RCE",
-          "nome": "RCE_Pinkuino97",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 11,
-          "matricola": "58",
-          "team": "RMT",
-          "nome": "RMT FIERA 69",
-          "auto": "RS 5 Turbo DTM '19"
-        }
-      ]
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
     },
     {
       "day": "LUNEDI",
@@ -517,6 +439,27 @@
           "team": "MFC",
           "nome": "VRT Flexciccio",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "23",
+          "team": "GTRC",
+          "nome": "GTRC_Emilios98",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "59",
+          "team": "RMT",
+          "nome": "RMT_87_TOMMY",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "65",
+          "team": "RSR",
+          "nome": "RsR_Shura",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -777,9 +720,9 @@
         },
         {
           "pos": 7,
-          "matricola": "61",
-          "team": "RMT",
-          "nome": "Tlm_Sile",
+          "matricola": "41",
+          "team": "PRT",
+          "nome": "FrRoGaMeR",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -900,10 +843,10 @@
         },
         {
           "pos": 9,
-          "matricola": "526",
-          "team": "TLM",
-          "nome": "BabyKiller",
-          "auto": "ASSENTE"
+          "matricola": "484",
+          "team": "PRT",
+          "nome": "Luca R72",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 10,
@@ -917,20 +860,6 @@
           "matricola": "475",
           "team": "MMS",
           "nome": "Bolker",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 12,
-          "matricola": "496",
-          "team": "RMT",
-          "nome": "RMT Moody33",
-          "auto": "ASSENTE"
-        },
-        {
-          "pos": 13,
-          "matricola": "484",
-          "team": "PRT",
-          "nome": "Luca R72",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -1090,10 +1019,10 @@
         },
         {
           "pos": 8,
-          "matricola": "344",
-          "team": "TLM",
-          "nome": "TLM_Jack187",
-          "auto": "RC F GT500 '16"
+          "matricola": "325",
+          "team": "SCGT",
+          "nome": "Scgt-mattia",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 9,
@@ -1129,13 +1058,6 @@
           "team": "GTRC",
           "nome": "GTRC-Checco",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 14,
-          "matricola": "325",
-          "team": "SCGT",
-          "nome": "Scgt-mattia",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -1192,17 +1114,17 @@
         },
         {
           "pos": 7,
-          "matricola": "181",
-          "team": "BCSC",
-          "nome": "BAD_lupogrigio",
-          "auto": "ASSENTE"
+          "matricola": "261",
+          "team": "TLM",
+          "nome": "TLM_Mannino",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 8,
-          "matricola": "182",
-          "team": "CBR",
-          "nome": "AgaresErkekjette",
-          "auto": "ASSENTE"
+          "matricola": "239",
+          "team": "RMT",
+          "nome": "RMT_PINOWAY",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 9,
@@ -1231,20 +1153,6 @@
           "team": "GTV",
           "nome": "Vale34",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "261",
-          "team": "TLM",
-          "nome": "TLM_Mannino",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 14,
-          "matricola": "239",
-          "team": "RMT",
-          "nome": "RMT_PINOWAY",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -1325,13 +1233,6 @@
           "matricola": "415",
           "team": "RMT",
           "nome": "LID_Nelloz",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 11,
-          "matricola": "436",
-          "team": "SRT",
-          "nome": "SRT_RintheDream",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2120,10 +2021,10 @@
         },
         {
           "pos": 9,
-          "matricola": "345",
-          "team": "TLM",
-          "nome": "TLM_GabryRR",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "300",
+          "team": "MMS",
+          "nome": "MMS_Gattonero70",
+          "auto": "GT-R NISMO GT500 '16"
         },
         {
           "pos": 10,
@@ -2152,13 +2053,6 @@
           "team": "TLM",
           "nome": "TLM_MichaeFox12",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 14,
-          "matricola": "300",
-          "team": "MMS",
-          "nome": "MMS_Gattonero70",
-          "auto": "GT-R NISMO GT500 '16"
         }
       ]
     },
@@ -2612,9 +2506,9 @@
         },
         {
           "pos": 3,
-          "matricola": "256",
-          "team": "SRT",
-          "nome": "Daiard95",
+          "matricola": "262",
+          "team": "EVO",
+          "nome": "TER_Brazorf",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2685,13 +2579,6 @@
           "matricola": "200",
           "team": "EVO",
           "nome": "Ric_hero1971",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 14,
-          "matricola": "262",
-          "team": "EVO",
-          "nome": "TER_Brazorf",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2780,6 +2667,27 @@
           "matricola": "75",
           "team": "SMI",
           "nome": "SMI-Marcus_Pilot",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "50",
+          "team": "PRT",
+          "nome": "S.Mancabelli",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "5",
+          "team": "BCSC",
+          "nome": "BCSC_IL MALEDETTO",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "46",
+          "team": "PRT",
+          "nome": "Danielex_Otto4",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -3256,6 +3164,34 @@
           "team": "SMI",
           "nome": "SMI_Minchippo",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "74",
+          "team": "SMI",
+          "nome": "SMI-Lellobello",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "14",
+          "team": "DCT",
+          "nome": "F.Narga",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 13,
+          "matricola": "54",
+          "team": "RCE",
+          "nome": "RCE_Pinkuino97",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "58",
+          "team": "RMT",
+          "nome": "RMT FIERA 69",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -3333,10 +3269,10 @@
         },
         {
           "pos": 10,
-          "matricola": "150",
-          "team": "RMT",
-          "nome": "JOKERVR46",
-          "auto": "ASSENTE"
+          "matricola": "108",
+          "team": "DCT",
+          "nome": "DCT_Radik",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 11,
@@ -3351,13 +3287,6 @@
           "team": "ARC",
           "nome": "ARC-Tommizio",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 13,
-          "matricola": "108",
-          "team": "DCT",
-          "nome": "DCT_Radik",
-          "auto": "RC F GT500 '16"
         }
       ]
     },
