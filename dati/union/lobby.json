@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-26T04:55:38+00:00"
+    "generated_at": "2026-10-26T18:43:24+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -421,10 +421,10 @@
         },
         {
           "pos": 9,
-          "matricola": "53",
+          "matricola": "55",
           "team": "RCE",
-          "nome": "RCE_Freej",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "The Iceman00",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 10,
@@ -727,10 +727,10 @@
         },
         {
           "pos": 8,
-          "matricola": "52",
+          "matricola": "54",
           "team": "RCE",
-          "nome": "RCE_DarkneSS",
-          "auto": "ASSENTE"
+          "nome": "RCE_Pinkuino97",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 9,
@@ -1539,10 +1539,10 @@
         },
         {
           "pos": 13,
-          "matricola": "55",
+          "matricola": "53",
           "team": "RCE",
-          "nome": "The Iceman00",
-          "auto": "RC F GT500 '16"
+          "nome": "RCE_Freej",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 14,
@@ -1743,9 +1743,9 @@
         },
         {
           "pos": 13,
-          "matricola": "507",
+          "matricola": "508",
           "team": "SCGT",
-          "nome": "Gass95",
+          "nome": "Maciaddu",
           "auto": "RC F GT500 '16"
         }
       ]
@@ -3023,9 +3023,9 @@
         },
         {
           "pos": 6,
-          "matricola": "508",
+          "matricola": "507",
           "team": "SCGT",
-          "nome": "Maciaddu",
+          "nome": "Gass95",
           "auto": "RC F GT500 '16"
         },
         {
@@ -3181,10 +3181,10 @@
         },
         {
           "pos": 13,
-          "matricola": "54",
+          "matricola": "52",
           "team": "RCE",
-          "nome": "RCE_Pinkuino97",
-          "auto": "RC F GT500 '16"
+          "nome": "RCE_DarkneSS",
+          "auto": "ASSENTE"
         },
         {
           "pos": 14,
