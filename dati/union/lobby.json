@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-27T05:13:20+00:00"
+    "generated_at": "2026-10-27T18:04:03+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -1863,9 +1863,9 @@
         },
         {
           "pos": 3,
-          "matricola": "197",
+          "matricola": "198",
           "team": "EVO",
-          "nome": "EVO_Manu81",
+          "nome": "EVO_Piraz",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2784,9 +2784,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "198",
+          "matricola": "197",
           "team": "EVO",
-          "nome": "EVO_Piraz",
+          "nome": "EVO_Manu81",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
