@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-27T10:24:05+00:00",
+    "updated_at": "2026-10-27T13:10:23+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:50.099",
         "leader": "ran251087",
-        "partecipanti": 109887,
+        "partecipanti": 110791,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1270,
+            "pos_assoluta": 1281,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.144
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 4247,
+            "pos_assoluta": 4281,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.668
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 6686,
+            "pos_assoluta": 6748,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 1.932
@@ -95,9 +95,9 @@
         "fine": "29 Ott 2026",
         "scadenza": "29 Ott 2026",
         "chiusura": "2026-10-29T06:59:59Z",
-        "miglior_tempo": "1:16.684",
+        "miglior_tempo": "1:16.630",
         "leader": "AMS__Andrew",
-        "partecipanti": 142294,
+        "partecipanti": 142946,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,10 +108,10 @@
             "squadra": "GTV",
             "tempo": "1:18.760",
             "tempo_ms": 78760,
-            "pos_assoluta": 1931,
+            "pos_assoluta": 1945,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.707
+            "distacco_assoluto_pct": 2.78
           },
           {
             "psn": "Vale34_",
@@ -120,10 +120,10 @@
             "squadra": "GTV",
             "tempo": "1:19.099",
             "tempo_ms": 79099,
-            "pos_assoluta": 5124,
+            "pos_assoluta": 5154,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.43,
-            "distacco_assoluto_pct": 3.149
+            "distacco_assoluto_pct": 3.222
           },
           {
             "psn": "Utile_ruspante",
@@ -132,10 +132,10 @@
             "squadra": "GTV",
             "tempo": "1:19.237",
             "tempo_ms": 79237,
-            "pos_assoluta": 5816,
+            "pos_assoluta": 5851,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.606,
-            "distacco_assoluto_pct": 3.329
+            "distacco_assoluto_pct": 3.402
           },
           {
             "psn": "marse9191",
@@ -144,10 +144,10 @@
             "squadra": "GTV",
             "tempo": "1:19.672",
             "tempo_ms": 79672,
-            "pos_assoluta": 8303,
+            "pos_assoluta": 8359,
             "pos_gtv": 4,
             "distacco_gtv_pct": 1.158,
-            "distacco_assoluto_pct": 3.897
+            "distacco_assoluto_pct": 3.97
           },
           {
             "psn": "Mirco94-",
@@ -159,7 +159,7 @@
             "pos_assoluta": 46389,
             "pos_gtv": 5,
             "distacco_gtv_pct": 3.993,
-            "distacco_assoluto_pct": 6.808
+            "distacco_assoluto_pct": 6.884
           },
           {
             "psn": "Yukimura9221",
@@ -171,7 +171,7 @@
             "pos_assoluta": 54709,
             "pos_gtv": 6,
             "distacco_gtv_pct": 4.448,
-            "distacco_assoluto_pct": 7.275
+            "distacco_assoluto_pct": 7.351
           }
         ]
       }
@@ -603,7 +603,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:16.974",
           "tempo_ms": 76974,
-          "pos_assoluta": 199,
+          "pos_assoluta": 212,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -803,7 +803,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28080,
+      "rank_medio": 28081,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -812,7 +812,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 6686,
+          "rank": 6748,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -3869,7 +3869,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 1931,
+          "rank": 1945,
           "tempo": "1:18.760",
           "evento": "Sportsland SUGO"
         },
@@ -5212,7 +5212,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 8303,
+          "rank": 8359,
           "tempo": "1:19.672",
           "evento": "Sportsland SUGO"
         },
@@ -7975,14 +7975,14 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1270,
+          "rank": 1281,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 5124,
+          "rank": 5154,
           "tempo": "1:19.099",
           "evento": "Sportsland SUGO"
         },
@@ -8671,7 +8671,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 199,
+          "rank": 212,
           "tempo": "1:16.974",
           "evento": "SUGO International Racing Course"
         },
@@ -11362,7 +11362,7 @@
       "rank_medio": 34301,
       "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Circuit de Spa-Francorchamps",
+      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
         {
@@ -13050,7 +13050,7 @@
         {
           "data": "2026-10-29",
           "tipo": "time_trial",
-          "rank": 5816,
+          "rank": 5851,
           "tempo": "1:19.237",
           "evento": "Sportsland SUGO"
         },
@@ -13078,7 +13078,7 @@
         {
           "data": "2026-09-28",
           "tipo": "gara",
-          "rank": 9610,
+          "rank": 9612,
           "tempo": "1:35.656",
           "evento": "Red Bull Ring"
         },
@@ -14036,7 +14036,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 4247,
+          "rank": 4281,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
