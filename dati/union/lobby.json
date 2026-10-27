@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-26T18:43:24+00:00"
+    "generated_at": "2026-10-27T05:13:20+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -815,10 +815,10 @@
         },
         {
           "pos": 5,
-          "matricola": "469",
-          "team": "GTRC",
-          "nome": "GTRC_Ganciocielo",
-          "auto": "RC F GT500 '16"
+          "matricola": "475",
+          "team": "MMS",
+          "nome": "Bolker",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 6,
@@ -853,13 +853,6 @@
           "matricola": "483",
           "team": "PRT",
           "nome": "Zio_zero7",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 11,
-          "matricola": "475",
-          "team": "MMS",
-          "nome": "Bolker",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -3185,13 +3178,6 @@
           "team": "RCE",
           "nome": "RCE_DarkneSS",
           "auto": "ASSENTE"
-        },
-        {
-          "pos": 14,
-          "matricola": "58",
-          "team": "RMT",
-          "nome": "RMT FIERA 69",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
