@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-10-28T05:51:32+00:00"
+    "generated_at": "2026-10-29T05:55:25+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -142,8 +142,8 @@
       "name": "A3",
       "category": "PRO GOLD",
       "host": "Albixximo",
-      "live": "PRT- xSamueLx",
-      "url": "https://www.twitch.tv/xsamuelx_channel",
+      "live": "PRT- Albixximo",
+      "url": "http://www.youtube.com/@AlbixximoLive",
       "pilots": [
         {
           "pos": 1,
@@ -393,10 +393,10 @@
         },
         {
           "pos": 5,
-          "matricola": "3",
-          "team": "ARC",
-          "nome": "ARC-VintageAR",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "4",
+          "team": "BCSC",
+          "nome": "BAD_brucem84",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 6,
@@ -428,9 +428,9 @@
         },
         {
           "pos": 10,
-          "matricola": "72",
+          "matricola": "74",
           "team": "SMI",
-          "nome": "SMI_V3sP4",
+          "nome": "SMI-Lellobello",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1146,6 +1146,13 @@
           "team": "GTV",
           "nome": "Vale34",
           "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 13,
+          "matricola": "216",
+          "team": "MFC",
+          "nome": "GioBar73 @ PRT",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -1455,10 +1462,10 @@
         },
         {
           "pos": 2,
-          "matricola": "4",
-          "team": "BCSC",
-          "nome": "BAD_brucem84",
-          "auto": "RC F GT500 '16"
+          "matricola": "3",
+          "team": "ARC",
+          "nome": "ARC-VintageAR",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 3,
@@ -1552,8 +1559,8 @@
       "name": "A18",
       "category": "ELITE",
       "host": "Albixximo",
-      "live": "PRT- xSamueLx",
-      "url": "https://www.twitch.tv/xsamuelx_channel",
+      "live": "PRT- Albixximo",
+      "url": "http://www.youtube.com/@AlbixximoLive",
       "pilots": [
         {
           "pos": 1,
@@ -1646,8 +1653,8 @@
       "time": "Ore 21:00",
       "name": "A19",
       "category": "AMA",
-      "host": "Goivas80",
-      "live": "PBC- Goivas80",
+      "host": "danxbon",
+      "live": "PBC- danxbon",
       "url": "https://youtube.com/@performancebearcrew4660",
       "pilots": [
         {
@@ -1796,10 +1803,10 @@
         },
         {
           "pos": 7,
-          "matricola": "417",
-          "team": "RMT",
-          "nome": "RMT_Mario84",
-          "auto": "NSX CONCEPT-GT '16"
+          "matricola": "383",
+          "team": "GTID",
+          "nome": "GTID_Berti62",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 8,
@@ -1827,13 +1834,6 @@
           "matricola": "435",
           "team": "SRT",
           "nome": "SRT Kaido",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 12,
-          "matricola": "383",
-          "team": "GTID",
-          "nome": "GTID_Berti62",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -1919,9 +1919,9 @@
         },
         {
           "pos": 11,
-          "matricola": "216",
-          "team": "MFC",
-          "nome": "GioBar73 @ PRT",
+          "matricola": "206",
+          "team": "GTID",
+          "nome": "GTID_Ale #77",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -1936,13 +1936,6 @@
           "matricola": "254",
           "team": "SMI",
           "nome": "Vanveremberg-87",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 14,
-          "matricola": "206",
-          "team": "GTID",
-          "nome": "GTID_Ale #77",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2460,13 +2453,6 @@
         },
         {
           "pos": 12,
-          "matricola": "495",
-          "team": "RMT",
-          "nome": "RMT-Ghigno 4",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 13,
           "matricola": "464",
           "team": "FFM",
           "nome": "FFM_FilippoFm89",
@@ -3160,9 +3146,9 @@
         },
         {
           "pos": 11,
-          "matricola": "74",
+          "matricola": "72",
           "team": "SMI",
-          "nome": "SMI-Lellobello",
+          "nome": "SMI_V3sP4",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
