@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-30T15:06:18+00:00",
+    "updated_at": "2026-10-30T21:27:59+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.639",
         "leader": "AT__1826",
-        "partecipanti": 50060,
+        "partecipanti": 59296,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -49,7 +49,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:49.973",
         "leader": "SFE_Damian",
-        "partecipanti": 135959,
+        "partecipanti": 139064,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1481,
+            "pos_assoluta": 1502,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.259
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 5025,
+            "pos_assoluta": 5102,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.784
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 7977,
+            "pos_assoluta": 8137,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 2.049
@@ -555,7 +555,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:16.974",
           "tempo_ms": 76974,
-          "pos_assoluta": 442,
+          "pos_assoluta": 459,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -569,7 +569,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.391",
           "tempo_ms": 77391,
-          "pos_assoluta": 1391,
+          "pos_assoluta": 1440,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.542,
           "distacco_assoluto_pct": null
@@ -583,9 +583,23 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.850",
           "tempo_ms": 77850,
-          "pos_assoluta": 3877,
+          "pos_assoluta": 4021,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.138,
+          "distacco_assoluto_pct": null
+        },
+        {
+          "psn": "Mirco94-",
+          "gt7name": "Mirco",
+          "numero": "94",
+          "squadra": "JGTV",
+          "auto": "3503",
+          "data": "26 Ott 2026",
+          "tempo": "1:18.298",
+          "tempo_ms": 78298,
+          "pos_assoluta": 8028,
+          "pos_gtv": 4,
+          "distacco_gtv_pct": 1.72,
           "distacco_assoluto_pct": null
         },
         {
@@ -597,8 +611,8 @@
           "data": "26 Ott 2026",
           "tempo": "1:18.389",
           "tempo_ms": 78389,
-          "pos_assoluta": 8634,
-          "pos_gtv": 4,
+          "pos_assoluta": 9004,
+          "pos_gtv": 5,
           "distacco_gtv_pct": 1.838,
           "distacco_assoluto_pct": null
         }
@@ -797,7 +811,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 910,
-      "rank_medio": 28092,
+      "rank_medio": 28094,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -806,7 +820,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 7977,
+          "rank": 8137,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -7969,7 +7983,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1481,
+          "rank": 1502,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -8665,7 +8679,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 442,
+          "rank": 459,
           "tempo": "1:16.974",
           "evento": "SUGO International Racing Course"
         },
@@ -12247,8 +12261,8 @@
       "categoria": "ELITE",
       "dr": "B",
       "sr": "S",
-      "miglior_rank": 1391,
-      "rank_medio": 19516,
+      "miglior_rank": 1440,
+      "rank_medio": 19517,
       "eventi_pubblicati": 112,
       "ultimo_evento_data": "2026-10-26",
       "ultimo_evento": "Michelin Raceway Road Atlanta",
@@ -12257,7 +12271,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 1391,
+          "rank": 1440,
           "tempo": "1:17.391",
           "evento": "SUGO International Racing Course"
         },
@@ -13049,7 +13063,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18965,
+      "rank_medio": 18967,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -13065,7 +13079,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 3877,
+          "rank": 4021,
           "tempo": "1:17.850",
           "evento": "SUGO International Racing Course"
         },
@@ -14042,7 +14056,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47162,
+      "rank_medio": 47165,
       "eventi_pubblicati": 150,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -14051,7 +14065,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 5025,
+          "rank": 5102,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -14065,7 +14079,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 8634,
+          "rank": 9004,
           "tempo": "1:18.389",
           "evento": "SUGO International Racing Course"
         },
@@ -16154,11 +16168,11 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26476,
-      "eventi_pubblicati": 137,
+      "rank_medio": 26343,
+      "eventi_pubblicati": 138,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
-      "ultima_gara": "Autódromo de Interlagos",
+      "ultima_gara": "SUGO International Racing Course",
       "eventi": [
         {
           "data": "2026-10-29",
@@ -16168,11 +16182,11 @@
           "evento": "Sportsland SUGO"
         },
         {
-          "data": "2026-10-19",
+          "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 22869,
-          "tempo": "1:35.710",
-          "evento": "Autódromo de Interlagos"
+          "rank": 8028,
+          "tempo": "1:18.298",
+          "evento": "SUGO International Racing Course"
         },
         {
           "data": "2026-10-19",
@@ -16180,6 +16194,13 @@
           "rank": 3182,
           "tempo": "1:46.974",
           "evento": "Suzuka Circuit"
+        },
+        {
+          "data": "2026-10-19",
+          "tipo": "gara",
+          "rank": 22869,
+          "tempo": "1:35.710",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2026-09-21",
@@ -17142,13 +17163,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 721
+        "conteggio": 722
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1060
       }
     ],
-    "eventi_totali": 2275
+    "eventi_totali": 2276
   }
 }
