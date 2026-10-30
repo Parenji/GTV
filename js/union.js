@@ -1938,8 +1938,10 @@ function unionDGEsito(testo) {
     return { tipo: "respinto", sec: 0, label: "Respinto", motivo: motivo ? motivo.charAt(0).toUpperCase() + motivo.slice(1) : "" };
   }
   if (!t) return { tipo: "attesa", sec: 0, label: "In valutazione" };
-  // Dalla Gara 2 solo il motivo ("INFONDATO", "QUALITA' VIDEO BASSA")
-  if (/infondat|qualit/i.test(t)) {
+  // Gara 3: reclamo girato alle segnalazioni degli host, che decidono la sanzione
+  if (/segnalazion/i.test(t)) return { tipo: "altro", sec: 0, label: "Passato agli host", motivo: "Vedi le segnalazioni degli host" };
+  // Dalla Gara 2 solo il motivo ("INFONDATO", "QUALITA' VIDEO BASSA", "MANCA TELEMETRIA")
+  if (/infondat|qualit|manca|non\s*conform/i.test(t)) {
     return { tipo: "respinto", sec: 0, label: "Respinto", motivo: t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() };
   }
   return { tipo: "altro", sec: 0, label: t };
@@ -1953,9 +1955,13 @@ function unionDGHostEsito(testo, gara) {
   if (!t) return { tipo: "attesa", peso: 3, label: "In valutazione" };
   if (/null|annullat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Nulla" };
   if (/gi[aà]\s*valutat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Già valutata" };
+  // Gara 3: "respinto, andava fatto reclamo"
+  if ((m = t.match(/^(rifiutat|respint)[oa]?\s*[,:\-–]?\s*(.*)$/i))) {
+    return { tipo: "nullo", peso: 9, label: "Respinta", sub: m[2] ? m[2].charAt(0).toUpperCase() + m[2].slice(1) : "" };
+  }
   if (/squalific.*(prossima|dalla\s*pr)/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Salta " + prossima };
   if (/squalific/i.test(t)) return { tipo: "squalifica", peso: 0, label: "Squalifica", sub: "Dalla Gara " + gara };
-  if (/salta\s*qualific/i.test(t)) return { tipo: "griglia", peso: 1, label: "Salta la qualifica", sub: "In " + prossima };
+  if (/salta\s*(la\s*)?(prossima\s*)?qualific/i.test(t)) return { tipo: "griglia", peso: 1, label: "Salta la qualifica", sub: "In " + prossima };
   if ((m = t.match(/(\d+)\s*posizion/i))) {
     return { tipo: "griglia", peso: 1, label: "−" + m[1] + " posizioni", sub: "In griglia a " + prossima };
   }
@@ -2008,8 +2014,8 @@ function fetchUnionDGSheet(url) {
 }
 
 // Ricorsi: ogni riga rimanda a un reclamo con il numero di riga del foglio
-// reclami (RIGA RELAMO, intestazione = riga 1). Se respinti la penalita'
-// raddoppia; PENALITA' FINALE e' quella definitiva.
+// reclami (RIGA RELAMO, intestazione = riga 1; Gara 3 anche "N 10"). Se
+// respinti la penalita' raddoppia; PENALITA' FINALE e' quella definitiva.
 function fetchUnionDGRicorsi(url) {
   return fetch(url)
     .then(function (r) {
@@ -2025,7 +2031,7 @@ function fetchUnionDGRicorsi(url) {
       }
       var c = {
         riga: col(/^RIGA/),
-        nome: col(/RICHIEDENTE RICORSO/),
+        nome: col(/RICHIEDENTE/), // Gara 1 "... RICHIEDENTE RICORSO", Gara 3 "ID GT7 RICHIEDENTE"
         valutazione: col(/^VALUTAZIONE/),
         finale: col(/FINALE/),
       };
@@ -2036,7 +2042,7 @@ function fetchUnionDGRicorsi(url) {
         var val = v(r, "valutazione");
         var finale = parseInt(v(r, "finale"), 10);
         return {
-          riga: parseInt(v(r, "riga"), 10),
+          riga: parseInt(v(r, "riga").replace(/\D/g, ""), 10),
           nome: v(r, "nome"),
           valutazione: val,
           finale: isNaN(finale) ? null : finale,
@@ -2059,7 +2065,9 @@ function unionDGApplicaRicorsi(reclami, ricorsi) {
     rc.reclamo = x;
     rc.prima = prima.tipo === "pen" ? prima.sec : null;
     x.ricorso = rc;
-    if (prima.tipo === "pen" && rc.finale !== null && rc.finale !== prima.sec) {
+    if (prima.tipo === "pen" && rc.finale === 0) {
+      x.esito = { tipo: "zero", sec: 0, label: "Annullata", sub: "Ricorso accolto", sub2: "era +" + prima.sec + " s" };
+    } else if (prima.tipo === "pen" && rc.finale !== null && rc.finale !== prima.sec) {
       x.esito = { tipo: "pen", sec: rc.finale, label: "+" + rc.finale + " s",
         sub: rc.esito === "respinto" ? "Ricorso respinto" : "Ricorso accolto", sub2: "era +" + prima.sec + " s" };
     } else if (rc.esito === "respinto") {
@@ -2340,7 +2348,7 @@ function unionDGRicorsiHtml(ricorsi) {
     var esito = rc.esito === "respinto" ? "Respinto" : rc.esito === "accolto" ? "Accolto" : "In valutazione";
     var penalita =
       rc.prima !== null && rc.finale !== null
-        ? '<span class="ui-dg-pen"><s>+' + rc.prima + " s</s> → <b>+" + rc.finale + " s</b></span>"
+        ? '<span class="ui-dg-pen"><s>+' + rc.prima + " s</s> → <b>" + (rc.finale ? "+" + rc.finale + " s" : "annullata") + "</b></span>"
         : "";
     return (
       '<article class="ui-card ui-dg-card ui-dg-ric ui-dg-ric--' + rc.esito + (gtv ? " is-gtv" : "") + '">' +
@@ -2435,7 +2443,8 @@ function unionDGHostHtml(host) {
             '<span class="ui-dg-p"><span class="' + (x.gtvI ? "ui-dg-name is-gtv" : "ui-dg-name") + '">' + escapeHtml(x.nomeI) + "</span> " +
             '<span class="ui-dg-team">' + escapeHtml(x.teamI) + "</span>" +
             (x.note ? '<small class="ui-dg-motivo ui-dg-rownote">' + escapeHtml(x.note) + "</small>" : "") + "</span>" +
-            '<span class="ui-dg-res">' + unionDGEsitoHtml(x.esito) + "</span>" +
+            '<span class="ui-dg-res">' + unionDGEsitoHtml(x.esito) +
+            (x.esito.sub ? '<small class="ui-dg-motivo">' + escapeHtml(x.esito.sub) + "</small>" : "") + "</span>" +
             "</li>"
           );
         })

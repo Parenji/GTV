@@ -30,5 +30,10 @@ window.GTV_CONFIG = {
       reclami: "https://docs.google.com/spreadsheets/d/14X2mRI6cIdonrv39S5MwUzQ3wYUuqnJcPjhsp-_p1Ig/export?format=csv",
       host: "https://docs.google.com/spreadsheets/d/19lPn___FAUSwLh0jSsDXTSOoHNk2LXM52ZAjK2y0zqo/export?format=csv",
     },
+    3: {
+      reclami: "https://docs.google.com/spreadsheets/d/1Q1yWgZxF40Sa2gcRTfeCQrJGzRlbA2rq_RSVVXZfT5Y/export?format=csv",
+      host: "https://docs.google.com/spreadsheets/d/1rT1zpDHl_4xcXt_jtY59jipetT7pXxmBX1_TMLtBLHc/export?format=csv",
+      ricorsi: "https://docs.google.com/spreadsheets/d/1Oe4Xf3-lLyXPl631Qa9QudijOXc93BHscZ_-Q-NCvOo/export?format=csv",
+    },
   },
 };
