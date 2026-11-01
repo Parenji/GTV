@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-01T15:16:26+00:00",
+    "updated_at": "2026-11-01T21:09:36+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "12 Nov 2026",
         "scadenza": "12 Nov 2026",
         "chiusura": "2026-11-12T06:59:59Z",
-        "miglior_tempo": "1:20.639",
-        "leader": "AT__1826",
-        "partecipanti": 91593,
+        "miglior_tempo": "1:20.623",
+        "leader": "MetalGear9493",
+        "partecipanti": 96388,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,10 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 3243,
+            "pos_assoluta": 3408,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.4
+            "distacco_assoluto_pct": 2.42
           },
           {
             "psn": "Carlos_mania",
@@ -46,7 +46,7 @@
             "pos_assoluta": 52937,
             "pos_gtv": 2,
             "distacco_gtv_pct": 5.241,
-            "distacco_assoluto_pct": 7.767
+            "distacco_assoluto_pct": 7.788
           }
         ]
       },
@@ -61,7 +61,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:49.973",
         "leader": "SFE_Damian",
-        "partecipanti": 154236,
+        "partecipanti": 156962,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1638,
+            "pos_assoluta": 1661,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.259
@@ -84,10 +84,22 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 5557,
+            "pos_assoluta": 5643,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.784
+          },
+          {
+            "psn": "Fil_GTracing",
+            "gt7name": "F.Kaniewski",
+            "numero": "73",
+            "squadra": "GTV",
+            "tempo": "1:52.030",
+            "tempo_ms": 112030,
+            "pos_assoluta": 6662,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 0.603,
+            "distacco_assoluto_pct": 1.87
           },
           {
             "psn": "GTV_legendafluo",
@@ -96,8 +108,8 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 8884,
-            "pos_gtv": 3,
+            "pos_assoluta": 9028,
+            "pos_gtv": 4,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 2.049
           },
@@ -109,7 +121,7 @@
             "tempo": "1:53.915",
             "tempo_ms": 113915,
             "pos_assoluta": 51375,
-            "pos_gtv": 4,
+            "pos_gtv": 5,
             "distacco_gtv_pct": 2.296,
             "distacco_assoluto_pct": 3.585
           },
@@ -121,7 +133,7 @@
             "tempo": "1:54.219",
             "tempo_ms": 114219,
             "pos_assoluta": 52215,
-            "pos_gtv": 5,
+            "pos_gtv": 6,
             "distacco_gtv_pct": 2.569,
             "distacco_assoluto_pct": 3.861
           }
@@ -567,7 +579,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:16.974",
           "tempo_ms": 76974,
-          "pos_assoluta": 523,
+          "pos_assoluta": 529,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -581,7 +593,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.391",
           "tempo_ms": 77391,
-          "pos_assoluta": 1658,
+          "pos_assoluta": 1701,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.542,
           "distacco_assoluto_pct": null
@@ -595,7 +607,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.850",
           "tempo_ms": 77850,
-          "pos_assoluta": 4704,
+          "pos_assoluta": 4805,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.138,
           "distacco_assoluto_pct": null
@@ -609,7 +621,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:18.298",
           "tempo_ms": 78298,
-          "pos_assoluta": 9392,
+          "pos_assoluta": 9614,
           "pos_gtv": 4,
           "distacco_gtv_pct": 1.72,
           "distacco_assoluto_pct": null
@@ -623,7 +635,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:18.389",
           "tempo_ms": 78389,
-          "pos_assoluta": 10523,
+          "pos_assoluta": 10739,
           "pos_gtv": 5,
           "distacco_gtv_pct": 1.838,
           "distacco_assoluto_pct": null
@@ -637,7 +649,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:21.472",
           "tempo_ms": 81472,
-          "pos_assoluta": 46665,
+          "pos_assoluta": 46749,
           "pos_gtv": 6,
           "distacco_gtv_pct": 5.844,
           "distacco_assoluto_pct": null
@@ -837,7 +849,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 910,
-      "rank_medio": 28101,
+      "rank_medio": 28103,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -846,7 +858,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 8884,
+          "rank": 9028,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -8000,7 +8012,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18777,
+      "rank_medio": 18779,
       "eventi_pubblicati": 98,
       "ultimo_evento_data": "2026-11-12",
       "ultimo_evento": "Blue Moon Bay Speedway - Infield A",
@@ -8009,14 +8021,14 @@
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 3243,
+          "rank": 3408,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1638,
+          "rank": 1661,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -8712,7 +8724,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 523,
+          "rank": 529,
           "tempo": "1:16.974",
           "evento": "SUGO International Racing Course"
         },
@@ -9646,7 +9658,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 46665,
+          "rank": 46749,
           "tempo": "1:21.472",
           "evento": "SUGO International Racing Course"
         },
@@ -11411,15 +11423,22 @@
       "numero": "73",
       "squadra": "GTV",
       "categoria": "",
-      "dr": "A",
-      "sr": "S",
+      "dr": "B",
+      "sr": "A",
       "miglior_rank": 317,
-      "rank_medio": 34301,
-      "eventi_pubblicati": 106,
-      "ultimo_evento_data": "2026-08-17",
-      "ultimo_evento": "Willow Springs International Raceway: Horse Thief Mile",
+      "rank_medio": 34043,
+      "eventi_pubblicati": 107,
+      "ultimo_evento_data": "2026-11-05",
+      "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
       "ultima_gara": "Yas Marina Circuit",
       "eventi": [
+        {
+          "data": "2026-11-05",
+          "tipo": "time_trial",
+          "rank": 6662,
+          "tempo": "1:52.030",
+          "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
+        },
         {
           "data": "2026-08-17",
           "tipo": "gara",
@@ -12311,7 +12330,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 1658,
+          "rank": 1701,
           "tempo": "1:17.391",
           "evento": "SUGO International Racing Course"
         },
@@ -13103,7 +13122,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18973,
+      "rank_medio": 18974,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -13119,7 +13138,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 4704,
+          "rank": 4805,
           "tempo": "1:17.850",
           "evento": "SUGO International Racing Course"
         },
@@ -14096,7 +14115,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47178,
+      "rank_medio": 47180,
       "eventi_pubblicati": 150,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -14105,7 +14124,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 5557,
+          "rank": 5643,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -14119,7 +14138,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 10523,
+          "rank": 10739,
           "tempo": "1:18.389",
           "evento": "SUGO International Racing Course"
         },
@@ -16208,7 +16227,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26353,
+      "rank_medio": 26354,
       "eventi_pubblicati": 138,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -16224,7 +16243,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 9392,
+          "rank": 9614,
           "tempo": "1:18.298",
           "evento": "SUGO International Racing Course"
         },
@@ -17203,13 +17222,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 722
+        "conteggio": 723
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1061
       }
     ],
-    "eventi_totali": 2278
+    "eventi_totali": 2279
   }
 }
