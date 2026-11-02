@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-01T21:09:36+00:00",
+    "updated_at": "2026-11-02T13:26:24+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -9,6 +9,22 @@
   },
   "time_trial": {
     "attivi": [
+      {
+        "nome": "Nürburgring GP",
+        "pista": "Nürburgring GP",
+        "logo": "images/tracks/nurburgring.png",
+        "auto": "Porsche 911 GT3 R (992) '22",
+        "inizio": "02 Nov 2026",
+        "fine": "16 Nov 2026",
+        "scadenza": "16 Nov 2026",
+        "chiusura": "2026-11-16T11:59:59Z",
+        "miglior_tempo": "1:57.577",
+        "leader": "VQS_Melvyn",
+        "partecipanti": 2068,
+        "fonte_leader": "ufficiale",
+        "conclusa": false,
+        "classifica": []
+      },
       {
         "nome": "Blue Moon Bay Speedway - Infield A",
         "pista": "Blue Moon Bay Speedway - Infield A",
@@ -20,7 +36,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.623",
         "leader": "MetalGear9493",
-        "partecipanti": 96388,
+        "partecipanti": 101740,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +47,22 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 3408,
+            "pos_assoluta": 3548,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.42
+          },
+          {
+            "psn": "Abramo1991",
+            "gt7name": "Maverick",
+            "numero": "14",
+            "squadra": "GTV",
+            "tempo": "1:24.762",
+            "tempo_ms": 84762,
+            "pos_assoluta": 34613,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 2.65,
+            "distacco_assoluto_pct": 5.134
           },
           {
             "psn": "Carlos_mania",
@@ -44,7 +72,7 @@
             "tempo": "1:26.902",
             "tempo_ms": 86902,
             "pos_assoluta": 52937,
-            "pos_gtv": 2,
+            "pos_gtv": 3,
             "distacco_gtv_pct": 5.241,
             "distacco_assoluto_pct": 7.788
           }
@@ -61,7 +89,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:49.973",
         "leader": "SFE_Damian",
-        "partecipanti": 156962,
+        "partecipanti": 160308,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +100,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1661,
+            "pos_assoluta": 1683,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.259
@@ -84,7 +112,7 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 5643,
+            "pos_assoluta": 5748,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.784
@@ -96,7 +124,7 @@
             "squadra": "GTV",
             "tempo": "1:52.030",
             "tempo_ms": 112030,
-            "pos_assoluta": 6662,
+            "pos_assoluta": 6780,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.603,
             "distacco_assoluto_pct": 1.87
@@ -108,7 +136,7 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 9028,
+            "pos_assoluta": 9209,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 2.049
@@ -542,12 +570,42 @@
   },
   "gare_settimanali": [
     {
+      "nome": "Race A · Dragon Trail - Gardens",
+      "pista": "Dragon Trail - Gardens",
+      "logo": "images/tracks/dragon.png",
+      "impostazioni": "5 giri · Road · Comfort S · Carburante x1 · Gomme x1 · auto più usata: Chevrolet Corvette Stingray Convertible (C3) '69",
+      "inizio": "02 Nov 2026",
+      "fine": "08 Nov 2026",
+      "settimana": "02 Nov 2026",
+      "classifica": []
+    },
+    {
+      "nome": "Race B · Grand Valley - Highway 1",
+      "pista": "Grand Valley - Highway 1",
+      "logo": "images/tracks/grandvalley.png",
+      "impostazioni": "6 giri · Gr.3 · Racing M · Carburante x1 · Gomme x1 · auto più usata: Mitsubishi Lancer Evolution Final Edition Gr.3",
+      "inizio": "02 Nov 2026",
+      "fine": "08 Nov 2026",
+      "settimana": "02 Nov 2026",
+      "classifica": []
+    },
+    {
+      "nome": "Race C · Watkins Glen Long Course",
+      "pista": "Watkins Glen Long Course",
+      "logo": "images/tracks/watkins.png",
+      "impostazioni": "11 giri · Gr.4 · Racing H M · Carburante x3 · Gomme x5 · auto più usata: Audi TT Cup '16",
+      "inizio": "02 Nov 2026",
+      "fine": "08 Nov 2026",
+      "settimana": "02 Nov 2026",
+      "classifica": []
+    }
+  ],
+  "gare_precedenti": [
+    {
       "nome": "Race A · SUGO International Racing Course",
       "pista": "SUGO International Racing Course",
       "logo": null,
-      "impostazioni": "5 giri · Road · Sport H · Carburante x1 · Gomme x1 · auto più usata: Nissan Fairlady Z (Z34) '08",
-      "inizio": "26 Ott 2026",
-      "fine": "01 Nov 2026",
+      "impostazioni": "Road",
       "settimana": "26 Ott 2026",
       "classifica": []
     },
@@ -555,9 +613,7 @@
       "nome": "Race B · Willow Springs International Raceway: Big Willow",
       "pista": "Willow Springs International Raceway: Big Willow",
       "logo": "images/tracks/willowsprings.png",
-      "impostazioni": "7 giri · Gr.4 · Racing H · Carburante x1 · Gomme x1 · auto più usata: Audi TT Cup '16",
-      "inizio": "26 Ott 2026",
-      "fine": "01 Nov 2026",
+      "impostazioni": "Gr.4",
       "settimana": "26 Ott 2026",
       "classifica": []
     },
@@ -565,9 +621,7 @@
       "nome": "Race C · SUGO International Racing Course",
       "pista": "SUGO International Racing Course",
       "logo": null,
-      "impostazioni": "14 giri · Gr.3 · Racing M S · Carburante x2 · Gomme x4 · auto più usata: Subaru BRZ GT300 '21",
-      "inizio": "26 Ott 2026",
-      "fine": "01 Nov 2026",
+      "impostazioni": null,
       "settimana": "26 Ott 2026",
       "classifica": [
         {
@@ -579,7 +633,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:16.974",
           "tempo_ms": 76974,
-          "pos_assoluta": 529,
+          "pos_assoluta": 537,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -593,7 +647,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.391",
           "tempo_ms": 77391,
-          "pos_assoluta": 1701,
+          "pos_assoluta": 1727,
           "pos_gtv": 2,
           "distacco_gtv_pct": 0.542,
           "distacco_assoluto_pct": null
@@ -607,7 +661,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:17.850",
           "tempo_ms": 77850,
-          "pos_assoluta": 4805,
+          "pos_assoluta": 4882,
           "pos_gtv": 3,
           "distacco_gtv_pct": 1.138,
           "distacco_assoluto_pct": null
@@ -621,7 +675,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:18.298",
           "tempo_ms": 78298,
-          "pos_assoluta": 9614,
+          "pos_assoluta": 9764,
           "pos_gtv": 4,
           "distacco_gtv_pct": 1.72,
           "distacco_assoluto_pct": null
@@ -635,7 +689,7 @@
           "data": "26 Ott 2026",
           "tempo": "1:18.389",
           "tempo_ms": 78389,
-          "pos_assoluta": 10739,
+          "pos_assoluta": 10991,
           "pos_gtv": 5,
           "distacco_gtv_pct": 1.838,
           "distacco_assoluto_pct": null
@@ -649,191 +703,9 @@
           "data": "26 Ott 2026",
           "tempo": "1:21.472",
           "tempo_ms": 81472,
-          "pos_assoluta": 46749,
+          "pos_assoluta": 50513,
           "pos_gtv": 6,
           "distacco_gtv_pct": 5.844,
-          "distacco_assoluto_pct": null
-        }
-      ]
-    }
-  ],
-  "gare_precedenti": [
-    {
-      "nome": "Race A · Circuit Gilles-Villeneuve",
-      "pista": "Circuit Gilles-Villeneuve",
-      "logo": "images/tracks/gillesvilleneuve.png",
-      "impostazioni": "Road",
-      "settimana": "19 Ott 2026",
-      "classifica": []
-    },
-    {
-      "nome": "Race B · Autódromo de Interlagos",
-      "pista": "Autódromo de Interlagos",
-      "logo": "images/tracks/interlagos.png",
-      "impostazioni": "Gr.3",
-      "settimana": "19 Ott 2026",
-      "classifica": [
-        {
-          "psn": "Yukimura9221",
-          "gt7name": "Yukimura",
-          "numero": "106",
-          "squadra": "GTV",
-          "auto": "MAZDA RX-VISION GT3 EVO '26",
-          "data": "19 Ott 2026",
-          "tempo": "1:35.271",
-          "tempo_ms": 95271,
-          "pos_assoluta": 15147,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Mirco94-",
-          "gt7name": "Mirco",
-          "numero": "94",
-          "squadra": "JGTV",
-          "auto": "Porsche 911 GT3 R (992) '22",
-          "data": "19 Ott 2026",
-          "tempo": "1:35.710",
-          "tempo_ms": 95710,
-          "pos_assoluta": 22869,
-          "pos_gtv": 2,
-          "distacco_gtv_pct": 0.461,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Carlos_mania",
-          "gt7name": "Sun|)own",
-          "numero": "54",
-          "squadra": "GTV",
-          "auto": "Lamborghini Huracán GT3 '15",
-          "data": "19 Ott 2026",
-          "tempo": "1:37.202",
-          "tempo_ms": 97202,
-          "pos_assoluta": 49192,
-          "pos_gtv": 3,
-          "distacco_gtv_pct": 2.027,
-          "distacco_assoluto_pct": null
-        }
-      ]
-    },
-    {
-      "nome": "Race C · Suzuka Circuit",
-      "pista": "Suzuka Circuit",
-      "logo": "images/tracks/suzuka.png",
-      "impostazioni": "Gr.2",
-      "settimana": "19 Ott 2026",
-      "classifica": [
-        {
-          "psn": "Giusdandri",
-          "gt7name": "Giusdandri",
-          "numero": "87",
-          "squadra": "GTV",
-          "auto": "Honda NSX CONCEPT-GT '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:46.455",
-          "tempo_ms": 106455,
-          "pos_assoluta": 1491,
-          "pos_gtv": 1,
-          "distacco_gtv_pct": 0.0,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Utile_ruspante",
-          "gt7name": "Barda88",
-          "numero": "88",
-          "squadra": "GTV",
-          "auto": "Honda NSX CONCEPT-GT '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:46.726",
-          "tempo_ms": 106726,
-          "pos_assoluta": 2256,
-          "pos_gtv": 2,
-          "distacco_gtv_pct": 0.255,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Mirco94-",
-          "gt7name": "Mirco",
-          "numero": "94",
-          "squadra": "JGTV",
-          "auto": "Honda NSX CONCEPT-GT '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:46.974",
-          "tempo_ms": 106974,
-          "pos_assoluta": 3182,
-          "pos_gtv": 3,
-          "distacco_gtv_pct": 0.488,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Vale34_",
-          "gt7name": "Vale34",
-          "numero": "34",
-          "squadra": "GTV",
-          "auto": "Lexus RC F GT500 '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:47.237",
-          "tempo_ms": 107237,
-          "pos_assoluta": 4293,
-          "pos_gtv": 4,
-          "distacco_gtv_pct": 0.735,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Fra_salvo96",
-          "gt7name": "Frasalvo96",
-          "numero": "9",
-          "squadra": "JGTV",
-          "auto": "Lexus RC F GT500 '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:47.969",
-          "tempo_ms": 107969,
-          "pos_assoluta": 8554,
-          "pos_gtv": 5,
-          "distacco_gtv_pct": 1.422,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Sauzer27",
-          "gt7name": "Sauzer",
-          "numero": "17",
-          "squadra": "JGTV",
-          "auto": "Lexus RC F GT500 '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:48.460",
-          "tempo_ms": 108460,
-          "pos_assoluta": 12112,
-          "pos_gtv": 6,
-          "distacco_gtv_pct": 1.883,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Yukimura9221",
-          "gt7name": "Yukimura",
-          "numero": "106",
-          "squadra": "GTV",
-          "auto": "Honda NSX CONCEPT-GT '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:48.501",
-          "tempo_ms": 108501,
-          "pos_assoluta": 12434,
-          "pos_gtv": 7,
-          "distacco_gtv_pct": 1.922,
-          "distacco_assoluto_pct": null
-        },
-        {
-          "psn": "Carlos_mania",
-          "gt7name": "Sun|)own",
-          "numero": "54",
-          "squadra": "GTV",
-          "auto": "Lexus RC F GT500 '16",
-          "data": "19 Ott 2026",
-          "tempo": "1:48.658",
-          "tempo_ms": 108658,
-          "pos_assoluta": 13618,
-          "pos_gtv": 8,
-          "distacco_gtv_pct": 2.069,
           "distacco_assoluto_pct": null
         }
       ]
@@ -849,7 +721,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 910,
-      "rank_medio": 28103,
+      "rank_medio": 28104,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -858,7 +730,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 9028,
+          "rank": 9209,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -3007,12 +2879,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32629,
-      "eventi_pubblicati": 126,
-      "ultimo_evento_data": "2026-11-05",
-      "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
+      "rank_medio": 32645,
+      "eventi_pubblicati": 127,
+      "ultimo_evento_data": "2026-11-12",
+      "ultimo_evento": "Blue Moon Bay Speedway - Infield A",
       "ultima_gara": "Red Bull Ring",
       "eventi": [
+        {
+          "data": "2026-11-12",
+          "tipo": "time_trial",
+          "rank": 34613,
+          "tempo": "1:24.762",
+          "evento": "Blue Moon Bay Speedway - Infield A"
+        },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
@@ -8012,7 +7891,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18779,
+      "rank_medio": 18781,
       "eventi_pubblicati": 98,
       "ultimo_evento_data": "2026-11-12",
       "ultimo_evento": "Blue Moon Bay Speedway - Infield A",
@@ -8021,14 +7900,14 @@
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 3408,
+          "rank": 3548,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1661,
+          "rank": 1683,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -8724,7 +8603,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 529,
+          "rank": 537,
           "tempo": "1:16.974",
           "evento": "SUGO International Racing Course"
         },
@@ -9635,7 +9514,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45433,
+      "rank_medio": 45463,
       "eventi_pubblicati": 128,
       "ultimo_evento_data": "2026-11-12",
       "ultimo_evento": "Blue Moon Bay Speedway - Infield A",
@@ -9658,7 +9537,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 46749,
+          "rank": 50513,
           "tempo": "1:21.472",
           "evento": "SUGO International Racing Course"
         },
@@ -11426,7 +11305,7 @@
       "dr": "B",
       "sr": "A",
       "miglior_rank": 317,
-      "rank_medio": 34043,
+      "rank_medio": 34044,
       "eventi_pubblicati": 107,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -11435,7 +11314,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 6662,
+          "rank": 6780,
           "tempo": "1:52.030",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -12330,7 +12209,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 1701,
+          "rank": 1727,
           "tempo": "1:17.391",
           "evento": "SUGO International Racing Course"
         },
@@ -13122,7 +13001,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18974,
+      "rank_medio": 18975,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -13138,7 +13017,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 4805,
+          "rank": 4882,
           "tempo": "1:17.850",
           "evento": "SUGO International Racing Course"
         },
@@ -14115,7 +13994,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 47180,
+      "rank_medio": 47182,
       "eventi_pubblicati": 150,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -14124,7 +14003,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 5643,
+          "rank": 5748,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -14138,7 +14017,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 10739,
+          "rank": 10991,
           "tempo": "1:18.389",
           "evento": "SUGO International Racing Course"
         },
@@ -16227,7 +16106,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26354,
+      "rank_medio": 26355,
       "eventi_pubblicati": 138,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
@@ -16243,7 +16122,7 @@
         {
           "data": "2026-10-26",
           "tipo": "gara",
-          "rank": 9614,
+          "rank": 9764,
           "tempo": "1:18.298",
           "evento": "SUGO International Racing Course"
         },
@@ -17226,9 +17105,9 @@
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 1061
+        "conteggio": 1062
       }
     ],
-    "eventi_totali": 2279
+    "eventi_totali": 2280
   }
 }
