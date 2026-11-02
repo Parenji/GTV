@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-02T18:28:24+00:00",
+    "updated_at": "2026-11-02T23:52:53+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,12 +18,48 @@
         "fine": "16 Nov 2026",
         "scadenza": "16 Nov 2026",
         "chiusura": "2026-11-16T11:59:59Z",
-        "miglior_tempo": "1:57.187",
-        "leader": "KAEWCHOT_RACING",
-        "partecipanti": 14128,
+        "miglior_tempo": "1:57.136",
+        "leader": "SFE_Damian",
+        "partecipanti": 25320,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
+          {
+            "psn": "Kappaonegt",
+            "gt7name": "Kevin",
+            "numero": "26",
+            "squadra": "GTV",
+            "tempo": "1:59.191",
+            "tempo_ms": 119191,
+            "pos_assoluta": 168,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 1.754
+          },
+          {
+            "psn": "Snake-asr88",
+            "gt7name": "Iceman",
+            "numero": "8",
+            "squadra": "GTV",
+            "tempo": "1:59.739",
+            "tempo_ms": 119739,
+            "pos_assoluta": 457,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 0.46,
+            "distacco_assoluto_pct": 2.222
+          },
+          {
+            "psn": "GTV_legendafluo",
+            "gt7name": "GTV-Oriano06",
+            "numero": "6",
+            "squadra": "GTV",
+            "tempo": "1:59.846",
+            "tempo_ms": 119846,
+            "pos_assoluta": 563,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 0.55,
+            "distacco_assoluto_pct": 2.314
+          },
           {
             "psn": "Fil_GTracing",
             "gt7name": "F.Kaniewski",
@@ -31,10 +67,10 @@
             "squadra": "GTV",
             "tempo": "2:00.078",
             "tempo_ms": 120078,
-            "pos_assoluta": 432,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 2.467
+            "pos_assoluta": 841,
+            "pos_gtv": 4,
+            "distacco_gtv_pct": 0.744,
+            "distacco_assoluto_pct": 2.512
           },
           {
             "psn": "titirolamadonn",
@@ -43,10 +79,10 @@
             "squadra": "GTV",
             "tempo": "2:00.153",
             "tempo_ms": 120153,
-            "pos_assoluta": 474,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 0.062,
-            "distacco_assoluto_pct": 2.531
+            "pos_assoluta": 923,
+            "pos_gtv": 5,
+            "distacco_gtv_pct": 0.807,
+            "distacco_assoluto_pct": 2.576
           },
           {
             "psn": "Yukimura9221",
@@ -55,10 +91,10 @@
             "squadra": "GTV",
             "tempo": "2:01.141",
             "tempo_ms": 121141,
-            "pos_assoluta": 1442,
-            "pos_gtv": 3,
-            "distacco_gtv_pct": 0.885,
-            "distacco_assoluto_pct": 3.374
+            "pos_assoluta": 2827,
+            "pos_gtv": 6,
+            "distacco_gtv_pct": 1.636,
+            "distacco_assoluto_pct": 3.419
           },
           {
             "psn": "Mirco94-",
@@ -67,10 +103,10 @@
             "squadra": "JGTV",
             "tempo": "2:01.317",
             "tempo_ms": 121317,
-            "pos_assoluta": 1684,
-            "pos_gtv": 4,
-            "distacco_gtv_pct": 1.032,
-            "distacco_assoluto_pct": 3.524
+            "pos_assoluta": 3284,
+            "pos_gtv": 7,
+            "distacco_gtv_pct": 1.784,
+            "distacco_assoluto_pct": 3.569
           }
         ]
       },
@@ -85,7 +121,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.623",
         "leader": "MetalGear9493",
-        "partecipanti": 104587,
+        "partecipanti": 107669,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -96,7 +132,7 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 3629,
+            "pos_assoluta": 3715,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.42
@@ -138,7 +174,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:49.973",
         "leader": "SFE_Damian",
-        "partecipanti": 162158,
+        "partecipanti": 164379,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -149,7 +185,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1699,
+            "pos_assoluta": 1715,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.259
@@ -161,7 +197,7 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 5803,
+            "pos_assoluta": 5868,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.784
@@ -173,7 +209,7 @@
             "squadra": "GTV",
             "tempo": "1:52.030",
             "tempo_ms": 112030,
-            "pos_assoluta": 6848,
+            "pos_assoluta": 6924,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.603,
             "distacco_assoluto_pct": 1.87
@@ -185,7 +221,7 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 9311,
+            "pos_assoluta": 9415,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 2.049
@@ -642,11 +678,11 @@
           "gt7name": "Mirco",
           "numero": "94",
           "squadra": "JGTV",
-          "auto": "Mercedes-AMG GT3 '20",
+          "auto": "Ferrari 296 GT3 '23",
           "data": "02 Nov 2026",
-          "tempo": "1:50.227",
-          "tempo_ms": 110227,
-          "pos_assoluta": 2958,
+          "tempo": "1:49.320",
+          "tempo_ms": 109320,
+          "pos_assoluta": 1901,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -661,7 +697,22 @@
       "inizio": "02 Nov 2026",
       "fine": "08 Nov 2026",
       "settimana": "02 Nov 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Fil_GTracing",
+          "gt7name": "F.Kaniewski",
+          "numero": "73",
+          "squadra": "GTV",
+          "auto": "Audi TT Cup '16",
+          "data": "02 Nov 2026",
+          "tempo": "1:55.714",
+          "tempo_ms": 115714,
+          "pos_assoluta": 1368,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     }
   ],
   "gare_precedenti": [
@@ -799,17 +850,24 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "B",
-      "miglior_rank": 910,
-      "rank_medio": 28105,
-      "eventi_pubblicati": 105,
-      "ultimo_evento_data": "2026-11-05",
-      "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
+      "miglior_rank": 563,
+      "rank_medio": 27846,
+      "eventi_pubblicati": 106,
+      "ultimo_evento_data": "2026-11-16",
+      "ultimo_evento": "Nürburgring GP",
       "ultima_gara": "Dragon Trail - Seaside",
       "eventi": [
         {
+          "data": "2026-11-16",
+          "tipo": "time_trial",
+          "rank": 563,
+          "tempo": "1:59.846",
+          "evento": "Nürburgring GP"
+        },
+        {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 9311,
+          "rank": 9415,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -1551,13 +1609,20 @@
       "categoria": "ELITE",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 1238,
-      "rank_medio": 31903,
-      "eventi_pubblicati": 101,
-      "ultimo_evento_data": "2026-08-20",
-      "ultimo_evento": "Deep Forest Raceway Reverse",
+      "miglior_rank": 457,
+      "rank_medio": 31594,
+      "eventi_pubblicati": 102,
+      "ultimo_evento_data": "2026-11-16",
+      "ultimo_evento": "Nürburgring GP",
       "ultima_gara": "Suzuka Circuit",
       "eventi": [
+        {
+          "data": "2026-11-16",
+          "tipo": "time_trial",
+          "rank": 457,
+          "tempo": "1:59.739",
+          "evento": "Nürburgring GP"
+        },
         {
           "data": "2026-08-20",
           "tipo": "time_trial",
@@ -6554,15 +6619,22 @@
       "numero": "26",
       "squadra": "GTV",
       "categoria": "",
-      "dr": "B",
+      "dr": "A",
       "sr": "A",
       "miglior_rank": 85,
-      "rank_medio": 20679,
-      "eventi_pubblicati": 88,
-      "ultimo_evento_data": "2026-10-12",
-      "ultimo_evento": "Michelin Raceway Road Atlanta",
+      "rank_medio": 20449,
+      "eventi_pubblicati": 89,
+      "ultimo_evento_data": "2026-11-16",
+      "ultimo_evento": "Nürburgring GP",
       "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-11-16",
+          "tipo": "time_trial",
+          "rank": 168,
+          "tempo": "1:59.191",
+          "evento": "Nürburgring GP"
+        },
         {
           "data": "2026-10-12",
           "tipo": "gara",
@@ -7970,7 +8042,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18782,
+      "rank_medio": 18783,
       "eventi_pubblicati": 98,
       "ultimo_evento_data": "2026-11-12",
       "ultimo_evento": "Blue Moon Bay Speedway - Infield A",
@@ -7979,14 +8051,14 @@
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 3629,
+          "rank": 3715,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1699,
+          "rank": 1715,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -9623,7 +9695,7 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 49192,
+          "rank": 49194,
           "tempo": "1:37.202",
           "evento": "Autódromo de Interlagos"
         },
@@ -11381,28 +11453,35 @@
       "numero": "73",
       "squadra": "GTV",
       "categoria": "",
-      "dr": "B",
-      "sr": "A",
+      "dr": "A",
+      "sr": "S",
       "miglior_rank": 317,
-      "rank_medio": 33733,
-      "eventi_pubblicati": 108,
+      "rank_medio": 33441,
+      "eventi_pubblicati": 109,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
-      "ultima_gara": "Yas Marina Circuit",
+      "ultima_gara": "Watkins Glen Long Course",
       "eventi": [
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 432,
+          "rank": 841,
           "tempo": "2:00.078",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 6848,
+          "rank": 6924,
           "tempo": "1:52.030",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
+        },
+        {
+          "data": "2026-11-02",
+          "tipo": "gara",
+          "rank": 1368,
+          "tempo": "1:55.714",
+          "evento": "Watkins Glen Long Course"
         },
         {
           "data": "2026-08-17",
@@ -13110,7 +13189,7 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 2256,
+          "rank": 2257,
           "tempo": "1:46.726",
           "evento": "Suzuka Circuit"
         },
@@ -14079,8 +14158,8 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 1442,
-      "rank_medio": 46880,
+      "miglior_rank": 2627,
+      "rank_medio": 46889,
       "eventi_pubblicati": 151,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -14089,14 +14168,14 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 1442,
+          "rank": 2827,
           "tempo": "2:01.141",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 5803,
+          "rank": 5868,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -15154,7 +15233,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 119,
-      "rank_medio": 5436,
+      "rank_medio": 5441,
       "eventi_pubblicati": 90,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -15163,7 +15242,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 474,
+          "rank": 923,
           "tempo": "2:00.153",
           "evento": "Nürburgring GP"
         },
@@ -16206,7 +16285,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 25981,
+      "rank_medio": 25985,
       "eventi_pubblicati": 141,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -16215,15 +16294,15 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 1684,
+          "rank": 3284,
           "tempo": "2:01.317",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-02",
           "tipo": "gara",
-          "rank": 2958,
-          "tempo": "1:50.227",
+          "rank": 1901,
+          "tempo": "1:49.320",
           "evento": "Grand Valley - Highway 1"
         },
         {
@@ -16250,14 +16329,14 @@
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 3182,
+          "rank": 3183,
           "tempo": "1:46.974",
           "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-10-19",
           "tipo": "gara",
-          "rank": 22869,
+          "rank": 22870,
           "tempo": "1:35.710",
           "evento": "Autódromo de Interlagos"
         },
@@ -17214,11 +17293,11 @@
       },
       {
         "etichetta": "501 – 1.000",
-        "conteggio": 77
+        "conteggio": 80
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 301
+        "conteggio": 302
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -17229,6 +17308,6 @@
         "conteggio": 1063
       }
     ],
-    "eventi_totali": 2286
+    "eventi_totali": 2290
   }
 }
