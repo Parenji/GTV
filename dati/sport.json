@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-02T13:26:24+00:00",
+    "updated_at": "2026-11-02T17:01:06+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,12 +18,25 @@
         "fine": "16 Nov 2026",
         "scadenza": "16 Nov 2026",
         "chiusura": "2026-11-16T11:59:59Z",
-        "miglior_tempo": "1:57.577",
-        "leader": "VQS_Melvyn",
-        "partecipanti": 2068,
+        "miglior_tempo": "1:57.187",
+        "leader": "KAEWCHOT_RACING",
+        "partecipanti": 10356,
         "fonte_leader": "ufficiale",
         "conclusa": false,
-        "classifica": []
+        "classifica": [
+          {
+            "psn": "titirolamadonn",
+            "gt7name": "Bowie knife99",
+            "numero": "666",
+            "squadra": "GTV",
+            "tempo": "2:00.153",
+            "tempo_ms": 120153,
+            "pos_assoluta": 384,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 2.531
+          }
+        ]
       },
       {
         "nome": "Blue Moon Bay Speedway - Infield A",
@@ -36,7 +49,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.623",
         "leader": "MetalGear9493",
-        "partecipanti": 101740,
+        "partecipanti": 103633,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -47,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 3548,
+            "pos_assoluta": 3606,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.42
@@ -89,7 +102,7 @@
         "chiusura": "2026-11-05T06:59:59Z",
         "miglior_tempo": "1:49.973",
         "leader": "SFE_Damian",
-        "partecipanti": 160308,
+        "partecipanti": 161549,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -100,7 +113,7 @@
             "squadra": "GTV",
             "tempo": "1:51.358",
             "tempo_ms": 111358,
-            "pos_assoluta": 1683,
+            "pos_assoluta": 1693,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.259
@@ -112,7 +125,7 @@
             "squadra": "GTV",
             "tempo": "1:51.935",
             "tempo_ms": 111935,
-            "pos_assoluta": 5748,
+            "pos_assoluta": 5785,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 1.784
@@ -124,7 +137,7 @@
             "squadra": "GTV",
             "tempo": "1:52.030",
             "tempo_ms": 112030,
-            "pos_assoluta": 6780,
+            "pos_assoluta": 6826,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.603,
             "distacco_assoluto_pct": 1.87
@@ -136,7 +149,7 @@
             "squadra": "GTV",
             "tempo": "1:52.226",
             "tempo_ms": 112226,
-            "pos_assoluta": 9209,
+            "pos_assoluta": 9274,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.779,
             "distacco_assoluto_pct": 2.049
@@ -583,7 +596,7 @@
       "nome": "Race B · Grand Valley - Highway 1",
       "pista": "Grand Valley - Highway 1",
       "logo": "images/tracks/grandvalley.png",
-      "impostazioni": "6 giri · Gr.3 · Racing M · Carburante x1 · Gomme x1 · auto più usata: Mitsubishi Lancer Evolution Final Edition Gr.3",
+      "impostazioni": "6 giri · Gr.3 · Racing M · Carburante x1 · Gomme x1 · auto più usata: Toyota GR Supra Racing Concept '18",
       "inizio": "02 Nov 2026",
       "fine": "08 Nov 2026",
       "settimana": "02 Nov 2026",
@@ -615,7 +628,22 @@
       "logo": "images/tracks/willowsprings.png",
       "impostazioni": "Gr.4",
       "settimana": "26 Ott 2026",
-      "classifica": []
+      "classifica": [
+        {
+          "psn": "Mirco94-",
+          "gt7name": "Mirco",
+          "numero": "94",
+          "squadra": "JGTV",
+          "auto": "Genesis G70 GR4",
+          "data": "26 Ott 2026",
+          "tempo": "1:22.573",
+          "tempo_ms": 82573,
+          "pos_assoluta": 21705,
+          "pos_gtv": 1,
+          "distacco_gtv_pct": 0.0,
+          "distacco_assoluto_pct": null
+        }
+      ]
     },
     {
       "nome": "Race C · SUGO International Racing Course",
@@ -721,7 +749,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 910,
-      "rank_medio": 28104,
+      "rank_medio": 28105,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-05",
       "ultimo_evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane",
@@ -730,7 +758,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 9209,
+          "rank": 9274,
           "tempo": "1:52.226",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -7900,14 +7928,14 @@
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 3548,
+          "rank": 3606,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 1683,
+          "rank": 1693,
           "tempo": "1:51.358",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -11314,7 +11342,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 6780,
+          "rank": 6826,
           "tempo": "1:52.030",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -14003,7 +14031,7 @@
         {
           "data": "2026-11-05",
           "tipo": "time_trial",
-          "rank": 5748,
+          "rank": 5785,
           "tempo": "1:51.935",
           "evento": "Circuit de Barcelona-Catalunya GP Layout No Chicane"
         },
@@ -15061,12 +15089,19 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 119,
-      "rank_medio": 5492,
-      "eventi_pubblicati": 89,
-      "ultimo_evento_data": "2026-10-08",
-      "ultimo_evento": "Circuit de Sainte-Croix - B Reverse",
+      "rank_medio": 5435,
+      "eventi_pubblicati": 90,
+      "ultimo_evento_data": "2026-11-16",
+      "ultimo_evento": "Nürburgring GP",
       "ultima_gara": "Fuji International Speedway",
       "eventi": [
+        {
+          "data": "2026-11-16",
+          "tipo": "time_trial",
+          "rank": 384,
+          "tempo": "2:00.153",
+          "evento": "Nürburgring GP"
+        },
         {
           "data": "2026-10-08",
           "tipo": "time_trial",
@@ -16106,11 +16141,11 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26355,
-      "eventi_pubblicati": 138,
+      "rank_medio": 26322,
+      "eventi_pubblicati": 139,
       "ultimo_evento_data": "2026-10-29",
       "ultimo_evento": "Sportsland SUGO",
-      "ultima_gara": "SUGO International Racing Course",
+      "ultima_gara": "Willow Springs International Raceway: Big Willow",
       "eventi": [
         {
           "data": "2026-10-29",
@@ -16118,6 +16153,13 @@
           "rank": 50812,
           "tempo": "1:21.905",
           "evento": "Sportsland SUGO"
+        },
+        {
+          "data": "2026-10-26",
+          "tipo": "gara",
+          "rank": 21705,
+          "tempo": "1:22.573",
+          "evento": "Willow Springs International Raceway: Big Willow"
         },
         {
           "data": "2026-10-26",
@@ -17089,7 +17131,7 @@
       },
       {
         "etichetta": "101 – 500",
-        "conteggio": 97
+        "conteggio": 98
       },
       {
         "etichetta": "501 – 1.000",
@@ -17105,9 +17147,9 @@
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 1062
+        "conteggio": 1063
       }
     ],
-    "eventi_totali": 2280
+    "eventi_totali": 2282
   }
 }
