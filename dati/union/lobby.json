@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-02T21:45:02+00:00"
+    "generated_at": "2026-11-03T19:33:03+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -548,13 +548,6 @@
           "team": "MMS",
           "nome": "JackVenom",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 12,
-          "matricola": "360",
-          "team": "ARC",
-          "nome": "KSI-AreS_GlaDiuS",
-          "auto": "RC F GT500 '16"
         }
       ]
     },
@@ -733,13 +726,6 @@
           "auto": "RS 5 Turbo DTM '19"
         },
         {
-          "pos": 10,
-          "matricola": "48",
-          "team": "PRT",
-          "nome": "PRT_MaxLukex",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
           "pos": 11,
           "matricola": "10",
           "team": "CBR",
@@ -855,9 +841,9 @@
       "time": "Ore 22:20",
       "name": "A12",
       "category": "ELITE",
-      "host": "bmario1962",
-      "live": "RMT- bmario1962",
-      "url": "https://www.twitch.tv/racing_monster_team_",
+      "host": "Buitre83gt",
+      "live": "TLM- Buitre83gt",
+      "url": "https://youtube.com/@teamlionmotorsport",
       "pilots": [
         {
           "pos": 1,
@@ -1154,7 +1140,7 @@
       "time": "Ore 22:20",
       "name": "A15",
       "category": "PRO AMA",
-      "host": "BAD_brucem84",
+      "host": "Cacino95",
       "live": "BCSC- Pardus—89",
       "url": "https://youtube.com/@badcerbero23",
       "pilots": [
