@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-03T19:33:03+00:00"
+    "generated_at": "2026-11-05T20:02:09+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -726,6 +726,13 @@
           "auto": "RS 5 Turbo DTM '19"
         },
         {
+          "pos": 10,
+          "matricola": "45",
+          "team": "PRT",
+          "nome": "Phin",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
           "pos": 11,
           "matricola": "10",
           "team": "CBR",
@@ -744,13 +751,6 @@
           "matricola": "69",
           "team": "SMI",
           "nome": "SMI_Massi_TopGun",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 14,
-          "matricola": "45",
-          "team": "PRT",
-          "nome": "Phin",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2186,10 +2186,10 @@
         },
         {
           "pos": 5,
-          "matricola": "287",
-          "team": "DCT",
-          "nome": "Shudew",
-          "auto": "RC F GT500 '16"
+          "matricola": "343",
+          "team": "TLM",
+          "nome": "TLM_IL_DUCA_VASH",
+          "auto": "ASSENTE"
         },
         {
           "pos": 6,
@@ -2207,10 +2207,10 @@
         },
         {
           "pos": 8,
-          "matricola": "286",
-          "team": "DCT",
-          "nome": "DCT_Shider_02",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "326",
+          "team": "SCGT",
+          "nome": "SCGT-Salvatore",
+          "auto": "RC F GT500 '16"
         },
         {
           "pos": 9,
@@ -2239,20 +2239,6 @@
           "team": "PRT",
           "nome": "N_Spec",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "326",
-          "team": "SCGT",
-          "nome": "SCGT-Salvatore",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 14,
-          "matricola": "343",
-          "team": "TLM",
-          "nome": "TLM_IL_DUCA_VASH",
-          "auto": "ASSENTE"
         }
       ]
     },
@@ -3345,7 +3331,7 @@
           "pos": 13,
           "matricola": "277",
           "team": "CBR",
-          "nome": "Clesh555",
+          "nome": "CBR_Clesh555",
           "auto": "GT-R NISMO GT500 '16"
         }
       ]
