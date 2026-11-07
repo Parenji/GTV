@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-07T06:08:00+00:00"
+    "generated_at": "2026-11-07T17:45:46+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -671,6 +671,13 @@
           "team": "PRT",
           "nome": "(edo56)",
           "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "481",
+          "team": "PRT",
+          "nome": "Simoppr",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -772,6 +779,13 @@
           "matricola": "69",
           "team": "SMI",
           "nome": "SMI_Massi_TopGun",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "47",
+          "team": "PRT",
+          "nome": "PRT_Leox86",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -1149,9 +1163,9 @@
         },
         {
           "pos": 13,
-          "matricola": "257",
-          "team": "SRT",
-          "nome": "Lok",
+          "matricola": "191",
+          "team": "DCT",
+          "nome": "CpMa_95",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -1167,9 +1181,9 @@
       "pilots": [
         {
           "pos": 1,
-          "matricola": "403",
+          "matricola": "412",
           "team": "PRT",
-          "nome": "Baba Voss",
+          "nome": "Verdi76",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2375,9 +2389,9 @@
         },
         {
           "pos": 6,
-          "matricola": "481",
-          "team": "PRT",
-          "nome": "Simoppr",
+          "matricola": "464",
+          "team": "FFM",
+          "nome": "FFM_FilippoFm89",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -2413,13 +2427,6 @@
           "matricola": "466",
           "team": "FMC",
           "nome": "FMC_Marcosanta",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 12,
-          "matricola": "464",
-          "team": "FFM",
-          "nome": "FFM_FilippoFm89",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2727,6 +2734,13 @@
           "team": "RMT",
           "nome": "RMT-AT83Andrea",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "136",
+          "team": "PRT",
+          "nome": "H7-25 YT",
+          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -2811,9 +2825,9 @@
         },
         {
           "pos": 11,
-          "matricola": "191",
-          "team": "DCT",
-          "nome": "CpMa_95",
+          "matricola": "257",
+          "team": "SRT",
+          "nome": "Lok",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2892,9 +2906,9 @@
         },
         {
           "pos": 10,
-          "matricola": "412",
+          "matricola": "403",
           "team": "PRT",
-          "nome": "Verdi76",
+          "nome": "Baba Voss",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3054,10 +3068,10 @@
         },
         {
           "pos": 2,
-          "matricola": "47",
-          "team": "PRT",
-          "nome": "PRT_Leox86",
-          "auto": "RS 5 Turbo DTM '19"
+          "matricola": "52",
+          "team": "RCE",
+          "nome": "RCE_DarkneSS",
+          "auto": "ASSENTE"
         },
         {
           "pos": 3,
@@ -3128,13 +3142,6 @@
           "team": "DCT",
           "nome": "F.Narga",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "52",
-          "team": "RCE",
-          "nome": "RCE_DarkneSS",
-          "auto": "ASSENTE"
         }
       ]
     },
@@ -3191,9 +3198,9 @@
         },
         {
           "pos": 7,
-          "matricola": "136",
-          "team": "PRT",
-          "nome": "H7-25 YT",
+          "matricola": "92",
+          "team": "ARC",
+          "nome": "ARC-Tommizio",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3223,13 +3230,6 @@
           "team": "SMI",
           "nome": "SMI_#Gianni",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 12,
-          "matricola": "92",
-          "team": "ARC",
-          "nome": "ARC-Tommizio",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
