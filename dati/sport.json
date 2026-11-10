@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-10T00:41:09+00:00",
+    "updated_at": "2026-11-10T13:29:00+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-11-19T06:59:59Z",
         "miglior_tempo": "1:39.865",
         "leader": "N2_HyperzWC",
-        "partecipanti": 107381,
+        "partecipanti": 110553,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:41.666",
             "tempo_ms": 101666,
-            "pos_assoluta": 2168,
+            "pos_assoluta": 2224,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.803
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:41.833",
             "tempo_ms": 101833,
-            "pos_assoluta": 3161,
+            "pos_assoluta": 3246,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.164,
             "distacco_assoluto_pct": 1.971
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:41.938",
             "tempo_ms": 101938,
-            "pos_assoluta": 4011,
+            "pos_assoluta": 4112,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.268,
             "distacco_assoluto_pct": 2.076
@@ -67,7 +67,7 @@
             "squadra": "GTV",
             "tempo": "1:42.340",
             "tempo_ms": 102340,
-            "pos_assoluta": 8352,
+            "pos_assoluta": 8561,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.663,
             "distacco_assoluto_pct": 2.478
@@ -79,7 +79,7 @@
             "squadra": "GTV",
             "tempo": "1:42.487",
             "tempo_ms": 102487,
-            "pos_assoluta": 9998,
+            "pos_assoluta": 10956,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.808,
             "distacco_assoluto_pct": 2.626
@@ -97,7 +97,7 @@
         "chiusura": "2026-11-16T11:59:59Z",
         "miglior_tempo": "1:56.840",
         "leader": "Falcon_Josete",
-        "partecipanti": 153209,
+        "partecipanti": 155949,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -108,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "1:58.716",
             "tempo_ms": 118716,
-            "pos_assoluta": 388,
+            "pos_assoluta": 392,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.606
@@ -120,7 +120,7 @@
             "squadra": "GTV",
             "tempo": "1:59.080",
             "tempo_ms": 119080,
-            "pos_assoluta": 829,
+            "pos_assoluta": 835,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.307,
             "distacco_assoluto_pct": 1.917
@@ -132,7 +132,7 @@
             "squadra": "GTV",
             "tempo": "1:59.384",
             "tempo_ms": 119384,
-            "pos_assoluta": 1408,
+            "pos_assoluta": 1416,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.563,
             "distacco_assoluto_pct": 2.177
@@ -144,7 +144,7 @@
             "squadra": "GTV",
             "tempo": "1:59.448",
             "tempo_ms": 119448,
-            "pos_assoluta": 1589,
+            "pos_assoluta": 1597,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.617,
             "distacco_assoluto_pct": 2.232
@@ -156,7 +156,7 @@
             "squadra": "GTV",
             "tempo": "1:59.709",
             "tempo_ms": 119709,
-            "pos_assoluta": 2664,
+            "pos_assoluta": 2678,
             "pos_gtv": 5,
             "distacco_gtv_pct": 0.836,
             "distacco_assoluto_pct": 2.455
@@ -168,7 +168,7 @@
             "squadra": "GTV",
             "tempo": "1:59.739",
             "tempo_ms": 119739,
-            "pos_assoluta": 2827,
+            "pos_assoluta": 2843,
             "pos_gtv": 6,
             "distacco_gtv_pct": 0.862,
             "distacco_assoluto_pct": 2.481
@@ -180,7 +180,7 @@
             "squadra": "JGTV",
             "tempo": "1:59.837",
             "tempo_ms": 119837,
-            "pos_assoluta": 3462,
+            "pos_assoluta": 3481,
             "pos_gtv": 7,
             "distacco_gtv_pct": 0.944,
             "distacco_assoluto_pct": 2.565
@@ -192,7 +192,7 @@
             "squadra": "GTV",
             "tempo": "1:59.872",
             "tempo_ms": 119872,
-            "pos_assoluta": 3768,
+            "pos_assoluta": 3790,
             "pos_gtv": 8,
             "distacco_gtv_pct": 0.974,
             "distacco_assoluto_pct": 2.595
@@ -204,7 +204,7 @@
             "squadra": "GTV",
             "tempo": "2:00.078",
             "tempo_ms": 120078,
-            "pos_assoluta": 5564,
+            "pos_assoluta": 5604,
             "pos_gtv": 9,
             "distacco_gtv_pct": 1.147,
             "distacco_assoluto_pct": 2.771
@@ -216,7 +216,7 @@
             "squadra": "GTV",
             "tempo": "2:00.241",
             "tempo_ms": 120241,
-            "pos_assoluta": 7457,
+            "pos_assoluta": 7521,
             "pos_gtv": 10,
             "distacco_gtv_pct": 1.285,
             "distacco_assoluto_pct": 2.911
@@ -228,7 +228,7 @@
             "squadra": "GTV",
             "tempo": "2:00.401",
             "tempo_ms": 120401,
-            "pos_assoluta": 9264,
+            "pos_assoluta": 9347,
             "pos_gtv": 11,
             "distacco_gtv_pct": 1.419,
             "distacco_assoluto_pct": 3.048
@@ -240,7 +240,7 @@
             "squadra": "GTV",
             "tempo": "2:00.487",
             "tempo_ms": 120487,
-            "pos_assoluta": 9916,
+            "pos_assoluta": 9995,
             "pos_gtv": 12,
             "distacco_gtv_pct": 1.492,
             "distacco_assoluto_pct": 3.121
@@ -252,7 +252,7 @@
             "squadra": "GTV",
             "tempo": "2:01.681",
             "tempo_ms": 121681,
-            "pos_assoluta": 21764,
+            "pos_assoluta": 23152,
             "pos_gtv": 13,
             "distacco_gtv_pct": 2.498,
             "distacco_assoluto_pct": 4.143
@@ -270,7 +270,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.612",
         "leader": "AT__1826",
-        "partecipanti": 156990,
+        "partecipanti": 158842,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -281,7 +281,7 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 5034,
+            "pos_assoluta": 5084,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.434
@@ -293,7 +293,7 @@
             "squadra": "GTV",
             "tempo": "1:23.177",
             "tempo_ms": 83177,
-            "pos_assoluta": 17198,
+            "pos_assoluta": 17937,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.73,
             "distacco_assoluto_pct": 3.182
@@ -812,7 +812,7 @@
           "data": "09 Nov 2026",
           "tempo": "1:17.664",
           "tempo_ms": 77664,
-          "pos_assoluta": 1514,
+          "pos_assoluta": 1851,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -941,8 +941,8 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "B",
-      "miglior_rank": 388,
-      "rank_medio": 27622,
+      "miglior_rank": 392,
+      "rank_medio": 27623,
       "eventi_pubblicati": 108,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -951,14 +951,14 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 4011,
+          "rank": 4112,
           "tempo": "1:41.938",
           "evento": "Fuji International Speedway"
         },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 388,
+          "rank": 392,
           "tempo": "1:58.716",
           "evento": "Nürburgring GP"
         },
@@ -1715,7 +1715,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 1238,
-      "rank_medio": 31109,
+      "rank_medio": 31116,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -1724,14 +1724,14 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 2827,
+          "rank": 2843,
           "tempo": "1:59.739",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 17198,
+          "rank": 17937,
           "tempo": "1:23.177",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
@@ -3149,7 +3149,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32511,
+      "rank_medio": 32529,
       "eventi_pubblicati": 129,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -3158,14 +3158,14 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 9998,
+          "rank": 10956,
           "tempo": "1:42.487",
           "evento": "Fuji International Speedway"
         },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 21764,
+          "rank": 23152,
           "tempo": "2:01.681",
           "evento": "Nürburgring GP"
         },
@@ -5421,7 +5421,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 1589,
+          "rank": 1597,
           "tempo": "1:59.448",
           "evento": "Nürburgring GP"
         },
@@ -6388,7 +6388,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 4550,
-      "rank_medio": 33186,
+      "rank_medio": 33187,
       "eventi_pubblicati": 53,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -6397,7 +6397,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 9916,
+          "rank": 9995,
           "tempo": "2:00.487",
           "evento": "Nürburgring GP"
         },
@@ -6785,7 +6785,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 829,
+          "rank": 835,
           "tempo": "1:59.080",
           "evento": "Nürburgring GP"
         },
@@ -8196,7 +8196,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18470,
+      "rank_medio": 18471,
       "eventi_pubblicati": 100,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -8205,21 +8205,21 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 2168,
+          "rank": 2224,
           "tempo": "1:41.666",
           "evento": "Fuji International Speedway"
         },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 2664,
+          "rank": 2678,
           "tempo": "1:59.709",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 5034,
+          "rank": 5084,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
@@ -11021,16 +11021,16 @@
         {
           "data": "2024-12-12",
           "tipo": "time_trial",
-          "rank": 34701,
-          "tempo": "2:17.651",
-          "evento": "Grand Valley - Highway 1"
+          "rank": 20123,
+          "tempo": "6:45.615",
+          "evento": "Nürburgring 24h"
         },
         {
           "data": "2024-12-12",
           "tipo": "time_trial",
-          "rank": 20123,
-          "tempo": "6:45.615",
-          "evento": "Nürburgring 24h"
+          "rank": 34701,
+          "tempo": "2:17.651",
+          "evento": "Grand Valley - Highway 1"
         },
         {
           "data": "2024-11-28",
@@ -11378,16 +11378,16 @@
         {
           "data": "2023-10-29",
           "tipo": "time_trial",
-          "rank": 5781,
-          "tempo": "2:25.749",
-          "evento": "Suzuka Circuit"
+          "rank": 22342,
+          "tempo": "7:57.157",
+          "evento": "Nürburgring Nordschleife"
         },
         {
           "data": "2023-10-29",
           "tipo": "time_trial",
-          "rank": 22342,
-          "tempo": "7:57.157",
-          "evento": "Nürburgring Nordschleife"
+          "rank": 5781,
+          "tempo": "2:25.749",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2023-10-19",
@@ -11633,7 +11633,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 5564,
+          "rank": 5604,
           "tempo": "2:00.078",
           "evento": "Nürburgring GP"
         },
@@ -12533,7 +12533,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 19115,
+      "rank_medio": 19116,
       "eventi_pubblicati": 115,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -12542,14 +12542,14 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 3161,
+          "rank": 3246,
           "tempo": "1:41.833",
           "evento": "Fuji International Speedway"
         },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 3768,
+          "rank": 3790,
           "tempo": "1:59.872",
           "evento": "Nürburgring GP"
         },
@@ -13355,7 +13355,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18778,
+      "rank_medio": 18782,
       "eventi_pubblicati": 105,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -13364,14 +13364,14 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 9264,
+          "rank": 9347,
           "tempo": "2:00.401",
           "evento": "Nürburgring GP"
         },
         {
           "data": "2026-11-09",
           "tipo": "gara",
-          "rank": 1514,
+          "rank": 1851,
           "tempo": "1:17.664",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -14369,7 +14369,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 46669,
+      "rank_medio": 46671,
       "eventi_pubblicati": 152,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -14378,14 +14378,14 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 8352,
+          "rank": 8561,
           "tempo": "1:42.340",
           "evento": "Fuji International Speedway"
         },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 7457,
+          "rank": 7521,
           "tempo": "2:00.241",
           "evento": "Nürburgring GP"
         },
@@ -15459,7 +15459,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 1408,
+          "rank": 1416,
           "tempo": "1:59.384",
           "evento": "Nürburgring GP"
         },
@@ -16509,7 +16509,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 1225,
-      "rank_medio": 26021,
+      "rank_medio": 26022,
       "eventi_pubblicati": 141,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -16518,7 +16518,7 @@
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
-          "rank": 3462,
+          "rank": 3481,
           "tempo": "1:59.837",
           "evento": "Nürburgring GP"
         },
