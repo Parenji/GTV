@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-10T15:33:25+00:00",
+    "updated_at": "2026-11-10T16:29:03+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-11-19T06:59:59Z",
         "miglior_tempo": "1:39.865",
         "leader": "N2_HyperzWC",
-        "partecipanti": 111404,
+        "partecipanti": 111817,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:41.666",
             "tempo_ms": 101666,
-            "pos_assoluta": 2242,
+            "pos_assoluta": 2247,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.803
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:41.833",
             "tempo_ms": 101833,
-            "pos_assoluta": 3273,
+            "pos_assoluta": 3286,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.164,
             "distacco_assoluto_pct": 1.971
@@ -55,7 +55,7 @@
             "squadra": "GTV",
             "tempo": "1:41.938",
             "tempo_ms": 101938,
-            "pos_assoluta": 4146,
+            "pos_assoluta": 4158,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.268,
             "distacco_assoluto_pct": 2.076
@@ -67,7 +67,7 @@
             "squadra": "GTV",
             "tempo": "1:42.340",
             "tempo_ms": 102340,
-            "pos_assoluta": 8629,
+            "pos_assoluta": 8661,
             "pos_gtv": 4,
             "distacco_gtv_pct": 0.663,
             "distacco_assoluto_pct": 2.478
@@ -97,7 +97,7 @@
         "chiusura": "2026-11-16T11:59:59Z",
         "miglior_tempo": "1:56.840",
         "leader": "Falcon_Josete",
-        "partecipanti": 156732,
+        "partecipanti": 157116,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -270,7 +270,7 @@
         "chiusura": "2026-11-12T06:59:59Z",
         "miglior_tempo": "1:20.612",
         "leader": "AT__1826",
-        "partecipanti": 159428,
+        "partecipanti": 159700,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -281,7 +281,7 @@
             "squadra": "GTV",
             "tempo": "1:22.574",
             "tempo_ms": 82574,
-            "pos_assoluta": 5098,
+            "pos_assoluta": 5108,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.434
@@ -812,7 +812,7 @@
           "data": "09 Nov 2026",
           "tempo": "1:17.664",
           "tempo_ms": 77664,
-          "pos_assoluta": 1960,
+          "pos_assoluta": 1983,
           "pos_gtv": 1,
           "distacco_gtv_pct": 0.0,
           "distacco_assoluto_pct": null
@@ -951,7 +951,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 4146,
+          "rank": 4158,
           "tempo": "1:41.938",
           "evento": "Fuji International Speedway"
         },
@@ -8205,7 +8205,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 2242,
+          "rank": 2247,
           "tempo": "1:41.666",
           "evento": "Fuji International Speedway"
         },
@@ -8219,7 +8219,7 @@
         {
           "data": "2026-11-12",
           "tipo": "time_trial",
-          "rank": 5098,
+          "rank": 5108,
           "tempo": "1:22.574",
           "evento": "Blue Moon Bay Speedway - Infield A"
         },
@@ -12533,7 +12533,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 19116,
+      "rank_medio": 19117,
       "eventi_pubblicati": 115,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -12542,7 +12542,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 3273,
+          "rank": 3286,
           "tempo": "1:41.833",
           "evento": "Fuji International Speedway"
         },
@@ -13371,7 +13371,7 @@
         {
           "data": "2026-11-09",
           "tipo": "gara",
-          "rank": 1960,
+          "rank": 1983,
           "tempo": "1:17.664",
           "evento": "Michelin Raceway Road Atlanta"
         },
@@ -14378,7 +14378,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 8629,
+          "rank": 8661,
           "tempo": "1:42.340",
           "evento": "Fuji International Speedway"
         },
