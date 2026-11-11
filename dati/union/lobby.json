@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-10T19:49:26+00:00"
+    "generated_at": "2026-11-11T19:41:12+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -590,9 +590,9 @@
         },
         {
           "pos": 3,
-          "matricola": "521",
+          "matricola": "520",
           "team": "SRT",
-          "nome": "habanero",
+          "nome": "kiank87",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -762,9 +762,9 @@
         },
         {
           "pos": 13,
-          "matricola": "69",
+          "matricola": "74",
           "team": "SMI",
-          "nome": "SMI_Massi_TopGun",
+          "nome": "SMI-Lellobello",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -2312,9 +2312,9 @@
         },
         {
           "pos": 3,
-          "matricola": "520",
+          "matricola": "521",
           "team": "SRT",
-          "nome": "kiank87",
+          "nome": "habanero",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
@@ -3026,9 +3026,9 @@
         },
         {
           "pos": 7,
-          "matricola": "74",
+          "matricola": "69",
           "team": "SMI",
-          "nome": "SMI-Lellobello",
+          "nome": "SMI_Massi_TopGun",
           "auto": "RS 5 Turbo DTM '19"
         },
         {
