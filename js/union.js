@@ -2015,7 +2015,7 @@ function fetchUnionDGSheet(url) {
         teamR: col(/^TAG TEAM RICHIEDENTE/),
         nomeR: col(/^ID GT7 RICHIEDENTE/),
         teamI: col(/^TAG TEAM INDAGATO/),
-        nomeI: col(/^ID GT7? INDAGAT/), // Gara 2: "ID GT INDAGAT0"
+        nomeI: col(/^ID GT7? IN\w*DAGAT/), // Gara 2: "ID GT INDAGAT0", Gara 4: "ID GT7 INADAGATO"
         lega: col(/^RANK/),
         lobby: col(/LOBBY/),
         note: col(/^NOTE/),
