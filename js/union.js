@@ -1926,13 +1926,14 @@ function unionDGUrls() {
 // Esito dalla colonna PENALITA': numero = secondi, "RIFIUTATO, motivo" = respinto
 function unionDGEsito(testo) {
   var t = String(testo || "").trim();
+  var m;
   if (/^\d+$/.test(t)) {
     var sec = parseInt(t, 10);
     return sec > 0
       ? { tipo: "pen", sec: sec, label: "+" + sec + " s" }
       : { tipo: "zero", sec: 0, label: "Nessuna penalità" };
   }
-  var m = t.match(/^(rifiutat|respint)[oa]?\s*[,:\-–]?\s*(.*)$/i);
+  m = t.match(/^(rifiutat|respint)[oa]?\s*[,:\-–]?\s*(.*)$/i);
   if (m) {
     var motivo = m[2].trim();
     return { tipo: "respinto", sec: 0, label: "Respinto", motivo: motivo ? motivo.charAt(0).toUpperCase() + motivo.slice(1) : "" };
@@ -1940,6 +1941,11 @@ function unionDGEsito(testo) {
   if (!t) return { tipo: "attesa", sec: 0, label: "In valutazione" };
   // Gara 3: reclamo girato alle segnalazioni degli host, che decidono la sanzione
   if (/segnalazion/i.test(t)) return { tipo: "altro", sec: 0, label: "Passato agli host", motivo: "Vedi le segnalazioni degli host" };
+  // Gara 4: "SQUALIFICA PROSSIMA GARA", "GIÀ VALUTATO RIGA 13" (stesso fatto di un altro reclamo)
+  if (/squalific/i.test(t)) return { tipo: "squalifica", sec: 0, label: "Squalifica", sub: "Salta la prossima gara" };
+  if ((m = t.match(/gi[aà]\s*valutat\w*\s*(?:riga\s*(\d+))?/i))) {
+    return { tipo: "zero", sec: 0, label: "Già valutato", sub: m[1] ? "Vedi il reclamo alla riga " + m[1] : "" };
+  }
   // Dalla Gara 2 solo il motivo ("INFONDATO", "QUALITA' VIDEO BASSA", "MANCA TELEMETRIA")
   if (/infondat|qualit|manca|non\s*conform/i.test(t)) {
     return { tipo: "respinto", sec: 0, label: "Respinto", motivo: t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() };
@@ -1955,6 +1961,8 @@ function unionDGHostEsito(testo, gara) {
   if (!t) return { tipo: "attesa", peso: 3, label: "In valutazione" };
   if (/null|annullat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Nulla" };
   if (/gi[aà]\s*valutat/i.test(t)) return { tipo: "nullo", peso: 9, label: "Già valutata" };
+  // Gara 4: "GIÀ GESTITO DAL DIRETTIVO"
+  if (/gi[aà]\s*gestit/i.test(t)) return { tipo: "nullo", peso: 9, label: "Già gestita", sub: "Dal direttivo" };
   // Gara 3: "respinto, andava fatto reclamo"
   if ((m = t.match(/^(rifiutat|respint)[oa]?\s*[,:\-–]?\s*(.*)$/i))) {
     return { tipo: "nullo", peso: 9, label: "Respinta", sub: m[2] ? m[2].charAt(0).toUpperCase() + m[2].slice(1) : "" };

@@ -1900,7 +1900,8 @@ a.ui-card:focus-visible {
   font-size: var(--ui-fs-lg);
 }
 
-.ui-dg-esito--pen {
+.ui-dg-esito--pen,
+.ui-dg-esito--squalifica {
   color: var(--ui-danger);
 }
 
