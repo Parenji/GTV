@@ -2281,8 +2281,10 @@ function unionReportDGHtml(reclami, host, lobbyData, ricorsi) {
   var gtvSet = unionDGGtvSet(lobbyData);
   unionDGCorreggiTeam(reclami.concat(host || []), lobbyData);
   reclami.concat(host || []).forEach(function (x) {
-    x.gtvR = /^GTV\b/.test(x.teamR) || !!gtvSet[unionNorm(x.nomeR)];
-    x.gtvI = /^GTV\b/.test(x.teamI) || !!gtvSet[unionNorm(x.nomeI)];
+    if (/^GTV\b/.test(x.teamR)) x.teamR = "GTV"; // "GTV CORSE" -> GTV
+    if (/^GTV\b/.test(x.teamI)) x.teamI = "GTV";
+    x.gtvR = x.teamR === "GTV" || !!gtvSet[unionNorm(x.nomeR)];
+    x.gtvI = x.teamI === "GTV" || !!gtvSet[unionNorm(x.nomeI)];
   });
   var ordine = function (a, b) {
     return unionTierIndex(a.lega) - unionTierIndex(b.lega) || unionDGLobbyNum(a.lobby) - unionDGLobbyNum(b.lobby);
