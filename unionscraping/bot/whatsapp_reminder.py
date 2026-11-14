@@ -180,8 +180,19 @@ def _lobby_sort_key(name):
     return (int(m.group(1)) if m else 9999, name)
 
 
+def load_ritirati(path=None):
+    """Piloti GTV ritirati dal campionato (chiave_pilota): "ritirati" del calendario."""
+    cal = json.loads(Path(path or CALENDARIO_JSON).read_text(encoding="utf-8"))
+    return {nomi.chiave_pilota(r.get("nome")) for r in cal.get("ritirati", [])}
+
+
 def gtv_lobbies_for_day(data, day_name):
-    """Lobby del giorno che contengono almeno un pilota GTV, ordinate per nome."""
+    """Lobby del giorno che contengono almeno un pilota GTV, ordinate per nome.
+
+    I ritirati restano nelle lobby Union finche' la Lega non le aggiorna:
+    qui si saltano, non corrono piu'.
+    """
+    ritirati = load_ritirati()
     out = []
     for lb in data.get("lobbies", []):
         if str(lb.get("day", "")).strip().upper() != day_name:
@@ -189,6 +200,7 @@ def gtv_lobbies_for_day(data, day_name):
         pilots = [
             p for p in lb.get("pilots", [])
             if nomi.e_gtv(p.get("team"))
+            and nomi.chiave_pilota(p.get("nome")) not in ritirati
         ]
         if not pilots:
             continue

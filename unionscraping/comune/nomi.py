@@ -12,6 +12,12 @@ def normalizza(testo):
     return re.sub(r"[^a-z0-9]", "", testo.lower())
 
 
+def chiave_pilota(nome):
+    """Nome per ritrovare un pilota tra le fonti: "GTV Drivergt1985" -> "drivergt1985"."""
+    n = normalizza(nome)
+    return n[3:] if n.startswith("gtv") else n
+
+
 def somiglianza(a, b):
     """0..1 tra due nomi gia' normalizzati (1 = identici)."""
     if a == b:

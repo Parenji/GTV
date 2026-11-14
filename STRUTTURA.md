@@ -74,3 +74,6 @@ Ogni push su `main` fa ripartire il deploy di Vercel.
 - **Nuova gara Union**: si aggiorna `dati/union/calendario.json`; per il
   Report DG si aggiunge la voce in `config.js` → `unionReportDG`.
 - **Nuovo titolo**: si aggiunge una voce in cima a `dati/palmares.json`.
+- **Nuovo round (foglietto di telecronaca e regia della diretta)**: si aggiorna
+  `unionscraping/telecronaca/round.json` (team, impostazioni stanza, calendario
+  con giri, usura e chicche). È nella cartella ignorata da git: è l'unica copia.

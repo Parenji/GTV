@@ -238,7 +238,7 @@ function loadUnionStats() {
         var gtvNomi = {};
         (data.lobbies || []).forEach(function (lb) {
           (lb.pilots || []).forEach(function (p) {
-            if (String(p.team || "").trim().toUpperCase() === "GTV") {
+            if (unionGtvInPista(p)) {
               gtvNomi[String(p.nome || "").trim().toLowerCase()] = true;
             }
           });
@@ -297,6 +297,7 @@ function loadUnionPiloti() {
 
       var unionRows = rows.filter(function (r) {
         var participa = String(r[5] || "").trim().toLowerCase();
+        if (unionRitirato(r[0]) || unionRitirato(r[1])) return false;
         return participa === "x" || participa === "✓" || participa === "1";
       });
 
@@ -572,7 +573,7 @@ function renderUnionSpecchietto(container, data) {
   var rows = [];
   data.lobbies.forEach(function (lb) {
     lb.pilots.forEach(function (p) {
-      if (String(p.team || "").trim().toUpperCase() !== "GTV") return;
+      if (!unionGtvInPista(p)) return;
       rows.push({ name: lb.name, day: lb.day, time: lb.time, category: lb.category, pilot: p.nome || "" });
     });
   });
@@ -664,18 +665,17 @@ function renderUnionLobbyBody(container, data) {
 }
 
 function unionLobbyCardHtml(lb) {
-  var gtv = lb.pilots.filter(function (p) {
-    return String(p.team || "").trim().toUpperCase() === "GTV";
-  }).length;
+  var gtv = lb.pilots.filter(unionGtvInPista).length;
 
   var pilots = lb.pilots
     .map(function (p) {
-      var isGtv = String(p.team || "").trim().toUpperCase() === "GTV";
+      var isGtv = unionGtvInPista(p);
+      var ritirato = unionIsGtv(p) && !isGtv ? ' <span class="ui-muted">(ritirato)</span>' : "";
       return (
         '<li class="ui-row' + (isGtv ? " is-gtv" : "") + '">' +
         '<span class="ui-pos">' + escapeHtml(p.pos) + "</span>" +
         '<span class="ui-muted">' + escapeHtml(p.team) + "</span>" +
-        '<span class="ui-ellipsis' + (isGtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) + "</span>" +
+        '<span class="ui-ellipsis' + (isGtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) + ritirato + "</span>" +
         "</li>"
       );
     })
@@ -775,9 +775,7 @@ function renderUnionLive(container, data, csvRows) {
   var corrono = []; // GTV che corrono: un link per ogni pilota
   var host = []; // lobby con un GTV in regia
   data.lobbies.forEach(function (lb) {
-    var gtv = (lb.pilots || []).filter(function (p) {
-      return String(p.team || "").trim().toUpperCase() === "GTV";
-    });
+    var gtv = (lb.pilots || []).filter(unionGtvInPista);
     gtv.forEach(function (p) {
       corrono.push({ lb: lb, nome: p.nome, alt: (gtvCsv[unionNorm(p.nome)] || {}).psn });
     });
@@ -865,6 +863,25 @@ function unionNorm(s) {
 
 function unionIsGtv(p) {
   return String((p && p.team) || "").trim().toUpperCase() === "GTV";
+}
+
+// Piloti GTV ritirati dal campionato ("ritirati" del calendario): restano
+// nelle lobby Union finche' la Lega non le aggiorna, ma non corrono piu'.
+// Senza `gara` conta solo se e' ritirato; con `gara`, se lo e' gia' a quella.
+function unionChiavePilota(nome) {
+  return unionNorm(nome).replace(/^gtv/, "");
+}
+
+function unionRitirato(nome, gara) {
+  var chiave = unionChiavePilota(nome);
+  return ((UNION_CAL && UNION_CAL.ritirati) || []).some(function (r) {
+    return unionChiavePilota(r.nome) === chiave && (!gara || gara >= (r.dalla_gara || 1));
+  });
+}
+
+// GTV che corre ancora: per lobby, live, specchietto e conteggi
+function unionGtvInPista(p) {
+  return unionIsGtv(p) && !unionRitirato(p.nome);
 }
 
 // Stati al posto del piazzamento (A assente, NC, BOX, DSQ): etichetta e sigla
@@ -991,7 +1008,9 @@ function renderUnionRisultati() {
 
   UNION_LEGHE.forEach(function (lega) {
     var legaData = data.leghe[lega];
-    var gtv = ((legaData && legaData.piloti) || []).filter(unionIsGtv);
+    var gtv = ((legaData && legaData.piloti) || []).filter(function (p) {
+      return unionIsGtv(p) && !unionRitirato(p.nome, unionCls.gara);
+    });
     if (!gtv.length) return;
 
     var schede = gtv
@@ -1202,7 +1221,7 @@ function renderUnionClassifiche() {
   if (tabs) {
     tabs.innerHTML = UNION_LEGHE.map(function (lega) {
       var piloti = (data.leghe[lega] && data.leghe[lega].piloti) || [];
-      var gtv = piloti.filter(unionIsGtv).length;
+      var gtv = piloti.filter(unionGtvInPista).length;
       var attiva = lega === unionCls.lega;
       return (
         '<button type="button" role="tab" class="ui-tab ' + unionCategoryColorClass(lega) + '"' +
@@ -1291,7 +1310,8 @@ function unionClsRowHtml(p) {
     '<li class="ui-row' + (gtv ? " is-gtv" : "") + '" tabindex="0" aria-expanded="false">' +
     '<span class="ui-pos">' + (p.pos || "") + "</span>" +
     '<span class="ui-muted">' + escapeHtml(p.team || "") + "</span>" +
-    '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) + (gtv ? unionMovimento(p) : "") + "</span>" +
+    '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) +
+    (gtv && unionRitirato(p.nome) ? ' <span class="ui-muted">(ritirato)</span>' : gtv ? unionMovimento(p) : "") + "</span>" +
     '<span class="ui-num">' + (p.punti || 0) + "</span>" +
     '<span class="ui-row-more">' + gare + "</span>" +
     "</li>"

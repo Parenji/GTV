@@ -1,5 +1,5 @@
 {
-  "_nota": "Calendario Union: unica fonte per union.html, bot Telegram e promemoria. Si modifica a mano. tipo = gara (conta in classifica) | finale. bandiera = codice in images/bandiere/<codice>.svg; mappa = file in images/tracks/.",
+  "_nota": "Calendario Union: unica fonte per union.html, bot Telegram e promemoria. Si modifica a mano. tipo = gara (conta in classifica) | finale. bandiera = codice in images/bandiere/<codice>.svg; mappa = file in images/tracks/. ritirati = piloti GTV ritirati dal campionato dalla gara indicata in poi: spariscono da lobby GTV, live, promemoria e risultati, in classifica restano con la scritta ritirato.",
   "campionato": "Union E-Sport",
   "stagione": 2026,
   "round": "Round 2",
@@ -11,5 +11,9 @@
     {"n": 4, "nome": "Gara 4", "tipo": "gara", "pista": "Autopolis", "bandiera": "jp", "mappa": "autopolis.png", "dal": "2026-11-02", "al": "2026-11-08"},
     {"n": 5, "nome": "Gara 5", "tipo": "gara", "pista": "Nürburgring GP", "bandiera": "de", "mappa": "nurburgring.svg", "dal": "2026-11-16", "al": "2026-11-22"},
     {"n": 6, "nome": "Finale", "tipo": "finale", "pista": "Barcelona GP", "bandiera": "es", "mappa": "barcelona.svg", "dal": "2026-11-30", "al": "2026-12-06", "badge": ["No chicane"]}
+  ],
+  "ritirati": [
+    {"nome": "Scrocchio98", "dalla_gara": 4},
+    {"nome": "Drivergt1985", "dalla_gara": 4}
   ]
 }
