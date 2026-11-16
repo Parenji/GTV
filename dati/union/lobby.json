@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-14T06:36:04+00:00"
+    "generated_at": "2026-11-16T22:14:27+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -1845,13 +1845,6 @@
           "team": "GTV",
           "nome": "Mirco",
           "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 13,
-          "matricola": "254",
-          "team": "SMI",
-          "nome": "Vanveremberg-87",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
