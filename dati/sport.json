@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-16T13:34:24+00:00",
+    "updated_at": "2026-11-16T16:58:05+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.786",
         "leader": "MetalGear9493",
-        "partecipanti": 89527,
+        "partecipanti": 91823,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 1487,
+            "pos_assoluta": 1511,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.094
@@ -61,7 +61,7 @@
         "chiusura": "2026-11-19T06:59:59Z",
         "miglior_tempo": "1:39.865",
         "leader": "N2_HyperzWC",
-        "partecipanti": 161077,
+        "partecipanti": 162786,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "1:41.666",
             "tempo_ms": 101666,
-            "pos_assoluta": 3132,
+            "pos_assoluta": 3167,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.803
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "1:41.833",
             "tempo_ms": 101833,
-            "pos_assoluta": 4577,
+            "pos_assoluta": 4628,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.164,
             "distacco_assoluto_pct": 1.971
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:41.938",
             "tempo_ms": 101938,
-            "pos_assoluta": 5756,
+            "pos_assoluta": 5818,
             "pos_gtv": 3,
             "distacco_gtv_pct": 0.268,
             "distacco_assoluto_pct": 2.076
@@ -636,7 +636,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 497,
-      "rank_medio": 27599,
+      "rank_medio": 27600,
       "eventi_pubblicati": 109,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -645,7 +645,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 5756,
+          "rank": 5818,
           "tempo": "1:41.938",
           "evento": "Fuji International Speedway"
         },
@@ -7920,14 +7920,14 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1487,
+          "rank": 1511,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 3132,
+          "rank": 3167,
           "tempo": "1:41.666",
           "evento": "Fuji International Speedway"
         },
@@ -12264,7 +12264,7 @@
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
-          "rank": 4577,
+          "rank": 4628,
           "tempo": "1:41.833",
           "evento": "Fuji International Speedway"
         },
@@ -13090,12 +13090,12 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "S",
-      "miglior_rank": 1348,
-      "rank_medio": 18846,
-      "eventi_pubblicati": 105,
+      "miglior_rank": 925,
+      "rank_medio": 18677,
+      "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
-      "ultima_gara": "Michelin Raceway Road Atlanta",
+      "ultima_gara": "Suzuka Circuit",
       "eventi": [
         {
           "data": "2026-11-16",
@@ -13103,6 +13103,13 @@
           "rank": 13349,
           "tempo": "2:00.401",
           "evento": "Nürburgring GP"
+        },
+        {
+          "data": "2026-11-16",
+          "tipo": "gara",
+          "rank": 925,
+          "tempo": "1:36.181",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-11-09",
@@ -17267,7 +17274,7 @@
       },
       {
         "etichetta": "501 – 1.000",
-        "conteggio": 78
+        "conteggio": 79
       },
       {
         "etichetta": "1.001 – 5.000",
@@ -17282,6 +17289,6 @@
         "conteggio": 1069
       }
     ],
-    "eventi_totali": 2317
+    "eventi_totali": 2318
   }
 }
