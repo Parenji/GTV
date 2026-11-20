@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-19T23:33:01+00:00",
+    "updated_at": "2026-11-20T14:03:37+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "03 Dic 2026",
         "scadenza": "03 Dic 2026",
         "chiusura": "2026-12-03T06:59:59Z",
-        "miglior_tempo": "1:21.752",
-        "leader": "MetalGear9493",
-        "partecipanti": 27754,
+        "miglior_tempo": "1:21.578",
+        "leader": "Blackwing-_rako",
+        "partecipanti": 37036,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -29,12 +29,12 @@
             "gt7name": "Yukimura",
             "numero": "106",
             "squadra": "GTV",
-            "tempo": "1:25.270",
-            "tempo_ms": 85270,
-            "pos_assoluta": 2169,
+            "tempo": "1:24.226",
+            "tempo_ms": 84226,
+            "pos_assoluta": 1497,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 4.303
+            "distacco_assoluto_pct": 3.246
           }
         ]
       },
@@ -49,7 +49,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.786",
         "leader": "MetalGear9493",
-        "partecipanti": 120145,
+        "partecipanti": 122371,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1084,
+            "pos_assoluta": 1096,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.828
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 1852,
+            "pos_assoluta": 1876,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
             "distacco_assoluto_pct": 2.094
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "2:14.496",
             "tempo_ms": 134496,
-            "pos_assoluta": 26991,
+            "pos_assoluta": 28426,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.559,
             "distacco_assoluto_pct": 4.434
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "2:14.542",
             "tempo_ms": 134542,
-            "pos_assoluta": 27823,
+            "pos_assoluta": 29314,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.594,
             "distacco_assoluto_pct": 4.469
@@ -660,7 +660,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 497,
-      "rank_medio": 27464,
+      "rank_medio": 27467,
       "eventi_pubblicati": 110,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -683,7 +683,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 8626,
+          "rank": 8969,
           "tempo": "1:29.184",
           "evento": "Deep Forest Raceway"
         },
@@ -2881,7 +2881,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32605,
+      "rank_medio": 32616,
       "eventi_pubblicati": 130,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -2890,7 +2890,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 26991,
+          "rank": 28426,
           "tempo": "2:14.496",
           "evento": "Watkins Glen Long Course"
         },
@@ -5160,7 +5160,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1084,
+          "rank": 1096,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7949,7 +7949,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18331,
+      "rank_medio": 18332,
       "eventi_pubblicati": 101,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -7958,7 +7958,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1852,
+          "rank": 1876,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -9593,7 +9593,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45326,
+      "rank_medio": 45338,
       "eventi_pubblicati": 129,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -9602,7 +9602,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 27823,
+          "rank": 29314,
           "tempo": "2:14.542",
           "evento": "Watkins Glen Long Course"
         },
@@ -12314,11 +12314,11 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18898,
-      "eventi_pubblicati": 117,
+      "rank_medio": 18844,
+      "eventi_pubblicati": 118,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
-      "ultima_gara": "Trial Mountain Circuit",
+      "ultima_gara": "Suzuka Circuit",
       "eventi": [
         {
           "data": "2026-11-19",
@@ -12333,6 +12333,13 @@
           "rank": 5135,
           "tempo": "1:59.872",
           "evento": "Nürburgring GP"
+        },
+        {
+          "data": "2026-11-16",
+          "tipo": "gara",
+          "rank": 12570,
+          "tempo": "1:38.062",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-11-09",
@@ -12407,23 +12414,16 @@
         {
           "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 2488,
-          "tempo": "1:36.928",
-          "evento": "Dragon Trail - Seaside"
-        },
-        {
-          "data": "2026-09-07",
-          "tipo": "gara",
           "rank": 2892,
           "tempo": "2:15.870",
           "evento": "Mount Panorama Motor Racing Circuit"
         },
         {
-          "data": "2026-08-31",
+          "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 2345,
-          "tempo": "3:32.219",
-          "evento": "24 Heures du Mans Racing Circuit"
+          "rank": 2488,
+          "tempo": "1:36.928",
+          "evento": "Dragon Trail - Seaside"
         },
         {
           "data": "2026-08-31",
@@ -12431,6 +12431,13 @@
           "rank": 7164,
           "tempo": "1:46.573",
           "evento": "Watkins Glen Long Course"
+        },
+        {
+          "data": "2026-08-31",
+          "tipo": "gara",
+          "rank": 2345,
+          "tempo": "3:32.219",
+          "evento": "24 Heures du Mans Racing Circuit"
         },
         {
           "data": "2026-08-31",
@@ -12645,16 +12652,16 @@
         {
           "data": "2026-04-27",
           "tipo": "gara",
-          "rank": 6540,
-          "tempo": "1:38.041",
-          "evento": "Circuit Gilles-Villeneuve"
+          "rank": 8961,
+          "tempo": "1:56.531",
+          "evento": "Daytona Road Course"
         },
         {
           "data": "2026-04-27",
           "tipo": "gara",
-          "rank": 8961,
-          "tempo": "1:56.531",
-          "evento": "Daytona Road Course"
+          "rank": 6540,
+          "tempo": "1:38.041",
+          "evento": "Circuit Gilles-Villeneuve"
         },
         {
           "data": "2026-04-20",
@@ -12701,16 +12708,16 @@
         {
           "data": "2026-03-16",
           "tipo": "gara",
-          "rank": 13985,
-          "tempo": "1:26.301",
-          "evento": "Brands Hatch Grand Prix Circuit"
+          "rank": 10669,
+          "tempo": "1:44.216",
+          "evento": "Kyoto Driving Park - Yamagiwa Reverse"
         },
         {
           "data": "2026-03-16",
           "tipo": "gara",
-          "rank": 10669,
-          "tempo": "1:44.216",
-          "evento": "Kyoto Driving Park - Yamagiwa Reverse"
+          "rank": 13985,
+          "tempo": "1:26.301",
+          "evento": "Brands Hatch Grand Prix Circuit"
         },
         {
           "data": "2026-03-12",
@@ -12729,16 +12736,16 @@
         {
           "data": "2026-02-23",
           "tipo": "gara",
-          "rank": 23258,
-          "tempo": "1:58.213",
-          "evento": "Watkins Glen Long Course"
+          "rank": 16537,
+          "tempo": "2:04.531",
+          "evento": "Mount Panorama Motor Racing Circuit"
         },
         {
           "data": "2026-02-23",
           "tipo": "gara",
-          "rank": 16537,
-          "tempo": "2:04.531",
-          "evento": "Mount Panorama Motor Racing Circuit"
+          "rank": 23258,
+          "tempo": "1:58.213",
+          "evento": "Watkins Glen Long Course"
         },
         {
           "data": "2026-02-19",
@@ -12785,16 +12792,16 @@
         {
           "data": "2026-01-26",
           "tipo": "gara",
-          "rank": 6764,
-          "tempo": "1:51.458",
-          "evento": "Suzuka Circuit"
+          "rank": 6674,
+          "tempo": "1:33.737",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2026-01-26",
           "tipo": "gara",
-          "rank": 6674,
-          "tempo": "1:33.737",
-          "evento": "Autódromo de Interlagos"
+          "rank": 6764,
+          "tempo": "1:51.458",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-01-15",
@@ -12918,23 +12925,16 @@
         {
           "data": "2025-11-10",
           "tipo": "gara",
-          "rank": 5662,
-          "tempo": "1:40.060",
-          "evento": "Autódromo de Interlagos"
-        },
-        {
-          "data": "2025-11-10",
-          "tipo": "gara",
           "rank": 8290,
           "tempo": "1:51.545",
           "evento": "Trial Mountain Circuit"
         },
         {
-          "data": "2025-11-03",
+          "data": "2025-11-10",
           "tipo": "gara",
-          "rank": 5889,
-          "tempo": "1:18.908",
-          "evento": "Michelin Raceway Road Atlanta"
+          "rank": 5662,
+          "tempo": "1:40.060",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2025-11-03",
@@ -12942,6 +12942,13 @@
           "rank": 2859,
           "tempo": "1:38.074",
           "evento": "Red Bull Ring"
+        },
+        {
+          "data": "2025-11-03",
+          "tipo": "gara",
+          "rank": 5889,
+          "tempo": "1:18.908",
+          "evento": "Michelin Raceway Road Atlanta"
         },
         {
           "data": "2025-10-30",
@@ -13150,7 +13157,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18725,
+      "rank_medio": 18727,
       "eventi_pubblicati": 106,
       "ultimo_evento_data": "2026-11-16",
       "ultimo_evento": "Nürburgring GP",
@@ -13166,7 +13173,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 3946,
+          "rank": 4110,
           "tempo": "1:36.181",
           "evento": "Suzuka Circuit"
         },
@@ -14170,18 +14177,18 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2169,
-      "rank_medio": 46382,
-      "eventi_pubblicati": 153,
+      "miglior_rank": 1497,
+      "rank_medio": 46264,
+      "eventi_pubblicati": 154,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
-      "ultima_gara": "SUGO International Racing Course",
+      "ultima_gara": "Deep Forest Raceway",
       "eventi": [
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2169,
-          "tempo": "1:25.270",
+          "rank": 1497,
+          "tempo": "1:24.226",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
         {
@@ -14197,6 +14204,13 @@
           "rank": 10736,
           "tempo": "2:00.232",
           "evento": "Nürburgring GP"
+        },
+        {
+          "data": "2026-11-16",
+          "tipo": "gara",
+          "rank": 28786,
+          "tempo": "1:30.649",
+          "evento": "Deep Forest Raceway"
         },
         {
           "data": "2026-11-05",
@@ -14698,16 +14712,16 @@
         {
           "data": "2025-12-15",
           "tipo": "gara",
-          "rank": 27369,
-          "tempo": "1:43.390",
-          "evento": "Sardegna - Road Track - A"
+          "rank": 16684,
+          "tempo": "0:48.220",
+          "evento": "Daytona Tri-Oval"
         },
         {
           "data": "2025-12-15",
           "tipo": "gara",
-          "rank": 16684,
-          "tempo": "0:48.220",
-          "evento": "Daytona Tri-Oval"
+          "rank": 27369,
+          "tempo": "1:43.390",
+          "evento": "Sardegna - Road Track - A"
         },
         {
           "data": "2025-12-11",
@@ -14817,16 +14831,16 @@
         {
           "data": "2025-10-27",
           "tipo": "gara",
-          "rank": 16090,
-          "tempo": "1:49.831",
-          "evento": "Dragon Trail - Seaside"
+          "rank": 9985,
+          "tempo": "1:07.775",
+          "evento": "Tsukuba Circuit"
         },
         {
           "data": "2025-10-27",
           "tipo": "gara",
-          "rank": 9985,
-          "tempo": "1:07.775",
-          "evento": "Tsukuba Circuit"
+          "rank": 16090,
+          "tempo": "1:49.831",
+          "evento": "Dragon Trail - Seaside"
         },
         {
           "data": "2025-10-23",
@@ -14866,16 +14880,16 @@
         {
           "data": "2025-09-29",
           "tipo": "gara",
-          "rank": 39990,
-          "tempo": "1:41.904",
-          "evento": "Dragon Trail - Seaside"
+          "rank": 8184,
+          "tempo": "0:59.515",
+          "evento": "Blue Moon Bay Speedway - Infield B"
         },
         {
           "data": "2025-09-29",
           "tipo": "gara",
-          "rank": 8184,
-          "tempo": "0:59.515",
-          "evento": "Blue Moon Bay Speedway - Infield B"
+          "rank": 39990,
+          "tempo": "1:41.904",
+          "evento": "Dragon Trail - Seaside"
         },
         {
           "data": "2025-09-28",
@@ -17348,13 +17362,13 @@
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 741
+        "conteggio": 742
       },
       {
         "etichetta": "oltre 20.000",
-        "conteggio": 1072
+        "conteggio": 1073
       }
     ],
-    "eventi_totali": 2324
+    "eventi_totali": 2326
   }
 }
