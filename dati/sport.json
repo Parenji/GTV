@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-21T15:18:05+00:00",
+    "updated_at": "2026-11-21T16:13:25+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.508",
         "leader": "sirvia",
-        "partecipanti": 54592,
+        "partecipanti": 55280,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:24.226",
             "tempo_ms": 84226,
-            "pos_assoluta": 2330,
+            "pos_assoluta": 2376,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 3.335
@@ -49,7 +49,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.786",
         "leader": "MetalGear9493",
-        "partecipanti": 128196,
+        "partecipanti": 128465,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1125,
+            "pos_assoluta": 1127,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.828
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 1928,
+            "pos_assoluta": 1933,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
             "distacco_assoluto_pct": 2.094
@@ -660,7 +660,7 @@
       "dr": "B",
       "sr": "C",
       "miglior_rank": 497,
-      "rank_medio": 27474,
+      "rank_medio": 27475,
       "eventi_pubblicati": 110,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -683,7 +683,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 9818,
+          "rank": 9855,
           "tempo": "1:29.184",
           "evento": "Deep Forest Raceway"
         },
@@ -5160,7 +5160,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1125,
+          "rank": 1127,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7958,7 +7958,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1928,
+          "rank": 1933,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -12314,7 +12314,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18852,
+      "rank_medio": 18853,
       "eventi_pubblicati": 118,
       "ultimo_evento_data": "2026-11-19",
       "ultimo_evento": "Fuji International Speedway",
@@ -12337,7 +12337,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 13537,
+          "rank": 13574,
           "tempo": "1:38.062",
           "evento": "Suzuka Circuit"
         },
@@ -13173,7 +13173,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 4445,
+          "rank": 4460,
           "tempo": "1:36.181",
           "evento": "Suzuka Circuit"
         },
@@ -14177,7 +14177,7 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2330,
+      "miglior_rank": 2376,
       "rank_medio": 46285,
       "eventi_pubblicati": 154,
       "ultimo_evento_data": "2026-12-03",
@@ -14187,7 +14187,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2330,
+          "rank": 2376,
           "tempo": "1:24.226",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -14208,7 +14208,7 @@
         {
           "data": "2026-11-16",
           "tipo": "gara",
-          "rank": 31188,
+          "rank": 31197,
           "tempo": "1:30.649",
           "evento": "Deep Forest Raceway"
         },
