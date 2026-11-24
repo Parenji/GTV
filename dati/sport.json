@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-23T20:18:07+00:00",
+    "updated_at": "2026-11-24T03:19:14+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 76733,
+        "partecipanti": 78470,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 2315,
+            "pos_assoluta": 2423,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
@@ -49,7 +49,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.779",
         "leader": "AT__1826",
-        "partecipanti": 139291,
+        "partecipanti": 140345,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,7 +60,7 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1193,
+            "pos_assoluta": 1214,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.833
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 2047,
+            "pos_assoluta": 2071,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
             "distacco_assoluto_pct": 2.1
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "2:14.496",
             "tempo_ms": 134496,
-            "pos_assoluta": 31810,
+            "pos_assoluta": 32801,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.559,
             "distacco_assoluto_pct": 4.439
@@ -96,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "2:14.542",
             "tempo_ms": 134542,
-            "pos_assoluta": 32820,
+            "pos_assoluta": 33836,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.594,
             "distacco_assoluto_pct": 4.475
@@ -2881,7 +2881,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32642,
+      "rank_medio": 32649,
       "eventi_pubblicati": 130,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -2890,7 +2890,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 31810,
+          "rank": 32801,
           "tempo": "2:14.496",
           "evento": "Watkins Glen Long Course"
         },
@@ -5151,7 +5151,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 18878,
+      "rank_medio": 18879,
       "eventi_pubblicati": 138,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -5160,7 +5160,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1193,
+          "rank": 1214,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7949,7 +7949,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18333,
+      "rank_medio": 18334,
       "eventi_pubblicati": 101,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -7958,7 +7958,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 2047,
+          "rank": 2071,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -9593,7 +9593,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45365,
+      "rank_medio": 45373,
       "eventi_pubblicati": 129,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -9602,7 +9602,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 32820,
+          "rank": 33836,
           "tempo": "2:14.542",
           "evento": "Watkins Glen Long Course"
         },
@@ -14184,8 +14184,8 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2315,
-      "rank_medio": 46300,
+      "miglior_rank": 2423,
+      "rank_medio": 46301,
       "eventi_pubblicati": 154,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -14194,7 +14194,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2315,
+          "rank": 2423,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
