@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-24T19:32:48+00:00",
+    "updated_at": "2026-11-25T01:24:32+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 82210,
+        "partecipanti": 83737,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,22 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 2620,
+            "pos_assoluta": 2695,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
+          },
+          {
+            "psn": "Giusdandri",
+            "gt7name": "Giusdandri",
+            "numero": "87",
+            "squadra": "GTV",
+            "tempo": "1:26.223",
+            "tempo_ms": 86223,
+            "pos_assoluta": 12059,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 2.937,
+            "distacco_assoluto_pct": 5.913
           }
         ]
       },
@@ -49,7 +61,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.779",
         "leader": "AT__1826",
-        "partecipanti": 142909,
+        "partecipanti": 144030,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -60,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1232,
+            "pos_assoluta": 1239,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.833
@@ -72,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 2106,
+            "pos_assoluta": 2124,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
             "distacco_assoluto_pct": 2.1
@@ -84,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "2:14.496",
             "tempo_ms": 134496,
-            "pos_assoluta": 32801,
+            "pos_assoluta": 33758,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.559,
             "distacco_assoluto_pct": 4.439
@@ -96,7 +108,7 @@
             "squadra": "GTV",
             "tempo": "2:14.542",
             "tempo_ms": 134542,
-            "pos_assoluta": 33836,
+            "pos_assoluta": 34829,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.594,
             "distacco_assoluto_pct": 4.475
@@ -2881,7 +2893,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 4810,
-      "rank_medio": 32649,
+      "rank_medio": 32657,
       "eventi_pubblicati": 130,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -2890,7 +2902,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 32801,
+          "rank": 33758,
           "tempo": "2:14.496",
           "evento": "Watkins Glen Long Course"
         },
@@ -5160,7 +5172,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1232,
+          "rank": 1239,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7958,7 +7970,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 2106,
+          "rank": 2124,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -9593,7 +9605,7 @@
       "dr": "B",
       "sr": "B",
       "miglior_rank": 2956,
-      "rank_medio": 45373,
+      "rank_medio": 45380,
       "eventi_pubblicati": 129,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -9602,7 +9614,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 33836,
+          "rank": 34829,
           "tempo": "2:14.542",
           "evento": "Watkins Glen Long Course"
         },
@@ -12314,12 +12326,26 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18768,
-      "eventi_pubblicati": 119,
-      "ultimo_evento_data": "2026-11-19",
-      "ultimo_evento": "Fuji International Speedway",
-      "ultima_gara": "Deep Forest Raceway",
+      "rank_medio": 18579,
+      "eventi_pubblicati": 121,
+      "ultimo_evento_data": "2026-12-03",
+      "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
+      "ultima_gara": "Kyoto Driving Park - Yamagiwa",
       "eventi": [
+        {
+          "data": "2026-12-03",
+          "tipo": "time_trial",
+          "rank": 12059,
+          "tempo": "1:26.223",
+          "evento": "Tokyo Expressway - Central Counterclockwise"
+        },
+        {
+          "data": "2026-11-23",
+          "tipo": "gara",
+          "rank": 2669,
+          "tempo": "1:44.360",
+          "evento": "Kyoto Driving Park - Yamagiwa"
+        },
         {
           "data": "2026-11-19",
           "tipo": "time_trial",
@@ -14184,8 +14210,8 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2620,
-      "rank_medio": 46302,
+      "miglior_rank": 2627,
+      "rank_medio": 46303,
       "eventi_pubblicati": 154,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -14194,7 +14220,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2620,
+          "rank": 2695,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -17365,17 +17391,17 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 312
+        "conteggio": 313
       },
       {
         "etichetta": "5.001 – 20.000",
-        "conteggio": 743
+        "conteggio": 744
       },
       {
         "etichetta": "oltre 20.000",
         "conteggio": 1073
       }
     ],
-    "eventi_totali": 2327
+    "eventi_totali": 2329
   }
 }
