@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-25T01:24:32+00:00",
+    "updated_at": "2026-11-25T15:30:36+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 83737,
+        "partecipanti": 86165,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 2695,
+            "pos_assoluta": 2812,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
@@ -59,9 +59,9 @@
         "fine": "26 Nov 2026",
         "scadenza": "26 Nov 2026",
         "chiusura": "2026-11-26T06:59:59Z",
-        "miglior_tempo": "2:08.779",
-        "leader": "AT__1826",
-        "partecipanti": 144030,
+        "miglior_tempo": "2:08.650",
+        "leader": "L-Shooter_RB26",
+        "partecipanti": 145803,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,10 +72,10 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1239,
+            "pos_assoluta": 1256,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.833
+            "distacco_assoluto_pct": 1.935
           },
           {
             "psn": "Vale34_",
@@ -84,10 +84,10 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 2124,
+            "pos_assoluta": 2154,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
-            "distacco_assoluto_pct": 2.1
+            "distacco_assoluto_pct": 2.202
           },
           {
             "psn": "Abramo1991",
@@ -99,7 +99,7 @@
             "pos_assoluta": 33758,
             "pos_gtv": 3,
             "distacco_gtv_pct": 2.559,
-            "distacco_assoluto_pct": 4.439
+            "distacco_assoluto_pct": 4.544
           },
           {
             "psn": "Carlos_mania",
@@ -111,7 +111,7 @@
             "pos_assoluta": 34829,
             "pos_gtv": 4,
             "distacco_gtv_pct": 2.594,
-            "distacco_assoluto_pct": 4.475
+            "distacco_assoluto_pct": 4.58
           }
         ]
       }
@@ -5172,7 +5172,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1239,
+          "rank": 1256,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7970,7 +7970,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 2124,
+          "rank": 2154,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -12326,7 +12326,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18579,
+      "rank_medio": 18582,
       "eventi_pubblicati": 121,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -12342,7 +12342,7 @@
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 2669,
+          "rank": 3052,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -12447,16 +12447,16 @@
         {
           "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 2892,
-          "tempo": "2:15.870",
-          "evento": "Mount Panorama Motor Racing Circuit"
+          "rank": 2488,
+          "tempo": "1:36.928",
+          "evento": "Dragon Trail - Seaside"
         },
         {
           "data": "2026-09-07",
           "tipo": "gara",
-          "rank": 2488,
-          "tempo": "1:36.928",
-          "evento": "Dragon Trail - Seaside"
+          "rank": 2892,
+          "tempo": "2:15.870",
+          "evento": "Mount Panorama Motor Racing Circuit"
         },
         {
           "data": "2026-08-31",
@@ -12510,23 +12510,16 @@
         {
           "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 4363,
-          "tempo": "2:00.776",
-          "evento": "Tokyo Expressway - East Clockwise"
-        },
-        {
-          "data": "2026-08-03",
-          "tipo": "gara",
           "rank": 3518,
           "tempo": "1:37.301",
           "evento": "Red Bull Ring"
         },
         {
-          "data": "2026-07-27",
+          "data": "2026-08-03",
           "tipo": "gara",
-          "rank": 3448,
-          "tempo": "1:52.257",
-          "evento": "Trial Mountain Circuit"
+          "rank": 4363,
+          "tempo": "2:00.776",
+          "evento": "Tokyo Expressway - East Clockwise"
         },
         {
           "data": "2026-07-27",
@@ -12534,6 +12527,13 @@
           "rank": 7062,
           "tempo": "1:33.988",
           "evento": "Circuit de Barcelona-Catalunya GP Layout"
+        },
+        {
+          "data": "2026-07-27",
+          "tipo": "gara",
+          "rank": 3448,
+          "tempo": "1:52.257",
+          "evento": "Trial Mountain Circuit"
         },
         {
           "data": "2026-07-23",
@@ -12741,16 +12741,16 @@
         {
           "data": "2026-03-16",
           "tipo": "gara",
-          "rank": 13985,
-          "tempo": "1:26.301",
-          "evento": "Brands Hatch Grand Prix Circuit"
+          "rank": 10669,
+          "tempo": "1:44.216",
+          "evento": "Kyoto Driving Park - Yamagiwa Reverse"
         },
         {
           "data": "2026-03-16",
           "tipo": "gara",
-          "rank": 10669,
-          "tempo": "1:44.216",
-          "evento": "Kyoto Driving Park - Yamagiwa Reverse"
+          "rank": 13985,
+          "tempo": "1:26.301",
+          "evento": "Brands Hatch Grand Prix Circuit"
         },
         {
           "data": "2026-03-12",
@@ -12825,16 +12825,16 @@
         {
           "data": "2026-01-26",
           "tipo": "gara",
-          "rank": 6674,
-          "tempo": "1:33.737",
-          "evento": "Autódromo de Interlagos"
+          "rank": 6764,
+          "tempo": "1:51.458",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2026-01-26",
           "tipo": "gara",
-          "rank": 6764,
-          "tempo": "1:51.458",
-          "evento": "Suzuka Circuit"
+          "rank": 6674,
+          "tempo": "1:33.737",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2026-01-15",
@@ -12874,16 +12874,16 @@
         {
           "data": "2025-12-25",
           "tipo": "time_trial",
-          "rank": 107847,
-          "tempo": "1:00.710",
-          "evento": "Tsukuba Circuit"
+          "rank": 142283,
+          "tempo": "2:08.086",
+          "evento": "Circuit de Spa-Francorchamps"
         },
         {
           "data": "2025-12-25",
           "tipo": "time_trial",
-          "rank": 142283,
-          "tempo": "2:08.086",
-          "evento": "Circuit de Spa-Francorchamps"
+          "rank": 107847,
+          "tempo": "1:00.710",
+          "evento": "Tsukuba Circuit"
         },
         {
           "data": "2025-12-22",
@@ -12958,16 +12958,16 @@
         {
           "data": "2025-11-10",
           "tipo": "gara",
-          "rank": 8290,
-          "tempo": "1:51.545",
-          "evento": "Trial Mountain Circuit"
+          "rank": 5662,
+          "tempo": "1:40.060",
+          "evento": "Autódromo de Interlagos"
         },
         {
           "data": "2025-11-10",
           "tipo": "gara",
-          "rank": 5662,
-          "tempo": "1:40.060",
-          "evento": "Autódromo de Interlagos"
+          "rank": 8290,
+          "tempo": "1:51.545",
+          "evento": "Trial Mountain Circuit"
         },
         {
           "data": "2025-11-03",
@@ -14220,7 +14220,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2695,
+          "rank": 2812,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
