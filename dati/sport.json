@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-25T18:42:01+00:00",
+    "updated_at": "2026-11-26T00:59:00+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 87295,
+        "partecipanti": 88806,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 2858,
+            "pos_assoluta": 2945,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
@@ -43,7 +43,7 @@
             "squadra": "GTV",
             "tempo": "1:26.223",
             "tempo_ms": 86223,
-            "pos_assoluta": 12059,
+            "pos_assoluta": 12926,
             "pos_gtv": 2,
             "distacco_gtv_pct": 2.937,
             "distacco_assoluto_pct": 5.913
@@ -61,7 +61,7 @@
         "chiusura": "2026-11-26T06:59:59Z",
         "miglior_tempo": "2:08.650",
         "leader": "L-Shooter_RB26",
-        "partecipanti": 146609,
+        "partecipanti": 147887,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -72,7 +72,7 @@
             "squadra": "GTV",
             "tempo": "2:11.140",
             "tempo_ms": 131140,
-            "pos_assoluta": 1265,
+            "pos_assoluta": 1276,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.935
@@ -84,7 +84,7 @@
             "squadra": "GTV",
             "tempo": "2:11.483",
             "tempo_ms": 131483,
-            "pos_assoluta": 2166,
+            "pos_assoluta": 2194,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.262,
             "distacco_assoluto_pct": 2.202
@@ -5172,7 +5172,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 1265,
+          "rank": 1276,
           "tempo": "2:11.140",
           "evento": "Watkins Glen Long Course"
         },
@@ -7961,7 +7961,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1043,
-      "rank_medio": 18334,
+      "rank_medio": 18335,
       "eventi_pubblicati": 101,
       "ultimo_evento_data": "2026-11-26",
       "ultimo_evento": "Watkins Glen Long Course",
@@ -7970,7 +7970,7 @@
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
-          "rank": 2166,
+          "rank": 2194,
           "tempo": "2:11.483",
           "evento": "Watkins Glen Long Course"
         },
@@ -12326,7 +12326,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18584,
+      "rank_medio": 18593,
       "eventi_pubblicati": 121,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -12335,14 +12335,14 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 12059,
+          "rank": 12926,
           "tempo": "1:26.223",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 3213,
+          "rank": 3438,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -14220,7 +14220,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 2858,
+          "rank": 2945,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
