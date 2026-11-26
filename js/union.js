@@ -1993,6 +1993,8 @@ function unionDGHostEsito(testo, gara) {
   if ((m = t.match(/(\d+)\s*posizion/i))) {
     return { tipo: "griglia", peso: 1, label: "−" + m[1] + " posizioni", sub: "In griglia a " + prossima };
   }
+  // Gara 5: "-3 PUNTI" (punti tolti in classifica)
+  if ((m = t.match(/^[-−–]\s*(\d+)\s*punt/i))) return { tipo: "pen", peso: 2, label: "−" + m[1] + " punti", sub: "In classifica" };
   if (/^\d+$/.test(t)) return { tipo: "pen", peso: 2, label: "+" + t + " s" };
   return { tipo: "altro", peso: 2, label: t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() };
 }
@@ -2019,7 +2021,8 @@ function fetchUnionDGSheet(url) {
         lega: col(/^RANK/),
         lobby: col(/LOBBY/),
         note: col(/^NOTE/),
-        esito: col(/^PENALIT/),
+        esito: col(/^PEN+ALIT/), // Gara 5 reclami: "PENNALITà"
+        valutazione: col(/^VALUTAZIONE/),
       };
       function v(r, k) {
         return c[k] === -1 ? "" : String(r[c[k]] || "").trim();
@@ -2034,6 +2037,7 @@ function fetchUnionDGSheet(url) {
           lobby: v(r, "lobby").toUpperCase().replace(/\s+/g, "").replace(/^([A-Z]+)0+(?=\d)/, "$1"), // A05 -> A5
           note: v(r, "note"),
           esitoRaw: v(r, "esito"),
+          valutazione: v(r, "valutazione"),
         };
       }).filter(function (x) {
         return x.nomeR || x.nomeI;
@@ -2128,7 +2132,13 @@ function fetchUnionReportDG(gara) {
     ])
       .then(function (res) {
         res[0].forEach(function (x) { x.esito = unionDGEsito(x.esitoRaw); });
-        (res[1] || []).forEach(function (x) { x.esito = unionDGHostEsito(x.esitoRaw, gara); });
+        (res[1] || []).forEach(function (x) {
+          x.esito = unionDGHostEsito(x.esitoRaw, gara);
+          // Gara 5: la colonna VALUTAZIONE dice il motivo della sanzione
+          if (x.esito.label.indexOf("punti") !== -1 && x.valutazione) {
+            x.esito.sub = x.valutazione.charAt(0).toUpperCase() + x.valutazione.slice(1).toLowerCase();
+          }
+        });
         var ricorsi = unionDGApplicaRicorsi(res[0], res[2]);
         return { reclami: res[0], host: res[1], ricorsi: ricorsi };
       })
