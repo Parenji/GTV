@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-26T15:01:09+00:00",
+    "updated_at": "2026-11-26T17:41:58+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -9,6 +9,35 @@
   },
   "time_trial": {
     "attivi": [
+      {
+        "nome": "Yas Marina Circuit",
+        "pista": "Yas Marina Circuit",
+        "logo": "images/tracks/yasmarina.png",
+        "auto": "Peugeot L750R HYbrid Vision Gran Turismo, 2017",
+        "inizio": "26 Nov 2026",
+        "fine": "10 Dic 2026",
+        "scadenza": "10 Dic 2026",
+        "chiusura": "2026-12-10T06:59:59Z",
+        "miglior_tempo": "1:36.869",
+        "leader": "Calster_25",
+        "partecipanti": 14855,
+        "fonte_leader": "ufficiale",
+        "conclusa": false,
+        "classifica": [
+          {
+            "psn": "Yukimura9221",
+            "gt7name": "Yukimura",
+            "numero": "106",
+            "squadra": "GTV",
+            "tempo": "1:41.795",
+            "tempo_ms": 101795,
+            "pos_assoluta": 3917,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 5.085
+          }
+        ]
+      },
       {
         "nome": "Fuji International Speedway",
         "pista": "Fuji International Speedway",
@@ -20,23 +49,7 @@
         "chiusura": "2026-12-10T06:59:59Z",
         "miglior_tempo": "1:36.730",
         "leader": "CHARO_GH69",
-        "partecipanti": 13034,
-        "fonte_leader": "ufficiale",
-        "conclusa": false,
-        "classifica": []
-      },
-      {
-        "nome": "Yas Marina Circuit",
-        "pista": "Yas Marina Circuit",
-        "logo": "images/tracks/yasmarina.png",
-        "auto": "Peugeot L750R HYbrid Vision Gran Turismo, 2017",
-        "inizio": "26 Nov 2026",
-        "fine": "10 Dic 2026",
-        "scadenza": "10 Dic 2026",
-        "chiusura": "2026-12-10T06:59:59Z",
-        "miglior_tempo": "1:37.158",
-        "leader": "IGTSH_mozzzsi",
-        "partecipanti": 10414,
+        "partecipanti": 18801,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -52,7 +65,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 91653,
+        "partecipanti": 92713,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -63,7 +76,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 3084,
+            "pos_assoluta": 3138,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
@@ -12269,7 +12282,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18473,
+      "rank_medio": 18475,
       "eventi_pubblicati": 122,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -12285,14 +12298,14 @@
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 3746,
+          "rank": 3844,
           "tempo": "0:45.228",
           "evento": "Kyoto Driving Park - Miyabi"
         },
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 3720,
+          "rank": 3806,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -14161,16 +14174,23 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 46305,
-      "eventi_pubblicati": 154,
-      "ultimo_evento_data": "2026-12-03",
-      "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
+      "rank_medio": 46032,
+      "eventi_pubblicati": 155,
+      "ultimo_evento_data": "2026-12-10",
+      "ultimo_evento": "Yas Marina Circuit",
       "ultima_gara": "Deep Forest Raceway",
       "eventi": [
         {
+          "data": "2026-12-10",
+          "tipo": "time_trial",
+          "rank": 3917,
+          "tempo": "1:41.795",
+          "evento": "Yas Marina Circuit"
+        },
+        {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 3084,
+          "rank": 3138,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -17341,7 +17361,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 314
+        "conteggio": 315
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -17352,6 +17372,6 @@
         "conteggio": 1073
       }
     ],
-    "eventi_totali": 2330
+    "eventi_totali": 2331
   }
 }
