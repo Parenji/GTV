@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-26T17:41:58+00:00",
+    "updated_at": "2026-11-26T18:28:53+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-10T06:59:59Z",
         "miglior_tempo": "1:36.869",
         "leader": "Calster_25",
-        "partecipanti": 14855,
+        "partecipanti": 16211,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,7 +31,7 @@
             "squadra": "GTV",
             "tempo": "1:41.795",
             "tempo_ms": 101795,
-            "pos_assoluta": 3917,
+            "pos_assoluta": 4160,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 5.085
@@ -49,7 +49,7 @@
         "chiusura": "2026-12-10T06:59:59Z",
         "miglior_tempo": "1:36.730",
         "leader": "CHARO_GH69",
-        "partecipanti": 18801,
+        "partecipanti": 20464,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": []
@@ -65,7 +65,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 92713,
+        "partecipanti": 93037,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -76,7 +76,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 3138,
+            "pos_assoluta": 3147,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.892
@@ -12298,14 +12298,14 @@
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 3844,
+          "rank": 3864,
           "tempo": "0:45.228",
           "evento": "Kyoto Driving Park - Miyabi"
         },
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 3806,
+          "rank": 3817,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -14174,7 +14174,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 46032,
+      "rank_medio": 46034,
       "eventi_pubblicati": 155,
       "ultimo_evento_data": "2026-12-10",
       "ultimo_evento": "Yas Marina Circuit",
@@ -14183,14 +14183,14 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 3917,
+          "rank": 4160,
           "tempo": "1:41.795",
           "evento": "Yas Marina Circuit"
         },
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 3138,
+          "rank": 3147,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
