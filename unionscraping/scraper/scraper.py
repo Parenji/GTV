@@ -64,6 +64,13 @@ PILOTI_SHEET = (
 )
 
 TIME_RE = re.compile(r"^Ore\s+(\d{1,2}:\d{2})$", re.IGNORECASE)
+# Lobby di un'altra settimana (es. le Superfinal sotto le Finali, dal
+# 2026-11-27): l'intestazione ha la data al posto di "Ore", "7/12/26 21:30"
+DATA_ORA_RE = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{2,4})\s+(\d{1,2}:\d{2})$")
+# Data del giorno in testa a ogni foglio: "lunedì, 30. novembre 2026"
+DATA_FOGLIO_RE = re.compile(r"(\d{1,2})\.?\s+([a-z]+)\s+(\d{4})", re.IGNORECASE)
+MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio",
+        "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 POS_RE = re.compile(r"^\d+$")
 
 
@@ -78,24 +85,48 @@ def fetch_csv(url: str) -> list:
 # ---------------------------------------------------------------------------
 # Parsing delle lobby
 # ---------------------------------------------------------------------------
+def intestazione(cella: str):
+    """(ora, data ISO o None) se la cella apre un blocco-lobby, altrimenti None."""
+    cella = cella.strip()
+    m = TIME_RE.match(cella)
+    if m:
+        return m.group(1), None
+    m = DATA_ORA_RE.match(cella)
+    if m:
+        g, mese, anno, ora = m.groups()
+        anno = int(anno) + (2000 if len(anno) == 2 else 0)
+        return ora, f"{anno:04d}-{int(mese):02d}-{int(g):02d}"
+    return None
+
+
+def data_foglio(rows: list):
+    """Data ISO del giorno del foglio, dalle prime righe (None se non c'e')."""
+    for r in rows[:6]:
+        for cella in r:
+            m = DATA_FOGLIO_RE.search(cella)
+            if m and m.group(2).lower() in MESI:
+                return f"{int(m.group(3)):04d}-{MESI.index(m.group(2).lower()) + 1:02d}-{int(m.group(1)):02d}"
+    return None
+
+
 def find_blocks(rows: list) -> list:
     """
     Individua tutti i blocchi-lobby nel foglio.
-    Ogni blocco inizia con una cella 'Ore HH:MM' seguita (colonna+1) dal nome
-    lobby (es. A1) e (colonna+4) dalla categoria. Restituisce:
-    [(row_index, col_index, time, name, category), ...]
+    Ogni blocco inizia con una cella 'Ore HH:MM' (o 'G/M/AA HH:MM') seguita
+    (colonna+1) dal nome lobby (es. A1) e (colonna+4) dalla categoria.
+    Restituisce: [(row_index, col_index, time, name, category, data), ...]
     """
     blocks = []
     for ri, row in enumerate(rows):
         for ci, cell in enumerate(row):
-            m = TIME_RE.match(cell.strip())
+            m = intestazione(cell)
             if not m:
                 continue
             name = row[ci + 1].strip() if ci + 1 < len(row) else ""
             cat = row[ci + 4].strip() if ci + 4 < len(row) else ""
             # ignora celle di titolo (es. 'Ore 21:00' usate come intestazioni)
             if name and re.match(r"^[A-Z]\d+$", name):
-                blocks.append((ri, ci, m.group(1), name, cat))
+                blocks.append((ri, ci, m[0], name, cat, m[1]))
     return blocks
 
 
@@ -119,8 +150,11 @@ def parse_block(rows: list, start_row: int, col: int, day: str) -> dict:
         i = col + off
         return r[i].strip() if i < len(r) else ""
 
-    # intestazione
-    lobby["time"] = cell(rows[start_row], 0)
+    # intestazione ("Ore HH:MM"; per le lobby con la data, anche "data")
+    ora, data = intestazione(cell(rows[start_row], 0))
+    lobby["time"] = f"Ore {ora}"
+    if data:
+        lobby["data"] = data
     lobby["name"] = cell(rows[start_row], 1)
     lobby["category"] = cell(rows[start_row], 4)
 
@@ -129,7 +163,7 @@ def parse_block(rows: list, start_row: int, col: int, day: str) -> dict:
         t1 = cell(r, 1)
         t4 = cell(r, 4)
 
-        if TIME_RE.match(t0):
+        if intestazione(t0):
             break  # inizio di un altro blocco
 
         if t1 == "HOST":
@@ -155,18 +189,25 @@ def parse_block(rows: list, start_row: int, col: int, day: str) -> dict:
     return lobby
 
 
-def parse_lobbies() -> list:
-    lobbies = []
+def parse_lobbies():
+    """(lobby della settimana, lobby gia' fissate per un'altra settimana).
+
+    Una lobby con la data nell'intestazione e' di questa settimana solo se la
+    data e' quella del foglio; le altre (es. le Superfinal) vanno a parte, cosi'
+    sito e promemoria non le confondono con le gare dei prossimi giorni.
+    """
+    lobbies, prossime = [], []
     for day, gid in LOBBY_GIDS.items():
         rows = fetch_csv(LOBBY_SHEET.format(gid=gid))
-        blocks = find_blocks(rows)
-        for (ri, ci, time, name, cat) in blocks:
+        giorno = data_foglio(rows)
+        for (ri, ci, _time, _name, _cat, data) in find_blocks(rows):
             lb = parse_block(rows, ri, ci, day)
-            lobbies.append(lb)
+            (prossime if data and data != giorno else lobbies).append(lb)
     # ordina per giorno e nome lobby
     day_order = {d: i for i, d in enumerate(LOBBY_GIDS)}
-    lobbies.sort(key=lambda lb: (day_order.get(lb["day"], 99), lb["name"]))
-    return lobbies
+    for lista in (lobbies, prossime):
+        lista.sort(key=lambda lb: (lb.get("data", ""), day_order.get(lb["day"], 99), lb["name"]))
+    return lobbies, prossime
 
 
 # ---------------------------------------------------------------------------
@@ -220,8 +261,8 @@ def main():
     print(f"  {len(pilots)} piloti trovati")
 
     print("Scarico i fogli LOBBY…")
-    lobbies = parse_lobbies()
-    print(f"  {len(lobbies)} lobby trovate")
+    lobbies, prossime = parse_lobbies()
+    print(f"  {len(lobbies)} lobby trovate, {len(prossime)} di un'altra settimana")
     for lb in lobbies:
         print(f"    {lb['day']:10s} {lb['name']:4s} {lb['category']:10s} "
               f"{lb['time']:8s} host={lb['host'] or '-':20s} piloti={len(lb['pilots'])}")
@@ -242,6 +283,7 @@ def main():
         },
         "stats": build_stats(lobbies, pilots),
         "lobbies": lobbies,
+        "prossime": prossime,
     }
 
     if json_io.scrivi_se_cambiato(OUT_JSON, data, indent=2):

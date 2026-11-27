@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-27T21:39:26+00:00",
+  "generated_at": "2026-11-27T22:50:02+00:00",
   "source": "https://albixximo-union2026-r2.vercel.app/Classifiche/portal.html",
   "gare_pubblicate": [
    1,
@@ -47,6 +47,7 @@
        "pole": true
       }
      ],
+     "finale": 1,
      "storico_pos": [
       1,
       2,
@@ -89,6 +90,7 @@
        "fl": true
       }
      ],
+     "finale": 2,
      "storico_pos": [
       1,
       1,
@@ -130,6 +132,7 @@
        "fl": true
       }
      ],
+     "finale": 3,
      "storico_pos": [
       19,
       6,
@@ -168,6 +171,7 @@
        "pos": 4
       }
      ],
+     "finale": 4,
      "storico_pos": [
       5,
       2,
@@ -209,6 +213,7 @@
        "pole": true
       }
      ],
+     "finale": 5,
      "storico_pos": [
       54,
       21,
@@ -250,6 +255,7 @@
        "pole": true
       }
      ],
+     "finale": 6,
      "storico_pos": [
       1,
       12,
@@ -287,6 +293,7 @@
        "pos": 3
       }
      ],
+     "finale": 7,
      "storico_pos": [
       5,
       4,
@@ -326,6 +333,7 @@
        "pos": 2
       }
      ],
+     "finale": 8,
      "storico_pos": [
       19,
       8,
@@ -364,6 +372,7 @@
        "pos": 1
       }
      ],
+     "finale": 9,
      "storico_pos": [
       29,
       12,
@@ -403,6 +412,7 @@
        "pole": true
       }
      ],
+     "finale": 10,
      "storico_pos": [
       35,
       22,
@@ -441,6 +451,7 @@
        "pos": 5
       }
      ],
+     "finale": 11,
      "storico_pos": [
       35,
       11,
@@ -480,6 +491,7 @@
        "fl": true
       }
      ],
+     "finale": 12,
      "storico_pos": [
       35,
       29,
@@ -519,6 +531,7 @@
        "pos": 2
       }
      ],
+     "finale": 13,
      "storico_pos": [
       19,
       29,
@@ -556,6 +569,7 @@
        "pos": 3
       }
      ],
+     "finale": 14,
      "storico_pos": [
       14,
       15,
@@ -2092,6 +2106,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       58,
       39,
@@ -2130,6 +2145,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       41,
       43,
@@ -2167,6 +2183,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       7,
       29,
@@ -2204,6 +2221,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       59,
       46,
@@ -2243,6 +2261,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       50,
       56,
@@ -2280,6 +2299,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       47,
       57,
@@ -2317,6 +2337,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       59,
       null,
@@ -2354,6 +2375,7 @@
        "pos": 8
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       61,
       61,
@@ -2393,6 +2415,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       19,
       50,
@@ -2430,6 +2453,7 @@
        "stato": "AI"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       62,
       62,
@@ -2472,6 +2496,8 @@
        "pos": 5
       }
      ],
+     "movimento": "promosso",
+     "finale": 1,
      "storico_pos": [
       13,
       6,
@@ -2509,6 +2535,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 2,
      "storico_pos": [
       5,
       2,
@@ -2546,6 +2574,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 3,
      "storico_pos": [
       9,
       8,
@@ -2586,6 +2616,8 @@
        "pos": 5
       }
      ],
+     "movimento": "promosso",
+     "finale": 4,
      "storico_pos": [
       2,
       7,
@@ -2623,6 +2655,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 5,
      "storico_pos": [
       13,
       15,
@@ -2660,6 +2694,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 6,
      "storico_pos": [
       null,
       null,
@@ -2700,6 +2736,8 @@
        "pos": 4
       }
      ],
+     "movimento": "promosso",
+     "finale": 7,
      "storico_pos": [
       null,
       null,
@@ -2742,6 +2780,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 8,
      "storico_pos": [
       2,
       1,
@@ -2779,6 +2819,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 9,
      "storico_pos": [
       35,
       22,
@@ -2818,6 +2860,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 10,
      "storico_pos": [
       13,
       22,
@@ -2855,6 +2899,7 @@
        "pos": 2
       }
      ],
+     "finale": 11,
      "storico_pos": [
       19,
       19,
@@ -2894,6 +2939,7 @@
        "pos": 5
       }
      ],
+     "finale": 12,
      "storico_pos": [
       25,
       12,
@@ -2934,6 +2980,7 @@
        "pos": 4
       }
      ],
+     "finale": 13,
      "storico_pos": [
       1,
       4,
@@ -2972,6 +3019,7 @@
        "pos": 6
       }
      ],
+     "finale": 14,
      "storico_pos": [
       56,
       29,
@@ -4744,6 +4792,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       19,
       37,
@@ -4781,6 +4830,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       31,
       41,
@@ -4818,6 +4868,7 @@
        "stato": "NC"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       47,
       51,
@@ -4857,6 +4908,7 @@
        "stato": "AI"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       56,
       61,
@@ -4894,6 +4946,7 @@
        "stato": "AI"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       13,
       41,
@@ -4931,6 +4984,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       56,
       61,
@@ -4968,6 +5022,7 @@
        "stato": "NC"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       56,
       59,
@@ -5005,6 +5060,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       40,
       55,
@@ -5042,6 +5098,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       47,
       57,
@@ -5079,6 +5136,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       56,
       61,
@@ -5124,6 +5182,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 1,
      "storico_pos": [
       6,
       2,
@@ -5163,6 +5223,8 @@
        "pos": 4
       }
      ],
+     "movimento": "promosso",
+     "finale": 2,
      "storico_pos": [
       6,
       1,
@@ -5206,6 +5268,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 3,
      "storico_pos": [
       11,
       18,
@@ -5243,6 +5307,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 4,
      "storico_pos": [
       11,
       2,
@@ -5280,6 +5346,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 5,
      "storico_pos": [
       6,
       34,
@@ -5322,6 +5390,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 6,
      "storico_pos": [
       56,
       56,
@@ -5360,6 +5430,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 7,
      "storico_pos": [
       2,
       28,
@@ -5402,6 +5474,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 8,
      "storico_pos": [
       1,
       25,
@@ -5440,6 +5514,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 9,
      "storico_pos": [
       30,
       32,
@@ -5477,6 +5553,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 10,
      "storico_pos": [
       23,
       16,
@@ -5514,6 +5592,7 @@
        "pos": 6
       }
      ],
+     "finale": 11,
      "storico_pos": [
       36,
       9,
@@ -5551,6 +5630,7 @@
        "pole": true
       }
      ],
+     "finale": 12,
      "storico_pos": [
       null,
       null,
@@ -5588,6 +5668,7 @@
        "pos": 4
       }
      ],
+     "finale": 13,
      "storico_pos": [
       18,
       5,
@@ -5626,6 +5707,7 @@
        "pos": 6
       }
      ],
+     "finale": 14,
      "storico_pos": [
       11,
       2,
@@ -7542,6 +7624,7 @@
        "pos": 8
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       58,
       52,
@@ -7579,6 +7662,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       47,
       62,
@@ -7617,6 +7701,7 @@
        "pos": 11
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       56,
       43,
@@ -7654,6 +7739,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       41,
       40,
@@ -7691,6 +7777,7 @@
        "pos": 11
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       66,
       66,
@@ -7728,6 +7815,7 @@
        "stato": "AI"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       61,
       62,
@@ -7765,6 +7853,7 @@
        "pos": 12
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       50,
       57,
@@ -7802,6 +7891,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       61,
       57,
@@ -7839,6 +7929,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       36,
       57,
@@ -7876,6 +7967,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       68,
       69,
@@ -7919,6 +8011,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 1,
      "storico_pos": [
       1,
       2,
@@ -7959,6 +8053,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 2,
      "storico_pos": [
       5,
       1,
@@ -7999,6 +8095,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 3,
      "storico_pos": [
       4,
       2,
@@ -8040,6 +8138,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 4,
      "storico_pos": [
       null,
       null,
@@ -8077,6 +8177,8 @@
        "pos": 6
       }
      ],
+     "movimento": "promosso",
+     "finale": 5,
      "storico_pos": [
       10,
       5,
@@ -8115,6 +8217,8 @@
        "pos": 4
       }
      ],
+     "movimento": "promosso",
+     "finale": 6,
      "storico_pos": [
       10,
       5,
@@ -8152,6 +8256,8 @@
        "pos": 7
       }
      ],
+     "movimento": "promosso",
+     "finale": 7,
      "storico_pos": [
       10,
       7,
@@ -8190,6 +8296,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 8,
      "storico_pos": [
       3,
       4,
@@ -8228,6 +8336,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 9,
      "storico_pos": [
       1,
       20,
@@ -8266,6 +8376,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 10,
      "storico_pos": [
       15,
       10,
@@ -8307,6 +8419,7 @@
        "fl": true
       }
      ],
+     "finale": 11,
      "storico_pos": [
       null,
       null,
@@ -8346,6 +8459,7 @@
        "pos": 3
       }
      ],
+     "finale": 12,
      "storico_pos": [
       52,
       17,
@@ -8383,6 +8497,7 @@
        "pos": 5
       }
      ],
+     "finale": 13,
      "storico_pos": [
       21,
       25,
@@ -8420,6 +8535,7 @@
        "pos": 4
       }
      ],
+     "finale": 14,
      "storico_pos": [
       15,
       7,
@@ -9883,6 +9999,7 @@
        "pos": 8
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       27,
       36,
@@ -9920,6 +10037,7 @@
        "pos": 9
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       49,
       49,
@@ -9957,6 +10075,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       27,
       36,
@@ -9994,6 +10113,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       37,
       47,
@@ -10032,6 +10152,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       41,
       35,
@@ -10069,6 +10190,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       39,
@@ -10106,6 +10228,7 @@
        "stato": "AI"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       33,
       39,
@@ -10143,6 +10266,7 @@
        "stato": "NC"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       21,
       43,
@@ -10180,6 +10304,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       49,
@@ -10217,6 +10342,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       56,
@@ -10263,6 +10389,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 1,
      "storico_pos": [
       6,
       1,
@@ -10304,6 +10432,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 2,
      "storico_pos": [
       2,
       4,
@@ -10343,6 +10473,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 3,
      "storico_pos": [
       2,
       1,
@@ -10381,6 +10513,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 4,
      "storico_pos": [
       22,
       11,
@@ -10420,6 +10554,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 5,
      "storico_pos": [
       27,
       14,
@@ -10462,6 +10598,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 6,
      "storico_pos": [
       52,
       37,
@@ -10502,6 +10640,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 7,
      "storico_pos": [
       17,
       19,
@@ -10540,6 +10680,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 8,
      "storico_pos": [
       17,
       16,
@@ -10581,6 +10723,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 9,
      "storico_pos": [
       1,
       8,
@@ -10619,6 +10763,8 @@
        "pos": 8
       }
      ],
+     "movimento": "promosso",
+     "finale": 10,
      "storico_pos": [
       2,
       10,
@@ -10658,6 +10804,7 @@
        "pole": true
       }
      ],
+     "finale": 11,
      "storico_pos": [
       6,
       5,
@@ -10695,6 +10842,7 @@
        "pos": 8
       }
      ],
+     "finale": 12,
      "storico_pos": [
       11,
       7,
@@ -10735,6 +10883,7 @@
        "fl": true
       }
      ],
+     "finale": 13,
      "storico_pos": [
       11,
       16,
@@ -10773,6 +10922,7 @@
        "pos": 5
       }
      ],
+     "finale": 14,
      "storico_pos": [
       52,
       24,
@@ -12383,6 +12533,7 @@
        "stato": "NC"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       33,
       32,
@@ -12420,6 +12571,7 @@
        "pos": 11
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       33,
       40,
@@ -12457,6 +12609,7 @@
        "pos": 12
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       49,
       50,
@@ -12494,6 +12647,7 @@
        "pos": 11
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       58,
@@ -12531,6 +12685,7 @@
        "pos": 10
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       17,
       42,
@@ -12568,6 +12723,7 @@
        "pos": 5
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       43,
       57,
@@ -12605,6 +12761,7 @@
        "pos": 8
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       60,
@@ -12642,6 +12799,7 @@
        "pos": 11
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       50,
       59,
@@ -12679,6 +12837,7 @@
        "stato": "AG"
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       38,
       56,
@@ -12716,6 +12875,7 @@
        "pos": 12
       }
      ],
+     "movimento": "retrocesso",
      "storico_pos": [
       52,
       61,
@@ -12764,6 +12924,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 1,
      "storico_pos": [
       2,
       2,
@@ -12806,6 +12968,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 2,
      "storico_pos": [
       7,
       13,
@@ -12844,6 +13008,8 @@
        "pos": 1
       }
      ],
+     "movimento": "promosso",
+     "finale": 3,
      "storico_pos": [
       10,
       10,
@@ -12881,6 +13047,8 @@
        "pos": 3
       }
      ],
+     "movimento": "promosso",
+     "finale": 4,
      "storico_pos": [
       7,
       8,
@@ -12918,6 +13086,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 5,
      "storico_pos": [
       4,
       3,
@@ -12957,6 +13127,8 @@
        "pos": 2
       }
      ],
+     "movimento": "promosso",
+     "finale": 6,
      "storico_pos": [
       4,
       9,
@@ -13000,6 +13172,8 @@
        "fl": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 7,
      "storico_pos": [
       1,
       1,
@@ -13040,6 +13214,8 @@
        "pole": true
       }
      ],
+     "movimento": "promosso",
+     "finale": 8,
      "storico_pos": [
       16,
       13,
@@ -13078,6 +13254,8 @@
        "pos": 5
       }
      ],
+     "movimento": "promosso",
+     "finale": 9,
      "storico_pos": [
       10,
       16,
@@ -13116,6 +13294,8 @@
        "pos": 4
       }
      ],
+     "movimento": "promosso",
+     "finale": 10,
      "storico_pos": [
       27,
       18,
@@ -13154,6 +13334,7 @@
        "pos": 3
       }
      ],
+     "finale": 11,
      "storico_pos": [
       7,
       10,
@@ -13192,6 +13373,7 @@
        "pos": 1
       }
      ],
+     "finale": 12,
      "storico_pos": [
       17,
       37,
@@ -13232,6 +13414,7 @@
        "pos": 6
       }
      ],
+     "finale": 13,
      "storico_pos": [
       17,
       7,
@@ -13271,6 +13454,7 @@
        "pole": true
       }
      ],
+     "finale": 14,
      "storico_pos": [
       22,
       12,
@@ -29245,7 +29429,18 @@
     "A23": {
      "lega": "AMA",
      "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G3/AMA/A23.png",
-     "classifica": [],
+     "classifica": [
+      {
+       "pos": 1,
+       "nome": "*",
+       "auto": "Questa lobby è stata unita ad altre lobby",
+       "distacco": null,
+       "giro": null,
+       "punti": null,
+       "team": "",
+       "q": null
+      }
+     ],
      "pole": null,
      "giro_veloce": null
     },

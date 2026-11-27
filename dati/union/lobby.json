@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-27T21:24:35+00:00"
+    "generated_at": "2026-11-27T22:51:07+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -22,8 +22,8 @@
       "time": "Ore 21:30",
       "name": "A1",
       "category": "FINALE AMA",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
+      "host": "Leobustv_18",
+      "live": "RCE- Leobustv_18",
       "url": "https://www.youtube.com/@RCE_Official",
       "pilots": [
         {
@@ -123,48 +123,6 @@
           "team": "SCGT",
           "nome": "domydero",
           "auto": "RISERVA X DCT_R.Leta"
-        },
-        {
-          "pos": 1,
-          "matricola": "386",
-          "team": "GTID",
-          "nome": "Ice_Fire",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 2,
-          "matricola": "481",
-          "team": "PRT",
-          "nome": "Simoppr",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 3,
-          "matricola": "366",
-          "team": "CBR",
-          "nome": "CBR_FELIX",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 4,
-          "matricola": "519",
-          "team": "SRT",
-          "nome": "Yanuzzo_44",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 5,
-          "matricola": "378",
-          "team": "FFM",
-          "nome": "R.Napoletano",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 6,
-          "matricola": "460",
-          "team": "DCT",
-          "nome": "DCT_R.Leta",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -173,8 +131,8 @@
       "time": "Ore 21:45",
       "name": "A2",
       "category": "FINALE PRO AMA",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
+      "host": "Tiskitoski",
+      "live": "SMI- lupo_verde_3",
       "url": "https://twitch.tv/shoganai_motorsportitalia",
       "pilots": [
         {
@@ -274,41 +232,6 @@
           "team": "MMS",
           "nome": "Saetta Assidua",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 1,
-          "matricola": "387",
-          "team": "GTID",
-          "nome": "Xelavr6",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 2,
-          "matricola": "303",
-          "team": "OES",
-          "nome": "Pinpinella95",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 3,
-          "matricola": "323",
-          "team": "RRT",
-          "nome": "RRT_SNERZZZ",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "404",
-          "team": "PRT",
-          "nome": "Mastro",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "397",
-          "team": "MMS",
-          "nome": "MMS_DpGurney78",
-          "auto": "GT-R NISMO GT500 '16"
         }
       ]
     },
@@ -397,8 +320,8 @@
       "time": "Ore 21:00",
       "name": "A8",
       "category": "FINALE PRO SILVER",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
+      "host": "CBR_Mava",
+      "live": "CBR- Live_cobraracing",
       "url": "https://twitch.tv/live_cobraracingtwitch",
       "pilots": [
         {
@@ -498,48 +421,6 @@
           "team": "SMI",
           "nome": "SMI_Maximuccio73",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 1,
-          "matricola": "250",
-          "team": "SMI",
-          "nome": "SMI_DENI_BURIDA",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 2,
-          "matricola": "336",
-          "team": "SMI",
-          "nome": "SMI_Maximuccio73",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 3,
-          "matricola": "339",
-          "team": "SRT",
-          "nome": "Dome98",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "257",
-          "team": "SRT",
-          "nome": "Lok",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "232",
-          "team": "PRT",
-          "nome": "Zak",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 6,
-          "matricola": "S1",
-          "team": "CBR",
-          "nome": "CBR_BAFFOKILLER_",
-          "auto": ""
         }
       ]
     },
@@ -558,8 +439,8 @@
       "time": "Ore 21:00",
       "name": "A16",
       "category": "FINALE PRO GOLD",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
+      "host": "Albixximo",
+      "live": "PRT- xSamueLx",
       "url": "https://www.twitch.tv/xsamuelx_channel",
       "pilots": [
         {
@@ -659,55 +540,6 @@
           "team": "GTID",
           "nome": "GTID_Ale #77",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 1,
-          "matricola": "145",
-          "team": "RCE",
-          "nome": "RCE_Patrick85",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 2,
-          "matricola": "157",
-          "team": "RSR",
-          "nome": "Mat-bull11",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 3,
-          "matricola": "135",
-          "team": "PRT",
-          "nome": "G. Bozzo",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "133",
-          "team": "PRT",
-          "nome": "Ferro77",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "101",
-          "team": "CBR",
-          "nome": "CBR_Samu12",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 6,
-          "matricola": "153",
-          "team": "RMT",
-          "nome": "RMT-Axel K",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 7,
-          "matricola": "206",
-          "team": "GTID",
-          "nome": "GTID_Ale #77",
-          "auto": "RS 5 Turbo DTM '19"
         }
       ]
     },
@@ -766,8 +598,8 @@
       "time": "Ore 21:30",
       "name": "A23",
       "category": "FINALE ELITE",
-      "host": "DA DEFINIRE",
-      "live": "LOBBY CHIUSA",
+      "host": "MF_maxlaqualunqe",
+      "live": "MFC- MFCorse-46",
       "url": "https://youtube.com/@mfcorse-46",
       "pilots": [
         {
@@ -867,55 +699,6 @@
           "team": "PRT",
           "nome": "Sulimanov",
           "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 1,
-          "matricola": "74",
-          "team": "SMI",
-          "nome": "SMI-Lellobello",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 2,
-          "matricola": "52",
-          "team": "RCE",
-          "nome": "RCE_DarkneSS",
-          "auto": ""
-        },
-        {
-          "pos": 3,
-          "matricola": "140",
-          "team": "PRT",
-          "nome": "Sulimanov",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 4,
-          "matricola": "41",
-          "team": "PRT",
-          "nome": "FrRoGaMeR",
-          "auto": "RS 5 Turbo DTM '19"
-        },
-        {
-          "pos": 5,
-          "matricola": "25",
-          "team": "GTRC",
-          "nome": "GTRC- TROTOTEK",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 6,
-          "matricola": "155",
-          "team": "RSR",
-          "nome": "C.Leclecca",
-          "auto": "RC F GT500 '16"
-        },
-        {
-          "pos": 7,
-          "matricola": "97",
-          "team": "BCSC",
-          "nome": "ITA_SOLID_SNAKE",
-          "auto": "RC F GT500 '16"
         }
       ]
     },
@@ -984,8 +767,8 @@
       "time": "Ore 21:30",
       "name": "A31",
       "category": "FINALE STAR",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
+      "host": "MirkoDC10",
+      "live": "DCT- MirkoDC10",
       "url": "https://www.twitch.tv/dclab_channel_1",
       "pilots": [
         {
@@ -1085,7 +868,337 @@
           "team": "PRT",
           "nome": "PRT_Perdinci",
           "auto": "RS 5 Turbo DTM '19"
+        }
+      ]
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 21:00",
+      "name": "A32",
+      "category": "PRO AMA",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:20",
+      "name": "A34",
+      "category": "STAR",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:20",
+      "name": "A35",
+      "category": "ELITE",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 22:20",
+      "name": "A36",
+      "category": "PRO SILVER",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": []
+    }
+  ],
+  "prossime": [
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:30",
+      "name": "A3",
+      "category": "SUPERFINAL AMA",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "386",
+          "team": "GTID",
+          "nome": "Ice_Fire",
+          "auto": "RS 5 Turbo DTM '19"
         },
+        {
+          "pos": 2,
+          "matricola": "481",
+          "team": "PRT",
+          "nome": "Simoppr",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "366",
+          "team": "CBR",
+          "nome": "CBR_FELIX",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 4,
+          "matricola": "519",
+          "team": "SRT",
+          "nome": "Yanuzzo_44",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 5,
+          "matricola": "378",
+          "team": "FFM",
+          "nome": "R.Napoletano",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "460",
+          "team": "DCT",
+          "nome": "DCT_R.Leta",
+          "auto": "RS 5 Turbo DTM '19"
+        }
+      ],
+      "data": "2026-12-07"
+    },
+    {
+      "day": "LUNEDI",
+      "time": "Ore 21:45",
+      "name": "A4",
+      "category": "SUPERFINAL PRO AMA",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "387",
+          "team": "GTID",
+          "nome": "Xelavr6",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "303",
+          "team": "OES",
+          "nome": "Pinpinella95",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 3,
+          "matricola": "323",
+          "team": "RRT",
+          "nome": "RRT_SNERZZZ",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "404",
+          "team": "PRT",
+          "nome": "Mastro",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "397",
+          "team": "MMS",
+          "nome": "MMS_DpGurney78",
+          "auto": "GT-R NISMO GT500 '16"
+        }
+      ],
+      "data": "2026-12-07"
+    },
+    {
+      "day": "MARTEDI",
+      "time": "Ore 21:30",
+      "name": "A10",
+      "category": "SUPERFINALS PRO SILVER",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "250",
+          "team": "SMI",
+          "nome": "SMI_DENI_BURIDA",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 2,
+          "matricola": "336",
+          "team": "SMI",
+          "nome": "SMI_Maximuccio73",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "339",
+          "team": "SRT",
+          "nome": "Dome98",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "257",
+          "team": "SRT",
+          "nome": "Lok",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "232",
+          "team": "PRT",
+          "nome": "Zak",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "S1",
+          "team": "CBR",
+          "nome": "CBR_BAFFOKILLER_",
+          "auto": ""
+        }
+      ],
+      "data": "2026-12-08"
+    },
+    {
+      "day": "MERCOLEDI",
+      "time": "Ore 21:30",
+      "name": "A18",
+      "category": "SUPERFINALS PRO GOLD",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "145",
+          "team": "RCE",
+          "nome": "RCE_Patrick85",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "157",
+          "team": "RSR",
+          "nome": "Mat-bull11",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "135",
+          "team": "PRT",
+          "nome": "G. Bozzo",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "133",
+          "team": "PRT",
+          "nome": "Ferro77",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "101",
+          "team": "CBR",
+          "nome": "CBR_Samu12",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "153",
+          "team": "RMT",
+          "nome": "RMT-Axel K",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "206",
+          "team": "GTID",
+          "nome": "GTID_Ale #77",
+          "auto": "RS 5 Turbo DTM '19"
+        }
+      ],
+      "data": "2026-12-09"
+    },
+    {
+      "day": "GIOVEDI",
+      "time": "Ore 21:30",
+      "name": "A25",
+      "category": "SUPER FINALS ELITE",
+      "host": "DA DEFINIRE",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
+        {
+          "pos": 1,
+          "matricola": "74",
+          "team": "SMI",
+          "nome": "SMI-Lellobello",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "52",
+          "team": "RCE",
+          "nome": "RCE_DarkneSS",
+          "auto": ""
+        },
+        {
+          "pos": 3,
+          "matricola": "140",
+          "team": "PRT",
+          "nome": "Sulimanov",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "41",
+          "team": "PRT",
+          "nome": "FrRoGaMeR",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "25",
+          "team": "GTRC",
+          "nome": "GTRC- TROTOTEK",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 6,
+          "matricola": "155",
+          "team": "RSR",
+          "nome": "C.Leclecca",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 7,
+          "matricola": "97",
+          "team": "BCSC",
+          "nome": "ITA_SOLID_SNAKE",
+          "auto": "RC F GT500 '16"
+        }
+      ],
+      "data": "2026-12-10"
+    },
+    {
+      "day": "VENERDI",
+      "time": "Ore 21:30",
+      "name": "A33",
+      "category": "SUPER FINALS STAR",
+      "host": "LOBBY CHIUSA",
+      "live": "LOBBY CHIUSA",
+      "url": "",
+      "pilots": [
         {
           "pos": 1,
           "matricola": "21",
@@ -1135,47 +1248,8 @@
           "nome": "EVO_lama85",
           "auto": "RC F GT500 '16"
         }
-      ]
-    },
-    {
-      "day": "VENERDI",
-      "time": "Ore 21:00",
-      "name": "A32",
-      "category": "PRO AMA",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
-      "url": "",
-      "pilots": []
-    },
-    {
-      "day": "VENERDI",
-      "time": "Ore 22:20",
-      "name": "A34",
-      "category": "STAR",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
-      "url": "",
-      "pilots": []
-    },
-    {
-      "day": "VENERDI",
-      "time": "Ore 22:20",
-      "name": "A35",
-      "category": "ELITE",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
-      "url": "",
-      "pilots": []
-    },
-    {
-      "day": "VENERDI",
-      "time": "Ore 22:20",
-      "name": "A36",
-      "category": "PRO SILVER",
-      "host": "LOBBY CHIUSA",
-      "live": "LOBBY CHIUSA",
-      "url": "",
-      "pilots": []
+      ],
+      "data": "2026-12-11"
     }
   ]
 }

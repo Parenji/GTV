@@ -13,6 +13,10 @@ Com'e' fatto il portale (verificato il 2026-10-03, dopo la Gara 1):
     piazzamento ("1°"), le stelle di pole (oro) e giro veloce (viola) oppure
     uno stato (A assenza, NC, BOX, DSQ). Si leggono senza OCR;
   - le lobby di ogni lega stanno nell'oggetto `lobbiesByLeague`;
+  - a fine round (dal 2026-11-27, dopo la Gara 5) la classifica ha anche la
+    colonna "PROMO / RETRO UNION 2027" (PROMOSSO / RETROCESSO) e l'oggetto
+    `unionFinalists` elenca i 14 piloti di ogni lega qualificati alle
+    finali (in ordine, con la posizione in classifica e i punti);
   - i RISULTATI DI GARA sono immagini 4K, una per lobby:
         /Gare/G<n>/<LEGA>/<LOBBY>.png
     con classifica definitiva completa: pilota, auto, qualifica, tempo gara,
@@ -86,13 +90,14 @@ normalizza = nomi.normalizza
 # Lettura del portale
 # ---------------------------------------------------------------------------
 def variabile_json(sorgente: str, nome: str):
-    """Valore JSON di `const <nome> = {...};` scritto su una riga del portale."""
-    for riga in sorgente.splitlines():
-        riga = riga.strip()
-        if riga.startswith(f"const {nome} = "):
-            valore = riga[len(f"const {nome} = "):].rstrip(";")
-            return json.loads(valore)
-    return None
+    """Valore JSON di `const <nome> = {...};` nel portale (None se manca)."""
+    inizio = re.search(rf"(?m)^\s*const {re.escape(nome)} = ", sorgente)
+    if not inizio:
+        return None
+    try:
+        return json.JSONDecoder().raw_decode(sorgente, inizio.end())[0]
+    except ValueError:
+        return None
 
 
 def lobby_per_lega(sorgente: str) -> dict:
@@ -155,14 +160,17 @@ def classifica_lega(pagina: str):
     Le colonne si riconoscono dall'intestazione, cosi' un cambio di ordine nel
     portale non rompe la lettura. I pari merito hanno la Pos vuota: valgono la
     Pos della riga sopra (`pari`: True), come nella tabella del portale.
+    A fine round la colonna "PROMO / RETRO" da' `movimento` (promosso o
+    retrocesso nella lega dell'anno dopo).
     """
     corse = re.search(r"STANDINGS\s*[•·-]\s*GARA\s*(\d+)", pulisci(pagina))
-    piloti, colonna, pos_corrente = [], None, None
+    piloti, colonna, pos_corrente, promo = [], None, None, None
     for riga in re.findall(r"<tr\b.*?</tr>", pagina, re.S):
         celle = re.findall(r"<t[dh]\b[^>]*>(.*?)</t[dh]>", riga, re.S)
         testi = [pulisci(c) for c in celle]
         if "POS" in [t.upper() for t in testi] and "PILOTA" in [t.upper() for t in testi]:
             colonna = {t.upper(): i for i, t in enumerate(testi)}
+            promo = next((i for t, i in colonna.items() if t.startswith("PROMO")), None)
             continue
         if colonna is None or len(celle) < len(colonna):
             continue
@@ -193,8 +201,31 @@ def classifica_lega(pagina: str):
         }
         if pari:
             riga_pilota["pari"] = True
+        movimento = testi[promo].upper() if promo is not None and promo < len(testi) else ""
+        if "PROMOSS" in movimento:
+            riga_pilota["movimento"] = "promosso"
+        elif "RETROCESS" in movimento:
+            riga_pilota["movimento"] = "retrocesso"
         piloti.append(riga_pilota)
     return piloti, int(corse.group(1)) if corse else 0
+
+
+def segna_finalisti(piloti: list, finalisti: list, lega: str) -> list:
+    """Piloti della lega qualificati alle finali (`unionFinalists`).
+
+    Ogni riga della classifica che compare nell'elenco prende `finale`: il
+    posto nell'elenco (1-14). Restituisce i nomi non trovati in classifica.
+    L'elenco puo' cambiare per rinunce e ripescaggi: si rilegge a ogni giro.
+    """
+    per_nome = {normalizza(p["nome"]): p for p in piloti}
+    mancanti = []
+    for posto, f in enumerate(finalisti or [], start=1):
+        riga = per_nome.get(normalizza(f.get("pilota")))
+        if riga is None:
+            mancanti.append(f"{lega}: {f.get('pilota')}")
+        else:
+            riga["finale"] = posto
+    return mancanti
 
 
 def punti_gara(piloti: list, corse: int, gare: dict, lega: str) -> None:
@@ -473,6 +504,7 @@ def main() -> int:
     sorgente = rete.scarica(PORTALE_PAGINA)
     pagine = variabile_json(sorgente or "", "pages") or {}
     lobby = lobby_per_lega(sorgente or "")
+    finalisti = variabile_json(sorgente or "", "unionFinalists") or {}
     if not pagine:
         print("x Nel portale non trovo le classifiche (`pages`): e' cambiato il formato?")
         return 1
@@ -483,6 +515,18 @@ def main() -> int:
         leghe[lega] = {"gare_corse": corse, "piloti": piloti}
         gtv = sum(1 for p in piloti if nomi.e_gtv(p["team"]))
         print(f"  {lega:<10} {len(piloti):3d} piloti, {gtv} GTV, dopo la gara {corse}, lobby {', '.join(lobby.get(lega, []))}")
+        # Categorie estreme: dalla STAR non si sale, dalla AMA non si scende
+        vietato = {"STAR": "promosso", "AMA": "retrocesso"}.get(lega)
+        for p in piloti:
+            if vietato and p.get("movimento") == vietato:
+                print(f"  ! {lega}: il portale segna {p['nome']} {vietato}, ignorato")
+                del p["movimento"]
+        if finalisti.get(lega):
+            for nome in segna_finalisti(piloti, finalisti[lega], lega):
+                print(f"  ! finalista non trovato in classifica: {nome}")
+            mossi = [p.get("movimento") for p in piloti]
+            print(f"  {'':<10} {sum(1 for p in piloti if p.get('finale'))} finalisti,"
+                  f" {mossi.count('promosso')} promossi, {mossi.count('retrocesso')} retrocessi")
 
     usa_ocr = ocr.disponibile() and not args.controlla
     gare = {}

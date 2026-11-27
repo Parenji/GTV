@@ -39,8 +39,13 @@ function initUnionSezioni() {
 var UNION_LEGHE = ["STAR", "ELITE", "PRO GOLD", "PRO SILVER", "PRO AMA", "AMA"];
 
 // Classe colore della categoria (--cat): stessi colori ovunque
+// Lega di una categoria di lobby: "FINALE AMA" e "SUPER FINALS STAR" sono AMA e STAR
+function unionLegaDi(category) {
+  return String(category || "").trim().toUpperCase().replace(/^(SUPER\s*)?FINAL[EIS]*\s+/, "");
+}
+
 function unionCategoryColorClass(category) {
-  var c = String(category || "").trim().toUpperCase().replace(/\s+/g, "");
+  var c = unionLegaDi(category).replace(/\s+/g, "");
   switch (c) {
     case "STAR":
       return "ui-cat-star";
@@ -125,14 +130,48 @@ function unionRaceCardHtml(g) {
       '" alt="" onerror="this.style.display=\'none\'">'
     : "";
   return (
-    '<div class="ui-card ui-race" data-dal="' + escapeHtml(g.dal) + '" data-al="' + escapeHtml(g.al) + '">' +
+    '<div class="ui-card ui-race' + (g.giorni && g.giorni.length ? " ui-race--wide" : "") + '" data-dal="' + escapeHtml(g.dal) + '" data-al="' + escapeHtml(g.al) + '">' +
     '<span class="ui-race-round">' + escapeHtml(g.nome) + "</span>" +
     '<span class="ui-race-track">' + bandiera + escapeHtml(g.pista) + "</span>" +
     '<span class="ui-race-date">' + escapeHtml(unionPeriodo(g.dal, g.al)) + "</span>" +
     (badge ? "<span>" + badge + "</span>" : "") +
+    unionGiorniLegheHtml(g.giorni) +
     mappa +
     "</div>"
   );
+}
+
+var UNION_GIORNI_BREVI = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
+
+// "Lun 30 nov" da "2026-11-30"
+function unionGiornoBreve(iso) {
+  var d = new Date(String(iso || "") + "T12:00:00");
+  if (isNaN(d)) return "";
+  return UNION_GIORNI_BREVI[d.getDay()] + " " + d.getDate() + " " + UNION_MESI_BREVI[d.getMonth()];
+}
+
+// Settimana con un giorno per lega (finali): "Lun 30 nov  AMA PRO AMA"
+function unionGiorniLegheHtml(giorni) {
+  if (!giorni || !giorni.length) return "";
+  return (
+    '<ul class="ui-race-days">' +
+    giorni.map(function (x) {
+      return (
+        '<li><span class="ui-muted">' + escapeHtml(unionGiornoBreve(x.data)) + "</span>" +
+        "<span>" + (x.leghe || []).map(unionCatBadge).join(" ") + "</span></li>"
+      );
+    }).join("") +
+    "</ul>"
+  );
+}
+
+// Giorno della finale di una lega (ISO), dal calendario
+function unionGiornoFinale(lega) {
+  var finale = ((UNION_CAL && UNION_CAL.gare) || []).filter(function (g) { return g.tipo === "finale"; })[0];
+  var giorno = ((finale && finale.giorni) || []).filter(function (x) {
+    return (x.leghe || []).indexOf(lega) !== -1;
+  })[0];
+  return giorno ? giorno.data : "";
 }
 
 function renderUnionCalendario(cal) {
@@ -338,7 +377,7 @@ function lookupUnionMatricola(map, psn, gt7) {
 }
 
 function unionTierIndex(cat) {
-  var c = String(cat || "").trim().toUpperCase();
+  var c = unionLegaDi(cat);
   var i = UNION_LEGHE.indexOf(c);
   return i === -1 ? UNION_LEGHE.length : i;
 }
@@ -646,6 +685,7 @@ function renderUnionSpecchietto(container, data) {
 function renderUnionLobbyBody(container, data) {
   var byDay = {};
   data.lobbies.forEach(function (lb) {
+    if (!lb.pilots || !lb.pilots.length) return; // lobby chiusa, nessuno schierato
     var d = String(lb.day || "").toUpperCase();
     (byDay[d] = byDay[d] || []).push(lb);
   });
@@ -849,7 +889,7 @@ var unionCls = {
   data: null,
   gara: null, // gara mostrata nei risultati
   lega: "STAR", // lega mostrata nelle classifiche
-  tutti: {}, // lega -> true se "mostra tutti"
+  vista: {}, // lega -> "gtv" (finestra sui GTV), "finalisti" o "tutti"
   aperti: {}, // lega -> {indice di inizio del tratto compresso: true}
 };
 
@@ -1252,8 +1292,9 @@ function renderUnionClassifiche() {
         renderUnionClassifiche();
         return;
       }
-      if (e.target.closest("[data-tutti]")) {
-        unionCls.tutti[unionCls.lega] = !unionCls.tutti[unionCls.lega];
+      var vista = e.target.closest("[data-vista]");
+      if (vista) {
+        unionCls.vista[unionCls.lega] = vista.getAttribute("data-vista");
         renderUnionClassifiche();
         return;
       }
@@ -1273,6 +1314,7 @@ function renderUnionClassifiche() {
 
   body.innerHTML = unionClassificaLegaHtml(unionCls.lega);
   setUnionClsUpdate(data);
+  renderUnionGtvFinali();
 }
 
 function unionMovimento(p) {
@@ -1283,6 +1325,30 @@ function unionMovimento(p) {
   if (d > 0) return ' <span class="ui-delta ui-delta--up" title="Guadagnate ' + d + ' posizioni">▲' + d + "</span>";
   if (d < 0) return ' <span class="ui-delta ui-delta--down" title="Perse ' + -d + ' posizioni">▼' + -d + "</span>";
   return ' <span class="ui-delta ui-delta--same" title="Stessa posizione">=</span>';
+}
+
+// Lega dell'anno dopo per chi sale o scende (le leghe sono in ordine, STAR in cima)
+function unionLegaDopo(lega, movimento) {
+  var i = UNION_LEGHE.indexOf(lega);
+  var j = movimento === "promosso" ? i - 1 : movimento === "retrocesso" ? i + 1 : -1;
+  return i === -1 || j < 0 || j >= UNION_LEGHE.length ? "" : UNION_LEGHE[j];
+}
+
+function unionMovimentoTesto(p, lega) {
+  if (!p.movimento) return "";
+  var dove = unionLegaDopo(lega, p.movimento);
+  return (p.movimento === "promosso" ? "Promosso" : "Retrocesso") + (dove ? " in " + dove : "") + " per Union 2027";
+}
+
+// Segnalini della classifica finale: F = qualificato alle finali, ▲/▼ = promosso/retrocesso
+function unionSegniFinaliHtml(p, lega) {
+  return (
+    (p.finale ? ' <span class="ui-dot ui-dot--finale" title="Qualificato alle finali">F</span>' : "") +
+    (p.movimento
+      ? ' <span class="ui-dot ui-dot--' + (p.movimento === "promosso" ? "su" : "giu") + '" title="' +
+        escapeHtml(unionMovimentoTesto(p, lega)) + '">' + (p.movimento === "promosso" ? "▲" : "▼") + "</span>"
+      : "")
+  );
 }
 
 // Cella gara di una riga della classifica: piazzamento, segnalini e punti
@@ -1299,19 +1365,22 @@ function unionEsitoHtml(p, i, corsa) {
   );
 }
 
-function unionClsRowHtml(p) {
+function unionClsRowHtml(p, lega) {
   var gtv = unionIsGtv(p);
   var gare = "";
   var pubblicate = (unionCls.data.meta && unionCls.data.meta.gare_pubblicate) || [];
   for (var i = 0; i < UNION_NUM_GARE; i++) {
     gare += "<span><small>G" + (i + 1) + "</small>" + unionEsitoHtml(p, i, pubblicate.indexOf(i + 1) !== -1) + "</span>";
   }
+  if (p.finale) gare += '<span class="ui-row-note">Qualificato alle finali</span>';
+  if (p.movimento) gare += '<span class="ui-row-note">' + escapeHtml(unionMovimentoTesto(p, lega)) + "</span>";
   return (
     '<li class="ui-row' + (gtv ? " is-gtv" : "") + '" tabindex="0" aria-expanded="false">' +
     '<span class="ui-pos">' + (p.pos || "") + "</span>" +
     '<span class="ui-muted">' + escapeHtml(p.team || "") + "</span>" +
     '<span class="ui-ellipsis' + (gtv ? " ui-strong" : "") + '">' + unionPilotaLink(p.nome) +
-    (gtv && unionRitirato(p.nome) ? ' <span class="ui-muted">(ritirato)</span>' : gtv ? unionMovimento(p) : "") + "</span>" +
+    unionSegniFinaliHtml(p, lega) +
+    (gtv && unionRitirato(p.nome) ? ' <span class="ui-muted">(ritirato)</span>' : gtv && !p.movimento ? unionMovimento(p) : "") + "</span>" +
     '<span class="ui-num">' + (p.punti || 0) + "</span>" +
     '<span class="ui-row-more">' + gare + "</span>" +
     "</li>"
@@ -1327,28 +1396,57 @@ function unionClassificaLegaHtml(lega) {
   var nota = piloti.every(function (p) { return !p.punti; })
     ? '<p class="ui-text ui-muted" style="margin-top:0">Il ' + escapeHtml((UNION_CAL && UNION_CAL.round) || "campionato") + ' non è ancora iniziato: tutti a 0 punti, in ordine alfabetico.</p>'
     : "";
-  var tutti = !!unionCls.tutti[lega];
+  var conFinalisti = piloti.some(function (p) { return p.finale; });
+  var conMovimenti = piloti.some(function (p) { return p.movimento; });
+  var vista = unionCls.vista[lega] || "gtv";
+  if (vista === "finalisti" && !conFinalisti) vista = "gtv";
+  var tutti = vista === "tutti";
   var aperti = unionCls.aperti[lega] || {};
 
-  // Finestra: podio + ogni GTV con due piloti sopra e due sotto
-  var visibile = piloti.map(function (p) { return tutti || (p.pos || 999) <= 3; });
-  piloti.forEach(function (p, i) {
-    if (!unionIsGtv(p)) return;
-    for (var k = Math.max(0, i - 2); k <= Math.min(piloti.length - 1, i + 2); k++) visibile[k] = true;
-  });
+  var visibile;
+  if (vista === "finalisti") {
+    visibile = piloti.map(function (p) { return !!p.finale; });
+  } else {
+    // Finestra: podio + ogni GTV con due piloti sopra e due sotto
+    visibile = piloti.map(function (p) { return tutti || (p.pos || 999) <= 3; });
+    piloti.forEach(function (p, i) {
+      if (!unionIsGtv(p)) return;
+      for (var k = Math.max(0, i - 2); k <= Math.min(piloti.length - 1, i + 2); k++) visibile[k] = true;
+    });
+  }
+
+  var viste = [["gtv", "Finestra GTV"]];
+  if (conFinalisti) viste.push(["finalisti", "Finalisti"]);
+  viste.push(["tutti", "Tutti i " + piloti.length]);
+  var selettore =
+    '<div class="ui-seg" role="group" aria-label="Cosa mostrare" style="margin-bottom: var(--ui-s3)">' +
+    viste.map(function (v) {
+      return '<button type="button" class="ui-seg-btn" data-vista="' + v[0] + '" aria-pressed="' + (v[0] === vista) + '">' + v[1] + "</button>";
+    }).join("") +
+    "</div>";
+  var legenda = conFinalisti || conMovimenti
+    ? '<p class="ui-text ui-muted ui-cls-legenda">' +
+      (conFinalisti ? '<span><span class="ui-dot ui-dot--finale">F</span> alle finali</span>' : "") +
+      (conMovimenti && lega !== "STAR" ? '<span><span class="ui-dot ui-dot--su">▲</span> promosso</span>' : "") +
+      (conMovimenti && lega !== "AMA" ? '<span><span class="ui-dot ui-dot--giu">▼</span> retrocesso</span>' : "") +
+      (conMovimenti ? "<span>per Union 2027</span>" : "") +
+      "</p>"
+    : "";
 
   var html = "";
   var i = 0;
   while (i < piloti.length) {
     if (visibile[i]) {
-      html += unionClsRowHtml(piloti[i]);
+      html += unionClsRowHtml(piloti[i], lega);
       i++;
       continue;
     }
     var inizio = i;
     while (i < piloti.length && !visibile[i]) i++;
     if (aperti[inizio]) {
-      for (var k = inizio; k < i; k++) html += unionClsRowHtml(piloti[k]);
+      for (var k = inizio; k < i; k++) html += unionClsRowHtml(piloti[k], lega);
+    } else if (vista === "finalisti") {
+      // fuori dai finalisti: niente "mostra altri"
     } else {
       var n = i - inizio;
       html +=
@@ -1359,15 +1457,75 @@ function unionClassificaLegaHtml(lega) {
 
   return (
     nota +
+    selettore +
+    legenda +
     '<ol class="ui-list">' +
     '<li class="ui-row ui-row--head"><span>Pos</span><span>Team</span><span>Pilota</span><span class="ui-num">Punti</span></li>' +
     html +
     "</ol>" +
-    '<div class="ui-btn-row ui-btn-row--center" style="margin-top: var(--ui-s4)">' +
-    '<button type="button" class="ui-btn ui-btn--ghost" data-tutti>' +
-    (tutti ? "Mostra solo la finestra sui GTV" : "Mostra tutti i " + piloti.length + " piloti") +
-    "</button></div>"
+    (vista === "finalisti"
+      ? '<p class="ui-text ui-muted" style="margin-top: var(--ui-s3)">L\'elenco può cambiare per rinunce: si ripesca dal 15° in classifica generale.</p>'
+      : "")
   );
+}
+
+// GTV alle finali (con giorno, lobby e ora) e movimenti per Union 2027
+function renderUnionGtvFinali() {
+  var box = document.getElementById("union-cls-gtv");
+  var data = unionCls.data;
+  if (!box || !data) return;
+  var finalisti = [];
+  var movimenti = [];
+  UNION_LEGHE.forEach(function (lega) {
+    ((data.leghe[lega] || {}).piloti || []).forEach(function (p) {
+      if (!unionIsGtv(p) || unionRitirato(p.nome)) return;
+      if (p.finale) finalisti.push({ p: p, lega: lega });
+      if (p.movimento) movimenti.push({ p: p, lega: lega });
+    });
+  });
+  movimenti.sort(function (a, b) { return (a.p.movimento === "promosso" ? 0 : 1) - (b.p.movimento === "promosso" ? 0 : 1); });
+  if (!finalisti.length && !movimenti.length) {
+    box.hidden = true;
+    return;
+  }
+
+  fetchUnionLobbyData()
+    .catch(function () { return null; })
+    .then(function (lobbyData) {
+      var lobbyDi = {};
+      ((lobbyData && lobbyData.lobbies) || []).forEach(function (lb) {
+        (lb.pilots || []).forEach(function (x) { lobbyDi[unionChiavePilota(x.nome)] = lb; });
+      });
+      var righe = finalisti.map(function (f) {
+        var lb = lobbyDi[unionChiavePilota(f.p.nome)];
+        var quando = unionGiornoBreve(unionGiornoFinale(f.lega));
+        var dettagli = [f.p.pos + "° in classifica, " + f.p.punti + " pt"];
+        if (quando) dettagli.push(quando + (lb ? " ore " + unionOra(lb.time) : ""));
+        if (lb) dettagli.push("lobby " + lb.name);
+        return (
+          '<li class="ui-gtv-finale">' +
+          '<span class="ui-strong">' + unionPilotaLink(f.p.nome) + "</span>" + unionCatBadge(f.lega) +
+          '<span class="ui-muted">' + escapeHtml(dettagli.join(", ")) + "</span>" +
+          "</li>"
+        );
+      }).join("");
+      var mov = movimenti.map(function (m) {
+        var su = m.p.movimento === "promosso";
+        return (
+          '<li class="ui-gtv-finale">' +
+          '<span class="ui-dot ui-dot--' + (su ? "su" : "giu") + '">' + (su ? "▲" : "▼") + "</span>" +
+          '<span class="ui-strong">' + unionPilotaLink(m.p.nome) + "</span>" +
+          '<span class="ui-muted">' + escapeHtml(unionMovimentoTesto(m.p, m.lega)) + "</span>" +
+          "</li>"
+        );
+      }).join("");
+      box.innerHTML =
+        (righe
+          ? '<div class="ui-subhead">GTV alle finali</div><ul class="ui-gtv-finali">' + righe + "</ul>"
+          : "") +
+        (mov ? '<div class="ui-subhead">Union 2027</div><ul class="ui-gtv-finali">' + mov + "</ul>" : "");
+      box.hidden = false;
+    });
 }
 
 function setUnionClsUpdate(data) {

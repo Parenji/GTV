@@ -53,6 +53,17 @@ rileggono solo se cambiano (`--rileggi` forza). Il workflow controlla prima
 su Linux (`--controlla`) e usa un runner macOS solo quando c'e' un'immagine
 nuova da leggere.
 
+A fine round il portale aggiunge la colonna "PROMO / RETRO UNION 2027" e
+l'elenco dei 14 finalisti di ogni lega (`unionFinalists`): diventano
+`movimento` (promosso / retrocesso) e `finale` (posto nell'elenco) sulle righe
+della classifica. Dalla STAR non si sale e dalla AMA non si scende: lo script
+ignora un movimento del genere anche se il portale lo scrivesse.
+
+Nel foglio delle lobby del sito HUB, sotto le lobby della settimana possono
+esserci lobby gia' fissate per un'altra settimana (es. le Superfinal sotto le
+Finali), con la data al posto di "Ore" ("7/12/26 21:30"). `scraper.py` le mette
+in `prossime` dentro `lobby.json`: sito e promemoria leggono solo `lobbies`.
+
 I provvedimenti della direzione gara non si leggono dal portale (non li
 mostra): stanno nella sezione Report DG, dal foglio dei reclami.
 

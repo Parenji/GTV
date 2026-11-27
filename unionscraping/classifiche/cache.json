@@ -14411,7 +14411,18 @@
   "lega": "AMA",
   "immagine": "https://albixximo-union2026-r2.vercel.app/Gare/G3/AMA/A23.png",
   "impronta": "\"f79f2c82fac92e0c79b38ab1c6f81a53\"",
-  "classifica": [],
+  "classifica": [
+   {
+    "pos": 1,
+    "nome": "*",
+    "auto": "Questa lobby è stata unita ad altre lobby",
+    "distacco": null,
+    "giro": null,
+    "punti": null,
+    "team": "",
+    "q": null
+   }
+  ],
   "pole": null,
   "giro_veloce": null
  },

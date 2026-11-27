@@ -517,6 +517,57 @@ p.ui-text {
   background: var(--ui-fl);
 }
 
+/* Classifica di fine round: F finalista, ▲ promosso, ▼ retrocesso */
+.ui-dot--finale {
+  border: 1px solid var(--ui-accent);
+  color: var(--ui-accent);
+  font-family: var(--ui-font-bold);
+}
+
+.ui-dot--su {
+  background: var(--ui-accent);
+  color: var(--ui-accent-ink);
+  font-size: 8px;
+}
+
+.ui-dot--giu {
+  background: var(--ui-down);
+  color: #fff;
+  font-size: 8px;
+}
+
+.ui-cls-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-s2) var(--ui-s4);
+  margin: 0 0 var(--ui-s3);
+  font-size: var(--ui-fs-xs);
+}
+
+.ui-cls-legenda > span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-s1);
+}
+
+/* GTV alle finali / Union 2027, in cima alle classifiche */
+.ui-gtv-finali {
+  list-style: none;
+  margin: 0 0 var(--ui-s4);
+  padding: 0;
+}
+
+.ui-gtv-finale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-s1) var(--ui-s2);
+  padding: var(--ui-s3) 0;
+  border-bottom: 1px solid var(--ui-line);
+  font-size: var(--ui-fs-sm);
+}
+
 /* Movimento: ▲ guadagno, ▼ perdita, = invariato */
 .ui-delta {
   font-size: var(--ui-fs-xs);
@@ -745,6 +796,12 @@ p.ui-text {
 
 .ui-row.is-open .ui-row-more {
   display: flex;
+}
+
+/* Riga di testo nel dettaglio (finalista, promosso...) */
+.ui-row-more .ui-row-note {
+  flex-basis: 100%;
+  color: var(--ui-text-2);
 }
 
 .ui-row-more small {
@@ -1002,6 +1059,34 @@ a.ui-card:focus-visible {
 .ui-race-date {
   font-size: var(--ui-fs-sm);
   color: var(--ui-text-2);
+}
+
+/* Un giorno per lega (finali) */
+.ui-race-days {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--ui-s1);
+  font-size: var(--ui-fs-sm);
+}
+
+.ui-race-days li {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--ui-s2);
+}
+
+.ui-race-days li > span:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-s1);
+}
+
+/* La card con un giorno per lega occupa tutta la riga della griglia */
+.ui-race--wide {
+  grid-column: 1 / -1;
 }
 
 .ui-race-map {
