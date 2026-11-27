@@ -1469,11 +1469,13 @@ function unionClassificaLegaHtml(lega) {
   );
 }
 
-// GTV alle finali (con giorno, lobby e ora) e movimenti per Union 2027
+// GTV alle finali (con giorno, lobby e ora) e movimenti per Union 2027:
+// in cima alle classifiche e, come avviso, nella home della pagina
 function renderUnionGtvFinali() {
   var box = document.getElementById("union-cls-gtv");
+  var home = document.getElementById("union-home-finali");
   var data = unionCls.data;
-  if (!box || !data) return;
+  if ((!box && !home) || !data) return;
   var finalisti = [];
   var movimenti = [];
   UNION_LEGHE.forEach(function (lega) {
@@ -1485,7 +1487,8 @@ function renderUnionGtvFinali() {
   });
   movimenti.sort(function (a, b) { return (a.p.movimento === "promosso" ? 0 : 1) - (b.p.movimento === "promosso" ? 0 : 1); });
   if (!finalisti.length && !movimenti.length) {
-    box.hidden = true;
+    if (box) box.hidden = true;
+    if (home) home.hidden = true;
     return;
   }
 
@@ -1519,12 +1522,20 @@ function renderUnionGtvFinali() {
           "</li>"
         );
       }).join("");
-      box.innerHTML =
+      var html =
         (righe
           ? '<div class="ui-subhead">GTV alle finali</div><ul class="ui-gtv-finali">' + righe + "</ul>"
           : "") +
         (mov ? '<div class="ui-subhead">Union 2027</div><ul class="ui-gtv-finali">' + mov + "</ul>" : "");
-      box.hidden = false;
+      if (box) {
+        box.innerHTML = html;
+        box.hidden = false;
+      }
+      if (home) {
+        var corpo = home.querySelector("[data-finali-corpo]");
+        if (corpo) corpo.innerHTML = html;
+        home.hidden = false;
+      }
     });
 }
 
