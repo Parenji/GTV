@@ -2,7 +2,7 @@
   "meta": {
     "source": "https://sites.google.com/view/hubunion",
     "title": "HUB UNION - Campionato Union 2026 Round 2",
-    "generated_at": "2026-11-26T21:40:16+00:00"
+    "generated_at": "2026-11-27T21:24:35+00:00"
   },
   "stats": {
     "total_pilots": 472,
@@ -28,6 +28,104 @@
       "pilots": [
         {
           "pos": 1,
+          "matricola": "504",
+          "team": "SCGT",
+          "nome": "S.Buccheri",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "507",
+          "team": "SCGT",
+          "nome": "Gass95",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 3,
+          "matricola": "482",
+          "team": "PRT",
+          "nome": "Step87",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "471",
+          "team": "GTV",
+          "nome": "GTSCode",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "500",
+          "team": "RRT",
+          "nome": "RRT_muso_2692_gt",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "458",
+          "team": "CBR",
+          "nome": "Alex Lilla",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 7,
+          "matricola": "475",
+          "team": "MMS",
+          "nome": "Bolker",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 8,
+          "matricola": "484",
+          "team": "PRT",
+          "nome": "Luca R72",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "515",
+          "team": "SMI",
+          "nome": "SMI_Cristian16",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 10,
+          "matricola": "521",
+          "team": "SRT",
+          "nome": "habanero",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "497",
+          "team": "RRT",
+          "nome": "Pierpynolo76",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "481",
+          "team": "PRT",
+          "nome": "Simoppr",
+          "auto": ""
+        },
+        {
+          "pos": 13,
+          "matricola": "470",
+          "team": "GTV",
+          "nome": "Frasalvo96",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "509",
+          "team": "SCGT",
+          "nome": "domydero",
+          "auto": "RISERVA X DCT_R.Leta"
+        },
+        {
+          "pos": 1,
           "matricola": "386",
           "team": "GTID",
           "nome": "Ice_Fire",
@@ -38,6 +136,34 @@
           "matricola": "481",
           "team": "PRT",
           "nome": "Simoppr",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "366",
+          "team": "CBR",
+          "nome": "CBR_FELIX",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 4,
+          "matricola": "519",
+          "team": "SRT",
+          "nome": "Yanuzzo_44",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 5,
+          "matricola": "378",
+          "team": "FFM",
+          "nome": "R.Napoletano",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "460",
+          "team": "DCT",
+          "nome": "DCT_R.Leta",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -51,6 +177,104 @@
       "live": "LOBBY CHIUSA",
       "url": "https://twitch.tv/shoganai_motorsportitalia",
       "pilots": [
+        {
+          "pos": 1,
+          "matricola": "416",
+          "team": "RMT",
+          "nome": "Micius",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "380",
+          "team": "FMC",
+          "nome": "Fmc_Fulminato199",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "432",
+          "team": "SMI",
+          "nome": "zarsantez",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "406",
+          "team": "PRT",
+          "nome": "Luni55",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "421",
+          "team": "SCGT",
+          "nome": "SCGT Basilio",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "414",
+          "team": "RMT",
+          "nome": "Fabrifox99",
+          "auto": "NSX CONCEPT-GT '16"
+        },
+        {
+          "pos": 7,
+          "matricola": "361",
+          "team": "ARC",
+          "nome": "ARC-TheHammer44",
+          "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 8,
+          "matricola": "387",
+          "team": "GTID",
+          "nome": "Xelavr6",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "437",
+          "team": "SRT",
+          "nome": "Zagaracing",
+          "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 10,
+          "matricola": "420",
+          "team": "RRT",
+          "nome": "J-Fly",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "415",
+          "team": "RMT",
+          "nome": "LID_Nelloz",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "381",
+          "team": "GTID",
+          "nome": "Davide 1972 Ita",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "400",
+          "team": "OES",
+          "nome": "_st257",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "399",
+          "team": "MMS",
+          "nome": "Saetta Assidua",
+          "auto": "RS 5 Turbo DTM '19"
+        },
         {
           "pos": 1,
           "matricola": "387",
@@ -179,6 +403,104 @@
       "pilots": [
         {
           "pos": 1,
+          "matricola": "339",
+          "team": "SRT",
+          "nome": "Dome98",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "293",
+          "team": "GTID",
+          "nome": "GTID-Vinc3Clerc",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "274",
+          "team": "BCSC",
+          "nome": "TER_Axel79",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "320",
+          "team": "SMI",
+          "nome": "SMI_Gas89",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "296",
+          "team": "GTRC",
+          "nome": "GTRC-Checco",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 6,
+          "matricola": "340",
+          "team": "TLM",
+          "nome": "TLM_Jet-morello",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "334",
+          "team": "SMI",
+          "nome": "SMI_K67AVE",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 8,
+          "matricola": "305",
+          "team": "PBC",
+          "nome": "Pete",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "315",
+          "team": "RCE",
+          "nome": "RCE_fabryct90",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 10,
+          "matricola": "280",
+          "team": "CBR",
+          "nome": "Sintoh87",
+          "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 11,
+          "matricola": "277",
+          "team": "CBR",
+          "nome": "CBR_Clesh555",
+          "auto": "GT-R NISMO GT500 '16"
+        },
+        {
+          "pos": 12,
+          "matricola": "303",
+          "team": "OES",
+          "nome": "Pinpinella95",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 13,
+          "matricola": "337",
+          "team": "SMI",
+          "nome": "SMI_Stefano",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "336",
+          "team": "SMI",
+          "nome": "SMI_Maximuccio73",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 1,
           "matricola": "250",
           "team": "SMI",
           "nome": "SMI_DENI_BURIDA",
@@ -204,6 +526,20 @@
           "team": "SRT",
           "nome": "Lok",
           "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "232",
+          "team": "PRT",
+          "nome": "Zak",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "S1",
+          "team": "CBR",
+          "nome": "CBR_BAFFOKILLER_",
+          "auto": ""
         }
       ]
     },
@@ -226,6 +562,104 @@
       "live": "LOBBY CHIUSA",
       "url": "https://www.twitch.tv/xsamuelx_channel",
       "pilots": [
+        {
+          "pos": 1,
+          "matricola": "189",
+          "team": "CBR",
+          "nome": "P.Vicari",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "261",
+          "team": "TLM",
+          "nome": "TLM_Mannino",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "240",
+          "team": "RRT",
+          "nome": "Cristian",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 4,
+          "matricola": "226",
+          "team": "PRT",
+          "nome": "Denni",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "185",
+          "team": "CBR",
+          "nome": "CBR_Paolucci",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "241",
+          "team": "RRT",
+          "nome": "Pazzatu",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "200",
+          "team": "EVO",
+          "nome": "Ric_hero1971",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 8,
+          "matricola": "258",
+          "team": "SRT",
+          "nome": "Rikosmo94",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "224",
+          "team": "PBC",
+          "nome": "Parigi02",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 10,
+          "matricola": "228",
+          "team": "PRT",
+          "nome": "Focuss",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "232",
+          "team": "PRT",
+          "nome": "Zak",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "183",
+          "team": "CBR",
+          "nome": "CBR_Mava",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "234",
+          "team": "RCE",
+          "nome": "RCE_Leobustv",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "206",
+          "team": "GTID",
+          "nome": "GTID_Ale #77",
+          "auto": "RS 5 Turbo DTM '19"
+        },
         {
           "pos": 1,
           "matricola": "145",
@@ -252,6 +686,27 @@
           "matricola": "133",
           "team": "PRT",
           "nome": "Ferro77",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "101",
+          "team": "CBR",
+          "nome": "CBR_Samu12",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "153",
+          "team": "RMT",
+          "nome": "RMT-Axel K",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "206",
+          "team": "GTID",
+          "nome": "GTID_Ale #77",
           "auto": "RS 5 Turbo DTM '19"
         }
       ]
@@ -317,6 +772,104 @@
       "pilots": [
         {
           "pos": 1,
+          "matricola": "122",
+          "team": "GTID",
+          "nome": "GTIDsacco72",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "148",
+          "team": "RCE",
+          "nome": "RCE_Seccoide87",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "100",
+          "team": "CBR",
+          "nome": "CBR_JOHNNY",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "121",
+          "team": "GTID",
+          "nome": "GTID_Viper--Ste",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "126",
+          "team": "MFC",
+          "nome": "castoshi",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "93",
+          "team": "CBR",
+          "nome": "CBR_Baffokiller_",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "149",
+          "team": "RMT",
+          "nome": "RMT-AT83Andrea",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 8,
+          "matricola": "136",
+          "team": "PRT",
+          "nome": "H7-25 YT",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "99",
+          "team": "CBR",
+          "nome": "CBR_Giuliano.Vi",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 10,
+          "matricola": "117",
+          "team": "GTID",
+          "nome": "G.Altin",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 11,
+          "matricola": "141",
+          "team": "PRT",
+          "nome": "VeGe",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "154",
+          "team": "RRT",
+          "nome": "GIO",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "104",
+          "team": "CBR",
+          "nome": "M. Busato",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 14,
+          "matricola": "140",
+          "team": "PRT",
+          "nome": "Sulimanov",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 1,
           "matricola": "74",
           "team": "SMI",
           "nome": "SMI-Lellobello",
@@ -338,16 +891,30 @@
         },
         {
           "pos": 4,
-          "matricola": "52",
-          "team": "RCE",
-          "nome": "RCE_DarkneSS",
-          "auto": "ASSENTE"
+          "matricola": "41",
+          "team": "PRT",
+          "nome": "FrRoGaMeR",
+          "auto": "RS 5 Turbo DTM '19"
         },
         {
           "pos": 5,
           "matricola": "25",
           "team": "GTRC",
           "nome": "GTRC- TROTOTEK",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 6,
+          "matricola": "155",
+          "team": "RSR",
+          "nome": "C.Leclecca",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 7,
+          "matricola": "97",
+          "team": "BCSC",
+          "nome": "ITA_SOLID_SNAKE",
           "auto": "RC F GT500 '16"
         }
       ]
@@ -423,6 +990,104 @@
       "pilots": [
         {
           "pos": 1,
+          "matricola": "50",
+          "team": "PRT",
+          "nome": "S.Mancabelli",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 2,
+          "matricola": "63",
+          "team": "RSR",
+          "nome": "C.Zuccaro",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 3,
+          "matricola": "42",
+          "team": "PRT",
+          "nome": "PRT_Lee Boon",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 4,
+          "matricola": "51",
+          "team": "PRT",
+          "nome": "ValMar",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 5,
+          "matricola": "36",
+          "team": "PBC",
+          "nome": "M. Pennisi",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 6,
+          "matricola": "26",
+          "team": "GTRC",
+          "nome": "GTRC-MIKY",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 7,
+          "matricola": "18",
+          "team": "EVO",
+          "nome": "EVO_lama85",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 8,
+          "matricola": "23",
+          "team": "GTRC",
+          "nome": "GTRC_Emilios98",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 9,
+          "matricola": "21",
+          "team": "GTID",
+          "nome": "A.D’Alba",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 10,
+          "matricola": "28",
+          "team": "GTV",
+          "nome": "InuyashaGodYokai",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 11,
+          "matricola": "3",
+          "team": "ARC",
+          "nome": "ARC-VintageAR",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 12,
+          "matricola": "33",
+          "team": "MMS",
+          "nome": "MMS_Babide46",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 13,
+          "matricola": "11",
+          "team": "DCT",
+          "nome": "DCT-Ziototoooo",
+          "auto": "RC F GT500 '16"
+        },
+        {
+          "pos": 14,
+          "matricola": "44",
+          "team": "PRT",
+          "nome": "PRT_Perdinci",
+          "auto": "RS 5 Turbo DTM '19"
+        },
+        {
+          "pos": 1,
           "matricola": "21",
           "team": "GTID",
           "nome": "A.D’Alba",
@@ -444,10 +1109,10 @@
         },
         {
           "pos": 4,
-          "matricola": "51",
+          "matricola": "S1",
           "team": "PRT",
-          "nome": "ValMar",
-          "auto": "RS 5 Turbo DTM '19"
+          "nome": "FittipaldiBalex6",
+          "auto": ""
         },
         {
           "pos": 5,
