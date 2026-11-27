@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-27T01:00:37+00:00",
+    "updated_at": "2026-11-27T14:59:26+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -18,9 +18,9 @@
         "fine": "10 Dic 2026",
         "scadenza": "10 Dic 2026",
         "chiusura": "2026-12-10T06:59:59Z",
-        "miglior_tempo": "1:36.730",
-        "leader": "CHARO_GH69",
-        "partecipanti": 29470,
+        "miglior_tempo": "1:36.590",
+        "leader": "SFE_BRacer",
+        "partecipanti": 38909,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,10 @@
             "squadra": "GTV",
             "tempo": "1:38.090",
             "tempo_ms": 98090,
-            "pos_assoluta": 271,
+            "pos_assoluta": 379,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 1.406
+            "distacco_assoluto_pct": 1.553
           },
           {
             "psn": "GTV_legendafluo",
@@ -43,10 +43,22 @@
             "squadra": "GTV",
             "tempo": "1:38.253",
             "tempo_ms": 98253,
-            "pos_assoluta": 394,
+            "pos_assoluta": 539,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.166,
-            "distacco_assoluto_pct": 1.574
+            "distacco_assoluto_pct": 1.722
+          },
+          {
+            "psn": "Utile_ruspante",
+            "gt7name": "Barda88",
+            "numero": "88",
+            "squadra": "GTV",
+            "tempo": "1:38.749",
+            "tempo_ms": 98749,
+            "pos_assoluta": 1558,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 0.672,
+            "distacco_assoluto_pct": 2.235
           },
           {
             "psn": "Mirco94-",
@@ -56,9 +68,9 @@
             "tempo": "1:40.710",
             "tempo_ms": 100710,
             "pos_assoluta": 11663,
-            "pos_gtv": 3,
+            "pos_gtv": 4,
             "distacco_gtv_pct": 2.671,
-            "distacco_assoluto_pct": 4.115
+            "distacco_assoluto_pct": 4.265
           }
         ]
       },
@@ -73,7 +85,7 @@
         "chiusura": "2026-12-10T06:59:59Z",
         "miglior_tempo": "1:36.869",
         "leader": "Calster_25",
-        "partecipanti": 23052,
+        "partecipanti": 30261,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -84,7 +96,7 @@
             "squadra": "GTV",
             "tempo": "1:41.795",
             "tempo_ms": 101795,
-            "pos_assoluta": 6356,
+            "pos_assoluta": 8169,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 5.085
@@ -102,10 +114,22 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 94981,
+        "partecipanti": 97213,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
+          {
+            "psn": "InuyashaGodYokai",
+            "gt7name": "InuyashaGodYokai",
+            "numero": "36",
+            "squadra": "GTV",
+            "tempo": "1:23.331",
+            "tempo_ms": 83331,
+            "pos_assoluta": 1188,
+            "pos_gtv": 1,
+            "distacco_gtv_pct": 0.0,
+            "distacco_assoluto_pct": 2.361
+          },
           {
             "psn": "Yukimura9221",
             "gt7name": "Yukimura",
@@ -113,9 +137,9 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 3215,
-            "pos_gtv": 1,
-            "distacco_gtv_pct": 0.0,
+            "pos_assoluta": 3305,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 2.892
           },
           {
@@ -126,8 +150,8 @@
             "tempo": "1:26.223",
             "tempo_ms": 86223,
             "pos_assoluta": 13871,
-            "pos_gtv": 2,
-            "distacco_gtv_pct": 2.937,
+            "pos_gtv": 3,
+            "distacco_gtv_pct": 3.47,
             "distacco_assoluto_pct": 5.913
           }
         ]
@@ -664,8 +688,8 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "C",
-      "miglior_rank": 394,
-      "rank_medio": 27239,
+      "miglior_rank": 497,
+      "rank_medio": 27240,
       "eventi_pubblicati": 111,
       "ultimo_evento_data": "2026-12-10",
       "ultimo_evento": "Fuji International Speedway",
@@ -674,7 +698,7 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 394,
+          "rank": 539,
           "tempo": "1:38.253",
           "evento": "Fuji International Speedway"
         },
@@ -982,16 +1006,16 @@
         {
           "data": "2025-09-25",
           "tipo": "time_trial",
-          "rank": 65079,
-          "tempo": "1:28.404",
-          "evento": "Autodromo Nazionale Monza No Chicane"
+          "rank": 8166,
+          "tempo": "2:00.378",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2025-09-25",
           "tipo": "time_trial",
-          "rank": 8166,
-          "tempo": "2:00.378",
-          "evento": "Suzuka Circuit"
+          "rank": 65079,
+          "tempo": "1:28.404",
+          "evento": "Autodromo Nazionale Monza No Chicane"
         },
         {
           "data": "2025-09-22",
@@ -7960,8 +7984,8 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "S",
-      "miglior_rank": 271,
-      "rank_medio": 18158,
+      "miglior_rank": 379,
+      "rank_medio": 18159,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-12-10",
       "ultimo_evento": "Fuji International Speedway",
@@ -7970,7 +7994,7 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 271,
+          "rank": 379,
           "tempo": "1:38.090",
           "evento": "Fuji International Speedway"
         },
@@ -8692,12 +8716,19 @@
       "dr": "A+",
       "sr": "S",
       "miglior_rank": 30,
-      "rank_medio": 572,
-      "eventi_pubblicati": 129,
-      "ultimo_evento_data": "2026-10-26",
-      "ultimo_evento": "WeatherTech Raceway Laguna Seca",
+      "rank_medio": 576,
+      "eventi_pubblicati": 130,
+      "ultimo_evento_data": "2026-12-03",
+      "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
       "ultima_gara": "SUGO International Racing Course",
       "eventi": [
+        {
+          "data": "2026-12-03",
+          "tipo": "time_trial",
+          "rank": 1188,
+          "tempo": "1:23.331",
+          "evento": "Tokyo Expressway - Central Counterclockwise"
+        },
         {
           "data": "2026-10-26",
           "tipo": "gara",
@@ -12333,7 +12364,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18486,
+      "rank_medio": 18489,
       "eventi_pubblicati": 122,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -12349,14 +12380,14 @@
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 4041,
+          "rank": 4220,
           "tempo": "0:45.228",
           "evento": "Kyoto Driving Park - Miyabi"
         },
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 4015,
+          "rank": 4220,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -13204,12 +13235,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18733,
-      "eventi_pubblicati": 106,
-      "ultimo_evento_data": "2026-11-16",
-      "ultimo_evento": "Nürburgring GP",
+      "rank_medio": 18573,
+      "eventi_pubblicati": 107,
+      "ultimo_evento_data": "2026-12-10",
+      "ultimo_evento": "Fuji International Speedway",
       "ultima_gara": "Suzuka Circuit",
       "eventi": [
+        {
+          "data": "2026-12-10",
+          "tipo": "time_trial",
+          "rank": 1558,
+          "tempo": "1:38.749",
+          "evento": "Fuji International Speedway"
+        },
         {
           "data": "2026-11-16",
           "tipo": "time_trial",
@@ -14225,7 +14263,7 @@
       "dr": "A",
       "sr": "S",
       "miglior_rank": 2627,
-      "rank_medio": 46048,
+      "rank_medio": 46061,
       "eventi_pubblicati": 155,
       "ultimo_evento_data": "2026-12-10",
       "ultimo_evento": "Yas Marina Circuit",
@@ -14234,14 +14272,14 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 6356,
+          "rank": 8169,
           "tempo": "1:41.795",
           "evento": "Yas Marina Circuit"
         },
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 3215,
+          "rank": 3305,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -14507,16 +14545,16 @@
         {
           "data": "2026-05-28",
           "tipo": "time_trial",
-          "rank": 25291,
-          "tempo": "1:26.998",
-          "evento": "Circuit Gilles-Villeneuve"
+          "rank": 14736,
+          "tempo": "1:26.225",
+          "evento": "Autodromo Nazionale Monza"
         },
         {
           "data": "2026-05-28",
           "tipo": "time_trial",
-          "rank": 14736,
-          "tempo": "1:26.225",
-          "evento": "Autodromo Nazionale Monza"
+          "rank": 25291,
+          "tempo": "1:26.998",
+          "evento": "Circuit Gilles-Villeneuve"
         },
         {
           "data": "2026-05-25",
@@ -14633,16 +14671,16 @@
         {
           "data": "2026-02-12",
           "tipo": "time_trial",
-          "rank": 72804,
-          "tempo": "1:51.770",
-          "evento": "Autodromo Nazionale Monza"
+          "rank": 37157,
+          "tempo": "9:12.300",
+          "evento": "Nürburgring 24h"
         },
         {
           "data": "2026-02-12",
           "tipo": "time_trial",
-          "rank": 37157,
-          "tempo": "9:12.300",
-          "evento": "Nürburgring 24h"
+          "rank": 72804,
+          "tempo": "1:51.770",
+          "evento": "Autodromo Nazionale Monza"
         },
         {
           "data": "2026-02-09",
@@ -14955,16 +14993,16 @@
         {
           "data": "2025-09-25",
           "tipo": "time_trial",
-          "rank": 47769,
-          "tempo": "2:02.358",
-          "evento": "Suzuka Circuit"
+          "rank": 59920,
+          "tempo": "1:28.322",
+          "evento": "Autodromo Nazionale Monza No Chicane"
         },
         {
           "data": "2025-09-25",
           "tipo": "time_trial",
-          "rank": 59920,
-          "tempo": "1:28.322",
-          "evento": "Autodromo Nazionale Monza No Chicane"
+          "rank": 47769,
+          "tempo": "2:02.358",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2025-09-22",
@@ -17123,16 +17161,16 @@
         {
           "data": "2024-08-15",
           "tipo": "time_trial",
-          "rank": 46675,
-          "tempo": "1:59.321",
-          "evento": "Trial Mountain Circuit Reverse"
+          "rank": 27759,
+          "tempo": "1:40.873",
+          "evento": "Red Bull Ring"
         },
         {
           "data": "2024-08-15",
           "tipo": "time_trial",
-          "rank": 27759,
-          "tempo": "1:40.873",
-          "evento": "Red Bull Ring"
+          "rank": 46675,
+          "tempo": "1:59.321",
+          "evento": "Trial Mountain Circuit Reverse"
         },
         {
           "data": "2024-08-08",
@@ -17375,16 +17413,16 @@
         {
           "data": "2023-10-29",
           "tipo": "time_trial",
-          "rank": 3999,
-          "tempo": "2:25.525",
-          "evento": "Suzuka Circuit"
+          "rank": 88772,
+          "tempo": "8:19.066",
+          "evento": "Nürburgring Nordschleife"
         },
         {
           "data": "2023-10-29",
           "tipo": "time_trial",
-          "rank": 88772,
-          "tempo": "8:19.066",
-          "evento": "Nürburgring Nordschleife"
+          "rank": 3999,
+          "tempo": "2:25.525",
+          "evento": "Suzuka Circuit"
         },
         {
           "data": "2023-10-26",
@@ -17411,15 +17449,15 @@
       },
       {
         "etichetta": "101 – 500",
-        "conteggio": 100
+        "conteggio": 99
       },
       {
         "etichetta": "501 – 1.000",
-        "conteggio": 78
+        "conteggio": 79
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 314
+        "conteggio": 316
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -17430,6 +17468,6 @@
         "conteggio": 1073
       }
     ],
-    "eventi_totali": 2334
+    "eventi_totali": 2336
   }
 }
