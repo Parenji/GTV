@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-27T14:59:26+00:00",
+    "updated_at": "2026-11-27T17:26:27+00:00",
     "fonte": "gt-gridstats.com (dati Sport Mode Gran Turismo 7)",
     "piloti_gtv": 25,
     "piloti_con_dati": 24,
@@ -20,7 +20,7 @@
         "chiusura": "2026-12-10T06:59:59Z",
         "miglior_tempo": "1:36.590",
         "leader": "SFE_BRacer",
-        "partecipanti": 38909,
+        "partecipanti": 41830,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -31,10 +31,22 @@
             "squadra": "GTV",
             "tempo": "1:38.090",
             "tempo_ms": 98090,
-            "pos_assoluta": 379,
+            "pos_assoluta": 408,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 1.553
+          },
+          {
+            "psn": "marse9191",
+            "gt7name": "Brook24",
+            "numero": "24",
+            "squadra": "GTV",
+            "tempo": "1:38.186",
+            "tempo_ms": 98186,
+            "pos_assoluta": 498,
+            "pos_gtv": 2,
+            "distacco_gtv_pct": 0.098,
+            "distacco_assoluto_pct": 1.652
           },
           {
             "psn": "GTV_legendafluo",
@@ -43,8 +55,8 @@
             "squadra": "GTV",
             "tempo": "1:38.253",
             "tempo_ms": 98253,
-            "pos_assoluta": 539,
-            "pos_gtv": 2,
+            "pos_assoluta": 573,
+            "pos_gtv": 3,
             "distacco_gtv_pct": 0.166,
             "distacco_assoluto_pct": 1.722
           },
@@ -55,10 +67,22 @@
             "squadra": "GTV",
             "tempo": "1:38.749",
             "tempo_ms": 98749,
-            "pos_assoluta": 1558,
-            "pos_gtv": 3,
+            "pos_assoluta": 1697,
+            "pos_gtv": 4,
             "distacco_gtv_pct": 0.672,
             "distacco_assoluto_pct": 2.235
+          },
+          {
+            "psn": "Yukimura9221",
+            "gt7name": "Yukimura",
+            "numero": "106",
+            "squadra": "GTV",
+            "tempo": "1:38.928",
+            "tempo_ms": 98928,
+            "pos_assoluta": 2464,
+            "pos_gtv": 5,
+            "distacco_gtv_pct": 0.854,
+            "distacco_assoluto_pct": 2.421
           },
           {
             "psn": "Mirco94-",
@@ -68,7 +92,7 @@
             "tempo": "1:40.710",
             "tempo_ms": 100710,
             "pos_assoluta": 11663,
-            "pos_gtv": 4,
+            "pos_gtv": 6,
             "distacco_gtv_pct": 2.671,
             "distacco_assoluto_pct": 4.265
           }
@@ -83,9 +107,9 @@
         "fine": "10 Dic 2026",
         "scadenza": "10 Dic 2026",
         "chiusura": "2026-12-10T06:59:59Z",
-        "miglior_tempo": "1:36.869",
-        "leader": "Calster_25",
-        "partecipanti": 30261,
+        "miglior_tempo": "1:36.852",
+        "leader": "gyalog_kakukk123",
+        "partecipanti": 32442,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -96,10 +120,10 @@
             "squadra": "GTV",
             "tempo": "1:41.795",
             "tempo_ms": 101795,
-            "pos_assoluta": 8169,
+            "pos_assoluta": 8810,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
-            "distacco_assoluto_pct": 5.085
+            "distacco_assoluto_pct": 5.104
           }
         ]
       },
@@ -114,7 +138,7 @@
         "chiusura": "2026-12-03T06:59:59Z",
         "miglior_tempo": "1:21.409",
         "leader": "Blackwing-_rako",
-        "partecipanti": 97213,
+        "partecipanti": 97971,
         "fonte_leader": "ufficiale",
         "conclusa": false,
         "classifica": [
@@ -125,7 +149,7 @@
             "squadra": "GTV",
             "tempo": "1:23.331",
             "tempo_ms": 83331,
-            "pos_assoluta": 1188,
+            "pos_assoluta": 1194,
             "pos_gtv": 1,
             "distacco_gtv_pct": 0.0,
             "distacco_assoluto_pct": 2.361
@@ -137,7 +161,7 @@
             "squadra": "GTV",
             "tempo": "1:23.763",
             "tempo_ms": 83763,
-            "pos_assoluta": 3305,
+            "pos_assoluta": 3338,
             "pos_gtv": 2,
             "distacco_gtv_pct": 0.518,
             "distacco_assoluto_pct": 2.892
@@ -698,7 +722,7 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 539,
+          "rank": 573,
           "tempo": "1:38.253",
           "evento": "Fuji International Speedway"
         },
@@ -5187,12 +5211,19 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 478,
-      "rank_medio": 18879,
-      "eventi_pubblicati": 138,
-      "ultimo_evento_data": "2026-11-26",
-      "ultimo_evento": "Watkins Glen Long Course",
+      "rank_medio": 18747,
+      "eventi_pubblicati": 139,
+      "ultimo_evento_data": "2026-12-10",
+      "ultimo_evento": "Fuji International Speedway",
       "ultima_gara": "Circuit de Spa-Francorchamps",
       "eventi": [
+        {
+          "data": "2026-12-10",
+          "tipo": "time_trial",
+          "rank": 498,
+          "tempo": "1:38.186",
+          "evento": "Fuji International Speedway"
+        },
         {
           "data": "2026-11-26",
           "tipo": "time_trial",
@@ -7984,7 +8015,7 @@
       "categoria": "PRO GOLD",
       "dr": "B",
       "sr": "S",
-      "miglior_rank": 379,
+      "miglior_rank": 408,
       "rank_medio": 18159,
       "eventi_pubblicati": 102,
       "ultimo_evento_data": "2026-12-10",
@@ -7994,7 +8025,7 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 379,
+          "rank": 408,
           "tempo": "1:38.090",
           "evento": "Fuji International Speedway"
         },
@@ -8725,7 +8756,7 @@
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 1188,
+          "rank": 1194,
           "tempo": "1:23.331",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -12364,7 +12395,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1491,
-      "rank_medio": 18489,
+      "rank_medio": 18490,
       "eventi_pubblicati": 122,
       "ultimo_evento_data": "2026-12-03",
       "ultimo_evento": "Tokyo Expressway - Central Counterclockwise",
@@ -12380,14 +12411,14 @@
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 4220,
+          "rank": 4273,
           "tempo": "0:45.228",
           "evento": "Kyoto Driving Park - Miyabi"
         },
         {
           "data": "2026-11-23",
           "tipo": "gara",
-          "rank": 4220,
+          "rank": 4277,
           "tempo": "1:44.360",
           "evento": "Kyoto Driving Park - Yamagiwa"
         },
@@ -13235,7 +13266,7 @@
       "dr": "B",
       "sr": "S",
       "miglior_rank": 1348,
-      "rank_medio": 18573,
+      "rank_medio": 18574,
       "eventi_pubblicati": 107,
       "ultimo_evento_data": "2026-12-10",
       "ultimo_evento": "Fuji International Speedway",
@@ -13244,7 +13275,7 @@
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 1558,
+          "rank": 1697,
           "tempo": "1:38.749",
           "evento": "Fuji International Speedway"
         },
@@ -14262,24 +14293,31 @@
       "categoria": "",
       "dr": "A",
       "sr": "S",
-      "miglior_rank": 2627,
-      "rank_medio": 46061,
-      "eventi_pubblicati": 155,
+      "miglior_rank": 2464,
+      "rank_medio": 45785,
+      "eventi_pubblicati": 156,
       "ultimo_evento_data": "2026-12-10",
-      "ultimo_evento": "Yas Marina Circuit",
+      "ultimo_evento": "Fuji International Speedway",
       "ultima_gara": "Deep Forest Raceway",
       "eventi": [
         {
           "data": "2026-12-10",
           "tipo": "time_trial",
-          "rank": 8169,
+          "rank": 2464,
+          "tempo": "1:38.928",
+          "evento": "Fuji International Speedway"
+        },
+        {
+          "data": "2026-12-10",
+          "tipo": "time_trial",
+          "rank": 8810,
           "tempo": "1:41.795",
           "evento": "Yas Marina Circuit"
         },
         {
           "data": "2026-12-03",
           "tipo": "time_trial",
-          "rank": 3305,
+          "rank": 3338,
           "tempo": "1:23.763",
           "evento": "Tokyo Expressway - Central Counterclockwise"
         },
@@ -17449,7 +17487,7 @@
       },
       {
         "etichetta": "101 – 500",
-        "conteggio": 99
+        "conteggio": 100
       },
       {
         "etichetta": "501 – 1.000",
@@ -17457,7 +17495,7 @@
       },
       {
         "etichetta": "1.001 – 5.000",
-        "conteggio": 316
+        "conteggio": 317
       },
       {
         "etichetta": "5.001 – 20.000",
@@ -17468,6 +17506,6 @@
         "conteggio": 1073
       }
     ],
-    "eventi_totali": 2336
+    "eventi_totali": 2338
   }
 }
